@@ -1,0 +1,20 @@
+xfce4-dict-plugin - A plugin to query a Dict server
+
+With this plugin you can query a dictionary server(see RFC 2229) to search for the
+translation or explanation of a word. You can also choose a dictionary offered by the
+server to improve your search results.
+There are two special dictionaries:
+* - use this dictionary to search in all available dictionaries on the server
+! - use this dictionary to search in all available dictionaries on the server but
+    stop searching after the first match.
+
+You can also easily select a word in an email or on a webpage and drag it onto the dict
+icon in your panel, then the plugin begins to search and shows you the results.
+
+This plugin was mainly tested with the server "dict.org" but should work with any other
+servers which implement the DICT protocol defined in RFC 2229.
+
+ToDo:
+- support user authentification
+- keep dictionary list in memory
+- support the MATCH command

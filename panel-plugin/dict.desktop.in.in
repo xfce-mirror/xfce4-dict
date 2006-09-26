@@ -1,0 +1,7 @@
+[Xfce Panel]
+Type=X-XFCE-PanelPlugin
+Encoding=UTF-8
+_Name=Dict
+_Comment=A plugin to query a Dict server.
+Icon=dict-icon.svg
+X-XFCE-Exec=@libexecdir@/xfce4/panel-plugins/xfce4-dict-plugin

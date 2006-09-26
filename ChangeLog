@@ -1,0 +1,24 @@
+2006-09-26 enrico
+
+	* Added optional text field in the panel.
+
+
+2006-09-25 enrico
+
+	* Changed application icon
+	* Added Cancel button to the properties dialog to cancel current changes.
+
+
+2006-09-20 enrico
+
+	* New Release: 0.1.1
+	* Set icon for the main window
+	* Beautified the server response in the text widget.
+	* Show all lines of the result (thanks Remco den Breeje for reporting).
+	* Added DnD target "text/plain" to enable DnD for Firefox
+	  (thanks Remco den Breeje for reporting).
+
+
+2006-09-20 enrico
+
+	* Initial release 0.1.0.
