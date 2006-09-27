@@ -494,7 +494,7 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 		return FALSE;
 	}
 
-	send_command(fd, "show datbases");
+	send_command(fd, "show databases");
 
 	// read all server output and hope the buffer is big enough (8KB should be enough)
 	if (! get_answer(fd, (gchar*) buffer))
