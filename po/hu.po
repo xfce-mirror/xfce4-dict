@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-09-27 21:23+0100\n"
+"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
+"Language-Team: Hungarian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+
+#: ../panel-plugin/dict.c:262
+#: ../panel-plugin/dict.c:493
+msgid "Could not connect to server."
+msgstr "Sikertelen kapcsolódás a kiszolgálóhoz"
+
+#: ../panel-plugin/dict.c:268
+msgid "Input is too long."
+msgstr "Túl hosszú bevitel"
+
+#: ../panel-plugin/dict.c:292
+msgid "Server not ready."
+msgstr "A kiszolgáló nem érhető el"
+
+#: ../panel-plugin/dict.c:304
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Nincs találat \"%s\" kifejezésre"
+
+#: ../panel-plugin/dict.c:309
+#: ../panel-plugin/dict.c:523
+msgid "Unknown error while quering the server."
+msgstr "Ismeretlen hiba a kiszolgáló lekérdezésekor"
+
+#: ../panel-plugin/dict.c:315
+#, c-format
+msgid "Answer was too long, it has been truncated (%d definition(s) found)."
+msgstr "A válasz túl hosszú, levágtam (%d meghatározást találtam)"
+
+#: ../panel-plugin/dict.c:317
+#, c-format
+msgid "%d definition(s) found."
+msgstr "_Kibontás ide"
+
+#: ../panel-plugin/dict.c:518
+msgid "The server doesn't offer any databases."
+msgstr "A kiszolgáló nem ér el adatbázist"
+
+#: ../panel-plugin/dict.c:556
+msgid "-- The received list was too long. It has been truncated."
+msgstr "-- A kapott lista túl hosszú. Levágtam."
+
+#: ../panel-plugin/dict.c:578
+msgid "You have chosen an invalid dictionary entry."
+msgstr "Érvénytelen szótár bejegyzést választottál"
+
+#: ../panel-plugin/dict.c:621
+msgid "Properties"
+msgstr "Tulajdonságok"
+
+#: ../panel-plugin/dict.c:637
+msgid "Dictionary plugin"
+msgstr "Szótár beillesztés"
+
+#. server address
+#: ../panel-plugin/dict.c:649
+msgid "Server :"
+msgstr "Kiszolgáló :"
+
+#. server port
+#: ../panel-plugin/dict.c:661
+msgid "Server Port :"
+msgstr "Kiszolgáló port :"
+
+#. dictionary
+#: ../panel-plugin/dict.c:669
+msgid "Dictionary :"
+msgstr "Szótár :"
+
+#: ../panel-plugin/dict.c:673
+msgid "* (use all)"
+msgstr "* (mindet használja)"
+
+#: ../panel-plugin/dict.c:674
+msgid "! (use all, stop after first match)"
+msgstr "! (mindet használja, az elsőnél megáll)"
+
+#. show panel entry check box
+#: ../panel-plugin/dict.c:697
+msgid "Show text field in the panel"
+msgstr "Szöveg mező a panelon"
+
+#: ../panel-plugin/dict.c:700
+msgid "This option can only be used when the panel has a horizontal orientation."
+msgstr "A lehetőség csak a panel vízszintes fekvésénél használható."
+
+#. panel entry size
+#: ../panel-plugin/dict.c:705
+msgid "Text field size :"
+msgstr "Szöveg mező mérete :"
+
+#: ../panel-plugin/dict.c:829
+msgid "Text to search:"
+msgstr "Keresendő szöveg:"
+
+#: ../panel-plugin/dict.c:904
+#: ../panel-plugin/dict.desktop.in.in.h:1
+msgid "A plugin to query a Dict server."
+msgstr "Dict kiszolgáló beillesztés"
+
+#: ../panel-plugin/dict.c:908
+msgid "Developer"
+msgstr "Fejlesztő"
+
+#: ../panel-plugin/dict.c:993
+msgid "Look up a word"
+msgstr "Egy szó keresése"
+
+#: ../panel-plugin/dict.c:1042
+msgid "Ready."
+msgstr "Kész."
+
+#: ../panel-plugin/dict.desktop.in.in.h:2
+msgid "Dict"
+msgstr "Dict"
+
