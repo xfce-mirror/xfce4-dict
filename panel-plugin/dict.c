@@ -38,7 +38,7 @@
 
 #include "inline-icon.h"
 
-#define BUF_SIZE 8192
+#define BUF_SIZE 256
 
 
 typedef struct
@@ -156,24 +156,18 @@ static void send_command(gint fd, const gchar *str)
 }
 
 
-static gboolean get_answer(gint fd, gchar *buf)
+static gchar *get_answer(gint fd)
 {
-	gint len = 0;
 	gboolean fol = FALSE;
 	gboolean sol = FALSE;
 	gboolean tol = FALSE;
-	gchar c;
+	GString *str = g_string_sized_new(100);
+	gchar c, *tmp;
 	gchar ec[3];
 
 	alarm(10); // abort after 5 seconds, there should went wrong something
 	while (read(fd, &c, 1) > 0)
 	{
-		if (len == BUF_SIZE)
-		{
-			buf[len - 1] = '\0';
-			return FALSE;
-		}
-
 		if (tol) // third char of line
 		{
 			ec[2] = c;
@@ -193,7 +187,7 @@ static gboolean get_answer(gint fd, gchar *buf)
 		if (c == '\n') // last char of line, so the next run is first char of next line
 			fol = TRUE;
 
-		buf[len++] = c;
+		g_string_append_c(str, c);
 		if (tol &&
 			(
 				(strncmp(ec, "250", 3) == 0) || // ok
@@ -207,8 +201,11 @@ static gboolean get_answer(gint fd, gchar *buf)
 	}
 	alarm(0);
 
-	buf[len] = '\0';
-	return TRUE;
+	g_string_append_c(str, '\0');
+	tmp = str->str;
+	g_string_free(str, FALSE);
+
+	return tmp;
 }
 
 
@@ -235,8 +232,9 @@ void dict_status_add(DictData *dd, const gchar *format, ...)
 	static gchar string[512];
 	va_list args;
 
+	string[0] = ' ';
 	va_start(args, format);
-	g_vsnprintf(string, sizeof string, format, args);
+	g_vsnprintf(string + 1, (sizeof string) - 1, format, args);
 	va_end(args);
 
 	gtk_statusbar_pop(GTK_STATUSBAR(dd->statusbar), 1);
@@ -244,18 +242,31 @@ void dict_status_add(DictData *dd, const gchar *format, ...)
 }
 
 
+static void clear_text_buffer(DictData *dd)
+{
+	GtkTextIter start_iter, end_iter;
+
+	// clear the TextBuffer
+	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &start_iter);
+	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
+	gtk_text_buffer_delete(dd->main_textbuffer, &start_iter, &end_iter);
+}
+
+
 static gboolean dict_ask_server(DictData *dd, const gchar *word)
 {
 	gint fd, i, max_lines;
 	gint defs_found = 0;
-	gboolean answer_too_long = FALSE;
-	static gchar buffer[BUF_SIZE];
-	gchar *answer;
+	static gchar cmd[BUF_SIZE];
+	gchar *buffer = NULL;
 	gchar **lines;
-	gchar *tmp, *stripped;
-	GtkTextIter iter, start_iter, end_iter;
+	gchar *answer, *tmp, *stripped;
+	GtkTextIter iter;
 
 	if (word == NULL || strlen(word) == 0) return FALSE;
+
+	clear_text_buffer(dd);
+	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
 
 	if ((fd = open_socket(dd->server, dd->port)) == -1)
 	{
@@ -274,23 +285,18 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 	while (dd->dictionary[i] != ' ') i++;
 	dd->dictionary[i] = '\0';
 
-	snprintf(buffer, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, word);
-	send_command(fd, buffer);
+	snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, word);
+	send_command(fd, cmd);
 
 	// and now, "append" again the rest of the dictionary string again
 	dd->dictionary[i] = ' ';
 
-	// read all server output and hope the buffer is big enough (8KB should be enough)
-	if (! get_answer(fd, (gchar*) buffer))
-		answer_too_long = TRUE;
-
+	answer = buffer = get_answer(fd);
 	close(fd);
-	answer = (gchar*) buffer;
 
 	if (strncmp("220", answer, 3) != 0)
 	{
 		dict_status_add(dd, _("Server not ready."));
-		close(fd);
 		return FALSE;
 	}
 
@@ -300,36 +306,27 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 
 	if (strncmp("552", answer, 3) == 0)
 	{
-		close(fd);
 		dict_status_add(dd, _("No matches could be found for \"%s\"."), word);
 		return TRUE;
 	}
 	else if (strncmp("150", answer, 3) != 0 && strncmp("552", answer, 3) != 0)
 	{
 		dict_status_add(dd, _("Unknown error while quering the server."));
-		close(fd);
 		return FALSE;
 	}
 	defs_found = atoi(answer + 4);
-	if (answer_too_long)
-		dict_status_add(dd, _("Answer was too long, it has been truncated (%d definition(s) found)."), defs_found);
-	else
-		dict_status_add(dd, _("%d definition(s) found."), defs_found);
+	dict_status_add(dd, _("%d definition(s) found."), defs_found);
 
 	// go to next line
 	while (*answer != '\n') *answer++;
 	*answer++;
 
-	// clear the TextBuffer
-	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &start_iter);
-	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
-	gtk_text_buffer_delete(dd->main_textbuffer, &start_iter, &end_iter);
-	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
-
 	// parse output
 	lines = g_strsplit(answer, "\r\n", -1);
 	max_lines = g_strv_length(lines);
 	if (lines == NULL || max_lines == 0) return FALSE;
+
+	gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
 
 	i = -1;
 	while (i < max_lines)
@@ -351,6 +348,8 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 				gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
 			}
 		}
+		if (i >= (max_lines - 2)) break;
+
 		// all following lines represents the translation
 		i += 2; // skip the next two lines
 		while (lines[i] != NULL && lines[i][0] != '.' && lines[i][0] != '\r' && lines[i][0] != '\n')
@@ -367,6 +366,7 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 		gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n\n", 2);
 	}
 	g_strfreev(lines);
+	g_free(buffer);
 
 	// clear the panel entry to not search again when you click on the panel button
 	gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
@@ -478,9 +478,7 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 {
 	gint fd, i;
 	gint max_lines;
-	gboolean answer_too_long = FALSE;
-	static gchar buffer[BUF_SIZE];
-	gchar *answer;
+	gchar *buffer = NULL;
 	gchar **lines;
 	const gchar *host;
 	gint port;
@@ -497,28 +495,20 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	send_command(fd, "show databases");
 
 	// read all server output and hope the buffer is big enough (8KB should be enough)
-	if (! get_answer(fd, (gchar*) buffer))
-	{ // delete last line (which is probably incomplete) and add a notice that there is something missing
-		i = strlen(buffer) - 1;
-		while (buffer[i] != '\n') i--;
-		buffer[i - 1] = '\0';
-		answer_too_long = TRUE;
-	}
-
+	buffer = get_answer(fd);
 	close(fd);
-	answer = (gchar*) buffer;
 
 	// go to next line
-	while (*answer != '\n') *answer++;
-	*answer++;
+	while (*buffer != '\n') *buffer++;
+	*buffer++;
 
-	if (strncmp("554", answer, 3) == 0)
+	if (strncmp("554", buffer, 3) == 0)
 	{
 		close(fd);
 		xfce_err(_("The server doesn't offer any databases."));
 		return TRUE;
 	}
-	else if (strncmp("110", answer, 3) != 0 && strncmp("554", answer, 3) != 0)
+	else if (strncmp("110", buffer, 3) != 0 && strncmp("554", buffer, 3) != 0)
 	{
 		xfce_err(_("Unknown error while quering the server."));
 		close(fd);
@@ -526,8 +516,8 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	}
 
 	// go to next line
-	while (*answer != '\n') *answer++;
-	*answer++;
+	while (*buffer != '\n') *buffer++;
+	*buffer++;
 
 	// clear the combo box
 	i = gtk_tree_model_iter_n_children(gtk_combo_box_get_model(GTK_COMBO_BOX(dd->dict_combo)), NULL);
@@ -537,7 +527,7 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	}
 
 	// parse output
-	lines = g_strsplit(answer, "\r\n", -1);
+	lines = g_strsplit(buffer, "\r\n", -1);
 	max_lines = g_strv_length(lines);
 	if (lines == NULL || max_lines == 0) return FALSE;
 
@@ -549,12 +539,7 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	}
 
 	g_strfreev(lines);
-
-	if (answer_too_long)
-	{
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo),
-						_("-- The received list was too long. It has been truncated."));
-	}
+	g_free(buffer);
 
 	// set the active entry to * because we don't know where the previously selected item now is in
 	// the list and we also don't know whether it exists at all, and I don't walk through the list
@@ -795,12 +780,8 @@ static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
 
 static void clear_button_clicked_cb(GtkButton *button, DictData *dd)
 {
-	GtkTextIter start_iter, end_iter;
+	clear_text_buffer(dd);
 
-	// clear the TextBuffer
-	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &start_iter);
-	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
-	gtk_text_buffer_delete(dd->main_textbuffer, &start_iter, &end_iter);
 	// clear the entries
 	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
 	gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
@@ -819,7 +800,7 @@ static void dict_create_main_dialog(DictData *dd)
 {
 	GtkWidget *main_box;
 	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *clear_button, *close_button;
-	GtkWidget *scrolledwindow_results;
+	GtkWidget *sep, *align, *scrolledwindow_results;
 	//GtkWidget *dict_box, *dict_label, *combo_event_box;
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
@@ -833,23 +814,29 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_widget_show(main_box);
 	gtk_container_add(GTK_CONTAINER(dd->window), main_box);
 
-	// entry box (label, entry, button)
+	// entry box (label, entry, buttons)
 	entry_box = gtk_hbox_new(FALSE, 10);
 	gtk_widget_show(entry_box);
+	gtk_container_set_border_width(GTK_CONTAINER(entry_box), 2);
 	gtk_box_pack_start(GTK_BOX(main_box), entry_box, FALSE, TRUE, 5);
 
 	label_box = gtk_hbox_new(FALSE, 5);
 	gtk_widget_show(label_box);
-	gtk_box_pack_start(GTK_BOX(entry_box), label_box, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 0);
 
 	entry_label = gtk_label_new(_("Text to search:"));
 	gtk_widget_show(entry_label);
 	gtk_misc_set_alignment(GTK_MISC(entry_label), 1, 0.5);
-	gtk_box_pack_start(GTK_BOX(label_box), entry_label, FALSE, FALSE, 2);
+
+	align = gtk_alignment_new(1, 0.5, 0, 0);
+	gtk_alignment_set_padding(GTK_ALIGNMENT(align), 0, 0, 5, 0);
+	gtk_widget_show(align);
+	gtk_container_add(GTK_CONTAINER(align), entry_label);
+	gtk_box_pack_start(GTK_BOX(label_box), align, FALSE, FALSE, 2);
 
 	dd->main_entry = gtk_entry_new();
 	gtk_widget_show(dd->main_entry);
-	gtk_box_pack_start(GTK_BOX(label_box), dd->main_entry, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(label_box), dd->main_entry, TRUE, TRUE, 0);
 	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
 
 	entry_button = gtk_button_new_from_stock("gtk-find");
@@ -862,10 +849,23 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_box_pack_start(GTK_BOX(entry_box), clear_button, FALSE, FALSE, 0);
 	g_signal_connect(clear_button, "clicked", G_CALLBACK(clear_button_clicked_cb), dd);
 
+	// just make some space
+	align = gtk_alignment_new(1, 0.5, 0, 0);
+	gtk_alignment_set_padding(GTK_ALIGNMENT(align), 0, 0, 10, 0);
+	gtk_widget_show(align);
+	gtk_container_add(GTK_CONTAINER(align), gtk_label_new(""));
+	gtk_box_pack_start(GTK_BOX(entry_box), align, FALSE, FALSE, 0);
+
 	close_button = gtk_button_new_from_stock("gtk-close");
 	gtk_widget_show(close_button);
-	gtk_box_pack_end(GTK_BOX(entry_box), close_button, FALSE, FALSE, 5);
 	g_signal_connect(close_button, "clicked", G_CALLBACK(close_button_clicked), dd);
+	gtk_box_pack_end(GTK_BOX(entry_box), close_button, FALSE, FALSE, 2);
+
+	// insert it here and it will(hopefully) be placed before the Close button
+	sep = gtk_vseparator_new();
+	gtk_widget_show(sep);
+	gtk_box_pack_end(GTK_BOX(entry_box), sep, FALSE, FALSE, 5);
+
 /*
 	// dictionary chooser area
 	dict_box = gtk_hbox_new(FALSE, 10);
@@ -893,6 +893,7 @@ static void dict_create_main_dialog(DictData *dd)
 	// results area
 	scrolledwindow_results = gtk_scrolled_window_new(NULL, NULL);
 	gtk_widget_show(scrolledwindow_results);
+	gtk_container_set_border_width(GTK_CONTAINER(scrolledwindow_results), 4);
 	gtk_box_pack_start(GTK_BOX(main_box), scrolledwindow_results, TRUE, TRUE, 0);
 	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(scrolledwindow_results),
 								GTK_SHADOW_IN);
@@ -902,6 +903,8 @@ static void dict_create_main_dialog(DictData *dd)
 	// searched words textview stuff
 	dd->main_textview = gtk_text_view_new();
 	gtk_text_view_set_editable(GTK_TEXT_VIEW(dd->main_textview), FALSE);
+	gtk_text_view_set_left_margin(GTK_TEXT_VIEW(dd->main_textview), 5);
+	gtk_text_view_set_right_margin(GTK_TEXT_VIEW(dd->main_textview), 5);
 	dd->main_textbuffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(dd->main_textview));
 	dd->main_boldtag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			"bold", "weight", PANGO_WEIGHT_BOLD, NULL);

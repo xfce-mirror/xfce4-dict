@@ -1,5 +1,10 @@
 2006-10-01 enrico
 
+	* Fixed some minor GUI issues to improve usability
+	  (thanks to Fabian Nowak for his suggestions).
+	* Use a dynamic buffer when retrieving the response from a server to avoid
+	  truncated answers and crashes (thanks to Fabian Nowak for reporting).
+	* Clear the text view alays prior to a new search.
 	* New release: 0.2.0
 	* Set focus to the search entry when showing the main window.
 	* Added "Clear" button to the main window(suggested by Joe Klemmer).
