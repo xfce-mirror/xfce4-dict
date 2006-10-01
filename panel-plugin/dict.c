@@ -574,7 +574,7 @@ static void dict_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 
 		dd->show_panel_entry = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(dd->check_panel_entry));
 		dd->panel_entry_size = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(dd->panel_entry_size_spinner));
-		if (dd->show_panel_entry)
+		if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
 		{
 			gtk_widget_show(dd->panel_entry);
 		}

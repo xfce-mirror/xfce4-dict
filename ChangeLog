@@ -1,5 +1,6 @@
 2006-10-01 enrico
 
+	* Fixed display of panel text field when panel has no horizontal orientation.
 	* Fixed some minor GUI issues to improve usability
 	  (thanks to Fabian Nowak for his suggestions).
 	* Use a dynamic buffer when retrieving the response from a server to avoid
