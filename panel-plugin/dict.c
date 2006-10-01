@@ -793,6 +793,22 @@ static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
 }
 
 
+static void clear_button_clicked_cb(GtkButton *button, DictData *dd)
+{
+	GtkTextIter start_iter, end_iter;
+
+	// clear the TextBuffer
+	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &start_iter);
+	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
+	gtk_text_buffer_delete(dd->main_textbuffer, &start_iter, &end_iter);
+	// clear the entries
+	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
+	gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
+
+	dict_status_add(dd, _("Ready."));
+}
+
+
 static void close_button_clicked(GtkWidget *button, DictData *dd)
 {
 	gtk_widget_hide(dd->window);
@@ -802,14 +818,14 @@ static void close_button_clicked(GtkWidget *button, DictData *dd)
 static void dict_create_main_dialog(DictData *dd)
 {
 	GtkWidget *main_box;
-	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *close_button;
+	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *clear_button, *close_button;
 	GtkWidget *scrolledwindow_results;
 	//GtkWidget *dict_box, *dict_label, *combo_event_box;
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(dd->window), "xfce4-dict-plugin");
 	gtk_window_set_icon(GTK_WINDOW(dd->window), dd->icon);
-	gtk_window_set_default_size(GTK_WINDOW(dd->window), 450, 250);
+	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
 
 	g_signal_connect(G_OBJECT(dd->window), "delete_event", G_CALLBACK(gtk_widget_hide), NULL);
 
@@ -840,6 +856,11 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_widget_show(entry_button);
 	gtk_box_pack_start(GTK_BOX(entry_box), entry_button, FALSE, FALSE, 0);
 	g_signal_connect(entry_button, "clicked", G_CALLBACK(entry_button_clicked_cb), dd);
+
+	clear_button = gtk_button_new_from_stock("gtk-clear");
+	gtk_widget_show(clear_button);
+	gtk_box_pack_start(GTK_BOX(entry_box), clear_button, FALSE, FALSE, 0);
+	g_signal_connect(clear_button, "clicked", G_CALLBACK(clear_button_clicked_cb), dd);
 
 	close_button = gtk_button_new_from_stock("gtk-close");
 	gtk_widget_show(close_button);
@@ -949,6 +970,7 @@ static void dict_panel_button_clicked(GtkWidget *button, DictData *dd)
 			dict_ask_server(dd, panel_text);
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), panel_text);
 		}
+		gtk_widget_grab_focus(dd->main_entry);
 		gtk_widget_show(dd->window);
 	}
 }
