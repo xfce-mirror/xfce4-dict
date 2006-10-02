@@ -1046,7 +1046,7 @@ static void dict_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dd->panel_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
 	g_signal_connect(dd->panel_entry, "button-press-event", G_CALLBACK(dict_panel_entry_buttonpress_cb), dd);
 
-	if (dd->show_panel_entry)
+	if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
 		gtk_widget_show(dd->panel_entry);
 
     hbox = gtk_hbox_new(FALSE, 0);
