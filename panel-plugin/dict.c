@@ -71,6 +71,9 @@ typedef struct
     gchar *server;
     gchar *dictionary;
 
+	gchar *searched_word;  // word to query the server
+	gboolean query_is_running;
+
     GdkPixbuf *icon;
 }
 DictData;
@@ -253,7 +256,7 @@ static void clear_text_buffer(DictData *dd)
 }
 
 
-static gboolean dict_ask_server(DictData *dd, const gchar *word)
+static gboolean dict_ask_server(DictData *dd)
 {
 	gint fd, i, max_lines;
 	gint defs_found = 0;
@@ -263,7 +266,7 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 	gchar *answer, *tmp, *stripped;
 	GtkTextIter iter;
 
-	if (word == NULL || strlen(word) == 0) return FALSE;
+	if (dd->searched_word == NULL || strlen(dd->searched_word) == 0) return FALSE;
 
 	clear_text_buffer(dd);
 	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
@@ -274,18 +277,20 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 		return FALSE;
 	}
 
-	if (strlen(word) > (BUF_SIZE - 11))
+	if (strlen(dd->searched_word) > (BUF_SIZE - 11))
 	{
 		dict_status_add(dd, _("Input is too long."));
 		return FALSE;
 	}
+
+	dd->query_is_running = TRUE;
 
 	// take only the first part of the dictionary string, so let the string end at the space
 	i = 0;
 	while (dd->dictionary[i] != ' ') i++;
 	dd->dictionary[i] = '\0';
 
-	snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, word);
+	snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, dd->searched_word);
 	send_command(fd, cmd);
 
 	// and now, "append" again the rest of the dictionary string again
@@ -297,6 +302,7 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 	if (strncmp("220", answer, 3) != 0)
 	{
 		dict_status_add(dd, _("Server not ready."));
+		dd->query_is_running = FALSE;
 		return FALSE;
 	}
 
@@ -306,12 +312,14 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 
 	if (strncmp("552", answer, 3) == 0)
 	{
-		dict_status_add(dd, _("No matches could be found for \"%s\"."), word);
+		dict_status_add(dd, _("No matches could be found for \"%s\"."), dd->searched_word);
+		dd->query_is_running = FALSE;
 		return TRUE;
 	}
 	else if (strncmp("150", answer, 3) != 0 && strncmp("552", answer, 3) != 0)
 	{
 		dict_status_add(dd, _("Unknown error while quering the server."));
+		dd->query_is_running = FALSE;
 		return FALSE;
 	}
 	defs_found = atoi(answer + 4);
@@ -326,6 +334,7 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 	max_lines = g_strv_length(lines);
 	if (lines == NULL || max_lines == 0) return FALSE;
 
+	gdk_threads_enter();
 	gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
 
 	i = -1;
@@ -370,12 +379,33 @@ static gboolean dict_ask_server(DictData *dd, const gchar *word)
 
 	// clear the panel entry to not search again when you click on the panel button
 	gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
+	gdk_threads_leave();
+
+	dd->query_is_running = FALSE;
+
+	g_thread_exit(NULL);
 	return TRUE;
+}
+
+
+static void dict_start_query(DictData *dd, const gchar *word)
+{
+	if (dd->query_is_running)
+	{
+		gdk_beep();
+	}
+	else
+	{
+		g_free(dd->searched_word);
+		dd->searched_word = g_strdup(word); // copy the string because it will be freed by the caller
+		g_thread_create((GThreadFunc)dict_ask_server, dd, FALSE, NULL);
+	}
 }
 
 
 static void dict_free_data(XfcePanelPlugin *plugin, DictData *dd)
 {
+    g_free(dd->searched_word);
     g_free(dd->dictionary);
     g_free(dd->server);
     g_object_unref(dd->icon);
@@ -767,7 +797,7 @@ static void entry_activate_cb(GtkEntry *entry, DictData *dd)
 	else
 		entered_text = gtk_entry_get_text(GTK_ENTRY(dd->main_entry));
 
-	dict_ask_server(dd, entered_text);
+	dict_start_query(dd, entered_text);
 }
 
 
@@ -952,7 +982,7 @@ static void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_cont
 			drag_context->action = GDK_ACTION_COPY;
 		}
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), data->data);
-		dict_ask_server(dd, data->data);
+		dict_start_query(dd, data->data);
 		gtk_widget_show(dd->window);
 		gtk_window_deiconify(GTK_WINDOW(dd->window));
 		gtk_window_present(GTK_WINDOW(dd->window));
@@ -970,7 +1000,7 @@ static void dict_panel_button_clicked(GtkWidget *button, DictData *dd)
 		const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dd->panel_entry));
 		if (strcmp("", panel_text) != 0)
 		{
-			dict_ask_server(dd, panel_text);
+			dict_start_query(dd, panel_text);
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), panel_text);
 		}
 		gtk_widget_grab_focus(dd->main_entry);
@@ -1006,7 +1036,12 @@ static void dict_construct(XfcePanelPlugin *plugin)
 
     xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
+	g_thread_init(NULL);
+	gdk_threads_init();
+
     dd->plugin = plugin;
+	dd->searched_word = NULL;
+	dd->query_is_running = FALSE;
 
 	//dd->icon = load_and_scale(dict_icon_data, 24, -1);
 

@@ -1,3 +1,9 @@
+2006-10-14 enrico
+
+	* Implemented threading to not freeze the GUI while searching on a slow server
+	  (needs testing).
+
+
 2006-10-02 enrico
 
 	* Again fixed display of panel text field when panel has no horizontal orientation.

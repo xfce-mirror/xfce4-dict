@@ -3,17 +3,19 @@ plugin_PROGRAMS = xfce4-dict-plugin
 
 xfce4_dict_plugin_SOURCES =						\
 	inline-icon.h								\
-	dict.c								
+	dict.c
 
 xfce4_dict_plugin_CFLAGS =						\
 	-I$(top_srcdir)							\
 	$(LIBXFCEGUI4_CFLAGS)						\
 	$(LIBXFCE4PANEL_CFLAGS)						\
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
+	@GTHREAD_CFLAGS@
 
 xfce4_dict_plugin_LDADD =						\
 	$(LIBXFCE4PANEL_LIBS)						\
-	$(LIBXFCEGUI4_LIBS)
+	$(LIBXFCEGUI4_LIBS)							\
+	@GTHREAD_LIBS@
 
 inline-icon.h: $(srcdir)/dict-icon.svg
 	gdk-pixbuf-csource --raw --name=dict_icon_data dict-icon.svg > inline-icon.h
