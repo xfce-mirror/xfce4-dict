@@ -40,7 +40,6 @@
 
 #define BUF_SIZE 256
 
-
 typedef struct
 {
     XfcePanelPlugin *plugin;
@@ -73,13 +72,18 @@ typedef struct
 
 	gchar *searched_word;  // word to query the server
 	gboolean query_is_running;
+	gint query_status;
+	gchar *query_buffer;
 
     GdkPixbuf *icon;
-}
-DictData;
+} DictData;
 
 
-
+enum
+{
+	NO_CONNECTION,
+	NO_ERROR
+};
 
 /* Panel Plugin Interface */
 
@@ -127,6 +131,7 @@ static gint open_socket(const gchar *host_name, gint port)
 	if ((addr.sin_addr.s_addr = inet_addr(host_name)) == INADDR_NONE)
 	{
 		host_p = gethostbyname(host_name);
+		if (host_p == NULL) return (-1);
 		memcpy((gchar *)(&addr.sin_addr), host_p->h_addr, (size_t)host_p->h_length);
 	}
 
@@ -256,85 +261,68 @@ static void clear_text_buffer(DictData *dd)
 }
 
 
-static gboolean dict_ask_server(DictData *dd)
+static gboolean process_server_response(DictData *dd)
 {
-	gint fd, i, max_lines;
+	gint max_lines, i;
 	gint defs_found = 0;
-	static gchar cmd[BUF_SIZE];
-	gchar *buffer = NULL;
-	gchar **lines;
-	gchar *answer, *tmp, *stripped;
+	gchar *answer, *tmp, **lines, *stripped;
 	GtkTextIter iter;
 
-	if (dd->searched_word == NULL || strlen(dd->searched_word) == 0) return FALSE;
-
-	clear_text_buffer(dd);
-	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
-
-	if ((fd = open_socket(dd->server, dd->port)) == -1)
+	if (dd->query_status == NO_CONNECTION)
 	{
 		dict_status_add(dd, _("Could not connect to server."));
+		dd->query_status = NO_ERROR;
 		return FALSE;
 	}
 
-	if (strlen(dd->searched_word) > (BUF_SIZE - 11))
+	if (dd->query_buffer == NULL || strlen(dd->query_buffer) == 0)
 	{
-		dict_status_add(dd, _("Input is too long."));
+		dict_status_add(dd, _("Unknown error while quering the server."));
+		g_free(dd->query_buffer);
 		return FALSE;
 	}
 
-	dd->query_is_running = TRUE;
-
-	// take only the first part of the dictionary string, so let the string end at the space
-	i = 0;
-	while (dd->dictionary[i] != ' ') i++;
-	dd->dictionary[i] = '\0';
-
-	snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, dd->searched_word);
-	send_command(fd, cmd);
-
-	// and now, "append" again the rest of the dictionary string again
-	dd->dictionary[i] = ' ';
-
-	answer = buffer = get_answer(fd);
-	close(fd);
-
+	answer = dd->query_buffer;
 	if (strncmp("220", answer, 3) != 0)
 	{
 		dict_status_add(dd, _("Server not ready."));
-		dd->query_is_running = FALSE;
+		g_free(dd->query_buffer);
 		return FALSE;
 	}
 
 	// go to next line
-	while (*answer != '\n') *answer++;
-	*answer++;
+	while (*answer != '\n') answer++;
+	answer++;
 
 	if (strncmp("552", answer, 3) == 0)
 	{
 		dict_status_add(dd, _("No matches could be found for \"%s\"."), dd->searched_word);
-		dd->query_is_running = FALSE;
-		return TRUE;
+		g_free(dd->query_buffer);
+		return FALSE;
 	}
 	else if (strncmp("150", answer, 3) != 0 && strncmp("552", answer, 3) != 0)
 	{
 		dict_status_add(dd, _("Unknown error while quering the server."));
-		dd->query_is_running = FALSE;
+		g_free(dd->query_buffer);
 		return FALSE;
 	}
 	defs_found = atoi(answer + 4);
 	dict_status_add(dd, _("%d definition(s) found."), defs_found);
 
 	// go to next line
-	while (*answer != '\n') *answer++;
-	*answer++;
+	while (*answer != '\n') answer++;
+	answer++;
 
 	// parse output
 	lines = g_strsplit(answer, "\r\n", -1);
 	max_lines = g_strv_length(lines);
-	if (lines == NULL || max_lines == 0) return FALSE;
+	if (lines == NULL || max_lines == 0)
+	{
+		g_free(dd->query_buffer);
+		return FALSE;
+	}
 
-	gdk_threads_enter();
+	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
 	gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
 
 	i = -1;
@@ -342,6 +330,11 @@ static gboolean dict_ask_server(DictData *dd)
 	{
 		i++;
 		if (strncmp(lines[i], "250", 3) == 0) break; // end of data
+		if (strncmp(lines[i], "error:", 6) == 0) // an error occurred
+		{
+			gtk_text_buffer_insert(dd->main_textbuffer, &iter, lines[i], -1);
+			break;
+		}
 		if (strncmp(lines[i], "151", 3) != 0) continue; // unexpected line start, try next line
 
 		// get the used dictionary
@@ -375,16 +368,49 @@ static gboolean dict_ask_server(DictData *dd)
 		gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n\n", 2);
 	}
 	g_strfreev(lines);
-	g_free(buffer);
+	g_free(dd->query_buffer);
 
 	// clear the panel entry to not search again when you click on the panel button
 	gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
-	gdk_threads_leave();
+
+	return FALSE;
+}
+
+
+static void dict_ask_server(DictData *dd)
+{
+	gint fd, i;
+	static gchar cmd[BUF_SIZE];
+
+	if ((fd = open_socket(dd->server, dd->port)) == -1)
+	{
+		dd->query_status = NO_CONNECTION;
+		g_idle_add((GSourceFunc)process_server_response, dd);
+		g_thread_exit(NULL);
+		return;
+	}
+
+	dd->query_is_running = TRUE;
+
+	// take only the first part of the dictionary string, so let the string end at the space
+	i = 0;
+	while (dd->dictionary[i] != ' ') i++;
+	dd->dictionary[i] = '\0';
+
+	snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, dd->searched_word);
+	send_command(fd, cmd);
+
+	// and now, "append" again the rest of the dictionary string again
+	dd->dictionary[i] = ' ';
+
+	dd->query_buffer = get_answer(fd);
+	close(fd);
 
 	dd->query_is_running = FALSE;
+	// delegate parsing the response and related GUI stuff to GTK's main thread through the main loop
+	g_idle_add((GSourceFunc)process_server_response, dd);
 
 	g_thread_exit(NULL);
-	return TRUE;
 }
 
 
@@ -396,9 +422,37 @@ static void dict_start_query(DictData *dd, const gchar *word)
 	}
 	else
 	{
+		clear_text_buffer(dd);
+
+		if (word == NULL || strlen(word) == 0 || strlen(word) > (BUF_SIZE - 11))
+		{
+			dict_status_add(dd, _("Invalid input."));
+			return;
+		}
+
 		g_free(dd->searched_word);
-		dd->searched_word = g_strdup(word); // copy the string because it will be freed by the caller
-		g_thread_create((GThreadFunc)dict_ask_server, dd, FALSE, NULL);
+		if (! g_utf8_validate(word, -1, NULL))
+		{	// try to convert non-UTF8 input otherwise stop the query
+			dd->searched_word = g_locale_to_utf8(word, -1, NULL, NULL, NULL);
+			if (dd->searched_word == NULL || ! g_utf8_validate(dd->searched_word, -1, NULL))
+			{
+				dict_status_add(dd, _("Invalid non-UTF8 input."));
+				gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
+				gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
+				return;
+			}
+			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), dd->searched_word);
+			gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), dd->searched_word);
+		}
+		else
+		{
+			dd->searched_word = g_strdup(word); // copy the string because it will be freed by the caller
+		}
+
+		dict_status_add(dd, _("Querying the server %s..."), dd->server);
+
+		// start the thread to query the server
+		g_thread_create((GThreadFunc) dict_ask_server, dd, FALSE, NULL);
 	}
 }
 
@@ -524,13 +578,13 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 
 	send_command(fd, "show databases");
 
-	// read all server output and hope the buffer is big enough (8KB should be enough)
+	// read all server output
 	buffer = get_answer(fd);
 	close(fd);
 
 	// go to next line
-	while (*buffer != '\n') *buffer++;
-	*buffer++;
+	while (*buffer != '\n') buffer++;
+	buffer++;
 
 	if (strncmp("554", buffer, 3) == 0)
 	{
@@ -546,8 +600,8 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	}
 
 	// go to next line
-	while (*buffer != '\n') *buffer++;
-	*buffer++;
+	while (*buffer != '\n') buffer++;
+	buffer++;
 
 	// clear the combo box
 	i = gtk_tree_model_iter_n_children(gtk_combo_box_get_model(GTK_COMBO_BOX(dd->dict_combo)), NULL);
@@ -981,8 +1035,8 @@ static void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_cont
 		{
 			drag_context->action = GDK_ACTION_COPY;
 		}
-		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), data->data);
-		dict_start_query(dd, data->data);
+		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), (const gchar*) data->data);
+		dict_start_query(dd, (const gchar*) data->data);
 		gtk_widget_show(dd->window);
 		gtk_window_deiconify(GTK_WINDOW(dd->window));
 		gtk_window_present(GTK_WINDOW(dd->window));
@@ -1007,6 +1061,7 @@ static void dict_panel_button_clicked(GtkWidget *button, DictData *dd)
 		gtk_widget_show(dd->window);
 	}
 }
+
 
 static gboolean dict_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, DictData *dd)
 {
@@ -1037,11 +1092,11 @@ static void dict_construct(XfcePanelPlugin *plugin)
     xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
 	g_thread_init(NULL);
-	gdk_threads_init();
 
     dd->plugin = plugin;
 	dd->searched_word = NULL;
 	dd->query_is_running = FALSE;
+	dd->query_status = NO_ERROR;
 
 	//dd->icon = load_and_scale(dict_icon_data, 24, -1);
 
@@ -1068,6 +1123,8 @@ static void dict_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_change_orientation), dd);
 
     g_signal_connect(plugin, "style-set", G_CALLBACK(dict_style_set), dd);
+
+    g_signal_connect(plugin, "save", G_CALLBACK(dict_write_rc_file), dd);
 
     xfce_panel_plugin_menu_show_configure(plugin);
     g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_properties_dialog), dd);

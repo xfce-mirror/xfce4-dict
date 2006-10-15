@@ -1,5 +1,13 @@
 2006-10-14 enrico
 
+	* Improved the threading code to do GTK-related stuff in the main thread.
+	* Fixed some compiler warnings.
+	* Fixed crash when using an invalid hostname.
+	* Handle non-UTF8 input better, try to convert it, otherwise stop query.
+
+
+2006-10-14 enrico
+
 	* Implemented threading to not freeze the GUI while searching on a slow server
 	  (needs testing).
 
@@ -16,7 +24,7 @@
 	  (thanks to Fabian Nowak for his suggestions).
 	* Use a dynamic buffer when retrieving the response from a server to avoid
 	  truncated answers and crashes (thanks to Fabian Nowak for reporting).
-	* Clear the text view alays prior to a new search.
+	* Clear the text view always prior to a new search.
 	* New release: 0.2.0
 	* Set focus to the search entry when showing the main window.
 	* Added "Clear" button to the main window(suggested by Joe Klemmer).
