@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-26 16:48+0200\n"
-"PO-Revision-Date: 2006-09-26 16:51+0100\n"
+"POT-Creation-Date: 2006-10-15 23:47+0200\n"
+"PO-Revision-Date: 2006-10-15 23:48+0100\n"
 "Last-Translator: Enrico Tröger <enrico.troeger@uvena.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -13,87 +13,87 @@ msgstr ""
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/dict.c:262 ../panel-plugin/dict.c:493
+#: ../panel-plugin/dict.c:273 ../panel-plugin/dict.c:575
 msgid "Could not connect to server."
 msgstr "Konnte keine Verbindung zum Server herstellen."
 
-#: ../panel-plugin/dict.c:268
-msgid "Input is too long."
-msgstr "Eingabe ist zu lang."
+#: ../panel-plugin/dict.c:280 ../panel-plugin/dict.c:305
+#: ../panel-plugin/dict.c:597
+msgid "Unknown error while quering the server."
+msgstr "Unbekannter Fehler beim Abfragen des Servers."
 
-#: ../panel-plugin/dict.c:292
+#: ../panel-plugin/dict.c:288
 msgid "Server not ready."
 msgstr "Server ist nicht bereit."
 
-#: ../panel-plugin/dict.c:304
+#: ../panel-plugin/dict.c:299
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Keine Treffer für »%s« gefunden."
 
-#: ../panel-plugin/dict.c:309 ../panel-plugin/dict.c:523
-msgid "Unknown error while quering the server."
-msgstr "Unbekannter Fehler beim Abfragen des Servers."
-
-#: ../panel-plugin/dict.c:315
-#, c-format
-msgid "Answer was too long, it has been truncated (%d definition(s) found)."
-msgstr ""
-"Die Antwort war zu lang, sie wurde gekürzt (%d Definition(en) gefunden)."
-
-#: ../panel-plugin/dict.c:317
+#: ../panel-plugin/dict.c:310
 #, c-format
 msgid "%d definition(s) found."
 msgstr "%d Definition(en) gefunden."
 
-#: ../panel-plugin/dict.c:518
+#: ../panel-plugin/dict.c:429
+msgid "Invalid input."
+msgstr "Ungültige Eingabe."
+
+#: ../panel-plugin/dict.c:439
+msgid "Invalid non-UTF8 input."
+msgstr "Ungültige, nicht-UTF8 Eingabe"
+
+#: ../panel-plugin/dict.c:452
+#, c-format
+msgid "Querying the server %s..."
+msgstr "Frage Server %s ab..."
+
+#: ../panel-plugin/dict.c:592
 msgid "The server doesn't offer any databases."
 msgstr "Der Server bietet keine Datenbanken an."
 
-#: ../panel-plugin/dict.c:556
-msgid "-- The received list was too long. It has been truncated."
-msgstr "-- Die empfangene Liste ist zu lang, sie wurde gekürzt."
-
-#: ../panel-plugin/dict.c:578
+#: ../panel-plugin/dict.c:647
 msgid "You have chosen an invalid dictionary entry."
 msgstr "Sie haben einen ungültigen Eintrag ausgewählt."
 
-#: ../panel-plugin/dict.c:621
+#: ../panel-plugin/dict.c:690
 msgid "Properties"
 msgstr "Einstellungen"
 
-#: ../panel-plugin/dict.c:637
+#: ../panel-plugin/dict.c:706
 msgid "Dictionary plugin"
 msgstr "Wörterbuch-Plugin"
 
 #. server address
-#: ../panel-plugin/dict.c:649
+#: ../panel-plugin/dict.c:718
 msgid "Server :"
 msgstr "Server:"
 
 #. server port
-#: ../panel-plugin/dict.c:661
+#: ../panel-plugin/dict.c:730
 msgid "Server Port :"
 msgstr "Server-Port:"
 
 #. dictionary
-#: ../panel-plugin/dict.c:669
+#: ../panel-plugin/dict.c:738
 msgid "Dictionary :"
 msgstr "Wörterbuch:"
 
-#: ../panel-plugin/dict.c:673
+#: ../panel-plugin/dict.c:742
 msgid "* (use all)"
 msgstr "* (alle benutzen)"
 
-#: ../panel-plugin/dict.c:674
+#: ../panel-plugin/dict.c:743
 msgid "! (use all, stop after first match)"
 msgstr "! (alle benutzen, aber nach dem ersten Treffer aufhören)"
 
 #. show panel entry check box
-#: ../panel-plugin/dict.c:697
+#: ../panel-plugin/dict.c:766
 msgid "Show text field in the panel"
 msgstr "Zeige Textfeld im Panel"
 
-#: ../panel-plugin/dict.c:700
+#: ../panel-plugin/dict.c:769
 msgid ""
 "This option can only be used when the panel has a horizontal orientation."
 msgstr ""
@@ -101,30 +101,40 @@ msgstr ""
 "ist."
 
 #. panel entry size
-#: ../panel-plugin/dict.c:705
+#: ../panel-plugin/dict.c:774
 msgid "Text field size :"
 msgstr "Textfeldgröße:"
 
-#: ../panel-plugin/dict.c:829
+#: ../panel-plugin/dict.c:873 ../panel-plugin/dict.c:1159
+msgid "Ready."
+msgstr "Fertig."
+
+#: ../panel-plugin/dict.c:911
 msgid "Text to search:"
 msgstr "Suchwort:"
 
-#: ../panel-plugin/dict.c:904 ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1012 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "Plugin zum Abfragen eines Dict-Servers."
 
-#: ../panel-plugin/dict.c:908
+#: ../panel-plugin/dict.c:1016
 msgid "Developer"
 msgstr "Entwickler"
 
-#: ../panel-plugin/dict.c:993
+#: ../panel-plugin/dict.c:1108
 msgid "Look up a word"
 msgstr "Ein Wort nachschlagen"
-
-#: ../panel-plugin/dict.c:1042
-msgid "Ready."
-msgstr "Fertig."
 
 #: ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
 msgstr "Dict"
+
+#~ msgid "Input is too long."
+#~ msgstr "Eingabe ist zu lang."
+
+#~ msgid "Answer was too long, it has been truncated (%d definition(s) found)."
+#~ msgstr ""
+#~ "Die Antwort war zu lang, sie wurde gekürzt (%d Definition(en) gefunden)."
+
+#~ msgid "-- The received list was too long. It has been truncated."
+#~ msgstr "-- Die empfangene Liste ist zu lang, sie wurde gekürzt."
