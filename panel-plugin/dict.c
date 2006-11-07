@@ -96,7 +96,7 @@ XFCE_PANEL_PLUGIN_REGISTER_INTERNAL(dict_construct);
 /* internal functions */
 
 
-static GdkPixbuf *load_and_scale(const guint8 *data, int dstw, int dsth)
+static GdkPixbuf *dict_load_and_scale(const guint8 *data, int dstw, int dsth)
 {
 	GdkPixbuf *pb, *pb_scaled;
 	int pb_w, pb_h;
@@ -119,7 +119,7 @@ static GdkPixbuf *load_and_scale(const guint8 *data, int dstw, int dsth)
 }
 
 
-static gint open_socket(const gchar *host_name, gint port)
+static gint dict_open_socket(const gchar *host_name, gint port)
 {
 	struct sockaddr_in addr;
 	struct hostent *host_p;
@@ -154,7 +154,7 @@ static gint open_socket(const gchar *host_name, gint port)
 }
 
 
-static void send_command(gint fd, const gchar *str)
+static void dict_send_command(gint fd, const gchar *str)
 {
 	gchar buf[256];
 	gint len = strlen (str);
@@ -164,7 +164,7 @@ static void send_command(gint fd, const gchar *str)
 }
 
 
-static gchar *get_answer(gint fd)
+static gchar *dict_get_answer(gint fd)
 {
 	gboolean fol = FALSE;
 	gboolean sol = FALSE;
@@ -250,7 +250,7 @@ void dict_status_add(DictData *dd, const gchar *format, ...)
 }
 
 
-static void clear_text_buffer(DictData *dd)
+static void dict_clear_text_buffer(DictData *dd)
 {
 	GtkTextIter start_iter, end_iter;
 
@@ -261,7 +261,7 @@ static void clear_text_buffer(DictData *dd)
 }
 
 
-static gboolean process_server_response(DictData *dd)
+static gboolean dict_process_server_response(DictData *dd)
 {
 	gint max_lines, i;
 	gint defs_found = 0;
@@ -382,10 +382,10 @@ static void dict_ask_server(DictData *dd)
 	gint fd, i;
 	static gchar cmd[BUF_SIZE];
 
-	if ((fd = open_socket(dd->server, dd->port)) == -1)
+	if ((fd = dict_open_socket(dd->server, dd->port)) == -1)
 	{
 		dd->query_status = NO_CONNECTION;
-		g_idle_add((GSourceFunc)process_server_response, dd);
+		g_idle_add((GSourceFunc) dict_process_server_response, dd);
 		g_thread_exit(NULL);
 		return;
 	}
@@ -398,17 +398,17 @@ static void dict_ask_server(DictData *dd)
 	dd->dictionary[i] = '\0';
 
 	snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, dd->searched_word);
-	send_command(fd, cmd);
+	dict_send_command(fd, cmd);
 
 	// and now, "append" again the rest of the dictionary string again
 	dd->dictionary[i] = ' ';
 
-	dd->query_buffer = get_answer(fd);
+	dd->query_buffer = dict_get_answer(fd);
 	close(fd);
 
 	dd->query_is_running = FALSE;
 	// delegate parsing the response and related GUI stuff to GTK's main thread through the main loop
-	g_idle_add((GSourceFunc)process_server_response, dd);
+	g_idle_add((GSourceFunc) dict_process_server_response, dd);
 
 	g_thread_exit(NULL);
 }
@@ -422,7 +422,7 @@ static void dict_start_query(DictData *dd, const gchar *word)
 	}
 	else
 	{
-		clear_text_buffer(dd);
+		dict_clear_text_buffer(dd);
 
 		if (word == NULL || strlen(word) == 0 || strlen(word) > (BUF_SIZE - 11))
 		{
@@ -472,7 +472,7 @@ static gboolean dict_set_size(XfcePanelPlugin *plugin, gint size, DictData *dd)
 {
 	gint width;
 	//g_object_unref(G_OBJECT(dd->icon));
-	dd->icon = load_and_scale(dict_icon_data, size, -1);
+	dd->icon = dict_load_and_scale(dict_icon_data, size, -1);
 
     gtk_image_set_from_pixbuf(GTK_IMAGE(dd->panel_button_image), dd->icon);
 
@@ -570,16 +570,16 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	host = gtk_entry_get_text(GTK_ENTRY(dd->server_entry));
 	port = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(dd->port_spinner));
 
-	if ((fd = open_socket(host, port)) == -1)
+	if ((fd = dict_open_socket(host, port)) == -1)
 	{
 		xfce_err(_("Could not connect to server."));
 		return FALSE;
 	}
 
-	send_command(fd, "show databases");
+	dict_send_command(fd, "show databases");
 
 	// read all server output
-	buffer = get_answer(fd);
+	buffer = dict_get_answer(fd);
 	close(fd);
 
 	// go to next line
@@ -673,7 +673,7 @@ static void dict_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 }
 
 
-static void show_panel_entry_toggled(GtkToggleButton *tb, DictData *dd)
+static void dict_show_panel_entry_toggled(GtkToggleButton *tb, DictData *dd)
 {
 	gtk_widget_set_sensitive(dd->panel_entry_size_spinner, gtk_toggle_button_get_active(tb));
 	gtk_widget_set_sensitive(dd->panel_entry_size_label, gtk_toggle_button_get_active(tb));
@@ -768,7 +768,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
     gtk_tooltips_set_tip(dd->tooltips, dd->check_panel_entry,
 		_("This option can only be used when the panel has a horizontal orientation."), NULL);
 	gtk_widget_show(dd->check_panel_entry);
-	g_signal_connect(dd->check_panel_entry, "toggled", G_CALLBACK(show_panel_entry_toggled), dd);
+	g_signal_connect(dd->check_panel_entry, "toggled", G_CALLBACK(dict_show_panel_entry_toggled), dd);
 
     /* panel entry size */
     dd->panel_entry_size_label = gtk_label_new_with_mnemonic(_("Text field size :"));
@@ -836,7 +836,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 }
 
 
-static void entry_activate_cb(GtkEntry *entry, DictData *dd)
+static void dict_entry_activate_cb(GtkEntry *entry, DictData *dd)
 {
 	const gchar *entered_text;
 
@@ -855,16 +855,16 @@ static void entry_activate_cb(GtkEntry *entry, DictData *dd)
 }
 
 
-static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
+static void dict_entry_button_clicked_cb(GtkButton *button, DictData *dd)
 {
-	entry_activate_cb(NULL, dd);
+	dict_entry_activate_cb(NULL, dd);
 	gtk_widget_grab_focus(dd->main_entry);
 }
 
 
-static void clear_button_clicked_cb(GtkButton *button, DictData *dd)
+static void dict_clear_button_clicked_cb(GtkButton *button, DictData *dd)
 {
-	clear_text_buffer(dd);
+	dict_clear_text_buffer(dd);
 
 	// clear the entries
 	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
@@ -874,7 +874,7 @@ static void clear_button_clicked_cb(GtkButton *button, DictData *dd)
 }
 
 
-static void close_button_clicked(GtkWidget *button, DictData *dd)
+static void dict_close_button_clicked(GtkWidget *button, DictData *dd)
 {
 	gtk_widget_hide(dd->window);
 }
@@ -921,17 +921,17 @@ static void dict_create_main_dialog(DictData *dd)
 	dd->main_entry = gtk_entry_new();
 	gtk_widget_show(dd->main_entry);
 	gtk_box_pack_start(GTK_BOX(label_box), dd->main_entry, TRUE, TRUE, 0);
-	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
+	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(dict_entry_activate_cb), dd);
 
 	entry_button = gtk_button_new_from_stock("gtk-find");
 	gtk_widget_show(entry_button);
 	gtk_box_pack_start(GTK_BOX(entry_box), entry_button, FALSE, FALSE, 0);
-	g_signal_connect(entry_button, "clicked", G_CALLBACK(entry_button_clicked_cb), dd);
+	g_signal_connect(entry_button, "clicked", G_CALLBACK(dict_entry_button_clicked_cb), dd);
 
 	clear_button = gtk_button_new_from_stock("gtk-clear");
 	gtk_widget_show(clear_button);
 	gtk_box_pack_start(GTK_BOX(entry_box), clear_button, FALSE, FALSE, 0);
-	g_signal_connect(clear_button, "clicked", G_CALLBACK(clear_button_clicked_cb), dd);
+	g_signal_connect(clear_button, "clicked", G_CALLBACK(dict_clear_button_clicked_cb), dd);
 
 	// just make some space
 	align = gtk_alignment_new(1, 0.5, 0, 0);
@@ -942,7 +942,7 @@ static void dict_create_main_dialog(DictData *dd)
 
 	close_button = gtk_button_new_from_stock("gtk-close");
 	gtk_widget_show(close_button);
-	g_signal_connect(close_button, "clicked", G_CALLBACK(close_button_clicked), dd);
+	g_signal_connect(close_button, "clicked", G_CALLBACK(dict_close_button_clicked), dd);
 	gtk_box_pack_end(GTK_BOX(entry_box), close_button, FALSE, FALSE, 2);
 
 	// insert it here and it will(hopefully) be placed before the Close button
@@ -1078,7 +1078,7 @@ static gboolean dict_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton
 }
 
 
-static void signal_cb(gint sig)
+static void dict_signal_cb(gint sig)
 {
 	// do nothing here and hope we never get called
 }
@@ -1135,7 +1135,7 @@ static void dict_construct(XfcePanelPlugin *plugin)
 	/* panel entry */
 	dd->panel_entry = gtk_entry_new();
 	gtk_entry_set_width_chars(GTK_ENTRY(dd->panel_entry), 15);
-	g_signal_connect(dd->panel_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
+	g_signal_connect(dd->panel_entry, "activate", G_CALLBACK(dict_entry_activate_cb), dd);
 	g_signal_connect(dd->panel_entry, "button-press-event", G_CALLBACK(dict_panel_entry_buttonpress_cb), dd);
 
 	if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
@@ -1159,6 +1159,6 @@ static void dict_construct(XfcePanelPlugin *plugin)
 	dict_status_add(dd, _("Ready."));
 
 	siginterrupt(SIGALRM, 1);
-	signal(SIGALRM, signal_cb);
+	signal(SIGALRM, dict_signal_cb);
 }
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(dict_construct);

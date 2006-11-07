@@ -1,3 +1,8 @@
+2006-11-07 enrico
+
+	* Prefixed all functions with dict.
+
+
 2006-10-14 enrico
 
 	* Improved the threading code to do GTK-related stuff in the main thread.
