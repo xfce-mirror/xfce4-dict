@@ -1,3 +1,12 @@
+2006-11-16 enrico
+
+	* Added dependency of libexo.
+	* Added alternative search mode via a web site dictionary and provide three
+	  dictionary entries of dict.leo.org for convenience.
+	  The web site will be opened with the help of libexo.
+	* Added UTF8_STRING as drop targt. Might be it helps.
+
+
 2006-11-07 enrico
 
 	* Prefixed all functions with dict.
@@ -19,7 +28,8 @@
 
 2006-10-02 enrico
 
-	* Again fixed display of panel text field when panel has no horizontal orientation.
+	* Again fixed display of panel text field when panel has no horizontal
+	  orientation.
 
 
 2006-10-01 enrico

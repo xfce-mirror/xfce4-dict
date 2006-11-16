@@ -27,6 +27,9 @@
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libxfce4panel/xfce-panel-convenience.h>
 
+#define EXO_API_SUBJECT_TO_CHANGE
+#include <exo/exo.h>
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
@@ -40,9 +43,35 @@
 
 #define BUF_SIZE 256
 
+typedef enum
+{
+	DICTMODE_DICT,
+	DICTMODE_WEB,
+	DICTMODE_SPELL
+} _dict_mode;
+
+typedef enum
+{
+	WEBMODE_OTHER,
+	WEBMODE_LEO_GERENG,
+	WEBMODE_LEO_GERFRE,
+	WEBMODE_LEO_GERSPA
+} _web_mode;
+
+
+enum
+{
+	NO_CONNECTION,
+	NO_ERROR
+};
+
+
 typedef struct
 {
     XfcePanelPlugin *plugin;
+
+    _dict_mode mode;
+    _web_mode web_mode;
 
     GtkWidget *window;
     GtkWidget *statusbar;
@@ -75,15 +104,23 @@ typedef struct
 	gint query_status;
 	gchar *query_buffer;
 
+	GtkWidget *radio_dict;
+	GtkWidget *radio_web;
+
+	GtkWidget *web_entry_label;
+	GtkWidget *web_entry;
+	GtkWidget *web_radio_leo_gereng;
+	GtkWidget *web_radio_leo_gerfre;
+	GtkWidget *web_radio_leo_gerspa;
+	GtkWidget *web_radio_other;
+	gchar *web_url;
+
+	GtkWidget *frame_dict;
+	GtkWidget *frame_web;
+
     GdkPixbuf *icon;
 } DictData;
 
-
-enum
-{
-	NO_CONNECTION,
-	NO_ERROR
-};
 
 /* Panel Plugin Interface */
 
@@ -94,6 +131,76 @@ XFCE_PANEL_PLUGIN_REGISTER_INTERNAL(dict_construct);
 
 
 /* internal functions */
+
+
+static gint dict_str_pos(const gchar *haystack, const gchar *needle)
+{
+	gint haystack_length = strlen(haystack);
+	gint needle_length = strlen(needle);
+	gint i, j, pos = -1;
+
+	if (needle_length > haystack_length)
+	{
+		return -1;
+	}
+	else
+	{
+		for (i = 0; (i < haystack_length) && pos == -1; i++)
+		{
+			if (haystack[i] == needle[0] && needle_length == 1)	return i;
+			else if (haystack[i] == needle[0])
+			{
+				for (j = 1; (j < needle_length); j++)
+				{
+					if (haystack[i+j] == needle[j])
+					{
+						if (pos == -1) pos = i;
+					}
+					else
+					{
+						pos = -1;
+						break;
+					}
+				}
+			}
+		}
+		return pos;
+	}
+}
+
+
+/* replaces all occurrences of needle in haystack with replacement
+ * all strings have to NULL-terminated and needle and replacement have to be different,
+ * e.g. needle "%" and replacement "%%" causes an endless loop */
+static gchar *dict_str_replace(gchar *haystack, const gchar *needle, const gchar *replacement)
+{
+	gint i;
+	gchar *start;
+	gint lt_pos;
+	gchar *result;
+	GString *str;
+
+	if (haystack == NULL) return NULL;
+
+	start = strstr(haystack, needle);
+	lt_pos = dict_str_pos(haystack, needle);
+
+	if (start == NULL || lt_pos == -1) return haystack;
+
+	// substitute by copying
+	str = g_string_sized_new(strlen(haystack));
+	for (i = 0; i < lt_pos; i++)
+	{
+		g_string_append_c(str, haystack[i]);
+	}
+	g_string_append(str, replacement);
+	g_string_append(str, haystack + lt_pos + strlen(needle));
+
+	result = str->str;
+	g_free(haystack);
+	g_string_free(str, FALSE);
+	return dict_str_replace(result, needle, replacement);
+}
 
 
 static GdkPixbuf *dict_load_and_scale(const guint8 *data, int dstw, int dsth)
@@ -235,7 +342,15 @@ static void get_answer(gint fd, gchar *buf)
 */
 
 
-void dict_status_add(DictData *dd, const gchar *format, ...)
+static void dict_show_main_window(DictData *dd)
+{
+	gtk_widget_show(dd->window);
+	gtk_window_deiconify(GTK_WINDOW(dd->window));
+	gtk_window_present(GTK_WINDOW(dd->window));
+}
+
+
+static void dict_status_add(DictData *dd, const gchar *format, ...)
 {
 	static gchar string[512];
 	va_list args;
@@ -414,7 +529,7 @@ static void dict_ask_server(DictData *dd)
 }
 
 
-static void dict_start_query(DictData *dd, const gchar *word)
+static void dict_start_server_query(DictData *dd, const gchar *word)
 {
 	if (dd->query_is_running)
 	{
@@ -424,31 +539,6 @@ static void dict_start_query(DictData *dd, const gchar *word)
 	{
 		dict_clear_text_buffer(dd);
 
-		if (word == NULL || strlen(word) == 0 || strlen(word) > (BUF_SIZE - 11))
-		{
-			dict_status_add(dd, _("Invalid input."));
-			return;
-		}
-
-		g_free(dd->searched_word);
-		if (! g_utf8_validate(word, -1, NULL))
-		{	// try to convert non-UTF8 input otherwise stop the query
-			dd->searched_word = g_locale_to_utf8(word, -1, NULL, NULL, NULL);
-			if (dd->searched_word == NULL || ! g_utf8_validate(dd->searched_word, -1, NULL))
-			{
-				dict_status_add(dd, _("Invalid non-UTF8 input."));
-				gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
-				gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
-				return;
-			}
-			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), dd->searched_word);
-			gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), dd->searched_word);
-		}
-		else
-		{
-			dd->searched_word = g_strdup(word); // copy the string because it will be freed by the caller
-		}
-
 		dict_status_add(dd, _("Querying the server %s..."), dd->server);
 
 		// start the thread to query the server
@@ -457,11 +547,111 @@ static void dict_start_query(DictData *dd, const gchar *word)
 }
 
 
+static void dict_search_word(DictData *dd, const gchar *word)
+{
+	gboolean show = TRUE;
+
+	// sanity checks
+	if (word == NULL || strlen(word) == 0 || strlen(word) > (BUF_SIZE - 11))
+	{
+		dict_status_add(dd, _("Invalid input."));
+		return;
+	}
+
+	g_free(dd->searched_word);
+	if (! g_utf8_validate(word, -1, NULL))
+	{	// try to convert non-UTF8 input otherwise stop the query
+		dd->searched_word = g_locale_to_utf8(word, -1, NULL, NULL, NULL);
+		if (dd->searched_word == NULL || ! g_utf8_validate(dd->searched_word, -1, NULL))
+		{
+			dict_status_add(dd, _("Invalid non-UTF8 input."));
+			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
+			gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
+			return;
+		}
+		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), dd->searched_word);
+		gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), dd->searched_word);
+	}
+	else
+	{
+		dd->searched_word = g_strdup(word); // copy the string because it will be freed by the caller
+	}
+
+
+	if (dd->mode == DICTMODE_DICT)
+	{
+		dict_start_server_query(dd, dd->searched_word);
+	}
+	else if (dd->mode == DICTMODE_WEB)
+	{
+		gboolean success;
+		gboolean use_leo = FALSE;
+		gchar *uri, *base;
+
+		switch (dd->web_mode)
+		{
+			case WEBMODE_LEO_GERENG:
+			{
+				base = "http://dict.leo.org/ende?search={word}";
+				use_leo = TRUE;
+				break;
+			}
+			case WEBMODE_LEO_GERFRE:
+			{
+				base = "http://dict.leo.org/frde?search={word}";
+				use_leo = TRUE;
+				break;
+			}
+			case WEBMODE_LEO_GERSPA:
+			{
+				base = "http://dict.leo.org/esde?search={word}";
+				use_leo = TRUE;
+				break;
+			}
+			default: base = dd->web_url;
+		}
+
+		if (use_leo)
+		{
+			// convert the text into ISO-8869-15 because dict.leo.org expects it ;-(
+			gchar *tmp = g_convert(dd->searched_word, -1,
+									"ISO-8859-15", "UTF-8", NULL, NULL, NULL);
+			if (tmp != NULL)
+			{
+				g_free(dd->searched_word);
+				dd->searched_word = tmp;
+			}
+		}
+
+		uri = dict_str_replace(g_strdup(base), "{word}", dd->searched_word);
+		success = exo_url_show(uri, NULL, NULL);
+		if (! success)
+		{
+			xfce_err(_("Browser could not be opened. Please check your preferences."));
+		}
+		g_free(uri);
+
+		show = FALSE; // don't display main window
+	}
+
+	if (show)
+	{
+		dict_show_main_window(dd);
+	}
+	else
+	{
+		gtk_widget_hide(dd->window);
+	}
+
+}
+
+
 static void dict_free_data(XfcePanelPlugin *plugin, DictData *dd)
 {
     g_free(dd->searched_word);
     g_free(dd->dictionary);
     g_free(dd->server);
+    g_free(dd->web_url);
     g_object_unref(dd->icon);
     gtk_object_sink(GTK_OBJECT(dd->tooltips));
     g_free(dd);
@@ -506,11 +696,14 @@ static void dict_read_rc_file(XfcePanelPlugin *plugin, DictData *dd)
 {
     gchar *file;
     XfceRc *rc;
+    gint mode = DICTMODE_DICT;
+    gint webmode = WEBMODE_LEO_GERENG;
     gint port = 2628;
     gint panel_entry_size = 120;
     gboolean show_panel_entry = FALSE;
     const gchar *server = "dict.org";
     const gchar *dict = "*";
+    const gchar *weburl = NULL;
 
     if ((file = xfce_panel_plugin_lookup_rc_file(plugin)) != NULL)
     {
@@ -518,6 +711,9 @@ static void dict_read_rc_file(XfcePanelPlugin *plugin, DictData *dd)
         g_free(file);
         if (rc != NULL)
         {
+            mode = xfce_rc_read_int_entry(rc, "mode", mode);
+            webmode = xfce_rc_read_int_entry(rc, "web_mode", webmode);
+            weburl = xfce_rc_read_entry(rc, "web_url", weburl);
             show_panel_entry = xfce_rc_read_bool_entry(rc, "show_panel_entry", show_panel_entry);
             panel_entry_size = xfce_rc_read_int_entry(rc, "panel_entry_size", panel_entry_size);
             port = xfce_rc_read_int_entry(rc, "port", port);
@@ -528,6 +724,9 @@ static void dict_read_rc_file(XfcePanelPlugin *plugin, DictData *dd)
         }
     }
 
+    dd->mode = mode;
+    dd->web_mode = webmode;
+    dd->web_url = g_strdup(weburl);
     dd->show_panel_entry = show_panel_entry;
     dd->panel_entry_size = panel_entry_size;
     dd->port = port;
@@ -548,6 +747,10 @@ static void dict_write_rc_file(XfcePanelPlugin *plugin, DictData *dd)
 
     if (! rc) return;
 
+    xfce_rc_write_int_entry(rc, "mode", dd->mode);
+    xfce_rc_write_int_entry(rc, "web_mode", dd->web_mode);
+    if (dd->web_url != NULL)
+		xfce_rc_write_entry(rc, "web_url", dd->web_url);
     xfce_rc_write_bool_entry(rc, "show_panel_entry", dd->show_panel_entry);
     xfce_rc_write_int_entry(rc, "panel_entry_size", dd->panel_entry_size);
     xfce_rc_write_int_entry(rc, "port", dd->port);
@@ -633,38 +836,68 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 }
 
 
-static void dict_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
+static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 {
-    gchar *tmp;
-
     g_object_set_data(G_OBJECT(dd->plugin), "dialog", NULL);
 
     if (response == GTK_RESPONSE_OK)
     {
-		tmp = gtk_combo_box_get_active_text(GTK_COMBO_BOX(dd->dict_combo));
-		if (tmp == NULL || tmp[0] == '-')
+		// MODE DICT
+		if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(dd->radio_dict)))
 		{
-			xfce_err(_("You have chosen an invalid dictionary entry."));
-			return;
+			gchar *tmp;
+
+			dd->mode = DICTMODE_DICT;
+
+			tmp = gtk_combo_box_get_active_text(GTK_COMBO_BOX(dd->dict_combo));
+			if (tmp == NULL || tmp[0] == '-')
+			{
+				xfce_err(_("You have chosen an invalid dictionary entry."));
+				return;
+			}
+
+			dd->port = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(dd->port_spinner));
+
+			g_free(dd->server);
+			dd->server = g_strdup(gtk_entry_get_text(GTK_ENTRY(dd->server_entry)));
+
+			g_free(dd->dictionary);
+			dd->dictionary = g_strdup(tmp);
+		}
+		// MODE WEB
+		else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(dd->radio_web)))
+		{
+			dd->mode = DICTMODE_WEB;
+
+			if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(dd->web_radio_leo_gereng)))
+				dd->web_mode = WEBMODE_LEO_GERENG;
+			else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(dd->web_radio_leo_gerfre)))
+				dd->web_mode = WEBMODE_LEO_GERFRE;
+			else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(dd->web_radio_leo_gerspa)))
+				dd->web_mode = WEBMODE_LEO_GERSPA;
+			else
+			{
+				dd->web_mode = WEBMODE_OTHER;
+
+				g_free(dd->web_url);
+				dd->web_url = g_strdup(gtk_entry_get_text(GTK_ENTRY(dd->web_entry)));
+			}
 		}
 
-		dd->port = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(dd->port_spinner));
+		// general settings
+		dd->show_panel_entry = gtk_toggle_button_get_active(
+								GTK_TOGGLE_BUTTON(dd->check_panel_entry));
+		dd->panel_entry_size = gtk_spin_button_get_value_as_int(
+								GTK_SPIN_BUTTON(dd->panel_entry_size_spinner));
 
-		g_free(dd->server);
-		dd->server = g_strdup(gtk_entry_get_text(GTK_ENTRY(dd->server_entry)));
-
-		g_free(dd->dictionary);
-		dd->dictionary = g_strdup(tmp);
-
-		dd->show_panel_entry = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(dd->check_panel_entry));
-		dd->panel_entry_size = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(dd->panel_entry_size_spinner));
-		if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
-		{
+		if (dd->show_panel_entry &&
+			xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
 			gtk_widget_show(dd->panel_entry);
-		}
 		else
 			gtk_widget_hide(dd->panel_entry);
 
+
+		// save settings
 		dict_set_size(dd->plugin, xfce_panel_plugin_get_size(dd->plugin), dd);
 		dict_write_rc_file(dd->plugin, dd);
     }
@@ -680,10 +913,17 @@ static void dict_show_panel_entry_toggled(GtkToggleButton *tb, DictData *dd)
 }
 
 
+static void dict_use_webserver_toggled(GtkToggleButton *tb, DictData *dd)
+{
+	gtk_widget_set_sensitive(dd->web_entry, gtk_toggle_button_get_active(tb));
+	gtk_widget_set_sensitive(dd->web_entry_label, gtk_toggle_button_get_active(tb));
+}
+
+
 static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 {
-    GtkWidget *dlg, *header, *vbox, *table, *label1, *label2, *label3;
-    GtkWidget *button_get_list;
+    GtkWidget *dlg, *header, *vbox, *label3;
+    GSList *radio_group;
 
     xfce_panel_plugin_block_menu(plugin);
 
@@ -699,138 +939,244 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 
     gtk_window_set_position(GTK_WINDOW(dlg), GTK_WIN_POS_CENTER);
 
-    g_signal_connect(dlg, "response", G_CALLBACK(dict_dialog_response), dd);
+    g_signal_connect(dlg, "response", G_CALLBACK(dict_properties_dialog_response), dd);
 
     gtk_container_set_border_width(GTK_CONTAINER(dlg), 2);
 
     header = xfce_create_header(NULL, _("Dictionary plugin"));
-    gtk_widget_set_size_request(GTK_BIN(header)->child, 200, 32);
     gtk_container_set_border_width(GTK_CONTAINER(header), 6);
     gtk_widget_show(header);
     gtk_box_pack_start(GTK_BOX(GTK_DIALOG (dlg)->vbox), header, FALSE, TRUE, 0);
 
-    vbox = gtk_vbox_new(FALSE, 8);
+    vbox = gtk_vbox_new(FALSE, 3);
     gtk_container_set_border_width(GTK_CONTAINER(vbox), 6);
     gtk_widget_show(vbox);
     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), vbox, TRUE, TRUE, 0);
 
-    /* server address */
-    label1 = gtk_label_new_with_mnemonic(_("Server :"));
-    gtk_widget_show(label1);
+    /*
+     * Mode: DICT
+     */
+     {
+		GtkWidget *label1, *label2, *table, *button_get_list;
 
-    dd->server_entry = gtk_entry_new();
-    gtk_entry_set_max_length(GTK_ENTRY(dd->server_entry), 256);
-    if (dd->server != NULL)
+		/* server address */
+		label1 = gtk_label_new_with_mnemonic(_("Server :"));
+		gtk_widget_show(label1);
+
+		dd->server_entry = gtk_entry_new();
+		gtk_entry_set_max_length(GTK_ENTRY(dd->server_entry), 256);
+		if (dd->server != NULL)
+		{
+			gtk_entry_set_text(GTK_ENTRY(dd->server_entry), dd->server);
+		}
+		gtk_widget_show(dd->server_entry);
+
+		/* server port */
+		label2 = gtk_label_new_with_mnemonic(_("Server Port :"));
+		gtk_widget_show(label2);
+
+		dd->port_spinner = gtk_spin_button_new_with_range(0.0, 65536.0, 1.0);
+		gtk_spin_button_set_value(GTK_SPIN_BUTTON(dd->port_spinner), dd->port);
+		gtk_widget_show(dd->port_spinner);
+
+		/* dictionary */
+		label3 = gtk_label_new_with_mnemonic(_("Dictionary :"));
+		gtk_widget_show(label3);
+
+		dd->dict_combo = gtk_combo_box_new_text();
+		gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo), _("* (use all)"));
+		gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo),
+											_("! (use all, stop after first match)"));
+		gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo), "----------------");
+		if (dd->dictionary != NULL)
+		{
+			if (dd->dictionary[0] == '*')
+				gtk_combo_box_set_active(GTK_COMBO_BOX(dd->dict_combo), 0);
+			else if (dd->dictionary[0] == '!')
+				gtk_combo_box_set_active(GTK_COMBO_BOX(dd->dict_combo), 1);
+			else
+			{
+				gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo), dd->dictionary);
+				gtk_combo_box_set_active(GTK_COMBO_BOX(dd->dict_combo), 3);
+			}
+		}
+
+		gtk_widget_show(dd->dict_combo);
+
+		button_get_list = gtk_button_new_from_stock("gtk-find");
+		gtk_widget_show(button_get_list);
+		g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_get_dict_list_cb), dd);
+
+
+		/* put it all together */
+		table = gtk_table_new(3, 3, FALSE);
+		gtk_widget_show(table);
+		gtk_table_set_row_spacings(GTK_TABLE(table), 5);
+		gtk_table_set_col_spacings(GTK_TABLE(table), 5);
+
+		gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 0, 1,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 5);
+		gtk_misc_set_alignment(GTK_MISC(label1), 1, 0);
+
+		gtk_table_attach(GTK_TABLE(table), dd->server_entry, 1, 2, 0, 1,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 1, 2,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 0);
+		gtk_misc_set_alignment(GTK_MISC(label2), 1, 0);
+
+		gtk_table_attach(GTK_TABLE(table), dd->port_spinner, 1, 2, 1, 2,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_table_attach(GTK_TABLE(table), label3, 0, 1, 2, 3,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 0);
+		gtk_misc_set_alignment(GTK_MISC(label3), 1, 0);
+
+		gtk_table_attach(GTK_TABLE(table), dd->dict_combo, 1, 2, 2, 3,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 0, 0);
+
+		gtk_table_attach(GTK_TABLE(table), button_get_list, 2, 3, 2, 3,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 5);
+
+
+		dd->radio_dict = gtk_radio_button_new_with_label(NULL, _("Use a DICT server"));
+		radio_group = gtk_radio_button_get_group(GTK_RADIO_BUTTON(dd->radio_dict));
+		if (dd->mode == DICTMODE_DICT)
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(dd->radio_dict), TRUE);
+
+		gtk_widget_show(dd->radio_dict);
+		gtk_box_pack_start(GTK_BOX(vbox), dd->radio_dict, FALSE, FALSE, 0);
+
+		dd->frame_dict = gtk_frame_new(NULL);
+		gtk_frame_set_shadow_type(GTK_FRAME(dd->frame_dict), GTK_SHADOW_ETCHED_OUT);
+		gtk_widget_show(dd->frame_dict);
+		gtk_container_set_border_width(GTK_CONTAINER(dd->frame_dict), 5);
+		gtk_container_add(GTK_CONTAINER(dd->frame_dict), table);
+		gtk_box_pack_start(GTK_BOX(vbox), dd->frame_dict, FALSE, FALSE, 0);
+     }
+
+	/*
+     * Mode: WEB
+     */
+	{
+		GtkWidget  *web_vbox, *entry_hbox, *help_label;
+		GSList *web_type;
+
+		web_vbox = gtk_vbox_new(FALSE, 5);
+		gtk_widget_show(web_vbox);
+
+		dd->web_radio_leo_gereng = gtk_radio_button_new_with_label(NULL,
+													_("dict.leo.org - German <-> English"));
+		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(dd->web_radio_leo_gereng));
+		if (dd->web_mode == WEBMODE_LEO_GERENG)
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(dd->web_radio_leo_gereng), TRUE);
+		gtk_widget_show(dd->web_radio_leo_gereng);
+		gtk_box_pack_start(GTK_BOX(web_vbox), dd->web_radio_leo_gereng, FALSE, FALSE, 0);
+
+		dd->web_radio_leo_gerfre = gtk_radio_button_new_with_label(web_type,
+													_("dict.leo.org - German <-> French"));
+		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(dd->web_radio_leo_gerfre));
+		if (dd->web_mode == WEBMODE_LEO_GERFRE)
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(dd->web_radio_leo_gerfre), TRUE);
+		gtk_widget_show(dd->web_radio_leo_gerfre);
+		gtk_box_pack_start(GTK_BOX(web_vbox), dd->web_radio_leo_gerfre, FALSE, FALSE, 0);
+
+		dd->web_radio_leo_gerspa = gtk_radio_button_new_with_label(web_type,
+													_("dict.leo.org - German <-> Spanish"));
+		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(dd->web_radio_leo_gerspa));
+		if (dd->web_mode == WEBMODE_LEO_GERSPA)
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(dd->web_radio_leo_gerspa), TRUE);
+		gtk_widget_show(dd->web_radio_leo_gerspa);
+		gtk_box_pack_start(GTK_BOX(web_vbox), dd->web_radio_leo_gerspa, FALSE, FALSE, 0);
+
+		dd->web_radio_other = gtk_radio_button_new_with_label(web_type, _("Use another website"));
+		if (dd->web_mode == WEBMODE_OTHER)
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(dd->web_radio_other), TRUE);
+		gtk_widget_show(dd->web_radio_other);
+		g_signal_connect(G_OBJECT(dd->web_radio_other), "toggled",
+												G_CALLBACK(dict_use_webserver_toggled), dd);
+		gtk_box_pack_start(GTK_BOX(web_vbox), dd->web_radio_other, FALSE, FALSE, 0);
+
+		dd->web_entry_label = gtk_label_new_with_mnemonic(_("URL:"));
+		gtk_widget_show(dd->web_entry_label);
+		dd->web_entry = gtk_entry_new();
+		if (dd->web_url != NULL)
+			gtk_entry_set_text(GTK_ENTRY(dd->web_entry), dd->web_url);
+		gtk_widget_show(dd->web_entry);
+
+		entry_hbox = gtk_hbox_new(FALSE, 0);
+		gtk_widget_show(entry_hbox);
+		gtk_box_pack_start(GTK_BOX(entry_hbox), dd->web_entry_label, FALSE, TRUE, 5);
+		gtk_box_pack_start(GTK_BOX(entry_hbox), dd->web_entry, FALSE, FALSE, 0);
+		gtk_box_pack_start(GTK_BOX(web_vbox), entry_hbox, FALSE, FALSE, 0);
+
+		help_label = gtk_label_new(_("Enter an URL to a web site which offer translation services.\nUse {word} as placeholder for the searched word."));
+		gtk_label_set_line_wrap(GTK_LABEL(help_label), TRUE);
+		gtk_misc_set_alignment(GTK_MISC(help_label), 0, 0);
+		gtk_widget_show(help_label);
+		gtk_box_pack_start(GTK_BOX(web_vbox), help_label, FALSE, FALSE, 0);
+
+		dd->radio_web = gtk_radio_button_new_with_label(radio_group, _("Use a web site"));
+		gtk_widget_show(dd->radio_web);
+		if (dd->mode == DICTMODE_WEB)
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(dd->radio_web), TRUE);
+		gtk_box_pack_start(GTK_BOX(vbox), dd->radio_web, FALSE, FALSE, 0);
+
+		dd->frame_web = gtk_frame_new(NULL);
+		gtk_frame_set_shadow_type(GTK_FRAME(dd->frame_web), GTK_SHADOW_ETCHED_OUT);
+		gtk_widget_show(dd->frame_web);
+		gtk_container_set_border_width(GTK_CONTAINER(dd->frame_web), 5);
+		gtk_container_add(GTK_CONTAINER(dd->frame_web), web_vbox);
+		gtk_box_pack_start(GTK_BOX(vbox), dd->frame_web, FALSE, FALSE, 0);
+	}
+
+
+    /* Display text entry in the panel */
     {
-    	gtk_entry_set_text(GTK_ENTRY(dd->server_entry), dd->server);
+		GtkWidget *pe_hbox, *label;
+
+		/* show panel entry check box */
+		dd->check_panel_entry = gtk_check_button_new_with_label(
+													_("Show text field in the panel"));
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(dd->check_panel_entry), dd->show_panel_entry);
+		gtk_tooltips_set_tip(dd->tooltips, dd->check_panel_entry,
+			_("This option can only be used when the panel has a horizontal orientation."), NULL);
+		gtk_widget_show(dd->check_panel_entry);
+		g_signal_connect(G_OBJECT(dd->check_panel_entry), "toggled",
+													G_CALLBACK(dict_show_panel_entry_toggled), dd);
+
+		/* panel entry size */
+		dd->panel_entry_size_label = gtk_label_new_with_mnemonic(_("Text field size :"));
+		gtk_widget_show(dd->panel_entry_size_label);
+		dd->panel_entry_size_spinner = gtk_spin_button_new_with_range(0.0, 500.0, 1.0);
+		gtk_spin_button_set_value(GTK_SPIN_BUTTON(dd->panel_entry_size_spinner),
+																		dd->panel_entry_size);
+		gtk_widget_show(dd->panel_entry_size_spinner);
+
+		pe_hbox = gtk_hbox_new(FALSE, 0);
+		gtk_widget_show(pe_hbox);
+
+		gtk_box_pack_start(GTK_BOX(pe_hbox), dd->panel_entry_size_label, FALSE, FALSE, 10);
+		gtk_box_pack_start(GTK_BOX(pe_hbox), dd->panel_entry_size_spinner, TRUE, TRUE, 0);
+
+		label = gtk_label_new(""); // just to make some space, should be done better
+		gtk_widget_show(label);
+		gtk_box_pack_start(GTK_BOX(vbox), label, FALSE, FALSE, 0);
+		gtk_box_pack_start(GTK_BOX(vbox), dd->check_panel_entry, FALSE, FALSE, 0);
+		gtk_box_pack_start(GTK_BOX(vbox), pe_hbox, FALSE, FALSE, 0);
+
     }
-    gtk_widget_show(dd->server_entry);
 
-    /* server port */
-    label2 = gtk_label_new_with_mnemonic(_("Server Port :"));
-    gtk_widget_show(label2);
-
-    dd->port_spinner = gtk_spin_button_new_with_range(0.0, 65536.0, 1.0);
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(dd->port_spinner), dd->port);
-    gtk_widget_show(dd->port_spinner);
-
-    /* dictionary */
-    label3 = gtk_label_new_with_mnemonic(_("Dictionary :"));
-    gtk_widget_show(label3);
-
-    dd->dict_combo = gtk_combo_box_new_text();
-    gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo), _("* (use all)"));
-    gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo), _("! (use all, stop after first match)"));
-    gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo), "----------------");
-    if (dd->dictionary != NULL)
-    {
-    	if (dd->dictionary[0] == '*')
-			gtk_combo_box_set_active(GTK_COMBO_BOX(dd->dict_combo), 0);
-    	else if (dd->dictionary[0] == '!')
-			gtk_combo_box_set_active(GTK_COMBO_BOX(dd->dict_combo), 1);
-    	else
-    	{
-			gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo), dd->dictionary);
-			gtk_combo_box_set_active(GTK_COMBO_BOX(dd->dict_combo), 3);
-    	}
-    }
-
-    gtk_widget_show(dd->dict_combo);
-
-	button_get_list = gtk_button_new_from_stock("gtk-find");
-	gtk_widget_show(button_get_list);
-	g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_get_dict_list_cb), dd);
-
-
-	/* show panel entry check box */
-	dd->check_panel_entry = gtk_check_button_new_with_label(_("Show text field in the panel"));
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(dd->check_panel_entry), dd->show_panel_entry);
-    gtk_tooltips_set_tip(dd->tooltips, dd->check_panel_entry,
-		_("This option can only be used when the panel has a horizontal orientation."), NULL);
-	gtk_widget_show(dd->check_panel_entry);
-	g_signal_connect(dd->check_panel_entry, "toggled", G_CALLBACK(dict_show_panel_entry_toggled), dd);
-
-    /* panel entry size */
-    dd->panel_entry_size_label = gtk_label_new_with_mnemonic(_("Text field size :"));
-    gtk_widget_show(dd->panel_entry_size_label);
-    dd->panel_entry_size_spinner = gtk_spin_button_new_with_range(0.0, 500.0, 1.0);
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(dd->panel_entry_size_spinner), dd->panel_entry_size);
-
-   	//gtk_widget_set_sensitive(dd->check_panel_entry, gtk_toggle_button_get_active(tb));
-    gtk_widget_show(dd->panel_entry_size_spinner);
-
-
-	/* put it all together */
-    table = gtk_table_new(5, 3, FALSE);
-    gtk_widget_show(table);
-	gtk_table_set_row_spacings(GTK_TABLE(table), 10);
-	gtk_table_set_col_spacings(GTK_TABLE(table), 10);
-
-	gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 0, 1,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-	gtk_misc_set_alignment(GTK_MISC(label1), 1, 0);
-
-	gtk_table_attach(GTK_TABLE(table), dd->server_entry, 1, 2, 0, 1,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-
-	gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 1, 2,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-	gtk_misc_set_alignment(GTK_MISC(label2), 1, 0);
-
-	gtk_table_attach(GTK_TABLE(table), dd->port_spinner, 1, 2, 1, 2,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-
-	gtk_table_attach(GTK_TABLE(table), label3, 0, 1, 2, 3,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-	gtk_misc_set_alignment(GTK_MISC(label3), 1, 0);
-
-	gtk_table_attach(GTK_TABLE(table), dd->dict_combo, 1, 2, 2, 3,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-
-	gtk_table_attach(GTK_TABLE(table), button_get_list, 2, 3, 2, 3,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-
-	gtk_table_attach(GTK_TABLE(table), dd->check_panel_entry, 1, 2, 3, 4,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-
-	gtk_table_attach(GTK_TABLE(table), dd->panel_entry_size_label, 0, 1, 4, 5,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-	gtk_misc_set_alignment(GTK_MISC(label3), 1, 0);
-
-	gtk_table_attach(GTK_TABLE(table), dd->panel_entry_size_spinner, 1, 2, 4, 5,
-					(GtkAttachOptions) (GTK_FILL),
-					(GtkAttachOptions) (0), 0, 0);
-
-    gtk_box_pack_start(GTK_BOX(vbox), table, FALSE, FALSE, 0);
+	// init the sensitive widgets
+	dict_use_webserver_toggled(GTK_TOGGLE_BUTTON(dd->web_radio_other), dd);
+	dict_show_panel_entry_toggled(GTK_TOGGLE_BUTTON(dd->check_panel_entry), dd);
 
     gtk_widget_show(dlg);
 }
@@ -844,14 +1190,11 @@ static void dict_entry_activate_cb(GtkEntry *entry, DictData *dd)
 	{
 		entered_text = gtk_entry_get_text(GTK_ENTRY(dd->panel_entry));
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), entered_text);
-		gtk_widget_show(dd->window);
-		gtk_window_deiconify(GTK_WINDOW(dd->window));
-		gtk_window_present(GTK_WINDOW(dd->window));
 	}
 	else
 		entered_text = gtk_entry_get_text(GTK_ENTRY(dd->main_entry));
 
-	dict_start_query(dd, entered_text);
+	dict_search_word(dd, entered_text);
 }
 
 
@@ -1036,10 +1379,7 @@ static void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_cont
 			drag_context->action = GDK_ACTION_COPY;
 		}
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), (const gchar*) data->data);
-		dict_start_query(dd, (const gchar*) data->data);
-		gtk_widget_show(dd->window);
-		gtk_window_deiconify(GTK_WINDOW(dd->window));
-		gtk_window_present(GTK_WINDOW(dd->window));
+		dict_search_word(dd, (const gchar*) data->data);
 		gtk_drag_finish(drag_context, TRUE, FALSE, time);
 	}
 }
@@ -1052,13 +1392,14 @@ static void dict_panel_button_clicked(GtkWidget *button, DictData *dd)
 	else
 	{
 		const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dd->panel_entry));
+
+		dict_show_main_window(dd);
 		if (strcmp("", panel_text) != 0)
 		{
-			dict_start_query(dd, panel_text);
+			dict_search_word(dd, panel_text);
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), panel_text);
 		}
 		gtk_widget_grab_focus(dd->main_entry);
-		gtk_widget_show(dd->window);
 	}
 }
 
@@ -1152,7 +1493,8 @@ static void dict_construct(XfcePanelPlugin *plugin)
 
     /* DnD stuff */
     gtk_drag_dest_set(GTK_WIDGET(dd->panel_button), GTK_DEST_DEFAULT_ALL,
-		(GtkTargetEntry[]) { { "STRING", 0, 0 }, { "text/plain", 0, 0 } }, 2, GDK_ACTION_COPY);
+		(GtkTargetEntry[]) { { "STRING", 0, 0 }, { "UTF8_STRING", 0, 0 }, { "text/plain", 0, 0 } },
+		3, GDK_ACTION_COPY);
     g_signal_connect(dd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
     g_signal_connect(dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
 

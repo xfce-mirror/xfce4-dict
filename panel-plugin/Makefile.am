@@ -6,15 +6,17 @@ xfce4_dict_plugin_SOURCES =						\
 	dict.c
 
 xfce4_dict_plugin_CFLAGS =						\
-	-I$(top_srcdir)							\
+	-I$(top_srcdir)								\
 	$(LIBXFCEGUI4_CFLAGS)						\
 	$(LIBXFCE4PANEL_CFLAGS)						\
+	$(EXO_CFLAGS)								\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
 	@GTHREAD_CFLAGS@
 
 xfce4_dict_plugin_LDADD =						\
 	$(LIBXFCE4PANEL_LIBS)						\
 	$(LIBXFCEGUI4_LIBS)							\
+	$(EXO_LIBS)									\
 	@GTHREAD_LIBS@
 
 inline-icon.h: $(srcdir)/dict-icon.svg
