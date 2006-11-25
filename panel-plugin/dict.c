@@ -31,10 +31,12 @@
 #include <exo/exo.h>
 
 #include <sys/types.h>
+#include <sys/socket.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <netdb.h>
 #include <netinet/tcp.h>
+#include <netinet/in.h>
 #include <arpa/inet.h>
 #include <signal.h>
 #include <string.h>
@@ -658,9 +660,12 @@ static void dict_free_data(XfcePanelPlugin *plugin, DictData *dd)
 }
 
 
-static gboolean dict_set_size(XfcePanelPlugin *plugin, gint size, DictData *dd)
+static gboolean dict_set_size(XfcePanelPlugin *plugin, gint wsize, DictData *dd)
 {
 	gint width;
+	gint size = wsize - 2 - (2 * MAX(dd->panel_button->style->xthickness,
+									 dd->panel_button->style->ythickness));
+
 	//g_object_unref(G_OBJECT(dd->icon));
 	dd->icon = dict_load_and_scale(dict_icon_data, size, -1);
 
@@ -1357,7 +1362,7 @@ static void dict_about_dialog(GtkWidget *widget, DictData *dd)
                                XFCE_LICENSE_GPL);
 
 	xfce_about_info_add_credit(info, "Enrico Tröger", "enrico.troeger@uvena.de", _("Developer"));
-	//xfce_about_info_set_homepage(info, "http://goodies.xfce.org");
+	xfce_about_info_set_homepage(info, "http://goodies.xfce.org");
 
 	dialog = xfce_about_dialog_new_with_values(GTK_WINDOW(widget), info, dd->icon);
 	g_signal_connect(G_OBJECT(dialog), "response", G_CALLBACK(gtk_widget_destroy), NULL);

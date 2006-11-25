@@ -1,3 +1,11 @@
+2006-11-25 enrico
+
+	* Enabled website link to goodies.xfce.org in the about dialog.
+	* Added missing includes to fix compilation on FreeBSD.
+	* Improved calculation of panel icon size (thanks to Rupert Horstkötter
+	  for reporting).
+
+
 2006-11-16 enrico
 
 	* Added dependency of libexo.
@@ -12,7 +20,7 @@
 	* Prefixed all functions with dict.
 
 
-2006-10-14 enrico
+2006-10-15 enrico
 
 	* Improved the threading code to do GTK-related stuff in the main thread.
 	* Fixed some compiler warnings.
