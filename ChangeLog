@@ -1,3 +1,8 @@
+2006-12-04 enrico
+
+	* Fixed wrong display of panel text entry when panel orientation changed.
+
+
 2006-11-25 enrico
 
 	* Enabled website link to goodies.xfce.org in the about dialog.

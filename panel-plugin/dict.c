@@ -682,9 +682,10 @@ static gboolean dict_set_size(XfcePanelPlugin *plugin, gint wsize, DictData *dd)
 }
 
 
-static void dict_change_orientation(XfcePanelPlugin *plugin, GtkOrientation orientation, DictData *dd)
+static void dict_panel_change_orientation(XfcePanelPlugin *plugin, GtkOrientation orientation,
+										  DictData *dd)
 {
-	if (orientation == GTK_ORIENTATION_VERTICAL)
+	if (! dd->show_panel_entry || orientation == GTK_ORIENTATION_VERTICAL)
 		gtk_widget_hide(dd->panel_entry);
 	else
 		gtk_widget_show(dd->panel_entry);
@@ -897,7 +898,9 @@ static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictD
 
 		if (dd->show_panel_entry &&
 			xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
+		{
 			gtk_widget_show(dd->panel_entry);
+		}
 		else
 			gtk_widget_hide(dd->panel_entry);
 
@@ -1466,7 +1469,7 @@ static void dict_construct(XfcePanelPlugin *plugin)
 
     g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_set_size), dd);
 
-	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_change_orientation), dd);
+	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_panel_change_orientation), dd);
 
     g_signal_connect(plugin, "style-set", G_CALLBACK(dict_style_set), dd);
 
