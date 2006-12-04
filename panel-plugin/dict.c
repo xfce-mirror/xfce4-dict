@@ -672,7 +672,10 @@ static gboolean dict_set_size(XfcePanelPlugin *plugin, gint wsize, DictData *dd)
     gtk_image_set_from_pixbuf(GTK_IMAGE(dd->panel_button_image), dd->icon);
 
     if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
+    {
     	width = size + dd->panel_entry_size;
+		gtk_widget_set_size_request(dd->panel_entry, dd->panel_entry_size, -1);
+    }
     else
 		width = size;
 
