@@ -27,9 +27,6 @@
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libxfce4panel/xfce-panel-convenience.h>
 
-#define EXO_API_SUBJECT_TO_CHANGE
-#include <exo/exo.h>
-
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
@@ -549,6 +546,44 @@ static void dict_start_server_query(DictData *dd, const gchar *word)
 }
 
 
+/* taken from xarchiver, thanks Giuseppe */
+static gboolean dict_open_browser(DictData *dd, const gchar *uri)
+{
+	gchar *argv[3];
+	gchar *browser_path;
+	gboolean result = FALSE;
+
+	browser_path = g_find_program_in_path("exo-open");
+	if (browser_path == NULL)
+		browser_path = g_find_program_in_path("htmlview");
+	if (browser_path == NULL)
+		browser_path = g_find_program_in_path("firefox");
+	if (browser_path == NULL)
+		browser_path = g_find_program_in_path("mozilla");
+	if (browser_path == NULL)
+		browser_path = g_find_program_in_path("opera");
+	if (browser_path == NULL)
+		browser_path = g_find_program_in_path("epiphany");
+	if (browser_path == NULL)
+		browser_path = g_find_program_in_path("konqueror");
+	if (browser_path == NULL)
+		browser_path = g_find_program_in_path("seamonkey");
+
+	if (browser_path == NULL) return FALSE;
+
+	argv[0] = browser_path;
+	argv[1] = (gchar*) uri;
+	argv[2] = NULL;
+
+	result = gdk_spawn_on_screen(gtk_widget_get_screen(GTK_WIDGET(dd->plugin)), NULL, argv, NULL,
+				G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL);
+
+	g_free (browser_path);
+
+	return result;
+}
+
+
 static void dict_search_word(DictData *dd, const gchar *word)
 {
 	gboolean show = TRUE;
@@ -586,7 +621,6 @@ static void dict_search_word(DictData *dd, const gchar *word)
 	}
 	else if (dd->mode == DICTMODE_WEB)
 	{
-		gboolean success;
 		gboolean use_leo = FALSE;
 		gchar *uri, *base;
 
@@ -626,8 +660,7 @@ static void dict_search_word(DictData *dd, const gchar *word)
 		}
 
 		uri = dict_str_replace(g_strdup(base), "{word}", dd->searched_word);
-		success = exo_url_show(uri, NULL, NULL);
-		if (! success)
+		if (! dict_open_browser(dd, uri))
 		{
 			xfce_err(_("Browser could not be opened. Please check your preferences."));
 		}

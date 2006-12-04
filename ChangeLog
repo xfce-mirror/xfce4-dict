@@ -2,6 +2,7 @@
 
 	* Fixed wrong display of panel text entry when panel orientation changed.
 	* Panel text entry grows and shrinks now according to the given size.
+	* Removed dependency on libexo, use exo-open(and some other fallbacks) instead.
 
 
 2006-11-25 enrico
@@ -18,7 +19,7 @@
 	* Added alternative search mode via a web site dictionary and provide three
 	  dictionary entries of dict.leo.org for convenience.
 	  The web site will be opened with the help of libexo.
-	* Added UTF8_STRING as drop targt. Might be it helps.
+	* Added UTF8_STRING as drop target. Might be it helps.
 
 
 2006-11-07 enrico
