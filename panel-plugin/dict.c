@@ -808,6 +808,7 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	gint fd, i;
 	gint max_lines;
 	gchar *buffer = NULL;
+	gchar *answer = NULL;
 	gchar **lines;
 	const gchar *host;
 	gint port;
@@ -824,7 +825,7 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	dict_send_command(fd, "show databases");
 
 	// read all server output
-	buffer = dict_get_answer(fd);
+	answer = buffer = dict_get_answer(fd);
 	close(fd);
 
 	// go to next line
@@ -868,7 +869,7 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	}
 
 	g_strfreev(lines);
-	g_free(buffer);
+	g_free(answer);
 
 	// set the active entry to * because we don't know where the previously selected item now is in
 	// the list and we also don't know whether it exists at all, and I don't walk through the list

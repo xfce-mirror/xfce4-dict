@@ -1,5 +1,10 @@
 2006-12-04 enrico
 
+	* Fixed possible segfault after retrieving the dictionary list from a server.
+
+
+2006-12-04 enrico
+
 	* Fixed wrong display of panel text entry when panel orientation changed.
 	* Panel text entry grows and shrinks now according to the given size.
 	* Removed dependency on libexo, use exo-open(and some other fallbacks) instead.
