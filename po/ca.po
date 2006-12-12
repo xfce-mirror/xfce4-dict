@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-15 23:47+0200\n"
+"POT-Creation-Date: 2006-12-11 22:24+0100\n"
 "PO-Revision-Date: 2006-12-02 12:06+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
@@ -19,87 +19,124 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/dict.c:273 ../panel-plugin/dict.c:575
+#: ../panel-plugin/dict.c:387 ../panel-plugin/dict.c:821
 msgid "Could not connect to server."
 msgstr "No s'ha pogut connectar al servidor."
 
-#: ../panel-plugin/dict.c:280 ../panel-plugin/dict.c:305
-#: ../panel-plugin/dict.c:597
+#: ../panel-plugin/dict.c:394 ../panel-plugin/dict.c:419
+#: ../panel-plugin/dict.c:843
 msgid "Unknown error while quering the server."
 msgstr "Error desconegut al fer la consulta al servidor."
 
-#: ../panel-plugin/dict.c:288
+#: ../panel-plugin/dict.c:402
 msgid "Server not ready."
 msgstr "El servidor està disponible."
 
-#: ../panel-plugin/dict.c:299
+#: ../panel-plugin/dict.c:413
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "No hi ha cap coincidència per «%s»."
 
-#: ../panel-plugin/dict.c:310
+#: ../panel-plugin/dict.c:424
 #, c-format
 msgid "%d definition(s) found."
 msgstr "Nombre de definicions: %d."
 
-#: ../panel-plugin/dict.c:429
-msgid "Invalid input."
-msgstr "L'entrada no és vàlida."
-
-#: ../panel-plugin/dict.c:439
-msgid "Invalid non-UTF8 input."
-msgstr "Entrada no UTF8 invàlida."
-
-#: ../panel-plugin/dict.c:452
+#: ../panel-plugin/dict.c:541
 #, c-format
 msgid "Querying the server %s..."
 msgstr "Consultant al servidor %s…"
 
-#: ../panel-plugin/dict.c:592
+#: ../panel-plugin/dict.c:594
+msgid "Invalid input."
+msgstr "L'entrada no és vàlida."
+
+#: ../panel-plugin/dict.c:604
+msgid "Invalid non-UTF8 input."
+msgstr "Entrada no UTF8 invàlida."
+
+#: ../panel-plugin/dict.c:665
+msgid "Browser could not be opened. Please check your preferences."
+msgstr ""
+
+#: ../panel-plugin/dict.c:838
 msgid "The server doesn't offer any databases."
 msgstr "El servidor no ha ofert cap base de dades."
 
-#: ../panel-plugin/dict.c:647
+#: ../panel-plugin/dict.c:898
 msgid "You have chosen an invalid dictionary entry."
 msgstr "Heu triat una entrada de diccionari invàlida."
 
-#: ../panel-plugin/dict.c:690
+#: ../panel-plugin/dict.c:975
 msgid "Properties"
 msgstr "Propietats"
 
-#: ../panel-plugin/dict.c:706
+#: ../panel-plugin/dict.c:991
 msgid "Dictionary plugin"
 msgstr "Connector de diccionaris"
 
 #. server address
-#: ../panel-plugin/dict.c:718
+#: ../panel-plugin/dict.c:1008
 msgid "Server :"
 msgstr "Servidor:"
 
 #. server port
-#: ../panel-plugin/dict.c:730
+#: ../panel-plugin/dict.c:1020
 msgid "Server Port :"
 msgstr "Port del servidor:"
 
 #. dictionary
-#: ../panel-plugin/dict.c:738
+#: ../panel-plugin/dict.c:1028
 msgid "Dictionary :"
 msgstr "Diccionari:"
 
-#: ../panel-plugin/dict.c:742
+#: ../panel-plugin/dict.c:1032
 msgid "* (use all)"
 msgstr "* (empra'ls tots)"
 
-#: ../panel-plugin/dict.c:743
+#: ../panel-plugin/dict.c:1034
 msgid "! (use all, stop after first match)"
 msgstr "! (empra'ls tots, atura després de la primera coincidència)"
 
-#. show panel entry check box
-#: ../panel-plugin/dict.c:766
+#: ../panel-plugin/dict.c:1094
+msgid "Use a DICT server"
+msgstr ""
+
+#: ../panel-plugin/dict.c:1121
+msgid "dict.leo.org - German <-> English"
+msgstr ""
+
+#: ../panel-plugin/dict.c:1129
+msgid "dict.leo.org - German <-> French"
+msgstr ""
+
+#: ../panel-plugin/dict.c:1137
+msgid "dict.leo.org - German <-> Spanish"
+msgstr ""
+
+#: ../panel-plugin/dict.c:1144
+msgid "Use another website"
+msgstr ""
+
+#: ../panel-plugin/dict.c:1152
+msgid "URL:"
+msgstr ""
+
+#: ../panel-plugin/dict.c:1165
+msgid ""
+"Enter an URL to a web site which offer translation services.\n"
+"Use {word} as placeholder for the searched word."
+msgstr ""
+
+#: ../panel-plugin/dict.c:1171
+msgid "Use a web site"
+msgstr ""
+
+#: ../panel-plugin/dict.c:1192
 msgid "Show text field in the panel"
 msgstr "Mostra el text al quadre"
 
-#: ../panel-plugin/dict.c:769
+#: ../panel-plugin/dict.c:1195
 msgid ""
 "This option can only be used when the panel has a horizontal orientation."
 msgstr ""
@@ -107,27 +144,27 @@ msgstr ""
 "horitzontalment."
 
 #. panel entry size
-#: ../panel-plugin/dict.c:774
+#: ../panel-plugin/dict.c:1201
 msgid "Text field size :"
 msgstr "Mida del camp de text:"
 
-#: ../panel-plugin/dict.c:873 ../panel-plugin/dict.c:1159
+#: ../panel-plugin/dict.c:1261 ../panel-plugin/dict.c:1546
 msgid "Ready."
 msgstr "Llest."
 
-#: ../panel-plugin/dict.c:911
+#: ../panel-plugin/dict.c:1299
 msgid "Text to search:"
 msgstr "Text a cercar:"
 
-#: ../panel-plugin/dict.c:1012 ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1400 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "Un connector per consultar servidors «Dict» (diccionaris)."
 
-#: ../panel-plugin/dict.c:1016
+#: ../panel-plugin/dict.c:1404
 msgid "Developer"
 msgstr "Desenvolupador"
 
-#: ../panel-plugin/dict.c:1108
+#: ../panel-plugin/dict.c:1494
 msgid "Look up a word"
 msgstr "Cerca una paraula"
 
