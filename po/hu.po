@@ -3,21 +3,22 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-11 22:24+0100\n"
-"PO-Revision-Date: 2006-09-27 21:23+0100\n"
+"PO-Revision-Date: 2006-12-13 10:49+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
-#: ../panel-plugin/dict.c:387 ../panel-plugin/dict.c:821
+#: ../panel-plugin/dict.c:387
+#: ../panel-plugin/dict.c:821
 msgid "Could not connect to server."
 msgstr "Sikertelen kapcsolódás a kiszolgálóhoz"
 
-#: ../panel-plugin/dict.c:394 ../panel-plugin/dict.c:419
+#: ../panel-plugin/dict.c:394
+#: ../panel-plugin/dict.c:419
 #: ../panel-plugin/dict.c:843
 msgid "Unknown error while quering the server."
 msgstr "Ismeretlen hiba a kiszolgáló lekérdezésekor"
@@ -34,24 +35,24 @@ msgstr "Nincs találat \"%s\" kifejezésre"
 #: ../panel-plugin/dict.c:424
 #, c-format
 msgid "%d definition(s) found."
-msgstr "_Kibontás ide"
+msgstr "%d találat"
 
 #: ../panel-plugin/dict.c:541
 #, c-format
 msgid "Querying the server %s..."
-msgstr ""
+msgstr "%s kiszolgáló lekérdezése..."
 
 #: ../panel-plugin/dict.c:594
 msgid "Invalid input."
-msgstr ""
+msgstr "Érvénytelen bemenet"
 
 #: ../panel-plugin/dict.c:604
 msgid "Invalid non-UTF8 input."
-msgstr ""
+msgstr "Érvénytelen nem-UTF8 bemenet"
 
 #: ../panel-plugin/dict.c:665
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
+msgstr "A böngésző nem nyitható meg. Ellenőrizd a beállításokat"
 
 #: ../panel-plugin/dict.c:838
 msgid "The server doesn't offer any databases."
@@ -94,27 +95,27 @@ msgstr "! (mindet használja, az elsőnél megáll)"
 
 #: ../panel-plugin/dict.c:1094
 msgid "Use a DICT server"
-msgstr ""
+msgstr "DICT kiszolgáló használata"
 
 #: ../panel-plugin/dict.c:1121
 msgid "dict.leo.org - German <-> English"
-msgstr ""
+msgstr "dict.leo.org - Német <-> Angol"
 
 #: ../panel-plugin/dict.c:1129
 msgid "dict.leo.org - German <-> French"
-msgstr ""
+msgstr "dict.leo.org - Német <-> Francia"
 
 #: ../panel-plugin/dict.c:1137
 msgid "dict.leo.org - German <-> Spanish"
-msgstr ""
+msgstr "dict.leo.org - Német <-> Spanyol"
 
 #: ../panel-plugin/dict.c:1144
 msgid "Use another website"
-msgstr ""
+msgstr "Más kiszolgáló"
 
 #: ../panel-plugin/dict.c:1152
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../panel-plugin/dict.c:1165
 msgid ""
@@ -124,15 +125,14 @@ msgstr ""
 
 #: ../panel-plugin/dict.c:1171
 msgid "Use a web site"
-msgstr ""
+msgstr "Egy weblap használata"
 
 #: ../panel-plugin/dict.c:1192
 msgid "Show text field in the panel"
 msgstr "Szöveg mező a panelon"
 
 #: ../panel-plugin/dict.c:1195
-msgid ""
-"This option can only be used when the panel has a horizontal orientation."
+msgid "This option can only be used when the panel has a horizontal orientation."
 msgstr "A lehetőség csak a panel vízszintes fekvésénél használható."
 
 #. panel entry size
@@ -140,7 +140,8 @@ msgstr "A lehetőség csak a panel vízszintes fekvésénél használható."
 msgid "Text field size :"
 msgstr "Szöveg mező mérete :"
 
-#: ../panel-plugin/dict.c:1261 ../panel-plugin/dict.c:1546
+#: ../panel-plugin/dict.c:1261
+#: ../panel-plugin/dict.c:1546
 msgid "Ready."
 msgstr "Kész."
 
@@ -148,7 +149,8 @@ msgstr "Kész."
 msgid "Text to search:"
 msgstr "Keresendő szöveg:"
 
-#: ../panel-plugin/dict.c:1400 ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1400
+#: ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "Dict kiszolgáló beillesztés"
 
@@ -166,9 +168,8 @@ msgstr "Dict"
 
 #~ msgid "Input is too long."
 #~ msgstr "Túl hosszú bevitel"
-
 #~ msgid "Answer was too long, it has been truncated (%d definition(s) found)."
 #~ msgstr "A válasz túl hosszú, levágtam (%d meghatározást találtam)"
-
 #~ msgid "-- The received list was too long. It has been truncated."
 #~ msgstr "-- A kapott lista túl hosszú. Levágtam."
+
