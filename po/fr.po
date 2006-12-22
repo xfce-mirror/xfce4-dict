@@ -1,25 +1,28 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# French translation of the xfce4-dict-plugin package.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-dict-plugin package.
+# Gérald Barré <g.barre@free.fr>, 2006.
+# Maximilian Schleiss <maxschleiss@bluewin.ch>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-11 22:24+0100\n"
-"PO-Revision-Date: 2006-11-04 19:30+0100\n"
-"Last-Translator: Gerald Barre <g.barre@free.fr>\n"
+"PO-Revision-Date: 2006-12-22 18:14+0100\n"
+"Last-Translator: Maximilian Schleiss <maxschleiss@bluewin.ch>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/dict.c:387 ../panel-plugin/dict.c:821
+#: ../panel-plugin/dict.c:387
+#: ../panel-plugin/dict.c:821
 msgid "Could not connect to server."
 msgstr "Impossible de se connecter au serveur."
 
-#: ../panel-plugin/dict.c:394 ../panel-plugin/dict.c:419
+#: ../panel-plugin/dict.c:394
+#: ../panel-plugin/dict.c:419
 #: ../panel-plugin/dict.c:843
 msgid "Unknown error while quering the server."
 msgstr "Erreur inconnue pendant une demande au serveur"
@@ -53,7 +56,7 @@ msgstr "Entrée non-UTF8 invalide."
 
 #: ../panel-plugin/dict.c:665
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
+msgstr "Le navigateur n'a pas pu être ouvert. Veuillez vérifier vos préférences."
 
 #: ../panel-plugin/dict.c:838
 msgid "The server doesn't offer any databases."
@@ -96,54 +99,55 @@ msgstr "! (tous, s'arrête à la première réponse)"
 
 #: ../panel-plugin/dict.c:1094
 msgid "Use a DICT server"
-msgstr ""
+msgstr "Utiliser un serveur DICT"
 
 #: ../panel-plugin/dict.c:1121
 msgid "dict.leo.org - German <-> English"
-msgstr ""
+msgstr "dict.leo.org - Allemand <-> Anglais"
 
 #: ../panel-plugin/dict.c:1129
 msgid "dict.leo.org - German <-> French"
-msgstr ""
+msgstr "dict.leo.org - Allemand <-> Français"
 
 #: ../panel-plugin/dict.c:1137
 msgid "dict.leo.org - German <-> Spanish"
-msgstr ""
+msgstr "dict.leo.org - Allemand <-> Espagnol"
 
 #: ../panel-plugin/dict.c:1144
 msgid "Use another website"
-msgstr ""
+msgstr "Utiliser un autre site Web"
 
 #: ../panel-plugin/dict.c:1152
 msgid "URL:"
-msgstr ""
+msgstr "URL :"
 
 #: ../panel-plugin/dict.c:1165
 msgid ""
 "Enter an URL to a web site which offer translation services.\n"
 "Use {word} as placeholder for the searched word."
 msgstr ""
+"Inscrire l'adresse d'un site Web offrant un service de traduction.\n"
+"Utiliser {mot} comme paramètre fictif pour le mot recherché."
 
 #: ../panel-plugin/dict.c:1171
 msgid "Use a web site"
-msgstr ""
+msgstr "Utiliser un site Web"
 
 #: ../panel-plugin/dict.c:1192
 msgid "Show text field in the panel"
 msgstr "Montrer le champ de texte dans le panneau"
 
 #: ../panel-plugin/dict.c:1195
-msgid ""
-"This option can only be used when the panel has a horizontal orientation."
-msgstr ""
-"Cette option ne s'utilise que si le panneau est orienté horizontalement."
+msgid "This option can only be used when the panel has a horizontal orientation."
+msgstr "Cette option ne s'utilise que si le panneau est orienté horizontalement."
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1201
 msgid "Text field size :"
 msgstr "Taille du champ texte :"
 
-#: ../panel-plugin/dict.c:1261 ../panel-plugin/dict.c:1546
+#: ../panel-plugin/dict.c:1261
+#: ../panel-plugin/dict.c:1546
 msgid "Ready."
 msgstr "Prêt."
 
@@ -151,7 +155,8 @@ msgstr "Prêt."
 msgid "Text to search:"
 msgstr "Le texte à  rechercher"
 
-#: ../panel-plugin/dict.c:1400 ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1400
+#: ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "Un greffon pour accéder à un serveur Dict."
 
@@ -166,3 +171,4 @@ msgstr "Rechercher un mot"
 #: ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
 msgstr "Serveur de Dictionnaire Dict"
+
