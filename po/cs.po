@@ -1,0 +1,174 @@
+# Czech translations for xfce4-dict-plugin package.
+# Copyright (C) 2006 THE xfce4-dict-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-dict-plugin package.
+# Michal Várady <miko.vaji@gmail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-dict-plugin 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-11 22:24+0100\n"
+"PO-Revision-Date: 2006-12-15 20:29+0100\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
+"Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: ../panel-plugin/dict.c:387
+#: ../panel-plugin/dict.c:821
+msgid "Could not connect to server."
+msgstr "Nelze se připojit k serveru"
+
+#: ../panel-plugin/dict.c:394
+#: ../panel-plugin/dict.c:419
+#: ../panel-plugin/dict.c:843
+msgid "Unknown error while quering the server."
+msgstr "Při dotazu na server nastala neznámá chyba."
+
+#: ../panel-plugin/dict.c:402
+msgid "Server not ready."
+msgstr "Server není připraven."
+
+#: ../panel-plugin/dict.c:413
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Pro \"%s\" nebyly nalezeny žádné shody."
+
+#: ../panel-plugin/dict.c:424
+#, c-format
+msgid "%d definition(s) found."
+msgstr "Nalezebo %d definicí."
+
+#: ../panel-plugin/dict.c:541
+#, c-format
+msgid "Querying the server %s..."
+msgstr "Posílám dotaz na server %s..."
+
+#: ../panel-plugin/dict.c:594
+msgid "Invalid input."
+msgstr "Neplatný vstup."
+
+#: ../panel-plugin/dict.c:604
+msgid "Invalid non-UTF8 input."
+msgstr "Neplatný vstup v kódování jiném než UTF8."
+
+#: ../panel-plugin/dict.c:665
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "Nelze otevřít prohlížeč. Ověřte nastavení."
+
+#: ../panel-plugin/dict.c:838
+msgid "The server doesn't offer any databases."
+msgstr "Server nenabízí žádné databáze."
+
+#: ../panel-plugin/dict.c:898
+msgid "You have chosen an invalid dictionary entry."
+msgstr "Zvolili jste neplatnou položku slovníku."
+
+#: ../panel-plugin/dict.c:975
+msgid "Properties"
+msgstr "Vlastnosti"
+
+#: ../panel-plugin/dict.c:991
+msgid "Dictionary plugin"
+msgstr "Zásuvný modul slovník"
+
+#. server address
+#: ../panel-plugin/dict.c:1008
+msgid "Server :"
+msgstr "Server:"
+
+#. server port
+#: ../panel-plugin/dict.c:1020
+msgid "Server Port :"
+msgstr "Port serveru:"
+
+#. dictionary
+#: ../panel-plugin/dict.c:1028
+msgid "Dictionary :"
+msgstr "Slovník:"
+
+#: ../panel-plugin/dict.c:1032
+msgid "* (use all)"
+msgstr "* (použít vše)"
+
+#: ../panel-plugin/dict.c:1034
+msgid "! (use all, stop after first match)"
+msgstr "! (použít vše, zastavit při první shodě)"
+
+#: ../panel-plugin/dict.c:1094
+msgid "Use a DICT server"
+msgstr "Použít server DICT"
+
+#: ../panel-plugin/dict.c:1121
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Němčina <-> Angličtina"
+
+#: ../panel-plugin/dict.c:1129
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Němčina <-> Francouzština"
+
+#: ../panel-plugin/dict.c:1137
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Němčina <-> Španělstina"
+
+#: ../panel-plugin/dict.c:1144
+msgid "Use another website"
+msgstr "Použít jinou webovou stránku"
+
+#: ../panel-plugin/dict.c:1152
+msgid "URL:"
+msgstr "Adresa URL:"
+
+#: ../panel-plugin/dict.c:1165
+msgid ""
+"Enter an URL to a web site which offer translation services.\n"
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Zadejte adresu URL webové stránky, která nabízí překladatelské\n"
+"složky. Použijte {word} jako zástupný řetězec pro hledané slovo."
+
+#: ../panel-plugin/dict.c:1171
+msgid "Use a web site"
+msgstr "Použít webovou stránku"
+
+#: ../panel-plugin/dict.c:1192
+msgid "Show text field in the panel"
+msgstr "Zobrazit textové pole v panelu"
+
+#: ../panel-plugin/dict.c:1195
+msgid "This option can only be used when the panel has a horizontal orientation."
+msgstr "Tuto možnost lze použít pouze tehdy, je-li panel ve vodorovné pozici."
+
+#. panel entry size
+#: ../panel-plugin/dict.c:1201
+msgid "Text field size :"
+msgstr "Velikost textového pole:"
+
+#: ../panel-plugin/dict.c:1261
+#: ../panel-plugin/dict.c:1546
+msgid "Ready."
+msgstr "Připraven."
+
+#: ../panel-plugin/dict.c:1299
+msgid "Text to search:"
+msgstr "Text pro vyhledání:"
+
+#: ../panel-plugin/dict.c:1400
+#: ../panel-plugin/dict.desktop.in.in.h:1
+msgid "A plugin to query a Dict server."
+msgstr "Zásuvný modul pro dotaz serveru Dict."
+
+#: ../panel-plugin/dict.c:1404
+msgid "Developer"
+msgstr "Vývojář"
+
+#: ../panel-plugin/dict.c:1494
+msgid "Look up a word"
+msgstr "Vyhledat slovo"
+
+#: ../panel-plugin/dict.desktop.in.in.h:2
+msgid "Dict"
+msgstr "Dict"
+
