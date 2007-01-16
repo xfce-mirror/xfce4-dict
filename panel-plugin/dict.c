@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright © 2006 Enrico Tröger <enrico.troeger@uvena.de>
+ *  Copyright © 2006-2007 Enrico Tröger <enrico.troeger@uvena.de>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -1398,7 +1398,7 @@ static void dict_about_dialog(GtkWidget *widget, DictData *dd)
 
 	info = xfce_about_info_new("xfce4-dict-plugin", VERSION,
                                _("A plugin to query a Dict server."),
-                               XFCE_COPYRIGHT_TEXT("2006", "Enrico Tröger"),
+                               XFCE_COPYRIGHT_TEXT("2006-2007", "Enrico Tröger"),
                                XFCE_LICENSE_GPL);
 
 	xfce_about_info_add_credit(info, "Enrico Tröger", "enrico.troeger@uvena.de", _("Developer"));
