@@ -1280,7 +1280,8 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_window_set_icon(GTK_WINDOW(dd->window), dd->icon);
 	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
 
-	g_signal_connect(G_OBJECT(dd->window), "delete_event", G_CALLBACK(gtk_widget_hide), NULL);
+	g_signal_connect(G_OBJECT(dd->window), "delete_event",
+		G_CALLBACK(gtk_widget_hide_on_delete), NULL);
 
 	main_box = gtk_vbox_new(FALSE, 0);
 	gtk_widget_show(main_box);
