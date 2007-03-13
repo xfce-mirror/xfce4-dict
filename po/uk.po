@@ -1,0 +1,173 @@
+# Translation of xfce4-dict-plugin to Ukrainian
+# Copyright (C) 2007 Dmitry Nikitin
+# This file is distributed under the same license as the xfce4-dict-plugin package.
+#
+# Dmitry Nikitin <luckas_fb@mail.ru>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-dict-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-13 16:57+0200\n"
+"PO-Revision-Date: 2007-03-08 01:35+0200\n"
+"Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
+"Language-Team: Ukrainian <xfce-i18n@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../panel-plugin/dict.c:387 ../panel-plugin/dict.c:821
+msgid "Could not connect to server."
+msgstr "Неможливо з'єднатися з сервером"
+
+#: ../panel-plugin/dict.c:394 ../panel-plugin/dict.c:419
+#: ../panel-plugin/dict.c:843
+msgid "Unknown error while quering the server."
+msgstr "Невідома помилка при запиті сервера"
+
+#: ../panel-plugin/dict.c:402
+msgid "Server not ready."
+msgstr "Сервер не готовий."
+
+#: ../panel-plugin/dict.c:413
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Не знайдено відповідностей для \"%s\"."
+
+#: ../panel-plugin/dict.c:424
+#, c-format
+msgid "%d definition(s) found."
+msgstr "%d відповідності(тей) знайдено."
+
+#: ../panel-plugin/dict.c:541
+#, c-format
+msgid "Querying the server %s..."
+msgstr "Запитується сервер %s..."
+
+#: ../panel-plugin/dict.c:594
+msgid "Invalid input."
+msgstr "Неправильний ввід."
+
+#: ../panel-plugin/dict.c:604
+msgid "Invalid non-UTF8 input."
+msgstr "Неправильний не-UTF8 ввід."
+
+#: ../panel-plugin/dict.c:665
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "Браузер не вдалось відкрити. Будь-ласка перевірте Ваші налаштування."
+
+#: ../panel-plugin/dict.c:838
+msgid "The server doesn't offer any databases."
+msgstr "Сервер не підтримує жодних баз даних."
+
+#: ../panel-plugin/dict.c:898
+msgid "You have chosen an invalid dictionary entry."
+msgstr "Ви вибрали неправильний елемент словника."
+
+#: ../panel-plugin/dict.c:975
+msgid "Properties"
+msgstr "Властивості"
+
+#: ../panel-plugin/dict.c:991
+msgid "Dictionary plugin"
+msgstr "Розширення словника"
+
+#. server address
+#: ../panel-plugin/dict.c:1008
+msgid "Server :"
+msgstr "Сервер :"
+
+#. server port
+#: ../panel-plugin/dict.c:1020
+msgid "Server Port :"
+msgstr "Порт сервера :"
+
+#. dictionary
+#: ../panel-plugin/dict.c:1028
+msgid "Dictionary :"
+msgstr "Словник :"
+
+#: ../panel-plugin/dict.c:1032
+msgid "* (use all)"
+msgstr "* (використовувати все)"
+
+#: ../panel-plugin/dict.c:1034
+msgid "! (use all, stop after first match)"
+msgstr "! (використовувати все, зупинятись на першому збігові)"
+
+#: ../panel-plugin/dict.c:1094
+msgid "Use a DICT server"
+msgstr "Використовувати DICT сервер"
+
+#: ../panel-plugin/dict.c:1121
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Німецько <-> Англійський"
+
+#: ../panel-plugin/dict.c:1129
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Німецько <-> Французький"
+
+#: ../panel-plugin/dict.c:1137
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Німецько <-> Іспанський"
+
+#: ../panel-plugin/dict.c:1144
+msgid "Use another website"
+msgstr "Використовувати інший сайт"
+
+#: ../panel-plugin/dict.c:1152
+msgid "URL:"
+msgstr "Посилання:"
+
+#: ../panel-plugin/dict.c:1165
+msgid ""
+"Enter an URL to a web site which offer translation services.\n"
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Введіть посилання на сайт з послугами перекладу.\n"
+"Використовуйте {слово} як макет для пошуку слова."
+
+#: ../panel-plugin/dict.c:1171
+msgid "Use a web site"
+msgstr "Використовувати сайт"
+
+#: ../panel-plugin/dict.c:1192
+msgid "Show text field in the panel"
+msgstr "Показувати текстове поле в панелі"
+
+#: ../panel-plugin/dict.c:1195
+msgid ""
+"This option can only be used when the panel has a horizontal orientation."
+msgstr ""
+"Цей параметр можна використати тоді, коли панель має горизонтальну орієнтацію"
+
+#. panel entry size
+#: ../panel-plugin/dict.c:1201
+msgid "Text field size :"
+msgstr "Розмір текстового поля :"
+
+#: ../panel-plugin/dict.c:1261 ../panel-plugin/dict.c:1547
+msgid "Ready."
+msgstr "Готово."
+
+#: ../panel-plugin/dict.c:1300
+msgid "Text to search:"
+msgstr "Текст для пошуку:"
+
+#: ../panel-plugin/dict.c:1401 ../panel-plugin/dict.desktop.in.in.h:1
+msgid "A plugin to query a Dict server."
+msgstr "Розширення для запиту Dict серверу."
+
+#: ../panel-plugin/dict.c:1405
+msgid "Developer"
+msgstr "Розробник"
+
+#: ../panel-plugin/dict.c:1495
+msgid "Look up a word"
+msgstr "Дивись вище слово"
+
+#: ../panel-plugin/dict.desktop.in.in.h:2
+msgid "Dict"
+msgstr "Словник"
