@@ -1,16 +1,16 @@
 # Catalan translation of xfce4-dict-plugin.
-# Copyright (C) 2006 xfce4-dict-plugin's copyright holder.
+# Copyright (C) 2006, 2007 xfce4-dict-plugin's copyright holder.
 # This file is distributed under the same license as the
 # xfce4-dict-plugin package.
-# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006.
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006, 2007.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 22:24+0100\n"
-"PO-Revision-Date: 2006-12-02 12:06+0100\n"
+"POT-Creation-Date: 2007-05-11 19:17+0200\n"
+"PO-Revision-Date: 2007-05-11 19:15+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Entrada no UTF8 invàlida."
 
 #: ../panel-plugin/dict.c:665
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
+msgstr "No es pt obrir el navegador. Comproveu les vostres preferències."
 
 #: ../panel-plugin/dict.c:838
 msgid "The server doesn't offer any databases."
@@ -100,37 +100,39 @@ msgstr "! (empra'ls tots, atura després de la primera coincidència)"
 
 #: ../panel-plugin/dict.c:1094
 msgid "Use a DICT server"
-msgstr ""
+msgstr "Empra un servidor DICT"
 
 #: ../panel-plugin/dict.c:1121
 msgid "dict.leo.org - German <-> English"
-msgstr ""
+msgstr "dict.leo.org - Alemany <-> Anglès"
 
 #: ../panel-plugin/dict.c:1129
 msgid "dict.leo.org - German <-> French"
-msgstr ""
+msgstr "dict.leo.org - Alemany <-> Francès"
 
 #: ../panel-plugin/dict.c:1137
 msgid "dict.leo.org - German <-> Spanish"
-msgstr ""
+msgstr "dict.leo.org - Alemany <-> Espanyol"
 
 #: ../panel-plugin/dict.c:1144
 msgid "Use another website"
-msgstr ""
+msgstr "Empra un altre lloc web"
 
 #: ../panel-plugin/dict.c:1152
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../panel-plugin/dict.c:1165
 msgid ""
 "Enter an URL to a web site which offer translation services.\n"
 "Use {word} as placeholder for the searched word."
 msgstr ""
+"Introduïu una url d'un lloc web que ofereixi un servei de traducció.\n"
+"Empreu {word} com com a paràmetre de substitució per la paraula a cercar."
 
 #: ../panel-plugin/dict.c:1171
 msgid "Use a web site"
-msgstr ""
+msgstr "Empra un lloc web"
 
 #: ../panel-plugin/dict.c:1192
 msgid "Show text field in the panel"
@@ -148,23 +150,23 @@ msgstr ""
 msgid "Text field size :"
 msgstr "Mida del camp de text:"
 
-#: ../panel-plugin/dict.c:1261 ../panel-plugin/dict.c:1546
+#: ../panel-plugin/dict.c:1261 ../panel-plugin/dict.c:1547
 msgid "Ready."
 msgstr "Llest."
 
-#: ../panel-plugin/dict.c:1299
+#: ../panel-plugin/dict.c:1300
 msgid "Text to search:"
 msgstr "Text a cercar:"
 
-#: ../panel-plugin/dict.c:1400 ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1401 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "Un connector per consultar servidors «Dict» (diccionaris)."
 
-#: ../panel-plugin/dict.c:1404
+#: ../panel-plugin/dict.c:1405
 msgid "Developer"
 msgstr "Desenvolupador"
 
-#: ../panel-plugin/dict.c:1494
+#: ../panel-plugin/dict.c:1495
 msgid "Look up a word"
 msgstr "Cerca una paraula"
 
