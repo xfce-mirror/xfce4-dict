@@ -1,7 +1,8 @@
-# Portuguese translation of the xfce4-dict-plugin package.
-# Copyright (C) 2006 Enrico Tröger
+# Brazilian Portuguese translation of the xfce4-dict-plugin package.
+# Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin package.
-# Bruno Jesus <00cpxxx@gmail.com>
+# Bruno Jesus <00cpxxx@gmail.com>, 2006.
+# Pablo Lerina <pabloalr@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""

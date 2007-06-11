@@ -1,7 +1,6 @@
-# Catalan translation of xfce4-dict-plugin.
-# Copyright (C) 2006, 2007 xfce4-dict-plugin's copyright holder.
-# This file is distributed under the same license as the
-# xfce4-dict-plugin package.
+# Catalan translation of the xfce4-dict-plugin package.
+# Copyright (C) 2006-2007 Enrico Tröger
+# This file is distributed under the same license as the xfce4-dict-plugin package.
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006, 2007.
 #
 #
