@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the xfce4-dict-plugin package.
 # Bruno Jesus <00cpxxx@gmail.com>, 2006.
 # Pablo Lerina <pabloalr@gmail.com>, 2007.
+# Vladimir Melo <vladimirmelo@foresightlinux.org>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-11 22:24+0100\n"
-"PO-Revision-Date: 2007-06-07 16:57-0300\n"
-"Last-Translator: Pablo Lerina <pabloalr@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <xfce-i18n@xfce.org>\n"
+"PO-Revision-Date: 2007-08-26 13:19-0300\n"
+"Last-Translator: Vladimir Melo <vladimirmelo@foresightlinux.org>\n"
+"Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +26,7 @@ msgstr "Não foi possível conectar ao servidor."
 #: ../panel-plugin/dict.c:419
 #: ../panel-plugin/dict.c:843
 msgid "Unknown error while quering the server."
-msgstr "Erro desconhecido enquanto o servidor era acessado."
+msgstr "Erro desconhecido ao consultar o servidor."
 
 #: ../panel-plugin/dict.c:402
 msgid "Server not ready."
@@ -34,17 +35,17 @@ msgstr "O servidor não está pronto."
 #: ../panel-plugin/dict.c:413
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Nenhuma entrade encontrada para \"%s\"."
+msgstr "Nenhum resultado encontrado para \"%s\"."
 
 #: ../panel-plugin/dict.c:424
 #, c-format
 msgid "%d definition(s) found."
-msgstr "%d definições encontradas."
+msgstr "%d definição(ões) encontrada(s)."
 
 #: ../panel-plugin/dict.c:541
 #, c-format
 msgid "Querying the server %s..."
-msgstr "Perguntando ao servidor %s..."
+msgstr "Consultando o servidor %s..."
 
 #: ../panel-plugin/dict.c:594
 msgid "Invalid input."
@@ -52,11 +53,11 @@ msgstr "Entrada inválida."
 
 #: ../panel-plugin/dict.c:604
 msgid "Invalid non-UTF8 input."
-msgstr "Entrada não está em UTF8."
+msgstr "Entrada não-UTF8 inválida."
 
 #: ../panel-plugin/dict.c:665
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Um navegador não pôde ser aberto. Por favor verifique suas preferências."
+msgstr "Não foi possível abrir o navegador. Por favor verifique suas preferências."
 
 #: ../panel-plugin/dict.c:838
 msgid "The server doesn't offer any databases."
@@ -72,7 +73,7 @@ msgstr "Propriedades"
 
 #: ../panel-plugin/dict.c:991
 msgid "Dictionary plugin"
-msgstr "Plugin de dicionário"
+msgstr "Plug-in de dicionário"
 
 #. server address
 #: ../panel-plugin/dict.c:1008
@@ -82,7 +83,7 @@ msgstr "Servidor :"
 #. server port
 #: ../panel-plugin/dict.c:1020
 msgid "Server Port :"
-msgstr "Porta :"
+msgstr "Porta do Servidor :"
 
 #. dictionary
 #: ../panel-plugin/dict.c:1028
@@ -95,11 +96,11 @@ msgstr "* (usar todos)"
 
 #: ../panel-plugin/dict.c:1034
 msgid "! (use all, stop after first match)"
-msgstr "! (usar todos, parando no primeiro encontrado)"
+msgstr "! (usar todos, parar após primeiro resultado)"
 
 #: ../panel-plugin/dict.c:1094
 msgid "Use a DICT server"
-msgstr "Use um servidor DICT"
+msgstr "Usar um servidor de DICIONÁRIO"
 
 #: ../panel-plugin/dict.c:1121
 msgid "dict.leo.org - German <-> English"
@@ -115,23 +116,23 @@ msgstr "dict.leo.org - Alemão <-> Espanhol"
 
 #: ../panel-plugin/dict.c:1144
 msgid "Use another website"
-msgstr "Use outro website"
+msgstr "Usar outro site"
 
 #: ../panel-plugin/dict.c:1152
 msgid "URL:"
-msgstr "URL"
+msgstr "URL:"
 
 #: ../panel-plugin/dict.c:1165
 msgid ""
 "Enter an URL to a web site which offer translation services.\n"
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"Informe uma URL para um website que oferece serviços de tradução.\n"
-" Use {word} como um substituto para a palavra pesquisada."
+"Inserir um URL de um site que ofereça serviços de tradução.\n"
+"Usar {word} como um espaço reservado para a palavra pesquisada."
 
 #: ../panel-plugin/dict.c:1171
 msgid "Use a web site"
-msgstr "Utilize um website"
+msgstr "Usar um site"
 
 #: ../panel-plugin/dict.c:1192
 msgid "Show text field in the panel"
@@ -139,7 +140,7 @@ msgstr "Mostrar um campo de texto no painel"
 
 #: ../panel-plugin/dict.c:1195
 msgid "This option can only be used when the panel has a horizontal orientation."
-msgstr "Essa opção só pode ser usada quando o painel está na horizontal."
+msgstr "Essa opção só pode ser usada quando o painel estiver na horizontal."
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1201
@@ -158,7 +159,7 @@ msgstr "Texto a procurar:"
 #: ../panel-plugin/dict.c:1400
 #: ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
-msgstr "Um plugin para encontrar palavras em servidores Dict."
+msgstr "Um plug-in para consultar um servidor de dicionário."
 
 #: ../panel-plugin/dict.c:1404
 msgid "Developer"
@@ -166,7 +167,7 @@ msgstr "Desenvolvedor"
 
 #: ../panel-plugin/dict.c:1494
 msgid "Look up a word"
-msgstr "Encontrar uma palavra"
+msgstr "Procurar uma palavra"
 
 #: ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
