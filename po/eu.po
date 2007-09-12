@@ -1,0 +1,170 @@
+# translation of xfce4-dict-plugin.po to Euskara
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Piarres Beobide <pi@beobide.net>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-dict-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-11 22:24+0100\n"
+"PO-Revision-Date: 2007-09-12 12:20+0200\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: Euskara <Librezale@librezale.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../panel-plugin/dict.c:387 ../panel-plugin/dict.c:821
+msgid "Could not connect to server."
+msgstr "Ezin da zerbitzarira konektatu."
+
+#: ../panel-plugin/dict.c:394 ../panel-plugin/dict.c:419
+#: ../panel-plugin/dict.c:843
+msgid "Unknown error while quering the server."
+msgstr "Errore ezezaguna zerbitzaria galdekatzerakoan."
+
+#: ../panel-plugin/dict.c:402
+msgid "Server not ready."
+msgstr "Zerbitzaria ez dago prest."
+
+#: ../panel-plugin/dict.c:413
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Ez  da parekatzerik aurkitu \"%s\"-rentzat."
+
+#: ../panel-plugin/dict.c:424
+#, c-format
+msgid "%d definition(s) found."
+msgstr "%d definizio aurkitu dira"
+
+#: ../panel-plugin/dict.c:541
+#, c-format
+msgid "Querying the server %s..."
+msgstr "%s zerbitzaria galdekatzen..."
+
+#: ../panel-plugin/dict.c:594
+msgid "Invalid input."
+msgstr "Sarrera baliogabea."
+
+#: ../panel-plugin/dict.c:604
+msgid "Invalid non-UTF8 input."
+msgstr "Ez-UTF8 sarrera baliogabea"
+
+#: ../panel-plugin/dict.c:665
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "Nabigatzailea ezin da ireki. Mesedez egiaztatu zure hobespenak."
+
+#: ../panel-plugin/dict.c:838
+msgid "The server doesn't offer any databases."
+msgstr "Zerbitzariak ez du datubaserik eskaintzen."
+
+#: ../panel-plugin/dict.c:898
+msgid "You have chosen an invalid dictionary entry."
+msgstr "Hiztegi sarrera baliogabe bat hautatu duzu."
+
+#: ../panel-plugin/dict.c:975
+msgid "Properties"
+msgstr "Propietateak"
+
+#: ../panel-plugin/dict.c:991
+msgid "Dictionary plugin"
+msgstr "Hiztegi Plugina"
+
+#. server address
+#: ../panel-plugin/dict.c:1008
+msgid "Server :"
+msgstr "Zerbitzaria:"
+
+#. server port
+#: ../panel-plugin/dict.c:1020
+msgid "Server Port :"
+msgstr "Zerbitzari ataka:"
+
+#. dictionary
+#: ../panel-plugin/dict.c:1028
+msgid "Dictionary :"
+msgstr "Hiztegia:"
+
+#: ../panel-plugin/dict.c:1032
+msgid "* (use all)"
+msgstr "* (dena erabili)"
+
+#: ../panel-plugin/dict.c:1034
+msgid "! (use all, stop after first match)"
+msgstr "! (dena erabili, lehen parekatzean gelditu)"
+
+#: ../panel-plugin/dict.c:1094
+msgid "Use a DICT server"
+msgstr "DICT zerbitzari bat erabili"
+
+#: ../panel-plugin/dict.c:1121
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Alemaniera <-> Ingelesa"
+
+#: ../panel-plugin/dict.c:1129
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Alemaniera <-> Frantsesa"
+
+#: ../panel-plugin/dict.c:1137
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Alemaniera <-> Gaztelania"
+
+#: ../panel-plugin/dict.c:1144
+msgid "Use another website"
+msgstr "Beste webgune bat erabili"
+
+#: ../panel-plugin/dict.c:1152
+msgid "URL:"
+msgstr "URL-a:"
+
+#: ../panel-plugin/dict.c:1165
+msgid ""
+"Enter an URL to a web site which offer translation services.\n"
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Idatzi itzulpen zerbitzuak eskeintzen dituen webgunearen URL-a.\n"
+"Erabili {hitza} bilaketa hitzaren kokalekuan."
+
+#: ../panel-plugin/dict.c:1171
+msgid "Use a web site"
+msgstr "Webgune bat erabili"
+
+#: ../panel-plugin/dict.c:1192
+msgid "Show text field in the panel"
+msgstr "Testu eremua panelean ikusi"
+
+#: ../panel-plugin/dict.c:1195
+msgid "This option can only be used when the panel has a horizontal orientation."
+msgstr "Aukera hau panela horizontalean dagoenean bakarrik erabili daiteke."
+
+#. panel entry size
+#: ../panel-plugin/dict.c:1201
+msgid "Text field size :"
+msgstr "Testu eremu tamaina:"
+
+#: ../panel-plugin/dict.c:1261 ../panel-plugin/dict.c:1546
+msgid "Ready."
+msgstr "Prest."
+
+#: ../panel-plugin/dict.c:1299
+msgid "Text to search:"
+msgstr "Bilatzeko Testua:"
+
+#: ../panel-plugin/dict.c:1400 ../panel-plugin/dict.desktop.in.in.h:1
+msgid "A plugin to query a Dict server."
+msgstr "Hiztegi zerbitzari ba galdekatzeko Plugina."
+
+#: ../panel-plugin/dict.c:1404
+msgid "Developer"
+msgstr "Garatzailea"
+
+#: ../panel-plugin/dict.c:1494
+msgid "Look up a word"
+msgstr "hitz bat bilatu"
+
+#: ../panel-plugin/dict.desktop.in.in.h:2
+msgid "Dict"
+msgstr "Dict"
+
