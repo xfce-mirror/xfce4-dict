@@ -1,3 +1,9 @@
+2007-10-22  enrico
+
+	* Fixed missing application icon in taskbar and window frame.
+	* Added missing include of stdlib to avoid compiler warnings.
+
+
 2007-01-20 enrico
 
 	* Fixed possible crashes when showing the main window after it was closed.

@@ -21,6 +21,7 @@
 #include <config.h>
 #endif
 
+#include <stdlib.h>
 #include <gtk/gtk.h>
 
 #include <libxfcegui4/libxfcegui4.h>
@@ -1273,12 +1274,16 @@ static void dict_create_main_dialog(DictData *dd)
 	GtkWidget *main_box;
 	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *clear_button, *close_button;
 	GtkWidget *sep, *align, *scrolledwindow_results;
+	GdkPixbuf *icon;
 	//GtkWidget *dict_box, *dict_label, *combo_event_box;
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(dd->window), "xfce4-dict-plugin");
-	gtk_window_set_icon(GTK_WINDOW(dd->window), dd->icon);
 	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
+
+	icon = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
+	gtk_window_set_icon(GTK_WINDOW(dd->window), icon);
+	g_object_unref(icon);
 
 	g_signal_connect(G_OBJECT(dd->window), "delete_event",
 		G_CALLBACK(gtk_widget_hide_on_delete), NULL);
