@@ -1,0 +1,172 @@
+# Italian translations for xfce4-dict-plugin package.
+# Copyright (C) 2006-2007 Enrico Tröger
+# This file is distributed under the same license as the xfce4-dict-plugin package.
+# Fabio Riga <usul@aruba.it>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce 4-dict-plugin 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-11 22:24+0100\n"
+"PO-Revision-Date: 2007-06-27 14:44+0200\n"
+"Last-Translator: Fabio Riga <usul@aruba.it>\n"
+"Language-Team: Italian <xfce-i18n@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/dict.c:387 ../panel-plugin/dict.c:821
+msgid "Could not connect to server."
+msgstr "Impossibile connettersi al server."
+
+#: ../panel-plugin/dict.c:394 ../panel-plugin/dict.c:419
+#: ../panel-plugin/dict.c:843
+msgid "Unknown error while quering the server."
+msgstr "Errore sconosciuto durante la richiesta al server."
+
+#: ../panel-plugin/dict.c:402
+msgid "Server not ready."
+msgstr "Il server non è pronto."
+
+#: ../panel-plugin/dict.c:413
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Nessuna corrispondenza trovata per \"%s\"."
+
+#: ../panel-plugin/dict.c:424
+#, c-format
+msgid "%d definition(s) found."
+msgstr "%d definizione/i trovata/e."
+
+#: ../panel-plugin/dict.c:541
+#, c-format
+msgid "Querying the server %s..."
+msgstr "Richiesta al server %s in corso"
+
+#: ../panel-plugin/dict.c:594
+msgid "Invalid input."
+msgstr "Input non valido."
+
+#: ../panel-plugin/dict.c:604
+msgid "Invalid non-UTF8 input."
+msgstr "Input non UTF8 non valido."
+
+#: ../panel-plugin/dict.c:665
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "Impossibile aprire il navigatore. Controllare le preferenze."
+
+#: ../panel-plugin/dict.c:838
+msgid "The server doesn't offer any databases."
+msgstr "Il server non offre nessun database."
+
+#: ../panel-plugin/dict.c:898
+msgid "You have chosen an invalid dictionary entry."
+msgstr "È stata scelta una voce di dizionario non valida."
+
+#: ../panel-plugin/dict.c:975
+msgid "Properties"
+msgstr "Proprietà"
+
+#: ../panel-plugin/dict.c:991
+msgid "Dictionary plugin"
+msgstr "Estensione dizionario"
+
+#. server address
+#: ../panel-plugin/dict.c:1008
+msgid "Server :"
+msgstr "Server :"
+
+#. server port
+#: ../panel-plugin/dict.c:1020
+msgid "Server Port :"
+msgstr "Porta del server :"
+
+#. dictionary
+#: ../panel-plugin/dict.c:1028
+msgid "Dictionary :"
+msgstr "Dizionario :"
+
+#: ../panel-plugin/dict.c:1032
+msgid "* (use all)"
+msgstr "* (usa tutti)"
+
+#: ../panel-plugin/dict.c:1034
+msgid "! (use all, stop after first match)"
+msgstr "! (usa tutti, ferma alla prima corrispondenza)"
+
+#: ../panel-plugin/dict.c:1094
+msgid "Use a DICT server"
+msgstr "Usa un server DICT"
+
+#: ../panel-plugin/dict.c:1121
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Tedesco <-> Inglese"
+
+#: ../panel-plugin/dict.c:1129
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Tedesco <-> Francese"
+
+#: ../panel-plugin/dict.c:1137
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Tedesco <-> Spagnolo"
+
+#: ../panel-plugin/dict.c:1144
+msgid "Use another website"
+msgstr "Usa un altro sito"
+
+#: ../panel-plugin/dict.c:1152
+msgid "URL:"
+msgstr "URL:"
+
+#: ../panel-plugin/dict.c:1165
+#, fuzzy
+msgid ""
+"Enter an URL to a web site which offer translation services.\n"
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Inserire una URL per un sito che offre servizi di traduzione.\n"
+"Usare {parola} come rimpiazzo per la parola cercata."
+
+#: ../panel-plugin/dict.c:1171
+msgid "Use a web site"
+msgstr "Usa un sito internet"
+
+#: ../panel-plugin/dict.c:1192
+msgid "Show text field in the panel"
+msgstr "Mostra il campo per il testo nel pannello"
+
+#: ../panel-plugin/dict.c:1195
+msgid ""
+"This option can only be used when the panel has a horizontal orientation."
+msgstr ""
+"Questa opzione è utilizzabile solo se il pannello è orientato orizzontalmente."
+
+#. panel entry size
+#: ../panel-plugin/dict.c:1201
+msgid "Text field size :"
+msgstr "Dimensione del campo per il testo :"
+
+#: ../panel-plugin/dict.c:1261 ../panel-plugin/dict.c:1546
+msgid "Ready."
+msgstr "Pronto."
+
+#: ../panel-plugin/dict.c:1299
+msgid "Text to search:"
+msgstr "Testo da cercare:"
+
+#: ../panel-plugin/dict.c:1400 ../panel-plugin/dict.desktop.in.in.h:1
+msgid "A plugin to query a Dict server."
+msgstr "Un'estensione per interrogare un server Dict."
+
+#: ../panel-plugin/dict.c:1404
+msgid "Developer"
+msgstr "Sviluppatore"
+
+#: ../panel-plugin/dict.c:1494
+msgid "Look up a word"
+msgstr "Cerca una parola"
+
+#: ../panel-plugin/dict.desktop.in.in.h:2
+msgid "Dict"
+msgstr "Dict"
