@@ -1,0 +1,173 @@
+# Latvian translation of the xfce4-dict-plugin package.
+# opyright (C) 2006-2007 Enrico TrÃ¶ger
+# This file is distributed under the same license as the fce4-dict-plugin package.
+# Rihards Prieditis <rprieditis@inbox.lv>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fce4-dict-plugin 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-11 22:24+0100\n"
+"PO-Revision-Date: 2007-11-16 22:02+0300\n"
+"Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
+"Language-Team: Latvian <rprieditis@inbox.lv>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/dict.c:387
+#: ../panel-plugin/dict.c:821
+msgid "Could not connect to server."
+msgstr "Nevarēju savienoties ar serveri"
+
+#: ../panel-plugin/dict.c:394
+#: ../panel-plugin/dict.c:419
+#: ../panel-plugin/dict.c:843
+msgid "Unknown error while quering the server."
+msgstr "Nezināma kļūda vaicājot serveri."
+
+#: ../panel-plugin/dict.c:402
+msgid "Server not ready."
+msgstr "Serveris nav gatavs."
+
+#: ../panel-plugin/dict.c:413
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Nekas netika atrasts uz \"%s\""
+
+#: ../panel-plugin/dict.c:424
+#, c-format
+msgid "%d definition(s) found."
+msgstr "%d definīcija(as) atrasta(as)."
+
+#: ../panel-plugin/dict.c:541
+#, c-format
+msgid "Querying the server %s..."
+msgstr "Vaicāju serverim %s..."
+
+#: ../panel-plugin/dict.c:594
+msgid "Invalid input."
+msgstr "Nederīgs ievads"
+
+#: ../panel-plugin/dict.c:604
+msgid "Invalid non-UTF8 input."
+msgstr "Nederīgs ne-UTF8 ievads."
+
+#: ../panel-plugin/dict.c:665
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "Pārlūks nav atverams. Lūdzu pārbaudiet uzstādījumus."
+
+#: ../panel-plugin/dict.c:838
+msgid "The server doesn't offer any databases."
+msgstr "Serveris nepiedāvā nevienu datubāzi."
+
+#: ../panel-plugin/dict.c:898
+msgid "You have chosen an invalid dictionary entry."
+msgstr "Jūs esat izvēlējies nederīgu vārdnīcas ierakstu."
+
+#: ../panel-plugin/dict.c:975
+msgid "Properties"
+msgstr "Rekvizīti"
+
+#: ../panel-plugin/dict.c:991
+msgid "Dictionary plugin"
+msgstr "Vārdnīcu spraudnis"
+
+#. server address
+#: ../panel-plugin/dict.c:1008
+msgid "Server :"
+msgstr "Serveris :"
+
+#. server port
+#: ../panel-plugin/dict.c:1020
+msgid "Server Port :"
+msgstr "Servera Ports :"
+
+#. dictionary
+#: ../panel-plugin/dict.c:1028
+msgid "Dictionary :"
+msgstr "Vārdnīca :"
+
+#: ../panel-plugin/dict.c:1032
+msgid "* (use all)"
+msgstr "* (izmanto visu)"
+
+#: ../panel-plugin/dict.c:1034
+msgid "! (use all, stop after first match)"
+msgstr "! (izmantot visu, apstāties pie pirmā rezultāta)"
+
+#: ../panel-plugin/dict.c:1094
+msgid "Use a DICT server"
+msgstr "Izmantot DICT serveri"
+
+#: ../panel-plugin/dict.c:1121
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Vācu <-> Angļu"
+
+#: ../panel-plugin/dict.c:1129
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Vācu <-> Franču"
+
+#: ../panel-plugin/dict.c:1137
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Vācu <-> Spāņu"
+
+#: ../panel-plugin/dict.c:1144
+msgid "Use another website"
+msgstr "Izmantot citu mājas lapu"
+
+#: ../panel-plugin/dict.c:1152
+msgid "URL:"
+msgstr "URL:"
+
+#: ../panel-plugin/dict.c:1165
+msgid ""
+"Enter an URL to a web site which offer translation services.\n"
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Ievadiet URL uz mājas lapu, kura piedāvā tūlkošanas pakalpojumus\n"
+"Izmantojiet {word}, kā aizvietotāju meklējamajam vārdam."
+
+#: ../panel-plugin/dict.c:1171
+msgid "Use a web site"
+msgstr "Izmantot mājas lapu"
+
+#: ../panel-plugin/dict.c:1192
+msgid "Show text field in the panel"
+msgstr "Rādit teksta lauku panelī."
+
+#: ../panel-plugin/dict.c:1195
+msgid "This option can only be used when the panel has a horizontal orientation."
+msgstr "Šo opciju var izmantot tikai ar horezontālu paneļa orentāciju."
+
+#. panel entry size
+#: ../panel-plugin/dict.c:1201
+msgid "Text field size :"
+msgstr "Teksta lauka izmērs :"
+
+#: ../panel-plugin/dict.c:1261
+#: ../panel-plugin/dict.c:1546
+msgid "Ready."
+msgstr "Gatavs."
+
+#: ../panel-plugin/dict.c:1299
+msgid "Text to search:"
+msgstr "Meklējamais teksts:"
+
+#: ../panel-plugin/dict.c:1400
+#: ../panel-plugin/dict.desktop.in.in.h:1
+msgid "A plugin to query a Dict server."
+msgstr "Spraudnis Dict serveru vaicāšanai."
+
+#: ../panel-plugin/dict.c:1404
+msgid "Developer"
+msgstr "Izstrādāja"
+
+#: ../panel-plugin/dict.c:1494
+msgid "Look up a word"
+msgstr "Meklēt vārdu"
+
+#: ../panel-plugin/dict.desktop.in.in.h:2
+msgid "Dict"
+msgstr "Vārdnīca"
+
