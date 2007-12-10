@@ -1269,13 +1269,31 @@ static void dict_close_button_clicked(GtkWidget *button, DictData *dd)
 }
 
 
+static void dict_search_mode_dict_toggled(GtkToggleButton *togglebutton, DictData *dd)
+{
+	dd->mode = DICTMODE_DICT;
+}
+
+
+static void dict_search_mode_web_toggled(GtkToggleButton *togglebutton, DictData *dd)
+{
+	dd->mode = DICTMODE_WEB;
+}
+
+
+static void dict_search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *dd)
+{
+	dd->mode = DICTMODE_SPELL;
+}
+
+
 static void dict_create_main_dialog(DictData *dd)
 {
 	GtkWidget *main_box;
 	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *clear_button, *close_button;
 	GtkWidget *sep, *align, *scrolledwindow_results;
 	GdkPixbuf *icon;
-	//GtkWidget *dict_box, *dict_label, *combo_event_box;
+	GtkWidget *method_chooser, *radio, *label;
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(dd->window), "xfce4-dict-plugin");
@@ -1344,30 +1362,33 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_widget_show(sep);
 	gtk_box_pack_end(GTK_BOX(entry_box), sep, FALSE, FALSE, 5);
 
+	// search method chooser
+	method_chooser = gtk_hbox_new(FALSE, 0);
+	gtk_widget_show(method_chooser);
+	gtk_box_pack_start(GTK_BOX(main_box), method_chooser, FALSE, FALSE, 0);
+
+	label = gtk_label_new(_("Search in:"));
+	gtk_widget_show(label);
+	gtk_box_pack_start(GTK_BOX(method_chooser), label, FALSE, FALSE, 6);
+
+	radio = gtk_radio_button_new_with_label(NULL, _("Dict"));
+	gtk_widget_show(radio);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode == DICTMODE_DICT));
+	g_signal_connect(radio, "toggled", G_CALLBACK(dict_search_mode_dict_toggled), dd);
+	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
+
+	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Web"));
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode == DICTMODE_WEB));
+	g_signal_connect(radio, "toggled", G_CALLBACK(dict_search_mode_web_toggled), dd);
+	gtk_widget_show(radio);
+	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 /*
-	// dictionary chooser area
-	dict_box = gtk_hbox_new(FALSE, 10);
-	gtk_widget_show(dict_box);
-	gtk_box_pack_start(GTK_BOX(main_box), dict_box, FALSE, FALSE, 5);
-
-	dict_label = gtk_label_new(_("Dictioanry to use:"));
-	gtk_widget_show(dict_label);
-	gtk_box_pack_start(GTK_BOX(dict_box), dict_label, FALSE, FALSE, 0);
-
-    dd->main_dict_combo = gtk_combo_box_new_text();
-    gtk_combo_box_append_text(GTK_COMBO_BOX(dd->main_dict_combo), "*");
-    gtk_combo_box_append_text(GTK_COMBO_BOX(dd->main_dict_combo), "!");
-
-    gtk_widget_show(dd->main_dict_combo);
-
-    combo_event_box = gtk_event_box_new();
-    gtk_widget_show(combo_event_box);
-	gtk_container_add(GTK_CONTAINER(combo_event_box), dd->main_dict_combo);
-    gtk_tooltips_set_tip(dd->tooltips, combo_event_box,
-		_("Define the dictionary to be used.\nChoose \"*\" to use all available dictionaries.\nChoose \"!\" to use all available dictionaries, but stop the search after first result."), NULL);
-	gtk_box_pack_start(GTK_BOX(dict_box), combo_event_box, FALSE, FALSE, 0);
+	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Spellcheck"));
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode == DICTMODE_SPELL));
+	g_signal_connect(radio, "toggled", G_CALLBACK(dict_search_mode_spell_toggled), dd);
+	gtk_widget_show(radio);
+	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 */
-
 	// results area
 	scrolledwindow_results = gtk_scrolled_window_new(NULL, NULL);
 	gtk_widget_show(scrolledwindow_results);
@@ -1407,7 +1428,7 @@ static void dict_about_dialog(GtkWidget *widget, DictData *dd)
                                XFCE_COPYRIGHT_TEXT("2006-2007", "Enrico Tröger"),
                                XFCE_LICENSE_GPL);
 
-	xfce_about_info_add_credit(info, "Enrico Tröger", "enrico.troeger@uvena.de", _("Developer"));
+	xfce_about_info_add_credit(info, "Enrico Tröger", "enrico(dot)troeger(at)uvena(dot)de", _("Developer"));
 	xfce_about_info_set_homepage(info, "http://goodies.xfce.org");
 
 	dialog = xfce_about_dialog_new_with_values(GTK_WINDOW(widget), info, dd->icon);
@@ -1509,20 +1530,15 @@ static void dict_construct(XfcePanelPlugin *plugin)
     dict_create_main_dialog(dd);
 
     g_signal_connect(plugin, "free-data", G_CALLBACK(dict_free_data), dd);
-
     g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_set_size), dd);
-
 	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_panel_change_orientation), dd);
-
     g_signal_connect(plugin, "style-set", G_CALLBACK(dict_style_set), dd);
-
     g_signal_connect(plugin, "save", G_CALLBACK(dict_write_rc_file), dd);
+    g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_properties_dialog), dd);
+    g_signal_connect(plugin, "about", G_CALLBACK(dict_about_dialog), dd);
 
     xfce_panel_plugin_menu_show_configure(plugin);
-    g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_properties_dialog), dd);
-
     xfce_panel_plugin_menu_show_about(plugin);
-    g_signal_connect(plugin, "about", G_CALLBACK(dict_about_dialog), dd);
 
 	/* panel entry */
 	dd->panel_entry = gtk_entry_new();
