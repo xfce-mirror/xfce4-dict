@@ -1,3 +1,9 @@
+2007-12-14  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+
+	* de.po: Update of German translation.
+	* xfce4-dict-plugin.pot, *.po: Update Project-Id-Version of language
+	files.
+
 2007-12-07  Maximilian Schleiss <maximilian@xfce.org>
 
 	* de.po: German translation update
