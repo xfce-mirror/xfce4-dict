@@ -3,6 +3,8 @@ plugin_PROGRAMS = xfce4-dict-plugin
 
 xfce4_dict_plugin_SOURCES =						\
 	inline-icon.h								\
+	aspell.c									\
+	dict.h										\
 	dict.c
 
 xfce4_dict_plugin_CFLAGS =						\
@@ -40,6 +42,4 @@ CLEANFILES =								\
 	$(desktop_DATA)
 
 hicolor48dir = $(datadir)/icons/hicolor/scalable/apps
-
-hicolor48_DATA = \
-	dict-icon.svg
+hicolor48_DATA = dict-icon.svg
