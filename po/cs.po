@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-12-18 17:35+0100\n"
-"PO-Revision-Date: 2007-12-17 21:52+0100\n"
+"PO-Revision-Date: 2007-12-18 22:41+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -76,20 +76,17 @@ msgstr "Zásuvný modul slovník"
 
 #. server address
 #: ../panel-plugin/dict.c:984
-#, fuzzy
 msgid "Server:"
 msgstr "Server:"
 
 #. server port
 #: ../panel-plugin/dict.c:996
-#, fuzzy
 msgid "Server Port:"
 msgstr "Port serveru:"
 
 #. dictionary
 #: ../panel-plugin/dict.c:1004
 #: ../panel-plugin/dict.c:1164
-#, fuzzy
 msgid "Dictionary:"
 msgstr "Slovník:"
 
@@ -155,7 +152,6 @@ msgstr "Tuto možnost lze použít pouze tehdy, je-li panel ve vodorovné pozici
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1217
-#, fuzzy
 msgid "Text field size:"
 msgstr "Velikost textového pole:"
 
