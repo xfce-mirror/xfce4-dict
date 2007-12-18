@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-14 15:25+0100\n"
+"POT-Creation-Date: 2007-12-18 17:35+0100\n"
 "PO-Revision-Date: 2007-03-30 21:27+1000\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB\n"
@@ -75,17 +75,20 @@ msgstr "Dictionary plugin"
 
 #. server address
 #: ../panel-plugin/dict.c:984
-msgid "Server :"
+#, fuzzy
+msgid "Server:"
 msgstr "Server :"
 
 #. server port
 #: ../panel-plugin/dict.c:996
-msgid "Server Port :"
+#, fuzzy
+msgid "Server Port:"
 msgstr "Server Port :"
 
 #. dictionary
 #: ../panel-plugin/dict.c:1004 ../panel-plugin/dict.c:1164
-msgid "Dictionary :"
+#, fuzzy
+msgid "Dictionary:"
 msgstr "Dictionary :"
 
 #: ../panel-plugin/dict.c:1008
@@ -133,7 +136,7 @@ msgid "Use a web site"
 msgstr "Use a web site"
 
 #: ../panel-plugin/dict.c:1153
-msgid "Aspell program :"
+msgid "Aspell program:"
 msgstr ""
 
 #: ../panel-plugin/dict.c:1194
@@ -152,7 +155,8 @@ msgstr ""
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1217
-msgid "Text field size :"
+#, fuzzy
+msgid "Text field size:"
 msgstr "Text field size :"
 
 #: ../panel-plugin/dict.c:1277 ../panel-plugin/dict.c:1585

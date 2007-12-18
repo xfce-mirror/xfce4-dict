@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-14 15:25+0100\n"
-"PO-Revision-Date: 2007-12-14 15:27+0100\n"
+"POT-Creation-Date: 2007-12-18 17:35+0100\n"
+"PO-Revision-Date: 2007-12-18 17:36+0100\n"
 "Last-Translator: Enrico Tröger <enrico.troeger@uvena.de>\n"
 "Language-Team: German <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,13 +18,11 @@ msgstr ""
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/dict.c:300
-#: ../panel-plugin/dict.c:764
+#: ../panel-plugin/dict.c:300 ../panel-plugin/dict.c:764
 msgid "Could not connect to server."
 msgstr "Konnte keine Verbindung zum Server herstellen."
 
-#: ../panel-plugin/dict.c:307
-#: ../panel-plugin/dict.c:332
+#: ../panel-plugin/dict.c:307 ../panel-plugin/dict.c:332
 #: ../panel-plugin/dict.c:786
 msgid "Unknown error while quering the server."
 msgstr "Unbekannter Fehler beim Abfragen des Servers."
@@ -58,7 +56,9 @@ msgstr "Ungültige Eingabe: kein UTF8-Format."
 
 #: ../panel-plugin/dict.c:579
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Es konnte kein Browser geöffnet werden. Biite überprüfen Sie Ihre Einstellungen."
+msgstr ""
+"Es konnte kein Browser geöffnet werden. Biite überprüfen Sie Ihre "
+"Einstellungen."
 
 #: ../panel-plugin/dict.c:781
 msgid "The server doesn't offer any databases."
@@ -78,18 +78,17 @@ msgstr "Wörterbuch-Plugin"
 
 #. server address
 #: ../panel-plugin/dict.c:984
-msgid "Server :"
+msgid "Server:"
 msgstr "Server:"
 
 #. server port
 #: ../panel-plugin/dict.c:996
-msgid "Server Port :"
+msgid "Server Port:"
 msgstr "Server-Port:"
 
 #. dictionary
-#: ../panel-plugin/dict.c:1004
-#: ../panel-plugin/dict.c:1164
-msgid "Dictionary :"
+#: ../panel-plugin/dict.c:1004 ../panel-plugin/dict.c:1164
+msgid "Dictionary:"
 msgstr "Wörterbuch:"
 
 #: ../panel-plugin/dict.c:1008
@@ -137,7 +136,7 @@ msgid "Use a web site"
 msgstr "Webseite benutzen"
 
 #: ../panel-plugin/dict.c:1153
-msgid "Aspell program :"
+msgid "Aspell program:"
 msgstr "Aspell Programm:"
 
 #: ../panel-plugin/dict.c:1194
@@ -149,16 +148,18 @@ msgid "Show text field in the panel"
 msgstr "Zeige Textfeld in der Leiste"
 
 #: ../panel-plugin/dict.c:1211
-msgid "This option can only be used when the panel has a horizontal orientation."
-msgstr "Diese Option kann nur benutzt werden, wenn die Leiste horizontal ausgerichtet ist."
+msgid ""
+"This option can only be used when the panel has a horizontal orientation."
+msgstr ""
+"Diese Option kann nur benutzt werden, wenn die Leiste horizontal "
+"ausgerichtet ist."
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1217
-msgid "Text field size :"
+msgid "Text field size:"
 msgstr "Textfeldgröße:"
 
-#: ../panel-plugin/dict.c:1277
-#: ../panel-plugin/dict.c:1585
+#: ../panel-plugin/dict.c:1277 ../panel-plugin/dict.c:1585
 msgid "Ready."
 msgstr "Fertig."
 
@@ -170,8 +171,7 @@ msgstr "Suchwort:"
 msgid "Search with:"
 msgstr "Suchen mit:"
 
-#: ../panel-plugin/dict.c:1392
-#: ../panel-plugin/dict.desktop.in.in.h:2
+#: ../panel-plugin/dict.c:1392 ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
 msgstr "Dict"
 
@@ -183,8 +183,7 @@ msgstr "Web"
 msgid "Spellcheck"
 msgstr "Rechtschreibprüfung"
 
-#: ../panel-plugin/dict.c:1446
-#: ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1446 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "Plugin zum Abfragen eines Dict-Servers."
 
@@ -198,9 +197,10 @@ msgstr "Ein Wort nachschlagen"
 
 #~ msgid "Input is too long."
 #~ msgstr "Eingabe ist zu lang."
+
 #~ msgid "Answer was too long, it has been truncated (%d definition(s) found)."
 #~ msgstr ""
 #~ "Die Antwort war zu lang, sie wurde gekürzt (%d Definition(en) gefunden)."
+
 #~ msgid "-- The received list was too long. It has been truncated."
 #~ msgstr "-- Die empfangene Liste ist zu lang, sie wurde gekürzt."
-

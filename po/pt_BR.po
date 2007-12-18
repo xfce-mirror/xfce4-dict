@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-14 15:25+0100\n"
+"POT-Creation-Date: 2007-12-18 17:35+0100\n"
 "PO-Revision-Date: 2007-08-26 13:19-0300\n"
 "Last-Translator: Vladimir Melo <vladimirmelo@foresightlinux.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -76,17 +76,20 @@ msgstr "Plug-in de dicionário"
 
 #. server address
 #: ../panel-plugin/dict.c:984
-msgid "Server :"
+#, fuzzy
+msgid "Server:"
 msgstr "Servidor :"
 
 #. server port
 #: ../panel-plugin/dict.c:996
-msgid "Server Port :"
+#, fuzzy
+msgid "Server Port:"
 msgstr "Porta do Servidor :"
 
 #. dictionary
 #: ../panel-plugin/dict.c:1004 ../panel-plugin/dict.c:1164
-msgid "Dictionary :"
+#, fuzzy
+msgid "Dictionary:"
 msgstr "Dicionário :"
 
 #: ../panel-plugin/dict.c:1008
@@ -134,7 +137,7 @@ msgid "Use a web site"
 msgstr "Usar um site"
 
 #: ../panel-plugin/dict.c:1153
-msgid "Aspell program :"
+msgid "Aspell program:"
 msgstr ""
 
 #: ../panel-plugin/dict.c:1194
@@ -152,7 +155,8 @@ msgstr "Essa opção só pode ser usada quando o painel estiver na horizontal."
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1217
-msgid "Text field size :"
+#, fuzzy
+msgid "Text field size:"
 msgstr "Tamanho do campo de texto :"
 
 #: ../panel-plugin/dict.c:1277 ../panel-plugin/dict.c:1585

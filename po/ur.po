@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-14 15:25+0100\n"
+"POT-Creation-Date: 2007-12-18 17:35+0100\n"
 "PO-Revision-Date: 2007-10-26 20:47+0500\n"
 "Last-Translator: Muhammad Ali Makki <makk.ma@gmail.com>\n"
 "Language-Team: Urdu <makki.ma@gmail.com>\n"
@@ -76,17 +76,20 @@ msgstr "ڈکشنری پلگ ان"
 
 #. server address
 #: ../panel-plugin/dict.c:984
-msgid "Server :"
+#, fuzzy
+msgid "Server:"
 msgstr "سرور:"
 
 #. server port
 #: ../panel-plugin/dict.c:996
-msgid "Server Port :"
+#, fuzzy
+msgid "Server Port:"
 msgstr "سرور پورٹ:"
 
 #. dictionary
 #: ../panel-plugin/dict.c:1004 ../panel-plugin/dict.c:1164
-msgid "Dictionary :"
+#, fuzzy
+msgid "Dictionary:"
 msgstr "ڈکشنری:"
 
 #: ../panel-plugin/dict.c:1008
@@ -134,7 +137,7 @@ msgid "Use a web site"
 msgstr "ویب سائٹ استعمال کریں"
 
 #: ../panel-plugin/dict.c:1153
-msgid "Aspell program :"
+msgid "Aspell program:"
 msgstr ""
 
 #: ../panel-plugin/dict.c:1194
@@ -152,7 +155,8 @@ msgstr "یہ آپشن صرف تب استعمال ہوتا ہے جب پینل ا�
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1217
-msgid "Text field size :"
+#, fuzzy
+msgid "Text field size:"
 msgstr "متن فیلڈ حجم:"
 
 #: ../panel-plugin/dict.c:1277 ../panel-plugin/dict.c:1585

@@ -981,7 +981,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 		GtkWidget *label1, *label2, *table, *button_get_list, *frame1;
 
 		/* server address */
-		label1 = gtk_label_new_with_mnemonic(_("Server :"));
+		label1 = gtk_label_new_with_mnemonic(_("Server:"));
 		gtk_widget_show(label1);
 
 		dd->server_entry = gtk_entry_new();
@@ -993,7 +993,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 		gtk_widget_show(dd->server_entry);
 
 		/* server port */
-		label2 = gtk_label_new_with_mnemonic(_("Server Port :"));
+		label2 = gtk_label_new_with_mnemonic(_("Server Port:"));
 		gtk_widget_show(label2);
 
 		dd->port_spinner = gtk_spin_button_new_with_range(0.0, 65536.0, 1.0);
@@ -1001,7 +1001,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 		gtk_widget_show(dd->port_spinner);
 
 		/* dictionary */
-		label3 = gtk_label_new_with_mnemonic(_("Dictionary :"));
+		label3 = gtk_label_new_with_mnemonic(_("Dictionary:"));
 		gtk_widget_show(label3);
 
 		dd->dict_combo = gtk_combo_box_new_text();
@@ -1150,7 +1150,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 	{
 		GtkWidget *label4, *label5, *table, *frame3;
 
-		label4 = gtk_label_new_with_mnemonic(_("Aspell program :"));
+		label4 = gtk_label_new_with_mnemonic(_("Aspell program:"));
 		gtk_widget_show(label4);
 
 		dd->spell_entry = gtk_entry_new();
@@ -1161,7 +1161,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 		}
 		gtk_widget_show(dd->spell_entry);
 
-		label5 = gtk_label_new_with_mnemonic(_("Dictionary :"));
+		label5 = gtk_label_new_with_mnemonic(_("Dictionary:"));
 		gtk_widget_show(label5);
 
 		dd->spell_combo = gtk_combo_box_new_text();
@@ -1214,7 +1214,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 													G_CALLBACK(dict_show_panel_entry_toggled), dd);
 
 		/* panel entry size */
-		dd->panel_entry_size_label = gtk_label_new_with_mnemonic(_("Text field size :"));
+		dd->panel_entry_size_label = gtk_label_new_with_mnemonic(_("Text field size:"));
 		gtk_widget_show(dd->panel_entry_size_label);
 		dd->panel_entry_size_spinner = gtk_spin_button_new_with_range(0.0, 500.0, 1.0);
 		gtk_spin_button_set_value(GTK_SPIN_BUTTON(dd->panel_entry_size_spinner),

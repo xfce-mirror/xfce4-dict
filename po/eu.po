@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-14 15:25+0100\n"
+"POT-Creation-Date: 2007-12-18 17:35+0100\n"
 "PO-Revision-Date: 2007-09-12 12:20+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <Librezale@librezale.org>\n"
@@ -74,17 +74,20 @@ msgstr "Hiztegi Plugina"
 
 #. server address
 #: ../panel-plugin/dict.c:984
-msgid "Server :"
+#, fuzzy
+msgid "Server:"
 msgstr "Zerbitzaria:"
 
 #. server port
 #: ../panel-plugin/dict.c:996
-msgid "Server Port :"
+#, fuzzy
+msgid "Server Port:"
 msgstr "Zerbitzari ataka:"
 
 #. dictionary
 #: ../panel-plugin/dict.c:1004 ../panel-plugin/dict.c:1164
-msgid "Dictionary :"
+#, fuzzy
+msgid "Dictionary:"
 msgstr "Hiztegia:"
 
 #: ../panel-plugin/dict.c:1008
@@ -132,7 +135,7 @@ msgid "Use a web site"
 msgstr "Webgune bat erabili"
 
 #: ../panel-plugin/dict.c:1153
-msgid "Aspell program :"
+msgid "Aspell program:"
 msgstr ""
 
 #: ../panel-plugin/dict.c:1194
@@ -150,7 +153,8 @@ msgstr "Aukera hau panela horizontalean dagoenean bakarrik erabili daiteke."
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1217
-msgid "Text field size :"
+#, fuzzy
+msgid "Text field size:"
 msgstr "Testu eremu tamaina:"
 
 #: ../panel-plugin/dict.c:1277 ../panel-plugin/dict.c:1585
