@@ -1,4 +1,4 @@
-xfce4-dict-plugin - A plugin to query a Dict server
+xfce4-dict-plugin - A plugin to query a Dict server and other dictionary sources
 
 With this plugin you can query a dictionary server(see RFC 2229) to search for the
 translation or explanation of a word. You can also choose a dictionary offered by the
@@ -14,7 +14,22 @@ icon in your panel, then the plugin begins to search and shows you the results.
 This plugin was mainly tested with the server "dict.org" but should work with any other
 servers which implement the DICT protocol defined in RFC 2229.
 
-ToDo:
-- support user authentification
-- keep dictionary list in memory
-- support the MATCH command
+Searching web-based dictionary services like dict.leo.org or other ones is also supported
+by passing the search word as a URL argument and opening the URL in your webbrowser. The URL
+can be configured in the preferences dialog.
+
+It is also possible to verify the spelling of word using aspell. To get this working you need
+to have the aspell binary in your binary search path and at least one dictionary working. If you
+have multiple aspell dictionaries installed, you can select the one to use in the preferences
+dialog.
+
+Together with the plugin itself, a little tool named "xfce4-popup-dict" is installed which can
+be used to open the plugin's main window from the command line or from any other program.
+It can also be used to bind the dict plugin actions to a keyboard shortcut. You can add a new
+keyboard command with the Keyboard settings plugin in Xfce's settings manager and assign
+xfce4-popup-dict as the action command.
+It accepts the arguments -t and --text-field to grab the focus to the text entry field in the
+panel (if shown, it does nothing if not). If called without any arguments, it simply shows the
+plugin's main window.
+To get a list of available command line options you can also pass -h and --help as command line
+options.

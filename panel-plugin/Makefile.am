@@ -1,6 +1,22 @@
 plugindir = $(libexecdir)/xfce4/panel-plugins
 plugin_PROGRAMS = xfce4-dict-plugin
 
+bin_PROGRAMS =									\
+	xfce4-popup-dict
+
+xfce4_popup_dict_SOURCES =						\
+	xfce4-popup-dict.c							\
+	xfce4-popup-dict.h
+
+xfce4_popup_dict_CFLAGS =						\
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
+	$(GTK_CFLAGS)								\
+	$(PLATFORM_CFLAGS)
+
+xfce4_popup_dict_LDADD =						\
+	$(GTK_LIBS)
+
+
 xfce4_dict_plugin_SOURCES =						\
 	inline-icon.h								\
 	aspell.c									\

@@ -1,3 +1,10 @@
+2008-01-04  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+
+	* Add xfce4-popup-dict command to show the main window and/or grad the input
+	  focus to the text field in the panel.
+	* Change year in copyright notes to 2008.
+
+
 2007-12-18  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
 	* Remove wrong additional space before colons.

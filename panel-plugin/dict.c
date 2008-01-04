@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright © 2006-2007 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *  Copyright 2006-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -40,6 +40,7 @@
 #include <string.h>
 
 #include "dict.h"
+#include "xfce4-popup-dict.h"
 #include "inline-icon.h"
 
 #define BUF_SIZE 256
@@ -50,6 +51,7 @@
 static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd);
 static void dict_construct(XfcePanelPlugin *plugin);
 static void dict_write_rc_file(XfcePanelPlugin *plugin, DictData *dd);
+static void dict_panel_button_clicked(GtkWidget *button, DictData *dd);
 
 
 /* internal functions */
@@ -130,6 +132,62 @@ static gchar *dict_str_replace(gchar *haystack, const gchar *needle, const gchar
 	g_free(haystack);
 	g_string_free(str, FALSE);
 	return dict_str_replace(result, needle, replacement);
+}
+
+
+/* Handle user messages (xfce4-popup-dict) */
+static gboolean dict_message_received(GtkWidget *w, GdkEventClient *ev, gpointer user_data)
+{
+	DictData *dd = user_data;
+
+	if (ev->data_format == 8 && *(ev->data.b) != '\0')
+	{
+		if (strcmp(XFCE_DICT_WINDOW_MESSAGE, ev->data.b) == 0)
+		{	// open the main window
+			dict_panel_button_clicked(NULL, dd);
+			return TRUE;
+		}
+
+		if (strcmp(XFCE_DICT_TEXTFIELD_MESSAGE, ev->data.b) == 0)
+		{	// put the focus onto the panel entry
+			if (dd->show_panel_entry)
+				xfce_panel_plugin_focus_widget(dd->plugin, dd->panel_entry);
+		}
+	}
+
+	return FALSE;
+}
+
+
+static gboolean dict_set_selection(DictData *dd)
+{
+	GdkScreen *gscreen;
+	gchar      selection_name[32];
+	Atom       selection_atom;
+	GtkWidget *win;
+	Window     xwin;
+
+	win = gtk_invisible_new();
+	gtk_widget_realize(win);
+	xwin = GDK_WINDOW_XID(GTK_WIDGET(win)->window);
+
+	gscreen = gtk_widget_get_screen(win);
+	g_snprintf(selection_name, sizeof (selection_name),
+		XFCE_DICT_SELECTION"%d", gdk_screen_get_number(gscreen));
+	selection_atom = XInternAtom(GDK_DISPLAY(), selection_name, False);
+
+	if (XGetSelectionOwner(GDK_DISPLAY(), selection_atom))
+	{
+		gtk_widget_destroy(win);
+		return FALSE;
+	}
+
+	XSelectInput(GDK_DISPLAY(), xwin, PropertyChangeMask);
+	XSetSelectionOwner(GDK_DISPLAY(), selection_atom, xwin, GDK_CURRENT_TIME);
+
+	g_signal_connect(G_OBJECT(win), "client-event", G_CALLBACK(dict_message_received), dd);
+
+	return TRUE;
 }
 
 
@@ -1444,7 +1502,7 @@ static void dict_about_dialog(GtkWidget *widget, DictData *dd)
 
 	info = xfce_about_info_new("xfce4-dict-plugin", VERSION,
                                _("A plugin to query a Dict server."),
-                               XFCE_COPYRIGHT_TEXT("2006-2007", "Enrico Tröger"),
+                               XFCE_COPYRIGHT_TEXT("2006-2008", "Enrico Tröger"),
                                XFCE_LICENSE_GPL);
 
 	xfce_about_info_add_credit(info, "Enrico Tröger", "enrico(dot)troeger(at)uvena(dot)de", _("Developer"));
@@ -1485,7 +1543,7 @@ static void dict_panel_button_clicked(GtkWidget *button, DictData *dd)
 		const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dd->panel_entry));
 
 		dict_show_main_window(dd);
-		if (strcmp("", panel_text) != 0)
+		if (NZV(panel_text))
 		{
 			dict_search_word(dd, panel_text);
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), panel_text);
@@ -1574,6 +1632,7 @@ static void dict_construct(XfcePanelPlugin *plugin)
     gtk_container_add(GTK_CONTAINER(plugin), hbox);
 
     xfce_panel_plugin_add_action_widget(plugin, dd->panel_button);
+    dict_set_selection(dd);
 
     /* DnD stuff */
     gtk_drag_dest_set(GTK_WIDGET(dd->panel_button), GTK_DEST_DEFAULT_ALL,
