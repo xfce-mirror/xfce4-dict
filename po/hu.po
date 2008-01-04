@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-18 17:35+0100\n"
+"POT-Creation-Date: 2008-01-04 17:53+0100\n"
 "PO-Revision-Date: 2007-11-01 08:25+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
@@ -17,113 +17,113 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: HUNGARY\n"
 
-#: ../panel-plugin/dict.c:300 ../panel-plugin/dict.c:764
+#: ../panel-plugin/dict.c:358 ../panel-plugin/dict.c:822
 msgid "Could not connect to server."
 msgstr "Sikertelen kapcsolódás a kiszolgálóhoz"
 
-#: ../panel-plugin/dict.c:307 ../panel-plugin/dict.c:332
-#: ../panel-plugin/dict.c:786
+#: ../panel-plugin/dict.c:365 ../panel-plugin/dict.c:390
+#: ../panel-plugin/dict.c:844
 msgid "Unknown error while quering the server."
 msgstr "Ismeretlen hiba a kiszolgáló lekérdezésekor"
 
-#: ../panel-plugin/dict.c:315
+#: ../panel-plugin/dict.c:373
 msgid "Server not ready."
 msgstr "A kiszolgáló nem érhető el"
 
-#: ../panel-plugin/dict.c:326
+#: ../panel-plugin/dict.c:384
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Nincs találat \"%s\" kifejezésre"
 
-#: ../panel-plugin/dict.c:337
+#: ../panel-plugin/dict.c:395
 #, c-format
 msgid "%d definition(s) found."
 msgstr "%d találat"
 
-#: ../panel-plugin/dict.c:454
+#: ../panel-plugin/dict.c:512
 #, c-format
 msgid "Querying the server %s..."
 msgstr "%s kiszolgáló lekérdezése..."
 
-#: ../panel-plugin/dict.c:507
+#: ../panel-plugin/dict.c:565
 msgid "Invalid input."
 msgstr "Érvénytelen bemenet"
 
-#: ../panel-plugin/dict.c:517
+#: ../panel-plugin/dict.c:575
 msgid "Invalid non-UTF8 input."
 msgstr "Érvénytelen nem-UTF8 bemenet"
 
-#: ../panel-plugin/dict.c:579
+#: ../panel-plugin/dict.c:637
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "A böngésző nem nyitható meg. Ellenőrizd a beállításokat"
 
-#: ../panel-plugin/dict.c:781
+#: ../panel-plugin/dict.c:839
 msgid "The server doesn't offer any databases."
 msgstr "A kiszolgáló nem ér el adatbázist"
 
-#: ../panel-plugin/dict.c:836
+#: ../panel-plugin/dict.c:894
 msgid "You have chosen an invalid dictionary entry."
 msgstr "Érvénytelen szótár bejegyzést választottál"
 
-#: ../panel-plugin/dict.c:951
+#: ../panel-plugin/dict.c:1009
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: ../panel-plugin/dict.c:967
+#: ../panel-plugin/dict.c:1025
 msgid "Dictionary plugin"
 msgstr "Szótár beillesztés"
 
 #. server address
-#: ../panel-plugin/dict.c:984
+#: ../panel-plugin/dict.c:1042
 #, fuzzy
 msgid "Server:"
 msgstr "Kiszolgáló :"
 
 #. server port
-#: ../panel-plugin/dict.c:996
+#: ../panel-plugin/dict.c:1054
 #, fuzzy
 msgid "Server Port:"
 msgstr "Kiszolgáló port :"
 
 #. dictionary
-#: ../panel-plugin/dict.c:1004 ../panel-plugin/dict.c:1164
+#: ../panel-plugin/dict.c:1062 ../panel-plugin/dict.c:1222
 #, fuzzy
 msgid "Dictionary:"
 msgstr "Szótár :"
 
-#: ../panel-plugin/dict.c:1008
+#: ../panel-plugin/dict.c:1066
 msgid "* (use all)"
 msgstr "* (mindet használja)"
 
-#: ../panel-plugin/dict.c:1010
+#: ../panel-plugin/dict.c:1068
 msgid "! (use all, stop after first match)"
 msgstr "! (mindet használja, az elsőnél megáll)"
 
-#: ../panel-plugin/dict.c:1070
+#: ../panel-plugin/dict.c:1128
 msgid "Use a DICT server"
 msgstr "DICT kiszolgáló használata"
 
-#: ../panel-plugin/dict.c:1089
+#: ../panel-plugin/dict.c:1147
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Német <-> Angol"
 
-#: ../panel-plugin/dict.c:1097
+#: ../panel-plugin/dict.c:1155
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Német <-> Francia"
 
-#: ../panel-plugin/dict.c:1105
+#: ../panel-plugin/dict.c:1163
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Német <-> Spanyol"
 
-#: ../panel-plugin/dict.c:1112
+#: ../panel-plugin/dict.c:1170
 msgid "Use another website"
 msgstr "Más kiszolgáló"
 
-#: ../panel-plugin/dict.c:1120
+#: ../panel-plugin/dict.c:1178
 msgid "URL:"
 msgstr "URL:"
 
-#: ../panel-plugin/dict.c:1133
+#: ../panel-plugin/dict.c:1191
 msgid ""
 "Enter an URL to a web site which offer translation services.\n"
 "Use {word} as placeholder for the searched word."
@@ -131,68 +131,94 @@ msgstr ""
 "Adj meg egy fordítás-szolgáltatást nyújtó web-lap URL-t.\n"
 "Használd a {szó}-t a keresett szóhoz."
 
-#: ../panel-plugin/dict.c:1139
+#: ../panel-plugin/dict.c:1197
 msgid "Use a web site"
 msgstr "Egy weblap használata"
 
-#: ../panel-plugin/dict.c:1153
+#: ../panel-plugin/dict.c:1211
 msgid "Aspell program:"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1194
+#: ../panel-plugin/dict.c:1252
 msgid "Use Aspell"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1208
+#: ../panel-plugin/dict.c:1266
 msgid "Show text field in the panel"
 msgstr "Szöveg mező a panelon"
 
-#: ../panel-plugin/dict.c:1211
+#: ../panel-plugin/dict.c:1269
 msgid ""
 "This option can only be used when the panel has a horizontal orientation."
 msgstr "A lehetőség csak a panel vízszintes fekvésénél használható."
 
 #. panel entry size
-#: ../panel-plugin/dict.c:1217
+#: ../panel-plugin/dict.c:1275
 #, fuzzy
 msgid "Text field size:"
 msgstr "Szöveg mező mérete :"
 
-#: ../panel-plugin/dict.c:1277 ../panel-plugin/dict.c:1585
+#: ../panel-plugin/dict.c:1335 ../panel-plugin/dict.c:1644
 msgid "Ready."
 msgstr "Kész."
 
-#: ../panel-plugin/dict.c:1341
+#: ../panel-plugin/dict.c:1399
 msgid "Text to search:"
 msgstr "Keresendő szöveg:"
 
-#: ../panel-plugin/dict.c:1388
+#: ../panel-plugin/dict.c:1446
 msgid "Search with:"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1392 ../panel-plugin/dict.desktop.in.in.h:2
+#: ../panel-plugin/dict.c:1450 ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
 msgstr "Dict"
 
-#: ../panel-plugin/dict.c:1398
+#: ../panel-plugin/dict.c:1456
 msgid "Web"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1404
+#: ../panel-plugin/dict.c:1462
 msgid "Spellcheck"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1446 ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1504 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "Dict kiszolgáló beillesztés"
 
-#: ../panel-plugin/dict.c:1450
+#: ../panel-plugin/dict.c:1508
 msgid "Developer"
 msgstr "Fejlesztő"
 
-#: ../panel-plugin/dict.c:1538
+#: ../panel-plugin/dict.c:1596
 msgid "Look up a word"
 msgstr "Egy szó keresése"
+
+#: ../panel-plugin/xfce4-popup-dict.c:97
+#, c-format
+msgid "Usage: %s [options]\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-dict.c:98
+#, c-format
+msgid "Options:\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-dict.c:99
+#, c-format
+msgid "    -t, --text-field    grap the focus on the text field in the panel\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-dict.c:100
+#, c-format
+msgid "    -h, --help          show this help and exit\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-dict.c:101
+#, c-format
+msgid ""
+"If called without any options, the xfce4-dict-plugin main window is shown.\n"
+msgstr ""
 
 #~ msgid "Input is too long."
 #~ msgstr "Túl hosszú bevitel"

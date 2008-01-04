@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-18 17:35+0100\n"
+"POT-Creation-Date: 2008-01-04 17:53+0100\n"
 "PO-Revision-Date: 2007-10-26 20:47+0500\n"
 "Last-Translator: Muhammad Ali Makki <makk.ma@gmail.com>\n"
 "Language-Team: Urdu <makki.ma@gmail.com>\n"
@@ -18,113 +18,113 @@ msgstr ""
 "X-Poedit-Country: PAKISTAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/dict.c:300 ../panel-plugin/dict.c:764
+#: ../panel-plugin/dict.c:358 ../panel-plugin/dict.c:822
 msgid "Could not connect to server."
 msgstr "سرور سے رابطہ نہیں ہوسکا."
 
-#: ../panel-plugin/dict.c:307 ../panel-plugin/dict.c:332
-#: ../panel-plugin/dict.c:786
+#: ../panel-plugin/dict.c:365 ../panel-plugin/dict.c:390
+#: ../panel-plugin/dict.c:844
 msgid "Unknown error while quering the server."
 msgstr "سرور سے استفسار کے دوران نا معلوم  غلطی."
 
-#: ../panel-plugin/dict.c:315
+#: ../panel-plugin/dict.c:373
 msgid "Server not ready."
 msgstr "سرور تیار نہیں."
 
-#: ../panel-plugin/dict.c:326
+#: ../panel-plugin/dict.c:384
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "\"%s\" کا کوئی بھی میچ نہیں پایا گیا."
 
-#: ../panel-plugin/dict.c:337
+#: ../panel-plugin/dict.c:395
 #, c-format
 msgid "%d definition(s) found."
 msgstr "%d ڈیفینیشن ملی ہیں."
 
-#: ../panel-plugin/dict.c:454
+#: ../panel-plugin/dict.c:512
 #, c-format
 msgid "Querying the server %s..."
 msgstr "سرور %s کو دیکھا جارہا ہے..."
 
-#: ../panel-plugin/dict.c:507
+#: ../panel-plugin/dict.c:565
 msgid "Invalid input."
 msgstr "ناموزوں ماداخل (ان پٹ)."
 
-#: ../panel-plugin/dict.c:517
+#: ../panel-plugin/dict.c:575
 msgid "Invalid non-UTF8 input."
 msgstr "ناموزوں non-UTF8 ماداخل (ان پٹ)."
 
-#: ../panel-plugin/dict.c:579
+#: ../panel-plugin/dict.c:637
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "براؤزر نہیں کھل سکتا. اپنی ترجیحات چیک کریں."
 
-#: ../panel-plugin/dict.c:781
+#: ../panel-plugin/dict.c:839
 msgid "The server doesn't offer any databases."
 msgstr "سرور کوئی ڈیٹا بیس پیش نہیں کرتا."
 
-#: ../panel-plugin/dict.c:836
+#: ../panel-plugin/dict.c:894
 msgid "You have chosen an invalid dictionary entry."
 msgstr "آپ نے غلط ڈکشنری انٹری منتخب کی ہے."
 
-#: ../panel-plugin/dict.c:951
+#: ../panel-plugin/dict.c:1009
 msgid "Properties"
 msgstr "خصوصیات"
 
-#: ../panel-plugin/dict.c:967
+#: ../panel-plugin/dict.c:1025
 msgid "Dictionary plugin"
 msgstr "ڈکشنری پلگ ان"
 
 #. server address
-#: ../panel-plugin/dict.c:984
+#: ../panel-plugin/dict.c:1042
 #, fuzzy
 msgid "Server:"
 msgstr "سرور:"
 
 #. server port
-#: ../panel-plugin/dict.c:996
+#: ../panel-plugin/dict.c:1054
 #, fuzzy
 msgid "Server Port:"
 msgstr "سرور پورٹ:"
 
 #. dictionary
-#: ../panel-plugin/dict.c:1004 ../panel-plugin/dict.c:1164
+#: ../panel-plugin/dict.c:1062 ../panel-plugin/dict.c:1222
 #, fuzzy
 msgid "Dictionary:"
 msgstr "ڈکشنری:"
 
-#: ../panel-plugin/dict.c:1008
+#: ../panel-plugin/dict.c:1066
 msgid "* (use all)"
 msgstr "* (سب استعمال کریں)"
 
-#: ../panel-plugin/dict.c:1010
+#: ../panel-plugin/dict.c:1068
 msgid "! (use all, stop after first match)"
 msgstr "! (سب  استعمال کریں، پہلے میچ کے بعد روک دیں)"
 
-#: ../panel-plugin/dict.c:1070
+#: ../panel-plugin/dict.c:1128
 msgid "Use a DICT server"
 msgstr "DICT سرور استعمال کریں"
 
-#: ../panel-plugin/dict.c:1089
+#: ../panel-plugin/dict.c:1147
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - German <-> English"
 
-#: ../panel-plugin/dict.c:1097
+#: ../panel-plugin/dict.c:1155
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - German <-> French"
 
-#: ../panel-plugin/dict.c:1105
+#: ../panel-plugin/dict.c:1163
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - German <-> Spanish"
 
-#: ../panel-plugin/dict.c:1112
+#: ../panel-plugin/dict.c:1170
 msgid "Use another website"
 msgstr "دوسری ویب سائٹ"
 
-#: ../panel-plugin/dict.c:1120
+#: ../panel-plugin/dict.c:1178
 msgid "URL:"
 msgstr "URL:"
 
-#: ../panel-plugin/dict.c:1133
+#: ../panel-plugin/dict.c:1191
 msgid ""
 "Enter an URL to a web site which offer translation services.\n"
 "Use {word} as placeholder for the searched word."
@@ -132,65 +132,91 @@ msgstr ""
 "ترجمہ خدمات پیش کرنے والی ویب سائٹ کا پتہ لکھیں.\n"
 "تلاش کردہ جملہ کے لیے {word} بطور placeholder استعمال کریں."
 
-#: ../panel-plugin/dict.c:1139
+#: ../panel-plugin/dict.c:1197
 msgid "Use a web site"
 msgstr "ویب سائٹ استعمال کریں"
 
-#: ../panel-plugin/dict.c:1153
+#: ../panel-plugin/dict.c:1211
 msgid "Aspell program:"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1194
+#: ../panel-plugin/dict.c:1252
 msgid "Use Aspell"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1208
+#: ../panel-plugin/dict.c:1266
 msgid "Show text field in the panel"
 msgstr "متن فیلڈ پینل میں ظاہر کریں"
 
-#: ../panel-plugin/dict.c:1211
+#: ../panel-plugin/dict.c:1269
 msgid ""
 "This option can only be used when the panel has a horizontal orientation."
 msgstr "یہ آپشن صرف تب استعمال ہوتا ہے جب پینل افقی جہتیابی رکھتا ہو."
 
 #. panel entry size
-#: ../panel-plugin/dict.c:1217
+#: ../panel-plugin/dict.c:1275
 #, fuzzy
 msgid "Text field size:"
 msgstr "متن فیلڈ حجم:"
 
-#: ../panel-plugin/dict.c:1277 ../panel-plugin/dict.c:1585
+#: ../panel-plugin/dict.c:1335 ../panel-plugin/dict.c:1644
 msgid "Ready."
 msgstr "تیار."
 
-#: ../panel-plugin/dict.c:1341
+#: ../panel-plugin/dict.c:1399
 msgid "Text to search:"
 msgstr "متن برائے تلاش:"
 
-#: ../panel-plugin/dict.c:1388
+#: ../panel-plugin/dict.c:1446
 msgid "Search with:"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1392 ../panel-plugin/dict.desktop.in.in.h:2
+#: ../panel-plugin/dict.c:1450 ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
 msgstr "Dict"
 
-#: ../panel-plugin/dict.c:1398
+#: ../panel-plugin/dict.c:1456
 msgid "Web"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1404
+#: ../panel-plugin/dict.c:1462
 msgid "Spellcheck"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1446 ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1504 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "Dict سرور سے کیوری کا پلگ ان."
 
-#: ../panel-plugin/dict.c:1450
+#: ../panel-plugin/dict.c:1508
 msgid "Developer"
 msgstr "ڈیولپر"
 
-#: ../panel-plugin/dict.c:1538
+#: ../panel-plugin/dict.c:1596
 msgid "Look up a word"
 msgstr "جملہ تلاش کریں"
+
+#: ../panel-plugin/xfce4-popup-dict.c:97
+#, c-format
+msgid "Usage: %s [options]\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-dict.c:98
+#, c-format
+msgid "Options:\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-dict.c:99
+#, c-format
+msgid "    -t, --text-field    grap the focus on the text field in the panel\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-dict.c:100
+#, c-format
+msgid "    -h, --help          show this help and exit\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-dict.c:101
+#, c-format
+msgid ""
+"If called without any options, the xfce4-dict-plugin main window is shown.\n"
+msgstr ""
