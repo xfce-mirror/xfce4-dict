@@ -1345,21 +1345,30 @@ static void dict_close_button_clicked(GtkWidget *button, DictData *dd)
 static void dict_search_mode_dict_toggled(GtkToggleButton *togglebutton, DictData *dd)
 {
 	if (gtk_toggle_button_get_active(togglebutton))
+	{
 		dd->mode = DICTMODE_DICT;
+		gtk_widget_grab_focus(dd->main_entry);
+	}
 }
 
 
 static void dict_search_mode_web_toggled(GtkToggleButton *togglebutton, DictData *dd)
 {
 	if (gtk_toggle_button_get_active(togglebutton))
+	{
 		dd->mode = DICTMODE_WEB;
+		gtk_widget_grab_focus(dd->main_entry);
+	}
 }
 
 
 static void dict_search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *dd)
 {
 	if (gtk_toggle_button_get_active(togglebutton))
+	{
 		dd->mode = DICTMODE_SPELL;
+		gtk_widget_grab_focus(dd->main_entry);
+	}
 }
 
 

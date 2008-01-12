@@ -1,6 +1,12 @@
+2008-01-12  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+
+	* When changing the search method in the main window, put the input
+	  focus back to the text entry.
+
+
 2008-01-04  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Add xfce4-popup-dict command to show the main window and/or grad the input
+	* Add xfce4-popup-dict command to show the main window and/or grab the input
 	  focus to the text field in the panel.
 	* Change year in copyright notes to 2008.
 
