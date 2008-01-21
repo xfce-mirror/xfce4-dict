@@ -4,14 +4,15 @@
 # Bruno Jesus <00cpxxx@gmail.com>, 2006.
 # Pablo Lerina <pabloalr@gmail.com>, 2007.
 # Vladimir Melo <vladimirmelo@foresightlinux.org>, 2007.
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-04 17:53+0100\n"
-"PO-Revision-Date: 2007-08-26 13:19-0300\n"
-"Last-Translator: Vladimir Melo <vladimirmelo@foresightlinux.org>\n"
+"PO-Revision-Date: 2008-01-21 13:19-0300\n"
+"Last-Translator: Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -76,21 +77,18 @@ msgstr "Plug-in de dicionário"
 
 #. server address
 #: ../panel-plugin/dict.c:1042
-#, fuzzy
 msgid "Server:"
-msgstr "Servidor :"
+msgstr "Servidor:"
 
 #. server port
 #: ../panel-plugin/dict.c:1054
-#, fuzzy
 msgid "Server Port:"
-msgstr "Porta do Servidor :"
+msgstr "Porta do Servidor:"
 
 #. dictionary
 #: ../panel-plugin/dict.c:1062 ../panel-plugin/dict.c:1222
-#, fuzzy
 msgid "Dictionary:"
-msgstr "Dicionário :"
+msgstr "Dicionário:"
 
 #: ../panel-plugin/dict.c:1066
 msgid "* (use all)"
@@ -138,11 +136,11 @@ msgstr "Usar um site"
 
 #: ../panel-plugin/dict.c:1211
 msgid "Aspell program:"
-msgstr ""
+msgstr "Programa Aspell:"
 
 #: ../panel-plugin/dict.c:1252
 msgid "Use Aspell"
-msgstr ""
+msgstr "Utilizar o Aspell"
 
 #: ../panel-plugin/dict.c:1266
 msgid "Show text field in the panel"
@@ -155,9 +153,8 @@ msgstr "Essa opção só pode ser usada quando o painel estiver na horizontal."
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1275
-#, fuzzy
 msgid "Text field size:"
-msgstr "Tamanho do campo de texto :"
+msgstr "Tamanho do campo de texto:"
 
 #: ../panel-plugin/dict.c:1335 ../panel-plugin/dict.c:1644
 msgid "Ready."
@@ -169,7 +166,7 @@ msgstr "Texto a procurar:"
 
 #: ../panel-plugin/dict.c:1446
 msgid "Search with:"
-msgstr ""
+msgstr "Pesquisar:"
 
 #: ../panel-plugin/dict.c:1450 ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
@@ -177,11 +174,11 @@ msgstr "Dicionário"
 
 #: ../panel-plugin/dict.c:1456
 msgid "Web"
-msgstr ""
+msgstr "Internet"
 
 #: ../panel-plugin/dict.c:1462
 msgid "Spellcheck"
-msgstr ""
+msgstr "Corretor ortográfico"
 
 #: ../panel-plugin/dict.c:1504 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
@@ -198,25 +195,26 @@ msgstr "Procurar uma palavra"
 #: ../panel-plugin/xfce4-popup-dict.c:97
 #, c-format
 msgid "Usage: %s [options]\n"
-msgstr ""
+msgstr "Uso: %s [options]\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:98
 #, c-format
 msgid "Options:\n"
-msgstr ""
+msgstr "Opções:\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:99
 #, c-format
 msgid "    -t, --text-field    grap the focus on the text field in the panel\n"
-msgstr ""
+msgstr "    -t, --text-field    manter o foco no campo de texto no painel\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:100
 #, c-format
 msgid "    -h, --help          show this help and exit\n"
-msgstr ""
+msgstr "    -h, --help          mostra esta ajuda e sai\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:101
 #, c-format
 msgid ""
 "If called without any options, the xfce4-dict-plugin main window is shown.\n"
 msgstr ""
+"Se chamado sem nenhuma opção, a janela principal do xfce4-dict-plugin será exibida.\n"
