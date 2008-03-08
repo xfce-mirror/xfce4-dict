@@ -40,7 +40,7 @@ static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, g
 
 	g_io_channel_set_flags(ioc, G_IO_FLAG_NONBLOCK, NULL);
 	g_io_channel_set_encoding(ioc, NULL, NULL);
-	// "auto-close" ;-)
+	/* "auto-close" */
 	g_io_channel_set_close_on_unref(ioc, TRUE);
 
 	g_io_add_watch(ioc, cond, func, data);
@@ -62,7 +62,7 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 		while (g_io_channel_read_line(ioc, &msg, NULL, NULL, NULL) && msg != NULL)
 		{
 			if (msg[0] == '&')
-			{	// & cmd 17 7: ...
+			{	/* & cmd 17 7: ... */
 				tmp = strchr(msg + 2, ' ') + 1;
 				dict_status_add(dd, _("%d suggestion(s) found."), atoi(tmp));
 
@@ -164,7 +164,7 @@ void dict_start_aspell_query(DictData *dd, const gchar *word)
 			G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD, NULL, NULL, NULL,
 			&stdin_fd, &stdout_fd, &stderr_fd, &error))
 	{
-		set_up_io_channel(stdin_fd, G_IO_OUT, iofunc_write, (const gpointer) word);
+		set_up_io_channel(stdin_fd, G_IO_OUT, iofunc_write, word);
 		set_up_io_channel(stdout_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read, dd);
 		set_up_io_channel(stderr_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read_err, dd);
 		dict_status_add(dd, _("Ready."));

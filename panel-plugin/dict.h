@@ -22,7 +22,7 @@
 #define DICT_H 1
 
 
-// Returns: TRUE if ptr points to a non-zero value.
+/* Returns: TRUE if ptr points to a non-zero value. */
 #define NZV(ptr) \
 	((ptr) && (ptr)[0])
 
@@ -82,7 +82,7 @@ typedef struct
     gchar *server;
     gchar *dictionary;
 
-	gchar *searched_word;  // word to query the server
+	gchar *searched_word;  /* word to query the server */
 	gboolean query_is_running;
 	gint query_status;
 	gchar *query_buffer;

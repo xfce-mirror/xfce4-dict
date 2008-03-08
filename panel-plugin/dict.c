@@ -119,7 +119,7 @@ static gchar *dict_str_replace(gchar *haystack, const gchar *needle, const gchar
 	if (start == NULL || lt_pos == -1)
 		return haystack;
 
-	// substitute by copying
+	/* substitute by copying */
 	str = g_string_sized_new(strlen(haystack));
 	for (i = 0; i < lt_pos; i++)
 	{
@@ -143,13 +143,13 @@ static gboolean dict_message_received(GtkWidget *w, GdkEventClient *ev, gpointer
 	if (ev->data_format == 8 && *(ev->data.b) != '\0')
 	{
 		if (strcmp(XFCE_DICT_WINDOW_MESSAGE, ev->data.b) == 0)
-		{	// open the main window
+		{	/* open the main window */
 			dict_panel_button_clicked(NULL, dd);
 			return TRUE;
 		}
 
 		if (strcmp(XFCE_DICT_TEXTFIELD_MESSAGE, ev->data.b) == 0)
-		{	// put the focus onto the panel entry
+		{	/* put the focus onto the panel entry */
 			if (dd->show_panel_entry)
 				xfce_panel_plugin_focus_widget(dd->plugin, dd->panel_entry);
 		}
@@ -243,7 +243,7 @@ static gint dict_open_socket(const gchar *host_name, gint port)
 		close(fd);
 		return (-1);
 	}
-	//fcntl( fd, F_SETFL, O_NONBLOCK );
+	/*fcntl( fd, F_SETFL, O_NONBLOCK );*/
 
 	return (fd);
 }
@@ -254,7 +254,7 @@ static void dict_send_command(gint fd, const gchar *str)
 	gchar buf[256];
 	gint len = strlen (str);
 
-	snprintf(buf, 256, "%s\n", str);
+	g_snprintf(buf, 256, "%s\n", str);
 	send(fd, buf, len + 2, 0);
 }
 
@@ -268,36 +268,36 @@ static gchar *dict_get_answer(gint fd)
 	gchar c, *tmp;
 	gchar ec[3];
 
-	alarm(10); // abort after 5 seconds, there should went wrong something
+	alarm(10); /* abort after 5 seconds, there should went wrong something */
 	while (read(fd, &c, 1) > 0)
 	{
-		if (tol) // third char of line
+		if (tol) /* third char of line */
 		{
 			ec[2] = c;
 		}
-		if (sol) // second char of line
+		if (sol) /* second char of line */
 		{
 			ec[1] = c;
 			sol = FALSE;
 			tol = TRUE;
 		}
-		if (fol) // first char of line
+		if (fol) /* first char of line */
 		{
 			ec[0] = c;
 			fol = FALSE;
 			sol = TRUE;
 		}
-		if (c == '\n') // last char of line, so the next run is first char of next line
+		if (c == '\n') /* last char of line, so the next run is first char of next line */
 			fol = TRUE;
 
 		g_string_append_c(str, c);
 		if (tol &&
 			(
-				(strncmp(ec, "250", 3) == 0) || // ok
-				(strncmp(ec, "554", 3) == 0) ||	// no databases present
-				(strncmp(ec, "500", 3) == 0) ||	// unknown command
-				(strncmp(ec, "501", 3) == 0) ||	// syntax error
-				(strncmp(ec, "552", 3) == 0)	// nothing found
+				(strncmp(ec, "250", 3) == 0) || /* ok */
+				(strncmp(ec, "554", 3) == 0) ||	/* no databases present */
+				(strncmp(ec, "500", 3) == 0) ||	/* unknown command */
+				(strncmp(ec, "501", 3) == 0) ||	/* syntax error */
+				(strncmp(ec, "552", 3) == 0)	/* nothing found */
 			)
 		)
 			 break;
@@ -339,7 +339,7 @@ void dict_clear_text_buffer(DictData *dd)
 {
 	GtkTextIter start_iter, end_iter;
 
-	// clear the TextBuffer
+	/* clear the TextBuffer */
 	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &start_iter);
 	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
 	gtk_text_buffer_delete(dd->main_textbuffer, &start_iter, &end_iter);
@@ -375,7 +375,7 @@ gboolean dict_process_server_response(DictData *dd)
 		return FALSE;
 	}
 
-	// go to next line
+	/* go to next line */
 	while (*answer != '\n') answer++;
 	answer++;
 
@@ -394,11 +394,11 @@ gboolean dict_process_server_response(DictData *dd)
 	defs_found = atoi(answer + 4);
 	dict_status_add(dd, _("%d definition(s) found."), defs_found);
 
-	// go to next line
+	/* go to next line */
 	while (*answer != '\n') answer++;
 	answer++;
 
-	// parse output
+	/* parse output */
 	lines = g_strsplit(answer, "\r\n", -1);
 	max_lines = g_strv_length(lines);
 	if (lines == NULL || max_lines == 0)
@@ -414,22 +414,22 @@ gboolean dict_process_server_response(DictData *dd)
 	while (i < max_lines)
 	{
 		i++;
-		if (strncmp(lines[i], "250", 3) == 0) break; // end of data
-		if (strncmp(lines[i], "error:", 6) == 0) // an error occurred
+		if (strncmp(lines[i], "250", 3) == 0) break; /* end of data */
+		if (strncmp(lines[i], "error:", 6) == 0) /* an error occurred */
 		{
 			gtk_text_buffer_insert(dd->main_textbuffer, &iter, lines[i], -1);
 			break;
 		}
-		if (strncmp(lines[i], "151", 3) != 0) continue; // unexpected line start, try next line
+		if (strncmp(lines[i], "151", 3) != 0) continue; /* unexpected line start, try next line */
 
-		// get the used dictionary
-		tmp = strchr(lines[i], '"'); // get the opening " of quoted search word
+		/* get the used dictionary */
+		tmp = strchr(lines[i], '"'); /* get the opening " of quoted search word */
 		if (tmp != NULL)
 		{
-			tmp = strchr(tmp + 1, '"'); // get the closing " of quoted search word
+			tmp = strchr(tmp + 1, '"'); /* get the closing " of quoted search word */
 			if (tmp != NULL)
 			{
-				// skip the found quote and the following space
+				/* skip the found quote and the following space */
 				gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &iter, tmp + 2, -1,
 																dd->main_boldtag, NULL);
 				gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
@@ -437,8 +437,8 @@ gboolean dict_process_server_response(DictData *dd)
 		}
 		if (i >= (max_lines - 2)) break;
 
-		// all following lines represents the translation
-		i += 2; // skip the next two lines
+		/* all following lines represents the translation */
+		i += 2; /* skip the next two lines */
 		while (lines[i] != NULL && lines[i][0] != '.' && lines[i][0] != '\r' && lines[i][0] != '\n')
 		{
 			stripped = g_strstrip(lines[i]);
@@ -455,7 +455,7 @@ gboolean dict_process_server_response(DictData *dd)
 	g_strfreev(lines);
 	g_free(dd->query_buffer);
 
-	// clear the panel entry to not search again when you click on the panel button
+	/* clear the panel entry to not search again when you click on the panel button */
 	gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
 
 	return FALSE;
@@ -477,22 +477,22 @@ static void dict_ask_server(DictData *dd)
 
 	dd->query_is_running = TRUE;
 
-	// take only the first part of the dictionary string, so let the string end at the space
+	/* take only the first part of the dictionary string, so let the string end at the space */
 	i = 0;
 	while (dd->dictionary[i] != ' ') i++;
 	dd->dictionary[i] = '\0';
 
-	snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, dd->searched_word);
+	g_snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, dd->searched_word);
 	dict_send_command(fd, cmd);
 
-	// and now, "append" again the rest of the dictionary string again
+	/* and now, "append" again the rest of the dictionary string again */
 	dd->dictionary[i] = ' ';
 
 	dd->query_buffer = dict_get_answer(fd);
 	close(fd);
 
 	dd->query_is_running = FALSE;
-	// delegate parsing the response and related GUI stuff to GTK's main thread through the main loop
+	/* delegate parsing the response and related GUI stuff to GTK's main thread through the main loop */
 	g_idle_add((GSourceFunc) dict_process_server_response, dd);
 
 	g_thread_exit(NULL);
@@ -511,7 +511,7 @@ static void dict_start_server_query(DictData *dd, const gchar *word)
 
 		dict_status_add(dd, _("Querying the server %s..."), dd->server);
 
-		// start the thread to query the server
+		/* start the thread to query the server */
 		g_thread_create((GThreadFunc) dict_ask_server, dd, FALSE, NULL);
 	}
 }
@@ -559,7 +559,7 @@ static void dict_search_word(DictData *dd, const gchar *word)
 {
 	gboolean show = TRUE;
 
-	// sanity checks
+	/* sanity checks */
 	if (! NZV(word) || strlen(word) > (BUF_SIZE - 11))
 	{
 		dict_status_add(dd, _("Invalid input."));
@@ -568,7 +568,7 @@ static void dict_search_word(DictData *dd, const gchar *word)
 
 	g_free(dd->searched_word);
 	if (! g_utf8_validate(word, -1, NULL))
-	{	// try to convert non-UTF8 input otherwise stop the query
+	{	/* try to convert non-UTF8 input otherwise stop the query */
 		dd->searched_word = g_locale_to_utf8(word, -1, NULL, NULL, NULL);
 		if (dd->searched_word == NULL || ! g_utf8_validate(dd->searched_word, -1, NULL))
 		{
@@ -622,7 +622,7 @@ static void dict_search_word(DictData *dd, const gchar *word)
 
 			if (use_leo)
 			{
-				// convert the text into ISO-8869-15 because dict.leo.org expects it ;-(
+				/* convert the text into ISO-8869-15 because dict.leo.org expects it ;-( */
 				gchar *tmp = g_convert(dd->searched_word, -1,
 										"ISO-8859-15", "UTF-8", NULL, NULL, NULL);
 				if (tmp != NULL)
@@ -638,13 +638,13 @@ static void dict_search_word(DictData *dd, const gchar *word)
 			}
 			g_free(uri);
 
-			show = FALSE; // don't display main window
+			show = FALSE; /* don't display main window */
 			break;
 		}
 		case DICTMODE_SPELL:
 		{
-			/// TODO search only for the first word when working on a sentence,
-			/// workout a better solution
+			/* TODO search only for the first word when working on a sentence,
+			 * workout a better solution */
 			gchar *first_word_end = dd->searched_word;
 			if ((first_word_end = strchr(dd->searched_word, ' ')) ||
 				(first_word_end = strchr(dd->searched_word, '-')) ||
@@ -692,7 +692,7 @@ static gboolean dict_set_size(XfcePanelPlugin *plugin, gint wsize, DictData *dd)
 	gint size = wsize - 2 - (2 * MAX(dd->panel_button->style->xthickness,
 									 dd->panel_button->style->ythickness));
 
-	//g_object_unref(G_OBJECT(dd->icon));
+	/*g_object_unref(G_OBJECT(dd->icon));*/
 	dd->icon = dict_load_and_scale(dict_icon_data, size, -1);
 
     gtk_image_set_from_pixbuf(GTK_IMAGE(dd->panel_button_image), dd->icon);
@@ -825,11 +825,11 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 
 	dict_send_command(fd, "show databases");
 
-	// read all server output
+	/* read all server output */
 	answer = buffer = dict_get_answer(fd);
 	close(fd);
 
-	// go to next line
+	/* go to next line */
 	while (*buffer != '\n') buffer++;
 	buffer++;
 
@@ -846,18 +846,18 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 		return FALSE;
 	}
 
-	// go to next line
+	/* go to next line */
 	while (*buffer != '\n') buffer++;
 	buffer++;
 
-	// clear the combo box
+	/* clear the combo box */
 	i = gtk_tree_model_iter_n_children(gtk_combo_box_get_model(GTK_COMBO_BOX(dd->dict_combo)), NULL);
-	for (i -= 1; i > 2; i--)  // first three entries (*, ! and ----) should always exist
+	for (i -= 1; i > 2; i--)  /* first three entries (*, ! and ----) should always exist */
 	{
 		gtk_combo_box_remove_text(GTK_COMBO_BOX(dd->dict_combo), i);
 	}
 
-	// parse output
+	/* parse output */
 	lines = g_strsplit(buffer, "\r\n", -1);
 	max_lines = g_strv_length(lines);
 	if (lines == NULL || max_lines == 0) return FALSE;
@@ -872,8 +872,8 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	g_strfreev(lines);
 	g_free(answer);
 
-	// set the active entry to * because we don't know where the previously selected item now is in
-	// the list and we also don't know whether it exists at all, and I don't walk through the list
+	/* set the active entry to * because we don't know where the previously selected item now is in
+	 * the list and we also don't know whether it exists at all, and I don't walk through the list */
 	gtk_combo_box_set_active(GTK_COMBO_BOX(dd->dict_combo), 0);
 
 	return TRUE;
@@ -887,7 +887,7 @@ static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictD
     if (response == GTK_RESPONSE_OK)
     {
 		gchar *tmp;
-		// MODE DICT
+		/* MODE DICT */
 		tmp = gtk_combo_box_get_active_text(GTK_COMBO_BOX(dd->dict_combo));
 		if (tmp == NULL || tmp[0] == '0' || tmp[0] == '-')
 		{
@@ -904,7 +904,7 @@ static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictD
 		g_free(dd->dictionary);
 		dd->dictionary = tmp;
 
-		// MODE WEB
+		/* MODE WEB */
 		if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(dd->web_radio_leo_gereng)))
 			dd->web_mode = WEBMODE_LEO_GERENG;
 		else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(dd->web_radio_leo_gerfre)))
@@ -919,7 +919,7 @@ static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictD
 			dd->web_url = g_strdup(gtk_entry_get_text(GTK_ENTRY(dd->web_entry)));
 		}
 
-		// MODE SPELL
+		/* MODE SPELL */
 		tmp = gtk_combo_box_get_active_text(GTK_COMBO_BOX(dd->spell_combo));
 		if (NZV(tmp))
 		{
@@ -930,7 +930,7 @@ static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictD
 		g_free(dd->spell_bin);
 		dd->spell_bin = g_strdup(gtk_entry_get_text(GTK_ENTRY(dd->spell_entry)));
 
-		// general settings
+		/* general settings */
 		dd->show_panel_entry = gtk_toggle_button_get_active(
 								GTK_TOGGLE_BUTTON(dd->check_panel_entry));
 		dd->panel_entry_size = gtk_spin_button_get_value_as_int(
@@ -944,7 +944,7 @@ static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictD
 		else
 			gtk_widget_hide(dd->panel_entry);
 
-		// save settings
+		/* save settings */
 		dict_set_size(dd->plugin, xfce_panel_plugin_get_size(dd->plugin), dd);
 		dict_write_rc_file(dd->plugin, dd);
     }
@@ -1285,7 +1285,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 		gtk_box_pack_start(GTK_BOX(pe_hbox), dd->panel_entry_size_label, FALSE, FALSE, 10);
 		gtk_box_pack_start(GTK_BOX(pe_hbox), dd->panel_entry_size_spinner, TRUE, TRUE, 0);
 
-		label = gtk_label_new(""); // just to make some space, should be done better
+		label = gtk_label_new(""); /* just to make some space, should be done better */
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(vbox), label, FALSE, FALSE, 0);
 		gtk_box_pack_start(GTK_BOX(vbox), dd->check_panel_entry, FALSE, FALSE, 0);
@@ -1293,7 +1293,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 
     }
 
-	// init the sensitive widgets
+	/* init the sensitive widgets */
 	dict_use_webserver_toggled(GTK_TOGGLE_BUTTON(dd->web_radio_other), dd);
 	dict_show_panel_entry_toggled(GTK_TOGGLE_BUTTON(dd->check_panel_entry), dd);
 
@@ -1328,7 +1328,7 @@ static void dict_clear_button_clicked_cb(GtkButton *button, DictData *dd)
 {
 	dict_clear_text_buffer(dd);
 
-	// clear the entries
+	/* clear the entries */
 	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
 	gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
 
@@ -1395,7 +1395,7 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_widget_show(main_box);
 	gtk_container_add(GTK_CONTAINER(dd->window), main_box);
 
-	// entry box (label, entry, buttons)
+	/* entry box (label, entry, buttons) */
 	entry_box = gtk_hbox_new(FALSE, 10);
 	gtk_widget_show(entry_box);
 	gtk_container_set_border_width(GTK_CONTAINER(entry_box), 2);
@@ -1430,7 +1430,7 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_box_pack_start(GTK_BOX(entry_box), clear_button, FALSE, FALSE, 0);
 	g_signal_connect(clear_button, "clicked", G_CALLBACK(dict_clear_button_clicked_cb), dd);
 
-	// just make some space
+	/* just make some space */
 	align = gtk_alignment_new(1, 0.5, 0, 0);
 	gtk_alignment_set_padding(GTK_ALIGNMENT(align), 0, 0, 10, 0);
 	gtk_widget_show(align);
@@ -1442,12 +1442,12 @@ static void dict_create_main_dialog(DictData *dd)
 	g_signal_connect(close_button, "clicked", G_CALLBACK(dict_close_button_clicked), dd);
 	gtk_box_pack_end(GTK_BOX(entry_box), close_button, FALSE, FALSE, 2);
 
-	// insert it here and it will(hopefully) be placed before the Close button
+	/* insert it here and it will(hopefully) be placed before the Close button */
 	sep = gtk_vseparator_new();
 	gtk_widget_show(sep);
 	gtk_box_pack_end(GTK_BOX(entry_box), sep, FALSE, FALSE, 5);
 
-	// search method chooser
+	/* search method chooser */
 	method_chooser = gtk_hbox_new(FALSE, 0);
 	gtk_widget_show(method_chooser);
 	gtk_box_pack_start(GTK_BOX(main_box), method_chooser, FALSE, FALSE, 0);
@@ -1474,7 +1474,7 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
-	// results area
+	/* results area */
 	scrolledwindow_results = gtk_scrolled_window_new(NULL, NULL);
 	gtk_widget_show(scrolledwindow_results);
 	gtk_container_set_border_width(GTK_CONTAINER(scrolledwindow_results), 4);
@@ -1484,7 +1484,7 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolledwindow_results),
 					GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 
-	// searched words textview stuff
+	/* searched words textview stuff */
 	dd->main_textview = gtk_text_view_new();
 	gtk_text_view_set_editable(GTK_TEXT_VIEW(dd->main_textview), FALSE);
 	gtk_text_view_set_left_margin(GTK_TEXT_VIEW(dd->main_textview), 5);
@@ -1497,7 +1497,7 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_widget_show(dd->main_textview);
 	gtk_container_add(GTK_CONTAINER(scrolledwindow_results), dd->main_textview);
 
-	// status bar
+	/* status bar */
 	dd->statusbar = gtk_statusbar_new();
 	gtk_widget_show(dd->statusbar);
 	gtk_box_pack_end(GTK_BOX(main_box), dd->statusbar, FALSE, FALSE, 0);
@@ -1527,7 +1527,7 @@ static void dict_about_dialog(GtkWidget *widget, DictData *dd)
 
 
 static void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context,
-									gint x, gint y,GtkSelectionData *data, guint info, guint time,
+									gint x, gint y,GtkSelectionData *data, guint info, guint ltime,
 									DictData *dd)
 {
 	if ((data->length >= 0) && (data->format == 8))
@@ -1538,7 +1538,7 @@ static void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_cont
 		}
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), (const gchar*) data->data);
 		dict_search_word(dd, (const gchar*) data->data);
-		gtk_drag_finish(drag_context, TRUE, FALSE, time);
+		gtk_drag_finish(drag_context, TRUE, FALSE, ltime);
 	}
 }
 
@@ -1579,7 +1579,7 @@ static gboolean dict_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton
 
 static void dict_signal_cb(gint sig)
 {
-	// do nothing here and hope we never get called
+	/* do nothing here and hope we never get called */
 }
 
 
@@ -1587,6 +1587,11 @@ static void dict_construct(XfcePanelPlugin *plugin)
 {
 	DictData *dd = g_new0(DictData, 1);
 	GtkWidget *hbox;
+	GtkTargetEntry copy_dest_types[] = {
+		{ "STRING", 0, 0 },
+		{ "UTF8_STRING", 0, 0 },
+		{ "text/plain", 0, 0 }
+	};
 
     xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -1645,8 +1650,7 @@ static void dict_construct(XfcePanelPlugin *plugin)
 
     /* DnD stuff */
     gtk_drag_dest_set(GTK_WIDGET(dd->panel_button), GTK_DEST_DEFAULT_ALL,
-		(GtkTargetEntry[]) { { "STRING", 0, 0 }, { "UTF8_STRING", 0, 0 }, { "text/plain", 0, 0 } },
-		3, GDK_ACTION_COPY);
+		copy_dest_types, G_N_ELEMENTS(copy_dest_types), GDK_ACTION_COPY);
     g_signal_connect(dd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
     g_signal_connect(dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
 
