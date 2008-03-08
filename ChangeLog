@@ -1,6 +1,9 @@
 2008-03-08  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
 	* Don't use C++-style comments and fix some compiler warnings.
+	* When dragging text into the main entry text field, delete the previous
+	  text before to not append the dragged text.
+	* New release: 0.3.0
 
 
 2008-01-12  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
