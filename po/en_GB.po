@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-04 17:53+0100\n"
+"POT-Creation-Date: 2008-03-08 17:08+0100\n"
 "PO-Revision-Date: 2007-03-30 21:27+1000\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB\n"
@@ -159,39 +159,39 @@ msgstr ""
 msgid "Text field size:"
 msgstr "Text field size :"
 
-#: ../panel-plugin/dict.c:1335 ../panel-plugin/dict.c:1644
+#: ../panel-plugin/dict.c:1335 ../panel-plugin/dict.c:1663
 msgid "Ready."
 msgstr "Ready."
 
-#: ../panel-plugin/dict.c:1399
+#: ../panel-plugin/dict.c:1408
 msgid "Text to search:"
 msgstr "Text to search:"
 
-#: ../panel-plugin/dict.c:1446
+#: ../panel-plugin/dict.c:1455
 msgid "Search with:"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1450 ../panel-plugin/dict.desktop.in.in.h:2
+#: ../panel-plugin/dict.c:1459 ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
 msgstr "Dict"
 
-#: ../panel-plugin/dict.c:1456
+#: ../panel-plugin/dict.c:1465
 msgid "Web"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1462
+#: ../panel-plugin/dict.c:1471
 msgid "Spellcheck"
 msgstr ""
 
-#: ../panel-plugin/dict.c:1504 ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1513 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "A plugin to query a Dict server."
 
-#: ../panel-plugin/dict.c:1508
+#: ../panel-plugin/dict.c:1517
 msgid "Developer"
 msgstr "Developer"
 
-#: ../panel-plugin/dict.c:1596
+#: ../panel-plugin/dict.c:1615
 msgid "Look up a word"
 msgstr "Look up a word"
 

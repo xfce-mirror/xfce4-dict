@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-04 17:53+0100\n"
+"POT-Creation-Date: 2008-03-08 17:08+0100\n"
 "PO-Revision-Date: 2008-01-25 23:38+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
@@ -18,13 +18,11 @@ msgstr ""
 "X-Poedit-Country: HUNGARY\n"
 "X-Poedit-Language: Hungarian\n"
 
-#: ../panel-plugin/dict.c:358
-#: ../panel-plugin/dict.c:822
+#: ../panel-plugin/dict.c:358 ../panel-plugin/dict.c:822
 msgid "Could not connect to server."
 msgstr "Sikertelen kapcsolódás a kiszolgálóhoz"
 
-#: ../panel-plugin/dict.c:365
-#: ../panel-plugin/dict.c:390
+#: ../panel-plugin/dict.c:365 ../panel-plugin/dict.c:390
 #: ../panel-plugin/dict.c:844
 msgid "Unknown error while quering the server."
 msgstr "Ismeretlen hiba a kiszolgáló lekérdezésekor"
@@ -87,8 +85,7 @@ msgid "Server Port:"
 msgstr "Kiszolgáló port:"
 
 #. dictionary
-#: ../panel-plugin/dict.c:1062
-#: ../panel-plugin/dict.c:1222
+#: ../panel-plugin/dict.c:1062 ../panel-plugin/dict.c:1222
 msgid "Dictionary:"
 msgstr "Szótár:"
 
@@ -149,7 +146,8 @@ msgid "Show text field in the panel"
 msgstr "Szöveg mező a panelon"
 
 #: ../panel-plugin/dict.c:1269
-msgid "This option can only be used when the panel has a horizontal orientation."
+msgid ""
+"This option can only be used when the panel has a horizontal orientation."
 msgstr "A lehetőség csak a panel vízszintes fekvésénél használható."
 
 #. panel entry size
@@ -157,42 +155,39 @@ msgstr "A lehetőség csak a panel vízszintes fekvésénél használható."
 msgid "Text field size:"
 msgstr "Szöveg mező mérete:"
 
-#: ../panel-plugin/dict.c:1335
-#: ../panel-plugin/dict.c:1644
+#: ../panel-plugin/dict.c:1335 ../panel-plugin/dict.c:1663
 msgid "Ready."
 msgstr "Kész."
 
-#: ../panel-plugin/dict.c:1399
+#: ../panel-plugin/dict.c:1408
 msgid "Text to search:"
 msgstr "Keresendő szöveg:"
 
-#: ../panel-plugin/dict.c:1446
+#: ../panel-plugin/dict.c:1455
 msgid "Search with:"
 msgstr "Keresés ezzel:"
 
-#: ../panel-plugin/dict.c:1450
-#: ../panel-plugin/dict.desktop.in.in.h:2
+#: ../panel-plugin/dict.c:1459 ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
 msgstr "Dict"
 
-#: ../panel-plugin/dict.c:1456
+#: ../panel-plugin/dict.c:1465
 msgid "Web"
 msgstr "Web"
 
-#: ../panel-plugin/dict.c:1462
+#: ../panel-plugin/dict.c:1471
 msgid "Spellcheck"
 msgstr "Helyesírás"
 
-#: ../panel-plugin/dict.c:1504
-#: ../panel-plugin/dict.desktop.in.in.h:1
+#: ../panel-plugin/dict.c:1513 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
 msgstr "Dict kiszolgáló beillesztés"
 
-#: ../panel-plugin/dict.c:1508
+#: ../panel-plugin/dict.c:1517
 msgid "Developer"
 msgstr "Fejlesztő"
 
-#: ../panel-plugin/dict.c:1596
+#: ../panel-plugin/dict.c:1615
 msgid "Look up a word"
 msgstr "Egy szó keresése"
 
@@ -218,13 +213,15 @@ msgstr "    -h, --help          kiírja e súgót és kilép\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:101
 #, c-format
-msgid "If called without any options, the xfce4-dict-plugin main window is shown.\n"
+msgid ""
+"If called without any options, the xfce4-dict-plugin main window is shown.\n"
 msgstr "Opciók nélkül ay xfce4-dict-plugin fő ablak jelenik meg.\n"
 
 #~ msgid "Input is too long."
 #~ msgstr "Túl hosszú bevitel"
+
 #~ msgid "Answer was too long, it has been truncated (%d definition(s) found)."
 #~ msgstr "A válasz túl hosszú, levágtam (%d meghatározást találtam)"
+
 #~ msgid "-- The received list was too long. It has been truncated."
 #~ msgstr "-- A kapott lista túl hosszú. Levágtam."
-
