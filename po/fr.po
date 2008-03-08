@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the xfce4-dict-plugin package.
 # Gérald Barré <g.barre@free.fr>, 2006.
 # Maximilian Schleiss <maximilian@xfce.org>, 2006.
+# Mike Massonnet <mmassonnet@xfce.org, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-08 17:08+0100\n"
-"PO-Revision-Date: 2006-12-22 18:14+0100\n"
+"PO-Revision-Date: 2008-03-08 18:13+0100\n"
 "Last-Translator: Maximilian Schleiss <maximilian@xfce.org>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -75,19 +76,16 @@ msgstr "Greffon de dictionnaire"
 
 #. server address
 #: ../panel-plugin/dict.c:1042
-#, fuzzy
 msgid "Server:"
 msgstr "Serveur :"
 
 #. server port
 #: ../panel-plugin/dict.c:1054
-#, fuzzy
 msgid "Server Port:"
 msgstr "Port du serveur :"
 
 #. dictionary
 #: ../panel-plugin/dict.c:1062 ../panel-plugin/dict.c:1222
-#, fuzzy
 msgid "Dictionary:"
 msgstr "Dictionnaire :"
 
@@ -101,7 +99,7 @@ msgstr "! (tous, s'arrête à la première réponse)"
 
 #: ../panel-plugin/dict.c:1128
 msgid "Use a DICT server"
-msgstr "Utiliser un serveur DICT"
+msgstr "Utiliser un serveur Dict"
 
 #: ../panel-plugin/dict.c:1147
 msgid "dict.leo.org - German <-> English"
@@ -128,8 +126,9 @@ msgid ""
 "Enter an URL to a web site which offer translation services.\n"
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"Inscrire l'adresse d'un site Web offrant un service de traduction.\n"
-"Utiliser {mot} comme paramètre fictif pour le mot recherché."
+"Inscrivez l'adresse d'un site Web offrant un service de traduction. "
+"Utilisez {word} comme paramètre fictif pour le mot recherché.\nPar exemple : "
+"« http://www.google.fr/search?q={word} »."
 
 #: ../panel-plugin/dict.c:1197
 msgid "Use a web site"
@@ -137,11 +136,11 @@ msgstr "Utiliser un site Web"
 
 #: ../panel-plugin/dict.c:1211
 msgid "Aspell program:"
-msgstr ""
+msgstr "Programme Aspell :"
 
 #: ../panel-plugin/dict.c:1252
 msgid "Use Aspell"
-msgstr ""
+msgstr "Utiliser un vérificateur orthographique Aspell"
 
 #: ../panel-plugin/dict.c:1266
 msgid "Show text field in the panel"
@@ -155,9 +154,8 @@ msgstr ""
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1275
-#, fuzzy
 msgid "Text field size:"
-msgstr "Taille du champ texte :"
+msgstr "Taille du champ de texte :"
 
 #: ../panel-plugin/dict.c:1335 ../panel-plugin/dict.c:1663
 msgid "Ready."
@@ -169,19 +167,19 @@ msgstr "Le texte à  rechercher"
 
 #: ../panel-plugin/dict.c:1455
 msgid "Search with:"
-msgstr ""
+msgstr "Chercher avec :"
 
 #: ../panel-plugin/dict.c:1459 ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
-msgstr "Serveur de Dictionnaire Dict"
+msgstr "Serveur de dictionnaire Dict"
 
 #: ../panel-plugin/dict.c:1465
 msgid "Web"
-msgstr ""
+msgstr "Site Web"
 
 #: ../panel-plugin/dict.c:1471
 msgid "Spellcheck"
-msgstr ""
+msgstr "Vérificateur orthographique"
 
 #: ../panel-plugin/dict.c:1513 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
@@ -198,25 +196,25 @@ msgstr "Rechercher un mot"
 #: ../panel-plugin/xfce4-popup-dict.c:97
 #, c-format
 msgid "Usage: %s [options]\n"
-msgstr ""
+msgstr "Usage : %s [options]\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:98
 #, c-format
 msgid "Options:\n"
-msgstr ""
+msgstr "Options :\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:99
 #, c-format
 msgid "    -t, --text-field    grap the focus on the text field in the panel\n"
-msgstr ""
+msgstr "    -t, --text-field    placer le focus sur le champ de texte dans le panneau\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:100
 #, c-format
 msgid "    -h, --help          show this help and exit\n"
-msgstr ""
+msgstr "    -h, --help          afficher cette aide et quitter\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:101
 #, c-format
 msgid ""
 "If called without any options, the xfce4-dict-plugin main window is shown.\n"
-msgstr ""
+msgstr "Si appelé sans options, la fenêtre principale de xfce4-dict-plugin est affichée.\n"

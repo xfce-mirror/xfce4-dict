@@ -1,3 +1,7 @@
+2008-03-08  Mike Massonnet <mmassonnet@xfce.org>
+
+	* fr.po: Update French translation
+
 2008-03-08  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
 	* xfce4-dict-plugin.pot, *.po: Issued make update-po.
