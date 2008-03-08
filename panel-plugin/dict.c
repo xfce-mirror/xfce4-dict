@@ -1532,12 +1532,17 @@ static void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_cont
 {
 	if ((data->length >= 0) && (data->format == 8))
 	{
-		if (drag_context->action == GDK_ACTION_ASK)
+		drag_context->action = GDK_ACTION_COPY;
+
+		if (widget == dd->main_entry)
 		{
-			drag_context->action = GDK_ACTION_COPY;
+			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
 		}
-		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), (const gchar*) data->data);
-		dict_search_word(dd, (const gchar*) data->data);
+		else
+		{
+			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), (const gchar*) data->data);
+			dict_search_word(dd, (const gchar*) data->data);
+		}
 		gtk_drag_finish(drag_context, TRUE, FALSE, ltime);
 	}
 }
@@ -1652,6 +1657,7 @@ static void dict_construct(XfcePanelPlugin *plugin)
     gtk_drag_dest_set(GTK_WIDGET(dd->panel_button), GTK_DEST_DEFAULT_ALL,
 		copy_dest_types, G_N_ELEMENTS(copy_dest_types), GDK_ACTION_COPY);
     g_signal_connect(dd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
+    g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
     g_signal_connect(dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
 
 	dict_status_add(dd, _("Ready."));
