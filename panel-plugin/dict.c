@@ -1592,11 +1592,6 @@ static void dict_construct(XfcePanelPlugin *plugin)
 {
 	DictData *dd = g_new0(DictData, 1);
 	GtkWidget *hbox;
-	GtkTargetEntry copy_dest_types[] = {
-		{ "STRING", 0, 0 },
-		{ "UTF8_STRING", 0, 0 },
-		{ "text/plain", 0, 0 }
-	};
 
     xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -1653,9 +1648,10 @@ static void dict_construct(XfcePanelPlugin *plugin)
     xfce_panel_plugin_add_action_widget(plugin, dd->panel_button);
     dict_set_selection(dd);
 
-    /* DnD stuff */
-    gtk_drag_dest_set(GTK_WIDGET(dd->panel_button), GTK_DEST_DEFAULT_ALL,
-		copy_dest_types, G_N_ELEMENTS(copy_dest_types), GDK_ACTION_COPY);
+	/* DnD stuff */
+	gtk_drag_dest_set(GTK_WIDGET(dd->panel_button), GTK_DEST_DEFAULT_ALL,
+		NULL, 0, GDK_ACTION_COPY | GDK_ACTION_MOVE);
+	gtk_drag_dest_add_text_targets(GTK_WIDGET(dd->panel_button));
     g_signal_connect(dd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
     g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
     g_signal_connect(dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
