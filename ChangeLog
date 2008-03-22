@@ -3,6 +3,7 @@
 	* Use GTK's predefined text targets for Drag'n'Drop. This fixes a strange
 	  bug when dragging non-Ascii text from Poedit.
 	  Also allow move as DnD action.
+	* Fix indentation.
 
 
 2008-03-08  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>

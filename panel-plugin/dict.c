@@ -674,15 +674,15 @@ static void dict_search_word(DictData *dd, const gchar *word)
 
 static void dict_free_data(XfcePanelPlugin *plugin, DictData *dd)
 {
-    dict_write_rc_file(plugin, dd);
-    g_free(dd->searched_word);
-    g_free(dd->dictionary);
-    g_free(dd->server);
-    g_free(dd->web_url);
-    g_free(dd->spell_bin);
-    g_object_unref(dd->icon);
-    gtk_object_sink(GTK_OBJECT(dd->tooltips));
-    g_free(dd);
+	dict_write_rc_file(plugin, dd);
+	g_free(dd->searched_word);
+	g_free(dd->dictionary);
+	g_free(dd->server);
+	g_free(dd->web_url);
+	g_free(dd->spell_bin);
+	g_object_unref(dd->icon);
+	gtk_object_sink(GTK_OBJECT(dd->tooltips));
+	g_free(dd);
 }
 
 
@@ -695,19 +695,19 @@ static gboolean dict_set_size(XfcePanelPlugin *plugin, gint wsize, DictData *dd)
 	/*g_object_unref(G_OBJECT(dd->icon));*/
 	dd->icon = dict_load_and_scale(dict_icon_data, size, -1);
 
-    gtk_image_set_from_pixbuf(GTK_IMAGE(dd->panel_button_image), dd->icon);
+	gtk_image_set_from_pixbuf(GTK_IMAGE(dd->panel_button_image), dd->icon);
 
-    if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
-    {
-    	width = size + dd->panel_entry_size;
+	if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
+	{
+		width = size + dd->panel_entry_size;
 		gtk_widget_set_size_request(dd->panel_entry, dd->panel_entry_size, -1);
-    }
-    else
+	}
+	else
 		width = size;
 
-    gtk_widget_set_size_request(GTK_WIDGET(plugin), width, size);
+	gtk_widget_set_size_request(GTK_WIDGET(plugin), width, size);
 
-    return TRUE;
+	return TRUE;
 }
 
 
@@ -723,84 +723,84 @@ static void dict_panel_change_orientation(XfcePanelPlugin *plugin, GtkOrientatio
 
 static void dict_style_set(XfcePanelPlugin *plugin, gpointer ignored, DictData *dd)
 {
-    dict_set_size(plugin, xfce_panel_plugin_get_size(plugin), dd);
+	dict_set_size(plugin, xfce_panel_plugin_get_size(plugin), dd);
 }
 
 
 static void dict_read_rc_file(XfcePanelPlugin *plugin, DictData *dd)
 {
-    gchar *file;
-    XfceRc *rc;
-    gint mode = DICTMODE_DICT;
-    gint webmode = WEBMODE_LEO_GERENG;
-    gint port = 2628;
-    gint panel_entry_size = 120;
-    gboolean show_panel_entry = FALSE;
-    const gchar *server = "dict.org";
-    const gchar *dict = "*";
-    const gchar *weburl = NULL;
-    const gchar *spell_bin = "aspell";
-    const gchar *spell_dictionary = "en";
+	gchar *file;
+	XfceRc *rc;
+	gint mode = DICTMODE_DICT;
+	gint webmode = WEBMODE_LEO_GERENG;
+	gint port = 2628;
+	gint panel_entry_size = 120;
+	gboolean show_panel_entry = FALSE;
+	const gchar *server = "dict.org";
+	const gchar *dict = "*";
+	const gchar *weburl = NULL;
+	const gchar *spell_bin = "aspell";
+	const gchar *spell_dictionary = "en";
 
-    if ((file = xfce_panel_plugin_lookup_rc_file(plugin)) != NULL)
-    {
-        rc = xfce_rc_simple_open(file, TRUE);
-        g_free(file);
-        if (rc != NULL)
-        {
-            mode = xfce_rc_read_int_entry(rc, "mode", mode);
-            webmode = xfce_rc_read_int_entry(rc, "web_mode", webmode);
-            weburl = xfce_rc_read_entry(rc, "web_url", weburl);
-            show_panel_entry = xfce_rc_read_bool_entry(rc, "show_panel_entry", show_panel_entry);
-            panel_entry_size = xfce_rc_read_int_entry(rc, "panel_entry_size", panel_entry_size);
-            port = xfce_rc_read_int_entry(rc, "port", port);
-            server = xfce_rc_read_entry(rc, "server", server);
-            dict = xfce_rc_read_entry(rc, "dict", dict);
-            spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin);
-            spell_dictionary = xfce_rc_read_entry(rc, "spell_dictionary", spell_dictionary);
+	if ((file = xfce_panel_plugin_lookup_rc_file(plugin)) != NULL)
+	{
+		rc = xfce_rc_simple_open(file, TRUE);
+		g_free(file);
+		if (rc != NULL)
+		{
+			mode = xfce_rc_read_int_entry(rc, "mode", mode);
+			webmode = xfce_rc_read_int_entry(rc, "web_mode", webmode);
+			weburl = xfce_rc_read_entry(rc, "web_url", weburl);
+			show_panel_entry = xfce_rc_read_bool_entry(rc, "show_panel_entry", show_panel_entry);
+			panel_entry_size = xfce_rc_read_int_entry(rc, "panel_entry_size", panel_entry_size);
+			port = xfce_rc_read_int_entry(rc, "port", port);
+			server = xfce_rc_read_entry(rc, "server", server);
+			dict = xfce_rc_read_entry(rc, "dict", dict);
+			spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin);
+			spell_dictionary = xfce_rc_read_entry(rc, "spell_dictionary", spell_dictionary);
 
-            xfce_rc_close(rc);
-        }
-    }
+			xfce_rc_close(rc);
+		}
+	}
 
-    dd->mode = mode;
-    dd->web_mode = webmode;
-    dd->web_url = g_strdup(weburl);
-    dd->show_panel_entry = show_panel_entry;
-    dd->panel_entry_size = panel_entry_size;
-    dd->port = port;
-    dd->server = g_strdup(server);
-    dd->dictionary = g_strdup(dict);
-    dd->spell_bin = g_strdup(spell_bin);
-    dd->spell_dictionary = g_strdup(spell_dictionary);
+	dd->mode = mode;
+	dd->web_mode = webmode;
+	dd->web_url = g_strdup(weburl);
+	dd->show_panel_entry = show_panel_entry;
+	dd->panel_entry_size = panel_entry_size;
+	dd->port = port;
+	dd->server = g_strdup(server);
+	dd->dictionary = g_strdup(dict);
+	dd->spell_bin = g_strdup(spell_bin);
+	dd->spell_dictionary = g_strdup(spell_dictionary);
 }
 
 
 static void dict_write_rc_file(XfcePanelPlugin *plugin, DictData *dd)
 {
-    gchar *file;
-    XfceRc *rc;
+	gchar *file;
+	XfceRc *rc;
 
-    if (! (file = xfce_panel_plugin_save_location(plugin, TRUE))) return;
+	if (! (file = xfce_panel_plugin_save_location(plugin, TRUE))) return;
 
-    rc = xfce_rc_simple_open(file, FALSE);
-    g_free(file);
+	rc = xfce_rc_simple_open(file, FALSE);
+	g_free(file);
 
-    if (! rc) return;
+	if (! rc) return;
 
-    xfce_rc_write_int_entry(rc, "mode", dd->mode);
-    xfce_rc_write_int_entry(rc, "web_mode", dd->web_mode);
-    if (dd->web_url != NULL)
+	xfce_rc_write_int_entry(rc, "mode", dd->mode);
+	xfce_rc_write_int_entry(rc, "web_mode", dd->web_mode);
+	if (dd->web_url != NULL)
 		xfce_rc_write_entry(rc, "web_url", dd->web_url);
-    xfce_rc_write_bool_entry(rc, "show_panel_entry", dd->show_panel_entry);
-    xfce_rc_write_int_entry(rc, "panel_entry_size", dd->panel_entry_size);
-    xfce_rc_write_int_entry(rc, "port", dd->port);
-    xfce_rc_write_entry(rc, "server", dd->server);
-    xfce_rc_write_entry(rc, "dict", dd->dictionary);
-    xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);
-    xfce_rc_write_entry(rc, "spell_dictionary", dd->spell_dictionary);
+	xfce_rc_write_bool_entry(rc, "show_panel_entry", dd->show_panel_entry);
+	xfce_rc_write_int_entry(rc, "panel_entry_size", dd->panel_entry_size);
+	xfce_rc_write_int_entry(rc, "port", dd->port);
+	xfce_rc_write_entry(rc, "server", dd->server);
+	xfce_rc_write_entry(rc, "dict", dd->dictionary);
+	xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);
+	xfce_rc_write_entry(rc, "spell_dictionary", dd->spell_dictionary);
 
-    xfce_rc_close(rc);
+	xfce_rc_close(rc);
 }
 
 
@@ -882,10 +882,10 @@ static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 
 static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 {
-    g_object_set_data(G_OBJECT(dd->plugin), "dialog", NULL);
+	g_object_set_data(G_OBJECT(dd->plugin), "dialog", NULL);
 
-    if (response == GTK_RESPONSE_OK)
-    {
+	if (response == GTK_RESPONSE_OK)
+	{
 		gchar *tmp;
 		/* MODE DICT */
 		tmp = gtk_combo_box_get_active_text(GTK_COMBO_BOX(dd->dict_combo));
@@ -947,9 +947,9 @@ static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictD
 		/* save settings */
 		dict_set_size(dd->plugin, xfce_panel_plugin_get_size(dd->plugin), dd);
 		dict_write_rc_file(dd->plugin, dd);
-    }
-    gtk_widget_destroy(dlg);
-    xfce_panel_plugin_unblock_menu(dd->plugin);
+	}
+	gtk_widget_destroy(dlg);
+	xfce_panel_plugin_unblock_menu(dd->plugin);
 }
 
 
@@ -1002,40 +1002,40 @@ static void dict_get_spell_dictionaries(DictData *dd)
 
 static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 {
-    GtkWidget *dlg, *header, *vbox, *label3;
+	GtkWidget *dlg, *header, *vbox, *label3;
 
-    xfce_panel_plugin_block_menu(plugin);
+	xfce_panel_plugin_block_menu(plugin);
 
-    dlg = gtk_dialog_new_with_buttons(_("Properties"),
-                GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(plugin))),
-                GTK_DIALOG_DESTROY_WITH_PARENT |
-                GTK_DIALOG_NO_SEPARATOR,
-                GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
-                NULL);
+	dlg = gtk_dialog_new_with_buttons(_("Properties"),
+				GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(plugin))),
+				GTK_DIALOG_DESTROY_WITH_PARENT |
+				GTK_DIALOG_NO_SEPARATOR,
+				GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+				GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
+				NULL);
 
-    g_object_set_data(G_OBJECT(plugin), "dialog", dlg);
+	g_object_set_data(G_OBJECT(plugin), "dialog", dlg);
 
-    gtk_window_set_position(GTK_WINDOW(dlg), GTK_WIN_POS_CENTER);
+	gtk_window_set_position(GTK_WINDOW(dlg), GTK_WIN_POS_CENTER);
 
-    g_signal_connect(dlg, "response", G_CALLBACK(dict_properties_dialog_response), dd);
+	g_signal_connect(dlg, "response", G_CALLBACK(dict_properties_dialog_response), dd);
 
-    gtk_container_set_border_width(GTK_CONTAINER(dlg), 2);
+	gtk_container_set_border_width(GTK_CONTAINER(dlg), 2);
 
-    header = xfce_create_header(NULL, _("Dictionary plugin"));
-    gtk_container_set_border_width(GTK_CONTAINER(header), 6);
-    gtk_widget_show(header);
-    gtk_box_pack_start(GTK_BOX(GTK_DIALOG (dlg)->vbox), header, FALSE, TRUE, 0);
+	header = xfce_create_header(NULL, _("Dictionary plugin"));
+	gtk_container_set_border_width(GTK_CONTAINER(header), 6);
+	gtk_widget_show(header);
+	gtk_box_pack_start(GTK_BOX(GTK_DIALOG (dlg)->vbox), header, FALSE, TRUE, 0);
 
-    vbox = gtk_vbox_new(FALSE, 3);
-    gtk_container_set_border_width(GTK_CONTAINER(vbox), 6);
-    gtk_widget_show(vbox);
-    gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), vbox, TRUE, TRUE, 0);
+	vbox = gtk_vbox_new(FALSE, 3);
+	gtk_container_set_border_width(GTK_CONTAINER(vbox), 6);
+	gtk_widget_show(vbox);
+	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), vbox, TRUE, TRUE, 0);
 
-    /*
-     * Mode: DICT
-     */
-     {
+	/*
+	 * Mode: DICT
+	 */
+	 {
 		GtkWidget *label1, *label2, *table, *button_get_list, *frame1;
 
 		/* server address */
@@ -1131,11 +1131,11 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 		gtk_container_set_border_width(GTK_CONTAINER(frame1), 3);
 		gtk_container_add(GTK_CONTAINER(frame1), table);
 		gtk_box_pack_start(GTK_BOX(vbox), frame1, FALSE, FALSE, 0);
-     }
+	}
 
 	/*
-     * Mode: WEB
-     */
+	 * Mode: WEB
+	 */
 	{
 		GtkWidget  *web_vbox, *entry_hbox, *help_label, *frame2;
 		GSList *web_type;
@@ -1255,7 +1255,7 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 		gtk_container_set_border_width(GTK_CONTAINER(frame3), 3);
 		gtk_container_add(GTK_CONTAINER(frame3), table);
 		gtk_box_pack_start(GTK_BOX(vbox), frame3, TRUE, FALSE, 0);
-     }
+	}
 
 	/* Display text entry in the panel */
 	{
@@ -1291,13 +1291,13 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 		gtk_box_pack_start(GTK_BOX(vbox), dd->check_panel_entry, FALSE, FALSE, 0);
 		gtk_box_pack_start(GTK_BOX(vbox), pe_hbox, FALSE, FALSE, 0);
 
-    }
+	}
 
 	/* init the sensitive widgets */
 	dict_use_webserver_toggled(GTK_TOGGLE_BUTTON(dd->web_radio_other), dd);
 	dict_show_panel_entry_toggled(GTK_TOGGLE_BUTTON(dd->check_panel_entry), dd);
 
-    gtk_widget_show(dlg);
+	gtk_widget_show(dlg);
 }
 
 
@@ -1510,9 +1510,9 @@ static void dict_about_dialog(GtkWidget *widget, DictData *dd)
 	XfceAboutInfo *info;
 
 	info = xfce_about_info_new("xfce4-dict-plugin", VERSION,
-                               _("A plugin to query a Dict server."),
-                               XFCE_COPYRIGHT_TEXT("2006-2008", "Enrico Tröger"),
-                               XFCE_LICENSE_GPL);
+							   _("A plugin to query a Dict server."),
+							   XFCE_COPYRIGHT_TEXT("2006-2008", "Enrico Tröger"),
+							   XFCE_LICENSE_GPL);
 
 	xfce_about_info_add_credit(info, "Enrico Tröger", "enrico(dot)troeger(at)uvena(dot)de", _("Developer"));
 	xfce_about_info_set_homepage(info, "http://goodies.xfce.org");
@@ -1569,16 +1569,16 @@ static void dict_panel_button_clicked(GtkWidget *button, DictData *dd)
 
 static gboolean dict_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, DictData *dd)
 {
-  GtkWidget *toplevel;
+	GtkWidget *toplevel;
 
-  /* Determine toplevel parent widget */
-  toplevel = gtk_widget_get_toplevel(entry);
+	/* Determine toplevel parent widget */
+	toplevel = gtk_widget_get_toplevel(entry);
 
-  /* Grab entry focus if possible */
-  if (event->button != 3 && toplevel && toplevel->window)
-    xfce_panel_plugin_focus_widget(dd->plugin, entry);
+	/* Grab entry focus if possible */
+	if (event->button != 3 && toplevel && toplevel->window)
+		xfce_panel_plugin_focus_widget(dd->plugin, entry);
 
-  return FALSE;
+	return FALSE;
 }
 
 
@@ -1593,41 +1593,41 @@ static void dict_construct(XfcePanelPlugin *plugin)
 	DictData *dd = g_new0(DictData, 1);
 	GtkWidget *hbox;
 
-    xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
 	g_thread_init(NULL);
 
-    dd->plugin = plugin;
+	dd->plugin = plugin;
 	dd->searched_word = NULL;
 	dd->query_is_running = FALSE;
 	dd->query_status = NO_ERROR;
 
-    dict_read_rc_file(plugin, dd);
+	dict_read_rc_file(plugin, dd);
 
-    dd->panel_button = xfce_create_panel_button();
+	dd->panel_button = xfce_create_panel_button();
 
-    dd->tooltips = gtk_tooltips_new();
-    gtk_tooltips_set_tip(dd->tooltips, dd->panel_button, _("Look up a word"), NULL);
+	dd->tooltips = gtk_tooltips_new();
+	gtk_tooltips_set_tip(dd->tooltips, dd->panel_button, _("Look up a word"), NULL);
 
-    dd->panel_button_image = gtk_image_new();
-    gtk_container_add(GTK_CONTAINER(dd->panel_button), GTK_WIDGET(dd->panel_button_image));
+	dd->panel_button_image = gtk_image_new();
+	gtk_container_add(GTK_CONTAINER(dd->panel_button), GTK_WIDGET(dd->panel_button_image));
 
-    gtk_widget_show_all(dd->panel_button);
+	gtk_widget_show_all(dd->panel_button);
 
-    g_signal_connect(dd->panel_button, "clicked", G_CALLBACK(dict_panel_button_clicked), dd);
+	g_signal_connect(dd->panel_button, "clicked", G_CALLBACK(dict_panel_button_clicked), dd);
 
-    dict_create_main_dialog(dd);
+	dict_create_main_dialog(dd);
 
-    g_signal_connect(plugin, "free-data", G_CALLBACK(dict_free_data), dd);
-    g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_set_size), dd);
+	g_signal_connect(plugin, "free-data", G_CALLBACK(dict_free_data), dd);
+	g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_set_size), dd);
 	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_panel_change_orientation), dd);
-    g_signal_connect(plugin, "style-set", G_CALLBACK(dict_style_set), dd);
-    g_signal_connect(plugin, "save", G_CALLBACK(dict_write_rc_file), dd);
-    g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_properties_dialog), dd);
-    g_signal_connect(plugin, "about", G_CALLBACK(dict_about_dialog), dd);
+	g_signal_connect(plugin, "style-set", G_CALLBACK(dict_style_set), dd);
+	g_signal_connect(plugin, "save", G_CALLBACK(dict_write_rc_file), dd);
+	g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_properties_dialog), dd);
+	g_signal_connect(plugin, "about", G_CALLBACK(dict_about_dialog), dd);
 
-    xfce_panel_plugin_menu_show_configure(plugin);
-    xfce_panel_plugin_menu_show_about(plugin);
+	xfce_panel_plugin_menu_show_configure(plugin);
+	xfce_panel_plugin_menu_show_about(plugin);
 
 	/* panel entry */
 	dd->panel_entry = gtk_entry_new();
@@ -1638,23 +1638,23 @@ static void dict_construct(XfcePanelPlugin *plugin)
 	if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
 		gtk_widget_show(dd->panel_entry);
 
-    hbox = gtk_hbox_new(FALSE, 0);
-    gtk_widget_show(hbox);
+	hbox = gtk_hbox_new(FALSE, 0);
+	gtk_widget_show(hbox);
 
-    gtk_container_add(GTK_CONTAINER(hbox), dd->panel_button);
-    gtk_container_add(GTK_CONTAINER(hbox), dd->panel_entry);
-    gtk_container_add(GTK_CONTAINER(plugin), hbox);
+	gtk_container_add(GTK_CONTAINER(hbox), dd->panel_button);
+	gtk_container_add(GTK_CONTAINER(hbox), dd->panel_entry);
+	gtk_container_add(GTK_CONTAINER(plugin), hbox);
 
-    xfce_panel_plugin_add_action_widget(plugin, dd->panel_button);
-    dict_set_selection(dd);
+	xfce_panel_plugin_add_action_widget(plugin, dd->panel_button);
+	dict_set_selection(dd);
 
 	/* DnD stuff */
 	gtk_drag_dest_set(GTK_WIDGET(dd->panel_button), GTK_DEST_DEFAULT_ALL,
 		NULL, 0, GDK_ACTION_COPY | GDK_ACTION_MOVE);
 	gtk_drag_dest_add_text_targets(GTK_WIDGET(dd->panel_button));
-    g_signal_connect(dd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
-    g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
-    g_signal_connect(dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
+	g_signal_connect(dd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
+	g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
+	g_signal_connect(dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
 
 	dict_status_add(dd, _("Ready."));
 

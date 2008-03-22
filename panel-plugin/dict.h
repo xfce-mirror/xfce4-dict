@@ -52,35 +52,35 @@ enum
 
 typedef struct
 {
-    XfcePanelPlugin *plugin;
+	XfcePanelPlugin *plugin;
 
-    _dict_mode mode;
-    _web_mode web_mode;
+	_dict_mode mode;
+	_web_mode web_mode;
 
-    GtkWidget *window;
-    GtkWidget *statusbar;
-    GtkWidget *main_entry;
+	GtkWidget *window;
+	GtkWidget *statusbar;
+	GtkWidget *main_entry;
 	GtkWidget *panel_entry;
 	GtkWidget *main_textview;
 	GtkTextBuffer *main_textbuffer;
 	GtkTextTag *main_boldtag;
 
-    GtkWidget *server_entry;
-    GtkWidget *dict_combo;
-    GtkWidget *port_spinner;
-    GtkWidget *panel_entry_size_label;
-    GtkWidget *panel_entry_size_spinner;
+	GtkWidget *server_entry;
+	GtkWidget *dict_combo;
+	GtkWidget *port_spinner;
+	GtkWidget *panel_entry_size_label;
+	GtkWidget *panel_entry_size_spinner;
 	GtkWidget *check_panel_entry;
 
-    GtkWidget *panel_button;
-    GtkWidget *panel_button_image;
-    GtkTooltips *tooltips;
+	GtkWidget *panel_button;
+	GtkWidget *panel_button_image;
+	GtkTooltips *tooltips;
 
-    gboolean show_panel_entry;
-    gint panel_entry_size;
-    gint port;
-    gchar *server;
-    gchar *dictionary;
+	gboolean show_panel_entry;
+	gint panel_entry_size;
+	gint port;
+	gchar *server;
+	gchar *dictionary;
 
 	gchar *searched_word;  /* word to query the server */
 	gboolean query_is_running;
@@ -96,11 +96,11 @@ typedef struct
 	gchar *web_url;
 
 	GtkWidget *spell_entry;
-    GtkWidget *spell_combo;
+	GtkWidget *spell_combo;
 	gchar *spell_bin;
 	gchar *spell_dictionary;
 
-    GdkPixbuf *icon;
+	GdkPixbuf *icon;
 } DictData;
 
 
