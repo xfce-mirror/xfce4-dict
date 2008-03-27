@@ -18,6 +18,10 @@
  */
 
 
+/* Code to execute the aspell (or ispell or anything command line compatible) binary
+ * with a given search term and reads it output. */
+
+
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -26,13 +30,15 @@
 #include <gtk/gtk.h>
 
 #include <libxfcegui4/libxfcegui4.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
 
-#include "dict.h"
+/* Simple forward declaration to avoid inclusion of libxfce4panel headers */
+typedef struct XfcePanelPlugin_t XfcePanelPlugin;
+
+#include "common.h"
+#include "aspell.h"
 
 
-
-static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, gpointer data)
+static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, gconstpointer data)
 {
 	GIOChannel *ioc;
 
@@ -43,7 +49,7 @@ static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, g
 	/* "auto-close" */
 	g_io_channel_set_close_on_unref(ioc, TRUE);
 
-	g_io_add_watch(ioc, cond, func, data);
+	g_io_add_watch(ioc, cond, func, (gpointer) data);
 	g_io_channel_unref(ioc);
 
 	return ioc;

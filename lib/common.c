@@ -17,46 +17,43 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+
+/* All files in lib/ form a collection of common used code by the xfce4-dict stand-alone
+ * application and the xfce4-dict-plugin.
+ * This file contains very common code and has some glue to combine the aspell query code,
+ * the dictd server query code and the web dictionary code together. */
+
+
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
 
 #include <stdlib.h>
+#include <string.h>
 #include <gtk/gtk.h>
 
 #include <libxfcegui4/libxfcegui4.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
-#include <libxfce4panel/xfce-panel-convenience.h>
 
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <netdb.h>
-#include <netinet/tcp.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <signal.h>
-#include <string.h>
 
-#include "dict.h"
-#include "xfce4-popup-dict.h"
+
+/* Simple forward declaration to avoid inclusion of libxfce4panel headers */
+typedef struct XfcePanelPlugin_t XfcePanelPlugin;
+
+#include "common.h"
+#include "aspell.h"
+#include "dictd.h"
 #include "inline-icon.h"
 
-#define BUF_SIZE 256
 
 
-/* Panel Plugin Interface */
-
-static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd);
-static void dict_construct(XfcePanelPlugin *plugin);
-static void dict_write_rc_file(XfcePanelPlugin *plugin, DictData *dd);
-static void dict_panel_button_clicked(GtkWidget *button, DictData *dd);
+/* the following extern declared functions are called here for interaction with the panel
+ * plugin (if in use) and to avoid to require linkage to libxfce4panel */
+extern void dict_panel_plugin_save_settings(DictData *dd);
+extern void dict_panel_plugin_unblock(DictData *dd);
 
 
-/* internal functions */
 
-
+/* TODO make me UTF-8 safe */
 static gint dict_str_pos(const gchar *haystack, const gchar *needle)
 {
 	gint haystack_length = strlen(haystack);
@@ -135,184 +132,14 @@ static gchar *dict_str_replace(gchar *haystack, const gchar *needle, const gchar
 }
 
 
-/* Handle user messages (xfce4-popup-dict) */
-static gboolean dict_message_received(GtkWidget *w, GdkEventClient *ev, gpointer user_data)
+void dict_set_panel_entry_text(DictData *dd, const gchar *text)
 {
-	DictData *dd = user_data;
-
-	if (ev->data_format == 8 && *(ev->data.b) != '\0')
-	{
-		if (strcmp(XFCE_DICT_WINDOW_MESSAGE, ev->data.b) == 0)
-		{	/* open the main window */
-			dict_panel_button_clicked(NULL, dd);
-			return TRUE;
-		}
-
-		if (strcmp(XFCE_DICT_TEXTFIELD_MESSAGE, ev->data.b) == 0)
-		{	/* put the focus onto the panel entry */
-			if (dd->show_panel_entry)
-				xfce_panel_plugin_focus_widget(dd->plugin, dd->panel_entry);
-		}
-	}
-
-	return FALSE;
+	if (dd->panel_entry != NULL)
+		gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), text);
 }
 
 
-static gboolean dict_set_selection(DictData *dd)
-{
-	GdkScreen *gscreen;
-	gchar      selection_name[32];
-	Atom       selection_atom;
-	GtkWidget *win;
-	Window     xwin;
-
-	win = gtk_invisible_new();
-	gtk_widget_realize(win);
-	xwin = GDK_WINDOW_XID(GTK_WIDGET(win)->window);
-
-	gscreen = gtk_widget_get_screen(win);
-	g_snprintf(selection_name, sizeof (selection_name),
-		XFCE_DICT_SELECTION"%d", gdk_screen_get_number(gscreen));
-	selection_atom = XInternAtom(GDK_DISPLAY(), selection_name, False);
-
-	if (XGetSelectionOwner(GDK_DISPLAY(), selection_atom))
-	{
-		gtk_widget_destroy(win);
-		return FALSE;
-	}
-
-	XSelectInput(GDK_DISPLAY(), xwin, PropertyChangeMask);
-	XSetSelectionOwner(GDK_DISPLAY(), selection_atom, xwin, GDK_CURRENT_TIME);
-
-	g_signal_connect(G_OBJECT(win), "client-event", G_CALLBACK(dict_message_received), dd);
-
-	return TRUE;
-}
-
-
-static GdkPixbuf *dict_load_and_scale(const guint8 *data, int dstw, int dsth)
-{
-	GdkPixbuf *pb, *pb_scaled;
-	int pb_w, pb_h;
-
-	pb = gdk_pixbuf_new_from_inline(-1, data, FALSE, NULL);
-	pb_w = gdk_pixbuf_get_width(pb);
-	pb_h = gdk_pixbuf_get_height(pb);
-
-	if (dstw == pb_w && dsth == pb_h)
-		return(pb);
-	else if (dstw < 0)
-		dstw = (dsth * pb_w) / pb_h;
-	else if (dsth < 0)
-		dsth = (dstw * pb_h) / pb_w;
-
-	pb_scaled = gdk_pixbuf_scale_simple(pb, dstw, dsth, GDK_INTERP_HYPER);
-	g_object_unref(G_OBJECT(pb));
-
-	return (pb_scaled);
-}
-
-
-static gint dict_open_socket(const gchar *host_name, gint port)
-{
-	struct sockaddr_in addr;
-	struct hostent *host_p;
-	gint fd;
-	gint opt = 1;
-
-	memset((gchar *) &addr, 0, sizeof (addr));
-
-	if ((addr.sin_addr.s_addr = inet_addr(host_name)) == INADDR_NONE)
-	{
-		host_p = gethostbyname(host_name);
-		if (host_p == NULL) return (-1);
-		memcpy((gchar *)(&addr.sin_addr), host_p->h_addr, (size_t)host_p->h_length);
-	}
-
-	addr.sin_family  = AF_INET;
-	addr.sin_port    = htons((gushort) port);
-
-	if ((fd = socket (AF_INET, SOCK_STREAM, 0)) < 0)
-		return (-1);
-
-	setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (gchar *) &opt, sizeof (opt));
-
-	if (connect(fd, (struct sockaddr *) &addr, sizeof (addr)) != 0)
-	{
-		close(fd);
-		return (-1);
-	}
-	/*fcntl( fd, F_SETFL, O_NONBLOCK );*/
-
-	return (fd);
-}
-
-
-static void dict_send_command(gint fd, const gchar *str)
-{
-	gchar buf[256];
-	gint len = strlen (str);
-
-	g_snprintf(buf, 256, "%s\n", str);
-	send(fd, buf, len + 2, 0);
-}
-
-
-static gchar *dict_get_answer(gint fd)
-{
-	gboolean fol = FALSE;
-	gboolean sol = FALSE;
-	gboolean tol = FALSE;
-	GString *str = g_string_sized_new(100);
-	gchar c, *tmp;
-	gchar ec[3];
-
-	alarm(10); /* abort after 5 seconds, there should went wrong something */
-	while (read(fd, &c, 1) > 0)
-	{
-		if (tol) /* third char of line */
-		{
-			ec[2] = c;
-		}
-		if (sol) /* second char of line */
-		{
-			ec[1] = c;
-			sol = FALSE;
-			tol = TRUE;
-		}
-		if (fol) /* first char of line */
-		{
-			ec[0] = c;
-			fol = FALSE;
-			sol = TRUE;
-		}
-		if (c == '\n') /* last char of line, so the next run is first char of next line */
-			fol = TRUE;
-
-		g_string_append_c(str, c);
-		if (tol &&
-			(
-				(strncmp(ec, "250", 3) == 0) || /* ok */
-				(strncmp(ec, "554", 3) == 0) ||	/* no databases present */
-				(strncmp(ec, "500", 3) == 0) ||	/* unknown command */
-				(strncmp(ec, "501", 3) == 0) ||	/* syntax error */
-				(strncmp(ec, "552", 3) == 0)	/* nothing found */
-			)
-		)
-			 break;
-	}
-	alarm(0);
-
-	g_string_append_c(str, '\0');
-	tmp = str->str;
-	g_string_free(str, FALSE);
-
-	return tmp;
-}
-
-
-static void dict_show_main_window(DictData *dd)
+void dict_show_main_window(DictData *dd)
 {
 	gtk_widget_show(dd->window);
 	gtk_window_deiconify(GTK_WINDOW(dd->window));
@@ -343,177 +170,6 @@ void dict_clear_text_buffer(DictData *dd)
 	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &start_iter);
 	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
 	gtk_text_buffer_delete(dd->main_textbuffer, &start_iter, &end_iter);
-}
-
-
-gboolean dict_process_server_response(DictData *dd)
-{
-	gint max_lines, i;
-	gint defs_found = 0;
-	gchar *answer, *tmp, **lines, *stripped;
-	GtkTextIter iter;
-
-	if (dd->query_status == NO_CONNECTION)
-	{
-		dict_status_add(dd, _("Could not connect to server."));
-		dd->query_status = NO_ERROR;
-		return FALSE;
-	}
-
-	if (dd->query_buffer == NULL || strlen(dd->query_buffer) == 0)
-	{
-		dict_status_add(dd, _("Unknown error while quering the server."));
-		g_free(dd->query_buffer);
-		return FALSE;
-	}
-
-	answer = dd->query_buffer;
-	if (strncmp("220", answer, 3) != 0)
-	{
-		dict_status_add(dd, _("Server not ready."));
-		g_free(dd->query_buffer);
-		return FALSE;
-	}
-
-	/* go to next line */
-	while (*answer != '\n') answer++;
-	answer++;
-
-	if (strncmp("552", answer, 3) == 0)
-	{
-		dict_status_add(dd, _("No matches could be found for \"%s\"."), dd->searched_word);
-		g_free(dd->query_buffer);
-		return FALSE;
-	}
-	else if (strncmp("150", answer, 3) != 0 && strncmp("552", answer, 3) != 0)
-	{
-		dict_status_add(dd, _("Unknown error while quering the server."));
-		g_free(dd->query_buffer);
-		return FALSE;
-	}
-	defs_found = atoi(answer + 4);
-	dict_status_add(dd, _("%d definition(s) found."), defs_found);
-
-	/* go to next line */
-	while (*answer != '\n') answer++;
-	answer++;
-
-	/* parse output */
-	lines = g_strsplit(answer, "\r\n", -1);
-	max_lines = g_strv_length(lines);
-	if (lines == NULL || max_lines == 0)
-	{
-		g_free(dd->query_buffer);
-		return FALSE;
-	}
-
-	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
-	gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
-
-	i = -1;
-	while (i < max_lines)
-	{
-		i++;
-		if (strncmp(lines[i], "250", 3) == 0) break; /* end of data */
-		if (strncmp(lines[i], "error:", 6) == 0) /* an error occurred */
-		{
-			gtk_text_buffer_insert(dd->main_textbuffer, &iter, lines[i], -1);
-			break;
-		}
-		if (strncmp(lines[i], "151", 3) != 0) continue; /* unexpected line start, try next line */
-
-		/* get the used dictionary */
-		tmp = strchr(lines[i], '"'); /* get the opening " of quoted search word */
-		if (tmp != NULL)
-		{
-			tmp = strchr(tmp + 1, '"'); /* get the closing " of quoted search word */
-			if (tmp != NULL)
-			{
-				/* skip the found quote and the following space */
-				gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &iter, tmp + 2, -1,
-																dd->main_boldtag, NULL);
-				gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
-			}
-		}
-		if (i >= (max_lines - 2)) break;
-
-		/* all following lines represents the translation */
-		i += 2; /* skip the next two lines */
-		while (lines[i] != NULL && lines[i][0] != '.' && lines[i][0] != '\r' && lines[i][0] != '\n')
-		{
-			stripped = g_strstrip(lines[i]);
-			if (strlen(stripped) > 0)
-			{
-				gtk_text_buffer_insert(dd->main_textbuffer, &iter, stripped, -1);
-				if (i < (max_lines - 1) && lines[i + 1][0] != '.')
-					gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
-			}
-			i++;
-		}
-		gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n\n", 2);
-	}
-	g_strfreev(lines);
-	g_free(dd->query_buffer);
-
-	/* clear the panel entry to not search again when you click on the panel button */
-	gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
-
-	return FALSE;
-}
-
-
-static void dict_ask_server(DictData *dd)
-{
-	gint fd, i;
-	static gchar cmd[BUF_SIZE];
-
-	if ((fd = dict_open_socket(dd->server, dd->port)) == -1)
-	{
-		dd->query_status = NO_CONNECTION;
-		g_idle_add((GSourceFunc) dict_process_server_response, dd);
-		g_thread_exit(NULL);
-		return;
-	}
-
-	dd->query_is_running = TRUE;
-
-	/* take only the first part of the dictionary string, so let the string end at the space */
-	i = 0;
-	while (dd->dictionary[i] != ' ') i++;
-	dd->dictionary[i] = '\0';
-
-	g_snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, dd->searched_word);
-	dict_send_command(fd, cmd);
-
-	/* and now, "append" again the rest of the dictionary string again */
-	dd->dictionary[i] = ' ';
-
-	dd->query_buffer = dict_get_answer(fd);
-	close(fd);
-
-	dd->query_is_running = FALSE;
-	/* delegate parsing the response and related GUI stuff to GTK's main thread through the main loop */
-	g_idle_add((GSourceFunc) dict_process_server_response, dd);
-
-	g_thread_exit(NULL);
-}
-
-
-static void dict_start_server_query(DictData *dd, const gchar *word)
-{
-	if (dd->query_is_running)
-	{
-		gdk_beep();
-	}
-	else
-	{
-		dict_clear_text_buffer(dd);
-
-		dict_status_add(dd, _("Querying the server %s..."), dd->server);
-
-		/* start the thread to query the server */
-		g_thread_create((GThreadFunc) dict_ask_server, dd, FALSE, NULL);
-	}
 }
 
 
@@ -555,12 +211,64 @@ static gboolean dict_open_browser(DictData *dd, const gchar *uri)
 }
 
 
-static void dict_search_word(DictData *dd, const gchar *word)
+static gboolean dict_start_web_query(DictData *dd, const gchar *word)
 {
-	gboolean show = TRUE;
+	gboolean use_leo = FALSE;
+	gboolean success = TRUE;
+	gchar *uri, *base;
+
+	switch (dd->web_mode)
+	{
+		case WEBMODE_LEO_GERENG:
+		{
+			base = "http://dict.leo.org/ende?search={word}";
+			use_leo = TRUE;
+			break;
+		}
+		case WEBMODE_LEO_GERFRE:
+		{
+			base = "http://dict.leo.org/frde?search={word}";
+			use_leo = TRUE;
+			break;
+		}
+		case WEBMODE_LEO_GERSPA:
+		{
+			base = "http://dict.leo.org/esde?search={word}";
+			use_leo = TRUE;
+			break;
+		}
+		default: base = dd->web_url;
+	}
+
+	if (use_leo)
+	{
+		/* convert the text into ISO-8869-15 because dict.leo.org expects it ;-( */
+		gchar *tmp = g_convert(dd->searched_word, -1,
+								"ISO-8859-15", "UTF-8", NULL, NULL, NULL);
+		if (tmp != NULL)
+		{
+			g_free(dd->searched_word);
+			dd->searched_word = tmp;
+		}
+	}
+	uri = dict_str_replace(g_strdup(base), "{word}", dd->searched_word);
+	if (! dict_open_browser(dd, uri))
+	{
+		xfce_err(_("Browser could not be opened. Please check your preferences."));
+		success = FALSE;
+	}
+	g_free(uri);
+
+	return success;
+}
+
+
+void dict_search_word(DictData *dd, const gchar *word)
+{
+	gboolean browser_started = FALSE;
 
 	/* sanity checks */
-	if (! NZV(word) || strlen(word) > (BUF_SIZE - 11))
+	if (! NZV(word))
 	{
 		dict_status_add(dd, _("Invalid input."));
 		return;
@@ -574,11 +282,11 @@ static void dict_search_word(DictData *dd, const gchar *word)
 		{
 			dict_status_add(dd, _("Invalid non-UTF8 input."));
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
-			gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
+			dict_set_panel_entry_text(dd, "");
 			return;
 		}
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), dd->searched_word);
-		gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), dd->searched_word);
+		dict_set_panel_entry_text(dd, dd->searched_word);
 	}
 	else
 	{
@@ -594,51 +302,7 @@ static void dict_search_word(DictData *dd, const gchar *word)
 		}
 		case DICTMODE_WEB:
 		{
-			gboolean use_leo = FALSE;
-			gchar *uri, *base;
-
-			switch (dd->web_mode)
-			{
-				case WEBMODE_LEO_GERENG:
-				{
-					base = "http://dict.leo.org/ende?search={word}";
-					use_leo = TRUE;
-					break;
-				}
-				case WEBMODE_LEO_GERFRE:
-				{
-					base = "http://dict.leo.org/frde?search={word}";
-					use_leo = TRUE;
-					break;
-				}
-				case WEBMODE_LEO_GERSPA:
-				{
-					base = "http://dict.leo.org/esde?search={word}";
-					use_leo = TRUE;
-					break;
-				}
-				default: base = dd->web_url;
-			}
-
-			if (use_leo)
-			{
-				/* convert the text into ISO-8869-15 because dict.leo.org expects it ;-( */
-				gchar *tmp = g_convert(dd->searched_word, -1,
-										"ISO-8859-15", "UTF-8", NULL, NULL, NULL);
-				if (tmp != NULL)
-				{
-					g_free(dd->searched_word);
-					dd->searched_word = tmp;
-				}
-			}
-			uri = dict_str_replace(g_strdup(base), "{word}", dd->searched_word);
-			if (! dict_open_browser(dd, uri))
-			{
-				xfce_err(_("Browser could not be opened. Please check your preferences."));
-			}
-			g_free(uri);
-
-			show = FALSE; /* don't display main window */
+			browser_started = dict_start_web_query(dd, dd->searched_word);
 			break;
 		}
 		case DICTMODE_SPELL:
@@ -660,76 +324,22 @@ static void dict_search_word(DictData *dd, const gchar *word)
 		}
 	}
 
-	if (show)
-	{
-		dict_show_main_window(dd);
-	}
-	else
+	/* If we started a web search, the browser was successfully started and we are not in the
+	 * stand-alone app, then hide the main window in favour of the started browser.
+	 * If we are in the stand-alone app, don't hide the main window, we don't want this */
+	if (browser_started && dd->plugin != NULL)
 	{
 		gtk_widget_hide(dd->window);
 	}
-
-}
-
-
-static void dict_free_data(XfcePanelPlugin *plugin, DictData *dd)
-{
-	dict_write_rc_file(plugin, dd);
-	g_free(dd->searched_word);
-	g_free(dd->dictionary);
-	g_free(dd->server);
-	g_free(dd->web_url);
-	g_free(dd->spell_bin);
-	g_object_unref(dd->icon);
-	gtk_object_sink(GTK_OBJECT(dd->tooltips));
-	g_free(dd);
-}
-
-
-static gboolean dict_set_size(XfcePanelPlugin *plugin, gint wsize, DictData *dd)
-{
-	gint width;
-	gint size = wsize - 2 - (2 * MAX(dd->panel_button->style->xthickness,
-									 dd->panel_button->style->ythickness));
-
-	/*g_object_unref(G_OBJECT(dd->icon));*/
-	dd->icon = dict_load_and_scale(dict_icon_data, size, -1);
-
-	gtk_image_set_from_pixbuf(GTK_IMAGE(dd->panel_button_image), dd->icon);
-
-	if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
+	else
 	{
-		width = size + dd->panel_entry_size;
-		gtk_widget_set_size_request(dd->panel_entry, dd->panel_entry_size, -1);
+		dict_show_main_window(dd);
 	}
-	else
-		width = size;
-
-	gtk_widget_set_size_request(GTK_WIDGET(plugin), width, size);
-
-	return TRUE;
 }
 
 
-static void dict_panel_change_orientation(XfcePanelPlugin *plugin, GtkOrientation orientation,
-										  DictData *dd)
+void dict_read_rc_file(DictData *dd)
 {
-	if (! dd->show_panel_entry || orientation == GTK_ORIENTATION_VERTICAL)
-		gtk_widget_hide(dd->panel_entry);
-	else
-		gtk_widget_show(dd->panel_entry);
-}
-
-
-static void dict_style_set(XfcePanelPlugin *plugin, gpointer ignored, DictData *dd)
-{
-	dict_set_size(plugin, xfce_panel_plugin_get_size(plugin), dd);
-}
-
-
-static void dict_read_rc_file(XfcePanelPlugin *plugin, DictData *dd)
-{
-	gchar *file;
 	XfceRc *rc;
 	gint mode = DICTMODE_DICT;
 	gint webmode = WEBMODE_LEO_GERENG;
@@ -742,25 +352,20 @@ static void dict_read_rc_file(XfcePanelPlugin *plugin, DictData *dd)
 	const gchar *spell_bin = "aspell";
 	const gchar *spell_dictionary = "en";
 
-	if ((file = xfce_panel_plugin_lookup_rc_file(plugin)) != NULL)
+	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
 	{
-		rc = xfce_rc_simple_open(file, TRUE);
-		g_free(file);
-		if (rc != NULL)
-		{
-			mode = xfce_rc_read_int_entry(rc, "mode", mode);
-			webmode = xfce_rc_read_int_entry(rc, "web_mode", webmode);
-			weburl = xfce_rc_read_entry(rc, "web_url", weburl);
-			show_panel_entry = xfce_rc_read_bool_entry(rc, "show_panel_entry", show_panel_entry);
-			panel_entry_size = xfce_rc_read_int_entry(rc, "panel_entry_size", panel_entry_size);
-			port = xfce_rc_read_int_entry(rc, "port", port);
-			server = xfce_rc_read_entry(rc, "server", server);
-			dict = xfce_rc_read_entry(rc, "dict", dict);
-			spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin);
-			spell_dictionary = xfce_rc_read_entry(rc, "spell_dictionary", spell_dictionary);
+		mode = xfce_rc_read_int_entry(rc, "mode", mode);
+		webmode = xfce_rc_read_int_entry(rc, "web_mode", webmode);
+		weburl = xfce_rc_read_entry(rc, "web_url", weburl);
+		show_panel_entry = xfce_rc_read_bool_entry(rc, "show_panel_entry", show_panel_entry);
+		panel_entry_size = xfce_rc_read_int_entry(rc, "panel_entry_size", panel_entry_size);
+		port = xfce_rc_read_int_entry(rc, "port", port);
+		server = xfce_rc_read_entry(rc, "server", server);
+		dict = xfce_rc_read_entry(rc, "dict", dict);
+		spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin);
+		spell_dictionary = xfce_rc_read_entry(rc, "spell_dictionary", spell_dictionary);
 
-			xfce_rc_close(rc);
-		}
+		xfce_rc_close(rc);
 	}
 
 	dd->mode = mode;
@@ -776,108 +381,57 @@ static void dict_read_rc_file(XfcePanelPlugin *plugin, DictData *dd)
 }
 
 
-static void dict_write_rc_file(XfcePanelPlugin *plugin, DictData *dd)
+void dict_write_rc_file(DictData *dd)
 {
-	gchar *file;
 	XfceRc *rc;
 
-	if (! (file = xfce_panel_plugin_save_location(plugin, TRUE))) return;
+	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", FALSE)) != NULL)
+	{
+		xfce_rc_write_int_entry(rc, "mode", dd->mode);
+		xfce_rc_write_int_entry(rc, "web_mode", dd->web_mode);
+		if (dd->web_url != NULL)
+			xfce_rc_write_entry(rc, "web_url", dd->web_url);
+		xfce_rc_write_bool_entry(rc, "show_panel_entry", dd->show_panel_entry);
+		xfce_rc_write_int_entry(rc, "panel_entry_size", dd->panel_entry_size);
+		xfce_rc_write_int_entry(rc, "port", dd->port);
+		xfce_rc_write_entry(rc, "server", dd->server);
+		xfce_rc_write_entry(rc, "dict", dd->dictionary);
+		xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);
+		xfce_rc_write_entry(rc, "spell_dictionary", dd->spell_dictionary);
 
-	rc = xfce_rc_simple_open(file, FALSE);
-	g_free(file);
-
-	if (! rc) return;
-
-	xfce_rc_write_int_entry(rc, "mode", dd->mode);
-	xfce_rc_write_int_entry(rc, "web_mode", dd->web_mode);
-	if (dd->web_url != NULL)
-		xfce_rc_write_entry(rc, "web_url", dd->web_url);
-	xfce_rc_write_bool_entry(rc, "show_panel_entry", dd->show_panel_entry);
-	xfce_rc_write_int_entry(rc, "panel_entry_size", dd->panel_entry_size);
-	xfce_rc_write_int_entry(rc, "port", dd->port);
-	xfce_rc_write_entry(rc, "server", dd->server);
-	xfce_rc_write_entry(rc, "dict", dd->dictionary);
-	xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);
-	xfce_rc_write_entry(rc, "spell_dictionary", dd->spell_dictionary);
-
-	xfce_rc_close(rc);
+		xfce_rc_close(rc);
+	}
 }
 
 
-static gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
+void dict_free_data(DictData *dd)
 {
-	gint fd, i;
-	gint max_lines;
-	gchar *buffer = NULL;
-	gchar *answer = NULL;
-	gchar **lines;
-	const gchar *host;
-	gint port;
-
-	host = gtk_entry_get_text(GTK_ENTRY(dd->server_entry));
-	port = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(dd->port_spinner));
-
-	if ((fd = dict_open_socket(host, port)) == -1)
+	if (dd->plugin != NULL)
 	{
-		xfce_err(_("Could not connect to server."));
-		return FALSE;
+		/* Destroy the setting dialog, if this open */
+		GtkWidget *dialog = g_object_get_data(G_OBJECT(dd->plugin), "dialog");
+		if (dialog)
+			gtk_widget_destroy(dialog);
 	}
 
-	dict_send_command(fd, "show databases");
+    gtk_widget_destroy(dd->window);
 
-	/* read all server output */
-	answer = buffer = dict_get_answer(fd);
-	close(fd);
+	dict_write_rc_file(dd);
+	g_free(dd->searched_word);
+	g_free(dd->dictionary);
+	g_free(dd->server);
+	g_free(dd->web_url);
+	g_free(dd->spell_bin);
 
-	/* go to next line */
-	while (*buffer != '\n') buffer++;
-	buffer++;
+	if (dd->icon != NULL)
+		g_object_unref(dd->icon);
+	if (dd->tooltips != NULL)
+		gtk_object_sink(GTK_OBJECT(dd->tooltips));
 
-	if (strncmp("554", buffer, 3) == 0)
-	{
-		close(fd);
-		xfce_err(_("The server doesn't offer any databases."));
-		return TRUE;
-	}
-	else if (strncmp("110", buffer, 3) != 0 && strncmp("554", buffer, 3) != 0)
-	{
-		xfce_err(_("Unknown error while quering the server."));
-		close(fd);
-		return FALSE;
-	}
-
-	/* go to next line */
-	while (*buffer != '\n') buffer++;
-	buffer++;
-
-	/* clear the combo box */
-	i = gtk_tree_model_iter_n_children(gtk_combo_box_get_model(GTK_COMBO_BOX(dd->dict_combo)), NULL);
-	for (i -= 1; i > 2; i--)  /* first three entries (*, ! and ----) should always exist */
-	{
-		gtk_combo_box_remove_text(GTK_COMBO_BOX(dd->dict_combo), i);
-	}
-
-	/* parse output */
-	lines = g_strsplit(buffer, "\r\n", -1);
-	max_lines = g_strv_length(lines);
-	if (lines == NULL || max_lines == 0) return FALSE;
-
-	i = 0;
-	while (i < max_lines && lines[i][0] != '.')
-	{
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo), lines[i]);
-		i++;
-	}
-
-	g_strfreev(lines);
-	g_free(answer);
-
-	/* set the active entry to * because we don't know where the previously selected item now is in
-	 * the list and we also don't know whether it exists at all, and I don't walk through the list */
-	gtk_combo_box_set_active(GTK_COMBO_BOX(dd->dict_combo), 0);
-
-	return TRUE;
+	g_free(dd);
 }
+
+
 
 
 static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
@@ -936,20 +490,16 @@ static void dict_properties_dialog_response(GtkWidget *dlg, gint response, DictD
 		dd->panel_entry_size = gtk_spin_button_get_value_as_int(
 								GTK_SPIN_BUTTON(dd->panel_entry_size_spinner));
 
-		if (dd->show_panel_entry &&
-			xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
-		{
-			gtk_widget_show(dd->panel_entry);
-		}
-		else
-			gtk_widget_hide(dd->panel_entry);
+		if (dd->plugin != NULL)
+			dict_panel_plugin_save_settings(dd);
 
 		/* save settings */
-		dict_set_size(dd->plugin, xfce_panel_plugin_get_size(dd->plugin), dd);
-		dict_write_rc_file(dd->plugin, dd);
+		dict_write_rc_file(dd);
 	}
 	gtk_widget_destroy(dlg);
-	xfce_panel_plugin_unblock_menu(dd->plugin);
+
+	if (dd->plugin != NULL)
+		dict_panel_plugin_unblock(dd);
 }
 
 
@@ -967,7 +517,7 @@ static void dict_use_webserver_toggled(GtkToggleButton *tb, DictData *dd)
 }
 
 
-static void dict_get_spell_dictionaries(DictData *dd)
+void dict_get_spell_dictionaries(DictData *dd)
 {
 	if (NZV(dd->spell_bin))
 	{
@@ -1000,21 +550,22 @@ static void dict_get_spell_dictionaries(DictData *dd)
 }
 
 
-static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
+void dict_properties_dialog(DictData *dd)
 {
-	GtkWidget *dlg, *header, *vbox, *label3;
+	GtkWidget *dlg, *header, *vbox, *label3, *parent;
 
-	xfce_panel_plugin_block_menu(plugin);
+	parent = (dd->plugin != NULL) ? GTK_WIDGET(dd->plugin) : dd->window;
 
 	dlg = gtk_dialog_new_with_buttons(_("Properties"),
-				GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(plugin))),
+				GTK_WINDOW(gtk_widget_get_toplevel(parent)),
 				GTK_DIALOG_DESTROY_WITH_PARENT |
 				GTK_DIALOG_NO_SEPARATOR,
 				GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 				GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
 				NULL);
 
-	g_object_set_data(G_OBJECT(plugin), "dialog", dlg);
+	if (dd->plugin != NULL)
+		g_object_set_data(G_OBJECT(dd->plugin), "dialog", dlg);
 
 	gtk_window_set_position(GTK_WINDOW(dlg), GTK_WIN_POS_CENTER);
 
@@ -1301,11 +852,11 @@ static void dict_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
 }
 
 
-static void dict_entry_activate_cb(GtkEntry *entry, DictData *dd)
+void dict_entry_activate_cb(GtkEntry *entry, DictData *dd)
 {
 	const gchar *entered_text;
 
-	if ((GtkWidget*)entry == dd->panel_entry)
+	if (entry != NULL && GTK_WIDGET(entry) == dd->panel_entry)
 	{
 		entered_text = gtk_entry_get_text(GTK_ENTRY(dd->panel_entry));
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), entered_text);
@@ -1317,32 +868,26 @@ static void dict_entry_activate_cb(GtkEntry *entry, DictData *dd)
 }
 
 
-static void dict_entry_button_clicked_cb(GtkButton *button, DictData *dd)
+void dict_entry_button_clicked_cb(GtkButton *button, DictData *dd)
 {
 	dict_entry_activate_cb(NULL, dd);
 	gtk_widget_grab_focus(dd->main_entry);
 }
 
 
-static void dict_clear_button_clicked_cb(GtkButton *button, DictData *dd)
+void dict_clear_button_clicked_cb(GtkButton *button, DictData *dd)
 {
 	dict_clear_text_buffer(dd);
 
 	/* clear the entries */
 	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
-	gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), "");
+	dict_set_panel_entry_text(dd, "");
 
 	dict_status_add(dd, _("Ready."));
 }
 
 
-static void dict_close_button_clicked(GtkWidget *button, DictData *dd)
-{
-	gtk_widget_hide(dd->window);
-}
-
-
-static void dict_search_mode_dict_toggled(GtkToggleButton *togglebutton, DictData *dd)
+void dict_search_mode_dict_toggled(GtkToggleButton *togglebutton, DictData *dd)
 {
 	if (gtk_toggle_button_get_active(togglebutton))
 	{
@@ -1352,7 +897,7 @@ static void dict_search_mode_dict_toggled(GtkToggleButton *togglebutton, DictDat
 }
 
 
-static void dict_search_mode_web_toggled(GtkToggleButton *togglebutton, DictData *dd)
+void dict_search_mode_web_toggled(GtkToggleButton *togglebutton, DictData *dd)
 {
 	if (gtk_toggle_button_get_active(togglebutton))
 	{
@@ -1362,7 +907,7 @@ static void dict_search_mode_web_toggled(GtkToggleButton *togglebutton, DictData
 }
 
 
-static void dict_search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *dd)
+void dict_search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *dd)
 {
 	if (gtk_toggle_button_get_active(togglebutton))
 	{
@@ -1372,24 +917,21 @@ static void dict_search_mode_spell_toggled(GtkToggleButton *togglebutton, DictDa
 }
 
 
-static void dict_create_main_dialog(DictData *dd)
+void dict_create_main_window(DictData *dd)
 {
 	GtkWidget *main_box;
-	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *clear_button, *close_button;
+	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *clear_button;
 	GtkWidget *sep, *align, *scrolledwindow_results;
 	GdkPixbuf *icon;
 	GtkWidget *method_chooser, *radio, *label;
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-	gtk_window_set_title(GTK_WINDOW(dd->window), "xfce4-dict-plugin");
+	gtk_window_set_title(GTK_WINDOW(dd->window), "Xfce Dictionary");
 	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
 
 	icon = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
 	gtk_window_set_icon(GTK_WINDOW(dd->window), icon);
 	g_object_unref(icon);
-
-	g_signal_connect(G_OBJECT(dd->window), "delete_event",
-		G_CALLBACK(gtk_widget_hide_on_delete), NULL);
 
 	main_box = gtk_vbox_new(FALSE, 0);
 	gtk_widget_show(main_box);
@@ -1437,10 +979,9 @@ static void dict_create_main_dialog(DictData *dd)
 	gtk_container_add(GTK_CONTAINER(align), gtk_label_new(""));
 	gtk_box_pack_start(GTK_BOX(entry_box), align, FALSE, FALSE, 0);
 
-	close_button = gtk_button_new_from_stock("gtk-close");
-	gtk_widget_show(close_button);
-	g_signal_connect(close_button, "clicked", G_CALLBACK(dict_close_button_clicked), dd);
-	gtk_box_pack_end(GTK_BOX(entry_box), close_button, FALSE, FALSE, 2);
+	dd->close_button = gtk_button_new_from_stock("gtk-close");
+	gtk_widget_show(dd->close_button);
+	gtk_box_pack_end(GTK_BOX(entry_box), dd->close_button, FALSE, FALSE, 2);
 
 	/* insert it here and it will(hopefully) be placed before the Close button */
 	sep = gtk_vseparator_new();
@@ -1504,13 +1045,19 @@ static void dict_create_main_dialog(DictData *dd)
 }
 
 
-static void dict_about_dialog(GtkWidget *widget, DictData *dd)
+const guint8 *dict_get_icon_data(void)
+{
+	return dict_icon_data;
+}
+
+
+void dict_about_dialog(GtkWidget *widget, DictData *dd)
 {
 	GtkWidget *dialog;
 	XfceAboutInfo *info;
 
-	info = xfce_about_info_new("xfce4-dict-plugin", VERSION,
-							   _("A plugin to query a Dict server."),
+	info = xfce_about_info_new("xfce4-dict", VERSION,
+							   _("A client program to query different dictionaries."),
 							   XFCE_COPYRIGHT_TEXT("2006-2008", "Enrico Tröger"),
 							   XFCE_LICENSE_GPL);
 
@@ -1519,16 +1066,15 @@ static void dict_about_dialog(GtkWidget *widget, DictData *dd)
 
 	dialog = xfce_about_dialog_new_with_values(GTK_WINDOW(widget), info, dd->icon);
 	g_signal_connect(G_OBJECT(dialog), "response", G_CALLBACK(gtk_widget_destroy), NULL);
-	gtk_window_set_title(GTK_WINDOW(dialog), "xfce4-dict-plugin");
+	gtk_window_set_title(GTK_WINDOW(dialog), "Xfce Dictionary");
 	gtk_dialog_run(GTK_DIALOG(dialog));
 
 	xfce_about_info_free(info);
 }
 
 
-static void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context,
-									gint x, gint y,GtkSelectionData *data, guint info, guint ltime,
-									DictData *dd)
+void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gint x, gint y,
+							 GtkSelectionData *data, guint info, guint ltime, DictData *dd)
 {
 	if ((data->length >= 0) && (data->format == 8))
 	{
@@ -1548,117 +1094,9 @@ static void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_cont
 }
 
 
-static void dict_panel_button_clicked(GtkWidget *button, DictData *dd)
-{
-	if (GTK_WIDGET_VISIBLE(dd->window))
-		gtk_widget_hide(dd->window);
-	else
-	{
-		const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dd->panel_entry));
-
-		dict_show_main_window(dd);
-		if (NZV(panel_text))
-		{
-			dict_search_word(dd, panel_text);
-			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), panel_text);
-		}
-		gtk_widget_grab_focus(dd->main_entry);
-	}
-}
-
-
-static gboolean dict_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, DictData *dd)
-{
-	GtkWidget *toplevel;
-
-	/* Determine toplevel parent widget */
-	toplevel = gtk_widget_get_toplevel(entry);
-
-	/* Grab entry focus if possible */
-	if (event->button != 3 && toplevel && toplevel->window)
-		xfce_panel_plugin_focus_widget(dd->plugin, entry);
-
-	return FALSE;
-}
-
-
-static void dict_signal_cb(gint sig)
+void dict_signal_cb(gint sig)
 {
 	/* do nothing here and hope we never get called */
 }
 
 
-static void dict_construct(XfcePanelPlugin *plugin)
-{
-	DictData *dd = g_new0(DictData, 1);
-	GtkWidget *hbox;
-
-	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-
-	g_thread_init(NULL);
-
-	dd->plugin = plugin;
-	dd->searched_word = NULL;
-	dd->query_is_running = FALSE;
-	dd->query_status = NO_ERROR;
-
-	dict_read_rc_file(plugin, dd);
-
-	dd->panel_button = xfce_create_panel_button();
-
-	dd->tooltips = gtk_tooltips_new();
-	gtk_tooltips_set_tip(dd->tooltips, dd->panel_button, _("Look up a word"), NULL);
-
-	dd->panel_button_image = gtk_image_new();
-	gtk_container_add(GTK_CONTAINER(dd->panel_button), GTK_WIDGET(dd->panel_button_image));
-
-	gtk_widget_show_all(dd->panel_button);
-
-	g_signal_connect(dd->panel_button, "clicked", G_CALLBACK(dict_panel_button_clicked), dd);
-
-	dict_create_main_dialog(dd);
-
-	g_signal_connect(plugin, "free-data", G_CALLBACK(dict_free_data), dd);
-	g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_set_size), dd);
-	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_panel_change_orientation), dd);
-	g_signal_connect(plugin, "style-set", G_CALLBACK(dict_style_set), dd);
-	g_signal_connect(plugin, "save", G_CALLBACK(dict_write_rc_file), dd);
-	g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_properties_dialog), dd);
-	g_signal_connect(plugin, "about", G_CALLBACK(dict_about_dialog), dd);
-
-	xfce_panel_plugin_menu_show_configure(plugin);
-	xfce_panel_plugin_menu_show_about(plugin);
-
-	/* panel entry */
-	dd->panel_entry = gtk_entry_new();
-	gtk_entry_set_width_chars(GTK_ENTRY(dd->panel_entry), 15);
-	g_signal_connect(dd->panel_entry, "activate", G_CALLBACK(dict_entry_activate_cb), dd);
-	g_signal_connect(dd->panel_entry, "button-press-event", G_CALLBACK(dict_panel_entry_buttonpress_cb), dd);
-
-	if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
-		gtk_widget_show(dd->panel_entry);
-
-	hbox = gtk_hbox_new(FALSE, 0);
-	gtk_widget_show(hbox);
-
-	gtk_container_add(GTK_CONTAINER(hbox), dd->panel_button);
-	gtk_container_add(GTK_CONTAINER(hbox), dd->panel_entry);
-	gtk_container_add(GTK_CONTAINER(plugin), hbox);
-
-	xfce_panel_plugin_add_action_widget(plugin, dd->panel_button);
-	dict_set_selection(dd);
-
-	/* DnD stuff */
-	gtk_drag_dest_set(GTK_WIDGET(dd->panel_button), GTK_DEST_DEFAULT_ALL,
-		NULL, 0, GDK_ACTION_COPY | GDK_ACTION_MOVE);
-	gtk_drag_dest_add_text_targets(GTK_WIDGET(dd->panel_button));
-	g_signal_connect(dd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
-	g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
-	g_signal_connect(dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
-
-	dict_status_add(dd, _("Ready."));
-
-	siginterrupt(SIGALRM, 1);
-	signal(SIGALRM, dict_signal_cb);
-}
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(dict_construct);

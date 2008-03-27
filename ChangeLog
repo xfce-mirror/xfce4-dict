@@ -1,3 +1,13 @@
+2008-03-27  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+	* Reorganise most of the code base to separat commonly used code from the
+	  panel plugin into a static library.
+	  Move dictd server query code into an own file for better readibility.
+	  Bump version requirement of libxfce*-libs to 4.4.0.
+	  Add stand-alone application xfce4-dict.
+	  (not yet finished, to be continued)
+
+
 2008-03-22  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
 	* Use GTK's predefined text targets for Drag'n'Drop. This fixes a strange

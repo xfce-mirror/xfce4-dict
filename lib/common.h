@@ -18,8 +18,8 @@
  */
 
 
-#ifndef DICT_H
-#define DICT_H 1
+#ifndef COMMON_H
+#define COMMON_H 1
 
 
 /* Returns: TRUE if ptr points to a non-zero value. */
@@ -32,7 +32,7 @@ typedef enum
 	DICTMODE_DICT = 0,
 	DICTMODE_WEB,
 	DICTMODE_SPELL
-} _dict_mode;
+} dict_mode_t;
 
 typedef enum
 {
@@ -40,7 +40,7 @@ typedef enum
 	WEBMODE_LEO_GERENG,
 	WEBMODE_LEO_GERFRE,
 	WEBMODE_LEO_GERSPA
-} _web_mode;
+} web_mode_t;
 
 
 enum
@@ -52,13 +52,14 @@ enum
 
 typedef struct
 {
-	XfcePanelPlugin *plugin;
+	XfcePanelPlugin *plugin; /* only used when loaded as panel plugin */
 
-	_dict_mode mode;
-	_web_mode web_mode;
+	dict_mode_t mode;
+	web_mode_t web_mode;
 
 	GtkWidget *window;
 	GtkWidget *statusbar;
+	GtkWidget *close_button;
 	GtkWidget *main_entry;
 	GtkWidget *panel_entry;
 	GtkWidget *main_textview;
@@ -106,7 +107,21 @@ typedef struct
 
 
 void dict_status_add(DictData *dd, const gchar *format, ...);
+void dict_set_panel_entry_text(DictData *dd, const gchar *text);
 void dict_clear_text_buffer(DictData *dd);
-void dict_start_aspell_query(DictData *dd, const gchar *word);
+void dict_free_data(DictData *dd);
+void dict_write_rc_file(DictData *dd);
+void dict_read_rc_file(DictData *dd);
+void dict_search_word(DictData *dd, const gchar *word);
+void dict_show_main_window(DictData *dd);
+void dict_properties_dialog(DictData *dd);
+void dict_about_dialog(GtkWidget *widget, DictData *dd);
+const guint8 *dict_get_icon_data(void);
+void dict_signal_cb(gint sig);
+void dict_create_main_window(DictData *dd);
+void dict_entry_activate_cb(GtkEntry *entry, DictData *dd);
+void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gint x, gint y,
+							 GtkSelectionData *data, guint info, guint ltime, DictData *dd);
+
 
 #endif

@@ -1,3 +1,8 @@
-panel-plugin/dict.c
-panel-plugin/xfce4-popup-dict.c
-panel-plugin/dict.desktop.in.in
+panel-plugin/xfce4-dict-plugin.desktop.in.in
+panel-plugin/xfce4-dict-plugin.c
+src/popup_plugin.c
+src/xfce4-dict.c
+src/xfce4-dict.desktop.in
+lib/aspell.c
+lib/dict.c
+lib/dict.h
