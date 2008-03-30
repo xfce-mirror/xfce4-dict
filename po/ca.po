@@ -1,7 +1,7 @@
 # Catalan translation of the xfce4-dict-plugin package.
 # Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin package.
-# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006, 2007.
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008.
 #
 #
 msgid ""
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-08 17:08+0100\n"
-"PO-Revision-Date: 2007-05-11 19:15+0100\n"
+"PO-Revision-Date: 2008-03-21 20:40+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -76,19 +76,16 @@ msgstr "Connector de diccionaris"
 
 #. server address
 #: ../panel-plugin/dict.c:1042
-#, fuzzy
 msgid "Server:"
 msgstr "Servidor:"
 
 #. server port
 #: ../panel-plugin/dict.c:1054
-#, fuzzy
 msgid "Server Port:"
 msgstr "Port del servidor:"
 
 #. dictionary
 #: ../panel-plugin/dict.c:1062 ../panel-plugin/dict.c:1222
-#, fuzzy
 msgid "Dictionary:"
 msgstr "Diccionari:"
 
@@ -138,11 +135,11 @@ msgstr "Empra un lloc web"
 
 #: ../panel-plugin/dict.c:1211
 msgid "Aspell program:"
-msgstr ""
+msgstr "programa «aspell»:"
 
 #: ../panel-plugin/dict.c:1252
 msgid "Use Aspell"
-msgstr ""
+msgstr "Empra «aspell»"
 
 #: ../panel-plugin/dict.c:1266
 msgid "Show text field in the panel"
@@ -157,7 +154,6 @@ msgstr ""
 
 #. panel entry size
 #: ../panel-plugin/dict.c:1275
-#, fuzzy
 msgid "Text field size:"
 msgstr "Mida del camp de text:"
 
@@ -171,7 +167,7 @@ msgstr "Text a cercar:"
 
 #: ../panel-plugin/dict.c:1455
 msgid "Search with:"
-msgstr ""
+msgstr "Cerca amb:"
 
 #: ../panel-plugin/dict.c:1459 ../panel-plugin/dict.desktop.in.in.h:2
 msgid "Dict"
@@ -179,11 +175,11 @@ msgstr "Dict"
 
 #: ../panel-plugin/dict.c:1465
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
 #: ../panel-plugin/dict.c:1471
 msgid "Spellcheck"
-msgstr ""
+msgstr "Corrector"
 
 #: ../panel-plugin/dict.c:1513 ../panel-plugin/dict.desktop.in.in.h:1
 msgid "A plugin to query a Dict server."
@@ -200,25 +196,27 @@ msgstr "Cerca una paraula"
 #: ../panel-plugin/xfce4-popup-dict.c:97
 #, c-format
 msgid "Usage: %s [options]\n"
-msgstr ""
+msgstr "Ús: %s [OPCIONS]\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:98
 #, c-format
 msgid "Options:\n"
-msgstr ""
+msgstr "Opcions:\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:99
 #, c-format
 msgid "    -t, --text-field    grap the focus on the text field in the panel\n"
-msgstr ""
+msgstr "    -t, --text-field    pren l'enfocament del camp de text del plafó\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:100
 #, c-format
 msgid "    -h, --help          show this help and exit\n"
-msgstr ""
+msgstr "    -h, --help          mostra aquesta ajuda i surt\n"
 
 #: ../panel-plugin/xfce4-popup-dict.c:101
 #, c-format
 msgid ""
 "If called without any options, the xfce4-dict-plugin main window is shown.\n"
 msgstr ""
+"Si es crida sense opcins, es mostra la finestra principal de l'xfce4-dict-"
+"plugin.\n"
