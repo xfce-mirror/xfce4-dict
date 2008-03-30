@@ -39,12 +39,23 @@
 #include <signal.h>
 #include <string.h>
 
-#include "common.h"
+#include "libdict.h"
 #include "popup_def.h"
 
 
+typedef struct
+{
+	DictData *dd;
+	XfcePanelPlugin *plugin;
 
-static GdkPixbuf *dict_load_and_scale(const guint8 *data, gint dstw, gint dsth)
+	GtkTooltips *tooltips;
+
+	GtkWidget *panel_button;
+	GtkWidget *panel_button_image;
+} DictPanelData;
+
+
+static GdkPixbuf *dict_plugin_load_and_scale(const guint8 *data, gint dstw, gint dsth)
 {
 	GdkPixbuf *pb, *pb_scaled;
 	int pb_w, pb_h;
@@ -67,21 +78,22 @@ static GdkPixbuf *dict_load_and_scale(const guint8 *data, gint dstw, gint dsth)
 }
 
 
-static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, DictData *dd)
+static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, DictPanelData *dpd)
 {
 	gint width;
-	gint size = wsize - 2 - (2 * MAX(dd->panel_button->style->xthickness,
-									 dd->panel_button->style->ythickness));
+	gint size = wsize - 2 - (2 * MAX(dpd->panel_button->style->xthickness,
+									 dpd->panel_button->style->ythickness));
 
 	/*g_object_unref(G_OBJECT(dd->icon));*/
-	dd->icon = dict_load_and_scale(dict_get_icon_data(), size, -1);
+	dpd->dd->icon = dict_plugin_load_and_scale(dict_get_icon_data(), size, -1);
 
-	gtk_image_set_from_pixbuf(GTK_IMAGE(dd->panel_button_image), dd->icon);
+	gtk_image_set_from_pixbuf(GTK_IMAGE(dpd->panel_button_image), dpd->dd->icon);
 
-	if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
+	if (dpd->dd->show_panel_entry &&
+		xfce_panel_plugin_get_orientation(plugin) == GTK_ORIENTATION_HORIZONTAL)
 	{
-		width = size + dd->panel_entry_size;
-		gtk_widget_set_size_request(dd->panel_entry, dd->panel_entry_size, -1);
+		width = size + dpd->dd->panel_entry_size;
+		gtk_widget_set_size_request(dpd->dd->panel_entry, dpd->dd->panel_entry_size, -1);
 	}
 	else
 		width = size;
@@ -92,7 +104,7 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 }
 
 
-/* unused
+/* TODO remove me, unused
 static void dict_toggle_main_window(GtkWidget *button, DictData *dd)
 {
 	if (GTK_WIDGET_VISIBLE(dd->window))
@@ -116,42 +128,48 @@ static void dict_toggle_main_window(GtkWidget *button, DictData *dd)
 */
 
 
-static void dict_plugin_panel_button_clicked(GtkWidget *button, DictData *dd)
+static void dict_plugin_show_main_window(DictData *dd)
 {
-	if (GTK_WIDGET_VISIBLE(dd->window))
-		gtk_widget_hide(dd->window);
+	gtk_widget_show(dd->window);
+	gtk_window_deiconify(GTK_WINDOW(dd->window));
+	gtk_window_present(GTK_WINDOW(dd->window));
+}
+
+
+static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *dpd)
+{
+	if (GTK_WIDGET_VISIBLE(dpd->dd->window))
+		gtk_widget_hide(dpd->dd->window);
 	else
 	{
-		const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dd->panel_entry));
+		const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dpd->dd->panel_entry));
 
-		dict_show_main_window(dd);
+		dict_plugin_show_main_window(dpd->dd);
 		if (NZV(panel_text))
 		{
-			dict_search_word(dd, panel_text);
-			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), panel_text);
+			dict_search_word(dpd->dd, panel_text);
+			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), panel_text);
 		}
-		gtk_widget_grab_focus(dd->main_entry);
+		gtk_widget_grab_focus(dpd->dd->main_entry);
 	}
 }
 
 
 /* Handle user messages (xfce4-popup-dict) */
-static gboolean dict_plugin_message_received(GtkWidget *w, GdkEventClient *ev, gpointer user_data)
+static gboolean dict_plugin_message_received(GtkWidget *w, GdkEventClient *ev, DictPanelData *dpd)
 {
-	DictData *dd = user_data;
-
 	if (ev->data_format == 8 && *(ev->data.b) != '\0')
 	{
 		if (strcmp(XFCE_DICT_WINDOW_MESSAGE, ev->data.b) == 0)
 		{	/* open the main window */
-			dict_plugin_panel_button_clicked(NULL, dd);
+			dict_plugin_panel_button_clicked(NULL, dpd);
 			return TRUE;
 		}
 
 		if (strcmp(XFCE_DICT_TEXTFIELD_MESSAGE, ev->data.b) == 0)
 		{	/* put the focus onto the panel entry */
-			if (dd->show_panel_entry)
-				xfce_panel_plugin_focus_widget(dd->plugin, dd->panel_entry);
+			if (dpd->dd->show_panel_entry)
+				xfce_panel_plugin_focus_widget(dpd->plugin, dpd->dd->panel_entry);
 		}
 	}
 
@@ -159,7 +177,7 @@ static gboolean dict_plugin_message_received(GtkWidget *w, GdkEventClient *ev, g
 }
 
 
-static gboolean dict_plugin_set_selection(DictData *dd)
+static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 {
 	GdkScreen *gscreen;
 	gchar      selection_name[32];
@@ -185,41 +203,53 @@ static gboolean dict_plugin_set_selection(DictData *dd)
 	XSelectInput(GDK_DISPLAY(), xwin, PropertyChangeMask);
 	XSetSelectionOwner(GDK_DISPLAY(), selection_atom, xwin, GDK_CURRENT_TIME);
 
-	g_signal_connect(G_OBJECT(win), "client-event", G_CALLBACK(dict_plugin_message_received), dd);
+	g_signal_connect(G_OBJECT(win), "client-event", G_CALLBACK(dict_plugin_message_received), dpd);
 
 	return TRUE;
 }
 
 
-void dict_plugin_close_button_clicked(GtkWidget *button, DictData *dd)
+void dict_plugin_close_button_clicked(GtkWidget *button, DictPanelData *dpd)
 {
-	gtk_widget_hide(dd->window);
+	gtk_widget_hide(dpd->dd->window);
 }
 
 
-static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictData *dd)
+static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictPanelData *dpd)
 {
-	dict_free_data(dd);
+	/* Destroy the setting dialog, if this open */
+	GtkWidget *dialog = g_object_get_data(G_OBJECT(dpd->plugin), "dialog");
+
+	if (dialog != NULL)
+	{
+		g_message("dict: destroy dialog");
+		gtk_widget_destroy(dialog);
+	}
+
+	gtk_object_sink(GTK_OBJECT(dpd->tooltips));
+
+	dict_free_data(dpd->dd);
+	g_free(dpd);
 }
 
 
-static void dict_plugin_panel_change_orientation(
-		XfcePanelPlugin *plugin, GtkOrientation orientation, DictData *dd)
+static void dict_plugin_panel_change_orientation(XfcePanelPlugin *plugin,
+												 GtkOrientation orientation, DictPanelData *dpd)
 {
-	if (! dd->show_panel_entry || orientation == GTK_ORIENTATION_VERTICAL)
-		gtk_widget_hide(dd->panel_entry);
+	if (! dpd->dd->show_panel_entry || orientation == GTK_ORIENTATION_VERTICAL)
+		gtk_widget_hide(dpd->dd->panel_entry);
 	else
-		gtk_widget_show(dd->panel_entry);
+		gtk_widget_show(dpd->dd->panel_entry);
 }
 
 
-static void dict_plugin_style_set(XfcePanelPlugin *plugin, gpointer unused, DictData *dd)
+static void dict_plugin_style_set(XfcePanelPlugin *plugin, gpointer unused, DictPanelData *dpd)
 {
-	dict_plugin_panel_set_size(plugin, xfce_panel_plugin_get_size(plugin), dd);
+	dict_plugin_panel_set_size(plugin, xfce_panel_plugin_get_size(plugin), dpd);
 }
 
 
-static gboolean dict_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, DictData *dd)
+static gboolean dict_plugin_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, DictPanelData *dpd)
 {
 	GtkWidget *toplevel;
 
@@ -228,120 +258,145 @@ static gboolean dict_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton
 
 	/* Grab entry focus if possible */
 	if (event->button != 3 && toplevel && toplevel->window)
-		xfce_panel_plugin_focus_widget(dd->plugin, entry);
+		xfce_panel_plugin_focus_widget(dpd->plugin, entry);
 
 	return FALSE;
 }
 
 
-static void dict_plugin_write_rc_file(XfcePanelPlugin *plugin, DictData *dd)
+static void dict_plugin_write_rc_file(XfcePanelPlugin *plugin, DictPanelData *dpd)
 {
-	dict_write_rc_file(dd);
+	dict_write_rc_file(dpd->dd);
 }
 
 
-static void dict_plugin_properties_dialog(XfcePanelPlugin *plugin, DictData *dd)
+static void dict_plugin_panel_save_settings(DictPanelData *dpd)
 {
-	xfce_panel_plugin_block_menu(plugin);
-
-	dict_properties_dialog(dd);
-}
-
-
-/* the following extern declared functions are called in libdict when panel plugin is in use */
-extern void dict_panel_plugin_save_settings(DictData *dd)
-{
-	if (dd->show_panel_entry &&
-		xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
+	if (dpd->dd->show_panel_entry &&
+		xfce_panel_plugin_get_orientation(dpd->plugin) == GTK_ORIENTATION_HORIZONTAL)
 	{
-		gtk_widget_show(dd->panel_entry);
+		gtk_widget_show(dpd->dd->panel_entry);
 	}
 	else
-		gtk_widget_hide(dd->panel_entry);
+		gtk_widget_hide(dpd->dd->panel_entry);
 
-	dict_plugin_panel_set_size(dd->plugin, xfce_panel_plugin_get_size(dd->plugin), dd);
+	dict_plugin_panel_set_size(dpd->plugin, xfce_panel_plugin_get_size(dpd->plugin), dpd);
 }
 
 
-extern void dict_panel_plugin_unblock(DictData *dd)
+static void dict_plugin_properties_dialog_response(GtkWidget *dlg, gint response, DictPanelData *dpd)
 {
-	xfce_panel_plugin_unblock_menu(dd->plugin);
+	if (response == GTK_RESPONSE_OK)
+		dict_plugin_panel_save_settings(dpd);
+
+	g_object_set_data(G_OBJECT(dpd->plugin), "dialog", NULL);
+	xfce_panel_plugin_unblock_menu(dpd->plugin);
 }
 
 
-static void dict_construct(XfcePanelPlugin *plugin)
+static void dict_plugin_properties_dialog(XfcePanelPlugin *plugin, DictPanelData *dpd)
 {
-	DictData *dd = g_new0(DictData, 1);
+	GtkWidget *dlg;
+
+	xfce_panel_plugin_block_menu(plugin);
+
+	dlg = dict_prefs_dialog_show(dpd->dd);
+
+	g_object_set_data(G_OBJECT(dpd->plugin), "dialog", dlg);
+
+	g_signal_connect(dlg, "response", G_CALLBACK(dict_plugin_properties_dialog_response), dpd);
+	g_signal_connect(dlg, "response", G_CALLBACK(dict_prefs_dialog_response), dpd->dd);
+
+	gtk_widget_show(dlg);
+}
+
+
+static void dict_plugin_panel_entry_activate_cb(GtkEntry *entry, DictPanelData *dpd)
+{
+	const gchar *entered_text = gtk_entry_get_text(GTK_ENTRY(dpd->dd->panel_entry));
+
+	gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), entered_text);
+
+	dict_search_word(dpd->dd, entered_text);
+}
+
+
+static void dict_plugin_construct(XfcePanelPlugin *plugin)
+{
+	DictPanelData *dpd = g_new0(DictPanelData, 1);
 	GtkWidget *hbox;
 
 	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
 	g_thread_init(NULL);
 
-	dd->plugin = plugin;
-	dd->searched_word = NULL;
-	dd->query_is_running = FALSE;
-	dd->query_status = NO_ERROR;
+	dpd->dd = dict_create_dictdata();
+	dpd->plugin = plugin;
 
-	dict_read_rc_file(dd);
+	dict_read_rc_file(dpd->dd);
 
-	dd->panel_button = xfce_create_panel_button();
+	dpd->panel_button = xfce_create_panel_button();
 
-	dd->tooltips = gtk_tooltips_new();
-	gtk_tooltips_set_tip(dd->tooltips, dd->panel_button, _("Look up a word"), NULL);
+	dpd->tooltips = gtk_tooltips_new();
+	gtk_tooltips_set_tip(dpd->tooltips, dpd->panel_button, _("Look up a word"), NULL);
 
-	dd->panel_button_image = gtk_image_new();
-	gtk_container_add(GTK_CONTAINER(dd->panel_button), GTK_WIDGET(dd->panel_button_image));
+	dpd->panel_button_image = gtk_image_new();
+	gtk_container_add(GTK_CONTAINER(dpd->panel_button), GTK_WIDGET(dpd->panel_button_image));
 
-	gtk_widget_show_all(dd->panel_button);
+	gtk_widget_show_all(dpd->panel_button);
 
-	g_signal_connect(dd->panel_button, "clicked", G_CALLBACK(dict_plugin_panel_button_clicked), dd);
+	g_signal_connect(dpd->panel_button, "clicked", G_CALLBACK(dict_plugin_panel_button_clicked), dpd);
 
-	dict_create_main_window(dd);
+	dict_create_main_window(dpd->dd);
 
-	g_signal_connect(dd->window, "delete_event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
-	g_signal_connect(dd->close_button, "clicked", G_CALLBACK(dict_plugin_close_button_clicked), dd);
-	g_signal_connect(plugin, "free-data", G_CALLBACK(dict_plugin_free_data), dd);
-	g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_plugin_panel_set_size), dd);
-	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_plugin_panel_change_orientation), dd);
-	g_signal_connect(plugin, "style-set", G_CALLBACK(dict_plugin_style_set), dd);
-	g_signal_connect(plugin, "save", G_CALLBACK(dict_plugin_write_rc_file), dd);
-	g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_plugin_properties_dialog), dd);
-	g_signal_connect(plugin, "about", G_CALLBACK(dict_about_dialog), dd);
+	g_signal_connect(dpd->dd->window, "delete_event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
+	g_signal_connect(dpd->dd->close_button, "clicked", G_CALLBACK(dict_plugin_close_button_clicked), dpd);
+	g_signal_connect(plugin, "free-data", G_CALLBACK(dict_plugin_free_data), dpd);
+	g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_plugin_panel_set_size), dpd);
+	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_plugin_panel_change_orientation), dpd);
+	g_signal_connect(plugin, "style-set", G_CALLBACK(dict_plugin_style_set), dpd);
+	g_signal_connect(plugin, "save", G_CALLBACK(dict_plugin_write_rc_file), dpd);
+	g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_plugin_properties_dialog), dpd);
+	g_signal_connect(plugin, "about", G_CALLBACK(dict_about_dialog), dpd->dd);
 
 	xfce_panel_plugin_menu_show_configure(plugin);
 	xfce_panel_plugin_menu_show_about(plugin);
 
 	/* panel entry */
-	dd->panel_entry = gtk_entry_new();
-	gtk_entry_set_width_chars(GTK_ENTRY(dd->panel_entry), 15);
-	g_signal_connect(dd->panel_entry, "activate", G_CALLBACK(dict_entry_activate_cb), dd);
-	g_signal_connect(dd->panel_entry, "button-press-event", G_CALLBACK(dict_panel_entry_buttonpress_cb), dd);
+	dpd->dd->panel_entry = gtk_entry_new();
+	gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), 15);
+	g_signal_connect(dpd->dd->panel_entry, "activate",
+		G_CALLBACK(dict_plugin_panel_entry_activate_cb), dpd);
+	g_signal_connect(dpd->dd->panel_entry, "button-press-event",
+		G_CALLBACK(dict_plugin_panel_entry_buttonpress_cb), dpd);
 
-	if (dd->show_panel_entry && xfce_panel_plugin_get_orientation(dd->plugin) == GTK_ORIENTATION_HORIZONTAL)
-		gtk_widget_show(dd->panel_entry);
+	if (dpd->dd->show_panel_entry &&
+		xfce_panel_plugin_get_orientation(dpd->plugin) == GTK_ORIENTATION_HORIZONTAL)
+	{
+		gtk_widget_show(dpd->dd->panel_entry);
+	}
 
 	hbox = gtk_hbox_new(FALSE, 0);
 	gtk_widget_show(hbox);
 
-	gtk_container_add(GTK_CONTAINER(hbox), dd->panel_button);
-	gtk_container_add(GTK_CONTAINER(hbox), dd->panel_entry);
+	gtk_container_add(GTK_CONTAINER(hbox), dpd->panel_button);
+	gtk_container_add(GTK_CONTAINER(hbox), dpd->dd->panel_entry);
 	gtk_container_add(GTK_CONTAINER(plugin), hbox);
 
-	xfce_panel_plugin_add_action_widget(plugin, dd->panel_button);
-	dict_plugin_set_selection(dd);
+	xfce_panel_plugin_add_action_widget(plugin, dpd->panel_button);
+	dict_plugin_set_selection(dpd);
 
 	/* DnD stuff */
-	gtk_drag_dest_set(GTK_WIDGET(dd->panel_button), GTK_DEST_DEFAULT_ALL,
+	gtk_drag_dest_set(GTK_WIDGET(dpd->panel_button), GTK_DEST_DEFAULT_ALL,
 		NULL, 0, GDK_ACTION_COPY | GDK_ACTION_MOVE);
-	gtk_drag_dest_add_text_targets(GTK_WIDGET(dd->panel_button));
-	g_signal_connect(dd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
-	g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
-	g_signal_connect(dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
+	gtk_drag_dest_add_text_targets(GTK_WIDGET(dpd->panel_button));
+	g_signal_connect(dpd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
+	g_signal_connect(dpd->dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
+	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
 
-	dict_status_add(dd, _("Ready."));
+	dict_status_add(dpd->dd, _("Ready."));
 
 	siginterrupt(SIGALRM, 1);
 	signal(SIGALRM, dict_signal_cb);
 }
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(dict_construct);
+XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(dict_plugin_construct);

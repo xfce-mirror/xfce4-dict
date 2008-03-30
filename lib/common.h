@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright 2007-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *  Copyright 2006-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -52,8 +52,6 @@ enum
 
 typedef struct
 {
-	XfcePanelPlugin *plugin; /* only used when loaded as panel plugin */
-
 	dict_mode_t mode;
 	web_mode_t web_mode;
 
@@ -72,10 +70,6 @@ typedef struct
 	GtkWidget *panel_entry_size_label;
 	GtkWidget *panel_entry_size_spinner;
 	GtkWidget *check_panel_entry;
-
-	GtkWidget *panel_button;
-	GtkWidget *panel_button_image;
-	GtkTooltips *tooltips;
 
 	gboolean show_panel_entry;
 	gint panel_entry_size;
@@ -102,26 +96,20 @@ typedef struct
 	gchar *spell_dictionary;
 
 	GdkPixbuf *icon;
+
+	gboolean is_plugin;	/* specify whether the panel plugin loaded or not */
 } DictData;
 
 
-
-void dict_status_add(DictData *dd, const gchar *format, ...);
-void dict_set_panel_entry_text(DictData *dd, const gchar *text);
-void dict_clear_text_buffer(DictData *dd);
 void dict_free_data(DictData *dd);
 void dict_write_rc_file(DictData *dd);
 void dict_read_rc_file(DictData *dd);
 void dict_search_word(DictData *dd, const gchar *word);
-void dict_show_main_window(DictData *dd);
-void dict_properties_dialog(DictData *dd);
-void dict_about_dialog(GtkWidget *widget, DictData *dd);
-const guint8 *dict_get_icon_data(void);
 void dict_signal_cb(gint sig);
-void dict_create_main_window(DictData *dd);
-void dict_entry_activate_cb(GtkEntry *entry, DictData *dd);
 void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gint x, gint y,
 							 GtkSelectionData *data, guint info, guint ltime, DictData *dd);
+
+DictData *dict_create_dictdata();
 
 
 #endif

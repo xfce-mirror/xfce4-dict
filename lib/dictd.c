@@ -43,18 +43,17 @@
 #include <signal.h>
 #include <string.h>
 
-/* Simple forward declaration to avoid inclusion of libxfce4panel headers */
-typedef struct XfcePanelPlugin_t XfcePanelPlugin;
-
 
 #include "common.h"
 #include "dictd.h"
+#include "gui.h"
+
 
 #define BUF_SIZE 256
 
 
 
-static gint dict_open_socket(const gchar *host_name, gint port)
+static gint open_socket(const gchar *host_name, gint port)
 {
 	struct sockaddr_in addr;
 	struct hostent *host_p;
@@ -90,7 +89,7 @@ static gint dict_open_socket(const gchar *host_name, gint port)
 }
 
 
-static void dict_send_command(gint fd, const gchar *str)
+static void send_command(gint fd, const gchar *str)
 {
 	gchar buf[256];
 	gint len = strlen (str);
@@ -100,7 +99,7 @@ static void dict_send_command(gint fd, const gchar *str)
 }
 
 
-static gboolean dict_process_server_response(DictData *dd)
+static gboolean process_server_response(DictData *dd)
 {
 	gint max_lines, i;
 	gint defs_found = 0;
@@ -216,13 +215,13 @@ static gboolean dict_process_server_response(DictData *dd)
 }
 
 
-static gchar *dict_get_answer(gint fd)
+static gchar *get_answer(gint fd)
 {
 	gboolean fol = FALSE;
 	gboolean sol = FALSE;
 	gboolean tol = FALSE;
 	GString *str = g_string_sized_new(100);
-	gchar c, *tmp;
+	gchar c;
 	gchar ec[3];
 
 	alarm(10); /* abort after 5 seconds, there should went wrong something */
@@ -262,22 +261,20 @@ static gchar *dict_get_answer(gint fd)
 	alarm(0);
 
 	g_string_append_c(str, '\0');
-	tmp = str->str;
-	g_string_free(str, FALSE);
 
-	return tmp;
+	return g_string_free(str, FALSE);
 }
 
 
-static void dict_ask_server(DictData *dd)
+static void ask_server(DictData *dd)
 {
 	gint fd, i;
 	static gchar cmd[BUF_SIZE];
 
-	if ((fd = dict_open_socket(dd->server, dd->port)) == -1)
+	if ((fd = open_socket(dd->server, dd->port)) == -1)
 	{
 		dd->query_status = NO_CONNECTION;
-		g_idle_add((GSourceFunc) dict_process_server_response, dd);
+		g_idle_add((GSourceFunc) process_server_response, dd);
 		g_thread_exit(NULL);
 		return;
 	}
@@ -290,17 +287,17 @@ static void dict_ask_server(DictData *dd)
 	dd->dictionary[i] = '\0';
 
 	g_snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, dd->searched_word);
-	dict_send_command(fd, cmd);
+	send_command(fd, cmd);
 
 	/* and now, "append" again the rest of the dictionary string again */
 	dd->dictionary[i] = ' ';
 
-	dd->query_buffer = dict_get_answer(fd);
+	dd->query_buffer = get_answer(fd);
 	close(fd);
 
 	dd->query_is_running = FALSE;
 	/* delegate parsing the response and related GUI stuff to GTK's main thread through the main loop */
-	g_idle_add((GSourceFunc) dict_process_server_response, dd);
+	g_idle_add((GSourceFunc) process_server_response, dd);
 
 	g_thread_exit(NULL);
 }
@@ -314,12 +311,10 @@ void dict_start_server_query(DictData *dd, const gchar *word)
 	}
 	else
 	{
-		dict_clear_text_buffer(dd);
-
-		dict_status_add(dd, _("Querying the server %s..."), dd->server);
+		dict_status_add(dd, _("Querying %s..."), dd->server);
 
 		/* start the thread to query the server */
-		g_thread_create((GThreadFunc) dict_ask_server, dd, FALSE, NULL);
+		g_thread_create((GThreadFunc) ask_server, dd, FALSE, NULL);
 	}
 }
 
@@ -337,16 +332,16 @@ gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
 	host = gtk_entry_get_text(GTK_ENTRY(dd->server_entry));
 	port = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(dd->port_spinner));
 
-	if ((fd = dict_open_socket(host, port)) == -1)
+	if ((fd = open_socket(host, port)) == -1)
 	{
 		xfce_err(_("Could not connect to server."));
 		return FALSE;
 	}
 
-	dict_send_command(fd, "show databases");
+	send_command(fd, "show databases");
 
 	/* read all server output */
-	answer = buffer = dict_get_answer(fd);
+	answer = buffer = get_answer(fd);
 	close(fd);
 
 	/* go to next line */

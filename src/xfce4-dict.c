@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright 2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *  Copyright 2006-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -35,27 +35,12 @@
 # include <locale.h>
 #endif
 
-/* Simple forward declaration to avoid inclusion of libxfce4panel headers */
-typedef struct XfcePanelPlugin_t XfcePanelPlugin;
-
-#include "common.h"
+#include "libdict.h"
 #include "popup_plugin.h"
 
 
 
-extern void dict_panel_plugin_unblock(DictData *dd)
-{
-	// no-op
-}
-
-
-extern void dict_panel_plugin_save_settings(DictData *dd)
-{
-	// no-op
-}
-
-
-gboolean main_quit(GtkWidget *widget, GdkEvent *event, DictData *dd)
+static gboolean main_quit(GtkWidget *widget, GdkEvent *event, DictData *dd)
 {
 	dict_free_data(dd);
     gtk_main_quit();
@@ -64,7 +49,7 @@ gboolean main_quit(GtkWidget *widget, GdkEvent *event, DictData *dd)
 }
 
 
-void close_button_clicked(GtkWidget *button, DictData *dd)
+static void close_button_clicked(GtkWidget *button, DictData *dd)
 {
 	main_quit(NULL, NULL, dd);
 }
@@ -87,19 +72,9 @@ gint main(gint argc, gchar *argv[])
 
 	/* no plugin found, start usual stand-alone app */
 
-	dd = g_new0(DictData, 1);
+	dd = dict_create_dictdata();
 
 	g_thread_init(NULL);
-
-	/* initialise some pointers, unused panel plugins pointers defaults to NULL when not used */
-	dd->plugin = NULL;
-	dd->searched_word = NULL;
-	dd->query_is_running = FALSE;
-	dd->query_status = NO_ERROR;
-	dd->panel_button = NULL;
-	dd->tooltips = NULL;
-	dd->panel_button_image = NULL;
-	dd->panel_entry = NULL;
 
 	dict_read_rc_file(dd);
 

@@ -1,0 +1,280 @@
+/*  $Id$
+ *
+ *  Copyright 2006-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Library General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+
+/* Creation of main window and helper functions (GUI stuff). */
+
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include <string.h>
+#include <gtk/gtk.h>
+#include <libxfcegui4/libxfcegui4.h>
+
+#include "common.h"
+#include "gui.h"
+#include "inline-icon.h"
+
+
+
+void dict_set_panel_entry_text(DictData *dd, const gchar *text)
+{
+	if (dd->panel_entry != NULL)
+		gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), text);
+}
+
+
+void dict_status_add(DictData *dd, const gchar *format, ...)
+{
+	static gchar string[512];
+	va_list args;
+
+	string[0] = ' ';
+	va_start(args, format);
+	g_vsnprintf(string + 1, (sizeof string) - 1, format, args);
+	va_end(args);
+
+	gtk_statusbar_pop(GTK_STATUSBAR(dd->statusbar), 1);
+	gtk_statusbar_push(GTK_STATUSBAR(dd->statusbar), 1, string);
+}
+
+
+void dict_clear_text_buffer(DictData *dd)
+{
+	GtkTextIter start_iter, end_iter;
+
+	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &start_iter);
+	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
+	gtk_text_buffer_delete(dd->main_textbuffer, &start_iter, &end_iter);
+}
+
+
+static void entry_activate_cb(GtkEntry *entry, DictData *dd)
+{
+	const gchar *entered_text = gtk_entry_get_text(GTK_ENTRY(dd->main_entry));
+
+	dict_search_word(dd, entered_text);
+}
+
+
+static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
+{
+	entry_activate_cb(NULL, dd);
+	gtk_widget_grab_focus(dd->main_entry);
+}
+
+
+static void clear_button_clicked_cb(GtkButton *button, DictData *dd)
+{
+	dict_clear_text_buffer(dd);
+
+	/* clear the entries */
+	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
+	dict_set_panel_entry_text(dd, "");
+
+	dict_status_add(dd, _("Ready."));
+}
+
+
+static void search_mode_dict_toggled(GtkToggleButton *togglebutton, DictData *dd)
+{
+	if (gtk_toggle_button_get_active(togglebutton))
+	{
+		dd->mode = DICTMODE_DICT;
+		gtk_widget_grab_focus(dd->main_entry);
+	}
+}
+
+
+static void search_mode_web_toggled(GtkToggleButton *togglebutton, DictData *dd)
+{
+	if (gtk_toggle_button_get_active(togglebutton))
+	{
+		dd->mode = DICTMODE_WEB;
+		gtk_widget_grab_focus(dd->main_entry);
+	}
+}
+
+
+static void search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *dd)
+{
+	if (gtk_toggle_button_get_active(togglebutton))
+	{
+		dd->mode = DICTMODE_SPELL;
+		gtk_widget_grab_focus(dd->main_entry);
+	}
+}
+
+
+const guint8 *dict_get_icon_data(void)
+{
+	return dict_icon_data;
+}
+
+
+void dict_create_main_window(DictData *dd)
+{
+	GtkWidget *main_box;
+	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *clear_button;
+	GtkWidget *sep, *align, *scrolledwindow_results;
+	GdkPixbuf *icon;
+	GtkWidget *method_chooser, *radio, *label;
+
+	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	gtk_window_set_title(GTK_WINDOW(dd->window), "Xfce Dictionary");
+	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
+
+	icon = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
+	gtk_window_set_icon(GTK_WINDOW(dd->window), icon);
+	g_object_unref(icon);
+
+	main_box = gtk_vbox_new(FALSE, 0);
+	gtk_widget_show(main_box);
+	gtk_container_add(GTK_CONTAINER(dd->window), main_box);
+
+	/* entry box (label, entry, buttons) */
+	entry_box = gtk_hbox_new(FALSE, 10);
+	gtk_widget_show(entry_box);
+	gtk_container_set_border_width(GTK_CONTAINER(entry_box), 2);
+	gtk_box_pack_start(GTK_BOX(main_box), entry_box, FALSE, TRUE, 5);
+
+	label_box = gtk_hbox_new(FALSE, 5);
+	gtk_widget_show(label_box);
+	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 0);
+
+	entry_label = gtk_label_new(_("Text to search:"));
+	gtk_widget_show(entry_label);
+	gtk_misc_set_alignment(GTK_MISC(entry_label), 1, 0.5);
+
+	align = gtk_alignment_new(1, 0.5, 0, 0);
+	gtk_alignment_set_padding(GTK_ALIGNMENT(align), 0, 0, 5, 0);
+	gtk_widget_show(align);
+	gtk_container_add(GTK_CONTAINER(align), entry_label);
+	gtk_box_pack_start(GTK_BOX(label_box), align, FALSE, FALSE, 2);
+
+	dd->main_entry = gtk_entry_new();
+	gtk_widget_show(dd->main_entry);
+	gtk_box_pack_start(GTK_BOX(label_box), dd->main_entry, TRUE, TRUE, 0);
+	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
+
+	entry_button = gtk_button_new_from_stock("gtk-find");
+	gtk_widget_show(entry_button);
+	gtk_box_pack_start(GTK_BOX(entry_box), entry_button, FALSE, FALSE, 0);
+	g_signal_connect(entry_button, "clicked", G_CALLBACK(entry_button_clicked_cb), dd);
+
+	clear_button = gtk_button_new_from_stock("gtk-clear");
+	gtk_widget_show(clear_button);
+	gtk_box_pack_start(GTK_BOX(entry_box), clear_button, FALSE, FALSE, 0);
+	g_signal_connect(clear_button, "clicked", G_CALLBACK(clear_button_clicked_cb), dd);
+
+	/* just make some space */
+	align = gtk_alignment_new(1, 0.5, 0, 0);
+	gtk_alignment_set_padding(GTK_ALIGNMENT(align), 0, 0, 10, 0);
+	gtk_widget_show(align);
+	gtk_container_add(GTK_CONTAINER(align), gtk_label_new(""));
+	gtk_box_pack_start(GTK_BOX(entry_box), align, FALSE, FALSE, 0);
+
+	dd->close_button = gtk_button_new_from_stock("gtk-close");
+	gtk_widget_show(dd->close_button);
+	gtk_box_pack_end(GTK_BOX(entry_box), dd->close_button, FALSE, FALSE, 2);
+
+	/* insert it here and it will(hopefully) be placed before the Close button */
+	sep = gtk_vseparator_new();
+	gtk_widget_show(sep);
+	gtk_box_pack_end(GTK_BOX(entry_box), sep, FALSE, FALSE, 5);
+
+	/* search method chooser */
+	method_chooser = gtk_hbox_new(FALSE, 0);
+	gtk_widget_show(method_chooser);
+	gtk_box_pack_start(GTK_BOX(main_box), method_chooser, FALSE, FALSE, 0);
+
+	label = gtk_label_new(_("Search with:"));
+	gtk_widget_show(label);
+	gtk_box_pack_start(GTK_BOX(method_chooser), label, FALSE, FALSE, 6);
+
+	radio = gtk_radio_button_new_with_label(NULL, _("Dict"));
+	gtk_widget_show(radio);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode == DICTMODE_DICT));
+	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_dict_toggled), dd);
+	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
+
+	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Web"));
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode == DICTMODE_WEB));
+	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_web_toggled), dd);
+	gtk_widget_show(radio);
+	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
+
+	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Spellcheck"));
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode == DICTMODE_SPELL));
+	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_spell_toggled), dd);
+	gtk_widget_show(radio);
+	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
+
+	/* results area */
+	scrolledwindow_results = gtk_scrolled_window_new(NULL, NULL);
+	gtk_widget_show(scrolledwindow_results);
+	gtk_container_set_border_width(GTK_CONTAINER(scrolledwindow_results), 4);
+	gtk_box_pack_start(GTK_BOX(main_box), scrolledwindow_results, TRUE, TRUE, 0);
+	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(scrolledwindow_results),
+								GTK_SHADOW_IN);
+	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolledwindow_results),
+					GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+
+	/* searched words textview stuff */
+	dd->main_textview = gtk_text_view_new();
+	gtk_text_view_set_editable(GTK_TEXT_VIEW(dd->main_textview), FALSE);
+	gtk_text_view_set_left_margin(GTK_TEXT_VIEW(dd->main_textview), 5);
+	gtk_text_view_set_right_margin(GTK_TEXT_VIEW(dd->main_textview), 5);
+	gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(dd->main_textview), GTK_WRAP_WORD);
+	dd->main_textbuffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(dd->main_textview));
+	dd->main_boldtag = gtk_text_buffer_create_tag(dd->main_textbuffer,
+			"bold", "weight", PANGO_WEIGHT_BOLD, NULL);
+
+	gtk_widget_show(dd->main_textview);
+	gtk_container_add(GTK_CONTAINER(scrolledwindow_results), dd->main_textview);
+
+	/* status bar */
+	dd->statusbar = gtk_statusbar_new();
+	gtk_widget_show(dd->statusbar);
+	gtk_box_pack_end(GTK_BOX(main_box), dd->statusbar, FALSE, FALSE, 0);
+}
+
+
+void dict_about_dialog(GtkWidget *widget, DictData *dd)
+{
+	GtkWidget *dialog;
+	XfceAboutInfo *info;
+
+	info = xfce_about_info_new("xfce4-dict", VERSION,
+							   _("A client program to query different dictionaries."),
+							   XFCE_COPYRIGHT_TEXT("2006-2008", "Enrico Tröger"),
+							   XFCE_LICENSE_GPL);
+
+	xfce_about_info_add_credit(info, "Enrico Tröger", "enrico(dot)troeger(at)uvena(dot)de", _("Developer"));
+	xfce_about_info_set_homepage(info, "http://goodies.xfce.org");
+
+	dialog = xfce_about_dialog_new_with_values(GTK_WINDOW(widget), info, dd->icon);
+	g_signal_connect(G_OBJECT(dialog), "response", G_CALLBACK(gtk_widget_destroy), NULL);
+	gtk_window_set_title(GTK_WINDOW(dialog), "Xfce Dictionary");
+	gtk_dialog_run(GTK_DIALOG(dialog));
+
+	xfce_about_info_free(info);
+}

@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright 2007-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *  Copyright 2006-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -31,11 +31,9 @@
 
 #include <libxfcegui4/libxfcegui4.h>
 
-/* Simple forward declaration to avoid inclusion of libxfce4panel headers */
-typedef struct XfcePanelPlugin_t XfcePanelPlugin;
-
 #include "common.h"
 #include "aspell.h"
+#include "gui.h"
 
 
 static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, gconstpointer data)
@@ -142,17 +140,32 @@ void dict_start_aspell_query(DictData *dd, const gchar *word)
 	gint     stdout_fd;
 	gint     stderr_fd;
 	gint     stdin_fd;
+	gchar	*tts;
 
 	if (! NZV(dd->spell_bin))
 	{
 		dict_status_add(dd, _("Please set an appropriate aspell command."));
 		return;
 	}
+
 	if (! NZV(word))
 	{
 		dict_status_add(dd, _("Invalid input."));
 		return;
 	}
+
+	/* TODO search only for the first word when working on a sentence,
+	 * workout a better solution */
+	tts = g_strdup(word);
+	if ((tts = strchr(word, ' ')) ||
+		(tts = strchr(word, '-')) ||
+		(tts = strchr(word, '_')) ||
+		(tts = strchr(word, '.')) ||
+		(tts = strchr(word, ',')))
+	{
+		*tts = '\0';
+	}
+
 	locale_cmd = g_locale_from_utf8(dd->spell_bin, -1, NULL, NULL, NULL);
 	if (locale_cmd == NULL)
 		locale_cmd = g_strdup(dd->spell_bin);
@@ -164,13 +177,11 @@ void dict_start_aspell_query(DictData *dd, const gchar *word)
 	argv[3] = g_strdup(dd->spell_dictionary);
 	argv[4] = NULL;
 
-	dict_clear_text_buffer(dd);
-
 	if (g_spawn_async_with_pipes(NULL, argv, NULL,
 			G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD, NULL, NULL, NULL,
 			&stdin_fd, &stdout_fd, &stderr_fd, &error))
 	{
-		set_up_io_channel(stdin_fd, G_IO_OUT, iofunc_write, word);
+		set_up_io_channel(stdin_fd, G_IO_OUT, iofunc_write, tts);
 		set_up_io_channel(stdout_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read, dd);
 		set_up_io_channel(stderr_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read_err, dd);
 		dict_status_add(dd, _("Ready."));
@@ -182,5 +193,6 @@ void dict_start_aspell_query(DictData *dd, const gchar *word)
 		error = NULL;
 	}
 
+	g_free(tts);
 	g_strfreev(argv);
 }
