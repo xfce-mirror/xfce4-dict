@@ -19,8 +19,13 @@ xfce4_dict_LDADD =								\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(LIBXFCEGUI4_LIBS)							\
 	@GTHREAD_LIBS@								\
-	$(top_srcdir)/lib/libdict.a
+	../lib/libdict.a
 
+
+desktopdir = $(datadir)/applications
+desktop_in_files = xfce4-dict.desktop.in
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST =									\
 	$(desktop_in_files)
@@ -28,7 +33,3 @@ EXTRA_DIST =									\
 CLEANFILES =									\
 	$(desktop_DATA)
 
-desktopdir = $(datadir)/applications
-desktop_in_files = xfce4-dict.desktop
-desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
