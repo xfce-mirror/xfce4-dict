@@ -55,6 +55,15 @@ static void close_button_clicked(GtkWidget *button, DictData *dd)
 }
 
 
+void pref_dialog_activated(GtkMenuItem *menuitem, DictData *dd)
+{
+	GtkWidget *dlg;
+
+	dlg = dict_prefs_dialog_show(gtk_widget_get_toplevel(GTK_WIDGET(menuitem)), dd);
+	gtk_widget_show(dlg);
+}
+
+
 gint main(gint argc, gchar *argv[])
 {
 	DictData *dd;
@@ -83,6 +92,9 @@ gint main(gint argc, gchar *argv[])
 
 	g_signal_connect(dd->window, "delete-event", G_CALLBACK(main_quit), dd);
 	g_signal_connect(dd->close_button, "clicked", G_CALLBACK(close_button_clicked), dd);
+	/* file menu */
+	g_signal_connect(dd->close_menu_item, "activate", G_CALLBACK(close_button_clicked), dd);
+	g_signal_connect(dd->pref_menu_item, "activate", G_CALLBACK(pref_dialog_activated), dd);
 
 	dict_status_add(dd, _("Ready."));
 

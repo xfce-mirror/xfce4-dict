@@ -358,6 +358,10 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	xfce_panel_plugin_menu_show_configure(plugin);
 	xfce_panel_plugin_menu_show_about(plugin);
 
+	/* file menu */
+	g_signal_connect(dpd->dd->close_menu_item, "activate", G_CALLBACK(dict_plugin_close_button_clicked), dpd);
+	g_signal_connect(dpd->dd->pref_menu_item, "activate", G_CALLBACK(dict_plugin_properties_dialog), dpd);
+
 	/* panel entry */
 	dpd->dd->panel_entry = gtk_entry_new();
 	gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), 15);

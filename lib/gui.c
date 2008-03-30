@@ -130,6 +130,43 @@ const guint8 *dict_get_icon_data(void)
 }
 
 
+static GtkWidget *create_file_menu(DictData *dd)
+{
+	GtkWidget *menubar, *file, *file_menu, *help, *help_menu, *menu_item;
+
+	menubar = gtk_menu_bar_new();
+
+	file = gtk_menu_item_new_with_mnemonic(_("_File"));
+
+	file_menu = gtk_menu_new();
+	gtk_menu_item_set_submenu(GTK_MENU_ITEM(file), file_menu);
+
+	dd->pref_menu_item = gtk_image_menu_item_new_from_stock("gtk-preferences", NULL);
+	gtk_container_add(GTK_CONTAINER(file_menu), dd->pref_menu_item);
+
+	gtk_container_add(GTK_CONTAINER(file_menu), gtk_separator_menu_item_new());
+
+	dd->close_menu_item = gtk_image_menu_item_new_from_stock((dd->is_plugin) ? "gtk-close" : "gtk-quit", NULL);
+	gtk_container_add(GTK_CONTAINER(file_menu), dd->close_menu_item);
+
+	help = gtk_menu_item_new_with_mnemonic(_("_Help"));
+
+	help_menu = gtk_menu_new();
+	gtk_menu_item_set_submenu(GTK_MENU_ITEM(help), help_menu);
+
+	menu_item = gtk_image_menu_item_new_from_stock("gtk-about", NULL);
+	gtk_container_add(GTK_CONTAINER(help_menu), menu_item);
+	g_signal_connect(menu_item, "activate", G_CALLBACK(dict_about_dialog), dd);
+
+	gtk_container_add(GTK_CONTAINER(menubar), file);
+	gtk_container_add(GTK_CONTAINER(menubar), help);
+
+	gtk_widget_show_all(menubar);
+
+	return menubar;
+}
+
+
 void dict_create_main_window(DictData *dd)
 {
 	GtkWidget *main_box;
@@ -149,6 +186,8 @@ void dict_create_main_window(DictData *dd)
 	main_box = gtk_vbox_new(FALSE, 0);
 	gtk_widget_show(main_box);
 	gtk_container_add(GTK_CONTAINER(dd->window), main_box);
+
+	gtk_box_pack_start(GTK_BOX(main_box), create_file_menu(dd), FALSE, TRUE, 0);
 
 	/* entry box (label, entry, buttons) */
 	entry_box = gtk_hbox_new(FALSE, 10);
@@ -192,7 +231,7 @@ void dict_create_main_window(DictData *dd)
 	gtk_container_add(GTK_CONTAINER(align), gtk_label_new(""));
 	gtk_box_pack_start(GTK_BOX(entry_box), align, FALSE, FALSE, 0);
 
-	dd->close_button = gtk_button_new_from_stock("gtk-close");
+	dd->close_button = gtk_button_new_from_stock((dd->is_plugin) ? "gtk-close" : "gtk-quit");
 	gtk_widget_show(dd->close_button);
 	gtk_box_pack_end(GTK_BOX(entry_box), dd->close_button, FALSE, FALSE, 2);
 
@@ -271,7 +310,8 @@ void dict_about_dialog(GtkWidget *widget, DictData *dd)
 	xfce_about_info_add_credit(info, "Enrico Tröger", "enrico(dot)troeger(at)uvena(dot)de", _("Developer"));
 	xfce_about_info_set_homepage(info, "http://goodies.xfce.org");
 
-	dialog = xfce_about_dialog_new_with_values(GTK_WINDOW(widget), info, dd->icon);
+	dialog = xfce_about_dialog_new_with_values(
+		GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(widget))), info, dd->icon);
 	g_signal_connect(G_OBJECT(dialog), "response", G_CALLBACK(gtk_widget_destroy), NULL);
 	gtk_window_set_title(GTK_WINDOW(dialog), "Xfce Dictionary");
 	gtk_dialog_run(GTK_DIALOG(dialog));

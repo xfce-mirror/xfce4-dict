@@ -4,6 +4,8 @@
 	* Redesign preferences dialog: use a GtkNotebook and use a XfceDialog.
 	* Update POTFILES.in.
 	* Remove debug messages.
+	* Add file menu to make preferences dialog accessable when run as
+	  stand-alone application.
 
 
 2008-03-27  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
