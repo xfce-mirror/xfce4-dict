@@ -1,6 +1,9 @@
 2008-03-30  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
 	* More code reorganisation and cleanup.
+	* Redesign preferences dialog: use a GtkNotebook and use a XfceDialog.
+	* Update POTFILES.in.
+	* Remove debug messages.
 
 
 2008-03-27  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

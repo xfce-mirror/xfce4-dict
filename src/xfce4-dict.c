@@ -73,6 +73,7 @@ gint main(gint argc, gchar *argv[])
 	/* no plugin found, start usual stand-alone app */
 
 	dd = dict_create_dictdata();
+	dd->is_plugin = FALSE;
 
 	g_thread_init(NULL);
 

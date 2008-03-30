@@ -124,7 +124,7 @@ static gchar *str_replace(gchar *haystack, const gchar *needle, const gchar *rep
 
 
 /* taken from xarchiver, thanks Giuseppe */
-static gboolean open_browser(DictData *dd, const gchar *uri)
+gboolean dict_open_browser(DictData *dd, const gchar *uri)
 {
 	gchar *argv[3];
 	gchar *browser_path;
@@ -202,7 +202,7 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 		}
 	}
 	uri = str_replace(g_strdup(base), "{word}", dd->searched_word);
-	if (! open_browser(dd, uri))
+	if (! dict_open_browser(dd, uri))
 	{
 		xfce_err(_("Browser could not be opened. Please check your preferences."));
 		success = FALSE;
@@ -255,7 +255,7 @@ void dict_search_word(DictData *dd, const gchar *word)
 		{
 			gboolean browser_started = start_web_query(dd, dd->searched_word);
 
-			/* If we started a web search, the browser was successfully started and we are not in the
+			/* If the browser was successfully started and we are not in the
 			 * stand-alone app, then hide the main window in favour of the started browser.
 			 * If we are in the stand-alone app, don't hide the main window, we don't want this */
 			if (browser_started && dd->is_plugin)
@@ -341,7 +341,6 @@ void dict_write_rc_file(DictData *dd)
 
 void dict_free_data(DictData *dd)
 {
-	g_message("dict: destroy window");
 	gtk_widget_destroy(dd->window);
 
 	dict_write_rc_file(dd);

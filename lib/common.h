@@ -27,6 +27,9 @@
 	((ptr) && (ptr)[0])
 
 
+#define PLUGIN_WEBSITE "http://goodies.xfce.org/projects/xfce4-dict"
+
+
 typedef enum
 {
 	DICTMODE_DICT = 0,
@@ -106,6 +109,7 @@ void dict_write_rc_file(DictData *dd);
 void dict_read_rc_file(DictData *dd);
 void dict_search_word(DictData *dd, const gchar *word);
 void dict_signal_cb(gint sig);
+gboolean dict_open_browser(DictData *dd, const gchar *uri);
 void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gint x, gint y,
 							 GtkSelectionData *data, guint info, guint ltime, DictData *dd);
 

@@ -4,5 +4,7 @@ src/popup_plugin.c
 src/xfce4-dict.c
 src/xfce4-dict.desktop.in
 lib/aspell.c
-lib/dict.c
-lib/dict.h
+lib/common.c
+lib/dictd.c
+lib/gui.c
+lib/prefs.c

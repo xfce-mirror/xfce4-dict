@@ -221,10 +221,7 @@ static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictPanelData *dpd)
 	GtkWidget *dialog = g_object_get_data(G_OBJECT(dpd->plugin), "dialog");
 
 	if (dialog != NULL)
-	{
-		g_message("dict: destroy dialog");
 		gtk_widget_destroy(dialog);
-	}
 
 	gtk_object_sink(GTK_OBJECT(dpd->tooltips));
 
@@ -286,8 +283,7 @@ static void dict_plugin_panel_save_settings(DictPanelData *dpd)
 
 static void dict_plugin_properties_dialog_response(GtkWidget *dlg, gint response, DictPanelData *dpd)
 {
-	if (response == GTK_RESPONSE_OK)
-		dict_plugin_panel_save_settings(dpd);
+	dict_plugin_panel_save_settings(dpd);
 
 	g_object_set_data(G_OBJECT(dpd->plugin), "dialog", NULL);
 	xfce_panel_plugin_unblock_menu(dpd->plugin);
@@ -300,12 +296,11 @@ static void dict_plugin_properties_dialog(XfcePanelPlugin *plugin, DictPanelData
 
 	xfce_panel_plugin_block_menu(plugin);
 
-	dlg = dict_prefs_dialog_show(dpd->dd);
+	dlg = dict_prefs_dialog_show(gtk_widget_get_toplevel(GTK_WIDGET(plugin)), dpd->dd);
 
 	g_object_set_data(G_OBJECT(dpd->plugin), "dialog", dlg);
 
 	g_signal_connect(dlg, "response", G_CALLBACK(dict_plugin_properties_dialog_response), dpd);
-	g_signal_connect(dlg, "response", G_CALLBACK(dict_prefs_dialog_response), dpd->dd);
 
 	gtk_widget_show(dlg);
 }
@@ -331,6 +326,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_thread_init(NULL);
 
 	dpd->dd = dict_create_dictdata();
+	dpd->dd->is_plugin = TRUE;
 	dpd->plugin = plugin;
 
 	dict_read_rc_file(dpd->dd);
