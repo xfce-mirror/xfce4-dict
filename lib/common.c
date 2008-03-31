@@ -215,6 +215,8 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 
 void dict_search_word(DictData *dd, const gchar *word)
 {
+	gboolean browser_started = FALSE;
+
 	/* sanity checks */
 	if (! NZV(word))
 	{
@@ -252,15 +254,8 @@ void dict_search_word(DictData *dd, const gchar *word)
 		}
 		case DICTMODE_WEB:
 		{
-			gboolean browser_started = start_web_query(dd, dd->searched_word);
+			browser_started = start_web_query(dd, dd->searched_word);
 
-			/* If the browser was successfully started and we are not in the
-			 * stand-alone app, then hide the main window in favour of the started browser.
-			 * If we are in the stand-alone app, don't hide the main window, we don't want this */
-			if (browser_started && dd->is_plugin)
-			{
-				gtk_widget_hide(dd->window);
-			}
 			break;
 		}
 		case DICTMODE_SPELL:
@@ -268,6 +263,17 @@ void dict_search_word(DictData *dd, const gchar *word)
 			dict_aspell_start_query(dd, dd->searched_word);
 			break;
 		}
+	}
+	/* If the browser was successfully started and we are not in the stand-alone app,
+	 * then hide the main window in favour of the started browser.
+	 * If we are in the stand-alone app, don't hide the main window, we don't want this */
+	if (browser_started && dd->is_plugin)
+	{
+		gtk_widget_hide(dd->window);
+	}
+	else
+	{
+		dict_gui_show_main_window(dd);
 	}
 }
 
