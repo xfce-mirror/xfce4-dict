@@ -68,7 +68,7 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 			if (msg[0] == '&')
 			{	/* & cmd 17 7: ... */
 				tmp = strchr(msg + 2, ' ') + 1;
-				dict_status_add(dd, _("%d suggestion(s) found."), atoi(tmp));
+				dict_gui_status_add(dd, _("%d suggestion(s) found."), atoi(tmp));
 
 				tmp = g_strdup_printf(_("Suggestions for \"%s\":\n"), dd->searched_word);
 				gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &iter, tmp, -1,
@@ -110,7 +110,7 @@ static gboolean iofunc_read_err(GIOChannel *ioc, GIOCondition cond, gpointer dat
 
 		while (g_io_channel_read_line(ioc, &msg, NULL, NULL, NULL) && msg != NULL)
 		{
-			dict_status_add(dd, _("%s"), g_strstrip(msg));
+			dict_gui_status_add(dd, _("%s"), g_strstrip(msg));
 			g_free(msg);
 		}
 	}
@@ -132,7 +132,7 @@ static gboolean iofunc_write(GIOChannel *ioc, GIOCondition cond, gpointer data)
 }
 
 
-void dict_start_aspell_query(DictData *dd, const gchar *word)
+void dict_aspell_start_query(DictData *dd, const gchar *word)
 {
 	GError  *error = NULL;
 	gchar  **argv;
@@ -144,13 +144,13 @@ void dict_start_aspell_query(DictData *dd, const gchar *word)
 
 	if (! NZV(dd->spell_bin))
 	{
-		dict_status_add(dd, _("Please set an appropriate aspell command."));
+		dict_gui_status_add(dd, _("Please set an appropriate aspell command."));
 		return;
 	}
 
 	if (! NZV(word))
 	{
-		dict_status_add(dd, _("Invalid input."));
+		dict_gui_status_add(dd, _("Invalid input."));
 		return;
 	}
 
@@ -184,11 +184,11 @@ void dict_start_aspell_query(DictData *dd, const gchar *word)
 		set_up_io_channel(stdin_fd, G_IO_OUT, iofunc_write, tts);
 		set_up_io_channel(stdout_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read, dd);
 		set_up_io_channel(stderr_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read_err, dd);
-		dict_status_add(dd, _("Ready."));
+		dict_gui_status_add(dd, _("Ready."));
 	}
 	else
 	{
-		dict_status_add(dd, _("Process failed (%s)"), error->message);
+		dict_gui_status_add(dd, _("Process failed (%s)"), error->message);
 		g_error_free(error);
 		error = NULL;
 	}

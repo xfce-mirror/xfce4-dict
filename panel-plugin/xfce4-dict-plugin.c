@@ -85,7 +85,7 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 									 dpd->panel_button->style->ythickness));
 
 	/*g_object_unref(G_OBJECT(dd->icon));*/
-	dpd->dd->icon = dict_plugin_load_and_scale(dict_get_icon_data(), size, -1);
+	dpd->dd->icon = dict_plugin_load_and_scale(dict_gui_get_icon_data(), size, -1);
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(dpd->panel_button_image), dpd->dd->icon);
 
@@ -128,14 +128,6 @@ static void dict_toggle_main_window(GtkWidget *button, DictData *dd)
 */
 
 
-static void dict_plugin_show_main_window(DictData *dd)
-{
-	gtk_widget_show(dd->window);
-	gtk_window_deiconify(GTK_WINDOW(dd->window));
-	gtk_window_present(GTK_WINDOW(dd->window));
-}
-
-
 static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *dpd)
 {
 	if (GTK_WIDGET_VISIBLE(dpd->dd->window))
@@ -144,7 +136,7 @@ static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *d
 	{
 		const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dpd->dd->panel_entry));
 
-		dict_plugin_show_main_window(dpd->dd);
+		dict_gui_show_main_window(dpd->dd);
 		if (NZV(panel_text))
 		{
 			dict_search_word(dpd->dd, panel_text);
@@ -343,7 +335,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 
 	g_signal_connect(dpd->panel_button, "clicked", G_CALLBACK(dict_plugin_panel_button_clicked), dpd);
 
-	dict_create_main_window(dpd->dd);
+	dict_gui_create_main_window(dpd->dd);
 
 	g_signal_connect(dpd->dd->window, "delete_event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
 	g_signal_connect(dpd->dd->close_button, "clicked", G_CALLBACK(dict_plugin_close_button_clicked), dpd);
@@ -353,7 +345,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(plugin, "style-set", G_CALLBACK(dict_plugin_style_set), dpd);
 	g_signal_connect(plugin, "save", G_CALLBACK(dict_plugin_write_rc_file), dpd);
 	g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_plugin_properties_dialog), dpd);
-	g_signal_connect(plugin, "about", G_CALLBACK(dict_about_dialog), dpd->dd);
+	g_signal_connect(plugin, "about", G_CALLBACK(dict_gui_about_dialog), dpd->dd);
 
 	xfce_panel_plugin_menu_show_configure(plugin);
 	xfce_panel_plugin_menu_show_about(plugin);
@@ -394,7 +386,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
 	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
 
-	dict_status_add(dpd->dd, _("Ready."));
+	dict_gui_status_add(dpd->dd, _("Ready."));
 
 	siginterrupt(SIGALRM, 1);
 	signal(SIGALRM, dict_signal_cb);

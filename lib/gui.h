@@ -22,12 +22,13 @@
 #define GUI_H 1
 
 
-void dict_status_add(DictData *dd, const gchar *format, ...);
-void dict_create_main_window(DictData *dd);
-void dict_about_dialog(GtkWidget *widget, DictData *dd);
-void dict_clear_text_buffer(DictData *dd);
-void dict_set_panel_entry_text(DictData *dd, const gchar *text);
-const guint8 *dict_get_icon_data(void);
+void dict_gui_status_add(DictData *dd, const gchar *format, ...);
+void dict_gui_create_main_window(DictData *dd);
+void dict_gui_about_dialog(GtkWidget *widget, DictData *dd);
+void dict_gui_clear_text_buffer(DictData *dd);
+void dict_gui_set_panel_entry_text(DictData *dd, const gchar *text);
+void dict_gui_show_main_window(DictData *dd);
+const guint8 *dict_gui_get_icon_data(void);
 
 
 #endif

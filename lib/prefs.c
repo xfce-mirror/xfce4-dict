@@ -270,7 +270,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		button_get_list = gtk_button_new_from_stock("gtk-find");
 		gtk_widget_show(button_get_list);
-		g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_get_dict_list_cb), dd);
+		g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_dictd_get_list), dd);
 
 		/* put it all together */
 		table = gtk_table_new(3, 3, FALSE);

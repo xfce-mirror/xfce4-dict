@@ -215,11 +215,10 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 
 void dict_search_word(DictData *dd, const gchar *word)
 {
-
 	/* sanity checks */
 	if (! NZV(word))
 	{
-		dict_status_add(dd, _("Invalid input."));
+		dict_gui_status_add(dd, _("Invalid input."));
 		return;
 	}
 
@@ -229,26 +228,26 @@ void dict_search_word(DictData *dd, const gchar *word)
 		dd->searched_word = g_locale_to_utf8(word, -1, NULL, NULL, NULL);
 		if (dd->searched_word == NULL || ! g_utf8_validate(dd->searched_word, -1, NULL))
 		{
-			dict_status_add(dd, _("Invalid non-UTF8 input."));
+			dict_gui_status_add(dd, _("Invalid non-UTF8 input."));
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
-			dict_set_panel_entry_text(dd, "");
+			dict_gui_set_panel_entry_text(dd, "");
 			return;
 		}
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), dd->searched_word);
-		dict_set_panel_entry_text(dd, dd->searched_word);
+		dict_gui_set_panel_entry_text(dd, dd->searched_word);
 	}
 	else
 	{
 		dd->searched_word = g_strdup(word);
 	}
 
-	dict_clear_text_buffer(dd);
+	dict_gui_clear_text_buffer(dd);
 
 	switch (dd->mode)
 	{
 		case DICTMODE_DICT:
 		{
-			dict_start_server_query(dd, dd->searched_word);
+			dict_dictd_start_query(dd, dd->searched_word);
 			break;
 		}
 		case DICTMODE_WEB:
@@ -266,7 +265,7 @@ void dict_search_word(DictData *dd, const gchar *word)
 		}
 		case DICTMODE_SPELL:
 		{
-			dict_start_aspell_query(dd, dd->searched_word);
+			dict_aspell_start_query(dd, dd->searched_word);
 			break;
 		}
 	}

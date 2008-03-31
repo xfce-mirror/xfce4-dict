@@ -108,14 +108,14 @@ static gboolean process_server_response(DictData *dd)
 
 	if (dd->query_status == NO_CONNECTION)
 	{
-		dict_status_add(dd, _("Could not connect to server."));
+		dict_gui_status_add(dd, _("Could not connect to server."));
 		dd->query_status = NO_ERROR;
 		return FALSE;
 	}
 
 	if (dd->query_buffer == NULL || strlen(dd->query_buffer) == 0)
 	{
-		dict_status_add(dd, _("Unknown error while quering the server."));
+		dict_gui_status_add(dd, _("Unknown error while quering the server."));
 		g_free(dd->query_buffer);
 		return FALSE;
 	}
@@ -123,7 +123,7 @@ static gboolean process_server_response(DictData *dd)
 	answer = dd->query_buffer;
 	if (strncmp("220", answer, 3) != 0)
 	{
-		dict_status_add(dd, _("Server not ready."));
+		dict_gui_status_add(dd, _("Server not ready."));
 		g_free(dd->query_buffer);
 		return FALSE;
 	}
@@ -134,18 +134,18 @@ static gboolean process_server_response(DictData *dd)
 
 	if (strncmp("552", answer, 3) == 0)
 	{
-		dict_status_add(dd, _("No matches could be found for \"%s\"."), dd->searched_word);
+		dict_gui_status_add(dd, _("No matches could be found for \"%s\"."), dd->searched_word);
 		g_free(dd->query_buffer);
 		return FALSE;
 	}
 	else if (strncmp("150", answer, 3) != 0 && strncmp("552", answer, 3) != 0)
 	{
-		dict_status_add(dd, _("Unknown error while quering the server."));
+		dict_gui_status_add(dd, _("Unknown error while quering the server."));
 		g_free(dd->query_buffer);
 		return FALSE;
 	}
 	defs_found = atoi(answer + 4);
-	dict_status_add(dd, _("%d definition(s) found."), defs_found);
+	dict_gui_status_add(dd, _("%d definition(s) found."), defs_found);
 
 	/* go to next line */
 	while (*answer != '\n') answer++;
@@ -209,7 +209,7 @@ static gboolean process_server_response(DictData *dd)
 	g_free(dd->query_buffer);
 
 	/* clear the panel entry to not search again when you click on the panel button */
-	dict_set_panel_entry_text(dd, "");
+	dict_gui_set_panel_entry_text(dd, "");
 
 	return FALSE;
 }
@@ -303,7 +303,7 @@ static void ask_server(DictData *dd)
 }
 
 
-void dict_start_server_query(DictData *dd, const gchar *word)
+void dict_dictd_start_query(DictData *dd, const gchar *word)
 {
 	if (dd->query_is_running)
 	{
@@ -311,7 +311,7 @@ void dict_start_server_query(DictData *dd, const gchar *word)
 	}
 	else
 	{
-		dict_status_add(dd, _("Querying %s..."), dd->server);
+		dict_gui_status_add(dd, _("Querying %s..."), dd->server);
 
 		/* start the thread to query the server */
 		g_thread_create((GThreadFunc) ask_server, dd, FALSE, NULL);
@@ -319,7 +319,7 @@ void dict_start_server_query(DictData *dd, const gchar *word)
 }
 
 
-gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd)
+gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 {
 	gint fd, i;
 	gint max_lines;

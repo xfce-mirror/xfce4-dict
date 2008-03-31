@@ -21,7 +21,7 @@
 #ifndef ASPELL_H
 #define ASPELL_H 1
 
-void dict_start_aspell_query(DictData *dd, const gchar *word);
+void dict_aspell_start_query(DictData *dd, const gchar *word);
 
 
 #endif

@@ -22,9 +22,8 @@
 #define DICTD_H 1
 
 
-void dict_start_server_query(DictData *dd, const gchar *word);
-
-gboolean dict_get_dict_list_cb(GtkWidget *button, DictData *dd);
+void dict_dictd_start_query(DictData *dd, const gchar *word);
+gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd);
 
 
 #endif

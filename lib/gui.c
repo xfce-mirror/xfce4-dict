@@ -35,14 +35,14 @@
 
 
 
-void dict_set_panel_entry_text(DictData *dd, const gchar *text)
+void dict_gui_set_panel_entry_text(DictData *dd, const gchar *text)
 {
 	if (dd->panel_entry != NULL)
 		gtk_entry_set_text(GTK_ENTRY(dd->panel_entry), text);
 }
 
 
-void dict_status_add(DictData *dd, const gchar *format, ...)
+void dict_gui_status_add(DictData *dd, const gchar *format, ...)
 {
 	static gchar string[512];
 	va_list args;
@@ -57,7 +57,7 @@ void dict_status_add(DictData *dd, const gchar *format, ...)
 }
 
 
-void dict_clear_text_buffer(DictData *dd)
+void dict_gui_clear_text_buffer(DictData *dd)
 {
 	GtkTextIter start_iter, end_iter;
 
@@ -84,13 +84,13 @@ static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
 
 static void clear_button_clicked_cb(GtkButton *button, DictData *dd)
 {
-	dict_clear_text_buffer(dd);
+	dict_gui_clear_text_buffer(dd);
 
 	/* clear the entries */
 	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
-	dict_set_panel_entry_text(dd, "");
+	dict_gui_set_panel_entry_text(dd, "");
 
-	dict_status_add(dd, _("Ready."));
+	dict_gui_status_add(dd, _("Ready."));
 }
 
 
@@ -124,7 +124,7 @@ static void search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *d
 }
 
 
-const guint8 *dict_get_icon_data(void)
+const guint8 *dict_gui_get_icon_data(void)
 {
 	return dict_icon_data;
 }
@@ -156,7 +156,7 @@ static GtkWidget *create_file_menu(DictData *dd)
 
 	menu_item = gtk_image_menu_item_new_from_stock("gtk-about", NULL);
 	gtk_container_add(GTK_CONTAINER(help_menu), menu_item);
-	g_signal_connect(menu_item, "activate", G_CALLBACK(dict_about_dialog), dd);
+	g_signal_connect(menu_item, "activate", G_CALLBACK(dict_gui_about_dialog), dd);
 
 	gtk_container_add(GTK_CONTAINER(menubar), file);
 	gtk_container_add(GTK_CONTAINER(menubar), help);
@@ -167,7 +167,7 @@ static GtkWidget *create_file_menu(DictData *dd)
 }
 
 
-void dict_create_main_window(DictData *dd)
+void dict_gui_create_main_window(DictData *dd)
 {
 	GtkWidget *main_box;
 	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *clear_button;
@@ -297,7 +297,15 @@ void dict_create_main_window(DictData *dd)
 }
 
 
-void dict_about_dialog(GtkWidget *widget, DictData *dd)
+void dict_gui_show_main_window(DictData *dd)
+{
+	gtk_widget_show(dd->window);
+	gtk_window_deiconify(GTK_WINDOW(dd->window));
+	gtk_window_present(GTK_WINDOW(dd->window));
+}
+
+
+void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 {
 	GtkWidget *dialog;
 	XfceAboutInfo *info;

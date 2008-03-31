@@ -88,7 +88,7 @@ gint main(gint argc, gchar *argv[])
 
 	dict_read_rc_file(dd);
 
-	dict_create_main_window(dd);
+	dict_gui_create_main_window(dd);
 
 	g_signal_connect(dd->window, "delete-event", G_CALLBACK(main_quit), dd);
 	g_signal_connect(dd->close_button, "clicked", G_CALLBACK(close_button_clicked), dd);
@@ -96,7 +96,7 @@ gint main(gint argc, gchar *argv[])
 	g_signal_connect(dd->close_menu_item, "activate", G_CALLBACK(close_button_clicked), dd);
 	g_signal_connect(dd->pref_menu_item, "activate", G_CALLBACK(pref_dialog_activated), dd);
 
-	dict_status_add(dd, _("Ready."));
+	dict_gui_status_add(dd, _("Ready."));
 
 	siginterrupt(SIGALRM, 1);
 	signal(SIGALRM, dict_signal_cb);
