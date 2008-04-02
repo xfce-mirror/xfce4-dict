@@ -213,6 +213,19 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 }
 
 
+dict_mode_t dict_set_search_mode_from_flags(dict_mode_t mode, gchar flags)
+{
+	if (flags & DICT_FLAGS_MODE_DICT)
+		mode = DICTMODE_DICT;
+	else if (flags & DICT_FLAGS_MODE_WEB)
+		mode = DICTMODE_WEB;
+	else if (flags & DICT_FLAGS_MODE_SPELL)
+		mode = DICTMODE_SPELL;
+
+	return mode;
+}
+
+
 void dict_search_word(DictData *dd, const gchar *word)
 {
 	gboolean browser_started = FALSE;
@@ -245,13 +258,8 @@ void dict_search_word(DictData *dd, const gchar *word)
 
 	dict_gui_clear_text_buffer(dd);
 
-	switch (dd->mode)
+	switch (dd->mode_in_use)
 	{
-		case DICTMODE_DICT:
-		{
-			dict_dictd_start_query(dd, dd->searched_word);
-			break;
-		}
 		case DICTMODE_WEB:
 		{
 			browser_started = start_web_query(dd, dd->searched_word);
@@ -261,6 +269,11 @@ void dict_search_word(DictData *dd, const gchar *word)
 		case DICTMODE_SPELL:
 		{
 			dict_aspell_start_query(dd, dd->searched_word);
+			break;
+		}
+		default:
+		{
+			dict_dictd_start_query(dd, dd->searched_word);
 			break;
 		}
 	}
@@ -281,7 +294,8 @@ void dict_search_word(DictData *dd, const gchar *word)
 void dict_read_rc_file(DictData *dd)
 {
 	XfceRc *rc;
-	gint mode = DICTMODE_DICT;
+	gint mode_in_use = DICTMODE_DICT;
+	gint mode_default = DICTMODE_LAST_USED;
 	gint webmode = WEBMODE_LEO_GERENG;
 	gint port = 2628;
 	gint panel_entry_size = 120;
@@ -294,7 +308,8 @@ void dict_read_rc_file(DictData *dd)
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
 	{
-		mode = xfce_rc_read_int_entry(rc, "mode", mode);
+		mode_in_use = xfce_rc_read_int_entry(rc, "mode_in_use", mode_in_use);
+		mode_default = xfce_rc_read_int_entry(rc, "mode_default", mode_default);
 		webmode = xfce_rc_read_int_entry(rc, "web_mode", webmode);
 		weburl = xfce_rc_read_entry(rc, "web_url", weburl);
 		show_panel_entry = xfce_rc_read_bool_entry(rc, "show_panel_entry", show_panel_entry);
@@ -308,7 +323,12 @@ void dict_read_rc_file(DictData *dd)
 		xfce_rc_close(rc);
 	}
 
-	dd->mode = mode;
+	dd->mode_default = mode_default;
+	if (dd->mode_default == DICTMODE_LAST_USED)
+		dd->mode_in_use = mode_in_use;
+	else
+		dd->mode_in_use = dd->mode_default;
+
 	dd->web_mode = webmode;
 	dd->web_url = g_strdup(weburl);
 	dd->show_panel_entry = show_panel_entry;
@@ -327,7 +347,8 @@ void dict_write_rc_file(DictData *dd)
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", FALSE)) != NULL)
 	{
-		xfce_rc_write_int_entry(rc, "mode", dd->mode);
+		xfce_rc_write_int_entry(rc, "mode_in_use", dd->mode_in_use);
+		xfce_rc_write_int_entry(rc, "mode_default", dd->mode_default);
 		xfce_rc_write_int_entry(rc, "web_mode", dd->web_mode);
 		if (dd->web_url != NULL)
 			xfce_rc_write_entry(rc, "web_url", dd->web_url);

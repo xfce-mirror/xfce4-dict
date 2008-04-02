@@ -40,7 +40,6 @@
 #include <string.h>
 
 #include "libdict.h"
-#include "popup_def.h"
 
 
 typedef struct
@@ -147,22 +146,31 @@ static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *d
 }
 
 
-/* Handle user messages (xfce4-popup-dict) */
+/* Handle user messages (xfce4-dict) */
 static gboolean dict_plugin_message_received(GtkWidget *w, GdkEventClient *ev, DictPanelData *dpd)
 {
-	if (ev->data_format == 8 && *(ev->data.b) != '\0')
+	if (ev->data_format == 8 && strncmp(ev->data.b, "xfdict", 6) == 0)
 	{
-		if (strcmp(XFCE_DICT_WINDOW_MESSAGE, ev->data.b) == 0)
-		{	/* open the main window */
+		gchar flags = ev->data.b[6];
+		gchar *tts = ev->data.b + 7;
+
+		dpd->dd->mode_in_use = dict_set_search_mode_from_flags(dpd->dd->mode_in_use, flags);
+
+		if (NZV(tts))
+		{
+			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), tts);
+			dict_search_word(dpd->dd, tts);
+		}
+		else if (flags & DICT_FLAGS_FOCUS_PANEL_ENTRY && dpd->dd->show_panel_entry)
+		{
+			xfce_panel_plugin_focus_widget(dpd->plugin, dpd->dd->panel_entry);
+		}
+		else
+		{
 			dict_plugin_panel_button_clicked(NULL, dpd);
-			return TRUE;
 		}
 
-		if (strcmp(XFCE_DICT_TEXTFIELD_MESSAGE, ev->data.b) == 0)
-		{	/* put the focus onto the panel entry */
-			if (dpd->dd->show_panel_entry)
-				xfce_panel_plugin_focus_widget(dpd->plugin, dpd->dd->panel_entry);
-		}
+		return TRUE;
 	}
 
 	return FALSE;

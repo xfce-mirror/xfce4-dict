@@ -1,3 +1,19 @@
+2008-04-02  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+	* Fix broken aspell search.
+	* Update package name for autotools.
+	* Show panel-only options in preferences dialog only if panel plugin
+	  is actually loaded.
+	* After clicking on the Clear button, bring the input focus back to the
+	  main entry.
+	* Add keyboard shortcuts for file menu items.
+	* Cleanup DictData struct, reorder elements and remove elements which
+	  are only used in the preferences dialog.
+	* Add search method selection to the preferences dialog, including new
+	  mode to use the search method from the last time.
+	* Add support for command line options for xfce4-dict command.
+
+
 2008-03-31  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
 	* Prefix some more functions.
@@ -20,7 +36,7 @@
 	  panel plugin into a static library.
 	  Move dictd server query code into an own file for better readibility.
 	  Bump version requirement of libxfce*-libs to 4.4.0.
-	  Add stand-alone application xfce4-dict.
+	  Add stand-alone application xfce4-dict (replaces xfce4-dict-popup command).
 	  (not yet finished, to be continued)
 
 

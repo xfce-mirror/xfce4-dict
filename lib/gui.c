@@ -27,6 +27,7 @@
 
 #include <string.h>
 #include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
 #include <libxfcegui4/libxfcegui4.h>
 
 #include "common.h"
@@ -64,6 +65,8 @@ void dict_gui_clear_text_buffer(DictData *dd)
 	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &start_iter);
 	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
 	gtk_text_buffer_delete(dd->main_textbuffer, &start_iter, &end_iter);
+
+	gtk_widget_grab_focus(dd->main_entry);
 }
 
 
@@ -98,7 +101,7 @@ static void search_mode_dict_toggled(GtkToggleButton *togglebutton, DictData *dd
 {
 	if (gtk_toggle_button_get_active(togglebutton))
 	{
-		dd->mode = DICTMODE_DICT;
+		dd->mode_in_use = DICTMODE_DICT;
 		gtk_widget_grab_focus(dd->main_entry);
 	}
 }
@@ -108,7 +111,7 @@ static void search_mode_web_toggled(GtkToggleButton *togglebutton, DictData *dd)
 {
 	if (gtk_toggle_button_get_active(togglebutton))
 	{
-		dd->mode = DICTMODE_WEB;
+		dd->mode_in_use = DICTMODE_WEB;
 		gtk_widget_grab_focus(dd->main_entry);
 	}
 }
@@ -118,7 +121,7 @@ static void search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *d
 {
 	if (gtk_toggle_button_get_active(togglebutton))
 	{
-		dd->mode = DICTMODE_SPELL;
+		dd->mode_in_use = DICTMODE_SPELL;
 		gtk_widget_grab_focus(dd->main_entry);
 	}
 }
@@ -133,6 +136,10 @@ const guint8 *dict_gui_get_icon_data(void)
 static GtkWidget *create_file_menu(DictData *dd)
 {
 	GtkWidget *menubar, *file, *file_menu, *help, *help_menu, *menu_item;
+	GtkAccelGroup *accel_group;
+
+	accel_group = gtk_accel_group_new();
+	gtk_window_add_accel_group(GTK_WINDOW(dd->window), accel_group);
 
 	menubar = gtk_menu_bar_new();
 
@@ -141,12 +148,15 @@ static GtkWidget *create_file_menu(DictData *dd)
 	file_menu = gtk_menu_new();
 	gtk_menu_item_set_submenu(GTK_MENU_ITEM(file), file_menu);
 
-	dd->pref_menu_item = gtk_image_menu_item_new_from_stock("gtk-preferences", NULL);
+	dd->pref_menu_item = gtk_image_menu_item_new_from_stock("gtk-preferences", accel_group);
+	gtk_widget_add_accelerator(dd->pref_menu_item, "activate", accel_group,
+			GDK_p, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
 	gtk_container_add(GTK_CONTAINER(file_menu), dd->pref_menu_item);
 
 	gtk_container_add(GTK_CONTAINER(file_menu), gtk_separator_menu_item_new());
 
-	dd->close_menu_item = gtk_image_menu_item_new_from_stock((dd->is_plugin) ? "gtk-close" : "gtk-quit", NULL);
+	dd->close_menu_item = gtk_image_menu_item_new_from_stock(
+			(dd->is_plugin) ? "gtk-close" : "gtk-quit", accel_group);
 	gtk_container_add(GTK_CONTAINER(file_menu), dd->close_menu_item);
 
 	help = gtk_menu_item_new_with_mnemonic(_("_Help"));
@@ -154,7 +164,7 @@ static GtkWidget *create_file_menu(DictData *dd)
 	help_menu = gtk_menu_new();
 	gtk_menu_item_set_submenu(GTK_MENU_ITEM(help), help_menu);
 
-	menu_item = gtk_image_menu_item_new_from_stock("gtk-about", NULL);
+	menu_item = gtk_image_menu_item_new_from_stock("gtk-about", accel_group);
 	gtk_container_add(GTK_CONTAINER(help_menu), menu_item);
 	g_signal_connect(menu_item, "activate", G_CALLBACK(dict_gui_about_dialog), dd);
 
@@ -251,18 +261,18 @@ void dict_gui_create_main_window(DictData *dd)
 
 	radio = gtk_radio_button_new_with_label(NULL, _("Dict"));
 	gtk_widget_show(radio);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode == DICTMODE_DICT));
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_DICT));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_dict_toggled), dd);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
 	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Web"));
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode == DICTMODE_WEB));
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_WEB));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_web_toggled), dd);
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
 	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Spellcheck"));
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode == DICTMODE_SPELL));
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_SPELL));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_spell_toggled), dd);
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);

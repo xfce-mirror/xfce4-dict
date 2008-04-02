@@ -25,10 +25,10 @@
 #include <X11/Xlib.h>
 #include <string.h>
 
-#include "popup_def.h"
+#include "libdict.h"
 
 
-static gboolean xfce4_check_is_running(GtkWidget *widget, Window *xid)
+static gboolean check_is_running(GtkWidget *widget, Window *xid)
 {
 	GdkScreen *gscreen;
 	gchar selection_name[32];
@@ -46,14 +46,12 @@ static gboolean xfce4_check_is_running(GtkWidget *widget, Window *xid)
 }
 
 
-gboolean dict_find_panel_plugin(void)
+gboolean dict_find_panel_plugin(gchar flags, const gchar *text)
 {
 	gboolean ret = FALSE;
 	GdkEventClient gev;
 	GtkWidget *win;
 	Window id;
-
-    gtk_window_set_default_icon_name("xfce4-dict");
 
 	win = gtk_invisible_new();
 	gtk_widget_realize(win);
@@ -63,30 +61,18 @@ gboolean dict_find_panel_plugin(void)
 	gev.send_event = TRUE;
 	gev.message_type = gdk_atom_intern("STRING", FALSE);
 	gev.data_format = 8;
-	/* temporary disabled */
-#if 0
-	if (argc > 1 && (strcmp(argv[1], "--text-field") == 0 || strcmp(argv[1], "-t") == 0))
-	{
-		strcpy(gev.data.b, XFCE_DICT_TEXTFIELD_MESSAGE);
-	}
-	else if (argc > 1 && (strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0))
-	{
-		g_print(_("Usage: %s [options]\n"), argv[0]);
-		g_print(_("Options:\n"));
-		g_print(_("    -t, --text-field    grap the focus on the text field in the panel\n"));
-		g_print(_("    -h, --help          show this help and exit\n"));
-		g_print(_("If called without any options, the xfce4-dict-plugin main window is shown.\n"));
-		return 0;
-	}
-	else
-	{
-		strcpy(gev.data.b, XFCE_DICT_WINDOW_MESSAGE);
-	}
-#else
-	strcpy(gev.data.b, XFCE_DICT_WINDOW_MESSAGE);
-#endif
 
-	if (xfce4_check_is_running(win, &id))
+	if (text == NULL)
+		text = "";
+
+	/* format of the send string: "xfdict?text":
+	 * "xfdict" is for identification of ourselves
+	 * ? is a bitmask to control the behaviour, it can contain one or more of DICT_FLAGS_*,
+	 * we send it as %c to ensure it takes only one char in the string,
+	 * everything after this is the text to search, given on command line */
+	g_snprintf(gev.data.b, sizeof gev.data.b, "xfdict%c%s", flags, text);
+
+	if (check_is_running(win, &id))
 	{
 		gdk_event_send_client_message((GdkEvent*) &gev, (GdkNativeWindow) id);
 		ret = TRUE;

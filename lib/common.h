@@ -29,17 +29,25 @@
 
 #define PLUGIN_WEBSITE "http://goodies.xfce.org/projects/xfce4-dict"
 
+#define DICT_FLAGS_FOCUS_PANEL_ENTRY	1
+#define DICT_FLAGS_MODE_DICT			2
+#define DICT_FLAGS_MODE_WEB				4
+#define DICT_FLAGS_MODE_SPELL			8
+
+#define XFCE_DICT_SELECTION	"XFCE_DICT_SEL"
+
 
 typedef enum
 {
 	DICTMODE_DICT = 0,
 	DICTMODE_WEB,
-	DICTMODE_SPELL
+	DICTMODE_SPELL,
+	DICTMODE_LAST_USED
 } dict_mode_t;
 
 typedef enum
 {
-	WEBMODE_OTHER,
+	WEBMODE_OTHER = 0,
 	WEBMODE_LEO_GERENG,
 	WEBMODE_LEO_GERFRE,
 	WEBMODE_LEO_GERSPA
@@ -55,9 +63,32 @@ enum
 
 typedef struct
 {
-	dict_mode_t mode;
+	/* settings */
+	dict_mode_t mode_in_use;
+	dict_mode_t mode_default;
 	web_mode_t web_mode;
 
+	gboolean show_panel_entry;
+	gint panel_entry_size;
+
+	gint port;
+	gchar *server;
+	gchar *dictionary;
+
+	gchar *web_url;
+
+	gchar *spell_bin;
+	gchar *spell_dictionary;
+
+	gboolean is_plugin;	/* specify whether the panel plugin loaded or not */
+
+	/* status values */
+	gchar *searched_word;  /* word to query the server */
+	gboolean query_is_running;
+	gint query_status;
+	gchar *query_buffer;
+
+	/* widgets */
 	GtkWidget *window;
 	GtkWidget *statusbar;
 	GtkWidget *close_button;
@@ -68,44 +99,13 @@ typedef struct
 	GtkWidget *main_textview;
 	GtkTextBuffer *main_textbuffer;
 	GtkTextTag *main_boldtag;
-
-	GtkWidget *server_entry;
-	GtkWidget *dict_combo;
-	GtkWidget *port_spinner;
-	GtkWidget *panel_entry_size_label;
-	GtkWidget *panel_entry_size_spinner;
-	GtkWidget *check_panel_entry;
-
-	gboolean show_panel_entry;
-	gint panel_entry_size;
-	gint port;
-	gchar *server;
-	gchar *dictionary;
-
-	gchar *searched_word;  /* word to query the server */
-	gboolean query_is_running;
-	gint query_status;
-	gchar *query_buffer;
-
-	GtkWidget *web_entry_label;
-	GtkWidget *web_entry;
-	GtkWidget *web_radio_leo_gereng;
-	GtkWidget *web_radio_leo_gerfre;
-	GtkWidget *web_radio_leo_gerspa;
-	GtkWidget *web_radio_other;
-	gchar *web_url;
-
-	GtkWidget *spell_entry;
-	GtkWidget *spell_combo;
-	gchar *spell_bin;
-	gchar *spell_dictionary;
-
 	GdkPixbuf *icon;
 
-	gboolean is_plugin;	/* specify whether the panel plugin loaded or not */
+	GtkWidget *web_entry_box;
 } DictData;
 
 
+dict_mode_t dict_set_search_mode_from_flags(dict_mode_t mode, gchar flags);
 void dict_free_data(DictData *dd);
 void dict_write_rc_file(DictData *dd);
 void dict_read_rc_file(DictData *dd);

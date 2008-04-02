@@ -18,10 +18,10 @@
  */
 
 
-#ifndef POPUP_DEF_H
-#define POPUP_DEF_H 1
+#ifndef POPUP_PLUGIN_H
+#define POPUP_PLUGIN_H 1
 
 
-gboolean dict_find_panel_plugin(void);
+gboolean dict_find_panel_plugin(gboolean focus_panel_entry, const gchar *text);
 
 #endif

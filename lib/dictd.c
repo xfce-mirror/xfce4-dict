@@ -326,13 +326,10 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	gchar *buffer = NULL;
 	gchar *answer = NULL;
 	gchar **lines;
-	const gchar *host;
-	gint port;
+	GtkWidget *dict_combo = g_object_get_data(G_OBJECT(button), "dict_combo");
 
-	host = gtk_entry_get_text(GTK_ENTRY(dd->server_entry));
-	port = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(dd->port_spinner));
 
-	if ((fd = open_socket(host, port)) == -1)
+	if ((fd = open_socket(dd->server, dd->port)) == -1)
 	{
 		xfce_err(_("Could not connect to server."));
 		return FALSE;
@@ -366,10 +363,10 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	buffer++;
 
 	/* clear the combo box */
-	i = gtk_tree_model_iter_n_children(gtk_combo_box_get_model(GTK_COMBO_BOX(dd->dict_combo)), NULL);
+	i = gtk_tree_model_iter_n_children(gtk_combo_box_get_model(GTK_COMBO_BOX(dict_combo)), NULL);
 	for (i -= 1; i > 2; i--)  /* first three entries (*, ! and ----) should always exist */
 	{
-		gtk_combo_box_remove_text(GTK_COMBO_BOX(dd->dict_combo), i);
+		gtk_combo_box_remove_text(GTK_COMBO_BOX(dict_combo), i);
 	}
 
 	/* parse output */
@@ -380,7 +377,7 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	i = 0;
 	while (i < max_lines && lines[i][0] != '.')
 	{
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dd->dict_combo), lines[i]);
+		gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo), lines[i]);
 		i++;
 	}
 
@@ -389,7 +386,7 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 
 	/* set the active entry to * because we don't know where the previously selected item now is in
 	 * the list and we also don't know whether it exists at all, and I don't walk through the list */
-	gtk_combo_box_set_active(GTK_COMBO_BOX(dd->dict_combo), 0);
+	gtk_combo_box_set_active(GTK_COMBO_BOX(dict_combo), 0);
 
 	return TRUE;
 }
