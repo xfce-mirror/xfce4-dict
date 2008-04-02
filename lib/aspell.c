@@ -36,7 +36,7 @@
 #include "gui.h"
 
 
-static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, gconstpointer data)
+static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, gpointer data)
 {
 	GIOChannel *ioc;
 
@@ -123,10 +123,10 @@ static gboolean iofunc_read_err(GIOChannel *ioc, GIOCondition cond, gpointer dat
 
 static gboolean iofunc_write(GIOChannel *ioc, GIOCondition cond, gpointer data)
 {
-	gsize written;
+	if (NZV((gchar *) data))
+		g_io_channel_write_chars(ioc, (gchar *) data, -1, NULL, NULL);
 
-	if (NZV((const gchar *) data))
-		g_io_channel_write_chars(ioc, (const gchar *) data, -1, &written, NULL);
+	g_free(data);
 
 	return FALSE;
 }
@@ -141,6 +141,7 @@ void dict_aspell_start_query(DictData *dd, const gchar *word)
 	gint     stderr_fd;
 	gint     stdin_fd;
 	gchar	*tts;
+	gchar	*tts_end;
 
 	if (! NZV(dd->spell_bin))
 	{
@@ -157,13 +158,13 @@ void dict_aspell_start_query(DictData *dd, const gchar *word)
 	/* TODO search only for the first word when working on a sentence,
 	 * workout a better solution */
 	tts = g_strdup(word);
-	if ((tts = strchr(word, ' ')) ||
-		(tts = strchr(word, '-')) ||
-		(tts = strchr(word, '_')) ||
-		(tts = strchr(word, '.')) ||
-		(tts = strchr(word, ',')))
+	if ((tts_end = strchr(word, ' ')) ||
+		(tts_end = strchr(word, '-')) ||
+		(tts_end = strchr(word, '_')) ||
+		(tts_end = strchr(word, '.')) ||
+		(tts_end = strchr(word, ',')))
 	{
-		*tts = '\0';
+		*tts_end = '\0';
 	}
 
 	locale_cmd = g_locale_from_utf8(dd->spell_bin, -1, NULL, NULL, NULL);
@@ -193,6 +194,6 @@ void dict_aspell_start_query(DictData *dd, const gchar *word)
 		error = NULL;
 	}
 
-	g_free(tts);
+	/* tts is freed in iofunc_write() */
 	g_strfreev(argv);
 }
