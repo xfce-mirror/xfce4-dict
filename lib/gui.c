@@ -307,6 +307,9 @@ void dict_gui_create_main_window(DictData *dd)
 
 	/* DnD */
 	g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
+	/* TODO: find a way to get this working, the treeview doesn't receive anything as long as it isn't
+	 * editable. scrolledwindow_results and a surrounding event box as receivers also don't work. */
+	g_signal_connect(dd->main_textview, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
 }
 
 
