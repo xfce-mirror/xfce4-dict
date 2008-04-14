@@ -391,7 +391,6 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 		NULL, 0, GDK_ACTION_COPY | GDK_ACTION_MOVE);
 	gtk_drag_dest_add_text_targets(GTK_WIDGET(dpd->panel_button));
 	g_signal_connect(dpd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
-	g_signal_connect(dpd->dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
 	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
 
 	dict_gui_status_add(dpd->dd, _("Ready."));

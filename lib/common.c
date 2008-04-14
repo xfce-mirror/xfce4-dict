@@ -386,19 +386,23 @@ void dict_free_data(DictData *dd)
 void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gint x, gint y,
 							 GtkSelectionData *data, guint info, guint ltime, DictData *dd)
 {
-	if ((data->length >= 0) && (data->format == 8))
+	if ((data != NULL) && (data->length >= 0) && (data->format == 8))
 	{
-		drag_context->action = GDK_ACTION_COPY;
+/*
+		GtkWidget *source = gtk_drag_get_source_widget(drag_context);
 
-		if (widget == dd->main_entry)
+		if (widget == dd->main_entry &&
+			source != NULL &&
+			gtk_widget_get_toplevel(source) == dd->window)
 		{
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
 		}
 		else
-		{
-			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), (const gchar*) data->data);
+*/		{
 			dict_search_word(dd, (const gchar*) data->data);
 		}
+
+		drag_context->action = GDK_ACTION_COPY;
 		gtk_drag_finish(drag_context, TRUE, FALSE, ltime);
 	}
 }

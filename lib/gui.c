@@ -304,6 +304,9 @@ void dict_gui_create_main_window(DictData *dd)
 	dd->statusbar = gtk_statusbar_new();
 	gtk_widget_show(dd->statusbar);
 	gtk_box_pack_end(GTK_BOX(main_box), dd->statusbar, FALSE, FALSE, 0);
+
+	/* DnD */
+	g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
 }
 
 
