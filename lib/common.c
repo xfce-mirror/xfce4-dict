@@ -408,12 +408,6 @@ void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gi
 }
 
 
-void dict_signal_cb(gint sig)
-{
-	/* do nothing here and hope we never get called */
-}
-
-
 DictData *dict_create_dictdata()
 {
 	DictData *dd = g_new0(DictData, 1);

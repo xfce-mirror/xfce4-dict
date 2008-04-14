@@ -23,7 +23,6 @@
 #include <glib/gi18n.h>
 #include <string.h>
 #include <stdlib.h>
-#include <signal.h>
 
 #include <libxfce4util/libxfce4util.h>
 
@@ -160,9 +159,6 @@ gint main(gint argc, gchar *argv[])
 		dict_search_word(dd, argv[1]);
 
 	dict_gui_status_add(dd, _("Ready."));
-
-	siginterrupt(SIGALRM, 1);
-	signal(SIGALRM, dict_signal_cb);
 
 	gtk_widget_show_all(dd->window);
 

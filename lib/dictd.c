@@ -32,6 +32,7 @@
 #include <gtk/gtk.h>
 #include <libxfcegui4/libxfcegui4.h>
 
+#include <signal.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
@@ -303,6 +304,26 @@ static void ask_server(DictData *dd)
 }
 
 
+void signal_cb(gint sig)
+{
+	/* do nothing here and hope we never get called */
+}
+
+
+static void dictd_init()
+{
+	static gboolean initialized = FALSE;
+
+	if (G_UNLIKELY(! initialized))
+	{
+		siginterrupt(SIGALRM, 1);
+		signal(SIGALRM, signal_cb);
+
+		initialized = TRUE;
+	}
+}
+
+
 void dict_dictd_start_query(DictData *dd, const gchar *word)
 {
 	if (dd->query_is_running)
@@ -312,6 +333,8 @@ void dict_dictd_start_query(DictData *dd, const gchar *word)
 	else
 	{
 		dict_gui_status_add(dd, _("Querying %s..."), dd->server);
+
+		dictd_init();
 
 		/* start the thread to query the server */
 		g_thread_create((GThreadFunc) ask_server, dd, FALSE, NULL);
@@ -328,6 +351,7 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	gchar **lines;
 	GtkWidget *dict_combo = g_object_get_data(G_OBJECT(button), "dict_combo");
 
+	dictd_init();
 
 	if ((fd = open_socket(dd->server, dd->port)) == -1)
 	{
@@ -390,3 +414,4 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 
 	return TRUE;
 }
+

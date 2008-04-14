@@ -36,7 +36,6 @@
 #include <netinet/tcp.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <signal.h>
 #include <string.h>
 
 #include "libdict.h"
@@ -394,8 +393,5 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
 
 	dict_gui_status_add(dpd->dd, _("Ready."));
-
-	siginterrupt(SIGALRM, 1);
-	signal(SIGALRM, dict_signal_cb);
 }
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(dict_plugin_construct);
