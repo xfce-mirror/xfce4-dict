@@ -315,6 +315,21 @@ static void dict_plugin_panel_entry_activate_cb(GtkEntry *entry, DictPanelData *
 }
 
 
+static void dict_plugin_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context,
+		gint x, gint y, GtkSelectionData *data, guint info, guint ltime, DictPanelData *dpd)
+{
+	if ((data != NULL) && (data->length >= 0) && (data->format == 8))
+	{
+		if (widget == dpd->panel_button || widget == dpd->dd->panel_entry)
+		{
+			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), (const gchar*) data->data);
+		}
+
+		dict_drag_data_received(widget, drag_context, x, y, data, info, ltime, dpd->dd);
+	}
+}
+
+
 static void dict_plugin_construct(XfcePanelPlugin *plugin)
 {
 	DictPanelData *dpd = g_new0(DictPanelData, 1);
@@ -389,8 +404,8 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	gtk_drag_dest_set(GTK_WIDGET(dpd->panel_button), GTK_DEST_DEFAULT_ALL,
 		NULL, 0, GDK_ACTION_COPY | GDK_ACTION_MOVE);
 	gtk_drag_dest_add_text_targets(GTK_WIDGET(dpd->panel_button));
-	g_signal_connect(dpd->panel_button, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
-	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dpd->dd);
+	g_signal_connect(dpd->panel_button, "drag-data-received", G_CALLBACK(dict_plugin_drag_data_received), dpd);
+	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_plugin_drag_data_received), dpd);
 
 	dict_gui_status_add(dpd->dd, _("Ready."));
 }
