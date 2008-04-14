@@ -1,15 +1,9 @@
 
 
-inline-icon.h: $(top_srcdir)/xfce4-dict.svg
-	gdk-pixbuf-csource --raw --name=dict_icon_data $(top_srcdir)/xfce4-dict.svg > $(srcdir)/inline-icon.h
-
-
 noinst_LIBRARIES = 								\
 	libdict.a
 
 libdict_a_SOURCES =								\
-	inline-icon.h								\
-	popup_def.h									\
 	libdict.h									\
 	aspell.c									\
 	aspell.h									\
@@ -28,3 +22,19 @@ libdict_a_CFLAGS =								\
 	$(LIBXFCE4PANEL_CFLAGS)						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
 	@GTHREAD_CFLAGS@
+
+noinst_DATA = 									\
+	inline-icon.h
+
+EXTRA_DIST = 									\
+	inline-icon.h
+
+if MAINTAINER_MODE
+# the target isn't named as the header file on
+# purpose to avoid automatic creation of the file
+# while building
+inline-icon: $(top_srcdir)/xfce4-dict.svg
+	gdk-pixbuf-csource --raw					\
+	--name=dict_icon_data						\
+	$(top_srcdir)/xfce4-dict.svg > $(srcdir)/inline-icon.h
+endif
