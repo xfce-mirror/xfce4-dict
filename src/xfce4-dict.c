@@ -50,7 +50,7 @@ static gboolean mode_spell = FALSE;
 static GOptionEntry cli_options[] =
 {
 #if GLIB_CHECK_VERSION(2,14,0)
-	{ "", 'h', 0, G_OPTION_ARG_NONE, &show_help, "dummy", NULL },
+	{ "help", 'h', 0, G_OPTION_ARG_NONE, &show_help, _("Show help options"), NULL },
 #endif
 	{ "dict", 'd', 0, G_OPTION_ARG_NONE, &mode_dict, N_("Search the given text using a Dict server(RFC 2229)"), NULL },
 	{ "web", 'w', 0, G_OPTION_ARG_NONE, &mode_web, N_("Search the given text using a web-based search engine"), NULL },
