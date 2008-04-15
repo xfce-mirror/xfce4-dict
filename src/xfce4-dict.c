@@ -59,7 +59,7 @@ static GOptionEntry cli_options[] =
 	{ "version", 'v', 0, G_OPTION_ARG_NONE, &show_version, N_("Show version information"), NULL },
 	{ NULL, 0, 0, 0, NULL, NULL, NULL }
 };
-//~ If called without any options, the xfce4-dict-plugin main window is shown.
+
 
 static gboolean main_quit(GtkWidget *widget, GdkEvent *event, DictData *dd)
 {
@@ -193,7 +193,6 @@ gint main(gint argc, gchar *argv[])
 	g_signal_connect(dd->pref_menu_item, "activate", G_CALLBACK(pref_dialog_activated), dd);
 
 	/* search text from command line options, if any */
-	/* TODO take all remaining args, not only argv[1] */
 	if (search_text != NULL)
 	{
 		dict_search_word(dd, search_text);
