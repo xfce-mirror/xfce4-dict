@@ -1,14 +1,21 @@
+2008-04-15  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Update Readme.
+ * Reformat ChangeLog.
+
+
 2008-04-14  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Fix make distcheck.
-	* Avoid creation of inline-icon.h during a normal build.
-	* Always start searching when text is dragged into the text entry in
-	  the main window.
-	* Connect to "drag-data-received" signal in library as it is equal for
-	  panel plugin and standalone code.
-	* Move signal handling code for networkign code completely into lib/dictd.c.
-	* Set entry text in the main window if text was dragged onto the panel
-	  button or into the panel entry.
+ * Fix make distcheck.
+ * Avoid creation of inline-icon.h during a normal build.
+ * Always start searching when text is dragged into the text entry in
+   the main window.
+ * Connect to "drag-data-received" signal in library as it is equal for
+   panel plugin and standalone code.
+ * Move signal handling code for networkign code completely into
+   lib/dictd.c.
+ * Set entry text in the main window if text was dragged onto the panel
+   button or into the panel entry.
 
 
 2008-04-03  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
@@ -18,197 +25,206 @@
 
 2008-04-02  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Fix broken aspell search.
-	* Update package name for autotools.
-	* Show panel-only options in preferences dialog only if panel plugin
-	  is actually loaded.
-	* After clicking on the Clear button, bring the input focus back to the
-	  main entry.
-	* Add keyboard shortcuts for file menu items.
-	* Cleanup DictData struct, reorder elements and remove elements which
-	  are only used in the preferences dialog.
-	* Add search method selection to the preferences dialog, including new
-	  mode to use the search method from the last time.
-	* Add support for command line options for xfce4-dict command.
+ * Fix broken aspell search.
+ * Update package name for autotools.
+ * Show panel-only options in preferences dialog only if panel plugin
+   is actually loaded.
+ * After clicking on the Clear button, bring the input focus back to
+   the main entry.
+ * Add keyboard shortcuts for file menu items.
+ * Cleanup DictData struct, reorder elements and remove elements which
+   are only used in the preferences dialog.
+ * Add search method selection to the preferences dialog, including new
+   mode to use the search method from the last time.
+ * Add support for command line options for xfce4-dict command.
 
 
 2008-03-31  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Prefix some more functions.
-	* Bring main window up when received data in panel plugin via DnD.
+ * Prefix some more functions.
+ * Bring main window up when received data in panel plugin via DnD.
 
 
 2008-03-30  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
-	* More code reorganisation and cleanup.
-	* Redesign preferences dialog: use a GtkNotebook and use a XfceDialog.
-	* Update POTFILES.in.
-	* Remove debug messages.
-	* Add file menu to make preferences dialog accessable when run as
-	  stand-alone application.
+ * More code reorganisation and cleanup.
+ * Redesign preferences dialog: use a GtkNotebook and use a XfceDialog.
+ * Update POTFILES.in.
+ * Remove debug messages.
+ * Add file menu to make preferences dialog accessable when run as
+   stand-alone application.
 
 
 2008-03-27  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Reorganise most of the code base to separat commonly used code from the
-	  panel plugin into a static library.
-	  Move dictd server query code into an own file for better readibility.
-	  Bump version requirement of libxfce*-libs to 4.4.0.
-	  Add stand-alone application xfce4-dict (replaces xfce4-dict-popup command).
-	  (not yet finished, to be continued)
+ * Reorganise most of the code base to separat commonly used code from
+   the panel plugin into a static library.
+   Move dictd server query code into an own file for better readibility.
+   Bump version requirement of libxfce*-libs to 4.4.0.
+   Add stand-alone application xfce4-dict (replaces xfce4-dict-popup
+   command).
+   (not yet finished, to be continued)
 
 
 2008-03-22  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Use GTK's predefined text targets for Drag'n'Drop. This fixes a strange
-	  bug when dragging non-Ascii text from Poedit.
-	  Also allow move as DnD action.
-	* Fix indentation.
+ * Use GTK's predefined text targets for Drag'n'Drop. This fixes a
+   strange bug when dragging non-Ascii text from Poedit. Also allow
+   move as DnD action.
+ * Fix indentation.
 
 
 2008-03-08  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Don't use C++-style comments and fix some compiler warnings.
-	* When dragging text into the main entry text field, delete the previous
-	  text before to not append the dragged text.
-	* New release: 0.3.0
+ * Don't use C++-style comments and fix some compiler warnings.
+ * When dragging text into the main entry text field, delete the
+   previous text before to not append the dragged text.
+ * New release: 0.3.0
 
 
 2008-01-12  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* When changing the search method in the main window, put the input
-	  focus back to the text entry.
+ * When changing the search method in the main window, put the input
+   focus back to the text entry.
 
 
 2008-01-04  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Add xfce4-popup-dict command to show the main window and/or grab the input
-	  focus to the text field in the panel.
-	* Change year in copyright notes to 2008.
+ * Add xfce4-popup-dict command to show the main window and/or grab
+   the input focus to the text field in the panel.
+ * Change year in copyright notes to 2008.
 
 
 2007-12-18  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Remove wrong additional space before colons.
+ * Remove wrong additional space before colons.
 
 
 2007-12-14  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Fix small memory leak.
-	* Always store all settings from the properties dialog.
-	* Remove search mode selection from properties dialog.
-	* Add aspell support (should also work with ispell).
+ * Fix small memory leak.
+ * Always store all settings from the properties dialog.
+ * Remove search mode selection from properties dialog.
+ * Add aspell support (should also work with ispell).
 
 
 2007-12-10  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Added search method radio buttons.
+ * Added search method radio buttons.
 
 
 2007-10-22  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Fixed missing application icon in taskbar and window frame.
-	* Added missing include of stdlib to avoid compiler warnings.
+ * Fixed missing application icon in taskbar and window frame.
+ * Added missing include of stdlib to avoid compiler warnings.
 
 
 2007-01-20 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Fixed possible crashes when showing the main window after it was closed.
+ * Fixed possible crashes when showing the main window after it was
+   closed.
 
 
 2007-01-16 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* New release: 0.2.1
+ * New release: 0.2.1
 
 
 2006-12-05 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Fixed possible segfault after retrieving the dictionary list from a server.
+ * Fixed possible segfault after retrieving the dictionary list from
+   a server.
 
 
 2006-12-04 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Fixed wrong display of panel text entry when panel orientation changed.
-	* Panel text entry grows and shrinks now according to the given size.
-	* Removed dependency on libexo, use exo-open(and some other fallbacks) instead.
+ * Fixed wrong display of panel text entry when panel orientation
+   changed.
+ * Panel text entry grows and shrinks now according to the given size.
+ * Removed dependency on libexo, use exo-open(and some other
+   fallbacks) instead.
 
 
 2006-11-25 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Enabled website link to goodies.xfce.org in the about dialog.
-	* Added missing includes to fix compilation on FreeBSD.
-	* Improved calculation of panel icon size (thanks to Rupert Horstkötter
-	  for reporting).
+ * Enabled website link to goodies.xfce.org in the about dialog.
+ * Added missing includes to fix compilation on FreeBSD.
+ * Improved calculation of panel icon size
+   (thanks to Rupert Horstkötter for reporting).
 
 
 2006-11-16 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Added dependency of libexo.
-	* Added alternative search mode via a web site dictionary and provide three
-	  dictionary entries of dict.leo.org for convenience.
-	  The web site will be opened with the help of libexo.
-	* Added UTF8_STRING as drop target. Might be it helps.
+ * Added dependency of libexo.
+ * Added alternative search mode via a web site dictionary and provide
+   three dictionary entries of dict.leo.org for convenience. The web
+   site will be opened with the help of libexo.
+ * Added UTF8_STRING as drop target. Might be it helps.
 
 
 2006-11-07 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Prefixed all functions with dict.
+ * Prefixed all functions with dict.
 
 
 2006-10-15 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Improved the threading code to do GTK-related stuff in the main thread.
-	* Fixed some compiler warnings.
-	* Fixed crash when using an invalid hostname.
-	* Handle non-UTF8 input better, try to convert it, otherwise stop query.
+ * Improved the threading code to do GTK-related stuff in the main
+   thread.
+ * Fixed some compiler warnings.
+ * Fixed crash when using an invalid hostname.
+ * Handle non-UTF8 input better, try to convert it, otherwise stop
+   query.
 
 
 2006-10-14 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Implemented threading to not freeze the GUI while searching on a slow server
-	  (needs testing).
+ * Implemented threading to not freeze the GUI while searching on a slow
+   server (needs testing).
 
 
 2006-10-02 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Again fixed display of panel text field when panel has no horizontal
-	  orientation.
+ * Again fixed display of panel text field when panel has no horizontal
+   orientation.
 
 
 2006-10-01 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Fixed display of panel text field when panel has no horizontal orientation.
-	* Fixed some minor GUI issues to improve usability
-	  (thanks to Fabian Nowak for his suggestions).
-	* Use a dynamic buffer when retrieving the response from a server to avoid
-	  truncated answers and crashes (thanks to Fabian Nowak for reporting).
-	* Clear the text view always prior to a new search.
-	* New release: 0.2.0
-	* Set focus to the search entry when showing the main window.
-	* Added "Clear" button to the main window(suggested by Joe Klemmer).
+ * Fixed display of panel text field when panel has no horizontal
+   orientation.
+ * Fixed some minor GUI issues to improve usability
+   (thanks to Fabian Nowak for his suggestions).
+ * Use a dynamic buffer when retrieving the response from a server to
+   avoid truncated answers and crashes
+   (thanks to Fabian Nowak for reporting).
+ * Clear the text view always prior to a new search.
+ * New release: 0.2.0
+ * Set focus to the search entry when showing the main window.
+ * Added "Clear" button to the main window (suggested by Joe Klemmer).
 
 
 2006-09-26 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Added optional text field in the panel.
+ * Added optional text field in the panel.
 
 
 2006-09-25 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Changed application icon
-	* Added Cancel button to the properties dialog to cancel current changes.
+ * Changed application icon * Added Cancel button to the properties
+   dialog to cancel current changes.
 
 
 2006-09-20 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* New Release: 0.1.1
-	* Set icon for the main window
-	* Beautified the server response in the text widget.
-	* Show all lines of the result (thanks Remco den Breeje for reporting).
-	* Added DnD target "text/plain" to enable DnD for Firefox
-	  (thanks Remco den Breeje for reporting).
+ * New Release: 0.1.1
+ * Set icon for the main window
+ * Beautified the server response in the text widget.
+ * Show all lines of the result (thanks Remco den Breeje for reporting).
+ * Added DnD target "text/plain" to enable DnD for Firefox
+   (thanks Remco den Breeje for reporting).
 
 
 2006-09-20 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
 
-	* Initial release 0.1.0.
+ * Initial release 0.1.0.
