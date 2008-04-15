@@ -1,0 +1,35 @@
+.TH "XFCE4-DICT" "1" "April 15, 2008" "xfce4-dict 0.4.0" ""
+.SH "NAME"
+xfce4-dict \(em a client program to query different dictionaries
+.SH "SYNOPSIS"
+.PP
+\fBxfce4-dict\fR [\fBoption\fP]  [\fBtext ...\fP]
+.SH "DESCRIPTION"
+.PP
+xfce4-dict allows you to search different kinds of dictionary services
+for words or phrases and shows you the result.
+Currently you can query a "Dict" server(RFC 2229), any online dictionary
+service by opening a web browser or search for words using the
+aspell/ispell program.
+.PP
+Homepage: http://goodies.xfce.org/projects/applications/xfce4-dict
+.SH "OPTIONS"
+If called without any arguments, the xfce4-dict main window is shown.
+Any passed text argument(s) are used as search text.
+.IP "\fB-d\fP, \fB\-\-dict\fP         " 10
+Search the given text using a Dict server(RFC 2229).
+.IP "\fB-w\fP, \fB\-\-web\fP         " 10
+Search the given text using a web-based search engine.
+.IP "\fB-t\fP, \fB\-\-text-field\fP         " 10
+Grab the focus on the text field in the panel (has no effect if panel plugin is not loaded).
+.IP "\fB-s\fP, \fB\-\-spell\fP         " 10
+Check the given text with a spellchecker.
+.IP "\fB-?\fP, \fB-h\fP, \fB\-\-help\fP         " 10
+Show help information and exit.
+.PP
+xfce4-dict supports all generic GTK options, a list is available on the help screen.
+.SH "AUTHOR"
+.PP
+This manual page was written by Enrico Troeger. Permission is granted to copy,
+distribute and/or modify this document under the terms of the GNU General
+Public License, Version 2, or (at your option) any later version.
