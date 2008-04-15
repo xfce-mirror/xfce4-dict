@@ -38,6 +38,9 @@
 #include "popup_plugin.h"
 
 
+#if GLIB_CHECK_VERSION(2,14,0)
+static gboolean show_help = FALSE;
+#endif
 static gboolean show_version = FALSE;
 static gboolean focus_panel_entry = FALSE;
 static gboolean mode_dict = FALSE;
@@ -46,11 +49,14 @@ static gboolean mode_spell = FALSE;
 
 static GOptionEntry cli_options[] =
 {
-	{ "dict", 'd', 0, G_OPTION_ARG_NONE, &mode_dict, N_("Search the given text using a DICTD server"), NULL },
+#if GLIB_CHECK_VERSION(2,14,0)
+	{ "", 'h', 0, G_OPTION_ARG_NONE, &show_help, "dummy", NULL },
+#endif
+	{ "dict", 'd', 0, G_OPTION_ARG_NONE, &mode_dict, N_("Search the given text using a Dict server(RFC 2229)"), NULL },
 	{ "web", 'w', 0, G_OPTION_ARG_NONE, &mode_web, N_("Search the given text using a web-based search engine"), NULL },
 	{ "spell", 's', 0, G_OPTION_ARG_NONE, &mode_spell, N_("Check the given text with a spellchecker"), NULL },
 	{ "text-field", 't', 0, G_OPTION_ARG_NONE, &focus_panel_entry, N_("Grab the focus on the text field in the panel"), NULL },
-	{ "version", 'v', 0, G_OPTION_ARG_NONE, &show_version, N_("Show version and exit"), NULL },
+	{ "version", 'v', 0, G_OPTION_ARG_NONE, &show_version, N_("Show version information"), NULL },
 	{ NULL, 0, 0, 0, NULL, NULL, NULL }
 };
 //~ If called without any options, the xfce4-dict-plugin main window is shown.
@@ -111,10 +117,21 @@ gint main(gint argc, gchar *argv[])
 	g_option_group_set_translation_domain(g_option_context_get_main_group(context), GETTEXT_PACKAGE);
 	g_option_context_add_group(context, gtk_get_option_group(FALSE));
 	g_option_context_parse(context, &argc, &argv, NULL);
-	g_option_context_free(context);
 
 	gtk_init(&argc, &argv);
     gtk_window_set_default_icon_name("xfce4-dict");
+
+#if GLIB_CHECK_VERSION(2,14,0)
+	if (show_help)
+	{
+		gchar *help_text = g_option_context_get_help(context, TRUE, NULL);
+		printf("%s\n", help_text);
+		g_free(help_text);
+		g_option_context_free(context);
+		exit(0);
+	}
+#endif
+	g_option_context_free(context);
 
 	if (show_version)
 	{
