@@ -27,7 +27,7 @@
 	((ptr) && (ptr)[0])
 
 
-#define PLUGIN_WEBSITE "http://goodies.xfce.org/projects/xfce4-dict"
+#define PLUGIN_WEBSITE "http://goodies.xfce.org/projects/applications/xfce4-dict"
 
 #define DICT_FLAGS_FOCUS_PANEL_ENTRY	1
 #define DICT_FLAGS_MODE_DICT			2

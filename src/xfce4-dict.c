@@ -102,11 +102,27 @@ static gchar get_flags()
 }
 
 
+static gchar *get_search_text(gint count, gchar **values)
+{
+	GString *str = g_string_sized_new(128);
+	gint i;
+
+	for (i = 1; i < count; i++)
+	{
+		g_string_append(str, values[i]);
+		if (i < (count - 1))
+			g_string_append_c(str, ' ');
+	}
+	return g_string_free(str, FALSE);
+}
+
+
 gint main(gint argc, gchar *argv[])
 {
 	DictData *dd;
 	GOptionContext *context;
 	gchar flags;
+	gchar *search_text;
 
 #ifdef ENABLE_NLS
 	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
@@ -146,9 +162,15 @@ gint main(gint argc, gchar *argv[])
 
 	flags = get_flags();
 
+	/* concatenate remaining command line arguments */
+	search_text = get_search_text(argc, argv);
+
 	/* try to find an existing panel plugin and pop it up */
-	if (dict_find_panel_plugin(flags, (argc > 1) ? argv[1] : NULL))
+	if (dict_find_panel_plugin(flags, search_text))
+	{
+		g_free(search_text);
 		exit(0);
+	}
 
 	/* no plugin found, start stand-alone app */
 
@@ -172,8 +194,11 @@ gint main(gint argc, gchar *argv[])
 
 	/* search text from command line options, if any */
 	/* TODO take all remaining args, not only argv[1] */
-	if (argc > 1)
-		dict_search_word(dd, argv[1]);
+	if (search_text != NULL)
+	{
+		dict_search_word(dd, search_text);
+		g_free(search_text);
+	}
 
 	dict_gui_status_add(dd, _("Ready."));
 

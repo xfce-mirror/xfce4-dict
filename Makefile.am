@@ -13,6 +13,7 @@ distclean-local:
 
 
 EXTRA_DIST =													\
+	xfce4-dict.1												\
 	intltool-extract.in											\
 	intltool-merge.in											\
 	intltool-update.in											\
@@ -28,6 +29,7 @@ hicolor48_DATA = xfce4-dict.svg
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 
+man_MANS=xfce4-dict.1
 
 install-data-hook:
 	@-if test -z "$(DESTDIR)"; then								\
