@@ -399,7 +399,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	hbox = gtk_hbox_new(FALSE, 0);
 	gtk_widget_show(hbox);
 
-	gtk_box_pack_start(GTK_BOX(hbox), dpd->panel_button, FALSE, FALSE, 2);
+	gtk_box_pack_start(GTK_BOX(hbox), dpd->panel_button, FALSE, FALSE, 0);
 	gtk_box_pack_start(GTK_BOX(hbox), dpd->dd->panel_entry, FALSE, FALSE, 0);
 	gtk_container_add(GTK_CONTAINER(plugin), hbox);
 
