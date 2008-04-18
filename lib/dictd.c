@@ -312,6 +312,7 @@ void signal_cb(gint sig)
 
 static void dictd_init()
 {
+#ifdef SIGALRM
 	static gboolean initialized = FALSE;
 
 	if (G_UNLIKELY(! initialized))
@@ -321,6 +322,7 @@ static void dictd_init()
 
 		initialized = TRUE;
 	}
+#endif
 }
 
 
