@@ -1,3 +1,28 @@
+2008-04-18  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Add command line option "--ignore-plugin" to start the stand-alone
+   application even if the panel plugin is loaded.
+ * Add new languages Chinese and Italian which are newly supported
+   by dict.leo.org.
+ * Rewrite of the web search code to be more flexible to use and to
+   simplify the code.
+   Add two other dictionary services:
+   Dictionary.com and TheFreeDictionary.com.
+
+
+2008-04-17  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Unify application name to "Xfce4 Dictionary".
+ * Remove Help button from preferences dialog as there is no help
+   available at all.
+ * Disable conversion into ISO-8859-15 of search text when using
+   dict.leo.org, seems not necessary anymore.
+ * Fix problems with preferences dialog callback if panel plugin is
+   loaded.
+ * Fix minor panel button sizing issues (make it a little wider on
+   horizontal panel, a little flatter on vertical panels).
+
+
 2008-04-15  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Update Readme.

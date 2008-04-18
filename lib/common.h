@@ -43,30 +43,17 @@ typedef enum
 	DICTMODE_LAST_USED
 } dict_mode_t;
 
-typedef enum
-{
-	WEBMODE_OTHER = 0,
-	WEBMODE_LEO_GERENG,
-	WEBMODE_LEO_GERFRE,
-	WEBMODE_LEO_GERSPA,
-	WEBMODE_LEO_GERITA,
-	WEBMODE_LEO_GERCHI
-} web_mode_t;
-
-
 enum
 {
 	NO_CONNECTION,
 	NO_ERROR
 };
 
-
 typedef struct
 {
 	/* settings */
 	dict_mode_t mode_in_use;
 	dict_mode_t mode_default;
-	web_mode_t web_mode;
 
 	gboolean show_panel_entry;
 	gint panel_entry_size;
@@ -100,8 +87,6 @@ typedef struct
 	GtkTextBuffer *main_textbuffer;
 	GtkTextTag *main_boldtag;
 	GdkPixbuf *icon;
-
-	GtkWidget *web_entry_box;
 } DictData;
 
 

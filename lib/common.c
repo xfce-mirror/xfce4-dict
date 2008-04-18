@@ -43,7 +43,6 @@
 
 
 
-
 /* TODO make me UTF-8 safe */
 static gint str_pos(const gchar *haystack, const gchar *needle)
 {
@@ -163,58 +162,10 @@ gboolean dict_open_browser(DictData *dd, const gchar *uri)
 
 static gboolean start_web_query(DictData *dd, const gchar *word)
 {
-	gboolean use_leo = FALSE;
 	gboolean success = TRUE;
-	gchar *uri, *base;
+	gchar *uri;
 
-	switch (dd->web_mode)
-	{
-		case WEBMODE_LEO_GERENG:
-		{
-			base = "http://dict.leo.org/ende?search={word}";
-			use_leo = TRUE;
-			break;
-		}
-		case WEBMODE_LEO_GERFRE:
-		{
-			base = "http://dict.leo.org/frde?search={word}";
-			use_leo = TRUE;
-			break;
-		}
-		case WEBMODE_LEO_GERSPA:
-		{
-			base = "http://dict.leo.org/esde?search={word}";
-			use_leo = TRUE;
-			break;
-		}
-		case WEBMODE_LEO_GERITA:
-		{
-			base = "http://dict.leo.org/itde?search={word}";
-			use_leo = TRUE;
-			break;
-		}
-		case WEBMODE_LEO_GERCHI:
-		{
-			base = "http://dict.leo.org/chde?search={word}";
-			use_leo = TRUE;
-			break;
-		}
-		default: base = dd->web_url;
-	}
-#if 0 /* for some reason this isn't necessary anymore */
-	if (use_leo)
-	{
-		/* convert the text into ISO-8869-15 because dict.leo.org expects it ;-( */
-		gchar *tmp = g_convert(dd->searched_word, -1,
-								"ISO-8859-15", "UTF-8", NULL, NULL, NULL);
-		if (tmp != NULL)
-		{
-			g_free(dd->searched_word);
-			dd->searched_word = tmp;
-		}
-	}
-#endif
-	uri = str_replace(g_strdup(base), "{word}", dd->searched_word);
+	uri = str_replace(g_strdup(dd->web_url), "{word}", dd->searched_word);
 	if (! dict_open_browser(dd, uri))
 	{
 		xfce_err(_("Browser could not be opened. Please check your preferences."));
@@ -309,7 +260,6 @@ void dict_read_rc_file(DictData *dd)
 	XfceRc *rc;
 	gint mode_in_use = DICTMODE_DICT;
 	gint mode_default = DICTMODE_LAST_USED;
-	gint webmode = WEBMODE_LEO_GERENG;
 	gint port = 2628;
 	gint panel_entry_size = 120;
 	gboolean show_panel_entry = FALSE;
@@ -323,7 +273,6 @@ void dict_read_rc_file(DictData *dd)
 	{
 		mode_in_use = xfce_rc_read_int_entry(rc, "mode_in_use", mode_in_use);
 		mode_default = xfce_rc_read_int_entry(rc, "mode_default", mode_default);
-		webmode = xfce_rc_read_int_entry(rc, "web_mode", webmode);
 		weburl = xfce_rc_read_entry(rc, "web_url", weburl);
 		show_panel_entry = xfce_rc_read_bool_entry(rc, "show_panel_entry", show_panel_entry);
 		panel_entry_size = xfce_rc_read_int_entry(rc, "panel_entry_size", panel_entry_size);
@@ -342,7 +291,6 @@ void dict_read_rc_file(DictData *dd)
 	else
 		dd->mode_in_use = dd->mode_default;
 
-	dd->web_mode = webmode;
 	dd->web_url = g_strdup(weburl);
 	dd->show_panel_entry = show_panel_entry;
 	dd->panel_entry_size = panel_entry_size;
@@ -362,7 +310,6 @@ void dict_write_rc_file(DictData *dd)
 	{
 		xfce_rc_write_int_entry(rc, "mode_in_use", dd->mode_in_use);
 		xfce_rc_write_int_entry(rc, "mode_default", dd->mode_default);
-		xfce_rc_write_int_entry(rc, "web_mode", dd->web_mode);
 		if (dd->web_url != NULL)
 			xfce_rc_write_entry(rc, "web_url", dd->web_url);
 		xfce_rc_write_bool_entry(rc, "show_panel_entry", dd->show_panel_entry);
@@ -434,5 +381,4 @@ DictData *dict_create_dictdata()
 
 	return dd;
 }
-
 

@@ -30,6 +30,12 @@
 #include "dictd.h"
 
 
+typedef struct
+{
+	gchar *label;
+	gchar *url;
+} web_dict_t;
+
 
 static void show_panel_entry_toggled(GtkToggleButton *tb, DictData *dd)
 {
@@ -40,20 +46,6 @@ static void show_panel_entry_toggled(GtkToggleButton *tb, DictData *dd)
 		gtk_widget_set_sensitive(g_object_get_data(G_OBJECT(tb), "label"),
 			gtk_toggle_button_get_active(tb));
 	}
-}
-
-
-static void web_search_type_changed(GtkRadioButton *radiobutton, DictData *dd)
-{
-	if (! gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(radiobutton)))
-		return; /* ignore the toggled event when a button is deselected */
-
-	dd->web_mode = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(radiobutton), "type"));
-
-	gtk_widget_set_sensitive(g_object_get_data(G_OBJECT(dd->web_entry_box), "web_entry"),
-		(dd->web_mode == WEBMODE_OTHER));
-	gtk_widget_set_sensitive(g_object_get_data(G_OBJECT(dd->web_entry_box), "web_entry_label"),
-		(dd->web_mode == WEBMODE_OTHER));
 }
 
 
@@ -124,12 +116,9 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 	dd->dictionary = tmp;
 
 	/* MODE WEB */
-	if (dd->web_mode == WEBMODE_OTHER)
-	{
-		g_free(dd->web_url);
-		dd->web_url = g_strdup(gtk_entry_get_text(
+	g_free(dd->web_url);
+	dd->web_url = g_strdup(gtk_entry_get_text(
 			GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "web_entry"))));
-	}
 
 	/* MODE SPELL */
 	tmp = gtk_combo_box_get_active_text(
@@ -159,13 +148,63 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 }
 
 
+static void web_dict_button_clicked(GtkButton *button, gpointer user_data)
+{
+	const gchar *url = user_data;
+	GtkEntry *entry = g_object_get_data(G_OBJECT(button), "web_entry");
+
+	if (entry != NULL && url != NULL)
+		gtk_entry_set_text(entry, url);
+}
+
+
+static GtkWidget *create_web_dicts_table(GtkWidget *entry)
+{
+	gint i;
+	gint offset;
+	GtkWidget *table, *button;
+	static web_dict_t web_dicts[] =
+	{
+		{ N_("dict.leo.org - German <-> English"), "http://dict.leo.org/ende?search={word}" },
+		{ N_("dict.leo.org - German <-> French"), "http://dict.leo.org/frde?search={word}" },
+		{ N_("dict.leo.org - German <-> Spanish"), "http://dict.leo.org/esde?search={word}" },
+		{ N_("dict.leo.org - German <-> Italian"), "http://dict.leo.org/itde?search={word}" },
+		{ N_("dict.leo.org - German <-> Chinese"), "http://dict.leo.org/chde?search={word}" },
+		{ N_("Dictionary.com"), "http://dictionary.reference.com/search?db=dictionary&q={word}" },
+		{ N_("TheFreeDictionary.com"), "http://www.thefreedictionary.com/_/partner.aspx?Word={word}&Set=www&mode=w" },
+		{ N_("Clear"), "" },
+		{ NULL, NULL }
+	};
+
+	table = gtk_table_new(4, 2, FALSE);
+	gtk_table_set_row_spacings(GTK_TABLE(table), 2);
+	gtk_table_set_col_spacings(GTK_TABLE(table), 2);
+
+	for (i = 0; web_dicts[i].label != NULL; i++)
+	{
+		offset = i % 2;
+		button = gtk_button_new_with_label(web_dicts[i].label);
+		g_signal_connect(button, "clicked", G_CALLBACK(web_dict_button_clicked), web_dicts[i].url);
+		g_object_set_data(G_OBJECT(button), "web_entry", entry);
+		gtk_widget_show(button);
+
+		gtk_table_attach(GTK_TABLE(table),
+				button, offset, 1 + offset, i - offset, i + 1 - offset,
+				(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+				(GtkAttachOptions) (0), 5, 5);
+	}
+
+	return table;
+}
+
+
 GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 {
 	GtkWidget *dialog, *inner_vbox, *notebook, *notebook_vbox;
 	GtkWidget *label1, *label2, *label3;
 
 	dialog = xfce_titled_dialog_new_with_buttons(
-		_("Xfce Dictionary"), GTK_WINDOW(parent),
+		_("Xfce4 Dictionary"), GTK_WINDOW(parent),
 		GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_NO_SEPARATOR,
 		GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
 		NULL);
@@ -183,7 +222,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	/*
 	 * Page: general
 	 */
-#define PAGE_GENERAL /* only navigation in Geany's symbol list ;-) */
+#define PAGE_GENERAL /* only for navigation in Geany's symbol list ;-) */
 	{
 		GtkWidget *radio_button, *label;
 		GSList *search_method;
@@ -286,7 +325,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	/*
 	 * Page: DICTD
 	 */
-#define PAGE_DICTD /* only navigation in Geany's symbol list ;-) */
+#define PAGE_DICTD /* only for navigation in Geany's symbol list ;-) */
 	 {
 		GtkWidget *table, *button_get_list, *server_entry, *port_spinner, *dict_combo;
 
@@ -393,10 +432,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	/*
 	 * Page: WEB
 	 */
-#define PAGE_WEB /* only navigation in Geany's symbol list ;-) */
+#define PAGE_WEB /* only for navigation in Geany's symbol list ;-) */
 	{
-		GtkWidget *radio_button, *label, *web_entry_label, *web_entry;
-		GSList *web_type;
+		GtkWidget *label, *web_entry_label, *web_entry, *web_entry_box, *web_dicts_table;
 
 		notebook_vbox = gtk_vbox_new(FALSE, 5);
 		gtk_widget_show(notebook_vbox);
@@ -410,65 +448,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 0);
 
-		radio_button = gtk_radio_button_new_with_label(NULL,
-							_("dict.leo.org - German <-> English"));
-		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
-		if (dd->web_mode == WEBMODE_LEO_GERENG)
-			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
-		gtk_widget_show(radio_button);
-		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
-		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(WEBMODE_LEO_GERENG));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(web_search_type_changed), dd);
-
-		radio_button = gtk_radio_button_new_with_label(web_type,
-							_("dict.leo.org - German <-> French"));
-		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
-		if (dd->web_mode == WEBMODE_LEO_GERFRE)
-			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
-		gtk_widget_show(radio_button);
-		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
-		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(WEBMODE_LEO_GERFRE));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(web_search_type_changed), dd);
-
-		radio_button = gtk_radio_button_new_with_label(web_type,
-							_("dict.leo.org - German <-> Spanish"));
-		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
-		if (dd->web_mode == WEBMODE_LEO_GERSPA)
-			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
-		gtk_widget_show(radio_button);
-		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
-		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(WEBMODE_LEO_GERSPA));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(web_search_type_changed), dd);
-
-		radio_button = gtk_radio_button_new_with_label(web_type,
-							_("dict.leo.org - German <-> Italian"));
-		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
-		if (dd->web_mode == WEBMODE_LEO_GERITA)
-			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
-		gtk_widget_show(radio_button);
-		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
-		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(WEBMODE_LEO_GERITA));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(web_search_type_changed), dd);
-
-		radio_button = gtk_radio_button_new_with_label(web_type,
-							_("dict.leo.org - German <-> Chinese"));
-		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
-		if (dd->web_mode == WEBMODE_LEO_GERCHI)
-			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
-		gtk_widget_show(radio_button);
-		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
-		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(WEBMODE_LEO_GERCHI));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(web_search_type_changed), dd);
-
-		radio_button = gtk_radio_button_new_with_label(web_type, _("Use another website"));
-		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
-		if (dd->web_mode == WEBMODE_OTHER)
-			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
-		gtk_widget_show(radio_button);
-		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
-		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(WEBMODE_OTHER));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(web_search_type_changed), dd);
-
 		web_entry_label = gtk_label_new_with_mnemonic(_("URL:"));
 		gtk_widget_show(web_entry_label);
 		web_entry = gtk_entry_new();
@@ -476,31 +455,31 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 			gtk_entry_set_text(GTK_ENTRY(web_entry), dd->web_url);
 		gtk_widget_show(web_entry);
 
-		dd->web_entry_box = gtk_hbox_new(FALSE, 0);
-		gtk_widget_show(dd->web_entry_box);
-		gtk_box_pack_start(GTK_BOX(dd->web_entry_box), web_entry_label, FALSE, TRUE, 5);
-		gtk_box_pack_start(GTK_BOX(dd->web_entry_box), web_entry, FALSE, FALSE, 0);
-		gtk_box_pack_start(GTK_BOX(inner_vbox), dd->web_entry_box, FALSE, FALSE, 0);
+		web_entry_box = gtk_hbox_new(FALSE, 0);
+		gtk_widget_show(web_entry_box);
+
+		web_dicts_table = create_web_dicts_table(web_entry);
+		gtk_widget_show(web_dicts_table);
+		gtk_box_pack_start(GTK_BOX(inner_vbox), web_dicts_table, FALSE, FALSE, 0);
+
+		gtk_box_pack_start(GTK_BOX(web_entry_box), web_entry_label, FALSE, TRUE, 5);
+		gtk_box_pack_start(GTK_BOX(web_entry_box), web_entry, TRUE, TRUE, 0);
+		gtk_box_pack_start(GTK_BOX(inner_vbox), web_entry_box, FALSE, FALSE, 0);
 
 		g_object_set_data(G_OBJECT(dialog), "web_entry", web_entry);
-		g_object_set_data(G_OBJECT(dd->web_entry_box), "web_entry", web_entry);
-		g_object_set_data(G_OBJECT(dd->web_entry_box), "web_entry_label", web_entry_label);
 
-		label1 = gtk_label_new(_("Enter an URL to a web site which offer translation services.\nUse {word} as placeholder for the searched word."));
+		label1 = gtk_label_new(_("Enter an URL to a web site which offer translation or dictionary services.\nUse {word} as placeholder for the searched word."));
 		gtk_label_set_line_wrap(GTK_LABEL(label1), TRUE);
 		gtk_misc_set_alignment(GTK_MISC(label1), 0, 0);
 		gtk_widget_show(label1);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label1, FALSE, FALSE, 0);
 		gtk_box_pack_start(GTK_BOX(notebook_vbox), inner_vbox, TRUE, TRUE, 5);
-
-		/* init the sensitive widgets */
-		web_search_type_changed(GTK_RADIO_BUTTON(radio_button), dd);
 	}
 
 	/*
 	 * Page: ASPELL
 	 */
-#define PAGE_ASPELL /* only navigation in Geany's symbol list ;-) */
+#define PAGE_ASPELL /* only for navigation in Geany's symbol list ;-) */
 	{
 		GtkWidget *table, *spell_entry, *spell_combo;
 
