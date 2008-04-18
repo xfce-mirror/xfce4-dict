@@ -170,6 +170,7 @@ static GtkWidget *create_web_dicts_table(GtkWidget *entry)
 		{ N_("dict.leo.org - German <-> Spanish"), "http://dict.leo.org/esde?search={word}" },
 		{ N_("dict.leo.org - German <-> Italian"), "http://dict.leo.org/itde?search={word}" },
 		{ N_("dict.leo.org - German <-> Chinese"), "http://dict.leo.org/chde?search={word}" },
+		{ N_("dist.cc - Dictionary"), "http://www.dict.cc/?s={word}" },
 		{ N_("Dictionary.com"), "http://dictionary.reference.com/search?db=dictionary&q={word}" },
 		{ N_("TheFreeDictionary.com"), "http://www.thefreedictionary.com/_/partner.aspx?Word={word}&Set=www&mode=w" },
 		{ N_("Clear"), "" },

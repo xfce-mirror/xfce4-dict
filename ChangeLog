@@ -8,6 +8,7 @@
    simplify the code.
    Add two other dictionary services:
    Dictionary.com and TheFreeDictionary.com.
+ * Add dist.cc dictionary service.
 
 
 2008-04-17  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
