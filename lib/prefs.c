@@ -99,7 +99,7 @@ static void get_spell_dictionaries(GtkWidget *spell_combo, DictData *dd)
 }
 
 
-static void prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
+void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 {
 	gchar *tmp;
 
@@ -172,7 +172,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
     gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
     gtk_window_set_icon_name(GTK_WINDOW(dialog), "xfce4-settings");
-	g_signal_connect_after(dialog, "response", G_CALLBACK(prefs_dialog_response), dd);
+	if (! dd->is_plugin) /* the response callback is run by the plugin's callback */
+		g_signal_connect(dialog, "response", G_CALLBACK(dict_prefs_dialog_response), dd);
 
 	notebook = gtk_notebook_new();
 	gtk_widget_show(notebook);

@@ -286,6 +286,9 @@ static void dict_plugin_panel_save_settings(DictPanelData *dpd)
 
 static void dict_plugin_properties_dialog_response(GtkWidget *dlg, gint response, DictPanelData *dpd)
 {
+	/* first run the real response handler which reads the settings from the dialog */
+	dict_prefs_dialog_response(dlg, response, dpd->dd);
+
 	dict_plugin_panel_save_settings(dpd);
 
 	g_object_set_data(G_OBJECT(dpd->plugin), "dialog", NULL);

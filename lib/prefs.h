@@ -22,6 +22,7 @@
 #define PREFS_H 1
 
 GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd);
+void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd);
 
 
 #endif
