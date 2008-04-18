@@ -187,6 +187,18 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 			use_leo = TRUE;
 			break;
 		}
+		case WEBMODE_LEO_GERITA:
+		{
+			base = "http://dict.leo.org/itde?search={word}";
+			use_leo = TRUE;
+			break;
+		}
+		case WEBMODE_LEO_GERCHI:
+		{
+			base = "http://dict.leo.org/chde?search={word}";
+			use_leo = TRUE;
+			break;
+		}
 		default: base = dd->web_url;
 	}
 #if 0 /* for some reason this isn't necessary anymore */

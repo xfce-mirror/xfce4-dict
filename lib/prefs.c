@@ -440,6 +440,26 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(WEBMODE_LEO_GERSPA));
 		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(web_search_type_changed), dd);
 
+		radio_button = gtk_radio_button_new_with_label(web_type,
+							_("dict.leo.org - German <-> Italian"));
+		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
+		if (dd->web_mode == WEBMODE_LEO_GERITA)
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
+		gtk_widget_show(radio_button);
+		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
+		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(WEBMODE_LEO_GERITA));
+		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(web_search_type_changed), dd);
+
+		radio_button = gtk_radio_button_new_with_label(web_type,
+							_("dict.leo.org - German <-> Chinese"));
+		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
+		if (dd->web_mode == WEBMODE_LEO_GERCHI)
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
+		gtk_widget_show(radio_button);
+		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
+		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(WEBMODE_LEO_GERCHI));
+		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(web_search_type_changed), dd);
+
 		radio_button = gtk_radio_button_new_with_label(web_type, _("Use another website"));
 		web_type = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
 		if (dd->web_mode == WEBMODE_OTHER)
