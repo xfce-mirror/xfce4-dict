@@ -103,17 +103,6 @@ static void prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 {
 	gchar *tmp;
 
-	if (response == GTK_RESPONSE_HELP)
-	{
-		/* show help */
-		gboolean result = dict_open_browser(dd, "exo-open --launch WebBrowser " PLUGIN_WEBSITE);
-
-		if (G_UNLIKELY(result == FALSE))
-			g_warning(_("Unable to open the following url: %s"), PLUGIN_WEBSITE);
-
-		return;
-	}
-
 	/* MODE DICT */
 	tmp = gtk_combo_box_get_active_text(
 		GTK_COMBO_BOX(g_object_get_data(G_OBJECT(dlg), "dict_combo")));
@@ -178,7 +167,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	dialog = xfce_titled_dialog_new_with_buttons(
 		_("Xfce Dictionary"), GTK_WINDOW(parent),
 		GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_NO_SEPARATOR,
-		GTK_STOCK_HELP, GTK_RESPONSE_HELP,
 		GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
 		NULL);
 
