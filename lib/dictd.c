@@ -135,7 +135,11 @@ static gboolean process_server_response(DictData *dd)
 
 	if (strncmp("552", answer, 3) == 0)
 	{
-		dict_gui_status_add(dd, _("No matches could be found for \"%s\"."), dd->searched_word);
+		dict_gui_status_add(dd, _("Ready."));
+		gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
+		tmp = g_strdup_printf(_("No matches could be found for \"%s\"."), dd->searched_word);
+		gtk_text_buffer_insert(dd->main_textbuffer, &iter, tmp, -1);
+		g_free(tmp);
 		g_free(dd->query_buffer);
 		return FALSE;
 	}
