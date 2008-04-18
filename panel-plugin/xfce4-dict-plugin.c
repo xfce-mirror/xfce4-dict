@@ -56,7 +56,7 @@ typedef struct
 static GdkPixbuf *dict_plugin_load_and_scale(const guint8 *data, gint dstw, gint dsth)
 {
 	GdkPixbuf *pb, *pb_scaled;
-	int pb_w, pb_h;
+	gint pb_w, pb_h;
 
 	pb = gdk_pixbuf_new_from_inline(-1, data, FALSE, NULL);
 	pb_w = gdk_pixbuf_get_width(pb);
@@ -72,17 +72,18 @@ static GdkPixbuf *dict_plugin_load_and_scale(const guint8 *data, gint dstw, gint
 	pb_scaled = gdk_pixbuf_scale_simple(pb, dstw, dsth, GDK_INTERP_HYPER);
 	g_object_unref(G_OBJECT(pb));
 
-	return (pb_scaled);
+	return pb_scaled;
 }
 
 
 static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, DictPanelData *dpd)
 {
 	gint width;
+	gint height = wsize;
 	gint size = wsize - 2 - (2 * MAX(dpd->panel_button->style->xthickness,
 									 dpd->panel_button->style->ythickness));
 
-	/*g_object_unref(G_OBJECT(dd->icon));*/
+	g_object_unref(G_OBJECT(dpd->dd->icon));
 	dpd->dd->icon = dict_plugin_load_and_scale(dict_gui_get_icon_data(), size, -1);
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(dpd->panel_button_image), dpd->dd->icon);
@@ -96,7 +97,10 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 	else
 		width = size;
 
-	gtk_widget_set_size_request(GTK_WIDGET(plugin), width, size);
+	if (xfce_panel_plugin_get_orientation(plugin) == GTK_ORIENTATION_VERTICAL)
+		height -= 4; /* reduce some of the height because it creates too much space otherwise */
+
+	gtk_widget_set_size_request(dpd->panel_button, wsize, height);
 
 	return TRUE;
 }
