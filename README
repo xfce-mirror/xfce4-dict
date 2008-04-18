@@ -1,4 +1,4 @@
-xfce4-dict - A client program to query different dictionaries
+Xfce4 Dictionary - A client program to query different dictionaries
 -------------------------------------------------------------
 
 This program allows you to search different kinds of dictionary services
@@ -41,8 +41,8 @@ text to search for. To start the search simply press the Enter key in
 the text field.
 
 
-"Dict" server
--------------
+Query a Dict server
+-------------------
 
 You can query a dictionary server(see RFC 2229) to search for the
 translation or explanation of a word. You can also choose a dictionary

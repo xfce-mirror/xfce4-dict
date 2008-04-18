@@ -186,7 +186,7 @@ void dict_gui_create_main_window(DictData *dd)
 	GtkWidget *method_chooser, *radio, *label;
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-	gtk_window_set_title(GTK_WINDOW(dd->window), "Xfce Dictionary");
+	gtk_window_set_title(GTK_WINDOW(dd->window), "Xfce4 Dictionary");
 	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
 
 	icon = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
@@ -332,12 +332,12 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 							   XFCE_LICENSE_GPL);
 
 	xfce_about_info_add_credit(info, "Enrico Tröger", "enrico(dot)troeger(at)uvena(dot)de", _("Developer"));
-	xfce_about_info_set_homepage(info, "http://goodies.xfce.org");
+	xfce_about_info_set_homepage(info, "http://goodies.xfce.org/projects/applications/xfce4-dict");
 
 	dialog = xfce_about_dialog_new_with_values(
 		GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(widget))), info, dd->icon);
 	g_signal_connect(G_OBJECT(dialog), "response", G_CALLBACK(gtk_widget_destroy), NULL);
-	gtk_window_set_title(GTK_WINDOW(dialog), "Xfce Dictionary");
+	gtk_window_set_title(GTK_WINDOW(dialog), "Xfce4 Dictionary");
 	gtk_dialog_run(GTK_DIALOG(dialog));
 
 	xfce_about_info_free(info);
