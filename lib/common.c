@@ -189,7 +189,7 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 		}
 		default: base = dd->web_url;
 	}
-
+#if 0 /* for some reason this isn't necessary anymore */
 	if (use_leo)
 	{
 		/* convert the text into ISO-8869-15 because dict.leo.org expects it ;-( */
@@ -201,6 +201,7 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 			dd->searched_word = tmp;
 		}
 	}
+#endif
 	uri = str_replace(g_strdup(base), "{word}", dd->searched_word);
 	if (! dict_open_browser(dd, uri))
 	{
