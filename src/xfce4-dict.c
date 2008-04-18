@@ -42,6 +42,7 @@
 static gboolean show_help = FALSE;
 #endif
 static gboolean show_version = FALSE;
+static gboolean ignore_plugin = FALSE;
 static gboolean focus_panel_entry = FALSE;
 static gboolean mode_dict = FALSE;
 static gboolean mode_web = FALSE;
@@ -50,12 +51,14 @@ static gboolean mode_spell = FALSE;
 static GOptionEntry cli_options[] =
 {
 #if GLIB_CHECK_VERSION(2,14,0)
+	/* Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one */
 	{ "help", 'h', 0, G_OPTION_ARG_NONE, &show_help, _("Show help options"), NULL },
 #endif
 	{ "dict", 'd', 0, G_OPTION_ARG_NONE, &mode_dict, N_("Search the given text using a Dict server(RFC 2229)"), NULL },
 	{ "web", 'w', 0, G_OPTION_ARG_NONE, &mode_web, N_("Search the given text using a web-based search engine"), NULL },
 	{ "spell", 's', 0, G_OPTION_ARG_NONE, &mode_spell, N_("Check the given text with a spellchecker"), NULL },
 	{ "text-field", 't', 0, G_OPTION_ARG_NONE, &focus_panel_entry, N_("Grab the focus on the text field in the panel"), NULL },
+	{ "ignore-plugin", 'i', 0, G_OPTION_ARG_NONE, &ignore_plugin, N_("Start stand-alone application even if the panel plugin is loaded"), NULL },
 	{ "version", 'v', 0, G_OPTION_ARG_NONE, &show_version, N_("Show version information"), NULL },
 	{ NULL, 0, 0, 0, NULL, NULL, NULL }
 };
@@ -166,7 +169,7 @@ gint main(gint argc, gchar *argv[])
 	search_text = get_search_text(argc, argv);
 
 	/* try to find an existing panel plugin and pop it up */
-	if (dict_find_panel_plugin(flags, search_text))
+	if (! ignore_plugin && dict_find_panel_plugin(flags, search_text))
 	{
 		g_free(search_text);
 		exit(0);
