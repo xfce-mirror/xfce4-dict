@@ -83,7 +83,6 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 	gint size = wsize - 2 - (2 * MAX(dpd->panel_button->style->xthickness,
 									 dpd->panel_button->style->ythickness));
 
-	g_object_unref(G_OBJECT(dpd->dd->icon));
 	dpd->dd->icon = dict_plugin_load_and_scale(dict_gui_get_icon_data(), size, -1);
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(dpd->panel_button_image), dpd->dd->icon);
@@ -400,8 +399,8 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	hbox = gtk_hbox_new(FALSE, 0);
 	gtk_widget_show(hbox);
 
-	gtk_container_add(GTK_CONTAINER(hbox), dpd->panel_button);
-	gtk_container_add(GTK_CONTAINER(hbox), dpd->dd->panel_entry);
+	gtk_box_pack_start(GTK_BOX(hbox), dpd->panel_button, FALSE, FALSE, 2);
+	gtk_box_pack_start(GTK_BOX(hbox), dpd->dd->panel_entry, FALSE, FALSE, 0);
 	gtk_container_add(GTK_CONTAINER(plugin), hbox);
 
 	xfce_panel_plugin_add_action_widget(plugin, dpd->panel_button);
