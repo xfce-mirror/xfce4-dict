@@ -65,6 +65,7 @@ static GOptionEntry cli_options[] =
 
 static gboolean main_quit(GtkWidget *widget, GdkEvent *event, DictData *dd)
 {
+	dict_gui_query_geometry(dd);
 	dict_free_data(dd);
     gtk_main_quit();
 

@@ -255,6 +255,29 @@ void dict_search_word(DictData *dd, const gchar *word)
 }
 
 
+static void parse_geometry(DictData *dd, const gchar *str)
+{
+	gint i;
+
+	/* first init first element with -1 */
+	dd->geometry[0] = -1;
+
+	sscanf(str, "%d;%d;%d;%d;%d;",
+		&dd->geometry[0], &dd->geometry[1], &dd->geometry[2], &dd->geometry[3], &dd->geometry[4]);
+
+	/* don't use insane values but when main windows was maximized last time, pos might be
+	 * negative at least on Windows for some reason */
+	if (dd->geometry[4] != 1)
+	{
+		for (i = 0; i < 4; i++)
+		{
+			if (dd->geometry[i] < -1)
+				dd->geometry[i] = -1;
+		}
+	}
+}
+
+
 void dict_read_rc_file(DictData *dd)
 {
 	XfceRc *rc;
@@ -268,6 +291,7 @@ void dict_read_rc_file(DictData *dd)
 	const gchar *weburl = NULL;
 	const gchar *spell_bin = "aspell";
 	const gchar *spell_dictionary = "en";
+	const gchar *geo = "-1;0;0;0;0;";
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
 	{
@@ -281,6 +305,9 @@ void dict_read_rc_file(DictData *dd)
 		dict = xfce_rc_read_entry(rc, "dict", dict);
 		spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin);
 		spell_dictionary = xfce_rc_read_entry(rc, "spell_dictionary", spell_dictionary);
+
+		geo = xfce_rc_read_entry(rc, "geometry", geo);
+		parse_geometry(dd, geo);
 
 		xfce_rc_close(rc);
 	}
@@ -308,6 +335,8 @@ void dict_write_rc_file(DictData *dd)
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", FALSE)) != NULL)
 	{
+		gchar geometry_string[128];
+
 		xfce_rc_write_int_entry(rc, "mode_in_use", dd->mode_in_use);
 		xfce_rc_write_int_entry(rc, "mode_default", dd->mode_default);
 		if (dd->web_url != NULL)
@@ -320,6 +349,10 @@ void dict_write_rc_file(DictData *dd)
 		xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);
 		xfce_rc_write_entry(rc, "spell_dictionary", dd->spell_dictionary);
 
+		g_snprintf(geometry_string, sizeof(geometry_string), "%d;%d;%d;%d;%d;",
+			dd->geometry[0], dd->geometry[1], dd->geometry[2], dd->geometry[3], dd->geometry[4]);
+		xfce_rc_write_entry(rc, "geometry", geometry_string);
+
 		xfce_rc_close(rc);
 	}
 }
@@ -327,9 +360,10 @@ void dict_write_rc_file(DictData *dd)
 
 void dict_free_data(DictData *dd)
 {
+	dict_write_rc_file(dd);
+
 	gtk_widget_destroy(dd->window);
 
-	dict_write_rc_file(dd);
 	g_free(dd->searched_word);
 	g_free(dd->dictionary);
 	g_free(dd->server);

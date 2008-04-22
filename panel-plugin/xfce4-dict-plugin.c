@@ -132,7 +132,13 @@ static void dict_toggle_main_window(GtkWidget *button, DictData *dd)
 static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *dpd)
 {
 	if (GTK_WIDGET_VISIBLE(dpd->dd->window))
+	{
+		/* we must query geometry settings here because position and maximized state
+		 * doesn't work when the window is hidden */
+		dict_gui_query_geometry(dpd->dd);
+
 		gtk_widget_hide(dpd->dd->window);
+	}
 	else
 	{
 		const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dpd->dd->panel_entry));
@@ -221,6 +227,13 @@ static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictPanelData *dpd)
 {
 	/* Destroy the setting dialog, if this open */
 	GtkWidget *dialog = g_object_get_data(G_OBJECT(dpd->plugin), "dialog");
+
+	/* if the main window is visible, query geometry as usual, if it is hidden the geometry
+	 * was queried when it was hidden */
+	if (GTK_WIDGET_VISIBLE(dpd->dd->window))
+	{
+		dict_gui_query_geometry(dpd->dd);
+	}
 
 	if (dialog != NULL)
 		gtk_widget_destroy(dialog);

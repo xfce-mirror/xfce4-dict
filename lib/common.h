@@ -75,6 +75,9 @@ typedef struct
 	gint query_status;
 	gchar *query_buffer;
 
+	/* main window's geometry */
+	gint geometry[5];
+
 	/* widgets */
 	GtkWidget *window;
 	GtkWidget *statusbar;
@@ -101,6 +104,5 @@ void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gi
 							 GtkSelectionData *data, guint info, guint ltime, DictData *dd);
 
 DictData *dict_create_dictdata();
-
 
 #endif

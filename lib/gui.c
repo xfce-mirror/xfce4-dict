@@ -310,6 +310,15 @@ void dict_gui_create_main_window(DictData *dd)
 	/* TODO: find a way to get this working, the treeview doesn't receive anything as long as it isn't
 	 * editable. scrolledwindow_results and a surrounding event box as receivers also don't work. */
 	g_signal_connect(dd->main_textview, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
+
+	/* use the saved window geometry */
+	if (dd->geometry[0] != -1)
+	{
+		gtk_window_move(GTK_WINDOW(dd->window), dd->geometry[0], dd->geometry[1]);
+		gtk_window_set_default_size(GTK_WINDOW(dd->window), dd->geometry[2], dd->geometry[3]);
+		if (dd->geometry[4] == 1)
+			gtk_window_maximize(GTK_WINDOW(dd->window));
+	}
 }
 
 
@@ -341,4 +350,16 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 	gtk_dialog_run(GTK_DIALOG(dialog));
 
 	xfce_about_info_free(info);
+}
+
+
+void dict_gui_query_geometry(DictData *dd)
+{
+	gtk_window_get_position(GTK_WINDOW(dd->window),	&dd->geometry[0], &dd->geometry[1]);
+	gtk_window_get_size(GTK_WINDOW(dd->window),	&dd->geometry[2], &dd->geometry[3]);
+
+	if (gdk_window_get_state(dd->window->window) & GDK_WINDOW_STATE_MAXIMIZED)
+		dd->geometry[4] = 1;
+	else
+		dd->geometry[4] = 0;
 }
