@@ -188,7 +188,7 @@ static GtkWidget *create_web_dicts_table(GtkWidget *entry)
 	for (i = 0; web_dicts[i].label != NULL; i++)
 	{
 		offset = i % 2;
-		button = gtk_button_new_with_label(web_dicts[i].label);
+		button = gtk_button_new_with_label(_(web_dicts[i].label));
 		g_signal_connect(button, "clicked", G_CALLBACK(web_dict_button_clicked), web_dicts[i].url);
 		g_object_set_data(G_OBJECT(button), "web_entry", entry);
 		gtk_widget_show(button);
