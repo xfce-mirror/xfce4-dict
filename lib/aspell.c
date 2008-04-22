@@ -69,8 +69,12 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 		{
 			if (msg[0] == '&')
 			{	/* & cmd 17 7: ... */
+				gint count;
 				tmp = strchr(msg + 2, ' ') + 1;
-				dict_gui_status_add(dd, _("%d suggestion(s) found."), atoi(tmp));
+				count = atoi(tmp);
+				dict_gui_status_add(dd, ngettext("%d suggestion found.",
+                                            "%d suggestions found.",
+                                            count), count);
 
 				tmp = g_strdup_printf(_("Suggestions for \"%s\":"), dd->searched_word);
 				gtk_text_buffer_insert_with_tags(

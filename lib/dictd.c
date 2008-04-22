@@ -106,7 +106,6 @@ static gboolean process_server_response(DictData *dd)
 	gint max_lines, i;
 	gint defs_found = 0;
 	gchar *answer, *tmp, **lines, *stripped;
-	GtkTextIter iter;
 
 	if (dd->query_status == NO_CONNECTION)
 	{
@@ -160,7 +159,9 @@ static gboolean process_server_response(DictData *dd)
 		return FALSE;
 	}
 	defs_found = atoi(answer + 4);
-	dict_gui_status_add(dd, _("%d definition(s) found."), defs_found);
+	dict_gui_status_add(dd, ngettext("%d definition found.",
+                                     "%d definitions found.",
+                                     defs_found), defs_found);
 
 	/* go to next line */
 	while (*answer != '\n') answer++;
