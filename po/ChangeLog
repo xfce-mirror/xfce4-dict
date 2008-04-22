@@ -1,3 +1,8 @@
+2008-04-22  Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+
+	* de.po: Update of German translation.
+	* xfce4-dict.pot, *.po: Issued make update-po.
+
 2008-03-30  Mike Massonnet <mmassonnet@xfce.org>
 
 	* ca.po: Update Catalan translation,
