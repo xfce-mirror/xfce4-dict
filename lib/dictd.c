@@ -48,6 +48,7 @@
 #include "common.h"
 #include "dictd.h"
 #include "gui.h"
+#include "aspell.h"
 
 
 #define BUF_SIZE 256
@@ -136,11 +137,20 @@ static gboolean process_server_response(DictData *dd)
 	if (strncmp("552", answer, 3) == 0)
 	{
 		dict_gui_status_add(dd, _("Ready."));
-		gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
+
 		tmp = g_strdup_printf(_("No matches could be found for \"%s\"."), dd->searched_word);
-		gtk_text_buffer_insert(dd->main_textbuffer, &iter, tmp, -1);
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 		g_free(tmp);
 		g_free(dd->query_buffer);
+
+		/* if we had no luck searching a word, maybe we have a typo so try searching with
+		 * aspell */
+		if (NZV(dd->spell_bin))
+		{
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
+			dict_aspell_start_query(dd, dd->searched_word);
+		}
+
 		return FALSE;
 	}
 	else if (strncmp("150", answer, 3) != 0 && strncmp("552", answer, 3) != 0)
@@ -165,8 +175,8 @@ static gboolean process_server_response(DictData *dd)
 		return FALSE;
 	}
 
-	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
-	gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
+	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &dd->textiter);
+	gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 
 	i = -1;
 	while (i < max_lines)
@@ -175,7 +185,7 @@ static gboolean process_server_response(DictData *dd)
 		if (strncmp(lines[i], "250", 3) == 0) break; /* end of data */
 		if (strncmp(lines[i], "error:", 6) == 0) /* an error occurred */
 		{
-			gtk_text_buffer_insert(dd->main_textbuffer, &iter, lines[i], -1);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, lines[i], -1);
 			break;
 		}
 		if (strncmp(lines[i], "151", 3) != 0) continue; /* unexpected line start, try next line */
@@ -188,9 +198,9 @@ static gboolean process_server_response(DictData *dd)
 			if (tmp != NULL)
 			{
 				/* skip the found quote and the following space */
-				gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &iter, tmp + 2, -1,
+				gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter, tmp + 2, -1,
 																dd->main_boldtag, NULL);
-				gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
 		}
 		if (i >= (max_lines - 2)) break;
@@ -202,13 +212,13 @@ static gboolean process_server_response(DictData *dd)
 			stripped = g_strstrip(lines[i]);
 			if (strlen(stripped) > 0)
 			{
-				gtk_text_buffer_insert(dd->main_textbuffer, &iter, stripped, -1);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, stripped, -1);
 				if (i < (max_lines - 1) && lines[i + 1][0] != '.')
-					gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n", 1);
+					gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
 			i++;
 		}
-		gtk_text_buffer_insert(dd->main_textbuffer, &iter, "\n\n", 2);
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
 	}
 	g_strfreev(lines);
 	g_free(dd->query_buffer);

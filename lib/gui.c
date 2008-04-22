@@ -60,11 +60,11 @@ void dict_gui_status_add(DictData *dd, const gchar *format, ...)
 
 void dict_gui_clear_text_buffer(DictData *dd)
 {
-	GtkTextIter start_iter, end_iter;
+	GtkTextIter end_iter;
 
-	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &start_iter);
+	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &dd->textiter);
 	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
-	gtk_text_buffer_delete(dd->main_textbuffer, &start_iter, &end_iter);
+	gtk_text_buffer_delete(dd->main_textbuffer, &dd->textiter, &end_iter);
 
 	gtk_widget_grab_focus(dd->main_entry);
 }

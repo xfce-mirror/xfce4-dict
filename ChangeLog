@@ -1,3 +1,9 @@
+2008-04-20  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * If searching with the Dict method and nothing was found, automatically
+   search with aspell (if available) as fallback in case of a typo.
+
+
 2008-04-18  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Add command line option "--ignore-plugin" to start the stand-alone

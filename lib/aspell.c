@@ -59,10 +59,8 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 	if (cond & (G_IO_IN | G_IO_PRI))
 	{
 		gchar *msg, *tmp;
-		GtkTextIter iter;
 		DictData *dd = data;
 
-		gtk_text_buffer_get_start_iter(dd->main_textbuffer, &iter);
 		while (g_io_channel_read_line(ioc, &msg, NULL, NULL, NULL) && msg != NULL)
 		{
 			if (msg[0] == '&')
@@ -71,24 +69,24 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				dict_gui_status_add(dd, _("%d suggestion(s) found."), atoi(tmp));
 
 				tmp = g_strdup_printf(_("Suggestions for \"%s\":\n"), dd->searched_word);
-				gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &iter, tmp, -1,
-					dd->main_boldtag, NULL);
+				gtk_text_buffer_insert_with_tags(
+					dd->main_textbuffer, &dd->textiter, tmp, -1, dd->main_boldtag, NULL);
 				g_free(tmp);
 
 				tmp = strchr(msg, ':') + 2;
-				gtk_text_buffer_insert(dd->main_textbuffer, &iter, g_strchomp(tmp), -1);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, g_strchomp(tmp), -1);
 			}
 			else if (msg[0] == '*')
 			{
 				tmp = g_strdup_printf(_("\"%s\" is spelled correctly.\n"), dd->searched_word);
-				gtk_text_buffer_insert(dd->main_textbuffer, &iter, tmp, -1);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				g_free(tmp);
 			}
 			else if (msg[0] == '#')
 			{
 				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\".\n"),
 					dd->searched_word);
-				gtk_text_buffer_insert(dd->main_textbuffer, &iter, tmp, -1);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				g_free(tmp);
 			}
 			g_free(msg);
