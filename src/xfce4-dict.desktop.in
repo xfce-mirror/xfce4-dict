@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Version=1.0
-_Name=Xfce Dictionary
+_Name=Xfce4 Dictionary
 _GenericName=Dictionary Client
 _Comment=A client program to query different dictionaries.
 Icon=xfce4-dict

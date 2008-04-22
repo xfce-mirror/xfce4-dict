@@ -78,13 +78,13 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 			}
 			else if (msg[0] == '*')
 			{
-				tmp = g_strdup_printf(_("\"%s\" is spelled correctly.\n"), dd->searched_word);
+				tmp = g_strdup_printf(_("\"%s\" is spelled correctly."), dd->searched_word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				g_free(tmp);
 			}
 			else if (msg[0] == '#')
 			{
-				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\".\n"),
+				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\"."),
 					dd->searched_word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				g_free(tmp);
@@ -108,7 +108,10 @@ static gboolean iofunc_read_err(GIOChannel *ioc, GIOCondition cond, gpointer dat
 
 		while (g_io_channel_read_line(ioc, &msg, NULL, NULL, NULL) && msg != NULL)
 		{
-			dict_gui_status_add(dd, _("%s"), g_strstrip(msg));
+			/* translation hint:
+			 * Error while executing <spell command, e.g. "aspell">: <error message> */
+			dict_gui_status_add(dd, _("Error while executing %s: %s"),
+				dd->spell_bin, g_strstrip(msg));
 			g_free(msg);
 		}
 	}

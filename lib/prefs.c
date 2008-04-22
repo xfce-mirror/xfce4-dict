@@ -334,7 +334,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(notebook_vbox);
 		inner_vbox = gtk_vbox_new(FALSE, 5);
 		gtk_widget_show(inner_vbox);
-		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("Dictd")));
+		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("Dict")));
 
 		/* server address */
 		label1 = gtk_label_new_with_mnemonic(_("Server:"));
