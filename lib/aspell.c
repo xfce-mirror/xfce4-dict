@@ -22,6 +22,10 @@
  * with a given search term and reads it output. */
 
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -68,10 +72,11 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				tmp = strchr(msg + 2, ' ') + 1;
 				dict_gui_status_add(dd, _("%d suggestion(s) found."), atoi(tmp));
 
-				tmp = g_strdup_printf(_("Suggestions for \"%s\":\n"), dd->searched_word);
+				tmp = g_strdup_printf(_("Suggestions for \"%s\":"), dd->searched_word);
 				gtk_text_buffer_insert_with_tags(
 					dd->main_textbuffer, &dd->textiter, tmp, -1, dd->main_boldtag, NULL);
 				g_free(tmp);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 
 				tmp = strchr(msg, ':') + 2;
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, g_strchomp(tmp), -1);
@@ -109,8 +114,8 @@ static gboolean iofunc_read_err(GIOChannel *ioc, GIOCondition cond, gpointer dat
 		while (g_io_channel_read_line(ioc, &msg, NULL, NULL, NULL) && msg != NULL)
 		{
 			/* translation hint:
-			 * Error while executing <spell command, e.g. "aspell">: <error message> */
-			dict_gui_status_add(dd, _("Error while executing %s: %s"),
+			 * Error while executing <spell command, e.g. "aspell"> (<error message>) */
+			dict_gui_status_add(dd, _("Error while executing \"%s\" (%s)."),
 				dd->spell_bin, g_strstrip(msg));
 			g_free(msg);
 		}
@@ -146,7 +151,7 @@ void dict_aspell_start_query(DictData *dd, const gchar *word)
 
 	if (! NZV(dd->spell_bin))
 	{
-		dict_gui_status_add(dd, _("Please set an appropriate aspell command."));
+		dict_gui_status_add(dd, _("Please set the aspell command in the preferences dialog."));
 		return;
 	}
 

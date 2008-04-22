@@ -186,7 +186,7 @@ void dict_gui_create_main_window(DictData *dd)
 	GtkWidget *method_chooser, *radio, *label;
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-	gtk_window_set_title(GTK_WINDOW(dd->window), "Xfce4 Dictionary");
+	gtk_window_set_title(GTK_WINDOW(dd->window), _("Xfce4 Dictionary"));
 	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
 
 	icon = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
