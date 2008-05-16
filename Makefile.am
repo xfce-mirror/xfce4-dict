@@ -41,3 +41,10 @@ install-data-hook:
 		echo "***   $(gtk_update_icon_cache)";					\
 		echo "***";												\
 	fi
+
+sign:
+	if test -f $(PACKAGE)-$(VERSION).tar.gz; then \
+		gpg --detach-sign --digest-algo SHA512 $(PACKAGE)-$(VERSION).tar.gz; fi
+	if test -f $(PACKAGE)-$(VERSION).tar.bz2; then \
+		gpg --detach-sign --digest-algo SHA512 $(PACKAGE)-$(VERSION).tar.bz2; fi
+
