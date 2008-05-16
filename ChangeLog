@@ -1,3 +1,9 @@
+2008-05-16  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Fix crash due to accessing invalid memory when reading the
+   config file (patch by Federico G. Schwindt, thanks).
+
+
 2008-05-15  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * New release: 0.4.0.

@@ -308,8 +308,6 @@ void dict_read_rc_file(DictData *dd)
 
 		geo = xfce_rc_read_entry(rc, "geometry", geo);
 		parse_geometry(dd, geo);
-
-		xfce_rc_close(rc);
 	}
 
 	dd->mode_default = mode_default;
@@ -326,6 +324,8 @@ void dict_read_rc_file(DictData *dd)
 	dd->dictionary = g_strdup(dict);
 	dd->spell_bin = g_strdup(spell_bin);
 	dd->spell_dictionary = g_strdup(spell_dictionary);
+
+	xfce_rc_close(rc);
 }
 
 
