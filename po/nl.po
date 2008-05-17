@@ -1,0 +1,328 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce4 Dictionary\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2008-05-16 12:25+0100\n"
+"Last-Translator: Vincent Tunru <imnotb@gmail.com>\n"
+"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+msgid "A plugin to query different dictionaries."
+msgstr "Een plugin om verschillende woordenboeken te raadplegen."
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+msgid "Dictionary"
+msgstr "Woordenboek"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:370
+msgid "Look up a word"
+msgstr "Een woord opzoeken"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:429
+#: ../src/xfce4-dict.c:206
+#: ../lib/aspell.c:198
+#: ../lib/dictd.c:138
+#: ../lib/gui.c:96
+msgid "Ready."
+msgstr "Gereed."
+
+#. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
+#: ../src/xfce4-dict.c:54
+msgid "Show help options"
+msgstr ""
+
+#: ../src/xfce4-dict.c:56
+msgid "Search the given text using a Dict server(RFC 2229)"
+msgstr "Zoek de gegeven tekst op met behulp van een Dict server (RFC 2229)"
+
+#: ../src/xfce4-dict.c:57
+msgid "Search the given text using a web-based search engine"
+msgstr "Zoek de gegeven tekst op met behulp van een internet-zoekmachine"
+
+#: ../src/xfce4-dict.c:58
+msgid "Check the given text with a spellchecker"
+msgstr "Kijk de gegeven tekst na met de spellingscontrole"
+
+#: ../src/xfce4-dict.c:59
+msgid "Grab the focus on the text field in the panel"
+msgstr "Plaats de focus op het tekst-invoerveld in het paneel"
+
+#: ../src/xfce4-dict.c:60
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr "Start het onafhankelijke programma ook als de plugin voor het paneel geladen is"
+
+#: ../src/xfce4-dict.c:61
+msgid "Show version information"
+msgstr "Geef versie-informatie weer"
+
+#: ../src/xfce4-dict.c:134
+msgid "[TEXT]"
+msgstr "[TEKST]"
+
+#: ../src/xfce4-dict.c:158
+#, c-format
+msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
+msgstr ""
+
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:339
+msgid "A client program to query different dictionaries."
+msgstr "Een programma om verschillende woordenboeken te raadplegen."
+
+#: ../src/xfce4-dict.desktop.in.h:2
+msgid "Dictionary Client"
+msgstr "Woordenboek"
+
+#: ../src/xfce4-dict.desktop.in.h:3
+#: ../lib/gui.c:189
+#: ../lib/prefs.c:212
+msgid "Xfce4 Dictionary"
+msgstr "Xfce4 Woordenboek"
+
+#: ../lib/aspell.c:75
+#, c-format
+msgid "%d suggestion found."
+msgid_plural "%d suggestions found."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/aspell.c:79
+#, c-format
+msgid "Suggestions for \"%s\":"
+msgstr "Suggesties voor \"%s\":"
+
+#: ../lib/aspell.c:90
+#, c-format
+msgid "\"%s\" is spelled correctly."
+msgstr "\"%s\" is correct gespeld."
+
+#: ../lib/aspell.c:96
+#, c-format
+msgid "No suggestions could be found for \"%s\"."
+msgstr "Geen suggesties gevonden voor \"%s\"."
+
+#. translation hint:
+#. * Error while executing <spell command, e.g. "aspell"> (<error message>)
+#: ../lib/aspell.c:122
+#, c-format
+msgid "Error while executing \"%s\" (%s)."
+msgstr "Fout bij het uitvoeren van \"%s\" (%s)."
+
+#: ../lib/aspell.c:158
+msgid "Please set the aspell command in the preferences dialog."
+msgstr "Geef het aspell commando op onder Voorkeuren."
+
+#: ../lib/aspell.c:164
+#: ../lib/common.c:200
+msgid "Invalid input."
+msgstr "Ongeldige invoer."
+
+#: ../lib/aspell.c:202
+#, c-format
+msgid "Process failed (%s)"
+msgstr "Fout bij verwerken (%s)"
+
+#: ../lib/common.c:171
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "De browser kon niet geopend worden, controleer uw Voorkeuren."
+
+#: ../lib/common.c:210
+msgid "Invalid non-UTF8 input."
+msgstr "Ongeldige invoer (geen UTF-8)."
+
+#: ../lib/dictd.c:112
+#: ../lib/dictd.c:375
+msgid "Could not connect to server."
+msgstr "Kon geen verbinding maken met de server."
+
+#: ../lib/dictd.c:119
+#: ../lib/dictd.c:157
+#: ../lib/dictd.c:397
+msgid "Unknown error while quering the server."
+msgstr "Onbekende fout bij het raadplegen van de server."
+
+#: ../lib/dictd.c:127
+#, fuzzy
+msgid "Server not ready."
+msgstr "De server is niet klaar."
+
+#: ../lib/dictd.c:140
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Kon geen term vinden voor \"%s\"."
+
+#: ../lib/dictd.c:162
+#, c-format
+msgid "%d definition found."
+msgid_plural "%d definitions found."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/dictd.c:352
+#, c-format
+msgid "Querying %s..."
+msgstr "%s aan het raadplegen..."
+
+#: ../lib/dictd.c:392
+msgid "The server doesn't offer any databases."
+msgstr "Deze server biedt geen woordenlijsten aan."
+
+#: ../lib/gui.c:146
+msgid "_File"
+msgstr "_Bestand"
+
+#: ../lib/gui.c:162
+msgid "_Help"
+msgstr "_Help"
+
+#: ../lib/gui.c:212
+msgid "Text to search:"
+msgstr "Tekst om op te zoeken:"
+
+#: ../lib/gui.c:258
+msgid "Search with:"
+msgstr "Zoek met:"
+
+#: ../lib/gui.c:262
+#: ../lib/prefs.c:247
+#: ../lib/prefs.c:341
+msgid "Dict"
+msgstr "Dict"
+
+#: ../lib/gui.c:268
+#: ../lib/prefs.c:256
+#: ../lib/prefs.c:448
+msgid "Web"
+msgstr "Internet-zoekmachine"
+
+#: ../lib/gui.c:274
+#: ../lib/prefs.c:265
+msgid "Spellcheck"
+msgstr "Spellingscontrole"
+
+#: ../lib/gui.c:343
+msgid "Developer"
+msgstr "Ontwikkelaar"
+
+#: ../lib/prefs.c:107
+#, fuzzy
+msgid "You have chosen an invalid dictionary entry."
+msgstr "U heeft een ongeldige term uit het woordenboek gekozen."
+
+#: ../lib/prefs.c:172
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Duits <-> Engels"
+
+#: ../lib/prefs.c:173
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Duits <-> Frans"
+
+#: ../lib/prefs.c:174
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Duits <-> Spaans"
+
+#: ../lib/prefs.c:175
+msgid "dict.leo.org - German <-> Italian"
+msgstr "dict.leo.org - Duits <-> Italiaans"
+
+#: ../lib/prefs.c:176
+msgid "dict.leo.org - German <-> Chinese"
+msgstr "dict.leo.org - Duits <-> Chinees"
+
+#: ../lib/prefs.c:177
+msgid "dist.cc - Dictionary"
+msgstr "dist.cc - Woordenboek"
+
+#: ../lib/prefs.c:178
+msgid "Dictionary.com"
+msgstr "Dictionary.com"
+
+#: ../lib/prefs.c:179
+msgid "TheFreeDictionary.com"
+msgstr "TheFreeDictionary.com"
+
+#: ../lib/prefs.c:180
+msgid "Clear"
+msgstr "Wissen"
+
+#: ../lib/prefs.c:239
+msgid "General"
+msgstr "Algemeen"
+
+#: ../lib/prefs.c:241
+msgid "<b>Default search method:</b>"
+msgstr "<b>Standaard-zoekmethode:</b>"
+
+#: ../lib/prefs.c:274
+msgid "Last used method"
+msgstr "Laatstgebruikte methode"
+
+#: ../lib/prefs.c:288
+msgid "<b>Panel text field:</b>"
+msgstr "<b>Invoerveld in paneel:</b>"
+
+#: ../lib/prefs.c:294
+msgid "Show text field in the panel"
+msgstr "Invoerveld weergeven in paneel"
+
+#. panel entry size
+#: ../lib/prefs.c:301
+msgid "Text field size:"
+msgstr "Grootte invoerveld:"
+
+#. server address
+#: ../lib/prefs.c:344
+msgid "Server:"
+msgstr "Server:"
+
+#. server port
+#: ../lib/prefs.c:356
+#, fuzzy
+msgid "Server Port:"
+msgstr "Poort server:"
+
+#. dictionary
+#: ../lib/prefs.c:364
+#: ../lib/prefs.c:508
+msgid "Dictionary:"
+msgstr "Woordenboek:"
+
+#: ../lib/prefs.c:368
+msgid "* (use all)"
+msgstr "* (alle gebruiken)"
+
+#: ../lib/prefs.c:370
+msgid "! (use all, stop after first match)"
+msgstr "! (alle gebruiken, stoppen na de eerste geldige term)"
+
+#: ../lib/prefs.c:450
+msgid "<b>Web search URL:</b>"
+msgstr "<b>URL van internet-zoekmachine:</b>"
+
+#: ../lib/prefs.c:456
+msgid "URL:"
+msgstr "URL:"
+
+# "Variabele" used in need of a better translation of "placeholder"
+#: ../lib/prefs.c:476
+#, fuzzy
+msgid ""
+"Enter an URL to a web site which offer translation or dictionary services.\n"
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Geef een URL in van een website die een woordenboek levert.\n"
+"Gebruik {word} als variabele voor het op te zoeken woord."
+
+#: ../lib/prefs.c:495
+msgid "Aspell"
+msgstr "Aspell"
+
+#: ../lib/prefs.c:497
+msgid "Aspell program:"
+msgstr "Aspell-programma:"
+
