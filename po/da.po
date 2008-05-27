@@ -1,0 +1,218 @@
+# translation of xfce4-dict-plugin to Danish
+# Copyright (C) 2007 THE xfce4-dict-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-dict-plugin package.
+# Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-dict-plugin\n"
+"POT-Creation-Date: 2006-12-11 22:24+0100\n"
+"PO-Revision-Date: 2008-05-17 15:16+0100\n"
+"Last-Translator: Jens Hyllegaard <jens.hyllegaard@gmail.com>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/dict.c:358
+#: ../panel-plugin/dict.c:822
+msgid "Could not connect to server."
+msgstr "Kunne ikke tilslutte til serveren"
+
+#: ../panel-plugin/dict.c:365
+#: ../panel-plugin/dict.c:390
+#: ../panel-plugin/dict.c:844
+msgid "Unknown error while quering the server."
+msgstr "Ukendt fejl ved forespørgsel til serveren."
+
+#: ../panel-plugin/dict.c:373
+msgid "Server not ready."
+msgstr "Serveren er ikke klar."
+
+#: ../panel-plugin/dict.c:384
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Kunne ikke finde nogen træfninger for \"%s\"."
+
+#: ../panel-plugin/dict.c:395
+#, c-format
+msgid "%d definition(s) found."
+msgstr "%d definition(er) fundet."
+
+#: ../panel-plugin/dict.c:512
+#, c-format
+msgid "Querying the server %s..."
+msgstr "Forespørger serveren %s..."
+
+#: ../panel-plugin/dict.c:565
+msgid "Invalid input."
+msgstr "Ugyldige inddata"
+
+#: ../panel-plugin/dict.c:575
+msgid "Invalid non-UTF8 input."
+msgstr "Ugyldige ikke-UTF8-inddata."
+
+#: ../panel-plugin/dict.c:637
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "Browseren kunne ikke åbnes. Kontrollér venligst dine indstillinger."
+
+#: ../panel-plugin/dict.c:839
+msgid "The server doesn't offer any databases."
+msgstr "Serveren tilbyder ikke nogle databaser."
+
+#: ../panel-plugin/dict.c:894
+msgid "You have chosen an invalid dictionary entry."
+msgstr "Du har valgt et ugyldigt ordbogsemne."
+
+#: ../panel-plugin/dict.c:1009
+msgid "Properties"
+msgstr "Egenskaber"
+
+#: ../panel-plugin/dict.c:1025
+msgid "Dictionary plugin"
+msgstr "Ordbogs-udvidelsesmodul"
+
+#. server address
+#: ../panel-plugin/dict.c:1042
+msgid "Server:"
+msgstr "Server:"
+
+#. server port
+#: ../panel-plugin/dict.c:1054
+msgid "Server Port:"
+msgstr "Serverport:"
+
+#. dictionary
+#: ../panel-plugin/dict.c:1062
+#: ../panel-plugin/dict.c:1222
+msgid "Dictionary:"
+msgstr "Ordbog:"
+
+#: ../panel-plugin/dict.c:1066
+msgid "* (use all)"
+msgstr "* (brug alle)"
+
+#: ../panel-plugin/dict.c:1068
+msgid "! (use all, stop after first match)"
+msgstr "! (brug alle, stop ved første træf)"
+
+#: ../panel-plugin/dict.c:1128
+msgid "Use a DICT server"
+msgstr "Brug en DICT-Server"
+
+#: ../panel-plugin/dict.c:1147
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Tysk <-> Engelsk"
+
+#: ../panel-plugin/dict.c:1155
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Tysk <-> Fransk"
+
+#: ../panel-plugin/dict.c:1163
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Tysk <-> Spansk"
+
+#: ../panel-plugin/dict.c:1170
+msgid "Use another website"
+msgstr "Brug et andet netsted"
+
+#: ../panel-plugin/dict.c:1178
+msgid "URL:"
+msgstr "URL:"
+
+#: ../panel-plugin/dict.c:1191
+msgid ""
+"Enter an URL to a web site which offer translation services.\n"
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Indtast en URL til et netsted der tilbyder oversættelses-tjenester.\n"
+"Brug {word} som pladsholder for det søgte ord."
+
+#: ../panel-plugin/dict.c:1197
+msgid "Use a web site"
+msgstr "Brug et netsted"
+
+#: ../panel-plugin/dict.c:1211
+msgid "Aspell program:"
+msgstr "Aspell-program:"
+
+#: ../panel-plugin/dict.c:1252
+msgid "Use Aspell"
+msgstr "Brug Aspell"
+
+#: ../panel-plugin/dict.c:1266
+msgid "Show text field in the panel"
+msgstr "Vis tekstfelt i panelet"
+
+#: ../panel-plugin/dict.c:1269
+msgid "This option can only be used when the panel has a horizontal orientation."
+msgstr "Denne indstilling kan kun bruges når panelet ligger vandret. "
+
+#. panel entry size
+#: ../panel-plugin/dict.c:1275
+msgid "Text field size:"
+msgstr "Tekstfeltstørrelse:"
+
+#: ../panel-plugin/dict.c:1335
+#: ../panel-plugin/dict.c:1644
+msgid "Ready."
+msgstr "Klar."
+
+#: ../panel-plugin/dict.c:1399
+msgid "Text to search:"
+msgstr "Søgetekst:"
+
+#: ../panel-plugin/dict.c:1446
+msgid "Search with:"
+msgstr "Søg med:"
+
+#: ../panel-plugin/dict.c:1450
+#: ../panel-plugin/dict.desktop.in.in.h:2
+msgid "Dict"
+msgstr "Dict"
+
+#: ../panel-plugin/dict.c:1456
+msgid "Web"
+msgstr "Internet"
+
+#: ../panel-plugin/dict.c:1462
+msgid "Spellcheck"
+msgstr "Stavekontrol"
+
+#: ../panel-plugin/dict.c:1504
+#: ../panel-plugin/dict.desktop.in.in.h:1
+msgid "A plugin to query a Dict server."
+msgstr "Et udvidelsesmodul der forespørger mod en Dict-server."
+
+#: ../panel-plugin/dict.c:1508
+msgid "Developer"
+msgstr "Udvikler"
+
+#: ../panel-plugin/dict.c:1596
+msgid "Look up a word"
+msgstr "Slå et ord op"
+
+#: ../panel-plugin/xfce4-popup-dict.c:97
+#, c-format
+msgid "Usage: %s [options]\n"
+msgstr "Brug: %s [tilvalg]\n"
+
+#: ../panel-plugin/xfce4-popup-dict.c:98
+#, c-format
+msgid "Options:\n"
+msgstr "Tilvalg:\n"
+
+#: ../panel-plugin/xfce4-popup-dict.c:99
+#, c-format
+msgid "    -t, --text-field    grap the focus on the text field in the panel\n"
+msgstr "    -t, --text-field    hent fokus på tekstfeltet i panelet\n"
+
+#: ../panel-plugin/xfce4-popup-dict.c:100
+#, c-format
+msgid "    -h, --help          show this help and exit\n"
+msgstr "    -h, --help          vis denne hjælpetekst og afslut\n"
+
+#: ../panel-plugin/xfce4-popup-dict.c:101
+#, c-format
+msgid "If called without any options, the xfce4-dict-plugin main window is shown.\n"
+msgstr "Hvis der kaldes uden tilvalg, vil hovedvinduet for xfce-dict-plugin blive vist.\n"
+
