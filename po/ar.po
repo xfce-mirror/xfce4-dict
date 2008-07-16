@@ -23,11 +23,8 @@ msgstr ""
 msgid "Look up a word"
 msgstr ""
 
-#: ../panel-plugin/xfce4-dict-plugin.c:429
-#: ../src/xfce4-dict.c:206
-#: ../lib/aspell.c:198
-#: ../lib/dictd.c:138
-#: ../lib/gui.c:96
+#: ../panel-plugin/xfce4-dict-plugin.c:429 ../src/xfce4-dict.c:206
+#: ../lib/aspell.c:198 ../lib/dictd.c:138 ../lib/gui.c:96
 msgid "Ready."
 msgstr ""
 
@@ -69,8 +66,7 @@ msgstr ""
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:339
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:339
 msgid "A client program to query different dictionaries."
 msgstr ""
 
@@ -78,9 +74,7 @@ msgstr ""
 msgid "Dictionary Client"
 msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:3
-#: ../lib/gui.c:189
-#: ../lib/prefs.c:212
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:212
 msgid "Xfce4 Dictionary"
 msgstr ""
 
@@ -117,8 +111,7 @@ msgstr ""
 msgid "Please set the aspell command in the preferences dialog."
 msgstr ""
 
-#: ../lib/aspell.c:164
-#: ../lib/common.c:200
+#: ../lib/aspell.c:164 ../lib/common.c:200
 msgid "Invalid input."
 msgstr ""
 
@@ -135,14 +128,11 @@ msgstr ""
 msgid "Invalid non-UTF8 input."
 msgstr ""
 
-#: ../lib/dictd.c:112
-#: ../lib/dictd.c:375
+#: ../lib/dictd.c:112 ../lib/dictd.c:375
 msgid "Could not connect to server."
 msgstr ""
 
-#: ../lib/dictd.c:119
-#: ../lib/dictd.c:157
-#: ../lib/dictd.c:397
+#: ../lib/dictd.c:119 ../lib/dictd.c:157 ../lib/dictd.c:397
 msgid "Unknown error while quering the server."
 msgstr ""
 
@@ -187,20 +177,15 @@ msgstr ""
 msgid "Search with:"
 msgstr ""
 
-#: ../lib/gui.c:262
-#: ../lib/prefs.c:247
-#: ../lib/prefs.c:341
+#: ../lib/gui.c:262 ../lib/prefs.c:247 ../lib/prefs.c:341
 msgid "Dict"
 msgstr ""
 
-#: ../lib/gui.c:268
-#: ../lib/prefs.c:256
-#: ../lib/prefs.c:448
+#: ../lib/gui.c:268 ../lib/prefs.c:256 ../lib/prefs.c:448
 msgid "Web"
 msgstr ""
 
-#: ../lib/gui.c:274
-#: ../lib/prefs.c:265
+#: ../lib/gui.c:274 ../lib/prefs.c:265
 msgid "Spellcheck"
 msgstr ""
 
@@ -284,8 +269,7 @@ msgid "Server Port:"
 msgstr ""
 
 #. dictionary
-#: ../lib/prefs.c:364
-#: ../lib/prefs.c:508
+#: ../lib/prefs.c:364 ../lib/prefs.c:508
 msgid "Dictionary:"
 msgstr ""
 
@@ -318,4 +302,3 @@ msgstr ""
 #: ../lib/prefs.c:497
 msgid "Aspell program:"
 msgstr ""
-
