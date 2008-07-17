@@ -17,7 +17,7 @@ xfce4_dict_plugin_LDADD =						\
 	$(LIBXFCE4PANEL_LIBS)						\
 	$(LIBXFCEGUI4_LIBS)							\
 	@GTHREAD_LIBS@								\
-	../lib/libdict.a
+	$(top_builddir)/lib/libdict.la
 
 
 # .desktop file

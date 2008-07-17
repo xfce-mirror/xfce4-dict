@@ -1,9 +1,9 @@
 
 
-noinst_LIBRARIES = 								\
-	libdict.a
+noinst_LTLIBRARIES = 							\
+	libdict.la
 
-libdict_a_SOURCES =								\
+libdict_la_SOURCES =							\
 	libdict.h									\
 	aspell.c									\
 	aspell.h									\
@@ -16,12 +16,18 @@ libdict_a_SOURCES =								\
 	prefs.c										\
 	prefs.h
 
-libdict_a_CFLAGS =								\
+libdict_la_CFLAGS =								\
 	-I$(top_srcdir)								\
 	$(LIBXFCEGUI4_CFLAGS)						\
 	$(LIBXFCE4PANEL_CFLAGS)						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
 	@GTHREAD_CFLAGS@
+
+libdict_la_LIBADD =								\
+	$(LIBXFCE4PANEL_LIBS)						\
+	$(LIBXFCEGUI4_LIBS)							\
+	@GTHREAD_LIBS@
+
 
 noinst_DATA = 									\
 	inline-icon.h
