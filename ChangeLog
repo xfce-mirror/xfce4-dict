@@ -2,6 +2,7 @@
 
  * Build the static library part with libtool to get correctly linked
    (fixes #4235).
+ * Add some border spaces in the preferences dialog for better look&feel.
 
 
 2008-05-16  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

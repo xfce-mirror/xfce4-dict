@@ -235,6 +235,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		notebook_vbox = gtk_vbox_new(FALSE, 2);
 		gtk_widget_show(notebook_vbox);
 		inner_vbox = gtk_vbox_new(FALSE, 5);
+		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("General")));
 
@@ -337,6 +338,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		notebook_vbox = gtk_vbox_new(FALSE, 2);
 		gtk_widget_show(notebook_vbox);
 		inner_vbox = gtk_vbox_new(FALSE, 5);
+		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("Dict")));
 
@@ -444,6 +446,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		notebook_vbox = gtk_vbox_new(FALSE, 5);
 		gtk_widget_show(notebook_vbox);
 		inner_vbox = gtk_vbox_new(FALSE, 5);
+		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("Web")));
 
@@ -491,6 +494,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		notebook_vbox = gtk_vbox_new(FALSE, 5);
 		gtk_widget_show(notebook_vbox);
 		inner_vbox = gtk_vbox_new(FALSE, 5);
+		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("Aspell")));
 
