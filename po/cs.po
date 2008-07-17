@@ -1,14 +1,14 @@
 # Czech translation of the xfce4-dict-plugin package.
 # Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin package.
-# Michal Várady <miko.vaji@gmail.com>, 2006.
+# Michal Várady <miko.vaji@gmail.com>, 2006-2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-17 16:20+0200\n"
-"PO-Revision-Date: 2008-05-12 00:08+0100\n"
+"PO-Revision-Date: 2008-07-17 16:36+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,8 +28,11 @@ msgstr "Slovník"
 msgid "Look up a word"
 msgstr "Vyhledat slovo"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:429 ../src/xfce4-dict.c:206
-#: ../lib/aspell.c:198 ../lib/dictd.c:138 ../lib/gui.c:96
+#: ../panel-plugin/xfce4-dict-plugin.c:429
+#: ../src/xfce4-dict.c:206
+#: ../lib/aspell.c:198
+#: ../lib/dictd.c:138
+#: ../lib/gui.c:96
 msgid "Ready."
 msgstr "Připraven."
 
@@ -51,9 +54,8 @@ msgid "Check the given text with a spellchecker"
 msgstr "Zkontrolovat zadaný text kontrolou pravopisu"
 
 #: ../src/xfce4-dict.c:59
-#, fuzzy
 msgid "Grab the focus on the text field in the panel"
-msgstr "Zobrazit textové pole v panelu"
+msgstr "Umístit kurzor do textového pole v panelu"
 
 #: ../src/xfce4-dict.c:60
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -72,16 +74,18 @@ msgstr "[TEXT]"
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr "(sestaveno na %s s GTK %d.%d.%d, GLib %d.%d.%d)"
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:339
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:339
 msgid "A client program to query different dictionaries."
 msgstr "Klientský program pro získávání dat z různých slovníků."
 
 #: ../src/xfce4-dict.desktop.in.h:2
-#, fuzzy
 msgid "Dictionary Client"
 msgstr "Klient slovníku"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:213
+#: ../src/xfce4-dict.desktop.in.h:3
+#: ../lib/gui.c:189
+#: ../lib/prefs.c:213
 msgid "Xfce4 Dictionary"
 msgstr "Slovník Xfce4"
 
@@ -119,7 +123,8 @@ msgstr "Chyba při spouštění \"%s\" (%s)."
 msgid "Please set the aspell command in the preferences dialog."
 msgstr "Příkaz aspell nastavte v dialogovém okně Předvolby."
 
-#: ../lib/aspell.c:164 ../lib/common.c:200
+#: ../lib/aspell.c:164
+#: ../lib/common.c:200
 msgid "Invalid input."
 msgstr "Neplatný vstup."
 
@@ -136,11 +141,14 @@ msgstr "Nelze otevřít prohlížeč. Ověřte nastavení."
 msgid "Invalid non-UTF8 input."
 msgstr "Neplatný vstup v kódování jiném než UTF8."
 
-#: ../lib/dictd.c:112 ../lib/dictd.c:375
+#: ../lib/dictd.c:112
+#: ../lib/dictd.c:375
 msgid "Could not connect to server."
 msgstr "Nelze se připojit k serveru"
 
-#: ../lib/dictd.c:119 ../lib/dictd.c:157 ../lib/dictd.c:397
+#: ../lib/dictd.c:119
+#: ../lib/dictd.c:157
+#: ../lib/dictd.c:397
 msgid "Unknown error while quering the server."
 msgstr "Při dotazu na server nastala neznámá chyba."
 
@@ -186,15 +194,20 @@ msgstr "Text pro vyhledání:"
 msgid "Search with:"
 msgstr "Hledat pomocí:"
 
-#: ../lib/gui.c:262 ../lib/prefs.c:249 ../lib/prefs.c:344
+#: ../lib/gui.c:262
+#: ../lib/prefs.c:249
+#: ../lib/prefs.c:344
 msgid "Dict"
 msgstr "Dict"
 
-#: ../lib/gui.c:268 ../lib/prefs.c:258 ../lib/prefs.c:452
+#: ../lib/gui.c:268
+#: ../lib/prefs.c:258
+#: ../lib/prefs.c:452
 msgid "Web"
 msgstr "Web"
 
-#: ../lib/gui.c:274 ../lib/prefs.c:267
+#: ../lib/gui.c:274
+#: ../lib/prefs.c:267
 msgid "Spellcheck"
 msgstr "Kontrola pravopisu"
 
@@ -278,7 +291,8 @@ msgid "Server Port:"
 msgstr "Port serveru:"
 
 #. dictionary
-#: ../lib/prefs.c:367 ../lib/prefs.c:512
+#: ../lib/prefs.c:367
+#: ../lib/prefs.c:512
 msgid "Dictionary:"
 msgstr "Slovník:"
 
@@ -299,13 +313,8 @@ msgid "URL:"
 msgstr "Adresa URL:"
 
 #: ../lib/prefs.c:480
-#, fuzzy
-msgid ""
-"Enter an URL to a web site which offer translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Zadejte adresu URL webové stránky, která nabízí překlady nebo slovníkové\n"
-"služby. Použijte {word} jako zástupný řetězec pro hledané slovo."
+msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Zadejte adresu URL webové stránky, která nabízí překlady nebo slovníkové služby. Použijte {word} jako zástupný řetězec pro hledané slovo."
 
 #: ../lib/prefs.c:499
 msgid "Aspell"
@@ -317,17 +326,14 @@ msgstr "Aplikace Aspell:"
 
 #~ msgid "Properties"
 #~ msgstr "Vlastnosti"
-
 #~ msgid "Use a DICT server"
 #~ msgstr "Použít server DICT"
-
 #~ msgid "Use another website"
 #~ msgstr "Použít jinou webovou stránku"
-
 #~ msgid "Use a web site"
 #~ msgstr "Použít webovou stránku"
-
 #~ msgid ""
 #~ "This option can only be used when the panel has a horizontal orientation."
 #~ msgstr ""
 #~ "Tuto možnost lze použít pouze tehdy, je-li panel ve vodorovné pozici."
+
