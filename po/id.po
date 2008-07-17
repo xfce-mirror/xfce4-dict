@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-22 13:11+0200\n"
+"POT-Creation-Date: 2008-07-17 16:20+0200\n"
 "PO-Revision-Date: 2008-06-20 15:51+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
@@ -79,7 +79,7 @@ msgstr "Program klien untuk kueri beragam kamus."
 msgid "Dictionary Client"
 msgstr "Klien Kamus"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:212
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:213
 msgid "Xfce4 Dictionary"
 msgstr "Kamus Xfce4"
 
@@ -180,15 +180,15 @@ msgstr "Teks untuk ditelusuri:"
 msgid "Search with:"
 msgstr "Telusuri dengan:"
 
-#: ../lib/gui.c:262 ../lib/prefs.c:247 ../lib/prefs.c:341
+#: ../lib/gui.c:262 ../lib/prefs.c:249 ../lib/prefs.c:344
 msgid "Dict"
 msgstr "Kamus"
 
-#: ../lib/gui.c:268 ../lib/prefs.c:256 ../lib/prefs.c:448
+#: ../lib/gui.c:268 ../lib/prefs.c:258 ../lib/prefs.c:452
 msgid "Web"
 msgstr "Web"
 
-#: ../lib/gui.c:274 ../lib/prefs.c:265
+#: ../lib/gui.c:274 ../lib/prefs.c:267
 msgid "Spellcheck"
 msgstr "Pemeriksa ejaan"
 
@@ -196,114 +196,115 @@ msgstr "Pemeriksa ejaan"
 msgid "Developer"
 msgstr "Pengembang"
 
-#: ../lib/prefs.c:107
+#: ../lib/prefs.c:108
 msgid "You have chosen an invalid dictionary entry."
 msgstr "Anda telah memilih entri kamus yang tidak sah."
 
-#: ../lib/prefs.c:172
+#: ../lib/prefs.c:173
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Jerman <-> Inggris"
 
-#: ../lib/prefs.c:173
+#: ../lib/prefs.c:174
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Jerman <-> Prancis"
 
-#: ../lib/prefs.c:174
+#: ../lib/prefs.c:175
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Jerman <-> Spanyol"
 
-#: ../lib/prefs.c:175
+#: ../lib/prefs.c:176
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Jerman <-> Italia"
 
-#: ../lib/prefs.c:176
+#: ../lib/prefs.c:177
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Jerman <-> China"
 
-#: ../lib/prefs.c:177
+#: ../lib/prefs.c:178
 msgid "dist.cc - Dictionary"
 msgstr "dist.cc - Kamus"
 
-#: ../lib/prefs.c:178
+#: ../lib/prefs.c:179
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:179
+#: ../lib/prefs.c:180
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:180
+#: ../lib/prefs.c:181
 msgid "Clear"
 msgstr "Bersihkan"
 
-#: ../lib/prefs.c:239
+#: ../lib/prefs.c:241
 msgid "General"
 msgstr "Umum"
 
-#: ../lib/prefs.c:241
+#: ../lib/prefs.c:243
 msgid "<b>Default search method:</b>"
 msgstr "<b>Metode penelusuran standar:</b>"
 
-#: ../lib/prefs.c:274
+#: ../lib/prefs.c:276
 msgid "Last used method"
 msgstr "Metode yang terakhir kali digunakan"
 
-#: ../lib/prefs.c:288
+#: ../lib/prefs.c:290
 msgid "<b>Panel text field:</b>"
 msgstr "<b>Ruang teks panel:</b>"
 
-#: ../lib/prefs.c:294
+#: ../lib/prefs.c:296
 msgid "Show text field in the panel"
 msgstr "Tampilkan ruang teks di panel"
 
 #. panel entry size
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:303
 msgid "Text field size:"
 msgstr "Ukuran ruang teks:"
 
 #. server address
-#: ../lib/prefs.c:344
+#: ../lib/prefs.c:347
 msgid "Server:"
 msgstr "Server:"
 
 #. server port
-#: ../lib/prefs.c:356
+#: ../lib/prefs.c:359
 msgid "Server Port:"
 msgstr "Pangkalan Server:"
 
 #. dictionary
-#: ../lib/prefs.c:364 ../lib/prefs.c:508
+#: ../lib/prefs.c:367 ../lib/prefs.c:512
 msgid "Dictionary:"
 msgstr "Kamus:"
 
-#: ../lib/prefs.c:368
+#: ../lib/prefs.c:371
 msgid "* (use all)"
 msgstr "* (gunakan semua)"
 
-#: ../lib/prefs.c:370
+#: ../lib/prefs.c:373
 msgid "! (use all, stop after first match)"
 msgstr "! (gunakan semua, stop setelah cocok pertama kali)"
 
-#: ../lib/prefs.c:450
+#: ../lib/prefs.c:454
 msgid "<b>Web search URL:</b>"
 msgstr "<b>URL penelusuran web:</b>"
 
-#: ../lib/prefs.c:456
+#: ../lib/prefs.c:460
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:476
+#: ../lib/prefs.c:480
+#, fuzzy
 msgid ""
-"Enter an URL to a web site which offer translation or dictionary services.\n"
+"Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
 "Masukkan URL situs web yang menawarkan penerjemahan atau layanan kamus.\n"
 "Gunakan {kata} sebagai tempat peletakan kata yang ditelusuri."
 
-#: ../lib/prefs.c:495
+#: ../lib/prefs.c:499
 msgid "Aspell"
 msgstr "Aspell"
 
-#: ../lib/prefs.c:497
+#: ../lib/prefs.c:501
 msgid "Aspell program:"
 msgstr "Program Aspell:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:42+0000\n"
+"POT-Creation-Date: 2008-07-17 16:20+0200\n"
 "PO-Revision-Date: 2008-07-08 17:39+0300\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -81,7 +81,7 @@ msgstr "Клієнтська програма для запиту різних �
 msgid "Dictionary Client"
 msgstr "Клієнт словника"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:212
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:213
 msgid "Xfce4 Dictionary"
 msgstr "Словник Xfce4"
 
@@ -187,15 +187,15 @@ msgstr "Текст для пошуку:"
 msgid "Search with:"
 msgstr "Шукати з:"
 
-#: ../lib/gui.c:262 ../lib/prefs.c:247 ../lib/prefs.c:341
+#: ../lib/gui.c:262 ../lib/prefs.c:249 ../lib/prefs.c:344
 msgid "Dict"
 msgstr "Словник"
 
-#: ../lib/gui.c:268 ../lib/prefs.c:256 ../lib/prefs.c:448
+#: ../lib/gui.c:268 ../lib/prefs.c:258 ../lib/prefs.c:452
 msgid "Web"
 msgstr "Веб"
 
-#: ../lib/gui.c:274 ../lib/prefs.c:265
+#: ../lib/gui.c:274 ../lib/prefs.c:267
 msgid "Spellcheck"
 msgstr "Перевірка орфографії"
 
@@ -203,114 +203,115 @@ msgstr "Перевірка орфографії"
 msgid "Developer"
 msgstr "Розробник"
 
-#: ../lib/prefs.c:107
+#: ../lib/prefs.c:108
 msgid "You have chosen an invalid dictionary entry."
 msgstr "Ви вибрали неправильний елемент словника."
 
-#: ../lib/prefs.c:172
+#: ../lib/prefs.c:173
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Німецька <-> Англійська"
 
-#: ../lib/prefs.c:173
+#: ../lib/prefs.c:174
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Німецька <-> Французька"
 
-#: ../lib/prefs.c:174
+#: ../lib/prefs.c:175
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Німецька <-> Іспанська"
 
-#: ../lib/prefs.c:175
+#: ../lib/prefs.c:176
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Німецька <-> Англійська"
 
-#: ../lib/prefs.c:176
+#: ../lib/prefs.c:177
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Німецька <-> Англійська"
 
-#: ../lib/prefs.c:177
+#: ../lib/prefs.c:178
 msgid "dist.cc - Dictionary"
 msgstr "dist.cc - Словник"
 
-#: ../lib/prefs.c:178
+#: ../lib/prefs.c:179
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:179
+#: ../lib/prefs.c:180
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:180
+#: ../lib/prefs.c:181
 msgid "Clear"
 msgstr "Очистити"
 
-#: ../lib/prefs.c:239
+#: ../lib/prefs.c:241
 msgid "General"
 msgstr "Основне"
 
-#: ../lib/prefs.c:241
+#: ../lib/prefs.c:243
 msgid "<b>Default search method:</b>"
 msgstr "<b>Типовий метод пошуку:</b>"
 
-#: ../lib/prefs.c:274
+#: ../lib/prefs.c:276
 msgid "Last used method"
 msgstr "Останній використовуваний метод"
 
-#: ../lib/prefs.c:288
+#: ../lib/prefs.c:290
 msgid "<b>Panel text field:</b>"
 msgstr "<b>Панель текстового поля:</b>"
 
-#: ../lib/prefs.c:294
+#: ../lib/prefs.c:296
 msgid "Show text field in the panel"
 msgstr "Показувати текстове поле в панелі"
 
 #. panel entry size
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:303
 msgid "Text field size:"
 msgstr "Розмір текстового поля:"
 
 #. server address
-#: ../lib/prefs.c:344
+#: ../lib/prefs.c:347
 msgid "Server:"
 msgstr "Сервер:"
 
 #. server port
-#: ../lib/prefs.c:356
+#: ../lib/prefs.c:359
 msgid "Server Port:"
 msgstr "Порт сервера:"
 
 #. dictionary
-#: ../lib/prefs.c:364 ../lib/prefs.c:508
+#: ../lib/prefs.c:367 ../lib/prefs.c:512
 msgid "Dictionary:"
 msgstr "Словник:"
 
-#: ../lib/prefs.c:368
+#: ../lib/prefs.c:371
 msgid "* (use all)"
 msgstr "* (використовувати все)"
 
-#: ../lib/prefs.c:370
+#: ../lib/prefs.c:373
 msgid "! (use all, stop after first match)"
 msgstr "! (використовувати все, зупинятись на першому збігові)"
 
-#: ../lib/prefs.c:450
+#: ../lib/prefs.c:454
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Пошук Web посилань URL:</b>"
 
-#: ../lib/prefs.c:456
+#: ../lib/prefs.c:460
 msgid "URL:"
 msgstr "Посилання URL:"
 
-#: ../lib/prefs.c:476
+#: ../lib/prefs.c:480
+#, fuzzy
 msgid ""
-"Enter an URL to a web site which offer translation or dictionary services.\n"
+"Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
 "Введіть посилання URL на сайт надає послуги перекладу або словника.\n"
 "Використовуйте {слово} як макет для пошуку слова."
 
-#: ../lib/prefs.c:495
+#: ../lib/prefs.c:499
 msgid "Aspell"
 msgstr "Програма Aspell"
 
-#: ../lib/prefs.c:497
+#: ../lib/prefs.c:501
 msgid "Aspell program:"
 msgstr "Програма Aspell:"

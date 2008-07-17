@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-22 13:11+0200\n"
+"POT-Creation-Date: 2008-07-17 16:20+0200\n"
 "PO-Revision-Date: 2008-05-12 00:08+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <xfce-i18n@xfce.org>\n"
@@ -28,11 +28,8 @@ msgstr "Slovník"
 msgid "Look up a word"
 msgstr "Vyhledat slovo"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:429
-#: ../src/xfce4-dict.c:206
-#: ../lib/aspell.c:198
-#: ../lib/dictd.c:138
-#: ../lib/gui.c:96
+#: ../panel-plugin/xfce4-dict-plugin.c:429 ../src/xfce4-dict.c:206
+#: ../lib/aspell.c:198 ../lib/dictd.c:138 ../lib/gui.c:96
 msgid "Ready."
 msgstr "Připraven."
 
@@ -75,8 +72,7 @@ msgstr "[TEXT]"
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr "(sestaveno na %s s GTK %d.%d.%d, GLib %d.%d.%d)"
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:339
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:339
 msgid "A client program to query different dictionaries."
 msgstr "Klientský program pro získávání dat z různých slovníků."
 
@@ -85,9 +81,7 @@ msgstr "Klientský program pro získávání dat z různých slovníků."
 msgid "Dictionary Client"
 msgstr "Klient slovníku"
 
-#: ../src/xfce4-dict.desktop.in.h:3
-#: ../lib/gui.c:189
-#: ../lib/prefs.c:212
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:213
 msgid "Xfce4 Dictionary"
 msgstr "Slovník Xfce4"
 
@@ -125,8 +119,7 @@ msgstr "Chyba při spouštění \"%s\" (%s)."
 msgid "Please set the aspell command in the preferences dialog."
 msgstr "Příkaz aspell nastavte v dialogovém okně Předvolby."
 
-#: ../lib/aspell.c:164
-#: ../lib/common.c:200
+#: ../lib/aspell.c:164 ../lib/common.c:200
 msgid "Invalid input."
 msgstr "Neplatný vstup."
 
@@ -143,14 +136,11 @@ msgstr "Nelze otevřít prohlížeč. Ověřte nastavení."
 msgid "Invalid non-UTF8 input."
 msgstr "Neplatný vstup v kódování jiném než UTF8."
 
-#: ../lib/dictd.c:112
-#: ../lib/dictd.c:375
+#: ../lib/dictd.c:112 ../lib/dictd.c:375
 msgid "Could not connect to server."
 msgstr "Nelze se připojit k serveru"
 
-#: ../lib/dictd.c:119
-#: ../lib/dictd.c:157
-#: ../lib/dictd.c:397
+#: ../lib/dictd.c:119 ../lib/dictd.c:157 ../lib/dictd.c:397
 msgid "Unknown error while quering the server."
 msgstr "Při dotazu na server nastala neznámá chyba."
 
@@ -196,20 +186,15 @@ msgstr "Text pro vyhledání:"
 msgid "Search with:"
 msgstr "Hledat pomocí:"
 
-#: ../lib/gui.c:262
-#: ../lib/prefs.c:247
-#: ../lib/prefs.c:341
+#: ../lib/gui.c:262 ../lib/prefs.c:249 ../lib/prefs.c:344
 msgid "Dict"
 msgstr "Dict"
 
-#: ../lib/gui.c:268
-#: ../lib/prefs.c:256
-#: ../lib/prefs.c:448
+#: ../lib/gui.c:268 ../lib/prefs.c:258 ../lib/prefs.c:452
 msgid "Web"
 msgstr "Web"
 
-#: ../lib/gui.c:274
-#: ../lib/prefs.c:265
+#: ../lib/gui.c:274 ../lib/prefs.c:267
 msgid "Spellcheck"
 msgstr "Kontrola pravopisu"
 
@@ -217,129 +202,132 @@ msgstr "Kontrola pravopisu"
 msgid "Developer"
 msgstr "Vývojář"
 
-#: ../lib/prefs.c:107
+#: ../lib/prefs.c:108
 msgid "You have chosen an invalid dictionary entry."
 msgstr "Zvolili jste neplatnou položku slovníku."
 
-#: ../lib/prefs.c:172
+#: ../lib/prefs.c:173
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Němčina <-> Angličtina"
 
-#: ../lib/prefs.c:173
+#: ../lib/prefs.c:174
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Němčina <-> Francouzština"
 
-#: ../lib/prefs.c:174
+#: ../lib/prefs.c:175
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Němčina <-> Španělstina"
 
-#: ../lib/prefs.c:175
+#: ../lib/prefs.c:176
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Němčina <-> Italština"
 
-#: ../lib/prefs.c:176
+#: ../lib/prefs.c:177
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Němčina <-> Čínština"
 
-#: ../lib/prefs.c:177
+#: ../lib/prefs.c:178
 msgid "dist.cc - Dictionary"
 msgstr "dist.cc - Slovník"
 
-#: ../lib/prefs.c:178
+#: ../lib/prefs.c:179
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:179
+#: ../lib/prefs.c:180
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:180
+#: ../lib/prefs.c:181
 msgid "Clear"
 msgstr "Čistý"
 
-#: ../lib/prefs.c:239
+#: ../lib/prefs.c:241
 msgid "General"
 msgstr "Obecné"
 
-#: ../lib/prefs.c:241
+#: ../lib/prefs.c:243
 msgid "<b>Default search method:</b>"
 msgstr "<b>Výchozí metoda pro hledání:</b>"
 
-#: ../lib/prefs.c:274
+#: ../lib/prefs.c:276
 msgid "Last used method"
 msgstr "Poslední použitá metoda"
 
-#: ../lib/prefs.c:288
+#: ../lib/prefs.c:290
 msgid "<b>Panel text field:</b>"
 msgstr "<b>Textové pole panelu:</b>"
 
-#: ../lib/prefs.c:294
+#: ../lib/prefs.c:296
 msgid "Show text field in the panel"
 msgstr "Zobrazit textové pole v panelu"
 
 #. panel entry size
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:303
 msgid "Text field size:"
 msgstr "Velikost textového pole:"
 
 #. server address
-#: ../lib/prefs.c:344
+#: ../lib/prefs.c:347
 msgid "Server:"
 msgstr "Server:"
 
 #. server port
-#: ../lib/prefs.c:356
+#: ../lib/prefs.c:359
 msgid "Server Port:"
 msgstr "Port serveru:"
 
 #. dictionary
-#: ../lib/prefs.c:364
-#: ../lib/prefs.c:508
+#: ../lib/prefs.c:367 ../lib/prefs.c:512
 msgid "Dictionary:"
 msgstr "Slovník:"
 
-#: ../lib/prefs.c:368
+#: ../lib/prefs.c:371
 msgid "* (use all)"
 msgstr "* (použít vše)"
 
-#: ../lib/prefs.c:370
+#: ../lib/prefs.c:373
 msgid "! (use all, stop after first match)"
 msgstr "! (použít vše, zastavit při první shodě)"
 
-#: ../lib/prefs.c:450
+#: ../lib/prefs.c:454
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Hledání na webové stránce URL:</b>"
 
-#: ../lib/prefs.c:456
+#: ../lib/prefs.c:460
 msgid "URL:"
 msgstr "Adresa URL:"
 
-#: ../lib/prefs.c:476
+#: ../lib/prefs.c:480
+#, fuzzy
 msgid ""
-"Enter an URL to a web site which offer translation or dictionary services.\n"
+"Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
 "Zadejte adresu URL webové stránky, která nabízí překlady nebo slovníkové\n"
 "služby. Použijte {word} jako zástupný řetězec pro hledané slovo."
 
-#: ../lib/prefs.c:495
+#: ../lib/prefs.c:499
 msgid "Aspell"
 msgstr "Aspell"
 
-#: ../lib/prefs.c:497
+#: ../lib/prefs.c:501
 msgid "Aspell program:"
 msgstr "Aplikace Aspell:"
 
 #~ msgid "Properties"
 #~ msgstr "Vlastnosti"
+
 #~ msgid "Use a DICT server"
 #~ msgstr "Použít server DICT"
+
 #~ msgid "Use another website"
 #~ msgstr "Použít jinou webovou stránku"
+
 #~ msgid "Use a web site"
 #~ msgstr "Použít webovou stránku"
+
 #~ msgid ""
 #~ "This option can only be used when the panel has a horizontal orientation."
 #~ msgstr ""
 #~ "Tuto možnost lze použít pouze tehdy, je-li panel ve vodorovné pozici."
-

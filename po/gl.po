@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-22 13:11+0200\n"
+"POT-Creation-Date: 2008-07-17 16:20+0200\n"
 "PO-Revision-Date: 2008-06-24 21:39+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -32,11 +32,8 @@ msgstr "Diccionario"
 msgid "Look up a word"
 msgstr "Buscar unha palabra"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:429
-#: ../src/xfce4-dict.c:206
-#: ../lib/aspell.c:198
-#: ../lib/dictd.c:138
-#: ../lib/gui.c:96
+#: ../panel-plugin/xfce4-dict-plugin.c:429 ../src/xfce4-dict.c:206
+#: ../lib/aspell.c:198 ../lib/dictd.c:138 ../lib/gui.c:96
 msgid "Ready."
 msgstr "Preparado."
 
@@ -63,7 +60,8 @@ msgstr ""
 
 #: ../src/xfce4-dict.c:60
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Iniciar a aplicación independente incluso se se cargou o plugin do panel"
+msgstr ""
+"Iniciar a aplicación independente incluso se se cargou o plugin do panel"
 
 #: ../src/xfce4-dict.c:61
 msgid "Show version information"
@@ -78,8 +76,7 @@ msgstr "[TEXTO]"
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr "(construido en %s con GTK %d.%d.%d, GLib %d.%d.%d)"
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:339
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:339
 msgid "A client program to query different dictionaries."
 msgstr "Un programa cliente para consultar diferentes diccionarios."
 
@@ -87,9 +84,7 @@ msgstr "Un programa cliente para consultar diferentes diccionarios."
 msgid "Dictionary Client"
 msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:3
-#: ../lib/gui.c:189
-#: ../lib/prefs.c:212
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:213
 msgid "Xfce4 Dictionary"
 msgstr "Diccionario de Xfce4"
 
@@ -126,8 +121,7 @@ msgstr "Erro ó executar \"%s\" (%s)."
 msgid "Please set the aspell command in the preferences dialog."
 msgstr "Configure o comando de aspell no diálogo de preferencias."
 
-#: ../lib/aspell.c:164
-#: ../lib/common.c:200
+#: ../lib/aspell.c:164 ../lib/common.c:200
 msgid "Invalid input."
 msgstr "Entrada incorrecta."
 
@@ -144,14 +138,11 @@ msgstr "Non se puido abrir o navegador. Comprobe as súas preferencias."
 msgid "Invalid non-UTF8 input."
 msgstr ""
 
-#: ../lib/dictd.c:112
-#: ../lib/dictd.c:375
+#: ../lib/dictd.c:112 ../lib/dictd.c:375
 msgid "Could not connect to server."
 msgstr "Non se puido conectar ó servidor."
 
-#: ../lib/dictd.c:119
-#: ../lib/dictd.c:157
-#: ../lib/dictd.c:397
+#: ../lib/dictd.c:119 ../lib/dictd.c:157 ../lib/dictd.c:397
 msgid "Unknown error while quering the server."
 msgstr "Erro descoñecido mentres se consultaba ó servidor."
 
@@ -196,20 +187,15 @@ msgstr "Texto a buscar:"
 msgid "Search with:"
 msgstr ""
 
-#: ../lib/gui.c:262
-#: ../lib/prefs.c:247
-#: ../lib/prefs.c:341
+#: ../lib/gui.c:262 ../lib/prefs.c:249 ../lib/prefs.c:344
 msgid "Dict"
 msgstr "Dict"
 
-#: ../lib/gui.c:268
-#: ../lib/prefs.c:256
-#: ../lib/prefs.c:448
+#: ../lib/gui.c:268 ../lib/prefs.c:258 ../lib/prefs.c:452
 msgid "Web"
 msgstr "Web"
 
-#: ../lib/gui.c:274
-#: ../lib/prefs.c:265
+#: ../lib/gui.c:274 ../lib/prefs.c:267
 msgid "Spellcheck"
 msgstr ""
 
@@ -217,114 +203,112 @@ msgstr ""
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: ../lib/prefs.c:107
+#: ../lib/prefs.c:108
 msgid "You have chosen an invalid dictionary entry."
 msgstr ""
 
-#: ../lib/prefs.c:172
+#: ../lib/prefs.c:173
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Alemán <-> Inglés"
 
-#: ../lib/prefs.c:173
+#: ../lib/prefs.c:174
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Alemán <-> Francés"
 
-#: ../lib/prefs.c:174
+#: ../lib/prefs.c:175
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Alemán <-> Español"
 
-#: ../lib/prefs.c:175
+#: ../lib/prefs.c:176
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Alemán <-> Italiano"
 
-#: ../lib/prefs.c:176
+#: ../lib/prefs.c:177
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Alemán <-> Chinés"
 
-#: ../lib/prefs.c:177
+#: ../lib/prefs.c:178
 msgid "dist.cc - Dictionary"
 msgstr "dist.cc - Diccionario"
 
-#: ../lib/prefs.c:178
+#: ../lib/prefs.c:179
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:179
+#: ../lib/prefs.c:180
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:180
+#: ../lib/prefs.c:181
 msgid "Clear"
 msgstr "Limpar"
 
-#: ../lib/prefs.c:239
+#: ../lib/prefs.c:241
 msgid "General"
 msgstr "Xeral"
 
-#: ../lib/prefs.c:241
+#: ../lib/prefs.c:243
 msgid "<b>Default search method:</b>"
 msgstr "<b>Método de busca predeterminado:</b>"
 
-#: ../lib/prefs.c:274
+#: ../lib/prefs.c:276
 msgid "Last used method"
 msgstr "Último método usado"
 
-#: ../lib/prefs.c:288
+#: ../lib/prefs.c:290
 msgid "<b>Panel text field:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:294
+#: ../lib/prefs.c:296
 msgid "Show text field in the panel"
 msgstr "Mostrar campo de texto no panel"
 
 #. panel entry size
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:303
 msgid "Text field size:"
 msgstr "Tamaño do campo de texto:"
 
 #. server address
-#: ../lib/prefs.c:344
+#: ../lib/prefs.c:347
 msgid "Server:"
 msgstr "Servidor:"
 
 #. server port
-#: ../lib/prefs.c:356
+#: ../lib/prefs.c:359
 msgid "Server Port:"
 msgstr "Porto do Servidor:"
 
 #. dictionary
-#: ../lib/prefs.c:364
-#: ../lib/prefs.c:508
+#: ../lib/prefs.c:367 ../lib/prefs.c:512
 msgid "Dictionary:"
 msgstr "Diccionario:"
 
-#: ../lib/prefs.c:368
+#: ../lib/prefs.c:371
 msgid "* (use all)"
 msgstr ""
 
-#: ../lib/prefs.c:370
+#: ../lib/prefs.c:373
 msgid "! (use all, stop after first match)"
 msgstr ""
 
-#: ../lib/prefs.c:450
+#: ../lib/prefs.c:454
 msgid "<b>Web search URL:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:456
+#: ../lib/prefs.c:460
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:476
+#: ../lib/prefs.c:480
 msgid ""
-"Enter an URL to a web site which offer translation or dictionary services.\n"
+"Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
 
-#: ../lib/prefs.c:495
+#: ../lib/prefs.c:499
 msgid "Aspell"
 msgstr "Aspell"
 
-#: ../lib/prefs.c:497
+#: ../lib/prefs.c:501
 msgid "Aspell program:"
 msgstr "Programa aspell:"
-

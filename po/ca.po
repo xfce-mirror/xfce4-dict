@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-22 13:11+0200\n"
+"POT-Creation-Date: 2008-07-17 16:20+0200\n"
 "PO-Revision-Date: 2008-03-21 20:40+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Dictionary Client"
 msgstr "Connector de diccionaris"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:212
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:213
 #, fuzzy
 msgid "Xfce4 Dictionary"
 msgstr "Diccionari:"
@@ -189,15 +189,15 @@ msgstr "Text a cercar:"
 msgid "Search with:"
 msgstr "Cerca amb:"
 
-#: ../lib/gui.c:262 ../lib/prefs.c:247 ../lib/prefs.c:341
+#: ../lib/gui.c:262 ../lib/prefs.c:249 ../lib/prefs.c:344
 msgid "Dict"
 msgstr "Dict"
 
-#: ../lib/gui.c:268 ../lib/prefs.c:256 ../lib/prefs.c:448
+#: ../lib/gui.c:268 ../lib/prefs.c:258 ../lib/prefs.c:452
 msgid "Web"
 msgstr "Web"
 
-#: ../lib/gui.c:274 ../lib/prefs.c:265
+#: ../lib/gui.c:274 ../lib/prefs.c:267
 msgid "Spellcheck"
 msgstr "Corrector"
 
@@ -205,122 +205,122 @@ msgstr "Corrector"
 msgid "Developer"
 msgstr "Desenvolupador"
 
-#: ../lib/prefs.c:107
+#: ../lib/prefs.c:108
 msgid "You have chosen an invalid dictionary entry."
 msgstr "Heu triat una entrada de diccionari invàlida."
 
-#: ../lib/prefs.c:172
+#: ../lib/prefs.c:173
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Alemany <-> Anglès"
 
-#: ../lib/prefs.c:173
+#: ../lib/prefs.c:174
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Alemany <-> Francès"
 
-#: ../lib/prefs.c:174
+#: ../lib/prefs.c:175
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Alemany <-> Espanyol"
 
-#: ../lib/prefs.c:175
+#: ../lib/prefs.c:176
 #, fuzzy
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Alemany <-> Anglès"
 
-#: ../lib/prefs.c:176
+#: ../lib/prefs.c:177
 #, fuzzy
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Alemany <-> Anglès"
 
-#: ../lib/prefs.c:177
+#: ../lib/prefs.c:178
 #, fuzzy
 msgid "dist.cc - Dictionary"
 msgstr "Diccionari:"
 
-#: ../lib/prefs.c:178
+#: ../lib/prefs.c:179
 #, fuzzy
 msgid "Dictionary.com"
 msgstr "Diccionari:"
 
-#: ../lib/prefs.c:179
+#: ../lib/prefs.c:180
 #, fuzzy
 msgid "TheFreeDictionary.com"
 msgstr "Diccionari:"
 
-#: ../lib/prefs.c:180
+#: ../lib/prefs.c:181
 msgid "Clear"
 msgstr ""
 
-#: ../lib/prefs.c:239
+#: ../lib/prefs.c:241
 msgid "General"
 msgstr ""
 
-#: ../lib/prefs.c:241
+#: ../lib/prefs.c:243
 msgid "<b>Default search method:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:274
+#: ../lib/prefs.c:276
 msgid "Last used method"
 msgstr ""
 
-#: ../lib/prefs.c:288
+#: ../lib/prefs.c:290
 msgid "<b>Panel text field:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:294
+#: ../lib/prefs.c:296
 msgid "Show text field in the panel"
 msgstr "Mostra el text al quadre"
 
 #. panel entry size
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:303
 msgid "Text field size:"
 msgstr "Mida del camp de text:"
 
 #. server address
-#: ../lib/prefs.c:344
+#: ../lib/prefs.c:347
 msgid "Server:"
 msgstr "Servidor:"
 
 #. server port
-#: ../lib/prefs.c:356
+#: ../lib/prefs.c:359
 msgid "Server Port:"
 msgstr "Port del servidor:"
 
 #. dictionary
-#: ../lib/prefs.c:364 ../lib/prefs.c:508
+#: ../lib/prefs.c:367 ../lib/prefs.c:512
 msgid "Dictionary:"
 msgstr "Diccionari:"
 
-#: ../lib/prefs.c:368
+#: ../lib/prefs.c:371
 msgid "* (use all)"
 msgstr "* (empra'ls tots)"
 
-#: ../lib/prefs.c:370
+#: ../lib/prefs.c:373
 msgid "! (use all, stop after first match)"
 msgstr "! (empra'ls tots, atura després de la primera coincidència)"
 
-#: ../lib/prefs.c:450
+#: ../lib/prefs.c:454
 msgid "<b>Web search URL:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:456
+#: ../lib/prefs.c:460
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:476
+#: ../lib/prefs.c:480
 #, fuzzy
 msgid ""
-"Enter an URL to a web site which offer translation or dictionary services.\n"
+"Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
 "Introduïu una url d'un lloc web que ofereixi un servei de traducció.\n"
 "Empreu {word} com com a paràmetre de substitució per la paraula a cercar."
 
-#: ../lib/prefs.c:495
+#: ../lib/prefs.c:499
 #, fuzzy
 msgid "Aspell"
 msgstr "Empra «aspell»"
 
-#: ../lib/prefs.c:497
+#: ../lib/prefs.c:501
 msgid "Aspell program:"
 msgstr "programa «aspell»:"
 

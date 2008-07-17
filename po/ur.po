@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-22 13:11+0200\n"
+"POT-Creation-Date: 2008-07-17 16:20+0200\n"
 "PO-Revision-Date: 2007-10-26 20:47+0500\n"
 "Last-Translator: Muhammad Ali Makki <makk.ma@gmail.com>\n"
 "Language-Team: Urdu <makki.ma@gmail.com>\n"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Dictionary Client"
 msgstr "ڈکشنری پلگ ان"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:212
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:213
 #, fuzzy
 msgid "Xfce4 Dictionary"
 msgstr "ڈکشنری:"
@@ -189,15 +189,15 @@ msgstr "متن برائے تلاش:"
 msgid "Search with:"
 msgstr ""
 
-#: ../lib/gui.c:262 ../lib/prefs.c:247 ../lib/prefs.c:341
+#: ../lib/gui.c:262 ../lib/prefs.c:249 ../lib/prefs.c:344
 msgid "Dict"
 msgstr "Dict"
 
-#: ../lib/gui.c:268 ../lib/prefs.c:256 ../lib/prefs.c:448
+#: ../lib/gui.c:268 ../lib/prefs.c:258 ../lib/prefs.c:452
 msgid "Web"
 msgstr ""
 
-#: ../lib/gui.c:274 ../lib/prefs.c:265
+#: ../lib/gui.c:274 ../lib/prefs.c:267
 msgid "Spellcheck"
 msgstr ""
 
@@ -205,125 +205,125 @@ msgstr ""
 msgid "Developer"
 msgstr "ڈیولپر"
 
-#: ../lib/prefs.c:107
+#: ../lib/prefs.c:108
 msgid "You have chosen an invalid dictionary entry."
 msgstr "آپ نے غلط ڈکشنری انٹری منتخب کی ہے."
 
-#: ../lib/prefs.c:172
+#: ../lib/prefs.c:173
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - German <-> English"
 
-#: ../lib/prefs.c:173
+#: ../lib/prefs.c:174
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - German <-> French"
 
-#: ../lib/prefs.c:174
+#: ../lib/prefs.c:175
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - German <-> Spanish"
 
-#: ../lib/prefs.c:175
+#: ../lib/prefs.c:176
 #, fuzzy
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - German <-> English"
 
-#: ../lib/prefs.c:176
+#: ../lib/prefs.c:177
 #, fuzzy
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - German <-> English"
 
-#: ../lib/prefs.c:177
+#: ../lib/prefs.c:178
 #, fuzzy
 msgid "dist.cc - Dictionary"
 msgstr "ڈکشنری:"
 
-#: ../lib/prefs.c:178
+#: ../lib/prefs.c:179
 #, fuzzy
 msgid "Dictionary.com"
 msgstr "ڈکشنری:"
 
-#: ../lib/prefs.c:179
+#: ../lib/prefs.c:180
 #, fuzzy
 msgid "TheFreeDictionary.com"
 msgstr "ڈکشنری:"
 
-#: ../lib/prefs.c:180
+#: ../lib/prefs.c:181
 msgid "Clear"
 msgstr ""
 
-#: ../lib/prefs.c:239
+#: ../lib/prefs.c:241
 msgid "General"
 msgstr ""
 
-#: ../lib/prefs.c:241
+#: ../lib/prefs.c:243
 msgid "<b>Default search method:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:274
+#: ../lib/prefs.c:276
 msgid "Last used method"
 msgstr ""
 
-#: ../lib/prefs.c:288
+#: ../lib/prefs.c:290
 msgid "<b>Panel text field:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:294
+#: ../lib/prefs.c:296
 msgid "Show text field in the panel"
 msgstr "متن فیلڈ پینل میں ظاہر کریں"
 
 #. panel entry size
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:303
 #, fuzzy
 msgid "Text field size:"
 msgstr "متن فیلڈ حجم:"
 
 #. server address
-#: ../lib/prefs.c:344
+#: ../lib/prefs.c:347
 #, fuzzy
 msgid "Server:"
 msgstr "سرور:"
 
 #. server port
-#: ../lib/prefs.c:356
+#: ../lib/prefs.c:359
 #, fuzzy
 msgid "Server Port:"
 msgstr "سرور پورٹ:"
 
 #. dictionary
-#: ../lib/prefs.c:364 ../lib/prefs.c:508
+#: ../lib/prefs.c:367 ../lib/prefs.c:512
 #, fuzzy
 msgid "Dictionary:"
 msgstr "ڈکشنری:"
 
-#: ../lib/prefs.c:368
+#: ../lib/prefs.c:371
 msgid "* (use all)"
 msgstr "* (سب استعمال کریں)"
 
-#: ../lib/prefs.c:370
+#: ../lib/prefs.c:373
 msgid "! (use all, stop after first match)"
 msgstr "! (سب  استعمال کریں، پہلے میچ کے بعد روک دیں)"
 
-#: ../lib/prefs.c:450
+#: ../lib/prefs.c:454
 msgid "<b>Web search URL:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:456
+#: ../lib/prefs.c:460
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:476
+#: ../lib/prefs.c:480
 #, fuzzy
 msgid ""
-"Enter an URL to a web site which offer translation or dictionary services.\n"
+"Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
 "ترجمہ خدمات پیش کرنے والی ویب سائٹ کا پتہ لکھیں.\n"
 "تلاش کردہ جملہ کے لیے {word} بطور placeholder استعمال کریں."
 
-#: ../lib/prefs.c:495
+#: ../lib/prefs.c:499
 msgid "Aspell"
 msgstr ""
 
-#: ../lib/prefs.c:497
+#: ../lib/prefs.c:501
 msgid "Aspell program:"
 msgstr ""
 
