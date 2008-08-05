@@ -41,6 +41,13 @@ typedef struct
 	gchar *url;
 } web_dict_t;
 
+enum
+{
+	NOTEBOOK_PAGE_GENERAL = 0,
+	NOTEBOOK_PAGE_DICTD,
+	NOTEBOOK_PAGE_WEB,
+	NOTEBOOK_PAGE_ASPELL
+};
 
 static void show_panel_entry_toggled(GtkToggleButton *tb, DictData *dd)
 {
@@ -98,18 +105,34 @@ static void get_spell_dictionaries(GtkWidget *spell_combo, DictData *dd)
 
 void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 {
-	gchar *tmp;
+	gchar *dictionary, *search_url;
 
-	/* MODE DICT */
-	tmp = gtk_combo_box_get_active_text(
+	/* check some values before actually saving the settings in case we need to return to
+	 * the dialog */
+	dictionary = gtk_combo_box_get_active_text(
 		GTK_COMBO_BOX(g_object_get_data(G_OBJECT(dlg), "dict_combo")));
-	if (tmp == NULL || tmp[0] == '0' || tmp[0] == '-')
+	if (! NZV(dictionary) || dictionary[0] == '-')
 	{
-		xfce_err(_("You have chosen an invalid dictionary entry."));
-		g_free(tmp);
+		xfce_err(_("You have chosen an invalid dictionary."));
+		g_free(dictionary);
+		gtk_notebook_set_current_page(
+			GTK_NOTEBOOK(g_object_get_data(G_OBJECT(dlg), "notebook")), NOTEBOOK_PAGE_DICTD);
+		gtk_widget_grab_focus(GTK_WIDGET(g_object_get_data(G_OBJECT(dlg), "dict_combo")));
+		return;
+	}
+	search_url = g_strdup(gtk_entry_get_text(
+			GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "web_entry"))));
+	if (! NZV(search_url) || search_url[0] == '-')
+	{
+		xfce_err(_("You must set a valid search URL."));
+		g_free(search_url);
+		gtk_notebook_set_current_page(
+			GTK_NOTEBOOK(g_object_get_data(G_OBJECT(dlg), "notebook")), NOTEBOOK_PAGE_WEB);
+		gtk_widget_grab_focus(GTK_WIDGET(g_object_get_data(G_OBJECT(dlg), "web_entry")));
 		return;
 	}
 
+	/* MODE DICT */
 	dd->port = gtk_spin_button_get_value_as_int(
 		GTK_SPIN_BUTTON(g_object_get_data(G_OBJECT(dlg), "port_spinner")));
 
@@ -118,20 +141,19 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 		GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "server_entry"))));
 
 	g_free(dd->dictionary);
-	dd->dictionary = tmp;
+	dd->dictionary = dictionary;
 
 	/* MODE WEB */
 	g_free(dd->web_url);
-	dd->web_url = g_strdup(gtk_entry_get_text(
-			GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "web_entry"))));
+	dd->web_url = search_url;
 
 	/* MODE SPELL */
-	tmp = gtk_combo_box_get_active_text(
+	dictionary = gtk_combo_box_get_active_text(
 			GTK_COMBO_BOX(g_object_get_data(G_OBJECT(dlg), "spell_combo")));
-	if (NZV(tmp))
+	if (NZV(dictionary))
 	{
 		g_free(dd->spell_dictionary);
-		dd->spell_dictionary = tmp;
+		dd->spell_dictionary = dictionary;
 	}
 
 	g_free(dd->spell_bin);
@@ -222,6 +244,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 	notebook = gtk_notebook_new();
 	gtk_widget_show(notebook);
+	g_object_set_data(G_OBJECT(dialog), "notebook", notebook);
 	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), notebook, FALSE, TRUE, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(notebook), 5);
 
@@ -238,7 +261,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		inner_vbox = gtk_vbox_new(FALSE, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
-		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("General")));
+		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
+			notebook_vbox, gtk_label_new(_("General")), NOTEBOOK_PAGE_GENERAL);
 
 		label = gtk_label_new(_("<b>Default search method:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
@@ -341,7 +365,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		inner_vbox = gtk_vbox_new(FALSE, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
-		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("Dict")));
+		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
+			notebook_vbox, gtk_label_new(_("Dict")), NOTEBOOK_PAGE_DICTD);
 
 		/* server address */
 		label1 = gtk_label_new_with_mnemonic(_("Server:"));
@@ -449,7 +474,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		inner_vbox = gtk_vbox_new(FALSE, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
-		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("Web")));
+		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
+			notebook_vbox, gtk_label_new(_("Web")), NOTEBOOK_PAGE_WEB);
 
 		label = gtk_label_new(_("<b>Web search URL:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
@@ -496,7 +522,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		inner_vbox = gtk_vbox_new(FALSE, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
-		gtk_notebook_append_page(GTK_NOTEBOOK(notebook), notebook_vbox, gtk_label_new(_("Aspell")));
+		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
+			notebook_vbox, gtk_label_new(_("Aspell")), NOTEBOOK_PAGE_ASPELL);
 
 		label1 = gtk_label_new_with_mnemonic(_("Aspell program:"));
 		gtk_widget_show(label1);

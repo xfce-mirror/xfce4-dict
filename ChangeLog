@@ -5,6 +5,7 @@
  * Make dict_open_browser() static for common.c as it is not used
    anywhere else.
  * Add 'xdg-open' as possible browser command to open URLs.
+ * Don't allow setting an empty search URL in the preferences dialog.
 
 
 2008-07-16  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
