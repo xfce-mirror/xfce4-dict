@@ -130,7 +130,7 @@ static gboolean open_browser(DictData *dd, const gchar *uri)
 	gboolean result = FALSE;
 	guint i = 0;
 	const gchar *browsers[] = {
-		"exo-open", "htmlview", "firefox", "mozilla",
+		"xdg-open", "exo-open", "htmlview", "firefox", "mozilla",
 		"opera", "epiphany", "konqueror", "seamonkey", NULL };
 
 	while (browsers[i] != NULL && (browser_path = g_find_program_in_path(browsers[i])) == NULL)
