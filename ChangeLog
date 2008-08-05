@@ -1,3 +1,11 @@
+2008-08-03  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Improve the code to find a usable browser to open URLs.
+ * Prevent opening a file manager when there is set an empty search URL.
+ * Make dict_open_browser() static for common.c as it is not used
+   anywhere else.
+
+
 2008-07-16  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Build the static library part with libtool to get correctly linked

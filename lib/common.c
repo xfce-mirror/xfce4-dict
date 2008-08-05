@@ -123,29 +123,24 @@ static gchar *str_replace(gchar *haystack, const gchar *needle, const gchar *rep
 
 
 /* taken from xarchiver, thanks Giuseppe */
-gboolean dict_open_browser(DictData *dd, const gchar *uri)
+static gboolean open_browser(DictData *dd, const gchar *uri)
 {
 	gchar *argv[3];
-	gchar *browser_path;
+	gchar *browser_path = NULL;
 	gboolean result = FALSE;
+	guint i = 0;
+	const gchar *browsers[] = {
+		"exo-open", "htmlview", "firefox", "mozilla",
+		"opera", "epiphany", "konqueror", "seamonkey", NULL };
 
-	browser_path = g_find_program_in_path("exo-open");
-	if (browser_path == NULL)
-		browser_path = g_find_program_in_path("htmlview");
-	if (browser_path == NULL)
-		browser_path = g_find_program_in_path("firefox");
-	if (browser_path == NULL)
-		browser_path = g_find_program_in_path("mozilla");
-	if (browser_path == NULL)
-		browser_path = g_find_program_in_path("opera");
-	if (browser_path == NULL)
-		browser_path = g_find_program_in_path("epiphany");
-	if (browser_path == NULL)
-		browser_path = g_find_program_in_path("konqueror");
-	if (browser_path == NULL)
-		browser_path = g_find_program_in_path("seamonkey");
+	while (browsers[i] != NULL && (browser_path = g_find_program_in_path(browsers[i])) == NULL)
+		i++;
 
-	if (browser_path == NULL) return FALSE;
+	if (browser_path == NULL)
+	{
+		g_warning("No browser could be found in your path.");
+		return FALSE;
+	}
 
 	argv[0] = browser_path;
 	argv[1] = (gchar*) uri;
@@ -154,7 +149,7 @@ gboolean dict_open_browser(DictData *dd, const gchar *uri)
 	result = gdk_spawn_on_screen(gtk_widget_get_screen(dd->window), NULL, argv, NULL,
 				G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL);
 
-	g_free (browser_path);
+	g_free(browser_path);
 
 	return result;
 }
@@ -166,7 +161,12 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 	gchar *uri;
 
 	uri = str_replace(g_strdup(dd->web_url), "{word}", dd->searched_word);
-	if (! dict_open_browser(dd, uri))
+	if (! NZV(uri))
+	{
+		xfce_err(_("The search URL is empty. Please check your preferences."));
+		success = FALSE;
+	}
+	else if (! open_browser(dd, uri))
 	{
 		xfce_err(_("Browser could not be opened. Please check your preferences."));
 		success = FALSE;
