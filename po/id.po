@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-17 16:20+0200\n"
-"PO-Revision-Date: 2008-06-20 15:51+0700\n"
+"PO-Revision-Date: 2008-07-18 22:19+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -293,12 +293,11 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:480
-#, fuzzy
 msgid ""
 "Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"Masukkan URL situs web yang menawarkan penerjemahan atau layanan kamus.\n"
+"Masukkan URL situs web yang menawarkan penerjemahan atau layanan kamus. "
 "Gunakan {kata} sebagai tempat peletakan kata yang ditelusuri."
 
 #: ../lib/prefs.c:499
