@@ -8,15 +8,14 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-17 16:20+0200\n"
-"PO-Revision-Date: 2008-07-08 17:39+0300\n"
+"PO-Revision-Date: 2008-07-28 18:26+0300\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
@@ -130,8 +129,7 @@ msgstr "Помилка процесу (%s)"
 
 #: ../lib/common.c:171
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
-"Переглядач Web не вдалось відкрити. Будь-ласка перевірте Ваші налаштування."
+msgstr "Переглядач Web не вдалось відкрити. Будь-ласка перевірте Ваші налаштування."
 
 #: ../lib/common.c:210
 msgid "Invalid non-UTF8 input."
@@ -300,12 +298,11 @@ msgid "URL:"
 msgstr "Посилання URL:"
 
 #: ../lib/prefs.c:480
-#, fuzzy
 msgid ""
 "Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"Введіть посилання URL на сайт надає послуги перекладу або словника.\n"
+"Введіть URL для Web сайту, що надає послуги перекладу або словника. "
 "Використовуйте {слово} як макет для пошуку слова."
 
 #: ../lib/prefs.c:499
@@ -315,3 +312,4 @@ msgstr "Програма Aspell"
 #: ../lib/prefs.c:501
 msgid "Aspell program:"
 msgstr "Програма Aspell:"
+
