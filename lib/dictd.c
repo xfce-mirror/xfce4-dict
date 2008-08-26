@@ -122,9 +122,16 @@ static gboolean process_server_response(DictData *dd)
 	}
 
 	answer = dd->query_buffer;
-	if (strncmp("220", answer, 3) != 0)
+	if (dd->query_status == SERVER_NOT_READY)
 	{
 		dict_gui_status_add(dd, _("Server not ready."));
+		g_free(dd->query_buffer);
+		return FALSE;
+	}
+
+	if (dd->query_status == UNKNOWN_DATABASE)
+	{
+		dict_gui_status_add(dd, _("Invalid dictionary specified. Please check your preferences."));
 		g_free(dd->query_buffer);
 		return FALSE;
 	}
@@ -133,7 +140,7 @@ static gboolean process_server_response(DictData *dd)
 	while (*answer != '\n') answer++;
 	answer++;
 
-	if (strncmp("552", answer, 3) == 0)
+	if (dd->query_status == NOTHING_FOUND)
 	{
 		dict_gui_status_add(dd, _("Ready."));
 
@@ -152,7 +159,7 @@ static gboolean process_server_response(DictData *dd)
 
 		return FALSE;
 	}
-	else if (strncmp("150", answer, 3) != 0 && strncmp("552", answer, 3) != 0)
+	else if (strncmp("150", answer, 3) != 0 && dd->query_status != NOTHING_FOUND)
 	{
 		dict_gui_status_add(dd, _("Unknown error while quering the server."));
 		g_free(dd->query_buffer);
@@ -231,7 +238,7 @@ static gboolean process_server_response(DictData *dd)
 }
 
 
-static gchar *get_answer(gint fd)
+static gchar *get_answer(DictData *dd, gint fd)
 {
 	gboolean fol = FALSE;
 	gboolean sol = FALSE;
@@ -240,7 +247,7 @@ static gchar *get_answer(gint fd)
 	gchar c;
 	gchar ec[3];
 
-	alarm(10); /* abort after 5 seconds, there should went wrong something */
+	alarm(10); /* abort after 10 seconds, there should went wrong something */
 	while (read(fd, &c, 1) > 0)
 	{
 		if (tol) /* third char of line */
@@ -263,16 +270,35 @@ static gchar *get_answer(gint fd)
 			fol = TRUE;
 
 		g_string_append_c(str, c);
-		if (tol &&
-			(
-				(strncmp(ec, "250", 3) == 0) || /* ok */
-				(strncmp(ec, "554", 3) == 0) ||	/* no databases present */
-				(strncmp(ec, "500", 3) == 0) ||	/* unknown command */
-				(strncmp(ec, "501", 3) == 0) ||	/* syntax error */
-				(strncmp(ec, "552", 3) == 0)	/* nothing found */
-			)
-		)
-			 break;
+		if (tol)
+		{
+			if (strncmp(ec, "250", 3) == 0 || 	/* ok */
+				strncmp(ec, "500", 3) == 0 ||	/* unknown command */
+				strncmp(ec, "501", 3) == 0)		/* syntax error */
+			{
+				break;
+			}
+			else if (strncmp(ec, "220", 3) == 0) /* server not ready */
+			{
+				dd->query_status = SERVER_NOT_READY;
+				break;
+			}
+			else if (strncmp(ec, "550", 3) == 0) /* invalid database */
+			{
+				dd->query_status = UNKNOWN_DATABASE;
+				break;
+			}
+			else if (strncmp(ec, "552", 3) == 0) /* nothing found */
+			{
+				dd->query_status = NOTHING_FOUND;
+				break;
+			}
+			else if (strncmp(ec, "554", 3) == 0) /* no databases present */
+			{
+				dd->query_status = NO_DATABASES;
+				break;
+			}
+		}
 	}
 	alarm(0);
 
@@ -308,7 +334,7 @@ static void ask_server(DictData *dd)
 	/* and now, "append" again the rest of the dictionary string again */
 	dd->dictionary[i] = ' ';
 
-	dd->query_buffer = get_answer(fd);
+	dd->query_buffer = get_answer(dd, fd);
 	close(fd);
 
 	dd->query_is_running = FALSE;
@@ -386,7 +412,7 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	send_command(fd, "show databases");
 
 	/* read all server output */
-	answer = buffer = get_answer(fd);
+	answer = buffer = get_answer(dd, fd);
 	close(fd);
 
 	/* go to next line */

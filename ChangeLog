@@ -1,3 +1,11 @@
+2008-08-26  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Don't let the notebook tab labels grab the focus in the prefs dialog.
+ * Save some string comparisons when parsing the response from a DICTD
+   server.
+ * Handle DICTD response 550 - 'invalid database' correctly.
+
+
 2008-08-25  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Make prefs dialog modal.

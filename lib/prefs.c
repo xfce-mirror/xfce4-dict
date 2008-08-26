@@ -244,6 +244,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_signal_connect(dialog, "response", G_CALLBACK(dict_prefs_dialog_response), dd);
 
 	notebook = gtk_notebook_new();
+	GTK_WIDGET_UNSET_FLAGS(notebook, GTK_CAN_FOCUS);
 	gtk_widget_show(notebook);
 	g_object_set_data(G_OBJECT(dialog), "notebook", notebook);
 	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), notebook, FALSE, TRUE, 0);

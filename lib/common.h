@@ -43,10 +43,15 @@ typedef enum
 	DICTMODE_LAST_USED
 } dict_mode_t;
 
+
 enum
 {
+	NO_ERROR,
 	NO_CONNECTION,
-	NO_ERROR
+	NOTHING_FOUND,
+	NO_DATABASES,
+	UNKNOWN_DATABASE,
+	SERVER_NOT_READY
 };
 
 typedef struct
