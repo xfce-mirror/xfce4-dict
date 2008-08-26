@@ -421,6 +421,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(button_get_list);
 		g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_dictd_get_list), dd);
 		g_object_set_data(G_OBJECT(button_get_list), "dict_combo", dict_combo);
+		g_object_set_data(G_OBJECT(button_get_list), "port_spinner", port_spinner);
+		g_object_set_data(G_OBJECT(button_get_list), "server_entry", server_entry);
 
 		/* put it all together */
 		table = gtk_table_new(3, 3, FALSE);

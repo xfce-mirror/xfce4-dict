@@ -367,10 +367,17 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	gchar *answer = NULL;
 	gchar **lines;
 	GtkWidget *dict_combo = g_object_get_data(G_OBJECT(button), "dict_combo");
+	GtkEntry *entry_server = g_object_get_data(G_OBJECT(button), "server_entry");
+	GtkSpinButton *entry_port = g_object_get_data(G_OBJECT(button), "port_spinner");
+	const gchar *server;
+	gint port;
 
 	dictd_init();
 
-	if ((fd = open_socket(dd->server, dd->port)) == -1)
+	server = gtk_entry_get_text(entry_server);
+	port = gtk_spin_button_get_value_as_int(entry_port);
+
+	if ((fd = open_socket(server, port)) == -1)
 	{
 		xfce_err(_("Could not connect to server."));
 		return FALSE;

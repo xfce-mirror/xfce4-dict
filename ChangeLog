@@ -1,6 +1,8 @@
 2008-08-25  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Make prefs dialog modal.
+ * When searching for available dictionaries of a DICTD server,
+   use the entered values in the dialog not the old saved ones.
 
 
 2008-08-03  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
