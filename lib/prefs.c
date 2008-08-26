@@ -237,8 +237,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
 		NULL);
 
-    gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
-    gtk_window_set_icon_name(GTK_WINDOW(dialog), "xfce4-settings");
+	gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
+	gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
+	gtk_window_set_icon_name(GTK_WINDOW(dialog), "xfce4-settings");
 	if (! dd->is_plugin) /* the response callback is run by the plugin's callback */
 		g_signal_connect(dialog, "response", G_CALLBACK(dict_prefs_dialog_response), dd);
 

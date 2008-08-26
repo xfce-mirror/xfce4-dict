@@ -1,3 +1,8 @@
+2008-08-25  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Make prefs dialog modal.
+
+
 2008-08-03  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Improve the code to find a usable browser to open URLs.
