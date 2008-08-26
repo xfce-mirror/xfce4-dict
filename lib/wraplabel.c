@@ -18,7 +18,7 @@
  *      along with this program; if not, write to the Free Software
  *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- *  $Id: wraplabel.c 2187 2008-01-23 14:32:52Z eht16 $
+ *  $Id$
  */
 
 /*

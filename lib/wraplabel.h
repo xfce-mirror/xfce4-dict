@@ -18,7 +18,7 @@
  *      along with this program; if not, write to the Free Software
  *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- *  $Id: geanywraplabel.h 2184 2008-01-23 13:35:08Z eht16 $
+ *  $Id$
  */
 
 #ifndef __WRAP_LABEL_H__
