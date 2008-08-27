@@ -322,6 +322,7 @@ static void ask_server(DictData *dd)
 	}
 
 	dd->query_is_running = TRUE;
+	dd->query_status = NO_ERROR;
 
 	/* take only the first part of the dictionary string, so let the string end at the space */
 	i = 0;
@@ -410,6 +411,8 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	}
 
 	send_command(fd, "show databases");
+
+	dd->query_status = NO_ERROR;
 
 	/* read all server output */
 	answer = buffer = get_answer(dd, fd);
