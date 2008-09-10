@@ -1,3 +1,9 @@
+2008-09-10  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Add Wiktionary.org to the list of web dictionaries
+   (thanks to Liviu Andronic for the hint).
+
+
 2008-08-26  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Don't let the notebook tab labels grab the focus in the prefs dialog.

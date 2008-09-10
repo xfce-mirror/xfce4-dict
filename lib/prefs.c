@@ -200,6 +200,7 @@ static GtkWidget *create_web_dicts_table(GtkWidget *entry)
 		{ N_("dist.cc - Dictionary"), "http://www.dict.cc/?s={word}" },
 		{ N_("Dictionary.com"), "http://dictionary.reference.com/search?db=dictionary&q={word}" },
 		{ N_("TheFreeDictionary.com"), "http://www.thefreedictionary.com/_/partner.aspx?Word={word}&Set=www&mode=w" },
+		{ N_("Wiktionary, the free dictionary (EN)"), "http://en.wiktionary.org/wiki/{word}" },
 		{ N_("Clear"), "" },
 		{ NULL, NULL }
 	};
