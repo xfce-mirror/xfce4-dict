@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-10 11:12+0200\n"
-"PO-Revision-Date: 2008-05-01 23:11+0200\n"
+"PO-Revision-Date: 2008-09-10 11:35+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -127,9 +127,8 @@ msgid "Process failed (%s)"
 msgstr "Prozesuak huts egin du (%s)"
 
 #: ../lib/common.c:166
-#, fuzzy
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Nabigatzailea ezin da ireki. Mesedez egiaztatu zure hobespenak."
+msgstr "Bilaketa URLa hutsik dago. Mesedez egiaztatu zure hobespenak."
 
 #: ../lib/common.c:171
 msgid "Browser could not be opened. Please check your preferences."
@@ -152,9 +151,8 @@ msgid "Server not ready."
 msgstr "Zerbitzaria ez dago prest."
 
 #: ../lib/dictd.c:134
-#, fuzzy
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Nabigatzailea ezin da ireki. Mesedez egiaztatu zure hobespenak."
+msgstr "Okerreko hiztegia zehazturik. Mesedez egiaztatu zure hobespenak."
 
 #: ../lib/dictd.c:147
 #, c-format
@@ -210,13 +208,12 @@ msgid "Developer"
 msgstr "Garatzailea"
 
 #: ../lib/prefs.c:116
-#, fuzzy
 msgid "You have chosen an invalid dictionary."
-msgstr "Hiztegi sarrera baliogabe bat hautatu duzu."
+msgstr "Hiztegi baliogabe bat hautatu duzu."
 
 #: ../lib/prefs.c:127
 msgid "You must set a valid search URL."
-msgstr ""
+msgstr "Baliozko bilaketa URL bat zehaztu behar duzu."
 
 #: ../lib/prefs.c:195
 msgid "dict.leo.org - German <-> English"
@@ -252,7 +249,7 @@ msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:203
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr ""
+msgstr "Wiktionary, hiztegi librea (EN)"
 
 #: ../lib/prefs.c:204
 msgid "Clear"
@@ -315,13 +312,12 @@ msgid "URL:"
 msgstr "URLa:"
 
 #: ../lib/prefs.c:511
-#, fuzzy
 msgid ""
 "Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"Idatzi itzulpen zerbitzuak eskeintzen dituen webgunearen URLa.\n"
-"Erabili {hitza} bilaketa hitzaren kokalekuan."
+"Idatzi itzulpena edo hiztegi zerbitzuak eskaintzen dituen webgune baten URLa. "
+"{word} erabili bilatu behar den hitza zehazteko."
 
 #: ../lib/prefs.c:531
 msgid "Aspell"
@@ -330,3 +326,4 @@ msgstr "Aspell"
 #: ../lib/prefs.c:533
 msgid "Aspell program:"
 msgstr "Aspell programa:"
+
