@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-10 11:12+0200\n"
-"PO-Revision-Date: 2008-07-17 11:54-0300\n"
+"PO-Revision-Date: 2008-09-10 08:18-0300\n"
 "Last-Translator: Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
@@ -32,8 +32,11 @@ msgstr "Dicionário"
 msgid "Look up a word"
 msgstr "Procurar uma palavra"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:429 ../src/xfce4-dict.c:206
-#: ../lib/aspell.c:198 ../lib/dictd.c:145 ../lib/gui.c:96
+#: ../panel-plugin/xfce4-dict-plugin.c:429
+#: ../src/xfce4-dict.c:206
+#: ../lib/aspell.c:198
+#: ../lib/dictd.c:145
+#: ../lib/gui.c:96
 msgid "Ready."
 msgstr "Pronto."
 
@@ -60,9 +63,7 @@ msgstr "Obter o foco no campo de texto no painel"
 
 #: ../src/xfce4-dict.c:60
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
-"Iniciar o aplicativo de forma independente mesmo se o plug-in no painel "
-"estiver carregado"
+msgstr "Iniciar o aplicativo de forma independente mesmo se o plug-in no painel estiver carregado"
 
 #: ../src/xfce4-dict.c:61
 msgid "Show version information"
@@ -77,7 +78,8 @@ msgstr "[TEXTO]"
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr "(compilado em %s com GTK %d.%d.%d, GLib %d.%d.%d)"
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:339
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:339
 msgid "A client program to query different dictionaries."
 msgstr "Um programa para consultar dicionários diferentes."
 
@@ -85,7 +87,9 @@ msgstr "Um programa para consultar dicionários diferentes."
 msgid "Dictionary Client"
 msgstr "Dicionário"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:236
+#: ../src/xfce4-dict.desktop.in.h:3
+#: ../lib/gui.c:189
+#: ../lib/prefs.c:236
 msgid "Xfce4 Dictionary"
 msgstr "Dicionário do Xfce4"
 
@@ -122,7 +126,8 @@ msgstr "Erro ao executar  \"%s\" (%s)."
 msgid "Please set the aspell command in the preferences dialog."
 msgstr "Por favor defina o comando aspell no diálogo de preferências."
 
-#: ../lib/aspell.c:164 ../lib/common.c:200
+#: ../lib/aspell.c:164
+#: ../lib/common.c:200
 msgid "Invalid input."
 msgstr "Entrada inválida."
 
@@ -132,25 +137,25 @@ msgid "Process failed (%s)"
 msgstr "O processo falhou (%s)"
 
 #: ../lib/common.c:166
-#, fuzzy
 msgid "The search URL is empty. Please check your preferences."
-msgstr ""
-"Não foi possível abrir o navegador. Por favor verifique suas preferências."
+msgstr "A URL para pesquisa está vazia. Por favor, verifique suas preferências."
 
 #: ../lib/common.c:171
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
-"Não foi possível abrir o navegador. Por favor verifique suas preferências."
+msgstr "Não foi possível abrir o navegador. Por favor verifique suas preferências."
 
 #: ../lib/common.c:210
 msgid "Invalid non-UTF8 input."
 msgstr "Entrada não-UTF8 inválida."
 
-#: ../lib/dictd.c:112 ../lib/dictd.c:409
+#: ../lib/dictd.c:112
+#: ../lib/dictd.c:409
 msgid "Could not connect to server."
 msgstr "Não foi possível conectar ao servidor."
 
-#: ../lib/dictd.c:119 ../lib/dictd.c:164 ../lib/dictd.c:433
+#: ../lib/dictd.c:119
+#: ../lib/dictd.c:164
+#: ../lib/dictd.c:433
 msgid "Unknown error while quering the server."
 msgstr "Erro desconhecido ao consultar o servidor."
 
@@ -159,10 +164,8 @@ msgid "Server not ready."
 msgstr "O servidor não está pronto."
 
 #: ../lib/dictd.c:134
-#, fuzzy
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr ""
-"Não foi possível abrir o navegador. Por favor verifique suas preferências."
+msgstr "Dicionário especificado inválido. Por favor, verifique suas preferências."
 
 #: ../lib/dictd.c:147
 #, c-format
@@ -201,15 +204,20 @@ msgstr "Texto a procurar:"
 msgid "Search with:"
 msgstr "Pesquisar:"
 
-#: ../lib/gui.c:262 ../lib/prefs.c:276 ../lib/prefs.c:372
+#: ../lib/gui.c:262
+#: ../lib/prefs.c:276
+#: ../lib/prefs.c:372
 msgid "Dict"
 msgstr "Dicionário"
 
-#: ../lib/gui.c:268 ../lib/prefs.c:285 ../lib/prefs.c:483
+#: ../lib/gui.c:268
+#: ../lib/prefs.c:285
+#: ../lib/prefs.c:483
 msgid "Web"
 msgstr "Internet"
 
-#: ../lib/gui.c:274 ../lib/prefs.c:294
+#: ../lib/gui.c:274
+#: ../lib/prefs.c:294
 msgid "Spellcheck"
 msgstr "Corretor ortográfico"
 
@@ -218,13 +226,12 @@ msgid "Developer"
 msgstr "Desenvolvedor"
 
 #: ../lib/prefs.c:116
-#, fuzzy
 msgid "You have chosen an invalid dictionary."
-msgstr "Você selecionou uma entrada inválida no dicionário."
+msgstr "Você selecionou um dicionário inválido."
 
 #: ../lib/prefs.c:127
 msgid "You must set a valid search URL."
-msgstr ""
+msgstr "Você deve definir uma URL válida para pesquisa."
 
 #: ../lib/prefs.c:195
 msgid "dict.leo.org - German <-> English"
@@ -260,7 +267,7 @@ msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:203
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr ""
+msgstr "Wiktionary, o dicionário livre (EN)"
 
 #: ../lib/prefs.c:204
 msgid "Clear"
@@ -302,7 +309,8 @@ msgid "Server Port:"
 msgstr "Porta do servidor:"
 
 #. dictionary
-#: ../lib/prefs.c:395 ../lib/prefs.c:544
+#: ../lib/prefs.c:395
+#: ../lib/prefs.c:544
 msgid "Dictionary:"
 msgstr "Dicionário:"
 
@@ -323,12 +331,8 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:511
-msgid ""
-"Enter an URL to a web site which offer translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Digite uma URL de um site que ofereça serviços de tradução ou dicionários. "
-"Utilize {palavra} como um espaço reservado para a palavra pesquisada."
+msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Digite uma URL de um site que ofereça serviços de tradução ou dicionários. Use {palavra} como um espaço reservado para a palavra pesquisada."
 
 #: ../lib/prefs.c:531
 msgid "Aspell"
@@ -340,32 +344,25 @@ msgstr "Programa Aspell:"
 
 #~ msgid "Properties"
 #~ msgstr "Propriedades"
-
 #~ msgid "Use a DICT server"
 #~ msgstr "Usar um servidor de DICIONÁRIO"
-
 #~ msgid "Use another website"
 #~ msgstr "Usar outro site"
-
 #~ msgid "Use a web site"
 #~ msgstr "Usar um site"
-
 #~ msgid ""
 #~ "This option can only be used when the panel has a horizontal orientation."
 #~ msgstr "Essa opção só pode ser usada quando o painel estiver na horizontal."
-
 #~ msgid "Usage: %s [options]\n"
 #~ msgstr "Uso: %s [options]\n"
-
 #~ msgid "Options:\n"
 #~ msgstr "Opções:\n"
-
 #~ msgid "    -h, --help          show this help and exit\n"
 #~ msgstr "    -h, --help          mostra esta ajuda e sai\n"
-
 #~ msgid ""
 #~ "If called without any options, the xfce4-dict-plugin main window is "
 #~ "shown.\n"
 #~ msgstr ""
 #~ "Se chamado sem nenhuma opção, a janela principal do xfce4-dict-plugin "
 #~ "será exibida.\n"
+
