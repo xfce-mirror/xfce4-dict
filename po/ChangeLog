@@ -1,3 +1,8 @@
+2008-09-10  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+	* de.po: Update of German translation.
+	* xfce4-dict.pot, *.po: Issued make update-po.
+
 2008-09-08 Og Maciel <ogmaciel@gnome.org>
 
 	* pt_PT.po: Updated European Portuguese translation by Nuno Miguel.

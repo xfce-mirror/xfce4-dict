@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-17 16:20+0200\n"
+"POT-Creation-Date: 2008-09-10 11:12+0200\n"
 "PO-Revision-Date: 2008-07-15 14:41+0200\n"
 "Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -24,7 +24,7 @@ msgid "Look up a word"
 msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.c:429 ../src/xfce4-dict.c:206
-#: ../lib/aspell.c:198 ../lib/dictd.c:138 ../lib/gui.c:96
+#: ../lib/aspell.c:198 ../lib/dictd.c:145 ../lib/gui.c:96
 msgid "Ready."
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Dictionary Client"
 msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:213
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:236
 msgid "Xfce4 Dictionary"
 msgstr ""
 
@@ -120,6 +120,10 @@ msgstr ""
 msgid "Process failed (%s)"
 msgstr ""
 
+#: ../lib/common.c:166
+msgid "The search URL is empty. Please check your preferences."
+msgstr ""
+
 #: ../lib/common.c:171
 msgid "Browser could not be opened. Please check your preferences."
 msgstr ""
@@ -128,11 +132,11 @@ msgstr ""
 msgid "Invalid non-UTF8 input."
 msgstr ""
 
-#: ../lib/dictd.c:112 ../lib/dictd.c:375
+#: ../lib/dictd.c:112 ../lib/dictd.c:409
 msgid "Could not connect to server."
 msgstr ""
 
-#: ../lib/dictd.c:119 ../lib/dictd.c:157 ../lib/dictd.c:397
+#: ../lib/dictd.c:119 ../lib/dictd.c:164 ../lib/dictd.c:433
 msgid "Unknown error while quering the server."
 msgstr ""
 
@@ -140,24 +144,28 @@ msgstr ""
 msgid "Server not ready."
 msgstr ""
 
-#: ../lib/dictd.c:140
+#: ../lib/dictd.c:134
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr ""
+
+#: ../lib/dictd.c:147
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr ""
 
-#: ../lib/dictd.c:162
+#: ../lib/dictd.c:169
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../lib/dictd.c:352
+#: ../lib/dictd.c:379
 #, c-format
 msgid "Querying %s..."
 msgstr ""
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:428
 msgid "The server doesn't offer any databases."
 msgstr ""
 
@@ -177,15 +185,15 @@ msgstr ""
 msgid "Search with:"
 msgstr ""
 
-#: ../lib/gui.c:262 ../lib/prefs.c:249 ../lib/prefs.c:344
+#: ../lib/gui.c:262 ../lib/prefs.c:276 ../lib/prefs.c:372
 msgid "Dict"
 msgstr ""
 
-#: ../lib/gui.c:268 ../lib/prefs.c:258 ../lib/prefs.c:452
+#: ../lib/gui.c:268 ../lib/prefs.c:285 ../lib/prefs.c:483
 msgid "Web"
 msgstr ""
 
-#: ../lib/gui.c:274 ../lib/prefs.c:267
+#: ../lib/gui.c:274 ../lib/prefs.c:294
 msgid "Spellcheck"
 msgstr ""
 
@@ -193,112 +201,120 @@ msgstr ""
 msgid "Developer"
 msgstr ""
 
-#: ../lib/prefs.c:108
-msgid "You have chosen an invalid dictionary entry."
+#: ../lib/prefs.c:116
+msgid "You have chosen an invalid dictionary."
 msgstr ""
 
-#: ../lib/prefs.c:173
+#: ../lib/prefs.c:127
+msgid "You must set a valid search URL."
+msgstr ""
+
+#: ../lib/prefs.c:195
 msgid "dict.leo.org - German <-> English"
 msgstr ""
 
-#: ../lib/prefs.c:174
+#: ../lib/prefs.c:196
 msgid "dict.leo.org - German <-> French"
 msgstr ""
 
-#: ../lib/prefs.c:175
+#: ../lib/prefs.c:197
 msgid "dict.leo.org - German <-> Spanish"
 msgstr ""
 
-#: ../lib/prefs.c:176
+#: ../lib/prefs.c:198
 msgid "dict.leo.org - German <-> Italian"
 msgstr ""
 
-#: ../lib/prefs.c:177
+#: ../lib/prefs.c:199
 msgid "dict.leo.org - German <-> Chinese"
 msgstr ""
 
-#: ../lib/prefs.c:178
+#: ../lib/prefs.c:200
 msgid "dist.cc - Dictionary"
 msgstr ""
 
-#: ../lib/prefs.c:179
+#: ../lib/prefs.c:201
 msgid "Dictionary.com"
 msgstr ""
 
-#: ../lib/prefs.c:180
+#: ../lib/prefs.c:202
 msgid "TheFreeDictionary.com"
 msgstr ""
 
-#: ../lib/prefs.c:181
+#: ../lib/prefs.c:203
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr ""
+
+#: ../lib/prefs.c:204
 msgid "Clear"
 msgstr ""
 
-#: ../lib/prefs.c:241
+#: ../lib/prefs.c:268
 msgid "General"
 msgstr ""
 
-#: ../lib/prefs.c:243
+#: ../lib/prefs.c:270
 msgid "<b>Default search method:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:276
+#: ../lib/prefs.c:303
 msgid "Last used method"
 msgstr ""
 
-#: ../lib/prefs.c:290
+#: ../lib/prefs.c:317
 msgid "<b>Panel text field:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:296
+#: ../lib/prefs.c:323
 msgid "Show text field in the panel"
 msgstr ""
 
 #. panel entry size
-#: ../lib/prefs.c:303
+#: ../lib/prefs.c:330
 msgid "Text field size:"
 msgstr ""
 
 #. server address
-#: ../lib/prefs.c:347
+#: ../lib/prefs.c:375
 msgid "Server:"
 msgstr ""
 
 #. server port
-#: ../lib/prefs.c:359
+#: ../lib/prefs.c:387
 msgid "Server Port:"
 msgstr ""
 
 #. dictionary
-#: ../lib/prefs.c:367 ../lib/prefs.c:512
+#: ../lib/prefs.c:395 ../lib/prefs.c:544
 msgid "Dictionary:"
 msgstr ""
 
-#: ../lib/prefs.c:371
+#: ../lib/prefs.c:399
 msgid "* (use all)"
 msgstr ""
 
-#: ../lib/prefs.c:373
+#: ../lib/prefs.c:401
 msgid "! (use all, stop after first match)"
 msgstr ""
 
-#: ../lib/prefs.c:454
+#: ../lib/prefs.c:485
 msgid "<b>Web search URL:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:460
+#: ../lib/prefs.c:491
 msgid "URL:"
 msgstr ""
 
-#: ../lib/prefs.c:480
+#: ../lib/prefs.c:511
 msgid ""
 "Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
 
-#: ../lib/prefs.c:499
+#: ../lib/prefs.c:531
 msgid "Aspell"
 msgstr ""
 
-#: ../lib/prefs.c:501
+#: ../lib/prefs.c:533
 msgid "Aspell program:"
 msgstr ""

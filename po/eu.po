@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-17 16:20+0200\n"
+"POT-Creation-Date: 2008-09-10 11:12+0200\n"
 "PO-Revision-Date: 2008-05-01 23:11+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
@@ -30,7 +30,7 @@ msgid "Look up a word"
 msgstr "Hitz bat bilatu"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:429 ../src/xfce4-dict.c:206
-#: ../lib/aspell.c:198 ../lib/dictd.c:138 ../lib/gui.c:96
+#: ../lib/aspell.c:198 ../lib/dictd.c:145 ../lib/gui.c:96
 msgid "Ready."
 msgstr "Prest."
 
@@ -80,7 +80,7 @@ msgstr "Hiztegi ezberdinak galdekatzeko bezero programa bat."
 msgid "Dictionary Client"
 msgstr "Hiztegi bezeroa"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:213
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:189 ../lib/prefs.c:236
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Hiztegia"
 
@@ -126,6 +126,11 @@ msgstr "Sarrera baliogabea."
 msgid "Process failed (%s)"
 msgstr "Prozesuak huts egin du (%s)"
 
+#: ../lib/common.c:166
+#, fuzzy
+msgid "The search URL is empty. Please check your preferences."
+msgstr "Nabigatzailea ezin da ireki. Mesedez egiaztatu zure hobespenak."
+
 #: ../lib/common.c:171
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Nabigatzailea ezin da ireki. Mesedez egiaztatu zure hobespenak."
@@ -134,11 +139,11 @@ msgstr "Nabigatzailea ezin da ireki. Mesedez egiaztatu zure hobespenak."
 msgid "Invalid non-UTF8 input."
 msgstr "Ez-UTF8 sarrera baliogabea"
 
-#: ../lib/dictd.c:112 ../lib/dictd.c:375
+#: ../lib/dictd.c:112 ../lib/dictd.c:409
 msgid "Could not connect to server."
 msgstr "Ezin da zerbitzarira konektatu."
 
-#: ../lib/dictd.c:119 ../lib/dictd.c:157 ../lib/dictd.c:397
+#: ../lib/dictd.c:119 ../lib/dictd.c:164 ../lib/dictd.c:433
 msgid "Unknown error while quering the server."
 msgstr "Errore ezezaguna zerbitzaria galdekatzerakoan."
 
@@ -146,24 +151,29 @@ msgstr "Errore ezezaguna zerbitzaria galdekatzerakoan."
 msgid "Server not ready."
 msgstr "Zerbitzaria ez dago prest."
 
-#: ../lib/dictd.c:140
+#: ../lib/dictd.c:134
+#, fuzzy
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Nabigatzailea ezin da ireki. Mesedez egiaztatu zure hobespenak."
+
+#: ../lib/dictd.c:147
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Ez  da parekatzerik aurkitu \"%s\"-rentzat."
 
-#: ../lib/dictd.c:162
+#: ../lib/dictd.c:169
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "definizio %d aurkitu da"
 msgstr[1] "%d definizio aurkitu dira"
 
-#: ../lib/dictd.c:352
+#: ../lib/dictd.c:379
 #, c-format
 msgid "Querying %s..."
 msgstr "%s galdekatzen..."
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:428
 msgid "The server doesn't offer any databases."
 msgstr "Zerbitzariak ez du datubaserik eskaintzen."
 
@@ -183,15 +193,15 @@ msgstr "Bilatzeko testua:"
 msgid "Search with:"
 msgstr "Bilatu honekin:"
 
-#: ../lib/gui.c:262 ../lib/prefs.c:249 ../lib/prefs.c:344
+#: ../lib/gui.c:262 ../lib/prefs.c:276 ../lib/prefs.c:372
 msgid "Dict"
 msgstr "Dict"
 
-#: ../lib/gui.c:268 ../lib/prefs.c:258 ../lib/prefs.c:452
+#: ../lib/gui.c:268 ../lib/prefs.c:285 ../lib/prefs.c:483
 msgid "Web"
 msgstr "Web"
 
-#: ../lib/gui.c:274 ../lib/prefs.c:267
+#: ../lib/gui.c:274 ../lib/prefs.c:294
 msgid "Spellcheck"
 msgstr "Ortografia-egiaztatzea"
 
@@ -199,103 +209,112 @@ msgstr "Ortografia-egiaztatzea"
 msgid "Developer"
 msgstr "Garatzailea"
 
-#: ../lib/prefs.c:108
-msgid "You have chosen an invalid dictionary entry."
+#: ../lib/prefs.c:116
+#, fuzzy
+msgid "You have chosen an invalid dictionary."
 msgstr "Hiztegi sarrera baliogabe bat hautatu duzu."
 
-#: ../lib/prefs.c:173
+#: ../lib/prefs.c:127
+msgid "You must set a valid search URL."
+msgstr ""
+
+#: ../lib/prefs.c:195
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Alemaniera <-> Ingelesa"
 
-#: ../lib/prefs.c:174
+#: ../lib/prefs.c:196
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Alemaniera <-> Frantsesa"
 
-#: ../lib/prefs.c:175
+#: ../lib/prefs.c:197
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Alemaniera <-> Gaztelania"
 
-#: ../lib/prefs.c:176
+#: ../lib/prefs.c:198
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Alemaniera <-> Italiera"
 
-#: ../lib/prefs.c:177
+#: ../lib/prefs.c:199
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Alemaniera <-> Txinera"
 
-#: ../lib/prefs.c:178
+#: ../lib/prefs.c:200
 msgid "dist.cc - Dictionary"
 msgstr "dist.cc - Hiztegia"
 
-#: ../lib/prefs.c:179
+#: ../lib/prefs.c:201
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:180
+#: ../lib/prefs.c:202
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:181
+#: ../lib/prefs.c:203
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr ""
+
+#: ../lib/prefs.c:204
 msgid "Clear"
 msgstr "Garbitu"
 
-#: ../lib/prefs.c:241
+#: ../lib/prefs.c:268
 msgid "General"
 msgstr "Orokorra"
 
-#: ../lib/prefs.c:243
+#: ../lib/prefs.c:270
 msgid "<b>Default search method:</b>"
 msgstr "<b>Lehenetsitako bilaketa metodoa:</b>"
 
-#: ../lib/prefs.c:276
+#: ../lib/prefs.c:303
 msgid "Last used method"
 msgstr "Azkenez erabilitako metodoa"
 
-#: ../lib/prefs.c:290
+#: ../lib/prefs.c:317
 msgid "<b>Panel text field:</b>"
 msgstr "<b>Panel testu eremua:</b>"
 
-#: ../lib/prefs.c:296
+#: ../lib/prefs.c:323
 msgid "Show text field in the panel"
 msgstr "Ikusi testu eremua panelean"
 
 #. panel entry size
-#: ../lib/prefs.c:303
+#: ../lib/prefs.c:330
 msgid "Text field size:"
 msgstr "Testu eremu tamaina:"
 
 #. server address
-#: ../lib/prefs.c:347
+#: ../lib/prefs.c:375
 msgid "Server:"
 msgstr "Zerbitzaria:"
 
 #. server port
-#: ../lib/prefs.c:359
+#: ../lib/prefs.c:387
 msgid "Server Port:"
 msgstr "Zerbitzari ataka:"
 
 #. dictionary
-#: ../lib/prefs.c:367 ../lib/prefs.c:512
+#: ../lib/prefs.c:395 ../lib/prefs.c:544
 msgid "Dictionary:"
 msgstr "Hiztegia:"
 
-#: ../lib/prefs.c:371
+#: ../lib/prefs.c:399
 msgid "* (use all)"
 msgstr "* (dena erabili)"
 
-#: ../lib/prefs.c:373
+#: ../lib/prefs.c:401
 msgid "! (use all, stop after first match)"
 msgstr "! (dena erabili, lehen parekatzean gelditu)"
 
-#: ../lib/prefs.c:454
+#: ../lib/prefs.c:485
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Web bilaketa URLa:</b>"
 
-#: ../lib/prefs.c:460
+#: ../lib/prefs.c:491
 msgid "URL:"
 msgstr "URLa:"
 
-#: ../lib/prefs.c:480
+#: ../lib/prefs.c:511
 #, fuzzy
 msgid ""
 "Enter an URL to a web site which offer translation or dictionary services. "
@@ -304,10 +323,10 @@ msgstr ""
 "Idatzi itzulpen zerbitzuak eskeintzen dituen webgunearen URLa.\n"
 "Erabili {hitza} bilaketa hitzaren kokalekuan."
 
-#: ../lib/prefs.c:499
+#: ../lib/prefs.c:531
 msgid "Aspell"
 msgstr "Aspell"
 
-#: ../lib/prefs.c:501
+#: ../lib/prefs.c:533
 msgid "Aspell program:"
 msgstr "Aspell programa:"
