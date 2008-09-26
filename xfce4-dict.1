@@ -1,4 +1,4 @@
-.TH "XFCE4-DICT" "1" "April 15, 2008" "xfce4-dict 0.4.0" ""
+.TH "XFCE4-DICT" "1" "September 15, 2008" "xfce4-dict 0.4.2" ""
 .SH "NAME"
 xfce4-dict \(em a client program to query different dictionaries
 .SH "SYNOPSIS"
@@ -26,6 +26,12 @@ Grab the focus on the text field in the panel (has no effect if panel plugin is 
 Check the given text with a spellchecker.
 .IP "\fB-i\fP, \fB\-\-ignore-plugin\fP         " 10
 Start stand-alone application even if the panel plugin is loaded.
+.IP "\fB-c\fP, \fB\-\-clipboard\fP         " 10
+Grabs the PRIMARY selection content (X selection clipboard), uses it as search text and performs
+a search. This is useful when you want to create keyboard shortcuts for this command.
+The search method can be specified with the \-d, \-w and \-s options, if not specified the
+default search method is used.
+If the PRIMARY clipboard doesn't contain any text, the normal clipboard is used.
 .IP "\fB-v\fP, \fB\-\-version\fP         " 10
 Show version information.
 .IP "\fB-?\fP, \fB-h\fP, \fB\-\-help\fP         " 10
