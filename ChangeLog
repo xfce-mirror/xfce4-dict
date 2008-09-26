@@ -1,3 +1,9 @@
+2008-09-25  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Add "en.wikipedia.org" and "www.merriam-webster.com" to the list
+   of web dictionaries (thanks to Liviu Andronic for the hint).
+
+
 2008-09-23  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * New release: 0.4.1.
