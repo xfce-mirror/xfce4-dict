@@ -4,7 +4,7 @@ dnl xfce4-dict
 dnl
 
 dnl version info
-m4_define([dict_version], [0.4.1])
+m4_define([dict_version], [0.4.2])
 
 dnl init autoconf
 AC_INIT([xfce4-dict], [dict_version], [goodies-dev@xfce.org])
