@@ -40,6 +40,13 @@
 #include "gui.h"
 
 
+typedef struct
+{
+	DictData *dd;
+	gchar *word;
+} iodata;
+
+
 static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, gpointer data)
 {
 	GIOChannel *ioc;
@@ -60,10 +67,11 @@ static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, g
 
 static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 {
+	iodata *iod = data;
 	if (cond & (G_IO_IN | G_IO_PRI))
 	{
 		gchar *msg, *tmp;
-		DictData *dd = data;
+		DictData *dd = iod->dd;
 
 		while (g_io_channel_read_line(ioc, &msg, NULL, NULL, NULL) && msg != NULL)
 		{
@@ -76,7 +84,7 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
                                             "%d suggestions found.",
                                             count), count);
 
-				tmp = g_strdup_printf(_("Suggestions for \"%s\":"), dd->searched_word);
+				tmp = g_strdup_printf(_("Suggestions for \"%s\":"), iod->word);
 				gtk_text_buffer_insert_with_tags(
 					dd->main_textbuffer, &dd->textiter, tmp, -1, dd->main_boldtag, NULL);
 				g_free(tmp);
@@ -84,25 +92,32 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 
 				tmp = strchr(msg, ':') + 2;
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, g_strchomp(tmp), -1);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
 			}
 			else if (msg[0] == '*')
 			{
-				tmp = g_strdup_printf(_("\"%s\" is spelled correctly."), dd->searched_word);
+				tmp = g_strdup_printf(_("\"%s\" is spelled correctly."), iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
 				g_free(tmp);
 			}
 			else if (msg[0] == '#')
 			{
 				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\"."),
-					dd->searched_word);
+					iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
 				g_free(tmp);
 			}
 			g_free(msg);
 		}
 	}
 	if (cond & (G_IO_ERR | G_IO_HUP | G_IO_NVAL))
+	{
+		g_free(iod->word);
+		g_free(iod);
 		return FALSE;
+	}
 
 	return TRUE;
 }
@@ -150,8 +165,10 @@ void dict_aspell_start_query(DictData *dd, const gchar *word)
 	gint     stdout_fd;
 	gint     stderr_fd;
 	gint     stdin_fd;
-	gchar	*tts;
-	gchar	*tts_end;
+	guint	 i;
+	gsize	 tts_len;
+	gchar  **tts; /* text to search */
+	iodata	*iod;
 
 	if (! NZV(dd->spell_bin))
 	{
@@ -165,45 +182,44 @@ void dict_aspell_start_query(DictData *dd, const gchar *word)
 		return;
 	}
 
-	/* TODO search only for the first word when working on a sentence,
-	 * workout a better solution */
-	tts = g_strdup(word);
-	if ((tts_end = strchr(word, ' ')) ||
-		(tts_end = strchr(word, '-')) ||
-		(tts_end = strchr(word, '_')) ||
-		(tts_end = strchr(word, '.')) ||
-		(tts_end = strchr(word, ',')))
+	tts = g_strsplit_set(word, " -_,.", 0);
+	tts_len = g_strv_length(tts);
+
+	for (i = 0; i < tts_len; i++)
 	{
-		*tts_end = '\0';
+		locale_cmd = g_locale_from_utf8(dd->spell_bin, -1, NULL, NULL, NULL);
+		if (locale_cmd == NULL)
+			locale_cmd = g_strdup(dd->spell_bin);
+
+		argv = g_new0(gchar*, 5);
+		argv[0] = locale_cmd;
+		argv[1] = g_strdup("-a");
+		argv[2] = g_strdup("-l");
+		argv[3] = g_strdup(dd->spell_dictionary);
+		argv[4] = NULL;
+
+		if (g_spawn_async_with_pipes(NULL, argv, NULL,
+				G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD, NULL, NULL, NULL,
+				&stdin_fd, &stdout_fd, &stderr_fd, &error))
+		{
+			iod = g_new(iodata, 1);
+			iod->dd = dd;
+			iod->word = g_strdup(tts[i]);
+
+			set_up_io_channel(stdin_fd, G_IO_OUT, iofunc_write, g_strdup(tts[i]));
+			set_up_io_channel(stdout_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read, iod);
+			set_up_io_channel(stderr_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read_err, dd);
+			dict_gui_status_add(dd, _("Ready."));
+		}
+		else
+		{
+			dict_gui_status_add(dd, _("Process failed (%s)"), error->message);
+			g_error_free(error);
+			error = NULL;
+		}
+
+		g_strfreev(argv);
 	}
 
-	locale_cmd = g_locale_from_utf8(dd->spell_bin, -1, NULL, NULL, NULL);
-	if (locale_cmd == NULL)
-		locale_cmd = g_strdup(dd->spell_bin);
-
-	argv = g_new0(gchar*, 5);
-	argv[0] = locale_cmd;
-	argv[1] = g_strdup("-a");
-	argv[2] = g_strdup("-l");
-	argv[3] = g_strdup(dd->spell_dictionary);
-	argv[4] = NULL;
-
-	if (g_spawn_async_with_pipes(NULL, argv, NULL,
-			G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD, NULL, NULL, NULL,
-			&stdin_fd, &stdout_fd, &stderr_fd, &error))
-	{
-		set_up_io_channel(stdin_fd, G_IO_OUT, iofunc_write, tts);
-		set_up_io_channel(stdout_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read, dd);
-		set_up_io_channel(stderr_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read_err, dd);
-		dict_gui_status_add(dd, _("Ready."));
-	}
-	else
-	{
-		dict_gui_status_add(dd, _("Process failed (%s)"), error->message);
-		g_error_free(error);
-		error = NULL;
-	}
-
-	/* tts is freed in iofunc_write() */
-	g_strfreev(argv);
+	g_strfreev(tts);
 }

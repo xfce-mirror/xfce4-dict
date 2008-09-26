@@ -5,6 +5,7 @@
  * Add new command line option: '--clipboard' (-c) to take the
    search text from the PRIMARY clipboard and performs a search.
    Update manual page.
+ * Fix spell checking with multiple words/sentences.
 
 
 2008-09-23  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
