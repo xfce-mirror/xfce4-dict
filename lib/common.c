@@ -173,6 +173,12 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 	}
 	g_free(uri);
 
+	if (success)
+	{
+		/* clear the panel entry to not search again when you click on the panel button */
+		dict_gui_set_panel_entry_text(dd, "");
+	}
+
 	return success;
 }
 
