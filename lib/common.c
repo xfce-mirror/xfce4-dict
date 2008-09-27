@@ -219,6 +219,8 @@ void dict_search_word(DictData *dd, const gchar *word)
 	{
 		dd->searched_word = g_strdup(word);
 	}
+	/* remove leading and trailing spaces */
+	g_strstrip(dd->searched_word);
 
 	dict_gui_clear_text_buffer(dd);
 

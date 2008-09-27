@@ -1,3 +1,9 @@
+2008-09-27  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Remove leading and trailing spaces from the search term before
+   performing the search (reported by Liviu Andronic).
+
+
 2008-09-26  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Add "en.wikipedia.org" and "www.merriam-webster.com" to the list
