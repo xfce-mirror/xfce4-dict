@@ -173,12 +173,6 @@ static gboolean start_web_query(DictData *dd, const gchar *word)
 	}
 	g_free(uri);
 
-	if (success)
-	{
-		/* clear the panel entry to not search again when you click on the panel button */
-		dict_gui_set_panel_entry_text(dd, "");
-	}
-
 	return success;
 }
 
@@ -235,7 +229,6 @@ void dict_search_word(DictData *dd, const gchar *word)
 		case DICTMODE_WEB:
 		{
 			browser_started = start_web_query(dd, dd->searched_word);
-
 			break;
 		}
 		case DICTMODE_SPELL:
@@ -260,6 +253,8 @@ void dict_search_word(DictData *dd, const gchar *word)
 	{
 		dict_gui_show_main_window(dd);
 	}
+	/* clear the panel entry to not search again when you click on the panel button */
+	dict_gui_set_panel_entry_text(dd, "");
 }
 
 

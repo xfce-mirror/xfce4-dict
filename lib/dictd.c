@@ -231,9 +231,6 @@ static gboolean process_server_response(DictData *dd)
 	g_strfreev(lines);
 	g_free(dd->query_buffer);
 
-	/* clear the panel entry to not search again when you click on the panel button */
-	dict_gui_set_panel_entry_text(dd, "");
-
 	return FALSE;
 }
 

@@ -114,9 +114,6 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 	}
 	if (cond & (G_IO_ERR | G_IO_HUP | G_IO_NVAL))
 	{
-		/* clear the panel entry to not search again when you click on the panel button */
-		dict_gui_set_panel_entry_text(iod->dd, "");
-
 		g_free(iod->word);
 		g_free(iod);
 

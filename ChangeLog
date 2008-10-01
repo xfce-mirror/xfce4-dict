@@ -1,3 +1,8 @@
+2008-09-29  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Improve clearing of panel text entry: clear it always.
+
+
 2008-09-27  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Remove leading and trailing spaces from the search term before
