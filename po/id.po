@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-10 11:12+0200\n"
-"PO-Revision-Date: 2008-07-18 22:19+0700\n"
+"PO-Revision-Date: 2008-09-10 22:18+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -125,9 +125,8 @@ msgid "Process failed (%s)"
 msgstr "Proses gagal (%s)"
 
 #: ../lib/common.c:166
-#, fuzzy
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Peramban tak bisa dibuka. Silakan cek pengaturan anda."
+msgstr "URL penelusuran kosong. Silakan cek pengaturan anda."
 
 #: ../lib/common.c:171
 msgid "Browser could not be opened. Please check your preferences."
@@ -150,9 +149,8 @@ msgid "Server not ready."
 msgstr "Server belum siap."
 
 #: ../lib/dictd.c:134
-#, fuzzy
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Peramban tak bisa dibuka. Silakan cek pengaturan anda."
+msgstr "Kamus tidak sah yang ditentukan. Silakan cek pengaturan anda."
 
 #: ../lib/dictd.c:147
 #, c-format
@@ -207,13 +205,12 @@ msgid "Developer"
 msgstr "Pengembang"
 
 #: ../lib/prefs.c:116
-#, fuzzy
 msgid "You have chosen an invalid dictionary."
-msgstr "Anda telah memilih entri kamus yang tidak sah."
+msgstr "Anda telah memilih kamus yang tidak sah."
 
 #: ../lib/prefs.c:127
 msgid "You must set a valid search URL."
-msgstr ""
+msgstr "Anda harus mengatur URL penelusuran yang sah."
 
 #: ../lib/prefs.c:195
 msgid "dict.leo.org - German <-> English"
@@ -249,7 +246,7 @@ msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:203
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr ""
+msgstr "Wiktionary, kamus gratis (EN)"
 
 #: ../lib/prefs.c:204
 msgid "Clear"
