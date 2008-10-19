@@ -363,7 +363,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	 */
 #define PAGE_DICTD /* only for navigation in Geany's symbol list ;-) */
 	 {
-		GtkWidget *table, *button_get_list, *server_entry, *port_spinner, *dict_combo;
+		GtkWidget *table, *button_get_list, *button_get_info;
+		GtkWidget *server_entry, *port_spinner, *dict_combo;
 
 		notebook_vbox = gtk_vbox_new(FALSE, 2);
 		gtk_widget_show(notebook_vbox);
@@ -421,12 +422,18 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(dialog), "port_spinner", port_spinner);
 		g_object_set_data(G_OBJECT(dialog), "dict_combo", dict_combo);
 
-		button_get_list = gtk_button_new_from_stock("gtk-find");
+		button_get_list = gtk_button_new_from_stock("gtk-refresh");
 		gtk_widget_show(button_get_list);
 		g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_dictd_get_list), dd);
 		g_object_set_data(G_OBJECT(button_get_list), "dict_combo", dict_combo);
 		g_object_set_data(G_OBJECT(button_get_list), "port_spinner", port_spinner);
 		g_object_set_data(G_OBJECT(button_get_list), "server_entry", server_entry);
+
+		button_get_info = gtk_button_new_from_stock("gtk-info");
+		gtk_widget_show(button_get_info);
+		g_signal_connect(button_get_info, "clicked", G_CALLBACK(dict_dictd_get_information), dd);
+		g_object_set_data(G_OBJECT(button_get_info), "port_spinner", port_spinner);
+		g_object_set_data(G_OBJECT(button_get_info), "server_entry", server_entry);
 
 		/* put it all together */
 		table = gtk_table_new(3, 3, FALSE);
@@ -440,6 +447,10 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_misc_set_alignment(GTK_MISC(label1), 1, 0);
 
 		gtk_table_attach(GTK_TABLE(table), server_entry, 1, 2, 0, 1,
+						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_table_attach(GTK_TABLE(table), button_get_info, 2, 3, 0, 1,
 						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
 						(GtkAttachOptions) (0), 5, 5);
 

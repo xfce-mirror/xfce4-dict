@@ -483,7 +483,97 @@ void dict_dictd_start_query(DictData *dd, const gchar *word)
 }
 
 
-gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
+void dict_dictd_get_information(GtkWidget *button, DictData *dd)
+{
+	gint fd;
+	gchar *buffer = NULL;
+	gchar *answer = NULL;
+	gchar *text, *end;
+	GtkEntry *entry_server = g_object_get_data(G_OBJECT(button), "server_entry");
+	GtkSpinButton *entry_port = g_object_get_data(G_OBJECT(button), "port_spinner");
+	const gchar *server;
+	gint port;
+	GtkWidget *dialog, *label, *swin, *vbox;
+
+	dictd_init();
+
+	server = gtk_entry_get_text(entry_server);
+	port = gtk_spin_button_get_value_as_int(entry_port);
+
+	if ((fd = open_socket(server, port)) == -1)
+	{
+		xfce_err(_("Could not connect to server."));
+		return;
+	}
+
+	dd->query_status = NO_CONNECTION;
+
+	g_free(get_answer(dd, fd));
+	if (dd->query_status != NO_ERROR)
+	{
+		xfce_err(_("Could not connect to server."));
+		return;
+	}
+
+	send_command(fd, "SHOW SERVER");
+
+	/* read all server output */
+	answer = buffer = get_answer(dd, fd);
+	send_command(fd, "QUIT");
+	close(fd);
+
+	/* go to next line */
+	while (*buffer != '\n') buffer++;
+	buffer++;
+
+	if (strncmp("114", buffer, 3) != 0)
+	{
+		xfce_err(_("An error occured while querying server information."));
+		return;
+	}
+
+	/* go to next line */
+	while (*buffer != '\n') buffer++;
+	buffer++;
+
+	end = strstr(buffer, ".\r\n250");
+	*end = '\0';
+
+	text = g_strdup_printf(_("Server Information for %s"), server);
+	dialog = gtk_dialog_new_with_buttons(text,
+				GTK_WINDOW(dd->window),
+				GTK_DIALOG_DESTROY_WITH_PARENT,
+				GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
+	vbox = gtk_vbox_new(FALSE, 12);
+	gtk_container_set_border_width(GTK_CONTAINER(vbox), 5);
+	gtk_container_add(GTK_CONTAINER(GTK_DIALOG(dialog)->vbox), vbox);
+	gtk_box_set_spacing(GTK_BOX(vbox), 6);
+	g_free(text);
+
+	gtk_window_set_default_size(GTK_WINDOW(dialog), 500, 400);
+	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_CLOSE);
+
+	text = g_strconcat("<tt>", buffer, "</tt>", NULL);
+	label = gtk_label_new(text);
+	gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
+	g_free(text);
+
+	swin = gtk_scrolled_window_new(NULL, NULL);
+	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(swin),
+		GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+	gtk_scrolled_window_add_with_viewport(GTK_SCROLLED_WINDOW(swin), label);
+
+	gtk_box_pack_start(GTK_BOX(vbox), swin, TRUE, TRUE, 0);
+
+	gtk_widget_show_all(vbox);
+	gtk_dialog_run(GTK_DIALOG(dialog));
+	gtk_widget_destroy(dialog);
+
+	g_free(answer);
+}
+
+
+void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 {
 	gint fd, i;
 	gint max_lines;
@@ -504,7 +594,7 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	if ((fd = open_socket(server, port)) == -1)
 	{
 		xfce_err(_("Could not connect to server."));
-		return FALSE;
+		return;
 	}
 
 	dd->query_status = NO_CONNECTION;
@@ -513,7 +603,7 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	if (dd->query_status != NO_ERROR)
 	{
 		xfce_err(_("Could not connect to server."));
-		return FALSE;
+		return;
 	}
 
 	send_command(fd, "SHOW DATABASES");
@@ -529,15 +619,13 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 
 	if (strncmp("554", buffer, 3) == 0)
 	{
-		close(fd);
 		xfce_err(_("The server doesn't offer any databases."));
-		return TRUE;
+		return;
 	}
 	else if (strncmp("110", buffer, 3) != 0 && strncmp("554", buffer, 3) != 0)
 	{
 		xfce_err(_("Unknown error while quering the server."));
-		close(fd);
-		return FALSE;
+		return;
 	}
 
 	/* go to next line */
@@ -554,7 +642,8 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	/* parse output */
 	lines = g_strsplit(buffer, "\r\n", -1);
 	max_lines = g_strv_length(lines);
-	if (lines == NULL || max_lines == 0) return FALSE;
+	if (lines == NULL || max_lines == 0)
+		return;
 
 	i = 0;
 	while (i < max_lines && lines[i][0] != '.')
@@ -569,7 +658,5 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	/* set the active entry to * because we don't know where the previously selected item now is in
 	 * the list and we also don't know whether it exists at all, and I don't walk through the list */
 	gtk_combo_box_set_active(GTK_COMBO_BOX(dict_combo), 0);
-
-	return TRUE;
 }
 

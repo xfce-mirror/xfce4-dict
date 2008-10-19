@@ -23,7 +23,8 @@
 
 
 void dict_dictd_start_query(DictData *dd, const gchar *word);
-gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd);
+void dict_dictd_get_list(GtkWidget *button, DictData *dd);
+void dict_dictd_get_information(GtkWidget *button, DictData *dd);
 
 
 #endif
