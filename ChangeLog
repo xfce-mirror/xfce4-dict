@@ -1,6 +1,8 @@
 2008-10-14  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Beautify the texview output a little bit.
+ * Do not skip the first line of a dictd server text response as it
+   might contain useful information.
 
 
 2008-09-29  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

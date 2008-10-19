@@ -105,6 +105,7 @@ static gboolean process_server_response(DictData *dd)
 {
 	gint max_lines, i;
 	gint defs_found = 0;
+	gboolean first_line;
 	gchar *answer, *tmp, *stripped;
 	gchar **lines, **dict_parts;
 
@@ -220,7 +221,8 @@ static gboolean process_server_response(DictData *dd)
 			break;
 
 		/* all following lines represents the translation */
-		i += 2; /* skip the next two lines */
+		i++;
+		first_line = TRUE;
 		while (lines[i] != NULL && lines[i][0] != '\r' && lines[i][0] != '\n')
 		{
 			/* check for a leading period indicating end of text response */
@@ -237,8 +239,16 @@ static gboolean process_server_response(DictData *dd)
 			stripped = g_strstrip(lines[i]);
 			if (strlen(stripped) > 0)
 			{
-				gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter, stripped, -1,
-					dd->main_tag_indent, NULL);
+				if (first_line)
+				{	/* do not indent the first line */
+					gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, stripped, -1);
+					first_line = FALSE;
+				}
+				else
+				{
+					gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter,
+						stripped, -1, dd->main_tag_indent, NULL);
+				}
 				if (i < (max_lines - 1) && lines[i + 1][0] != '.')
 					gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
