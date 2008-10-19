@@ -105,7 +105,8 @@ static gboolean process_server_response(DictData *dd)
 {
 	gint max_lines, i;
 	gint defs_found = 0;
-	gchar *answer, *tmp, **lines, *stripped;
+	gchar *answer, *tmp, *stripped;
+	gchar **lines, **dict_parts;
 
 	if (dd->query_status == NO_CONNECTION)
 	{
@@ -144,6 +145,7 @@ static gboolean process_server_response(DictData *dd)
 	{
 		dict_gui_status_add(dd, _("Ready."));
 
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 		tmp = g_strdup_printf(_("No matches could be found for \"%s\"."), dd->searched_word);
 		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 		g_free(tmp);
@@ -153,7 +155,7 @@ static gboolean process_server_response(DictData *dd)
 		 * aspell */
 		if (NZV(dd->spell_bin))
 		{
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			dict_aspell_start_query(dd, dd->searched_word);
 		}
 
@@ -190,28 +192,30 @@ static gboolean process_server_response(DictData *dd)
 	while (i < max_lines)
 	{
 		i++;
-		if (strncmp(lines[i], "250", 3) == 0) break; /* end of data */
+		if (strncmp(lines[i], "250", 3) == 0)
+			break; /* end of data */
 		if (strncmp(lines[i], "error:", 6) == 0) /* an error occurred */
 		{
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, lines[i], -1);
 			break;
 		}
-		if (strncmp(lines[i], "151", 3) != 0) continue; /* unexpected line start, try next line */
+		if (strncmp(lines[i], "151", 3) != 0)
+			continue; /* unexpected line start, try next line */
 
 		/* get the used dictionary */
-		tmp = strchr(lines[i], '"'); /* get the opening " of quoted search word */
-		if (tmp != NULL)
-		{
-			tmp = strchr(tmp + 1, '"'); /* get the closing " of quoted search word */
-			if (tmp != NULL)
-			{
-				/* skip the found quote and the following space */
-				gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter, tmp + 2, -1,
-																dd->main_boldtag, NULL);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
-			}
-		}
-		if (i >= (max_lines - 2)) break;
+		dict_parts = g_strsplit(lines[i], "\"", -1);
+
+		gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter,
+			g_strstrip(dict_parts[3]), -1, dd->main_tag_bold, NULL);
+
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, " (", 2);
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, g_strstrip(dict_parts[2]), -1);
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, ")\n", 2);
+
+		g_strfreev(dict_parts);
+
+		if (i >= (max_lines - 2))
+			break;
 
 		/* all following lines represents the translation */
 		i += 2; /* skip the next two lines */
@@ -220,7 +224,8 @@ static gboolean process_server_response(DictData *dd)
 			stripped = g_strstrip(lines[i]);
 			if (strlen(stripped) > 0)
 			{
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, stripped, -1);
+				gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter, stripped, -1,
+					dd->main_tag_indent, NULL);
 				if (i < (max_lines - 1) && lines[i + 1][0] != '.')
 					gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}

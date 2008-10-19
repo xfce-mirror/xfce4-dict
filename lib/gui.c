@@ -294,8 +294,13 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_text_view_set_right_margin(GTK_TEXT_VIEW(dd->main_textview), 5);
 	gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(dd->main_textview), GTK_WRAP_WORD);
 	dd->main_textbuffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(dd->main_textview));
-	dd->main_boldtag = gtk_text_buffer_create_tag(dd->main_textbuffer,
-			"bold", "weight", PANGO_WEIGHT_BOLD, NULL);
+	dd->main_tag_bold = gtk_text_buffer_create_tag(dd->main_textbuffer,
+			"bold",
+			"weight", PANGO_WEIGHT_BOLD,
+			"style", PANGO_STYLE_ITALIC,
+			"pixels-below-lines", 3, NULL);
+	dd->main_tag_indent = gtk_text_buffer_create_tag(dd->main_textbuffer,
+			"indent", "indent", 10, NULL);
 
 	gtk_widget_show(dd->main_textview);
 	gtk_container_add(GTK_CONTAINER(scrolledwindow_results), dd->main_textview);

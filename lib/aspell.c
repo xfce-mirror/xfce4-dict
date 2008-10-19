@@ -84,9 +84,10 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
                                             "%d suggestions found.",
                                             count), count);
 
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("Suggestions for \"%s\":"), iod->word);
 				gtk_text_buffer_insert_with_tags(
-					dd->main_textbuffer, &dd->textiter, tmp, -1, dd->main_boldtag, NULL);
+					dd->main_textbuffer, &dd->textiter, tmp, -1, dd->main_tag_bold, NULL);
 				g_free(tmp);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 
@@ -96,6 +97,7 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 			}
 			else if (msg[0] == '*')
 			{
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("\"%s\" is spelled correctly."), iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
@@ -103,6 +105,7 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 			}
 			else if (msg[0] == '#')
 			{
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\"."),
 					iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
