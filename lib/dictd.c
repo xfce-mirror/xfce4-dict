@@ -539,7 +539,7 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	end = strstr(buffer, ".\r\n250");
 	*end = '\0';
 
-	text = g_strdup_printf(_("Server Information for %s"), server);
+	text = g_strdup_printf(_("Server Information for \"%s\""), server);
 	dialog = gtk_dialog_new_with_buttons(text,
 				GTK_WINDOW(dd->window),
 				GTK_DIALOG_DESTROY_WITH_PARENT,

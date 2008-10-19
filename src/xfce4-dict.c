@@ -59,7 +59,7 @@ static GOptionEntry cli_options[] =
 	{ "spell", 's', 0, G_OPTION_ARG_NONE, &mode_spell, N_("Check the given text with a spell checker"), NULL },
 	{ "text-field", 't', 0, G_OPTION_ARG_NONE, &focus_panel_entry, N_("Grab the focus on the text field in the panel"), NULL },
 	{ "ignore-plugin", 'i', 0, G_OPTION_ARG_NONE, &ignore_plugin, N_("Start stand-alone application even if the panel plugin is loaded"), NULL },
-	{ "clipboard", 'c', 0, G_OPTION_ARG_NONE, &use_clipboard, N_("Grabs the PRIMARY selection content and uses it as search text."), NULL },
+	{ "clipboard", 'c', 0, G_OPTION_ARG_NONE, &use_clipboard, N_("Grabs the PRIMARY selection content and uses it as search text"), NULL },
 	{ "version", 'v', 0, G_OPTION_ARG_NONE, &show_version, N_("Show version information"), NULL },
 	{ NULL, 0, 0, 0, NULL, NULL, NULL }
 };

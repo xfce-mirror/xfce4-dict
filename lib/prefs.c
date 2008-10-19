@@ -541,7 +541,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
-			notebook_vbox, gtk_label_new(_("Aspell")), NOTEBOOK_PAGE_ASPELL);
+			notebook_vbox, gtk_label_new(_("Spell Check")), NOTEBOOK_PAGE_ASPELL);
 
 		label1 = gtk_label_new_with_mnemonic(_("Aspell program:"));
 		gtk_widget_show(label1);
