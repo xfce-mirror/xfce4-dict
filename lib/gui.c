@@ -32,6 +32,7 @@
 
 #include "common.h"
 #include "gui.h"
+#include "sexy-icon-entry.h"
 #include "inline-icon.h"
 
 
@@ -231,6 +232,26 @@ static void entry_activate_cb(GtkEntry *entry, DictData *dd)
 }
 
 
+static void entry_icon_pressed_cb(SexyIconEntry *entry, gint icon_pos, gint button, DictData *dd)
+{
+	if (button != 1)
+		return;
+
+	if (icon_pos == SEXY_ICON_ENTRY_PRIMARY)
+	{
+		entry_activate_cb(NULL, dd);
+		gtk_widget_grab_focus(dd->main_entry);
+	}
+	else if (icon_pos == SEXY_ICON_ENTRY_SECONDARY)
+	{
+		dict_gui_clear_text_buffer(dd);
+		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
+		dict_gui_set_panel_entry_text(dd, "");
+		dict_gui_status_add(dd, _("Ready."));
+	}
+}
+
+
 static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
 {
 	entry_activate_cb(NULL, dd);
@@ -238,15 +259,61 @@ static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
 }
 
 
-static void clear_button_clicked_cb(GtkButton *button, DictData *dd)
+static const gchar *get_icon_name(const gchar *req1, const gchar *req2, const gchar *fallback)
 {
-	dict_gui_clear_text_buffer(dd);
+	GtkIconTheme *theme = gtk_icon_theme_get_default();
 
-	/* clear the entries */
-	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
-	dict_gui_set_panel_entry_text(dd, "");
+	if (gtk_icon_theme_has_icon(theme, req1))
+		return req1;
+	else if (gtk_icon_theme_has_icon(theme, req2))
+		return req2;
+	else
+		return fallback;
+}
 
-	dict_gui_status_add(dd, _("Ready."));
+
+static void update_search_button(DictData *dd, GtkWidget *box)
+{
+	static GtkWidget *button = NULL;
+	/* cache the image name to not lookup through the theme each time */
+	static const gchar *web_image_name = NULL;
+	GtkWidget *image = NULL;
+
+	if (button == NULL)
+	{
+		button = gtk_button_new_from_stock("gtk-find");
+		gtk_widget_show(button);
+		gtk_box_pack_start(GTK_BOX(box), button, FALSE, FALSE, 0);
+		g_signal_connect(button, "clicked", G_CALLBACK(entry_button_clicked_cb), dd);
+
+		/* "internet-web-browser" is Tango, "web-browser" is Rodent, "gtk-find" is GTK */
+		web_image_name = get_icon_name("internet-web-browser", "web-browser", "gtk-find");
+	}
+
+	switch (dd->mode_in_use)
+	{
+		case DICTMODE_DICT:
+		{
+			image = gtk_image_new_from_stock("gtk-find", GTK_ICON_SIZE_BUTTON);
+			break;
+		}
+		case DICTMODE_WEB:
+		{
+			image = gtk_image_new_from_icon_name(web_image_name, GTK_ICON_SIZE_BUTTON);
+			break;
+		}
+		case DICTMODE_SPELL:
+		{
+			image = gtk_image_new_from_stock("gtk-spell-check", GTK_ICON_SIZE_BUTTON);
+			break;
+		}
+		default:
+			break;
+	}
+	if (image != NULL)
+	{
+		gtk_button_set_image(GTK_BUTTON(button), image);
+	}
 }
 
 
@@ -256,6 +323,7 @@ static void search_mode_dict_toggled(GtkToggleButton *togglebutton, DictData *dd
 	{
 		dd->mode_in_use = DICTMODE_DICT;
 		gtk_widget_grab_focus(dd->main_entry);
+		update_search_button(dd, NULL);
 	}
 }
 
@@ -266,6 +334,7 @@ static void search_mode_web_toggled(GtkToggleButton *togglebutton, DictData *dd)
 	{
 		dd->mode_in_use = DICTMODE_WEB;
 		gtk_widget_grab_focus(dd->main_entry);
+		update_search_button(dd, NULL);
 	}
 }
 
@@ -276,6 +345,7 @@ static void search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *d
 	{
 		dd->mode_in_use = DICTMODE_SPELL;
 		gtk_widget_grab_focus(dd->main_entry);
+		update_search_button(dd, NULL);
 	}
 }
 
@@ -343,7 +413,7 @@ void dict_gui_finalize(DictData *dd)
 void dict_gui_create_main_window(DictData *dd)
 {
 	GtkWidget *main_box;
-	GtkWidget *entry_box, *label_box, *entry_label, *entry_button, *clear_button;
+	GtkWidget *entry_box, *label_box, *image;
 	GtkWidget *sep, *align, *scrolledwindow_results;
 	GdkPixbuf *icon;
 	GtkWidget *method_chooser, *radio, *label;
@@ -373,30 +443,23 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(label_box);
 	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 0);
 
-	entry_label = gtk_label_new(_("Text to search:"));
-	gtk_widget_show(entry_label);
-	gtk_misc_set_alignment(GTK_MISC(entry_label), 1, 0.5);
-
-	align = gtk_alignment_new(1, 0.5, 0, 0);
-	gtk_alignment_set_padding(GTK_ALIGNMENT(align), 0, 0, 5, 0);
-	gtk_widget_show(align);
-	gtk_container_add(GTK_CONTAINER(align), entry_label);
-	gtk_box_pack_start(GTK_BOX(label_box), align, FALSE, FALSE, 2);
-
-	dd->main_entry = gtk_entry_new();
+	dd->main_entry = sexy_icon_entry_new();
+	image = gtk_image_new_from_stock("gtk-find", GTK_ICON_SIZE_MENU);
+	sexy_icon_entry_set_icon(SEXY_ICON_ENTRY(dd->main_entry),
+		SEXY_ICON_ENTRY_PRIMARY, GTK_IMAGE(image));
+	sexy_icon_entry_set_icon_highlight(
+		SEXY_ICON_ENTRY(dd->main_entry), SEXY_ICON_ENTRY_PRIMARY, TRUE);
+	image = gtk_image_new_from_stock("gtk-clear", GTK_ICON_SIZE_MENU);
+	sexy_icon_entry_set_icon(SEXY_ICON_ENTRY(dd->main_entry),
+		SEXY_ICON_ENTRY_SECONDARY, GTK_IMAGE(image));
+	sexy_icon_entry_set_icon_highlight(
+		SEXY_ICON_ENTRY(dd->main_entry), SEXY_ICON_ENTRY_SECONDARY, TRUE);
 	gtk_widget_show(dd->main_entry);
 	gtk_box_pack_start(GTK_BOX(label_box), dd->main_entry, TRUE, TRUE, 0);
 	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
+	g_signal_connect(dd->main_entry, "icon_released", G_CALLBACK(entry_icon_pressed_cb), dd);
 
-	entry_button = gtk_button_new_from_stock("gtk-find");
-	gtk_widget_show(entry_button);
-	gtk_box_pack_start(GTK_BOX(entry_box), entry_button, FALSE, FALSE, 0);
-	g_signal_connect(entry_button, "clicked", G_CALLBACK(entry_button_clicked_cb), dd);
-
-	clear_button = gtk_button_new_from_stock("gtk-clear");
-	gtk_widget_show(clear_button);
-	gtk_box_pack_start(GTK_BOX(entry_box), clear_button, FALSE, FALSE, 0);
-	g_signal_connect(clear_button, "clicked", G_CALLBACK(clear_button_clicked_cb), dd);
+	update_search_button(dd, entry_box);
 
 	/* just make some space */
 	align = gtk_alignment_new(1, 0.5, 0, 0);
@@ -435,7 +498,7 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
-	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Spellcheck"));
+	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Spell Check"));
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_SPELL));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_spell_toggled), dd);
 	gtk_widget_show(radio);

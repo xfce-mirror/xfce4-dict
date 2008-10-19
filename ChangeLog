@@ -1,3 +1,10 @@
+2008-10-18  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Use a SexyIconEntry for the search field, it's just sexy :).
+   Remove the Clear button from the GUI (provided in the search field).
+   Change the icon of the search button when switching search method.
+
+
 2008-10-17  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Add 'Information' button in the preferences dialog to query

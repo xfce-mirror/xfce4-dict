@@ -293,7 +293,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_WEB));
 		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(search_method_changed), dd);
 
-		radio_button = gtk_radio_button_new_with_label(search_method, _("Spellcheck"));
+		radio_button = gtk_radio_button_new_with_label(search_method, _("Spell Check"));
 		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
 		if (dd->mode_default == DICTMODE_SPELL)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);

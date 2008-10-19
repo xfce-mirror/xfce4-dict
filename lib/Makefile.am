@@ -13,6 +13,8 @@ libdict_la_SOURCES =							\
 	dictd.h										\
 	gui.c										\
 	gui.h										\
+	sexy-icon-entry.c							\
+	sexy-icon-entry.h							\
 	wraplabel.c									\
 	wraplabel.h									\
 	prefs.c										\
