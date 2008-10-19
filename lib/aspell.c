@@ -86,8 +86,8 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("Suggestions for \"%s\":"), iod->word);
-				gtk_text_buffer_insert_with_tags(
-					dd->main_textbuffer, &dd->textiter, tmp, -1, dd->main_tag_bold, NULL);
+				gtk_text_buffer_insert_with_tags_by_name(
+					dd->main_textbuffer, &dd->textiter, tmp, -1, "bold", NULL);
 				g_free(tmp);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 

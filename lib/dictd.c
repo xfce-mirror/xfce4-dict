@@ -207,8 +207,8 @@ static gboolean process_server_response(DictData *dd)
 		dict_parts = g_strsplit(lines[i], "\"", -1);
 
 		if (g_strv_length(dict_parts) > 3)
-		{	gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter,
-				g_strstrip(dict_parts[3]), -1, dd->main_tag_bold, NULL);
+		{	gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+				g_strstrip(dict_parts[3]), -1, "bold", NULL);
 
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, " (", 2);
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter,
@@ -246,8 +246,8 @@ static gboolean process_server_response(DictData *dd)
 				}
 				else
 				{
-					gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter,
-						stripped, -1, dd->main_tag_indent, NULL);
+					gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+						stripped, -1, "indent", NULL);
 				}
 				if (i < (max_lines - 1) && lines[i + 1][0] != '.')
 					gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);

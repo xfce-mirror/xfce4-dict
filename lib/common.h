@@ -93,8 +93,6 @@ typedef struct
 	GtkWidget *panel_entry;
 	GtkWidget *main_textview;
 	GtkTextBuffer *main_textbuffer;
-	GtkTextTag *main_tag_bold;
-	GtkTextTag *main_tag_indent;
 	GtkTextIter textiter;
 	GdkPixbuf *icon;
 } DictData;
