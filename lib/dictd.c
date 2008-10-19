@@ -221,8 +221,19 @@ static gboolean process_server_response(DictData *dd)
 
 		/* all following lines represents the translation */
 		i += 2; /* skip the next two lines */
-		while (lines[i] != NULL && lines[i][0] != '.' && lines[i][0] != '\r' && lines[i][0] != '\n')
+		while (lines[i] != NULL && lines[i][0] != '\r' && lines[i][0] != '\n')
 		{
+			/* check for a leading period indicating end of text response */
+			if (lines[i][0] == '.')
+			{
+				/* a double period at line start is a masked period, cf. RFC 2229 */
+				if (strlen(lines[i]) > 1 && lines[i][1] == '.')
+					/* the RFC says we should coolapse the two periods into one but we go the
+					 * lazy way and simply replace the first period by a space */
+					lines[i][0] = ' ';
+				else
+					break; /* we reached the end of the test response */
+			}
 			stripped = g_strstrip(lines[i]);
 			if (strlen(stripped) > 0)
 			{
