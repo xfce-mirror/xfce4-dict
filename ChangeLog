@@ -1,6 +1,9 @@
 2008-10-15  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Add support for links (cross-references) in dictd responses.
+ * Properly send DICT commands terminated with CRLF.
+ * Close DICT connections properly with the QUIT command and read
+   initial server status code.
 
 
 2008-10-14  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

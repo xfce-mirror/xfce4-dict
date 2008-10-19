@@ -96,7 +96,7 @@ static void send_command(gint fd, const gchar *str)
 	gchar buf[256];
 	gint len = strlen (str);
 
-	g_snprintf(buf, 256, "%s\n", str);
+	g_snprintf(buf, 256, "%s\r\n", str);
 	send(fd, buf, len + 2, 0);
 }
 
@@ -173,14 +173,30 @@ static gboolean process_server_response(DictData *dd)
 	GString *body = g_string_sized_new(256);
 
 
-	if (dd->query_status == NO_CONNECTION)
+	switch (dd->query_status)
 	{
-		dict_gui_status_add(dd, _("Could not connect to server."));
-		dd->query_status = NO_ERROR;
-		return FALSE;
+		case NO_CONNECTION:
+		{
+			dict_gui_status_add(dd, _("Could not connect to server."));
+			dd->query_status = NO_ERROR;
+			return FALSE;
+		}
+		case SERVER_NOT_READY:
+		{
+			dict_gui_status_add(dd, _("Server not ready."));
+			g_free(dd->query_buffer);
+			return FALSE;
+		}
+		case UNKNOWN_DATABASE:
+		{
+			dict_gui_status_add(dd,
+				_("Invalid dictionary specified. Please check your preferences."));
+			g_free(dd->query_buffer);
+			return FALSE;
+		}
 	}
 
-	if (dd->query_buffer == NULL || strlen(dd->query_buffer) == 0)
+	if (! NZV(dd->query_buffer))
 	{
 		dict_gui_status_add(dd, _("Unknown error while quering the server."));
 		g_free(dd->query_buffer);
@@ -188,20 +204,6 @@ static gboolean process_server_response(DictData *dd)
 	}
 
 	answer = dd->query_buffer;
-	if (dd->query_status == SERVER_NOT_READY)
-	{
-		dict_gui_status_add(dd, _("Server not ready."));
-		g_free(dd->query_buffer);
-		return FALSE;
-	}
-
-	if (dd->query_status == UNKNOWN_DATABASE)
-	{
-		dict_gui_status_add(dd, _("Invalid dictionary specified. Please check your preferences."));
-		g_free(dd->query_buffer);
-		return FALSE;
-	}
-
 	/* go to next line */
 	while (*answer != '\n') answer++;
 	answer++;
@@ -319,7 +321,7 @@ static gboolean process_server_response(DictData *dd)
 
 static gchar *get_answer(DictData *dd, gint fd)
 {
-	gboolean fol = FALSE;
+	gboolean fol = TRUE;
 	gboolean sol = FALSE;
 	gboolean tol = FALSE;
 	GString *str = g_string_sized_new(100);
@@ -357,9 +359,21 @@ static gchar *get_answer(DictData *dd, gint fd)
 			{
 				break;
 			}
-			else if (strncmp(ec, "220", 3) == 0) /* server not ready */
+			else if (strncmp(ec, "220", 3) == 0) /* server ready */
+			{
+				dd->query_status = NO_ERROR;
+				break;
+			}
+			else if (strncmp(ec, "420", 3) == 0 ||
+					 strncmp(ec, "421", 3) == 0) /* server not ready (server down or shutdown) */
 			{
 				dd->query_status = SERVER_NOT_READY;
+				break;
+			}
+			else if (strncmp(ec, "500", 3) == 0 ||
+					 strncmp(ec, "501", 3) == 0) /* bad command or parameters */
+			{
+				dd->query_status = BAD_COMMAND;
 				break;
 			}
 			else if (strncmp(ec, "550", 3) == 0) /* invalid database */
@@ -399,22 +413,26 @@ static void ask_server(DictData *dd)
 		g_thread_exit(NULL);
 		return;
 	}
-
 	dd->query_is_running = TRUE;
-	dd->query_status = NO_ERROR;
+	dd->query_status = NO_CONNECTION;
 
-	/* take only the first part of the dictionary string, so let the string end at the space */
-	i = 0;
-	while (dd->dictionary[i] != ' ') i++;
-	dd->dictionary[i] = '\0';
+	g_free(get_answer(dd, fd));
+	if (dd->query_status == NO_ERROR)
+	{
+		/* take only the first part of the dictionary string, so let the string end at the space */
+		i = 0;
+		while (dd->dictionary[i] != ' ') i++;
+		dd->dictionary[i] = '\0';
 
-	g_snprintf(cmd, BUF_SIZE, "define %s \"%s\"\n", dd->dictionary, dd->searched_word);
-	send_command(fd, cmd);
+		g_snprintf(cmd, BUF_SIZE, "DEFINE %s \"%s\"", dd->dictionary, dd->searched_word);
+		send_command(fd, cmd);
 
-	/* and now, "append" again the rest of the dictionary string again */
-	dd->dictionary[i] = ' ';
+		/* and now, "append" again the rest of the dictionary string again */
+		dd->dictionary[i] = ' ';
 
-	dd->query_buffer = get_answer(dd, fd);
+		dd->query_buffer = get_answer(dd, fd);
+		send_command(fd, "QUIT");
+	}
 	close(fd);
 
 	dd->query_is_running = FALSE;
@@ -489,12 +507,20 @@ gboolean dict_dictd_get_list(GtkWidget *button, DictData *dd)
 		return FALSE;
 	}
 
-	send_command(fd, "show databases");
+	dd->query_status = NO_CONNECTION;
 
-	dd->query_status = NO_ERROR;
+	g_free(get_answer(dd, fd));
+	if (dd->query_status != NO_ERROR)
+	{
+		xfce_err(_("Could not connect to server."));
+		return FALSE;
+	}
+
+	send_command(fd, "SHOW DATABASES");
 
 	/* read all server output */
 	answer = buffer = get_answer(dd, fd);
+	send_command(fd, "QUIT");
 	close(fd);
 
 	/* go to next line */
