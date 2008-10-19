@@ -1,3 +1,8 @@
+2008-10-19  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Fix a segfault in link parsing caused by malformed dictionary texts.
+
+
 2008-10-18  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Use a SexyIconEntry for the search field, it's just sexy :).

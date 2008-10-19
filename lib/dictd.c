@@ -151,6 +151,13 @@ static void parse_line(DictData *dd, GString *buffer)
 		g_string_erase(buffer, 0, len); /* remove already added text */
 
 		end = strchr(buffer->str, '}');
+		if (start > end)
+		{
+			/* braces don't match, skip this part, e.g. 'fd-deu-eng' returns
+			 * '    frozen}; to be cold; to freeze {froze' */
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "{", 1);
+			continue;
+		}
 		len = end - buffer->str; /* length of the link */
 		found_link = g_strndup(buffer->str, len);
 
