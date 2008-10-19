@@ -205,13 +205,15 @@ static gboolean process_server_response(DictData *dd)
 		/* get the used dictionary */
 		dict_parts = g_strsplit(lines[i], "\"", -1);
 
-		gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter,
-			g_strstrip(dict_parts[3]), -1, dd->main_tag_bold, NULL);
+		if (g_strv_length(dict_parts) > 3)
+		{	gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter,
+				g_strstrip(dict_parts[3]), -1, dd->main_tag_bold, NULL);
 
-		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, " (", 2);
-		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, g_strstrip(dict_parts[2]), -1);
-		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, ")\n", 2);
-
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, " (", 2);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter,
+				g_strstrip(dict_parts[2]), -1);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, ")\n", 2);
+		}
 		g_strfreev(dict_parts);
 
 		if (i >= (max_lines - 2))
