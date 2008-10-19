@@ -365,6 +365,8 @@ void dict_free_data(DictData *dd)
 {
 	dict_write_rc_file(dd);
 
+	dict_gui_finalize(dd);
+
 	gtk_widget_destroy(dd->window);
 
 	g_free(dd->searched_word);

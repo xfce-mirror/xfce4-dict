@@ -29,6 +29,7 @@ void dict_gui_clear_text_buffer(DictData *dd);
 void dict_gui_set_panel_entry_text(DictData *dd, const gchar *text);
 void dict_gui_show_main_window(DictData *dd);
 void dict_gui_query_geometry(DictData *dd);
+void dict_gui_finalize(DictData *dd);
 const guint8 *dict_gui_get_icon_data(void);
 
 

@@ -101,13 +101,77 @@ static void send_command(gint fd, const gchar *str)
 }
 
 
+static GtkTextTag *create_tag(DictData *dd, const gchar *link_str)
+{
+	static GdkColor *link_color = NULL;
+	static GdkColor default_link_color = { 0, 0, 0, 0xeeee };
+	GtkTextTag *tag;
+
+	if (link_color == NULL)
+	{
+		gtk_widget_style_get(GTK_WIDGET(dd->main_textview), "link-color", &link_color, NULL);
+		if (link_color == NULL)
+			link_color = &default_link_color;
+	}
+
+	tag = gtk_text_buffer_create_tag(dd->main_textbuffer, NULL,
+		"underline", PANGO_UNDERLINE_SINGLE,
+		"foreground-gdk", link_color, NULL);
+
+	g_object_set_data_full(G_OBJECT(tag), "link", g_strdup(link_str), g_free);
+
+	return tag;
+}
+
+
+static void parse_line(DictData *dd, GString *buffer)
+{
+	gchar *start;
+	gchar *end;
+	gsize len;
+	GtkTextTag *tag;
+	gchar *found_link;
+
+	while (buffer->len > 0)
+	{
+		start = strchr(buffer->str, '{');
+		len = 0;
+
+		if (start == NULL)
+		{	/* no links at all, so add the text and go */
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, buffer->str, buffer->len);
+			return;
+		}
+		/* get length of text *before* the next '{' */
+		while (len < buffer->len && (buffer->str + len) != start)
+			len++;
+
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, buffer->str, len);
+		len++; /* skip the '{' */
+		g_string_erase(buffer, 0, len); /* remove already added text */
+
+		end = strchr(buffer->str, '}');
+		len = end - buffer->str; /* length of the link */
+		found_link = g_strndup(buffer->str, len);
+
+		tag = create_tag(dd, found_link);
+		gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter,
+			buffer->str, len, tag, NULL);
+
+		g_free(found_link);
+		g_string_erase(buffer, 0, len + 1); /* remove already added text */
+	}
+}
+
+
 static gboolean process_server_response(DictData *dd)
 {
 	gint max_lines, i;
 	gint defs_found = 0;
-	gboolean first_line;
-	gchar *answer, *tmp, *stripped;
+	gchar *answer, *tmp;
 	gchar **lines, **dict_parts;
+	GString *body = g_string_sized_new(256);
+
 
 	if (dd->query_status == NO_CONNECTION)
 	{
@@ -222,7 +286,6 @@ static gboolean process_server_response(DictData *dd)
 
 		/* all following lines represents the translation */
 		i++;
-		first_line = TRUE;
 		while (lines[i] != NULL && lines[i][0] != '\r' && lines[i][0] != '\n')
 		{
 			/* check for a leading period indicating end of text response */
@@ -236,28 +299,19 @@ static gboolean process_server_response(DictData *dd)
 				else
 					break; /* we reached the end of the test response */
 			}
-			stripped = g_strstrip(lines[i]);
-			if (strlen(stripped) > 0)
-			{
-				if (first_line)
-				{	/* do not indent the first line */
-					gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, stripped, -1);
-					first_line = FALSE;
-				}
-				else
-				{
-					gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
-						stripped, -1, "indent", NULL);
-				}
-				if (i < (max_lines - 1) && lines[i + 1][0] != '.')
-					gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
-			}
+			g_string_append(body, lines[i]);
+			g_string_append_c(body, '\n');
+
 			i++;
 		}
+		parse_line(dd, body);
 		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
+		g_string_erase(body, 0, -1);
 	}
 	g_strfreev(lines);
 	g_free(dd->query_buffer);
+
+	g_string_free(body, TRUE);
 
 	return FALSE;
 }

@@ -36,6 +36,159 @@
 
 
 
+static gboolean hovering_over_link = FALSE;
+static GdkCursor *hand_cursor = NULL;
+static GdkCursor *regular_cursor = NULL;
+
+
+/* all textview_* functions are from the gtk-demo app to get links in the textview working */
+static void textview_follow_if_link(GtkWidget *text_view, GtkTextIter *iter, DictData *dd)
+{
+	GSList *tags = NULL, *tagp = NULL;
+
+	tags = gtk_text_iter_get_tags(iter);
+	for (tagp = tags;  tagp != NULL;  tagp = tagp->next)
+	{
+		GtkTextTag *tag = tagp->data;
+		gchar *found_link;
+
+		found_link = g_object_get_data(G_OBJECT(tag), "link");
+		if (found_link != NULL)
+		{
+			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), found_link);
+			dict_search_word(dd, found_link);
+
+			break;
+		}
+	}
+	if (tags)
+		g_slist_free(tags);
+}
+
+
+static gboolean textview_key_press_event(GtkWidget *text_view, GdkEventKey *event, DictData *dd)
+{
+	GtkTextIter iter;
+	GtkTextBuffer *buffer;
+
+	switch (event->keyval)
+	{
+		case GDK_Return:
+		case GDK_KP_Enter:
+		{
+			buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(text_view));
+			gtk_text_buffer_get_iter_at_mark(buffer, &iter, gtk_text_buffer_get_insert(buffer));
+			textview_follow_if_link(text_view, &iter, dd);
+			break;
+		}
+		default:
+			break;
+	}
+
+	return FALSE;
+}
+
+
+static gboolean textview_event_after(GtkWidget *text_view, GdkEvent *ev, DictData *dd)
+{
+	GtkTextIter start, end, iter;
+	GtkTextBuffer *buffer;
+	GdkEventButton *event;
+	gint x, y;
+
+	if (ev->type != GDK_BUTTON_RELEASE)
+		return FALSE;
+
+	event = (GdkEventButton *)ev;
+
+	if (event->button != 1)
+		return FALSE;
+
+	buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(text_view));
+
+	/* we shouldn't follow a link if the user has selected something */
+	gtk_text_buffer_get_selection_bounds(buffer, &start, &end);
+	if (gtk_text_iter_get_offset(&start) != gtk_text_iter_get_offset(&end))
+		return FALSE;
+
+	gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(text_view), GTK_TEXT_WINDOW_WIDGET,
+		event->x, event->y, &x, &y);
+
+	gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(text_view), &iter, x, y);
+
+	textview_follow_if_link(text_view, &iter, dd);
+
+	return FALSE;
+}
+
+
+static void textview_set_cursor_if_appropriate(GtkTextView *text_view, gint x, gint y)
+{
+	GSList *tags = NULL, *tagp = NULL;
+	GtkTextIter iter;
+	gboolean hovering = FALSE;
+
+	gtk_text_view_get_iter_at_location(text_view, &iter, x, y);
+
+	tags = gtk_text_iter_get_tags(&iter);
+	for (tagp = tags;  tagp != NULL;  tagp = tagp->next)
+	{
+		GtkTextTag *tag = tagp->data;
+
+		if (g_object_get_data(G_OBJECT(tag), "link") != NULL)
+		{
+			hovering = TRUE;
+			break;
+		}
+	}
+
+	if (hovering != hovering_over_link)
+	{
+		hovering_over_link = hovering;
+
+		if (hovering_over_link)
+			gdk_window_set_cursor(gtk_text_view_get_window(
+				text_view, GTK_TEXT_WINDOW_TEXT), hand_cursor);
+		else
+			gdk_window_set_cursor(gtk_text_view_get_window(
+				text_view, GTK_TEXT_WINDOW_TEXT), regular_cursor);
+	}
+
+	if (tags)
+		g_slist_free(tags);
+}
+
+
+static gboolean textview_motion_notify_event(GtkWidget *text_view, GdkEventMotion *event)
+{
+	gint x, y;
+
+	gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(text_view), GTK_TEXT_WINDOW_WIDGET,
+		event->x, event->y, &x, &y);
+
+	textview_set_cursor_if_appropriate(GTK_TEXT_VIEW(text_view), x, y);
+
+	gdk_window_get_pointer(text_view->window, NULL, NULL, NULL);
+
+	return FALSE;
+}
+
+
+static gboolean textview_visibility_notify_event(GtkWidget *text_view, GdkEventVisibility *event)
+{
+	gint wx, wy, bx, by;
+
+	gdk_window_get_pointer(text_view->window, &wx, &wy, NULL);
+
+	gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(text_view),
+		GTK_TEXT_WINDOW_WIDGET, wx, wy, &bx, &by);
+
+	textview_set_cursor_if_appropriate(GTK_TEXT_VIEW(text_view), bx, by);
+
+	return FALSE;
+}
+
+
 void dict_gui_set_panel_entry_text(DictData *dd, const gchar *text)
 {
 	if (dd->panel_entry != NULL)
@@ -177,6 +330,16 @@ static GtkWidget *create_file_menu(DictData *dd)
 }
 
 
+void dict_gui_finalize(DictData *dd)
+{
+	if (hand_cursor)
+		gdk_cursor_unref(hand_cursor);
+
+	if (regular_cursor)
+		gdk_cursor_unref(regular_cursor);
+}
+
+
 void dict_gui_create_main_window(DictData *dd)
 {
 	GtkWidget *main_box;
@@ -188,6 +351,7 @@ void dict_gui_create_main_window(DictData *dd)
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(dd->window), _("Xfce4 Dictionary"));
 	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
+	gtk_widget_set_name(dd->window, "Xfce4Dict");
 
 	icon = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
 	gtk_window_set_icon(GTK_WINDOW(dd->window), icon);
@@ -289,6 +453,7 @@ void dict_gui_create_main_window(DictData *dd)
 
 	/* searched words textview stuff */
 	dd->main_textview = gtk_text_view_new();
+	gtk_widget_set_name(dd->window, "Xfce4DictTextView");
 	gtk_text_view_set_editable(GTK_TEXT_VIEW(dd->main_textview), FALSE);
 	gtk_text_view_set_left_margin(GTK_TEXT_VIEW(dd->main_textview), 5);
 	gtk_text_view_set_right_margin(GTK_TEXT_VIEW(dd->main_textview), 5);
@@ -298,9 +463,23 @@ void dict_gui_create_main_window(DictData *dd)
 			"bold",
 			"weight", PANGO_WEIGHT_BOLD,
 			"style", PANGO_STYLE_ITALIC,
+			"indent", 10,
 			"pixels-below-lines", 3, NULL);
-	gtk_text_buffer_create_tag(dd->main_textbuffer,
-			"indent", "indent", 10, NULL);
+
+	/* support for links (cross-references) for dictd responses */
+	{
+		hand_cursor = gdk_cursor_new(GDK_HAND2);
+		regular_cursor = gdk_cursor_new(GDK_XTERM);
+
+		g_signal_connect(dd->main_textview, "key-press-event",
+			G_CALLBACK(textview_key_press_event), dd);
+		g_signal_connect(dd->main_textview, "event-after",
+			G_CALLBACK(textview_event_after), dd);
+		g_signal_connect(dd->main_textview, "motion-notify-event",
+			G_CALLBACK(textview_motion_notify_event), NULL);
+		g_signal_connect(dd->main_textview, "visibility-notify-event",
+			G_CALLBACK(textview_visibility_notify_event), NULL);
+	}
 
 	gtk_widget_show(dd->main_textview);
 	gtk_container_add(GTK_CONTAINER(scrolledwindow_results), dd->main_textview);
@@ -312,7 +491,7 @@ void dict_gui_create_main_window(DictData *dd)
 
 	/* DnD */
 	g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
-	/* TODO: find a way to get this working, the treeview doesn't receive anything as long as it isn't
+	/* TODO: find a way to get this working, the textview doesn't receive anything as long as it isn't
 	 * editable. scrolledwindow_results and a surrounding event box as receivers also don't work. */
 	g_signal_connect(dd->main_textview, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
 
