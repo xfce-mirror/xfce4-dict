@@ -80,6 +80,7 @@ G_BEGIN_DECLS
 GType sexy_icon_entry_get_type(void);
 
 GtkWidget *sexy_icon_entry_new(void);
+GtkWidget *sexy_icon_entry_new_full(const gchar *stock_id_pri, const gchar *stock_id_sec);
 
 void sexy_icon_entry_set_icon(SexyIconEntry *entry,
 							  SexyIconEntryPosition position,

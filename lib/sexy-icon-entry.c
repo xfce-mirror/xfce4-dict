@@ -794,6 +794,32 @@ sexy_icon_entry_new(void)
 	return GTK_WIDGET(g_object_new(SEXY_TYPE_ICON_ENTRY, NULL));
 }
 
+GtkWidget *sexy_icon_entry_new_full(const gchar *stock_id_pri, const gchar *stock_id_sec)
+{
+	GtkWidget *icon;
+	SexyIconEntry *entry;
+
+	entry = g_object_new(SEXY_TYPE_ICON_ENTRY, NULL);
+
+	if (stock_id_pri != NULL)
+	{
+		icon = gtk_image_new_from_stock(stock_id_pri, GTK_ICON_SIZE_MENU);
+		gtk_widget_show(icon);
+		sexy_icon_entry_set_icon(SEXY_ICON_ENTRY(entry), SEXY_ICON_ENTRY_PRIMARY, GTK_IMAGE(icon));
+		sexy_icon_entry_set_icon_highlight(SEXY_ICON_ENTRY(entry), SEXY_ICON_ENTRY_PRIMARY, TRUE);
+	}
+
+	if (stock_id_sec != NULL)
+	{
+		icon = gtk_image_new_from_stock(stock_id_sec, GTK_ICON_SIZE_MENU);
+		gtk_widget_show(icon);
+		sexy_icon_entry_set_icon(SEXY_ICON_ENTRY(entry), SEXY_ICON_ENTRY_SECONDARY, GTK_IMAGE(icon));
+		sexy_icon_entry_set_icon_highlight(SEXY_ICON_ENTRY(entry), SEXY_ICON_ENTRY_SECONDARY, TRUE);
+	}
+
+	return GTK_WIDGET(entry);
+}
+
 /**
  * sexy_icon_entry_set_icon
  * @entry: A #SexyIconEntry.
@@ -921,3 +947,4 @@ sexy_icon_entry_get_icon_highlight(SexyIconEntry *entry,
 
 	return entry->priv->icons[icon_pos].highlight;
 }
+

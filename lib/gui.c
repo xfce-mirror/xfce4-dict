@@ -259,6 +259,21 @@ static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
 }
 
 
+static gboolean entry_button_press_cb(GtkWidget *widget, GdkEventButton *event, DictData *dd)
+{
+	static gboolean ran = FALSE;
+
+	if (! ran)
+	{
+		ran = TRUE;
+		if (event->button == 1)
+			gtk_entry_set_text(GTK_ENTRY(widget), "");
+	}
+
+	return FALSE;
+}
+
+
 static const gchar *get_icon_name(const gchar *req1, const gchar *req2, const gchar *fallback)
 {
 	GtkIconTheme *theme = gtk_icon_theme_get_default();
@@ -412,8 +427,7 @@ void dict_gui_finalize(DictData *dd)
 
 void dict_gui_create_main_window(DictData *dd)
 {
-	GtkWidget *main_box;
-	GtkWidget *entry_box, *label_box, *image;
+	GtkWidget *main_box, *entry_box, *label_box;
 	GtkWidget *sep, *align, *scrolledwindow_results;
 	GdkPixbuf *icon;
 	GtkWidget *method_chooser, *radio, *label;
@@ -443,19 +457,11 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(label_box);
 	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 0);
 
-	dd->main_entry = sexy_icon_entry_new();
-	image = gtk_image_new_from_stock("gtk-find", GTK_ICON_SIZE_MENU);
-	sexy_icon_entry_set_icon(SEXY_ICON_ENTRY(dd->main_entry),
-		SEXY_ICON_ENTRY_PRIMARY, GTK_IMAGE(image));
-	sexy_icon_entry_set_icon_highlight(
-		SEXY_ICON_ENTRY(dd->main_entry), SEXY_ICON_ENTRY_PRIMARY, TRUE);
-	image = gtk_image_new_from_stock("gtk-clear", GTK_ICON_SIZE_MENU);
-	sexy_icon_entry_set_icon(SEXY_ICON_ENTRY(dd->main_entry),
-		SEXY_ICON_ENTRY_SECONDARY, GTK_IMAGE(image));
-	sexy_icon_entry_set_icon_highlight(
-		SEXY_ICON_ENTRY(dd->main_entry), SEXY_ICON_ENTRY_SECONDARY, TRUE);
+	dd->main_entry = sexy_icon_entry_new_full("gtk-find", "gtk-clear");
+	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), _("Search term"));
 	gtk_widget_show(dd->main_entry);
 	gtk_box_pack_start(GTK_BOX(label_box), dd->main_entry, TRUE, TRUE, 0);
+	g_signal_connect(dd->main_entry, "button-press-event", G_CALLBACK(entry_button_press_cb), dd);
 	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
 	g_signal_connect(dd->main_entry, "icon_released", G_CALLBACK(entry_icon_pressed_cb), dd);
 

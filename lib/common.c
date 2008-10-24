@@ -287,7 +287,7 @@ void dict_read_rc_file(DictData *dd)
 	gint mode_in_use = DICTMODE_DICT;
 	gint mode_default = DICTMODE_LAST_USED;
 	gint port = 2628;
-	gint panel_entry_size = 120;
+	gint panel_entry_size = 150;
 	gboolean show_panel_entry = FALSE;
 	const gchar *server = "dict.org";
 	const gchar *dict = "*";

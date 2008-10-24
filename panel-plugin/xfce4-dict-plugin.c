@@ -39,6 +39,7 @@
 #include <string.h>
 
 #include "libdict.h"
+#include "sexy-icon-entry.h"
 
 
 typedef struct
@@ -264,6 +265,14 @@ static void dict_plugin_style_set(XfcePanelPlugin *plugin, gpointer unused, Dict
 static gboolean dict_plugin_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, DictPanelData *dpd)
 {
 	GtkWidget *toplevel;
+	static gboolean ran = FALSE;
+
+	if (! ran)
+	{
+		ran = TRUE;
+		if (event->button == 1)
+			gtk_entry_set_text(GTK_ENTRY(entry), "");
+	}
 
 	/* Determine toplevel parent widget */
 	toplevel = gtk_widget_get_toplevel(entry);
@@ -334,6 +343,26 @@ static void dict_plugin_panel_entry_activate_cb(GtkEntry *entry, DictPanelData *
 }
 
 
+static void entry_icon_pressed_cb(SexyIconEntry *entry, gint pos, gint button, DictPanelData *dpd)
+{
+	if (button != 1)
+		return;
+
+	if (pos == SEXY_ICON_ENTRY_PRIMARY)
+	{
+		dict_plugin_panel_entry_activate_cb(NULL, dpd);
+		gtk_widget_grab_focus(dpd->dd->main_entry);
+	}
+	else if (pos == SEXY_ICON_ENTRY_SECONDARY)
+	{
+		dict_gui_clear_text_buffer(dpd->dd);
+		gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), "");
+		dict_gui_set_panel_entry_text(dpd->dd, "");
+		dict_gui_status_add(dpd->dd, _("Ready."));
+	}
+}
+
+
 static void dict_plugin_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context,
 		gint x, gint y, GtkSelectionData *data, guint info, guint ltime, DictPanelData *dpd)
 {
@@ -396,8 +425,11 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->pref_menu_item, "activate", G_CALLBACK(dict_plugin_properties_dialog), dpd);
 
 	/* panel entry */
-	dpd->dd->panel_entry = gtk_entry_new();
-	gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), 15);
+	dpd->dd->panel_entry = sexy_icon_entry_new_full(NULL, "gtk-clear");
+	gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), 25);
+	gtk_entry_set_text(GTK_ENTRY(dpd->dd->panel_entry), _("Search term"));
+	g_signal_connect(dpd->dd->panel_entry, "icon_released",
+		G_CALLBACK(entry_icon_pressed_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "activate",
 		G_CALLBACK(dict_plugin_panel_entry_activate_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "button-press-event",
@@ -409,7 +441,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 		gtk_widget_show(dpd->dd->panel_entry);
 	}
 
-	hbox = gtk_hbox_new(FALSE, 0);
+	hbox = gtk_hbox_new(FALSE, 3);
 	gtk_widget_show(hbox);
 
 	gtk_box_pack_start(GTK_BOX(hbox), dpd->panel_button, FALSE, FALSE, 0);
