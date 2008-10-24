@@ -40,6 +40,7 @@
 static gboolean hovering_over_link = FALSE;
 static GdkCursor *hand_cursor = NULL;
 static GdkCursor *regular_cursor = NULL;
+static gboolean entry_is_dirty = FALSE;
 
 
 /* all textview_* functions are from the gtk-demo app to get links in the textview working */
@@ -252,6 +253,12 @@ static void entry_icon_pressed_cb(SexyIconEntry *entry, gint icon_pos, gint butt
 }
 
 
+static void entry_changed_cb(GtkEditable *editable, DictData *dd)
+{
+	entry_is_dirty = TRUE;
+}
+
+
 static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
 {
 	entry_activate_cb(NULL, dd);
@@ -261,11 +268,9 @@ static void entry_button_clicked_cb(GtkButton *button, DictData *dd)
 
 static gboolean entry_button_press_cb(GtkWidget *widget, GdkEventButton *event, DictData *dd)
 {
-	static gboolean ran = FALSE;
-
-	if (! ran)
+	if (! entry_is_dirty)
 	{
-		ran = TRUE;
+		entry_is_dirty = TRUE;
 		if (event->button == 1)
 			gtk_entry_set_text(GTK_ENTRY(widget), "");
 	}
@@ -463,6 +468,7 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_box_pack_start(GTK_BOX(label_box), dd->main_entry, TRUE, TRUE, 0);
 	g_signal_connect(dd->main_entry, "button-press-event", G_CALLBACK(entry_button_press_cb), dd);
 	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
+	g_signal_connect(dd->main_entry, "changed", G_CALLBACK(entry_changed_cb), dd);
 	g_signal_connect(dd->main_entry, "icon_released", G_CALLBACK(entry_icon_pressed_cb), dd);
 
 	update_search_button(dd, entry_box);

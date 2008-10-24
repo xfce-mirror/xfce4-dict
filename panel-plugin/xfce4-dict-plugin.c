@@ -54,6 +54,8 @@ typedef struct
 } DictPanelData;
 
 
+static gboolean entry_is_dirty = FALSE;
+
 static GdkPixbuf *dict_plugin_load_and_scale(const guint8 *data, gint dstw, gint dsth)
 {
 	GdkPixbuf *pb, *pb_scaled;
@@ -262,29 +264,6 @@ static void dict_plugin_style_set(XfcePanelPlugin *plugin, gpointer unused, Dict
 }
 
 
-static gboolean dict_plugin_panel_entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, DictPanelData *dpd)
-{
-	GtkWidget *toplevel;
-	static gboolean ran = FALSE;
-
-	if (! ran)
-	{
-		ran = TRUE;
-		if (event->button == 1)
-			gtk_entry_set_text(GTK_ENTRY(entry), "");
-	}
-
-	/* Determine toplevel parent widget */
-	toplevel = gtk_widget_get_toplevel(entry);
-
-	/* Grab entry focus if possible */
-	if (event->button != 3 && toplevel && toplevel->window)
-		xfce_panel_plugin_focus_widget(dpd->plugin, entry);
-
-	return FALSE;
-}
-
-
 static void dict_plugin_write_rc_file(XfcePanelPlugin *plugin, DictPanelData *dpd)
 {
 	dict_write_rc_file(dpd->dd);
@@ -333,7 +312,7 @@ static void dict_plugin_properties_dialog(XfcePanelPlugin *plugin, DictPanelData
 }
 
 
-static void dict_plugin_panel_entry_activate_cb(GtkEntry *entry, DictPanelData *dpd)
+static void entry_activate_cb(GtkEntry *entry, DictPanelData *dpd)
 {
 	const gchar *entered_text = gtk_entry_get_text(GTK_ENTRY(dpd->dd->panel_entry));
 
@@ -350,7 +329,7 @@ static void entry_icon_pressed_cb(SexyIconEntry *entry, gint pos, gint button, D
 
 	if (pos == SEXY_ICON_ENTRY_PRIMARY)
 	{
-		dict_plugin_panel_entry_activate_cb(NULL, dpd);
+		entry_activate_cb(NULL, dpd);
 		gtk_widget_grab_focus(dpd->dd->main_entry);
 	}
 	else if (pos == SEXY_ICON_ENTRY_SECONDARY)
@@ -360,6 +339,34 @@ static void entry_icon_pressed_cb(SexyIconEntry *entry, gint pos, gint button, D
 		dict_gui_set_panel_entry_text(dpd->dd, "");
 		dict_gui_status_add(dpd->dd, _("Ready."));
 	}
+}
+
+
+static gboolean entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, DictPanelData *dpd)
+{
+	GtkWidget *toplevel;
+
+	if (! entry_is_dirty)
+	{
+		entry_is_dirty = TRUE;
+		if (event->button == 1)
+			gtk_entry_set_text(GTK_ENTRY(entry), "");
+	}
+
+	/* Determine toplevel parent widget */
+	toplevel = gtk_widget_get_toplevel(entry);
+
+	/* Grab entry focus if possible */
+	if (event->button != 3 && toplevel && toplevel->window)
+		xfce_panel_plugin_focus_widget(dpd->plugin, entry);
+
+	return FALSE;
+}
+
+
+static void entry_changed_cb(GtkEditable *editable, DictData *dd)
+{
+	entry_is_dirty = TRUE;
 }
 
 
@@ -428,12 +435,10 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	dpd->dd->panel_entry = sexy_icon_entry_new_full(NULL, "gtk-clear");
 	gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), 25);
 	gtk_entry_set_text(GTK_ENTRY(dpd->dd->panel_entry), _("Search term"));
-	g_signal_connect(dpd->dd->panel_entry, "icon_released",
-		G_CALLBACK(entry_icon_pressed_cb), dpd);
-	g_signal_connect(dpd->dd->panel_entry, "activate",
-		G_CALLBACK(dict_plugin_panel_entry_activate_cb), dpd);
-	g_signal_connect(dpd->dd->panel_entry, "button-press-event",
-		G_CALLBACK(dict_plugin_panel_entry_buttonpress_cb), dpd);
+	g_signal_connect(dpd->dd->panel_entry, "icon_released", G_CALLBACK(entry_icon_pressed_cb), dpd);
+	g_signal_connect(dpd->dd->panel_entry, "activate", G_CALLBACK(entry_activate_cb), dpd);
+	g_signal_connect(dpd->dd->panel_entry, "button-press-event", G_CALLBACK(entry_buttonpress_cb), dpd);
+	g_signal_connect(dpd->dd->panel_entry, "changed", G_CALLBACK(entry_changed_cb), dpd);
 
 	if (dpd->dd->show_panel_entry &&
 		xfce_panel_plugin_get_orientation(dpd->plugin) == GTK_ORIENTATION_HORIZONTAL)
