@@ -64,12 +64,16 @@ gboolean dict_find_panel_plugin(gchar flags, const gchar *text)
 
 	if (text == NULL)
 		text = "";
+	else if (strlen(text) > 12)
+		g_warning("The passed search text is longer than 12 characters and was truncated. Currently you can pass only a maximum of 12 characters to the panel plugin (or even less when using non-ASCII characters).");
 
 	/* format of the send string: "xfdict?text":
 	 * "xfdict" is for identification of ourselves
 	 * ? is a bitmask to control the behaviour, it can contain one or more of DICT_FLAGS_*,
 	 * we send it as %c to ensure it takes only one char in the string,
 	 * everything after this is the text to search, given on command line */
+	/** FIXME: remove the limit of 12 characters, maybe by sending more than message or by
+	  *        using another IPC mechanism, maybe DBus? */
 	g_snprintf(gev.data.b, sizeof gev.data.b, "xfdict%c%s", flags, text);
 
 	if (check_is_running(win, &id))

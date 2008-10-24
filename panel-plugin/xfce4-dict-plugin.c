@@ -144,13 +144,19 @@ static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *d
 	}
 	else
 	{
-		const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dpd->dd->panel_entry));
-
 		dict_gui_show_main_window(dpd->dd);
-		if (NZV(panel_text))
+		/* Do not search the panel text if it is still the default text */
+		if (dpd->dd->show_panel_entry &&
+			xfce_panel_plugin_get_orientation(dpd->plugin) == GTK_ORIENTATION_HORIZONTAL &&
+			entry_is_dirty)
 		{
-			dict_search_word(dpd->dd, panel_text);
-			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), panel_text);
+			const gchar *panel_text = gtk_entry_get_text(GTK_ENTRY(dpd->dd->panel_entry));
+
+			if (NZV(panel_text))
+			{
+				dict_search_word(dpd->dd, panel_text);
+				gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), panel_text);
+			}
 		}
 		gtk_widget_grab_focus(dpd->dd->main_entry);
 	}

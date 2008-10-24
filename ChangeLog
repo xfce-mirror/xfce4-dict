@@ -6,6 +6,9 @@
  * When highlighting cross-references, ignore short ones like
    {n}, {f} and {m} as often found in translation dictionaries.
  * Highlight phonetic information provided by some dictionaries.
+ * Fix wrong status bar text when querying a server for the first
+   time in the stand-alone app.
+ * Update Readme and manpage.
 
 
 2008-10-19  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

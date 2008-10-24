@@ -1,4 +1,4 @@
-.TH "XFCE4-DICT" "1" "September 15, 2008" "xfce4-dict 0.4.2" ""
+.TH "XFCE4-DICT" "1" "October 23, 2008" "xfce4-dict 0.4.2" ""
 .SH "NAME"
 xfce4-dict \(em a client program to query different dictionaries
 .SH "SYNOPSIS"
@@ -38,6 +38,17 @@ Show version information.
 Show help information and exit.
 .PP
 xfce4-dict supports all generic GTK options, a list is available on the help screen.
+.SH "BUGS"
+.PP
+There is a limitation of max. 12 characters in passing a search term
+to xfce4\-dict when the panel plugin is loaded. That is, if pass a search
+term as command line argument(s) to xfce4\-dict which is longer than 12
+characters, it is truncated. To be exact, the limit is 12 bytes so if
+the search term contains any non\-ASCII characters it might be even less
+than 12 characters.
+To work around this limitation, you can add the command line '\-i' so
+that xfce4-dict will start a single stand\-alone application. Then all
+passed text is used as search term.
 .SH "AUTHOR"
 .PP
 This manual page was written by Enrico Troeger. Permission is granted to copy,

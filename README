@@ -1,5 +1,6 @@
 Xfce4 Dictionary - A client program to query different dictionaries
--------------------------------------------------------------
+===================================================================
+
 
 This program allows you to search different kinds of dictionary services
 for words or phrases and shows you the result.
@@ -27,6 +28,17 @@ It can also be used to bind the dict plugin actions to a keyboard
 shortcut. You can add a new keyboard command with the Keyboard settings
 plugin in Xfce's settings manager and assign "xfce4-dict" as the action
 command.
+
+Please note:
+there is a limitation of max. 12 characters in passing a search term
+to xfce4-dict when the panel plugin is loaded. That is, if pass a search
+term as command line argument(s) to xfce4-dict which is longer than 12
+characters, it is truncated. To be exact, the limit is 12 bytes so if
+the search term contains any non-ASCII characters it might be even less
+than 12 characters.
+To work around this limitation, you can add the command line '-i' so
+that xfce4-dict will start a single stand-alone application. Then all
+passed text is used as search term.
 
 
 Panel Plugin
@@ -57,6 +69,21 @@ This program was mainly tested with the server "dict.org" but should
 work with any other servers which implement the DICT protocol defined
 in RFC 2229.
 
+Search result highlighting
+``````````````````````````
+
+Sometimes defintions in certain dictionaries contain special markups
+to give additional information. Two of them are:
+ * Cross-references
+     These are some kind of links in definitions to link to other
+     defintions.
+     Xfce4-dict will highlight these definitions and make them clickable
+     to easily jump (by searching) to this highlighted defition.
+ * Phonetic hints
+    These are mostly phonetic spellings found in translation
+    dictionaries to illustrate how a word is pronounced.
+    Xfce4-dict will highlight these with a green colour.
+
 
 Web-based dictionaries
 ----------------------
@@ -67,7 +94,7 @@ opening the URL in your web browser. The URL can be configured in the
 preferences dialog.
 
 A note on the started web browser:
-xfce4-dict will open the configured URL with the "exo-open" command
+xfce4-dict will open the configured URL with the "xdg-open" command
 which will open the configured default browser. If that doesn't work
 other known browsers are tried. But it's better to set a default browser
 using "Preferred Applications" in the Xfce settings manager.

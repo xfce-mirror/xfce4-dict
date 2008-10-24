@@ -214,9 +214,10 @@ gint main(gint argc, gchar *argv[])
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), search_text);
 		dict_search_word(dd, search_text);
 	}
-	g_free(search_text);
+	else
+		dict_gui_status_add(dd, _("Ready."));
 
-	dict_gui_status_add(dd, _("Ready."));
+	g_free(search_text);
 
 	gtk_widget_show_all(dd->window);
 
