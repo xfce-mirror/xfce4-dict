@@ -41,6 +41,8 @@ static gboolean hovering_over_link = FALSE;
 static GdkCursor *hand_cursor = NULL;
 static GdkCursor *regular_cursor = NULL;
 static gboolean entry_is_dirty = FALSE;
+/** TODO make colours (phonecitc, link colour) configurable */
+static const GdkColor phon_color = { 0, 0, 0x6363, 0 };
 
 
 /* all textview_* functions are from the gtk-demo app to get links in the textview working */
@@ -498,6 +500,7 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(label);
 	gtk_box_pack_start(GTK_BOX(method_chooser), label, FALSE, FALSE, 6);
 
+	/* TODO: add mnemonics, add 'Search $web_dictionary link when nothing found */
 	radio = gtk_radio_button_new_with_label(NULL, _("Dict"));
 	gtk_widget_show(radio);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_DICT));
@@ -539,7 +542,11 @@ void dict_gui_create_main_window(DictData *dd)
 			"weight", PANGO_WEIGHT_BOLD,
 			"style", PANGO_STYLE_ITALIC,
 			"indent", 10,
-			"pixels-below-lines", 3, NULL);
+			"pixels-below-lines", 5, NULL);
+	gtk_text_buffer_create_tag(dd->main_textbuffer,
+		"phonetic",
+		"style", PANGO_STYLE_ITALIC,
+		"foreground-gdk", &phon_color, NULL);
 
 	/* support for links (cross-references) for dictd responses */
 	{

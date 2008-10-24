@@ -101,6 +101,66 @@ static void send_command(gint fd, const gchar *str)
 }
 
 
+/* We parse the first line differently as there are usually no links
+ * but instead phonetic information */
+static void parse_header(DictData *dd, GString *buffer, GString *target)
+{
+	gchar *start;
+	gchar *end;
+	gsize len;
+	gchar end_char = '\\';
+
+	while (buffer->len > 0)
+	{
+		start = strchr(buffer->str, '\\');
+		len = 0;
+
+		if (start == NULL)
+		{
+			start = strchr(buffer->str, '['); /* alternative way of specifiying phonetics */
+			if (start != NULL)
+				end_char = ']';
+			else
+			{
+				/* no phonetics at all, so add the text to the body to get at least possible
+				 * links parsed and return */
+				g_string_prepend(target, buffer->str);
+				g_string_erase(buffer, 0, -1); /* remove already handled text */
+				return;
+			}
+		}
+		/* get length of text *before* the next '\' */
+		while (len < buffer->len && (buffer->str + len) != start)
+			len++;
+
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, buffer->str, len);
+		len++; /* skip the '\' */
+		g_string_erase(buffer, 0, len); /* remove already handled text */
+
+		start = buffer->str; /* set new start */
+		end = strchr(start, end_char);
+		if (start > end)
+		{
+			/* slashes don't match, skip this part */
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter,
+				(end_char == ']') ? "\\" : "]", 1);
+			continue;
+		}
+		len = end - buffer->str; /* length of the link */
+
+		gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+				buffer->str, len, "phonetic", NULL);
+
+		/* we only highlight the first match, so add remaining add the remaining text
+		 * to the body to get at least possible links parsed and return */
+		g_string_prepend(target, buffer->str + len + 1);
+		g_string_erase(buffer, 0, -1); /* remove already handled text */
+
+		break;
+	}
+}
+
+
 static GtkTextTag *create_tag(DictData *dd, const gchar *link_str)
 {
 	static GdkColor *link_color = NULL;
@@ -124,7 +184,27 @@ static GtkTextTag *create_tag(DictData *dd, const gchar *link_str)
 }
 
 
-static void parse_line(DictData *dd, GString *buffer)
+/* ignore links like {n} or {f} as they are often found in translation dictionaries and
+ * used for giving additional type information but not intended to link or reference something */
+static gboolean ignore_short_link(const gchar *str)
+{
+	if (str == NULL)
+		return TRUE;
+
+	/* ignore {n}, {f}, {m}  (surrounding braces are already stripped in 'str') */
+	if (strcmp("f", str) == 0 ||
+		strcmp("m", str) == 0 ||
+		strcmp("n", str) == 0)
+	{
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
+
+/* Find any cross-references like {reference} and make them clickable */
+static void parse_body(DictData *dd, GString *buffer)
 {
 	gchar *start;
 	gchar *end;
@@ -148,9 +228,10 @@ static void parse_line(DictData *dd, GString *buffer)
 
 		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, buffer->str, len);
 		len++; /* skip the '{' */
-		g_string_erase(buffer, 0, len); /* remove already added text */
+		g_string_erase(buffer, 0, len); /* remove already handled text */
 
-		end = strchr(buffer->str, '}');
+		start = buffer->str; /* set new start */
+		end = strchr(start, '}');
 		if (start > end)
 		{
 			/* braces don't match, skip this part, e.g. 'fd-deu-eng' returns
@@ -161,13 +242,94 @@ static void parse_line(DictData *dd, GString *buffer)
 		len = end - buffer->str; /* length of the link */
 		found_link = g_strndup(buffer->str, len);
 
-		tag = create_tag(dd, found_link);
-		gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter,
-			buffer->str, len, tag, NULL);
-
+		/* ignore {n}, {f}, ... */
+		if (ignore_short_link(found_link))
+		{
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "{", 1);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, buffer->str, len);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "}", 1);
+		}
+		else
+		{
+			tag = create_tag(dd, found_link);
+			gtk_text_buffer_insert_with_tags(dd->main_textbuffer, &dd->textiter,
+				buffer->str, len, tag, NULL);
+		}
 		g_free(found_link);
-		g_string_erase(buffer, 0, len + 1); /* remove already added text */
+		g_string_erase(buffer, 0, len + 1); /* remove already handled text */
 	}
+}
+
+
+static gint process_response_content(DictData *dd, gchar **lines, gint line_no, gint max_lines,
+									 GString *header, GString *body)
+{
+	gchar **dict_parts;
+	gboolean first_line;
+
+	line_no++;
+	if (strncmp(lines[line_no], "250", 3) == 0)
+		return max_lines; /* end of data */
+	if (strncmp(lines[line_no], "error:", 6) == 0) /* an error occurred */
+	{
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, lines[line_no], -1);
+		return max_lines;
+	}
+	if (strncmp(lines[line_no], "151", 3) != 0)
+		return line_no; /* unexpected line start, try next line */
+
+	/* get the used dictionary */
+	dict_parts = g_strsplit(lines[line_no], "\"", -1);
+
+	if (g_strv_length(dict_parts) > 3)
+	{	gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+			g_strstrip(dict_parts[3]), -1, "bold", NULL);
+
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, " (", 2);
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter,
+			g_strstrip(dict_parts[2]), -1);
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, ")\n", 2);
+	}
+	g_strfreev(dict_parts);
+
+	if (line_no >= (max_lines - 2))
+		return max_lines;
+
+	/* all following lines represents the translation */
+	line_no++;
+	first_line = TRUE;
+
+	while (lines[line_no] != NULL && lines[line_no][0] != '\r' && lines[line_no][0] != '\n')
+	{
+		/* check for a leading period indicating end of text response */
+		if (lines[line_no][0] == '.')
+		{
+			/* a double period at line start is a masked period, cf. RFC 2229 */
+			if (strlen(lines[line_no]) > 1 && lines[line_no][1] == '.')
+				/* the RFC says we should coolapse the two periods into one but we go the
+				 * lazy way and simply replace the first period by a space */
+				lines[line_no][0] = ' ';
+			else
+				break; /* we reached the end of the test response */
+		}
+		if (first_line)
+		{
+			g_string_append(header, lines[line_no]);
+			first_line = FALSE;
+		}
+		else
+			g_string_append(body, lines[line_no]);
+		g_string_append_c(body, '\n');
+
+		line_no++;
+	}
+	parse_header(dd, header, body);
+	parse_body(dd, body);
+	gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
+	g_string_erase(header, 0, -1);
+	g_string_erase(body, 0, -1);
+
+	return line_no;
 }
 
 
@@ -176,9 +338,9 @@ static gboolean process_server_response(DictData *dd)
 	gint max_lines, i;
 	gint defs_found = 0;
 	gchar *answer, *tmp;
-	gchar **lines, **dict_parts;
-	GString *body = g_string_sized_new(256);
-
+	gchar **lines;
+	GString *header = g_string_sized_new(256);
+	GString *body = g_string_sized_new(512);
 
 	switch (dd->query_status)
 	{
@@ -247,7 +409,8 @@ static gboolean process_server_response(DictData *dd)
                                      defs_found), defs_found);
 
 	/* go to next line */
-	while (*answer != '\n') answer++;
+	while (*answer != '\n')
+		answer++;
 	answer++;
 
 	/* parse output */
@@ -265,61 +428,12 @@ static gboolean process_server_response(DictData *dd)
 	i = -1;
 	while (i < max_lines)
 	{
-		i++;
-		if (strncmp(lines[i], "250", 3) == 0)
-			break; /* end of data */
-		if (strncmp(lines[i], "error:", 6) == 0) /* an error occurred */
-		{
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, lines[i], -1);
-			break;
-		}
-		if (strncmp(lines[i], "151", 3) != 0)
-			continue; /* unexpected line start, try next line */
-
-		/* get the used dictionary */
-		dict_parts = g_strsplit(lines[i], "\"", -1);
-
-		if (g_strv_length(dict_parts) > 3)
-		{	gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
-				g_strstrip(dict_parts[3]), -1, "bold", NULL);
-
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, " (", 2);
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter,
-				g_strstrip(dict_parts[2]), -1);
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, ")\n", 2);
-		}
-		g_strfreev(dict_parts);
-
-		if (i >= (max_lines - 2))
-			break;
-
-		/* all following lines represents the translation */
-		i++;
-		while (lines[i] != NULL && lines[i][0] != '\r' && lines[i][0] != '\n')
-		{
-			/* check for a leading period indicating end of text response */
-			if (lines[i][0] == '.')
-			{
-				/* a double period at line start is a masked period, cf. RFC 2229 */
-				if (strlen(lines[i]) > 1 && lines[i][1] == '.')
-					/* the RFC says we should coolapse the two periods into one but we go the
-					 * lazy way and simply replace the first period by a space */
-					lines[i][0] = ' ';
-				else
-					break; /* we reached the end of the test response */
-			}
-			g_string_append(body, lines[i]);
-			g_string_append_c(body, '\n');
-
-			i++;
-		}
-		parse_line(dd, body);
-		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
-		g_string_erase(body, 0, -1);
+		i = process_response_content(dd, lines, i, max_lines, header, body);
 	}
 	g_strfreev(lines);
 	g_free(dd->query_buffer);
 
+	g_string_free(header, TRUE);
 	g_string_free(body, TRUE);
 
 	return FALSE;

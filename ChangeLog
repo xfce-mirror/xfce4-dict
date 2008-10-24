@@ -3,6 +3,9 @@
  * Bring the 'Search Term' string back, this time in the search
    entry to get auto cleared on click.
  * Use for the panel text entry also a SexyIconEntry.
+ * When highlighting cross-references, ignore short ones like
+   {n}, {f} and {m} as often found in translation dictionaries.
+ * Highlight phonetic information provided by some dictionaries.
 
 
 2008-10-19  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
