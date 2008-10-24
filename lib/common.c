@@ -155,7 +155,7 @@ static gboolean open_browser(DictData *dd, const gchar *uri)
 }
 
 
-static gboolean start_web_query(DictData *dd, const gchar *word)
+gboolean dict_start_web_query(DictData *dd, const gchar *word)
 {
 	gboolean success = TRUE;
 	gchar *uri;
@@ -228,7 +228,7 @@ void dict_search_word(DictData *dd, const gchar *word)
 	{
 		case DICTMODE_WEB:
 		{
-			browser_started = start_web_query(dd, dd->searched_word);
+			browser_started = dict_start_web_query(dd, dd->searched_word);
 			break;
 		}
 		case DICTMODE_SPELL:

@@ -23,6 +23,6 @@
 
 GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd);
 void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd);
-
+const gchar *dict_prefs_get_web_url_label(DictData *dd);
 
 #endif

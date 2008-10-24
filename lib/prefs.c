@@ -49,6 +49,23 @@ enum
 	NOTEBOOK_PAGE_ASPELL
 };
 
+static const web_dict_t web_dicts[] =
+{
+	{ N_("dict.leo.org - German <-> English"), "http://dict.leo.org/ende?search={word}" },
+	{ N_("dict.leo.org - German <-> French"), "http://dict.leo.org/frde?search={word}" },
+	{ N_("dict.leo.org - German <-> Spanish"), "http://dict.leo.org/esde?search={word}" },
+	{ N_("dict.leo.org - German <-> Italian"), "http://dict.leo.org/itde?search={word}" },
+	{ N_("dict.leo.org - German <-> Chinese"), "http://dict.leo.org/chde?search={word}" },
+	{ N_("dist.cc - Dictionary"), "http://www.dict.cc/?s={word}" },
+	{ N_("Dictionary.com"), "http://dictionary.reference.com/search?db=dictionary&q={word}" },
+	{ N_("TheFreeDictionary.com"), "http://www.thefreedictionary.com/_/partner.aspx?Word={word}&Set=www&mode=w" },
+	{ N_("Wikipedia, the free encyclopedia (EN)"), "http://en.wikipedia.org/wiki/{word}" },
+	{ N_("Wiktionary, the free dictionary (EN)"), "http://en.wiktionary.org/wiki/{word}" },
+	{ N_("Merriam-Webster Online Dictionary"), "http://www.merriam-webster.com/dictionary/{word}" },
+	{ N_("Clear"), "" },
+	{ NULL, NULL }
+};
+
 static void show_panel_entry_toggled(GtkToggleButton *tb, DictData *dd)
 {
 	if (dd->is_plugin)
@@ -190,22 +207,6 @@ static GtkWidget *create_web_dicts_table(GtkWidget *entry)
 	gint i;
 	gint offset;
 	GtkWidget *table, *button;
-	static web_dict_t web_dicts[] =
-	{
-		{ N_("dict.leo.org - German <-> English"), "http://dict.leo.org/ende?search={word}" },
-		{ N_("dict.leo.org - German <-> French"), "http://dict.leo.org/frde?search={word}" },
-		{ N_("dict.leo.org - German <-> Spanish"), "http://dict.leo.org/esde?search={word}" },
-		{ N_("dict.leo.org - German <-> Italian"), "http://dict.leo.org/itde?search={word}" },
-		{ N_("dict.leo.org - German <-> Chinese"), "http://dict.leo.org/chde?search={word}" },
-		{ N_("dist.cc - Dictionary"), "http://www.dict.cc/?s={word}" },
-		{ N_("Dictionary.com"), "http://dictionary.reference.com/search?db=dictionary&q={word}" },
-		{ N_("TheFreeDictionary.com"), "http://www.thefreedictionary.com/_/partner.aspx?Word={word}&Set=www&mode=w" },
-		{ N_("Wikipedia, the free encyclopedia (EN)"), "http://en.wikipedia.org/wiki/{word}" },
-		{ N_("Wiktionary, the free dictionary (EN)"), "http://en.wiktionary.org/wiki/{word}" },
-		{ N_("Merriam-Webster Online Dictionary"), "http://www.merriam-webster.com/dictionary/{word}" },
-		{ N_("Clear"), "" },
-		{ NULL, NULL }
-	};
 
 	table = gtk_table_new(4, 2, FALSE);
 	gtk_table_set_row_spacings(GTK_TABLE(table), 2);
@@ -226,6 +227,19 @@ static GtkWidget *create_web_dicts_table(GtkWidget *entry)
 	}
 
 	return table;
+}
+
+
+const gchar *dict_prefs_get_web_url_label(DictData *dd)
+{
+	gint i;
+
+	for (i = 0; web_dicts[i].label != NULL; i++)
+	{
+		if (strcmp(web_dicts[i].url, dd->web_url) == 0)
+			return web_dicts[i].label;
+	}
+	return dd->web_url;
 }
 
 

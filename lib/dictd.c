@@ -49,6 +49,7 @@
 #include "dictd.h"
 #include "gui.h"
 #include "aspell.h"
+#include "prefs.h"
 
 
 #define BUF_SIZE 256
@@ -163,20 +164,11 @@ static void parse_header(DictData *dd, GString *buffer, GString *target)
 
 static GtkTextTag *create_tag(DictData *dd, const gchar *link_str)
 {
-	static GdkColor *link_color = NULL;
-	static GdkColor default_link_color = { 0, 0, 0, 0xeeee };
 	GtkTextTag *tag;
-
-	if (link_color == NULL)
-	{
-		gtk_widget_style_get(GTK_WIDGET(dd->main_textview), "link-color", &link_color, NULL);
-		if (link_color == NULL)
-			link_color = &default_link_color;
-	}
 
 	tag = gtk_text_buffer_create_tag(dd->main_textbuffer, NULL,
 		"underline", PANGO_UNDERLINE_SINGLE,
-		"foreground-gdk", link_color, NULL);
+		"foreground-gdk", dict_gui_get_color(dd, COLOR_LINK), NULL);
 
 	g_object_set_data_full(G_OBJECT(tag), "link", g_strdup(link_str), g_free);
 
@@ -374,7 +366,8 @@ static gboolean process_server_response(DictData *dd)
 
 	answer = dd->query_buffer;
 	/* go to next line */
-	while (*answer != '\n') answer++;
+	while (*answer != '\n')
+		answer++;
 	answer++;
 
 	if (dd->query_status == NOTHING_FOUND)
@@ -388,7 +381,19 @@ static gboolean process_server_response(DictData *dd)
 		g_free(dd->query_buffer);
 
 		/* if we had no luck searching a word, maybe we have a typo so try searching with
-		 * aspell */
+		 * aspell and offer a Web search*/
+		if (NZV(dd->web_url))
+		{
+			gchar *text = g_strdup_printf(
+				_("Do you want to search \"%s\" on the Web using "), dd->searched_word);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, text, -1);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\"", 1);
+			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+				dict_prefs_get_web_url_label(dd), -1, "link", NULL);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\"?", 2);
+			g_free(text);
+		}
 		if (NZV(dd->spell_bin))
 		{
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);

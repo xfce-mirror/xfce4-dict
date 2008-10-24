@@ -41,8 +41,6 @@ static gboolean hovering_over_link = FALSE;
 static GdkCursor *hand_cursor = NULL;
 static GdkCursor *regular_cursor = NULL;
 static gboolean entry_is_dirty = FALSE;
-/** TODO make colours (phonecitc, link colour) configurable */
-static const GdkColor phon_color = { 0, 0, 0x6363, 0 };
 
 
 /* all textview_* functions are from the gtk-demo app to get links in the textview working */
@@ -62,6 +60,13 @@ static void textview_follow_if_link(GtkWidget *text_view, GtkTextIter *iter, Dic
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), found_link);
 			dict_search_word(dd, found_link);
 
+			break;
+		}
+		g_object_get(G_OBJECT(tag), "name", &found_link, NULL);
+		if (found_link != NULL && strcmp("link", found_link) == 0)
+		{
+			dict_start_web_query(dd, dd->searched_word);
+			g_free(found_link);
 			break;
 		}
 	}
@@ -138,10 +143,18 @@ static void textview_set_cursor_if_appropriate(GtkTextView *text_view, gint x, g
 	for (tagp = tags;  tagp != NULL;  tagp = tagp->next)
 	{
 		GtkTextTag *tag = tagp->data;
+		gchar *name;
 
 		if (g_object_get_data(G_OBJECT(tag), "link") != NULL)
 		{
 			hovering = TRUE;
+			break;
+		}
+		g_object_get(G_OBJECT(tag), "name", &name, NULL);
+		if (name != NULL && strcmp("link", name) == 0)
+		{
+			hovering = TRUE;
+			g_free(name);
 			break;
 		}
 	}
@@ -378,7 +391,7 @@ const guint8 *dict_gui_get_icon_data(void)
 }
 
 
-static GtkWidget *create_file_menu(DictData *dd)
+ static GtkWidget *create_file_menu(DictData *dd)
 {
 	GtkWidget *menubar, *file, *file_menu, *help, *help_menu, *menu_item;
 	GtkAccelGroup *accel_group;
@@ -429,6 +442,23 @@ void dict_gui_finalize(DictData *dd)
 
 	if (regular_cursor)
 		gdk_cursor_unref(regular_cursor);
+}
+
+
+const GdkColor *dict_gui_get_color(DictData *dd, gint color)
+{
+	/** TODO make colours (phonetic, link colour) configurable */
+	static const GdkColor link_color = { 0, 0, 0, 0xeeee };
+	static const GdkColor phon_color = { 0, 0, 0x6363, 0 };
+
+	switch (color)
+	{
+		case COLOR_PHONECTIC:
+			return &phon_color;
+		case COLOR_LINK:
+			return &link_color;
+	}
+	return NULL;
 }
 
 
@@ -500,20 +530,19 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(label);
 	gtk_box_pack_start(GTK_BOX(method_chooser), label, FALSE, FALSE, 6);
 
-	/* TODO: add mnemonics, add 'Search $web_dictionary link when nothing found */
-	radio = gtk_radio_button_new_with_label(NULL, _("Dict"));
+	radio = gtk_radio_button_new_with_mnemonic(NULL, _("_Dict"));
 	gtk_widget_show(radio);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_DICT));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_dict_toggled), dd);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
-	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Web"));
+	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_Web"));
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_WEB));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_web_toggled), dd);
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
-	radio = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio), _("Spell Check"));
+	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_Spell Check"));
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_SPELL));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_spell_toggled), dd);
 	gtk_widget_show(radio);
@@ -544,9 +573,13 @@ void dict_gui_create_main_window(DictData *dd)
 			"indent", 10,
 			"pixels-below-lines", 5, NULL);
 	gtk_text_buffer_create_tag(dd->main_textbuffer,
-		"phonetic",
-		"style", PANGO_STYLE_ITALIC,
-		"foreground-gdk", &phon_color, NULL);
+			"phonetic",
+			"style", PANGO_STYLE_ITALIC,
+			"foreground-gdk", dict_gui_get_color(dd, COLOR_PHONECTIC), NULL);
+	gtk_text_buffer_create_tag(dd->main_textbuffer,
+			"link",
+			"underline", PANGO_UNDERLINE_SINGLE,
+			"foreground-gdk", dict_gui_get_color(dd, COLOR_LINK), NULL);
 
 	/* support for links (cross-references) for dictd responses */
 	{

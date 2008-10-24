@@ -55,6 +55,13 @@ enum
 	SERVER_NOT_READY
 };
 
+enum
+{
+	COLOR_LINK,
+	COLOR_PHONECTIC
+};
+
+
 typedef struct
 {
 	/* settings */
@@ -108,5 +115,6 @@ void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gi
 							 GtkSelectionData *data, guint info, guint ltime, DictData *dd);
 
 DictData *dict_create_dictdata();
+gboolean dict_start_web_query(DictData *dd, const gchar *word);
 
 #endif
