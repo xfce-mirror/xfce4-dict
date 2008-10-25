@@ -249,7 +249,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	GtkWidget *label1, *label2, *label3;
 
 	dialog = xfce_titled_dialog_new_with_buttons(
-		_("Xfce4 Dictionary"), GTK_WINDOW(parent),
+		_("Preferences"), GTK_WINDOW(parent),
 		GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_NO_SEPARATOR,
 		GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
 		NULL);
