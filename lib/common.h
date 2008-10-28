@@ -55,12 +55,6 @@ enum
 	SERVER_NOT_READY
 };
 
-enum
-{
-	COLOR_LINK,
-	COLOR_PHONECTIC
-};
-
 
 typedef struct
 {
@@ -102,7 +96,12 @@ typedef struct
 	GtkWidget *main_textview;
 	GtkTextBuffer *main_textbuffer;
 	GtkTextIter textiter;
+	GtkTextTag *link_tag;
+	GtkTextTag *phon_tag;
 	GdkPixbuf *icon;
+
+	GdkColor *link_color;
+	GdkColor *phon_color;
 } DictData;
 
 

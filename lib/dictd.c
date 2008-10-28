@@ -168,7 +168,7 @@ static GtkTextTag *create_tag(DictData *dd, const gchar *link_str)
 
 	tag = gtk_text_buffer_create_tag(dd->main_textbuffer, NULL,
 		"underline", PANGO_UNDERLINE_SINGLE,
-		"foreground-gdk", dict_gui_get_color(dd, COLOR_LINK), NULL);
+		"foreground-gdk", dd->link_color, NULL);
 
 	g_object_set_data_full(G_OBJECT(tag), "link", g_strdup(link_str), g_free);
 

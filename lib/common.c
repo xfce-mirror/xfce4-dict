@@ -30,6 +30,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include <gtk/gtk.h>
 
 #include <libxfcegui4/libxfcegui4.h>
@@ -281,6 +282,32 @@ static void parse_geometry(DictData *dd, const gchar *str)
 }
 
 
+static gdouble scale_round(gdouble val, gdouble factor)
+{
+	/*val = floor(val * factor + 0.5);*/
+	val = floor(val);
+	val = MAX(val, 0);
+	val = MIN(val, factor);
+
+	return val;
+}
+
+
+static gchar *get_hex_from_color(GdkColor *color)
+{
+	gchar *buffer = g_malloc0(9);
+
+	g_return_val_if_fail(color != NULL, NULL);
+
+	g_snprintf(buffer, 8, "#%02X%02X%02X",
+	      (guint) (scale_round(color->red / 256, 255)),
+	      (guint) (scale_round(color->green / 256, 255)),
+	      (guint) (scale_round(color->blue / 256, 255)));
+
+	return buffer;
+}
+
+
 void dict_read_rc_file(DictData *dd)
 {
 	XfceRc *rc;
@@ -295,6 +322,8 @@ void dict_read_rc_file(DictData *dd)
 	const gchar *spell_bin = "aspell";
 	const gchar *spell_dictionary = "en";
 	const gchar *geo = "-1;0;0;0;0;";
+	const gchar *link_color_str = "#0000ff";
+	const gchar *phon_color_str = "#006300";
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
 	{
@@ -307,7 +336,9 @@ void dict_read_rc_file(DictData *dd)
 		server = xfce_rc_read_entry(rc, "server", server);
 		dict = xfce_rc_read_entry(rc, "dict", dict);
 		spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin);
-		spell_dictionary = xfce_rc_read_entry(rc, "spell_dictionary", spell_dictionary);
+
+		link_color_str = xfce_rc_read_entry(rc, "link_color", link_color_str);
+		phon_color_str = xfce_rc_read_entry(rc, "phonetic_color", phon_color_str);
 
 		geo = xfce_rc_read_entry(rc, "geometry", geo);
 		parse_geometry(dd, geo);
@@ -328,6 +359,11 @@ void dict_read_rc_file(DictData *dd)
 	dd->spell_bin = g_strdup(spell_bin);
 	dd->spell_dictionary = g_strdup(spell_dictionary);
 
+	dd->link_color = g_new0(GdkColor, 1);
+	gdk_color_parse(link_color_str, dd->link_color);
+	dd->phon_color = g_new0(GdkColor, 1);
+	gdk_color_parse(phon_color_str, dd->phon_color);
+
 	xfce_rc_close(rc);
 }
 
@@ -338,7 +374,7 @@ void dict_write_rc_file(DictData *dd)
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", FALSE)) != NULL)
 	{
-		gchar geometry_string[128];
+		gchar *geometry_string, *link_color_str, *phon_color_str;
 
 		xfce_rc_write_int_entry(rc, "mode_in_use", dd->mode_in_use);
 		xfce_rc_write_int_entry(rc, "mode_default", dd->mode_default);
@@ -352,9 +388,18 @@ void dict_write_rc_file(DictData *dd)
 		xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);
 		xfce_rc_write_entry(rc, "spell_dictionary", dd->spell_dictionary);
 
-		g_snprintf(geometry_string, sizeof(geometry_string), "%d;%d;%d;%d;%d;",
+		link_color_str = get_hex_from_color(dd->link_color);
+		phon_color_str = get_hex_from_color(dd->phon_color);
+		xfce_rc_write_entry(rc, "link_color", link_color_str);
+		xfce_rc_write_entry(rc, "phonetic_color", phon_color_str);
+
+		geometry_string = g_strdup_printf("%d;%d;%d;%d;%d;",
 			dd->geometry[0], dd->geometry[1], dd->geometry[2], dd->geometry[3], dd->geometry[4]);
 		xfce_rc_write_entry(rc, "geometry", geometry_string);
+
+		g_free(link_color_str);
+		g_free(phon_color_str);
+		g_free(geometry_string);
 
 		xfce_rc_close(rc);
 	}
@@ -374,6 +419,9 @@ void dict_free_data(DictData *dd)
 	g_free(dd->server);
 	g_free(dd->web_url);
 	g_free(dd->spell_bin);
+
+	g_free(dd->link_color);
+	g_free(dd->phon_color);
 
 	if (dd->icon != NULL)
 		g_object_unref(dd->icon);
@@ -420,4 +468,5 @@ DictData *dict_create_dictdata()
 
 	return dd;
 }
+
 

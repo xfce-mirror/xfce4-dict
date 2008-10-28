@@ -185,6 +185,9 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 		dd->panel_entry_size = gtk_spin_button_get_value_as_int(
 					GTK_SPIN_BUTTON(g_object_get_data(G_OBJECT(dlg), "panel_entry_size_spinner")));
 	}
+	g_object_set(G_OBJECT(dd->link_tag), "foreground-gdk", dd->link_color, NULL);
+	g_object_set(G_OBJECT(dd->phon_tag), "foreground-gdk", dd->phon_color, NULL);
+
 	/* save settings */
 	dict_write_rc_file(dd);
 
@@ -243,6 +246,12 @@ const gchar *dict_prefs_get_web_url_label(DictData *dd)
 }
 
 
+void color_set_cb(GtkColorButton *widget, GdkColor *color)
+{
+	gtk_color_button_get_color(widget, color);
+}
+
+
 GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 {
 	GtkWidget *dialog, *inner_vbox, *notebook, *notebook_vbox;
@@ -272,7 +281,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	 */
 #define PAGE_GENERAL /* only for navigation in Geany's symbol list ;-) */
 	{
-		GtkWidget *radio_button, *label;
+		GtkWidget *radio_button, *label, *table, *color_link, *color_phon;
 		GSList *search_method;
 
 		notebook_vbox = gtk_vbox_new(FALSE, 2);
@@ -325,12 +334,52 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_LAST_USED));
 		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(search_method_changed), dd);
 
+		label = gtk_label_new(_("<b>Colors:</b>"));
+		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
+		gtk_misc_set_alignment(GTK_MISC(label), 0, 1);
+		gtk_widget_show(label);
+		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 5);
+
+		label1 = gtk_label_new(_("Link Color:"));
+		label2 = gtk_label_new(_("Phonectic Color:"));
+		color_link = gtk_color_button_new_with_color(dd->link_color);
+		color_phon = gtk_color_button_new_with_color(dd->phon_color);
+		g_signal_connect(color_link, "color-set", G_CALLBACK(color_set_cb), dd->link_color);
+		g_signal_connect(color_phon, "color-set", G_CALLBACK(color_set_cb), dd->phon_color);
+
+		table = gtk_table_new(2, 2, FALSE);
+		gtk_widget_show(table);
+		gtk_table_set_row_spacings(GTK_TABLE(table), 5);
+		gtk_table_set_col_spacings(GTK_TABLE(table), 5);
+
+		gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 0, 1,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 5);
+		gtk_misc_set_alignment(GTK_MISC(label1), 1, 0);
+
+		gtk_table_attach(GTK_TABLE(table), color_link, 1, 2, 0, 1,
+						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 1, 2,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 0);
+		gtk_misc_set_alignment(GTK_MISC(label2), 1, 0);
+
+		gtk_table_attach(GTK_TABLE(table), color_phon, 1, 2, 1, 2,
+						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_widget_show_all(table);
+		gtk_box_pack_start(GTK_BOX(inner_vbox), table, FALSE, FALSE, 0);
+
+
 		/* show panel entry check box */
 		if (dd->is_plugin)
 		{
 			GtkWidget *pe_hbox, *panel_entry_size_label, *panel_entry_size_spinner, *check_panel_entry;
 
-			label = gtk_label_new(_("<b>Panel text field:</b>"));
+			label = gtk_label_new(_("<b>Panel Text Field:</b>"));
 			gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
 			gtk_misc_set_alignment(GTK_MISC(label), 0, 1);
 			gtk_widget_show(label);
@@ -557,7 +606,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
 			notebook_vbox, gtk_label_new(_("Spell Check")), NOTEBOOK_PAGE_ASPELL);
 
-		label1 = gtk_label_new_with_mnemonic(_("Aspell program:"));
+		label1 = gtk_label_new_with_mnemonic(_("Aspell Program:"));
 		gtk_widget_show(label1);
 
 		spell_entry = gtk_entry_new();

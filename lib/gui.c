@@ -445,23 +445,6 @@ void dict_gui_finalize(DictData *dd)
 }
 
 
-const GdkColor *dict_gui_get_color(DictData *dd, gint color)
-{
-	/** TODO make colours (phonetic, link colour) configurable */
-	static const GdkColor link_color = { 0, 0, 0, 0xeeee };
-	static const GdkColor phon_color = { 0, 0, 0x6363, 0 };
-
-	switch (color)
-	{
-		case COLOR_PHONECTIC:
-			return &phon_color;
-		case COLOR_LINK:
-			return &link_color;
-	}
-	return NULL;
-}
-
-
 void dict_gui_create_main_window(DictData *dd)
 {
 	GtkWidget *main_box, *entry_box, *label_box;
@@ -572,14 +555,14 @@ void dict_gui_create_main_window(DictData *dd)
 			"style", PANGO_STYLE_ITALIC,
 			"indent", 10,
 			"pixels-below-lines", 5, NULL);
-	gtk_text_buffer_create_tag(dd->main_textbuffer,
+	dd->phon_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			"phonetic",
 			"style", PANGO_STYLE_ITALIC,
-			"foreground-gdk", dict_gui_get_color(dd, COLOR_PHONECTIC), NULL);
-	gtk_text_buffer_create_tag(dd->main_textbuffer,
+			"foreground-gdk", dd->phon_color, NULL);
+	dd->link_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			"link",
 			"underline", PANGO_UNDERLINE_SINGLE,
-			"foreground-gdk", dict_gui_get_color(dd, COLOR_LINK), NULL);
+			"foreground-gdk", dd->link_color, NULL);
 
 	/* support for links (cross-references) for dictd responses */
 	{
