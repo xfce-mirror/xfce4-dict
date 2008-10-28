@@ -18,14 +18,13 @@
  */
 
 
-#ifndef LIBDICT_H
-#define LIBDICT_H 1
+#ifndef SPELL_H
+#define SPELL_H 1
 
-#include "common.h"
-#include "spell.h"
-#include "dictd.h"
-#include "prefs.h"
-#include "gui.h"
+
+void dict_spell_start_query(DictData *dd, const gchar *word);
+
+void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo);
 
 
 #endif

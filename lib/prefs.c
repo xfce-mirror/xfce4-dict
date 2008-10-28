@@ -32,6 +32,7 @@
 #include "common.h"
 #include "prefs.h"
 #include "dictd.h"
+#include "spell.h"
 #include "wraplabel.h"
 
 
@@ -46,7 +47,7 @@ enum
 	NOTEBOOK_PAGE_GENERAL = 0,
 	NOTEBOOK_PAGE_DICTD,
 	NOTEBOOK_PAGE_WEB,
-	NOTEBOOK_PAGE_ASPELL
+	NOTEBOOK_PAGE_SPELL
 };
 
 static const web_dict_t web_dicts[] =
@@ -84,39 +85,6 @@ static void search_method_changed(GtkRadioButton *radiobutton, DictData *dd)
 		return; /* ignore the toggled event when a button is deselected */
 
 	dd->mode_default = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(radiobutton), "type"));
-}
-
-
-static void get_spell_dictionaries(GtkWidget *spell_combo, DictData *dd)
-{
-	if (NZV(dd->spell_bin))
-	{
-		gchar *tmp = NULL, *cmd, *locale_cmd;
-
-		cmd = g_strconcat(dd->spell_bin, " dump dicts", NULL);
-		locale_cmd = g_locale_from_utf8(cmd, -1, NULL, NULL, NULL);
-		if (locale_cmd == NULL)
-			locale_cmd = g_strdup(cmd);
-		g_spawn_command_line_sync(locale_cmd, &tmp, NULL, NULL, NULL);
-		if (NZV(tmp))
-		{
-			gchar **list = g_strsplit_set(tmp, "\n\r", -1);
-			gchar *item;
-			guint i, len = g_strv_length(list);
-			for (i = 0; i < len; i++)
-			{
-				item = g_strstrip(list[i]);
-				gtk_combo_box_append_text(GTK_COMBO_BOX(spell_combo), item);
-				if (strcmp(dd->spell_dictionary, item) == 0)
-					gtk_combo_box_set_active(GTK_COMBO_BOX(spell_combo), i);
-			}
-			g_strfreev(list);
-		}
-
-		g_free(cmd);
-		g_free(locale_cmd);
-		g_free(tmp);
-	}
 }
 
 
@@ -592,9 +560,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	}
 
 	/*
-	 * Page: ASPELL
+	 * Page: SPELL
 	 */
-#define PAGE_ASPELL /* only for navigation in Geany's symbol list ;-) */
+#define PAGE_SPELL /* only for navigation in Geany's symbol list ;-) */
 	{
 		GtkWidget *table, *spell_entry, *spell_combo;
 
@@ -604,9 +572,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
-			notebook_vbox, gtk_label_new(_("Spell Check")), NOTEBOOK_PAGE_ASPELL);
+			notebook_vbox, gtk_label_new(_("Spell Check")), NOTEBOOK_PAGE_SPELL);
 
-		label1 = gtk_label_new_with_mnemonic(_("Aspell Program:"));
+		label1 = gtk_label_new_with_mnemonic(_("Spell Check Program:"));
 		gtk_widget_show(label1);
 
 		spell_entry = gtk_entry_new();
@@ -621,7 +589,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(label2);
 
 		spell_combo = gtk_combo_box_new_text();
-		get_spell_dictionaries(spell_combo, dd);
+		dict_spell_get_dictionaries(dd, spell_combo);
 		gtk_widget_show(spell_combo);
 
 		g_object_set_data(G_OBJECT(dialog), "spell_combo", spell_combo);

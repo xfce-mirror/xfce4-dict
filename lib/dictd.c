@@ -48,7 +48,7 @@
 #include "common.h"
 #include "dictd.h"
 #include "gui.h"
-#include "aspell.h"
+#include "spell.h"
 #include "prefs.h"
 
 
@@ -381,7 +381,7 @@ static gboolean process_server_response(DictData *dd)
 		g_free(dd->query_buffer);
 
 		/* if we had no luck searching a word, maybe we have a typo so try searching with
-		 * aspell and offer a Web search*/
+		 * spell check and offer a Web search*/
 		if (NZV(dd->web_url))
 		{
 			gchar *text = g_strdup_printf(
@@ -397,7 +397,7 @@ static gboolean process_server_response(DictData *dd)
 		if (NZV(dd->spell_bin))
 		{
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
-			dict_aspell_start_query(dd, dd->searched_word);
+			dict_spell_start_query(dd, dd->searched_word);
 		}
 
 		return FALSE;

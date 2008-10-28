@@ -5,8 +5,8 @@ Xfce4 Dictionary - A client program to query different dictionaries
 This program allows you to search different kinds of dictionary services
 for words or phrases and shows you the result.
 Currently you can query a "Dict" server(RFC 2229), any online dictionary
-service by opening a web browser or search for words using the
-aspell/ispell program.
+service by opening a web browser or search for words using a spell check
+program like aspell, ispell or enchant.
 
 xfce4-dict contains a stand-alone application called "xfce4-dict" and a
 panel plugin for the Xfce panel.
@@ -100,11 +100,12 @@ other known browsers are tried. But it's better to set a default browser
 using "Preferred Applications" in the Xfce settings manager.
 
 
-Aspell/ispell based search
+Spell checking based search
 --------------------------
 
-It is also possible to verify the spelling of word using aspell (or its
-predecessor ispell). To get this working you need to have the aspell or
+It is also possible to verify the spelling of word using spell checking
+programs like enchant or aspell (or its predecessor ispell).
+To get this working you need to have the enchant, aspell or
 ispell binary in your binary search path and at least one dictionary
-working. If you have multiple aspell dictionaries installed, you can
+working. If you have multiple dictionaries installed, you can
 select the one to use in the preferences dialog.

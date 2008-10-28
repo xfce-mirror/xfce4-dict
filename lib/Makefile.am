@@ -4,21 +4,21 @@ noinst_LTLIBRARIES = 							\
 	libdict.la
 
 libdict_la_SOURCES =							\
-	libdict.h									\
-	aspell.c									\
-	aspell.h									\
 	common.c									\
 	common.h									\
 	dictd.c										\
 	dictd.h										\
 	gui.c										\
 	gui.h										\
+	libdict.h									\
+	prefs.c										\
+	prefs.h										\
 	sexy-icon-entry.c							\
 	sexy-icon-entry.h							\
+	spell.c										\
+	spell.h										\
 	wraplabel.c									\
-	wraplabel.h									\
-	prefs.c										\
-	prefs.h
+	wraplabel.h
 
 libdict_la_CFLAGS =								\
 	-I$(top_srcdir)								\

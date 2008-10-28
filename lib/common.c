@@ -20,7 +20,7 @@
 
 /* All files in lib/ form a collection of common used code by the xfce4-dict stand-alone
  * application and the xfce4-dict-plugin.
- * This file contains very common code and has some glue to combine the aspell query code,
+ * This file contains very common code and has some glue to combine the spell query code,
  * the dictd server query code and the web dictionary code together. */
 
 
@@ -38,7 +38,7 @@
 
 
 #include "common.h"
-#include "aspell.h"
+#include "spell.h"
 #include "dictd.h"
 #include "gui.h"
 
@@ -234,7 +234,7 @@ void dict_search_word(DictData *dd, const gchar *word)
 		}
 		case DICTMODE_SPELL:
 		{
-			dict_aspell_start_query(dd, dd->searched_word);
+			dict_spell_start_query(dd, dd->searched_word);
 			break;
 		}
 		default:
@@ -308,6 +308,22 @@ static gchar *get_hex_from_color(GdkColor *color)
 }
 
 
+static gchar *get_spell_program(void)
+{
+	gchar *path;
+
+	path = g_find_program_in_path("enchant");
+	if (path != NULL)
+		return path;
+
+	path = g_find_program_in_path("aspell");
+	if (path != NULL)
+		return path;
+
+	return g_strdup("");
+}
+
+
 void dict_read_rc_file(DictData *dd)
 {
 	XfceRc *rc;
@@ -316,11 +332,12 @@ void dict_read_rc_file(DictData *dd)
 	gint port = 2628;
 	gint panel_entry_size = 150;
 	gboolean show_panel_entry = FALSE;
+	gchar *spell_bin_default = get_spell_program();
 	const gchar *server = "dict.org";
 	const gchar *dict = "*";
 	const gchar *weburl = NULL;
-	const gchar *spell_bin = "aspell";
-	const gchar *spell_dictionary = "en";
+	const gchar *spell_bin = NULL;
+	const gchar *spell_dictionary = "en"; /// TODO find by LANG env
 	const gchar *geo = "-1;0;0;0;0;";
 	const gchar *link_color_str = "#0000ff";
 	const gchar *phon_color_str = "#006300";
@@ -335,7 +352,7 @@ void dict_read_rc_file(DictData *dd)
 		port = xfce_rc_read_int_entry(rc, "port", port);
 		server = xfce_rc_read_entry(rc, "server", server);
 		dict = xfce_rc_read_entry(rc, "dict", dict);
-		spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin);
+		spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin_default);
 
 		link_color_str = xfce_rc_read_entry(rc, "link_color", link_color_str);
 		phon_color_str = xfce_rc_read_entry(rc, "phonetic_color", phon_color_str);
@@ -356,8 +373,14 @@ void dict_read_rc_file(DictData *dd)
 	dd->port = port;
 	dd->server = g_strdup(server);
 	dd->dictionary = g_strdup(dict);
-	dd->spell_bin = g_strdup(spell_bin);
 	dd->spell_dictionary = g_strdup(spell_dictionary);
+	if (spell_bin != NULL)
+	{
+		dd->spell_bin = g_strdup(spell_bin);
+		g_free(spell_bin_default);
+	}
+	else
+		dd->spell_bin = spell_bin_default;
 
 	dd->link_color = g_new0(GdkColor, 1);
 	gdk_color_parse(link_color_str, dd->link_color);

@@ -3,7 +3,7 @@ panel-plugin/xfce4-dict-plugin.c
 src/popup_plugin.c
 src/xfce4-dict.c
 src/xfce4-dict.desktop.in
-lib/aspell.c
+lib/spell.c
 lib/common.c
 lib/dictd.c
 lib/gui.c
