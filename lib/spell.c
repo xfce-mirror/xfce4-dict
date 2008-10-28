@@ -300,18 +300,27 @@ static gchar **get_aspell_dicts(const gchar *str)
 
 void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo)
 {
-	if (NZV(dd->spell_bin))
-	{
-		gchar *tmp = NULL, *cmd, *locale_cmd;
-		gboolean use_enchant = FALSE;
+	const gchar *entry_cmd = gtk_entry_get_text(
+		GTK_ENTRY(g_object_get_data(G_OBJECT(spell_combo), "spell_entry")));
 
-		if (strstr(dd->spell_bin, "enchant") != NULL)
+	if (*entry_cmd != '\0')
+	{
+		gchar *tmp = NULL;
+		gchar *cmd, *locale_cmd;
+		gboolean use_enchant = FALSE;
+		GtkTreeModel *model;
+		GtkTreeIter iter;
+
+		model = gtk_combo_box_get_model(GTK_COMBO_BOX(spell_combo));
+		gtk_list_store_clear(GTK_LIST_STORE(model));
+
+		if (strstr(entry_cmd, "enchant") != NULL)
 		{
 			cmd = g_strdup("enchant-lsmod -list-dicts");
 			use_enchant = TRUE;
 		}
 		else
-			cmd = g_strconcat(dd->spell_bin, " dump dicts", NULL);
+			cmd = g_strconcat(entry_cmd, " dump dicts", NULL);
 
 		locale_cmd = g_locale_from_utf8(cmd, -1, NULL, NULL, NULL);
 		if (locale_cmd == NULL)
@@ -330,9 +339,10 @@ void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo)
 			{
 				if (NZV(list[i]))
 				{
-					gtk_combo_box_append_text(GTK_COMBO_BOX(spell_combo), list[i]);
+					gtk_list_store_append(GTK_LIST_STORE(model), &iter);
+					gtk_list_store_set(GTK_LIST_STORE(model), &iter, 0, list[i], -1);
 					if (strcmp(dd->spell_dictionary, list[i]) == 0)
-						gtk_combo_box_set_active(GTK_COMBO_BOX(spell_combo), i);
+						gtk_combo_box_set_active_iter(GTK_COMBO_BOX(spell_combo), &iter);
 				}
 			}
 			g_strfreev(list);

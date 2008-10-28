@@ -214,9 +214,57 @@ const gchar *dict_prefs_get_web_url_label(DictData *dd)
 }
 
 
-void color_set_cb(GtkColorButton *widget, GdkColor *color)
+static void color_set_cb(GtkColorButton *widget, GdkColor *color)
 {
 	gtk_color_button_get_color(widget, color);
+}
+
+
+static void button_dict_refresh_cb(GtkWidget *button, DictData *dd)
+{
+	GtkWidget *combo = g_object_get_data(G_OBJECT(button), "spell_combo");
+
+	dict_spell_get_dictionaries(dd, combo);
+}
+
+
+static gboolean spell_entry_focus_cb(GtkEntry *entry, GdkEventFocus *ev, GtkWidget *icon)
+{
+	gchar *path = g_find_program_in_path(gtk_entry_get_text(entry));
+
+	if (path != NULL)
+	{
+		gtk_image_set_from_stock(GTK_IMAGE(icon), GTK_STOCK_YES, GTK_ICON_SIZE_BUTTON);
+		g_free(path);
+	}
+	else
+		gtk_image_set_from_stock(GTK_IMAGE(icon), GTK_STOCK_STOP, GTK_ICON_SIZE_BUTTON);
+
+	return FALSE;
+}
+
+
+static void spell_entry_activate_cb(GtkEntry *entry, DictData *dd)
+{
+	GtkWidget *combo = g_object_get_data(G_OBJECT(entry), "spell_combo");
+	GtkWidget *icon = g_object_get_data(G_OBJECT(entry), "icon");
+
+	spell_entry_focus_cb(entry, NULL, icon);
+	dict_spell_get_dictionaries(dd, combo);
+}
+
+
+static void spell_combo_changed_cb(GtkComboBox *widget, DictData *dd)
+{
+	GtkTreeIter iter;
+
+	if (gtk_combo_box_get_active_iter(widget, &iter))
+	{
+		gchar *text;
+		gtk_tree_model_get(gtk_combo_box_get_model(widget), &iter, 0, &text, -1);
+		g_free(dd->spell_dictionary);
+		dd->spell_dictionary = text;
+	}
 }
 
 
@@ -564,7 +612,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	 */
 #define PAGE_SPELL /* only for navigation in Geany's symbol list ;-) */
 	{
-		GtkWidget *table, *spell_entry, *spell_combo;
+		GtkWidget *table, *label_help, *spell_entry, *spell_combo, *button_refresh, *image, *icon;
+		GtkListStore *store;
+		GtkCellRenderer *renderer;
 
 		notebook_vbox = gtk_vbox_new(FALSE, 5);
 		gtk_widget_show(notebook_vbox);
@@ -577,45 +627,88 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		label1 = gtk_label_new_with_mnemonic(_("Spell Check Program:"));
 		gtk_widget_show(label1);
 
+		icon = gtk_image_new();
+		gtk_widget_show(icon);
+
 		spell_entry = gtk_entry_new();
 		gtk_entry_set_max_length(GTK_ENTRY(spell_entry), 256);
 		if (dd->spell_bin != NULL)
 		{
 			gtk_entry_set_text(GTK_ENTRY(spell_entry), dd->spell_bin);
 		}
+		g_signal_connect(spell_entry, "focus-out-event", G_CALLBACK(spell_entry_focus_cb), icon);
+		g_signal_connect(spell_entry, "activate", G_CALLBACK(spell_entry_activate_cb), dd);
 		gtk_widget_show(spell_entry);
+
+		label_help = wrap_label_new(_(
+	"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check "
+	"program which is compatible to the ispell command.\nThe icon shows whether the entered "
+	"command exists.</i>"));
+		gtk_label_set_use_markup(GTK_LABEL(label_help), TRUE);
+		gtk_widget_show(label_help);
 
 		label2 = gtk_label_new_with_mnemonic(_("Dictionary:"));
 		gtk_widget_show(label2);
 
-		spell_combo = gtk_combo_box_new_text();
+		store = gtk_list_store_new(1, G_TYPE_STRING);
+		spell_combo = gtk_combo_box_new_with_model(GTK_TREE_MODEL(store));
+		g_object_set_data(G_OBJECT(spell_combo), "spell_entry", spell_entry);
+
+		renderer = gtk_cell_renderer_text_new();
+		gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(spell_combo), renderer, TRUE);
+		gtk_cell_layout_add_attribute(GTK_CELL_LAYOUT(spell_combo), renderer, "text", 0);
+
 		dict_spell_get_dictionaries(dd, spell_combo);
+		g_signal_connect(spell_combo, "changed", G_CALLBACK(spell_combo_changed_cb), dd);
 		gtk_widget_show(spell_combo);
 
+		button_refresh = gtk_button_new();
+		image = gtk_image_new_from_stock("gtk-refresh", GTK_ICON_SIZE_BUTTON);
+		gtk_button_set_image(GTK_BUTTON(button_refresh), image);
+		gtk_widget_show(button_refresh);
+		g_object_set_data(G_OBJECT(button_refresh), "spell_combo", spell_combo);
+		g_signal_connect(button_refresh, "clicked", G_CALLBACK(button_dict_refresh_cb), dd);
+
+		g_object_set_data(G_OBJECT(spell_entry), "icon", icon);
+		g_object_set_data(G_OBJECT(spell_entry), "spell_combo", spell_combo);
 		g_object_set_data(G_OBJECT(dialog), "spell_combo", spell_combo);
 		g_object_set_data(G_OBJECT(dialog), "spell_entry", spell_entry);
+		g_object_unref(store);
 
+		spell_entry_focus_cb(GTK_ENTRY(spell_entry), NULL, icon); /* initially set the icon */
 
-		table = gtk_table_new(2, 2, FALSE);
+		table = gtk_table_new(3, 3, FALSE);
 		gtk_widget_show(table);
 		gtk_table_set_row_spacings(GTK_TABLE(table), 5);
 		gtk_table_set_col_spacings(GTK_TABLE(table), 5);
 
-		gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 0, 1,
+		gtk_table_attach(GTK_TABLE(table), label_help, 0, 3, 0, 1,
+						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 1, 2,
 						(GtkAttachOptions) (GTK_FILL),
 						(GtkAttachOptions) (0), 5, 5);
 		gtk_misc_set_alignment(GTK_MISC(label1), 1, 0);
 
-		gtk_table_attach(GTK_TABLE(table), spell_entry, 1, 2, 0, 1,
+		gtk_table_attach(GTK_TABLE(table), spell_entry, 1, 2, 1, 2,
 						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
 						(GtkAttachOptions) (0), 5, 5);
 
-		gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 1, 2,
+		gtk_table_attach(GTK_TABLE(table), icon, 2, 3, 1, 2,
+						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 2, 3,
 						(GtkAttachOptions) (GTK_FILL),
 						(GtkAttachOptions) (0), 5, 0);
 		gtk_misc_set_alignment(GTK_MISC(label2), 1, 0);
 
-		gtk_table_attach(GTK_TABLE(table), spell_combo, 1, 2, 1, 2,
+		gtk_table_attach(GTK_TABLE(table), spell_combo, 1, 2, 2, 3,
+						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_table_attach(GTK_TABLE(table), button_refresh, 2, 3, 2, 3,
 						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
 						(GtkAttachOptions) (0), 5, 5);
 
