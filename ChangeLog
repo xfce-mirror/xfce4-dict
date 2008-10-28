@@ -1,3 +1,15 @@
+2008-10-28  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Guess the default spell check dictionary based on the user's
+   locale setting.
+ * Add a status icon to the prefs dialog indicating whether the
+   entered spell check command is valid.
+ * Add a refresh button next to the spell check dictionary list
+   for easy updating.
+ * Add support for 'enchant' as spell check program.
+ * Make colours used for links and phonetics configurable.
+
+
 2008-10-25  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Change the title of the prefs dialog to 'Preferences'.

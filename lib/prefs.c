@@ -696,7 +696,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 						(GtkAttachOptions) (0), 5, 5);
 
 		gtk_table_attach(GTK_TABLE(table), icon, 2, 3, 1, 2,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0),
 						(GtkAttachOptions) (0), 5, 5);
 
 		gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 2, 3,
@@ -709,7 +709,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 						(GtkAttachOptions) (0), 5, 5);
 
 		gtk_table_attach(GTK_TABLE(table), button_refresh, 2, 3, 2, 3,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0),
 						(GtkAttachOptions) (0), 5, 5);
 
 		gtk_box_pack_start(GTK_BOX(inner_vbox), table, FALSE, FALSE, 0);

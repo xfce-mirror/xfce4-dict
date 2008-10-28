@@ -324,6 +324,29 @@ static gchar *get_spell_program(void)
 }
 
 
+static gchar *get_default_lang(void)
+{
+	const gchar *lang = g_getenv("LANG");
+	gchar *result = NULL;
+
+	if (NZV(lang))
+	{
+		if (*lang == 'C' || *lang == 'c')
+			lang = "en";
+		else
+		{	/* if we have something like de_DE.UTF-8, strip everything from the period to the end */
+			gchar *period = strchr(lang, '.');
+			if (period != NULL)
+				result = g_strndup(lang, g_utf8_pointer_to_offset(lang, period));
+		}
+	}
+	else
+		lang = "en";
+
+	return (result != NULL) ? result : g_strdup(lang);
+}
+
+
 void dict_read_rc_file(DictData *dd)
 {
 	XfceRc *rc;
@@ -333,11 +356,12 @@ void dict_read_rc_file(DictData *dd)
 	gint panel_entry_size = 150;
 	gboolean show_panel_entry = FALSE;
 	gchar *spell_bin_default = get_spell_program();
+	gchar *spell_dictionary_default = get_default_lang();
 	const gchar *server = "dict.org";
 	const gchar *dict = "*";
 	const gchar *weburl = NULL;
 	const gchar *spell_bin = NULL;
-	const gchar *spell_dictionary = "en"; /// TODO find by LANG env
+	const gchar *spell_dictionary = NULL;
 	const gchar *geo = "-1;0;0;0;0;";
 	const gchar *link_color_str = "#0000ff";
 	const gchar *phon_color_str = "#006300";
@@ -353,6 +377,7 @@ void dict_read_rc_file(DictData *dd)
 		server = xfce_rc_read_entry(rc, "server", server);
 		dict = xfce_rc_read_entry(rc, "dict", dict);
 		spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin_default);
+		spell_dictionary = xfce_rc_read_entry(rc, "spell_dictionary", spell_dictionary_default);
 
 		link_color_str = xfce_rc_read_entry(rc, "link_color", link_color_str);
 		phon_color_str = xfce_rc_read_entry(rc, "phonetic_color", phon_color_str);
@@ -373,7 +398,6 @@ void dict_read_rc_file(DictData *dd)
 	dd->port = port;
 	dd->server = g_strdup(server);
 	dd->dictionary = g_strdup(dict);
-	dd->spell_dictionary = g_strdup(spell_dictionary);
 	if (spell_bin != NULL)
 	{
 		dd->spell_bin = g_strdup(spell_bin);
@@ -381,6 +405,13 @@ void dict_read_rc_file(DictData *dd)
 	}
 	else
 		dd->spell_bin = spell_bin_default;
+	if (spell_dictionary != NULL)
+	{
+		dd->spell_dictionary = g_strdup(spell_dictionary);
+		g_free(spell_dictionary_default);
+	}
+	else
+		dd->spell_dictionary = spell_dictionary_default;
 
 	dd->link_color = g_new0(GdkColor, 1);
 	gdk_color_parse(link_color_str, dd->link_color);
