@@ -91,6 +91,7 @@ typedef struct
 	GtkWidget *close_button;
 	GtkWidget *close_menu_item;
 	GtkWidget *pref_menu_item;
+	GtkWidget *main_combo;
 	GtkWidget *main_entry;
 	GtkWidget *panel_entry;
 	GtkWidget *main_textview;

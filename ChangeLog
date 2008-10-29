@@ -1,3 +1,11 @@
+2008-10-29  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Always clear the spell check dictionary list in the prefs dialog,
+   even if an empty or invalid spell check command was given.
+ * Add a combo box around the search field in the main window
+   to provide a history of previously searched words.
+
+
 2008-10-28  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Guess the default spell check dictionary based on the user's

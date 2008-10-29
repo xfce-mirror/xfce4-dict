@@ -15,6 +15,8 @@ libdict_la_SOURCES =							\
 	prefs.h										\
 	sexy-icon-entry.c							\
 	sexy-icon-entry.h							\
+	searchentry.c								\
+	searchentry.h								\
 	spell.c										\
 	spell.h										\
 	wraplabel.c									\

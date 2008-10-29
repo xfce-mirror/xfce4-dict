@@ -33,6 +33,7 @@
 #include "common.h"
 #include "gui.h"
 #include "sexy-icon-entry.h"
+#include "searchentry.h"
 #include "inline-icon.h"
 
 
@@ -268,6 +269,16 @@ static void entry_icon_pressed_cb(SexyIconEntry *entry, gint icon_pos, gint butt
 }
 
 
+static void combo_changed_cb(GtkComboBox *combo, DictData *dd)
+{
+	gchar *text = gtk_combo_box_get_active_text(combo);
+
+	dict_search_word(dd, text);
+
+	g_free(text);
+}
+
+
 static void entry_changed_cb(GtkEditable *editable, DictData *dd)
 {
 	entry_is_dirty = TRUE;
@@ -477,14 +488,16 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(label_box);
 	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 0);
 
-	dd->main_entry = sexy_icon_entry_new_full("gtk-find", "gtk-clear");
-	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), _("Search term"));
-	gtk_widget_show(dd->main_entry);
-	gtk_box_pack_start(GTK_BOX(label_box), dd->main_entry, TRUE, TRUE, 0);
-	g_signal_connect(dd->main_entry, "button-press-event", G_CALLBACK(entry_button_press_cb), dd);
-	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
+	dd->main_combo = xfd_search_entry_new(_("Search term"));
+	gtk_widget_show(dd->main_combo);
+	gtk_box_pack_start(GTK_BOX(label_box), dd->main_combo, TRUE, TRUE, 0);
+	g_signal_connect(dd->main_combo, "active-changed", G_CALLBACK(combo_changed_cb), dd);
+
+	dd->main_entry = gtk_bin_get_child(GTK_BIN(dd->main_combo));
 	g_signal_connect(dd->main_entry, "changed", G_CALLBACK(entry_changed_cb), dd);
+	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
 	g_signal_connect(dd->main_entry, "icon_released", G_CALLBACK(entry_icon_pressed_cb), dd);
+	g_signal_connect(dd->main_entry, "button-press-event", G_CALLBACK(entry_button_press_cb), dd);
 
 	update_search_button(dd, entry_box);
 
