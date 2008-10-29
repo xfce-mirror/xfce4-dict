@@ -4,6 +4,7 @@
    even if an empty or invalid spell check command was given.
  * Add a combo box around the search field in the main window
    to provide a history of previously searched words.
+ * When highlighting cross-references, ignore also {vt} and {pl}.
 
 
 2008-10-28  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

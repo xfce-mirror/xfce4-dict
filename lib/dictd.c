@@ -186,7 +186,9 @@ static gboolean ignore_short_link(const gchar *str)
 	/* ignore {n}, {f}, {m}  (surrounding braces are already stripped in 'str') */
 	if (strcmp("f", str) == 0 ||
 		strcmp("m", str) == 0 ||
-		strcmp("n", str) == 0)
+		strcmp("n", str) == 0 ||
+		strcmp("vt", str) == 0 ||
+		strcmp("pl", str) == 0)
 	{
 		return TRUE;
 	}
