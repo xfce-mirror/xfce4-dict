@@ -27,19 +27,19 @@
 G_BEGIN_DECLS
 
 
-#define WRAP_LABEL_TYPE				(wrap_label_get_type())
-#define WRAP_LABEL(obj)				(G_TYPE_CHECK_INSTANCE_CAST((obj), WRAP_LABEL_TYPE, WrapLabel))
-#define WRAP_LABEL_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST((klass), WRAP_LABEL_TYPE, WrapLabelClass))
-#define IS_WRAP_LABEL(obj)			(G_TYPE_CHECK_INSTANCE_TYPE((obj), WRAP_LABEL_TYPE))
-#define IS_WRAP_LABEL_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass), WRAP_LABEL_TYPE))
+#define XFD_WRAP_LABEL_TYPE				(xfd_wrap_label_get_type())
+#define XFD_WRAP_LABEL(obj)				(G_TYPE_CHECK_INSTANCE_CAST((obj), XFD_WRAP_LABEL_TYPE, XfdWrapLabel))
+#define XFD_WRAP_LABEL_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST((klass), XFD_WRAP_LABEL_TYPE, XfdWrapLabelClass))
+#define IS_XFD_WRAP_LABEL(obj)			(G_TYPE_CHECK_INSTANCE_TYPE((obj), XFD_WRAP_LABEL_TYPE))
+#define IS_XFD_WRAP_LABEL_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass), XFD_WRAP_LABEL_TYPE))
 
 
-typedef struct _WrapLabel       WrapLabel;
-typedef struct _WrapLabelClass  WrapLabelClass;
+typedef struct _XfdWrapLabel       XfdWrapLabel;
+typedef struct _XfdWrapLabelClass  XfdWrapLabelClass;
 
-GType			wrap_label_get_type			(void);
-GtkWidget*		wrap_label_new				(const gchar *text);
-void			wrap_label_set_text			(GtkLabel *label, const gchar *text);
+GType			xfd_wrap_label_get_type			(void);
+GtkWidget*		xfd_wrap_label_new				(const gchar *text);
+void			xfd_wrap_label_set_text			(GtkLabel *label, const gchar *text);
 
 
 G_END_DECLS

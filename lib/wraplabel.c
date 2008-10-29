@@ -36,15 +36,16 @@ static GObjectClass *parent_class = NULL;
 
 
 
-#define WRAP_LABEL_GET_PRIVATE(obj)		(G_TYPE_INSTANCE_GET_PRIVATE((obj),	WRAP_LABEL_TYPE, WrapLabelPrivate))
+#define XFD_WRAP_LABEL_GET_PRIVATE(obj)		(G_TYPE_INSTANCE_GET_PRIVATE((obj),	\
+											 XFD_WRAP_LABEL_TYPE, XfdWrapLabelPrivate))
 
 
-struct _WrapLabelClass
+struct _XfdWrapLabelClass
 {
 	GtkLabelClass parent_class;
 };
 
-struct _WrapLabel
+struct _XfdWrapLabel
 {
 	GtkLabel parent;
 };
@@ -52,65 +53,65 @@ struct _WrapLabel
 typedef struct
 {
 	gsize wrap_width;
-} WrapLabelPrivate;
+} XfdWrapLabelPrivate;
 
 
-static void wrap_label_class_init		(WrapLabelClass *klass);
-static void wrap_label_init				(WrapLabel *self);
-static void wrap_label_size_request		(GtkWidget *widget, GtkRequisition *req);
-static void wrap_label_size_allocate	(GtkWidget *widget, GtkAllocation *alloc);
-static void wrap_label_set_wrap_width	(GtkWidget *widget, gsize width);
+static void xfd_wrap_label_class_init		(XfdWrapLabelClass *klass);
+static void xfd_wrap_label_init				(XfdWrapLabel *self);
+static void xfd_wrap_label_size_request		(GtkWidget *widget, GtkRequisition *req);
+static void xfd_wrap_label_size_allocate	(GtkWidget *widget, GtkAllocation *alloc);
+static void xfd_wrap_label_set_wrap_width	(GtkWidget *widget, gsize width);
 
 
-GType wrap_label_get_type()
+GType xfd_wrap_label_get_type()
 {
 	static GType type = G_TYPE_INVALID;
 
 	if (G_UNLIKELY(type == G_TYPE_INVALID))
 	{
 		GTypeInfo gwl_info = {
-			sizeof (WrapLabelClass),
+			sizeof (XfdWrapLabelClass),
 			NULL, NULL,
-			(GClassInitFunc) wrap_label_class_init,
+			(GClassInitFunc) xfd_wrap_label_class_init,
 			NULL,
 			NULL,
-			sizeof (WrapLabel),
+			sizeof (XfdWrapLabel),
 			3,
-			(GInstanceInitFunc) wrap_label_init,
+			(GInstanceInitFunc) xfd_wrap_label_init,
 			NULL
 		};
 
-		type = g_type_register_static(GTK_TYPE_LABEL, "WrapLabel", &gwl_info, 0);
+		type = g_type_register_static(GTK_TYPE_LABEL, "XfdWrapLabel", &gwl_info, 0);
 	}
 
 	return type;
 }
 
 
-static void wrap_label_class_init(WrapLabelClass *klass)
+static void xfd_wrap_label_class_init(XfdWrapLabelClass *klass)
 {
 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS(klass);
 
 	parent_class = g_type_class_peek_parent(klass);
-	widget_class->size_request = wrap_label_size_request;
-	widget_class->size_allocate = wrap_label_size_allocate;
+	widget_class->size_request = xfd_wrap_label_size_request;
+	widget_class->size_allocate = xfd_wrap_label_size_allocate;
 
-	g_type_class_add_private(klass, sizeof (WrapLabelPrivate));
+	g_type_class_add_private(klass, sizeof (XfdWrapLabelPrivate));
 }
 
 
-static void wrap_label_init(WrapLabel *self)
+static void xfd_wrap_label_init(XfdWrapLabel *self)
 {
-	WrapLabelPrivate *priv = WRAP_LABEL_GET_PRIVATE(self);
+	XfdWrapLabelPrivate *priv = XFD_WRAP_LABEL_GET_PRIVATE(self);
 
 	priv->wrap_width = 0;
 }
 
 
 /* Sets the point at which the text should wrap. */
-static void wrap_label_set_wrap_width(GtkWidget *widget, gsize width)
+static void xfd_wrap_label_set_wrap_width(GtkWidget *widget, gsize width)
 {
-	WrapLabelPrivate *priv;
+	XfdWrapLabelPrivate *priv;
 
 	if (width == 0)
 		return;
@@ -121,7 +122,7 @@ static void wrap_label_set_wrap_width(GtkWidget *widget, gsize width)
 	*/
 	pango_layout_set_width(gtk_label_get_layout(GTK_LABEL(widget)), width * PANGO_SCALE);
 
-	priv = WRAP_LABEL_GET_PRIVATE(widget);
+	priv = XFD_WRAP_LABEL_GET_PRIVATE(widget);
 	if (priv->wrap_width != width)
 	{
 		priv->wrap_width = width;
@@ -132,7 +133,7 @@ static void wrap_label_set_wrap_width(GtkWidget *widget, gsize width)
 
 /* Forces the height to be the size necessary for the Pango layout, while allowing the
  * width to be flexible. */
-static void wrap_label_size_request(GtkWidget *widget, GtkRequisition *req)
+static void xfd_wrap_label_size_request(GtkWidget *widget, GtkRequisition *req)
 {
 	gint height;
 
@@ -144,26 +145,26 @@ static void wrap_label_size_request(GtkWidget *widget, GtkRequisition *req)
 
 
 /* Sets the wrap width to the width allocated to us. */
-static void wrap_label_size_allocate(GtkWidget *widget, GtkAllocation *alloc)
+static void xfd_wrap_label_size_allocate(GtkWidget *widget, GtkAllocation *alloc)
 {
 	(* GTK_WIDGET_CLASS(parent_class)->size_allocate)(widget, alloc);
 
-	wrap_label_set_wrap_width(widget, alloc->width);
+	xfd_wrap_label_set_wrap_width(widget, alloc->width);
 }
 
 
-void wrap_label_set_text(GtkLabel *label, const gchar *text)
+void xfd_wrap_label_set_text(GtkLabel *label, const gchar *text)
 {
-	WrapLabelPrivate *priv = WRAP_LABEL_GET_PRIVATE(label);
+	XfdWrapLabelPrivate *priv = XFD_WRAP_LABEL_GET_PRIVATE(label);
 
 	gtk_label_set_text(label, text);
-	wrap_label_set_wrap_width(GTK_WIDGET(label), priv->wrap_width);
+	xfd_wrap_label_set_wrap_width(GTK_WIDGET(label), priv->wrap_width);
 }
 
 
-GtkWidget *wrap_label_new(const gchar *text)
+GtkWidget *xfd_wrap_label_new(const gchar *text)
 {
-	GtkWidget *l = g_object_new(WRAP_LABEL_TYPE, NULL);
+	GtkWidget *l = g_object_new(XFD_WRAP_LABEL_TYPE, NULL);
 
 	if (text != NULL && text[0] != '\0')
 		gtk_label_set_text(GTK_LABEL(l), text);
