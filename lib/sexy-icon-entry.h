@@ -90,10 +90,10 @@ void sexy_icon_entry_set_icon_highlight(SexyIconEntry *entry,
 										SexyIconEntryPosition position,
 										gboolean highlight);
 
-GtkImage *sexy_icon_entry_get_icon(SexyIconEntry *entry,
+GtkImage *sexy_icon_entry_get_icon(const SexyIconEntry *entry,
 								   SexyIconEntryPosition position);
 
-gboolean sexy_icon_entry_get_icon_highlight(SexyIconEntry *entry,
+gboolean sexy_icon_entry_get_icon_highlight(const SexyIconEntry *entry,
 											SexyIconEntryPosition position);
 G_END_DECLS
 

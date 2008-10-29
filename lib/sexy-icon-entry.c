@@ -419,8 +419,16 @@ place_windows(SexyIconEntry *icon_entry, GtkAllocation *widget_alloc)
 	GtkAllocation left_icon_alloc;
 	GtkAllocation right_icon_alloc;
 	GtkAllocation text_area_alloc;
+	gint y;
 
 	get_text_area_size(icon_entry, &text_area_alloc);
+
+	/* DJW center text/icon
+	* TODO flicker needs to be eliminated
+	*/
+	gdk_window_get_geometry (GTK_ENTRY (icon_entry)->text_area, NULL, &y, NULL, NULL, NULL);
+	text_area_alloc.y = y;
+
 	get_icon_allocation(icon_entry, TRUE, widget_alloc, &text_area_alloc,
 						&left_icon_alloc, &left_icon_pos);
 	get_icon_allocation(icon_entry, FALSE, widget_alloc, &text_area_alloc,
@@ -468,9 +476,10 @@ static GdkPixbuf *
 get_pixbuf_from_icon(SexyIconEntry *entry, SexyIconEntryPosition icon_pos)
 {
 	GdkPixbuf *pixbuf = NULL;
-	gchar *stock_id;
+	const gchar *stock_id;
 	SexyIconInfo *icon_info = &entry->priv->icons[icon_pos];
 	GtkIconSize size;
+	int w, h;
 
 	switch (gtk_image_get_storage_type(GTK_IMAGE(icon_info->icon)))
 	{
@@ -480,9 +489,15 @@ get_pixbuf_from_icon(SexyIconEntry *entry, SexyIconEntryPosition icon_pos)
 			break;
 
 		case GTK_IMAGE_STOCK:
-			gtk_image_get_stock(GTK_IMAGE(icon_info->icon), &stock_id, &size);
+			gtk_image_get_stock(GTK_IMAGE(icon_info->icon), (char**)&stock_id, &size);
 			pixbuf = gtk_widget_render_icon(GTK_WIDGET(entry),
 											stock_id, size, NULL);
+			break;
+
+		case GTK_IMAGE_ICON_NAME:
+			gtk_image_get_icon_name (GTK_IMAGE(icon_info->icon), &stock_id, &size);
+			gtk_icon_size_lookup (size, &w, &h);
+			pixbuf = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (), stock_id, size, 0, NULL);
 			break;
 
 		default:
@@ -655,7 +670,8 @@ update_icon(GObject *obj, GParamSpec *param, SexyIconEntry *entry)
 
 		if (strcmp(name, "pixbuf")   && strcmp(name, "stock")  &&
 			strcmp(name, "image")    && strcmp(name, "pixmap") &&
-			strcmp(name, "icon_set") && strcmp(name, "pixbuf_animation"))
+			strcmp(name, "icon-set") && strcmp(name, "pixbuf-animation") &&
+			strcmp(name, "icon-name"))
 		{
 			return;
 		}
@@ -794,6 +810,7 @@ sexy_icon_entry_new(void)
 	return GTK_WIDGET(g_object_new(SEXY_TYPE_ICON_ENTRY, NULL));
 }
 
+
 GtkWidget *sexy_icon_entry_new_full(const gchar *stock_id_pri, const gchar *stock_id_sec)
 {
 	GtkWidget *icon;
@@ -819,6 +836,7 @@ GtkWidget *sexy_icon_entry_new_full(const gchar *stock_id_pri, const gchar *stoc
 
 	return GTK_WIDGET(entry);
 }
+
 
 /**
  * sexy_icon_entry_set_icon
@@ -918,7 +936,7 @@ sexy_icon_entry_set_icon_highlight(SexyIconEntry *entry,
  * Returns: A #GtkImage.
  */
 GtkImage *
-sexy_icon_entry_get_icon(SexyIconEntry *entry,
+sexy_icon_entry_get_icon(const SexyIconEntry *entry,
 						 SexyIconEntryPosition icon_pos)
 {
 	g_return_val_if_fail(entry != NULL, NULL);
@@ -938,7 +956,7 @@ sexy_icon_entry_get_icon(SexyIconEntry *entry,
  * Returns: TRUE if icon highlights.
  */
 gboolean
-sexy_icon_entry_get_icon_highlight(SexyIconEntry *entry,
+sexy_icon_entry_get_icon_highlight(const SexyIconEntry *entry,
 								   SexyIconEntryPosition icon_pos)
 {
 	g_return_val_if_fail(entry != NULL, FALSE);
@@ -947,4 +965,3 @@ sexy_icon_entry_get_icon_highlight(SexyIconEntry *entry,
 
 	return entry->priv->icons[icon_pos].highlight;
 }
-
