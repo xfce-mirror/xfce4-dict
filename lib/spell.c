@@ -300,19 +300,19 @@ static gchar **get_aspell_dicts(const gchar *str)
 
 void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo)
 {
+	GtkTreeModel *model;
 	const gchar *entry_cmd = gtk_entry_get_text(
 		GTK_ENTRY(g_object_get_data(G_OBJECT(spell_combo), "spell_entry")));
+
+	model = gtk_combo_box_get_model(GTK_COMBO_BOX(spell_combo));
+	gtk_list_store_clear(GTK_LIST_STORE(model));
 
 	if (*entry_cmd != '\0')
 	{
 		gchar *tmp = NULL;
 		gchar *cmd, *locale_cmd;
 		gboolean use_enchant = FALSE;
-		GtkTreeModel *model;
 		GtkTreeIter iter;
-
-		model = gtk_combo_box_get_model(GTK_COMBO_BOX(spell_combo));
-		gtk_list_store_clear(GTK_LIST_STORE(model));
 
 		if (strstr(entry_cmd, "enchant") != NULL)
 		{
