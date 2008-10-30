@@ -1,3 +1,8 @@
+2008-10-30  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Use a stock GTK about dialog.
+
+
 2008-10-29  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Always clear the spell check dictionary list in the prefs dialog,
