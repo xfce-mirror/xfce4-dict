@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-30 18:31+0100\n"
-"PO-Revision-Date: 2008-09-10 22:18+0700\n"
+"PO-Revision-Date: 2008-10-31 21:18+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,8 +25,11 @@ msgid "Dictionary"
 msgstr "Kamus"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:218
-#: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
+#: ../panel-plugin/xfce4-dict-plugin.c:472
+#: ../src/xfce4-dict.c:218
+#: ../lib/spell.c:212
+#: ../lib/dictd.c:377
+#: ../lib/gui.c:267
 msgid "Ready."
 msgstr "Siap."
 
@@ -34,10 +37,10 @@ msgstr "Siap."
 msgid "Look up a word"
 msgstr "Mencari kata"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:491
-#, fuzzy
+#: ../panel-plugin/xfce4-dict-plugin.c:443
+#: ../lib/gui.c:491
 msgid "Search term"
-msgstr "Telusuri dengan:"
+msgstr "Istilah penelusuran"
 
 #. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
 #: ../src/xfce4-dict.c:55
@@ -53,9 +56,8 @@ msgid "Search the given text using a web-based search engine"
 msgstr "Telusuri teks yang diberikan menggunakan mesin pencari berbasis web"
 
 #: ../src/xfce4-dict.c:59
-#, fuzzy
 msgid "Check the given text with a spell checker"
-msgstr "Cek teks yang diberikan dengan pemeriksa ejaan"
+msgstr "Periksa teks yang diberikan dengan pemeriksa ejaan"
 
 #: ../src/xfce4-dict.c:60
 msgid "Grab the focus on the text field in the panel"
@@ -67,7 +69,7 @@ msgstr "Mulai aplikasi mandiri bahkan jika plugin panel dimuat"
 
 #: ../src/xfce4-dict.c:62
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "Ambil isi seleksi UTAMA dan gunakan isi tersebut sebagai teks penelusuran"
 
 #: ../src/xfce4-dict.c:63
 msgid "Show version information"
@@ -82,7 +84,8 @@ msgstr "[TEKS]"
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr "(dibangun pada %s dengan GTK %d.%d.%d, Glib %d.%d.%d)"
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:647
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:647
 msgid "A client program to query different dictionaries."
 msgstr "Program klien untuk kueri beragam kamus."
 
@@ -90,7 +93,9 @@ msgstr "Program klien untuk kueri beragam kamus."
 msgid "Dictionary Client"
 msgstr "Klien Kamus"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:467 ../lib/gui.c:639
+#: ../src/xfce4-dict.desktop.in.h:3
+#: ../lib/gui.c:467
+#: ../lib/gui.c:639
 msgid "Xfce4 Dictionary"
 msgstr "Kamus Xfce4"
 
@@ -123,11 +128,11 @@ msgid "Error while executing \"%s\" (%s)."
 msgstr "Galat ketika mengeksekusi \"%s\" (%s)."
 
 #: ../lib/spell.c:175
-#, fuzzy
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Silakan atur perintah aspell di dialog pengaturan."
+msgstr "Silakan atur perintah pemeriksa ejaan di dialog pengaturan."
 
-#: ../lib/spell.c:181 ../lib/common.c:202
+#: ../lib/spell.c:181
+#: ../lib/common.c:202
 msgid "Invalid input."
 msgstr "Masukan tidak sah."
 
@@ -148,7 +153,10 @@ msgstr "Peramban tak bisa dibuka. Silakan cek pengaturan anda."
 msgid "Invalid non-UTF8 input."
 msgstr "Masukan non-UTF8 tidak sah."
 
-#: ../lib/dictd.c:343 ../lib/dictd.c:633 ../lib/dictd.c:642 ../lib/dictd.c:724
+#: ../lib/dictd.c:343
+#: ../lib/dictd.c:633
+#: ../lib/dictd.c:642
+#: ../lib/dictd.c:724
 #: ../lib/dictd.c:733
 msgid "Could not connect to server."
 msgstr "Tak bisa menghubungi server."
@@ -161,7 +169,9 @@ msgstr "Server belum siap."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Kamus tidak sah yang ditentukan. Silakan cek pengaturan anda."
 
-#: ../lib/dictd.c:364 ../lib/dictd.c:409 ../lib/dictd.c:755
+#: ../lib/dictd.c:364
+#: ../lib/dictd.c:409
+#: ../lib/dictd.c:755
 msgid "Unknown error while quering the server."
 msgstr "Galat tak dikenal ketika kueri server."
 
@@ -173,7 +183,7 @@ msgstr "Tak ada kata yang ditemukan untuk \"%s\"."
 #: ../lib/dictd.c:390
 #, c-format
 msgid "Do you want to search \"%s\" on the Web using "
-msgstr ""
+msgstr "Anda ingin menelusuri \"%s\" di Web menggunakan"
 
 #: ../lib/dictd.c:414
 #, c-format
@@ -187,14 +197,13 @@ msgid "Querying %s..."
 msgstr "Kueri %s..."
 
 #: ../lib/dictd.c:659
-#, fuzzy
 msgid "An error occured while querying server information."
-msgstr "Galat tak dikenal ketika kueri server."
+msgstr "Galat terjadi ketika mengueri informasi server."
 
 #: ../lib/dictd.c:670
-#, fuzzy, c-format
+#, c-format
 msgid "Server Information for \"%s\""
-msgstr "Saran untuk \"%s\":"
+msgstr "Informasi Server untuk \"%s\""
 
 #: ../lib/dictd.c:750
 msgid "The server doesn't offer any databases."
@@ -213,27 +222,24 @@ msgid "Search with:"
 msgstr "Telusuri dengan:"
 
 #: ../lib/gui.c:529
-#, fuzzy
 msgid "_Dict"
-msgstr "Kamus"
+msgstr "_Kamus"
 
 #: ../lib/gui.c:535
-#, fuzzy
 msgid "_Web"
-msgstr "Web"
+msgstr "_Web"
 
 #: ../lib/gui.c:541
-#, fuzzy
 msgid "_Spell Check"
-msgstr "Pemeriksa ejaan"
+msgstr "_Pemeriksa ejaan"
 
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
-msgstr ""
+msgstr "Hak Cipta © 2006-2008 Enrico Tröger"
 
 #: ../lib/gui.c:651
 msgid "translator-credits"
-msgstr ""
+msgstr "Andhika Padmawan <andhika.padmawan@gmail.com>, 2008."
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -268,9 +274,8 @@ msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:63
-#, fuzzy
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr "Wiktionary, kamus gratis (EN)"
+msgstr "Wikipedia, ensiklopedia gratis (EN)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
@@ -278,7 +283,7 @@ msgstr "Wiktionary, kamus gratis (EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr ""
+msgstr "Kamus Online Merriam-Webster"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
@@ -293,9 +298,8 @@ msgid "You must set a valid search URL."
 msgstr "Anda harus mengatur URL penelusuran yang sah."
 
 #: ../lib/prefs.c:277
-#, fuzzy
 msgid "Xfce4 Dictionary Preferences"
-msgstr "Kamus Xfce4"
+msgstr "Pengaturan Kamus Xfce4"
 
 #: ../lib/prefs.c:309
 msgid "General"
@@ -305,18 +309,20 @@ msgstr "Umum"
 msgid "<b>Default search method:</b>"
 msgstr "<b>Metode penelusuran standar:</b>"
 
-#: ../lib/prefs.c:317 ../lib/prefs.c:454
+#: ../lib/prefs.c:317
+#: ../lib/prefs.c:454
 msgid "Dict"
 msgstr "Kamus"
 
-#: ../lib/prefs.c:326 ../lib/prefs.c:575
+#: ../lib/prefs.c:326
+#: ../lib/prefs.c:575
 msgid "Web"
 msgstr "Web"
 
-#: ../lib/prefs.c:335 ../lib/prefs.c:625
-#, fuzzy
+#: ../lib/prefs.c:335
+#: ../lib/prefs.c:625
 msgid "Spell Check"
-msgstr "Pemeriksa ejaan"
+msgstr "Pemeriksa Ejaan"
 
 #: ../lib/prefs.c:344
 msgid "Last used method"
@@ -324,20 +330,19 @@ msgstr "Metode yang terakhir kali digunakan"
 
 #: ../lib/prefs.c:353
 msgid "<b>Colors:</b>"
-msgstr ""
+msgstr "<b>Warna:</b>"
 
 #: ../lib/prefs.c:359
 msgid "Link Color:"
-msgstr ""
+msgstr "Warna Taut:"
 
 #: ../lib/prefs.c:360
 msgid "Phonectic Color:"
-msgstr ""
+msgstr "Warna Fonetik:"
 
 #: ../lib/prefs.c:398
-#, fuzzy
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>Ruang teks panel:</b>"
+msgstr "<b>Ruang Teks Panel:</b>"
 
 #: ../lib/prefs.c:404
 msgid "Show text field in the panel"
@@ -359,7 +364,8 @@ msgid "Server Port:"
 msgstr "Pangkalan Server:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:650
+#: ../lib/prefs.c:477
+#: ../lib/prefs.c:650
 msgid "Dictionary:"
 msgstr "Kamus:"
 
@@ -380,30 +386,25 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:603
-msgid ""
-"Enter an URL to a web site which offer translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Masukkan URL situs web yang menawarkan penerjemahan atau layanan kamus. "
-"Gunakan {kata} sebagai tempat peletakan kata yang ditelusuri."
+msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Masukkan URL situs web yang menawarkan penerjemahan atau layanan kamus. Gunakan {kata} sebagai tempat peletakan kata yang ditelusuri."
 
 #: ../lib/prefs.c:627
-#, fuzzy
 msgid "Spell Check Program:"
-msgstr "Program Aspell:"
+msgstr "Program Pemeriksa Ejaan:"
 
 #: ../lib/prefs.c:644
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+"<i>Program pemeriksa ejaan dapat berupa 'enchant', 'aspell', 'ispell' atau program pemeriksa ejaan lain yang serasi dengan perintah ispell.\n"
+"Ikon menunjukkan apakah perintah yang dimasukkan ada.</i>"
 
 #~ msgid "Developer"
 #~ msgstr "Pengembang"
-
 #~ msgid "Text to search:"
 #~ msgstr "Teks untuk ditelusuri:"
-
 #~ msgid "Aspell"
 #~ msgstr "Aspell"
+
