@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-30 18:31+0100\n"
-"PO-Revision-Date: 2008-09-10 11:35+0200\n"
+"PO-Revision-Date: 2008-11-04 22:59+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,9 +36,8 @@ msgid "Look up a word"
 msgstr "Hitz bat bilatu"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:491
-#, fuzzy
 msgid "Search term"
-msgstr "Bilatu honekin:"
+msgstr "Bilaketa terminoa"
 
 #. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
 #: ../src/xfce4-dict.c:55
@@ -54,9 +53,8 @@ msgid "Search the given text using a web-based search engine"
 msgstr "Bilatu emandako testua web-ean oinarritutako motor bat erabiliaz"
 
 #: ../src/xfce4-dict.c:59
-#, fuzzy
 msgid "Check the given text with a spell checker"
-msgstr "Egiaztatu emandako testua hiztegi ortografikoarekin"
+msgstr "Egiaztatu emandako testua ortografikoarekin"
 
 #: ../src/xfce4-dict.c:60
 msgid "Grab the focus on the text field in the panel"
@@ -125,9 +123,8 @@ msgid "Error while executing \"%s\" (%s)."
 msgstr "Errorea \"%s\" (%s) exekutatzean."
 
 #: ../lib/spell.c:175
-#, fuzzy
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Mesedez ezarri aspell komandoa hobespenetan."
+msgstr "Mesedez ezarri egiaztapen ortografiko komandoa hobespenetan."
 
 #: ../lib/spell.c:181 ../lib/common.c:202
 msgid "Invalid input."
@@ -170,7 +167,7 @@ msgstr "Errore ezezaguna zerbitzaria galdekatzerakoan."
 #: ../lib/dictd.c:380
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Ez  da parekatzerik aurkitu \"%s\"-rentzat."
+msgstr "Ez da parekatzerik aurkitu \"%s\"-rentzat."
 
 #: ../lib/dictd.c:390
 #, c-format
@@ -190,14 +187,13 @@ msgid "Querying %s..."
 msgstr "%s galdekatzen..."
 
 #: ../lib/dictd.c:659
-#, fuzzy
 msgid "An error occured while querying server information."
-msgstr "Errore ezezaguna zerbitzaria galdekatzerakoan."
+msgstr "Errore bat gertatu da zerbitzaria galdekatzerakoan."
 
 #: ../lib/dictd.c:670
-#, fuzzy, c-format
+#, c-format
 msgid "Server Information for \"%s\""
-msgstr "\"%s\"-rentzat gomendioak:"
+msgstr "\"%s\"-rentzat zerbitzari argibideak"
 
 #: ../lib/dictd.c:750
 msgid "The server doesn't offer any databases."
@@ -216,27 +212,24 @@ msgid "Search with:"
 msgstr "Bilatu honekin:"
 
 #: ../lib/gui.c:529
-#, fuzzy
 msgid "_Dict"
-msgstr "Dict"
+msgstr "_Dict"
 
 #: ../lib/gui.c:535
-#, fuzzy
 msgid "_Web"
-msgstr "Web"
+msgstr "_Web"
 
 #: ../lib/gui.c:541
-#, fuzzy
 msgid "_Spell Check"
-msgstr "Ortografia-egiaztatzea"
+msgstr "_Ortografia-egiaztatzea"
 
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
-msgstr ""
+msgstr "Copyright © 2006-2008 Enrico Tröger"
 
 #: ../lib/gui.c:651
 msgid "translator-credits"
-msgstr ""
+msgstr "Piarres Beobide <pi@beobide.net>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -271,9 +264,8 @@ msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:63
-#, fuzzy
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr "Wiktionary, hiztegi librea (EN)"
+msgstr "Wikipedia, entziklopedia librea (EN)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
@@ -281,7 +273,7 @@ msgstr "Wiktionary, hiztegi librea (EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr ""
+msgstr "Merriam-Webster sare-bidezko hiztegia"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
@@ -296,9 +288,8 @@ msgid "You must set a valid search URL."
 msgstr "Baliozko bilaketa URL bat zehaztu behar duzu."
 
 #: ../lib/prefs.c:277
-#, fuzzy
 msgid "Xfce4 Dictionary Preferences"
-msgstr "Xfce4 Hiztegia"
+msgstr "Xfce4 hiztegi hobespenak"
 
 #: ../lib/prefs.c:309
 msgid "General"
@@ -317,7 +308,6 @@ msgid "Web"
 msgstr "Web"
 
 #: ../lib/prefs.c:335 ../lib/prefs.c:625
-#, fuzzy
 msgid "Spell Check"
 msgstr "Ortografia-egiaztatzea"
 
@@ -327,18 +317,17 @@ msgstr "Azkenez erabilitako metodoa"
 
 #: ../lib/prefs.c:353
 msgid "<b>Colors:</b>"
-msgstr ""
+msgstr "<b>Koloreak:</b>"
 
 #: ../lib/prefs.c:359
 msgid "Link Color:"
-msgstr ""
+msgstr "Lotura kolorea:"
 
 #: ../lib/prefs.c:360
 msgid "Phonectic Color:"
-msgstr ""
+msgstr "Kolore fonetikoa:"
 
 #: ../lib/prefs.c:398
-#, fuzzy
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Panel testu eremua:</b>"
 
@@ -391,9 +380,8 @@ msgstr ""
 "URLa. {word} erabili bilatu behar den hitza zehazteko."
 
 #: ../lib/prefs.c:627
-#, fuzzy
 msgid "Spell Check Program:"
-msgstr "Aspell programa:"
+msgstr "Egiaztapen ortografiko programa:"
 
 #: ../lib/prefs.c:644
 msgid ""
@@ -401,12 +389,7 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+"<b>Egiaztapen ortografiko programa 'enchant', 'aspell', 'ispell' edo ispell "
+"komandoarekin bateragarri den beste edozein izan daiteke.\n"
+"Ikonoak idatzitako komandoa existitzen den erakusten du.</i>"
 
-#~ msgid "Developer"
-#~ msgstr "Garatzailea"
-
-#~ msgid "Text to search:"
-#~ msgstr "Bilatzeko testua:"
-
-#~ msgid "Aspell"
-#~ msgstr "Aspell"
