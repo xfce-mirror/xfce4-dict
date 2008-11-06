@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-30 18:31+0100\n"
-"PO-Revision-Date: 2008-11-04 22:59+0100\n"
+"PO-Revision-Date: 2008-11-05 16:14+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.2.0\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
@@ -66,7 +67,7 @@ msgstr "Hasi banakako aplikazioa nahiz panel plugina kargaturik egon"
 
 #: ../src/xfce4-dict.c:62
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "Lehen mailako hautapena hartu eta bilaketa testu bezala erabiltzen du"
 
 #: ../src/xfce4-dict.c:63
 msgid "Show version information"
@@ -172,7 +173,7 @@ msgstr "Ez da parekatzerik aurkitu \"%s\"-rentzat."
 #: ../lib/dictd.c:390
 #, c-format
 msgid "Do you want to search \"%s\" on the Web using "
-msgstr ""
+msgstr "\"%s\" webean hau erabiliaz bilatu nahi duzu: "
 
 #: ../lib/dictd.c:414
 #, c-format
@@ -389,7 +390,6 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<b>Egiaztapen ortografiko programa 'enchant', 'aspell', 'ispell' edo ispell "
+"<i>Egiaztapen ortografiko programa 'enchant', 'aspell', 'ispell' edo ispell "
 "komandoarekin bateragarri den beste edozein izan daiteke.\n"
 "Ikonoak idatzitako komandoa existitzen den erakusten du.</i>"
-
