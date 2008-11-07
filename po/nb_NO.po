@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce 4-dict\n"
+"Project-Id-Version: xfce4-dict 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-30 18:31+0100\n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
 "PO-Revision-Date: 2008-09-11 17:37+0200\n"
 "Last-Translator: Terje Uriansrud <ter@operamail.com>\n"
 "Language-Team: Norwegian Bokmal\n"
@@ -21,11 +21,12 @@ msgid "A plugin to query different dictionaries."
 msgstr "Ordliste for hurtig tilgang til forskjellige ordlister."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr "Ordliste"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:218
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
 #: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
 msgid "Ready."
 msgstr "Klar"
@@ -38,44 +39,39 @@ msgstr "Søk opp et ord"
 msgid "Search term"
 msgstr "Søkestreng:"
 
-#. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
-#: ../src/xfce4-dict.c:55
-msgid "Show help options"
-msgstr "Vis hjelpeinnstillinger"
-
-#: ../src/xfce4-dict.c:57
+#: ../src/xfce4-dict.c:50
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Søk etter tekst med Dict tjener(RFC 2229)"
 
-#: ../src/xfce4-dict.c:58
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a web-based search engine"
 msgstr "Søk etter tekst med nettbasert søkemotor"
 
-#: ../src/xfce4-dict.c:59
+#: ../src/xfce4-dict.c:52
 msgid "Check the given text with a spell checker"
 msgstr "Kontroller denne teksten med ordliste"
 
-#: ../src/xfce4-dict.c:60
+#: ../src/xfce4-dict.c:53
 msgid "Grab the focus on the text field in the panel"
 msgstr "Ta fokus på tekstfeilt i panelet"
 
-#: ../src/xfce4-dict.c:61
+#: ../src/xfce4-dict.c:54
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Start frittstående program selv om panelprogram er startet"
 
-#: ../src/xfce4-dict.c:62
+#: ../src/xfce4-dict.c:55
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Bruker primærvalgt tekst og bruker denne som søketekst."
 
-#: ../src/xfce4-dict.c:63
+#: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "Vis versjonsinformasjon"
 
-#: ../src/xfce4-dict.c:136
+#: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[TEKST]"
 
-#: ../src/xfce4-dict.c:160
+#: ../src/xfce4-dict.c:143
 #, c-format
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr "(bygget på %s ,med GTK %d.%d.%d, GLib %d.%d.%d)"
@@ -84,13 +80,9 @@ msgstr "(bygget på %s ,med GTK %d.%d.%d, GLib %d.%d.%d)"
 msgid "A client program to query different dictionaries."
 msgstr "Et klientprogram for å søke i forskjellige ordlister."
 
-#: ../src/xfce4-dict.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
 msgstr "Ordlisteklient"
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:467 ../lib/gui.c:639
-msgid "Xfce4 Dictionary"
-msgstr "Xfce4 Ordliste"
 
 #: ../lib/spell.c:83
 #, c-format
@@ -222,14 +214,17 @@ msgstr "_Nettet"
 msgid "_Spell Check"
 msgstr "_Stavekontroll"
 
+#: ../lib/gui.c:639
+msgid "Xfce4 Dictionary"
+msgstr "Xfce4 Ordliste"
+
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
 msgstr "Copyright © 2006-2008 Enrico Tröger"
 
 #: ../lib/gui.c:651
 msgid "translator-credits"
-msgstr ""
-"Terje Uriansrud <ter@operamail.com>"
+msgstr "Terje Uriansrud <ter@operamail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -287,10 +282,6 @@ msgstr "Du har valgt ugyldig ordliste."
 msgid "You must set a valid search URL."
 msgstr "Du må sette en gyldig søkeurl."
 
-#: ../lib/prefs.c:277
-msgid "Xfce4 Dictionary Preferences"
-msgstr "Xfce4 Ordlisteinnstillinger"
-
 #: ../lib/prefs.c:309
 msgid "General"
 msgstr "Generelt"
@@ -324,7 +315,7 @@ msgid "Link Color:"
 msgstr "Lenkefarge:"
 
 #: ../lib/prefs.c:360
-msgid "Phonectic Color:"
+msgid "Phonetic Color:"
 msgstr "Fonetisk farge:"
 
 #: ../lib/prefs.c:398
@@ -393,4 +384,8 @@ msgstr ""
 "stavekontrollprogrammer som er kompatible med ispell kommandosyntaks.\n"
 "Ikonet viser om angitt kommando eksisterer.</i>"
 
+#~ msgid "Show help options"
+#~ msgstr "Vis hjelpeinnstillinger"
 
+#~ msgid "Xfce4 Dictionary Preferences"
+#~ msgstr "Xfce4 Ordlisteinnstillinger"

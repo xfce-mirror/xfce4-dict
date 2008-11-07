@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-30 18:31+0100\n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
 "PO-Revision-Date: 2008-07-28 18:26+0300\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -23,11 +23,12 @@ msgid "A plugin to query different dictionaries."
 msgstr "Плагін для для запиту різних словників."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr "Словник"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:218
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
 #: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
 msgid "Ready."
 msgstr "Готово."
@@ -41,45 +42,40 @@ msgstr "Дивись вище слово"
 msgid "Search term"
 msgstr "Шукати з:"
 
-#. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
-#: ../src/xfce4-dict.c:55
-msgid "Show help options"
-msgstr "Показати опції допомоги"
-
-#: ../src/xfce4-dict.c:57
+#: ../src/xfce4-dict.c:50
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Шукати введений текст використовуючи сервер Dict (RFC 2229)"
 
-#: ../src/xfce4-dict.c:58
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a web-based search engine"
 msgstr "Шукати введений текст використовуючи пошуковий рушій базований на WEB"
 
-#: ../src/xfce4-dict.c:59
+#: ../src/xfce4-dict.c:52
 #, fuzzy
 msgid "Check the given text with a spell checker"
 msgstr "Перевірити введений текст на орфографію"
 
-#: ../src/xfce4-dict.c:60
+#: ../src/xfce4-dict.c:53
 msgid "Grab the focus on the text field in the panel"
 msgstr "Захоплювати фокус текстового поля в панелі"
 
-#: ../src/xfce4-dict.c:61
+#: ../src/xfce4-dict.c:54
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Запустити автономну програму навіть якщо панель плагіну завантажена"
 
-#: ../src/xfce4-dict.c:62
+#: ../src/xfce4-dict.c:55
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr ""
 
-#: ../src/xfce4-dict.c:63
+#: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "Показати інформацію про версію"
 
-#: ../src/xfce4-dict.c:136
+#: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[ТЕКСТ]"
 
-#: ../src/xfce4-dict.c:160
+#: ../src/xfce4-dict.c:143
 #, c-format
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr "(зібрано на %s з GTK %d.%d.%d, GLib %d.%d.%d)"
@@ -88,13 +84,9 @@ msgstr "(зібрано на %s з GTK %d.%d.%d, GLib %d.%d.%d)"
 msgid "A client program to query different dictionaries."
 msgstr "Клієнтська програма для запиту різних словників."
 
-#: ../src/xfce4-dict.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
 msgstr "Клієнт словника"
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:467 ../lib/gui.c:639
-msgid "Xfce4 Dictionary"
-msgstr "Словник Xfce4"
 
 #: ../lib/spell.c:83
 #, c-format
@@ -238,6 +230,10 @@ msgstr "Веб"
 msgid "_Spell Check"
 msgstr "Перевірка орфографії"
 
+#: ../lib/gui.c:639
+msgid "Xfce4 Dictionary"
+msgstr "Словник Xfce4"
+
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
 msgstr ""
@@ -303,11 +299,6 @@ msgstr "Ви вибрали неправильний елемент словни
 msgid "You must set a valid search URL."
 msgstr ""
 
-#: ../lib/prefs.c:277
-#, fuzzy
-msgid "Xfce4 Dictionary Preferences"
-msgstr "Словник Xfce4"
-
 #: ../lib/prefs.c:309
 msgid "General"
 msgstr "Основне"
@@ -342,7 +333,7 @@ msgid "Link Color:"
 msgstr ""
 
 #: ../lib/prefs.c:360
-msgid "Phonectic Color:"
+msgid "Phonetic Color:"
 msgstr ""
 
 #: ../lib/prefs.c:398
@@ -409,6 +400,13 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+
+#~ msgid "Show help options"
+#~ msgstr "Показати опції допомоги"
+
+#, fuzzy
+#~ msgid "Xfce4 Dictionary Preferences"
+#~ msgstr "Словник Xfce4"
 
 #~ msgid "Developer"
 #~ msgstr "Розробник"

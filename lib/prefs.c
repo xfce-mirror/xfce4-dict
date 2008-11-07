@@ -357,7 +357,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 5);
 
 		label1 = gtk_label_new(_("Link Color:"));
-		label2 = gtk_label_new(_("Phonectic Color:"));
+		label2 = gtk_label_new(_("Phonetic Color:"));
 		color_link = gtk_color_button_new_with_color(dd->link_color);
 		color_phon = gtk_color_button_new_with_color(dd->phon_color);
 		g_signal_connect(color_link, "color-set", G_CALLBACK(color_set_cb), dd->link_color);

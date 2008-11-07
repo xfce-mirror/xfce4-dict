@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-30 18:31+0100\n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
 "PO-Revision-Date: 2008-07-15 14:41+0200\n"
 "Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -16,11 +16,12 @@ msgid "A plugin to query different dictionaries."
 msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:218
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
 #: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
 msgid "Ready."
 msgstr ""
@@ -33,44 +34,39 @@ msgstr ""
 msgid "Search term"
 msgstr ""
 
-#. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
-#: ../src/xfce4-dict.c:55
-msgid "Show help options"
-msgstr ""
-
-#: ../src/xfce4-dict.c:57
+#: ../src/xfce4-dict.c:50
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr ""
 
-#: ../src/xfce4-dict.c:58
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a web-based search engine"
 msgstr ""
 
-#: ../src/xfce4-dict.c:59
+#: ../src/xfce4-dict.c:52
 msgid "Check the given text with a spell checker"
 msgstr ""
 
-#: ../src/xfce4-dict.c:60
+#: ../src/xfce4-dict.c:53
 msgid "Grab the focus on the text field in the panel"
 msgstr ""
 
-#: ../src/xfce4-dict.c:61
+#: ../src/xfce4-dict.c:54
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr ""
 
-#: ../src/xfce4-dict.c:62
+#: ../src/xfce4-dict.c:55
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr ""
 
-#: ../src/xfce4-dict.c:63
+#: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr ""
 
-#: ../src/xfce4-dict.c:136
+#: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr ""
 
-#: ../src/xfce4-dict.c:160
+#: ../src/xfce4-dict.c:143
 #, c-format
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr ""
@@ -79,12 +75,8 @@ msgstr ""
 msgid "A client program to query different dictionaries."
 msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
-msgstr ""
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:467 ../lib/gui.c:639
-msgid "Xfce4 Dictionary"
 msgstr ""
 
 #: ../lib/spell.c:83
@@ -217,6 +209,10 @@ msgstr ""
 msgid "_Spell Check"
 msgstr ""
 
+#: ../lib/gui.c:639
+msgid "Xfce4 Dictionary"
+msgstr ""
+
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
 msgstr ""
@@ -281,10 +277,6 @@ msgstr ""
 msgid "You must set a valid search URL."
 msgstr ""
 
-#: ../lib/prefs.c:277
-msgid "Xfce4 Dictionary Preferences"
-msgstr ""
-
 #: ../lib/prefs.c:309
 msgid "General"
 msgstr ""
@@ -318,7 +310,7 @@ msgid "Link Color:"
 msgstr ""
 
 #: ../lib/prefs.c:360
-msgid "Phonectic Color:"
+msgid "Phonetic Color:"
 msgstr ""
 
 #: ../lib/prefs.c:398

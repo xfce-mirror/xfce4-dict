@@ -1,6 +1,6 @@
-# German translation of the xfce4-dict-plugin package.
+# German translation of the xfce4-dict package.
 # Copyright (C) 2006-2008 Enrico Tröger
-# This file is distributed under the same license as the xfce4-dict-plugin package.
+# This file is distributed under the same license as the xfce4-dict package.
 # Enrico Tröger <enrico@xfce.org>, 2006-2008.
 # Fabian Nowak <timystery@arcor.de>, 2007.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-30 18:31+0100\n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
 "PO-Revision-Date: 2008-10-30 18:31+0100\n"
 "Last-Translator: Enrico Tröger <enrico@xfce.org>\n"
 "Language-Team: German <xfce-i18n@xfce.org>\n"
@@ -24,11 +24,12 @@ msgid "A plugin to query different dictionaries."
 msgstr "Ein Plugin zum Abfragen verschiedener Wörterbücher."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr "Wörterbuch"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:218
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
 #: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
 msgid "Ready."
 msgstr "Bereit."
@@ -41,48 +42,43 @@ msgstr "Ein Wort nachschlagen"
 msgid "Search term"
 msgstr "Suchbegriff"
 
-#. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
-#: ../src/xfce4-dict.c:55
-msgid "Show help options"
-msgstr "Hilfeoptionen anzeigen"
-
-#: ../src/xfce4-dict.c:57
+#: ../src/xfce4-dict.c:50
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr ""
 "Den angegebenen Text mithilfe eines Dict Servers (nach RFC 2229) suchen"
 
-#: ../src/xfce4-dict.c:58
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a web-based search engine"
 msgstr "Den angegebenen Text mithilfe eines Webdienstes suchen"
 
-#: ../src/xfce4-dict.c:59
+#: ../src/xfce4-dict.c:52
 msgid "Check the given text with a spell checker"
 msgstr "Den angegebenen Text mit einer Rechtschreibprüfung kontrollieren"
 
-#: ../src/xfce4-dict.c:60
+#: ../src/xfce4-dict.c:53
 msgid "Grab the focus on the text field in the panel"
 msgstr "Setzt den Fokus auf das Eingabefeld in der Leiste"
 
-#: ../src/xfce4-dict.c:61
+#: ../src/xfce4-dict.c:54
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr ""
 "Als eigenständiges Programm starten auch wenn das Leisten-Plugin geladen ist"
 
-#: ../src/xfce4-dict.c:62
+#: ../src/xfce4-dict.c:55
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr ""
 "Holt sich den Inhalt aus der primären Zwischenablage und benutzt ihn als "
 "Suchtext"
 
-#: ../src/xfce4-dict.c:63
+#: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "Versionsinformationen anzeigen"
 
-#: ../src/xfce4-dict.c:136
+#: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[TEXT]"
 
-#: ../src/xfce4-dict.c:160
+#: ../src/xfce4-dict.c:143
 #, c-format
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr "(kompiliert am %s mit GTK %d.%d.%d, GLib %d.%d.%d)"
@@ -91,13 +87,9 @@ msgstr "(kompiliert am %s mit GTK %d.%d.%d, GLib %d.%d.%d)"
 msgid "A client program to query different dictionaries."
 msgstr "Ein Programm zum Abfragen verschiedener Wörterbücher."
 
-#: ../src/xfce4-dict.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
 msgstr "Wörterbuchprogramm"
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:467 ../lib/gui.c:639
-msgid "Xfce4 Dictionary"
-msgstr "Xfce4 Wörterbuch"
 
 #: ../lib/spell.c:83
 #, c-format
@@ -235,6 +227,10 @@ msgstr "_Web"
 msgid "_Spell Check"
 msgstr "_Rechtschreibprüfung"
 
+#: ../lib/gui.c:639
+msgid "Xfce4 Dictionary"
+msgstr "Xfce4 Wörterbuch"
+
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
 msgstr "Copyright © 2006-2008 Enrico Tröger"
@@ -301,10 +297,6 @@ msgstr "Sie haben ein ungültiges Wörterbuch ausgewählt."
 msgid "You must set a valid search URL."
 msgstr "Sie müssen eine gültige Such-URL angeben."
 
-#: ../lib/prefs.c:277
-msgid "Xfce4 Dictionary Preferences"
-msgstr "Xfce4 Wörterbuch Einstellungen"
-
 #: ../lib/prefs.c:309
 msgid "General"
 msgstr "Allgemein"
@@ -338,7 +330,7 @@ msgid "Link Color:"
 msgstr "Farbe für Verweise:"
 
 #: ../lib/prefs.c:360
-msgid "Phonectic Color:"
+msgid "Phonetic Color:"
 msgstr "Farbe für phonetische Hinweise:"
 
 #: ../lib/prefs.c:398
@@ -407,6 +399,12 @@ msgstr ""
 "<i>Das Programm für die Rechtschreibprüfung kann »enchant«, »aspell«, »ispell« "
 "oder ein anderes Programm sein, dass zu dem ispell-Programm kompatibel ist.\n"
 "Das Symbol zeigt, ob das eingegebene Programm existiert.</i>"
+
+#~ msgid "Show help options"
+#~ msgstr "Hilfeoptionen anzeigen"
+
+#~ msgid "Xfce4 Dictionary Preferences"
+#~ msgstr "Xfce4 Wörterbuch Einstellungen"
 
 #~ msgid "Developer"
 #~ msgstr "Entwickler"

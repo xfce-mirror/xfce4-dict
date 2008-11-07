@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-30 18:31+0100\n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
 "PO-Revision-Date: 2007-10-26 20:47+0500\n"
 "Last-Translator: Muhammad Ali Makki <makk.ma@gmail.com>\n"
 "Language-Team: Urdu <makki.ma@gmail.com>\n"
@@ -24,12 +24,13 @@ msgid "A plugin to query different dictionaries."
 msgstr "Dict سرور سے کیوری کا پلگ ان."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
 #, fuzzy
 msgid "Dictionary"
 msgstr "ڈکشنری:"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:218
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
 #: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
 msgid "Ready."
 msgstr "تیار."
@@ -42,45 +43,40 @@ msgstr "جملہ تلاش کریں"
 msgid "Search term"
 msgstr ""
 
-#. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
-#: ../src/xfce4-dict.c:55
-msgid "Show help options"
-msgstr ""
-
-#: ../src/xfce4-dict.c:57
+#: ../src/xfce4-dict.c:50
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr ""
 
-#: ../src/xfce4-dict.c:58
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a web-based search engine"
 msgstr ""
 
-#: ../src/xfce4-dict.c:59
+#: ../src/xfce4-dict.c:52
 msgid "Check the given text with a spell checker"
 msgstr ""
 
-#: ../src/xfce4-dict.c:60
+#: ../src/xfce4-dict.c:53
 #, fuzzy
 msgid "Grab the focus on the text field in the panel"
 msgstr "متن فیلڈ پینل میں ظاہر کریں"
 
-#: ../src/xfce4-dict.c:61
+#: ../src/xfce4-dict.c:54
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr ""
 
-#: ../src/xfce4-dict.c:62
+#: ../src/xfce4-dict.c:55
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr ""
 
-#: ../src/xfce4-dict.c:63
+#: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr ""
 
-#: ../src/xfce4-dict.c:136
+#: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr ""
 
-#: ../src/xfce4-dict.c:160
+#: ../src/xfce4-dict.c:143
 #, c-format
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr ""
@@ -89,15 +85,10 @@ msgstr ""
 msgid "A client program to query different dictionaries."
 msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:3
 #, fuzzy
 msgid "Dictionary Client"
 msgstr "ڈکشنری پلگ ان"
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:467 ../lib/gui.c:639
-#, fuzzy
-msgid "Xfce4 Dictionary"
-msgstr "ڈکشنری:"
 
 #: ../lib/spell.c:83
 #, fuzzy, c-format
@@ -233,6 +224,11 @@ msgstr ""
 msgid "_Spell Check"
 msgstr ""
 
+#: ../lib/gui.c:639
+#, fuzzy
+msgid "Xfce4 Dictionary"
+msgstr "ڈکشنری:"
+
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
 msgstr ""
@@ -303,11 +299,6 @@ msgstr "آپ نے غلط ڈکشنری انٹری منتخب کی ہے."
 msgid "You must set a valid search URL."
 msgstr ""
 
-#: ../lib/prefs.c:277
-#, fuzzy
-msgid "Xfce4 Dictionary Preferences"
-msgstr "ڈکشنری:"
-
 #: ../lib/prefs.c:309
 msgid "General"
 msgstr ""
@@ -341,7 +332,7 @@ msgid "Link Color:"
 msgstr ""
 
 #: ../lib/prefs.c:360
-msgid "Phonectic Color:"
+msgid "Phonetic Color:"
 msgstr ""
 
 #: ../lib/prefs.c:398
@@ -411,6 +402,10 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Xfce4 Dictionary Preferences"
+#~ msgstr "ڈکشنری:"
 
 #~ msgid "Developer"
 #~ msgstr "ڈیولپر"

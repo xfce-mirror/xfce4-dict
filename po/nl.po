@@ -1,9 +1,14 @@
+# Dutch translation of the xfce4-dict package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-dict package.
+# Vincent Tunru <projects@vinnl.nl>, 2008.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Xfce4 Dictionary\n"
+"Project-Id-Version: xfce4-dict 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-30 18:31+0100\n"
-"PO-Revision-Date: 2008-10-30 19:19+0100\n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
+"PO-Revision-Date: 2008-11-05 15:41+0100\n"
 "Last-Translator: Vincent Tunru <projects@vinnl.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,21 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NETHERLANDS\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\\n\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "Een plugin om verschillende woordenboeken te raadplegen."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr "Woordenboek"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472
-#: ../src/xfce4-dict.c:218
-#: ../lib/spell.c:212
-#: ../lib/dictd.c:377
-#: ../lib/gui.c:267
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
+#: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
 msgid "Ready."
 msgstr "Gereed."
 
@@ -33,74 +37,63 @@ msgstr "Gereed."
 msgid "Look up a word"
 msgstr "Een woord opzoeken"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443
-#: ../lib/gui.c:491
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:491
 msgid "Search term"
 msgstr "Zoekterm"
 
-#. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
-#: ../src/xfce4-dict.c:55
-msgid "Show help options"
-msgstr ""
-
-#: ../src/xfce4-dict.c:57
+#: ../src/xfce4-dict.c:50
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Zoek de gegeven tekst op met behulp van een Dict server (RFC 2229)"
 
-#: ../src/xfce4-dict.c:58
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a web-based search engine"
 msgstr "Zoek de gegeven tekst op met behulp van een internet-zoekmachine"
 
-#: ../src/xfce4-dict.c:59
+#: ../src/xfce4-dict.c:52
 msgid "Check the given text with a spell checker"
 msgstr "Kijk de gegeven tekst na met de spellingcontrole"
 
-#: ../src/xfce4-dict.c:60
+#: ../src/xfce4-dict.c:53
 msgid "Grab the focus on the text field in the panel"
 msgstr "Plaats de focus op het tekst-invoerveld in het paneel"
 
-#: ../src/xfce4-dict.c:61
+#: ../src/xfce4-dict.c:54
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Start het onafhankelijke programma ook als de plugin voor het paneel geladen is"
+msgstr ""
+"Start het onafhankelijke programma ook als de plugin voor het paneel geladen "
+"is"
 
-#: ../src/xfce4-dict.c:62
+#: ../src/xfce4-dict.c:55
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Gebruikt de primaire selectie-inhoud als zoektermen"
 
-#: ../src/xfce4-dict.c:63
+#: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "Geef versie-informatie weer"
 
-#: ../src/xfce4-dict.c:136
+#: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[TEKST]"
 
-#: ../src/xfce4-dict.c:160
+#: ../src/xfce4-dict.c:143
 #, fuzzy, c-format
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr "(gebouwd op %s met GTK %d.%d.%d, GLib %d.%d.%d)"
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:647
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:647
 msgid "A client program to query different dictionaries."
 msgstr "Een programma om verschillende woordenboeken te raadplegen."
 
-#: ../src/xfce4-dict.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
 msgstr "Woordenboek"
-
-#: ../src/xfce4-dict.desktop.in.h:3
-#: ../lib/gui.c:467
-#: ../lib/gui.c:639
-msgid "Xfce4 Dictionary"
-msgstr "Xfce4 Woordenboek"
 
 #: ../lib/spell.c:83
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d suggestie gevonden."
+msgstr[1] "%d suggesties gevonden."
 
 #: ../lib/spell.c:88
 #, c-format
@@ -128,8 +121,7 @@ msgstr "Fout bij het uitvoeren van \"%s\" (%s)."
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Stel een commando voor spellingcontrole in onder 'voorkeuren'."
 
-#: ../lib/spell.c:181
-#: ../lib/common.c:202
+#: ../lib/spell.c:181 ../lib/common.c:202
 msgid "Invalid input."
 msgstr "Ongeldige invoer."
 
@@ -150,10 +142,7 @@ msgstr "De browser kon niet geopend worden, controleer uw Voorkeuren."
 msgid "Invalid non-UTF8 input."
 msgstr "Ongeldige invoer (geen UTF-8)."
 
-#: ../lib/dictd.c:343
-#: ../lib/dictd.c:633
-#: ../lib/dictd.c:642
-#: ../lib/dictd.c:724
+#: ../lib/dictd.c:343 ../lib/dictd.c:633 ../lib/dictd.c:642 ../lib/dictd.c:724
 #: ../lib/dictd.c:733
 msgid "Could not connect to server."
 msgstr "Kon geen verbinding maken met de server."
@@ -166,9 +155,7 @@ msgstr "De server is niet klaar."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Ongeldig woordenboek, kijk de voorkeuren na."
 
-#: ../lib/dictd.c:364
-#: ../lib/dictd.c:409
-#: ../lib/dictd.c:755
+#: ../lib/dictd.c:364 ../lib/dictd.c:409 ../lib/dictd.c:755
 msgid "Unknown error while quering the server."
 msgstr "Onbekende fout bij het raadplegen van de server."
 
@@ -186,8 +173,8 @@ msgstr "Wil je \"%s\" op het internet opzoeken met"
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d definitie gevonden."
+msgstr[1] "%d definities gevonden."
 
 #: ../lib/dictd.c:604
 #, c-format
@@ -230,6 +217,10 @@ msgstr "_Internet"
 #: ../lib/gui.c:541
 msgid "_Spell Check"
 msgstr "_Spellingcontrole"
+
+#: ../lib/gui.c:639
+msgid "Xfce4 Dictionary"
+msgstr "Xfce4 Woordenboek"
 
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
@@ -295,10 +286,6 @@ msgstr "Ongeldig woordenboek gekozen."
 msgid "You must set a valid search URL."
 msgstr "Geef een geldige zoek-URL in."
 
-#: ../lib/prefs.c:277
-msgid "Xfce4 Dictionary Preferences"
-msgstr "Woordenboek-voorkeuren"
-
 #: ../lib/prefs.c:309
 msgid "General"
 msgstr "Algemeen"
@@ -307,18 +294,15 @@ msgstr "Algemeen"
 msgid "<b>Default search method:</b>"
 msgstr "<b>Standaard-zoekmethode:</b>"
 
-#: ../lib/prefs.c:317
-#: ../lib/prefs.c:454
+#: ../lib/prefs.c:317 ../lib/prefs.c:454
 msgid "Dict"
 msgstr "Dict"
 
-#: ../lib/prefs.c:326
-#: ../lib/prefs.c:575
+#: ../lib/prefs.c:326 ../lib/prefs.c:575
 msgid "Web"
 msgstr "Internet-zoekmachine"
 
-#: ../lib/prefs.c:335
-#: ../lib/prefs.c:625
+#: ../lib/prefs.c:335 ../lib/prefs.c:625
 msgid "Spell Check"
 msgstr "Spellingcontrole"
 
@@ -335,8 +319,7 @@ msgid "Link Color:"
 msgstr "Linkkleur:"
 
 #: ../lib/prefs.c:360
-#, fuzzy
-msgid "Phonectic Color:"
+msgid "Phonetic Color:"
 msgstr "Fonetische kleur:"
 
 #: ../lib/prefs.c:398
@@ -361,11 +344,10 @@ msgstr "Server:"
 #: ../lib/prefs.c:469
 #, fuzzy
 msgid "Server Port:"
-msgstr "Poort server:"
+msgstr "Serverpoort:"
 
 #. dictionary
-#: ../lib/prefs.c:477
-#: ../lib/prefs.c:650
+#: ../lib/prefs.c:477 ../lib/prefs.c:650
 msgid "Dictionary:"
 msgstr "Woordenboek:"
 
@@ -386,7 +368,9 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:603
-msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
+msgid ""
+"Enter an URL to a web site which offer translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
 msgstr ""
 "Geef een URL in van een website die als woordenboek kan dienen.\n"
 "Gebruik {word} op de plaats van het op te zoeken woord."
@@ -397,16 +381,22 @@ msgstr "Spellingcontrole-applicatie:"
 
 #: ../lib/prefs.c:644
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Als spellingcontrole kan 'enchant', 'aspell', 'ispell' of andere programma's die compatibel zijn met ispell gebruikt worden.\n"
+"<i>Als spellingcontrole kan 'enchant', 'aspell', 'ispell' of andere "
+"programma's die compatibel zijn met ispell gebruikt worden.\n"
 "Het pictogram geeft aan of het ingegeven commando bestaat.</i>"
+
+#~ msgid "Xfce4 Dictionary Preferences"
+#~ msgstr "Woordenboek-voorkeuren"
 
 #~ msgid "Developer"
 #~ msgstr "Ontwikkelaar"
+
 #~ msgid "Text to search:"
 #~ msgstr "Tekst om op te zoeken:"
+
 #~ msgid "Aspell"
 #~ msgstr "Aspell"
-

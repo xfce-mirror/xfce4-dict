@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-30 18:31+0100\n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
 "PO-Revision-Date: 2008-04-30 00:09+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
@@ -23,11 +23,12 @@ msgid "A plugin to query different dictionaries."
 msgstr "Egy beillesztés különböző szótárak lekérdezésére."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr "Szótár"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:218
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
 #: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
 msgid "Ready."
 msgstr "Kész."
@@ -41,45 +42,40 @@ msgstr "Egy szó keresése"
 msgid "Search term"
 msgstr "Keresés ezzel:"
 
-#. Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one
-#: ../src/xfce4-dict.c:55
-msgid "Show help options"
-msgstr "Súgó lehetőségek mutatása"
-
-#: ../src/xfce4-dict.c:57
+#: ../src/xfce4-dict.c:50
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Keresd az adott szöveget egy Dict szerveren(RFC 2229)"
 
-#: ../src/xfce4-dict.c:58
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a web-based search engine"
 msgstr "Keresd az adott szöveget egy web-alapú keresővel"
 
-#: ../src/xfce4-dict.c:59
+#: ../src/xfce4-dict.c:52
 #, fuzzy
 msgid "Check the given text with a spell checker"
 msgstr "Keresd az adott szöveget egy helyesírás-ellenőrzővel"
 
-#: ../src/xfce4-dict.c:60
+#: ../src/xfce4-dict.c:53
 msgid "Grab the focus on the text field in the panel"
 msgstr "Húzd a fókuszt a szövegmezőre a panelban"
 
-#: ../src/xfce4-dict.c:61
+#: ../src/xfce4-dict.c:54
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Az önálló alkalmazást indítsd, ha a panel beillesztés be is van töltve"
 
-#: ../src/xfce4-dict.c:62
+#: ../src/xfce4-dict.c:55
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr ""
 
-#: ../src/xfce4-dict.c:63
+#: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "Verzió adatok mutatása"
 
-#: ../src/xfce4-dict.c:136
+#: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[SZÖVEG]"
 
-#: ../src/xfce4-dict.c:160
+#: ../src/xfce4-dict.c:143
 #, c-format
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 msgstr ""
@@ -88,13 +84,9 @@ msgstr ""
 msgid "A client program to query different dictionaries."
 msgstr "Egy kliens program különféle szótárak lekérdezéséhez."
 
-#: ../src/xfce4-dict.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
 msgstr "Szótár kliens"
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:467 ../lib/gui.c:639
-msgid "Xfce4 Dictionary"
-msgstr "Xfce4 Szótár"
 
 #: ../lib/spell.c:83
 #, c-format
@@ -233,6 +225,10 @@ msgstr "Web"
 msgid "_Spell Check"
 msgstr "Helyesírás"
 
+#: ../lib/gui.c:639
+msgid "Xfce4 Dictionary"
+msgstr "Xfce4 Szótár"
+
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
 msgstr ""
@@ -298,11 +294,6 @@ msgstr "Érvénytelen szótár bejegyzést választottál"
 msgid "You must set a valid search URL."
 msgstr ""
 
-#: ../lib/prefs.c:277
-#, fuzzy
-msgid "Xfce4 Dictionary Preferences"
-msgstr "Xfce4 Szótár"
-
 #: ../lib/prefs.c:309
 msgid "General"
 msgstr "Általános"
@@ -337,7 +328,7 @@ msgid "Link Color:"
 msgstr ""
 
 #: ../lib/prefs.c:360
-msgid "Phonectic Color:"
+msgid "Phonetic Color:"
 msgstr ""
 
 #: ../lib/prefs.c:398
@@ -405,6 +396,13 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+
+#~ msgid "Show help options"
+#~ msgstr "Súgó lehetőségek mutatása"
+
+#, fuzzy
+#~ msgid "Xfce4 Dictionary Preferences"
+#~ msgstr "Xfce4 Szótár"
 
 #~ msgid "Developer"
 #~ msgstr "Fejlesztő"
