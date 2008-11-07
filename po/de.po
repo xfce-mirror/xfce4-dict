@@ -184,7 +184,7 @@ msgstr "Keine Treffer für »%s« gefunden."
 #: ../lib/dictd.c:390
 #, c-format
 msgid "Do you want to search \"%s\" on the Web using "
-msgstr "Möchten Sie »%s« im Web "
+msgstr "Möchten Sie »%s« im Web suchen mit "
 
 #: ../lib/dictd.c:414
 #, c-format
