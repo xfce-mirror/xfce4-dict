@@ -37,9 +37,6 @@
 #include "popup_plugin.h"
 
 
-#if GLIB_CHECK_VERSION(2,14,0)
-static gboolean show_help = FALSE;
-#endif
 static gboolean show_version = FALSE;
 static gboolean ignore_plugin = FALSE;
 static gboolean use_clipboard = FALSE;

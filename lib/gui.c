@@ -464,7 +464,7 @@ void dict_gui_create_main_window(DictData *dd)
 	GtkWidget *method_chooser, *radio, *label;
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-	gtk_window_set_title(GTK_WINDOW(dd->window), _("Xfce4 Dictionary"));
+	gtk_window_set_title(GTK_WINDOW(dd->window), _("Dictionary"));
 	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
 	gtk_widget_set_name(dd->window, "Xfce4Dict");
 
