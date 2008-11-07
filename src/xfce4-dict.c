@@ -50,17 +50,13 @@ static gboolean mode_spell = FALSE;
 
 static GOptionEntry cli_options[] =
 {
-#if GLIB_CHECK_VERSION(2,14,0)
-	/* Note for translators: run xfce4-dict --help and copy the help text for "--help" into this one */
-	{ "help", 'h', 0, G_OPTION_ARG_NONE, &show_help, N_("Show help options"), NULL },
-#endif
 	{ "dict", 'd', 0, G_OPTION_ARG_NONE, &mode_dict, N_("Search the given text using a Dict server(RFC 2229)"), NULL },
 	{ "web", 'w', 0, G_OPTION_ARG_NONE, &mode_web, N_("Search the given text using a web-based search engine"), NULL },
 	{ "spell", 's', 0, G_OPTION_ARG_NONE, &mode_spell, N_("Check the given text with a spell checker"), NULL },
 	{ "text-field", 't', 0, G_OPTION_ARG_NONE, &focus_panel_entry, N_("Grab the focus on the text field in the panel"), NULL },
 	{ "ignore-plugin", 'i', 0, G_OPTION_ARG_NONE, &ignore_plugin, N_("Start stand-alone application even if the panel plugin is loaded"), NULL },
 	{ "clipboard", 'c', 0, G_OPTION_ARG_NONE, &use_clipboard, N_("Grabs the PRIMARY selection content and uses it as search text"), NULL },
-	{ "version", 'v', 0, G_OPTION_ARG_NONE, &show_version, N_("Show version information"), NULL },
+	{ "version", 'V', 0, G_OPTION_ARG_NONE, &show_version, N_("Show version information"), NULL },
 	{ NULL, 0, 0, 0, NULL, NULL, NULL }
 };
 
@@ -142,16 +138,6 @@ gint main(gint argc, gchar *argv[])
 	gtk_init(&argc, &argv);
     gtk_window_set_default_icon_name("xfce4-dict");
 
-#if GLIB_CHECK_VERSION(2,14,0)
-	if (show_help)
-	{
-		gchar *help_text = g_option_context_get_help(context, TRUE, NULL);
-		printf("%s\n", help_text);
-		g_free(help_text);
-		g_option_context_free(context);
-		exit(0);
-	}
-#endif
 	g_option_context_free(context);
 
 	if (show_version)
