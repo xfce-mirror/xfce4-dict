@@ -1,31 +1,32 @@
-# European Portuguese translation of the xfce4-dict-plugin package.
-# Copyright (C) 2006-2007 Enrico Tröger
-# This file is distributed under the same license as the xfce4-dict-plugin package.
-# Nuno Miguel <nunis@netcabo.pt>, 2007, 2008.
+# Japanese translation of the xfce4-dict-plugin package.
+# Copyright (C) 2006-2008 Enrico Tröger
+# This file is distributed under the same license as the xfce4-dict-plugin pack
+# Yuko Iwamatsu <nigauri@gmail>, 2008.
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict-plugin 0.5.0\n"
+"Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-07 16:16+0100\n"
-"PO-Revision-Date: 2008-11-08 16:36+0100\n"
-"Last-Translator: Nuno Miguel <nunis@netcabo.pt>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2008-11-09 14:11+0900\n"
+"Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
+"Language-Team: Japanese <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr "Um plugin para questionar diferentes dicionários."
+msgstr "別の辞書を照会するためのプラグインです。"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2
 #: ../lib/gui.c:467
 #: ../lib/prefs.c:277
 msgid "Dictionary"
-msgstr "Dicionário"
+msgstr "辞書"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
 #: ../panel-plugin/xfce4-dict-plugin.c:472
@@ -34,117 +35,117 @@ msgstr "Dicionário"
 #: ../lib/dictd.c:377
 #: ../lib/gui.c:267
 msgid "Ready."
-msgstr "Pronto."
+msgstr "準備が完了しました。"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
-msgstr "Encontrar uma palavra"
+msgstr "単語を調べる"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:443
 #: ../lib/gui.c:491
 msgid "Search term"
-msgstr "Termo a procurar"
+msgstr "検索用語"
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr "Pesquisa pelo texto fornecido usando um servidor Dict (RFC 2229)"
+msgstr "指定されたテキストを Dict サーバー (RFC 2229) で検索する"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a web-based search engine"
-msgstr "Pesquisar pelo texto fornecido usando um motor de pesquisa na web"
+msgstr "指定されたテキストを Web ベースの検索エンジンで検索する"
 
 #: ../src/xfce4-dict.c:52
 msgid "Check the given text with a spell checker"
-msgstr "Verificar o texto dado com um verificador"
+msgstr "指定されたテキストをスペルチェッカーでチェックする"
 
 #: ../src/xfce4-dict.c:53
 msgid "Grab the focus on the text field in the panel"
-msgstr "Obter o foco no campo de texto no painel"
+msgstr "パネル内のテキストフィールドにフォーカスを取得する"
 
 #: ../src/xfce4-dict.c:54
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Iniciar aplicação independente mesmo se o plugin no painel estiver carregado"
+msgstr "パネルプラグインが読み込まれている場合でも、スタンドアロンアプリケーションを起動する"
 
 #: ../src/xfce4-dict.c:55
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Grava o conteúdo da selecção PRIMÁRIA e usa-o como texto de procura"
+msgstr "現在選択されている内容を取得し、検索テキストとして使用する"
 
 #: ../src/xfce4-dict.c:56
 msgid "Show version information"
-msgstr "Mostrar informação de versão"
+msgstr "バージョン情報を表示する"
 
 #: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
-msgstr "[TEXTO]"
+msgstr "[TEXT"
 
 #: ../src/xfce4-dict.c:143
 #, c-format
 msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-msgstr "(compilado em %s com GTK %d.%d.%d, GLib %d.%d.%d)"
+msgstr "(GTK %2$d.%3$d.%4$d、GLib %5$d.%6$d.%7$d により %1$s にビルド)"
 
 #: ../src/xfce4-dict.desktop.in.h:1
 #: ../lib/gui.c:647
 msgid "A client program to query different dictionaries."
-msgstr "Um programa para consultar dicionários diferentes."
+msgstr "別の辞書を照会するためのクライアントプログラムです。"
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
-msgstr "Cliente de Dicionário"
+msgstr "辞書クライアント"
 
 #: ../lib/spell.c:83
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "%d sugestão encontrada."
-msgstr[1] "%d sugestões encontradas."
+msgstr[0] "%d 個の候補が見つかりました。"
+msgstr[1] "%d 個の候補が見つかりました。"
 
 #: ../lib/spell.c:88
 #, c-format
 msgid "Suggestions for \"%s\":"
-msgstr "Sugestões para \"%s\":"
+msgstr "\"%s\" の候補:"
 
 #: ../lib/spell.c:101
 #, c-format
 msgid "\"%s\" is spelled correctly."
-msgstr "\"%s\" is spelled correctly."
+msgstr "\"%s\" は正しいスペルです。"
 
 #: ../lib/spell.c:109
 #, c-format
 msgid "No suggestions could be found for \"%s\"."
-msgstr "Nenhuma sugestão foi encontrada para \"%s\"."
+msgstr "\"%s\" の候補はありませんでした。"
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:138
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Erro durante a execução \"%s\" (%s)."
+msgstr "\"%s\" の実行中にエラーが発生しました (%s)。"
 
 #: ../lib/spell.c:175
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Por favor defina o comando de verificador no diálogo de preferências."
+msgstr "環境設定ダイアログで aspell コマンドを設定してください。"
 
 #: ../lib/spell.c:181
 #: ../lib/common.c:202
 msgid "Invalid input."
-msgstr "Entrada inválida."
+msgstr "不正な入力です。"
 
 #: ../lib/spell.c:216
 #, c-format
 msgid "Process failed (%s)"
-msgstr "Processo falhou (%s)"
+msgstr "処理失敗 (%s)"
 
 #: ../lib/common.c:168
 msgid "The search URL is empty. Please check your preferences."
-msgstr "O URL de procura está vazio. Por favor verifique as suas preferências."
+msgstr "検索 URL が空です。環境設定を確認してください。"
 
 #: ../lib/common.c:173
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Um navegador não pôde ser aberto. Por favor verifique as suas preferências."
+msgstr "ブラウザを開くことができませんでした。環境設定を確認してください。"
 
 #: ../lib/common.c:212
 msgid "Invalid non-UTF8 input."
-msgstr "Entrada não-UTF8 inválida."
+msgstr "不正な non-UTF8 入力です。"
 
 #: ../lib/dictd.c:343
 #: ../lib/dictd.c:633
@@ -152,84 +153,84 @@ msgstr "Entrada não-UTF8 inválida."
 #: ../lib/dictd.c:724
 #: ../lib/dictd.c:733
 msgid "Could not connect to server."
-msgstr "Incapaz de ligar ao servidor."
+msgstr "サーバーに接続できませんでした。"
 
 #: ../lib/dictd.c:349
 msgid "Server not ready."
-msgstr "O servidor não está pronto."
+msgstr "サーバーが準備できていません。"
 
 #: ../lib/dictd.c:356
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Dicionário especificado inválido. Por favor verifique as suas preferências."
+msgstr "無効な辞書が指定されています。環境設定を確認してください。"
 
 #: ../lib/dictd.c:364
 #: ../lib/dictd.c:409
 #: ../lib/dictd.c:755
 msgid "Unknown error while quering the server."
-msgstr "Erro desconhecido enquanto o servidor era acedido."
+msgstr "サーバへの問い合わせ中の不明なエラーです。"
 
 #: ../lib/dictd.c:380
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Nenhuma entrada encontrada para \"%s\"."
+msgstr "\"%s\" に一致するものは見つかりませんでした。"
 
 #: ../lib/dictd.c:390
 #, c-format
 msgid "Do you want to search \"%s\" on the Web using "
-msgstr "Deseja procurar \"%s\" na Web usando"
+msgstr "ウェブを使用するのときに \"%s\" を捜しますか?"
 
 #: ../lib/dictd.c:414
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d definição encontrada."
-msgstr[1] "%d definições encontradas."
+msgstr[0] "%d 個の定義が見つかりました。"
+msgstr[1] "%d 個の定義が見つかりました。"
 
 #: ../lib/dictd.c:604
 #, c-format
 msgid "Querying %s..."
-msgstr "Questionando %s..."
+msgstr "%s を問い合わせ中..."
 
 #: ../lib/dictd.c:659
 msgid "An error occured while querying server information."
-msgstr "Erro desconhecido enquanto o servidor era acedido."
+msgstr "エラーがサーバへの問い合わせ中に発生しました。"
 
 #: ../lib/dictd.c:670
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "Informação de Servidor para \"%s\""
+msgstr "\"%s\" の サーバ情報"
 
 #: ../lib/dictd.c:750
 msgid "The server doesn't offer any databases."
-msgstr "O servidor não oferece nenhuma base de dados."
+msgstr "ファイル(_F)"
 
 #: ../lib/gui.c:415
 msgid "_File"
-msgstr "_Ficheiro"
+msgstr "ファイル(_F)"
 
 #: ../lib/gui.c:431
 msgid "_Help"
-msgstr "_Ajuda"
+msgstr "ヘルプ(_H)"
 
 #: ../lib/gui.c:525
 msgid "Search with:"
-msgstr "Procurar com:"
+msgstr "検索方法:"
 
 #: ../lib/gui.c:529
 msgid "_Dict"
-msgstr "_Dicionário"
+msgstr "辞書(_D)"
 
 #: ../lib/gui.c:535
 msgid "_Web"
-msgstr "_Web"
+msgstr "Web(_W)"
 
 #: ../lib/gui.c:541
 msgid "_Spell Check"
-msgstr "_Verificador ortográfico"
+msgstr "スペルチェック(_S)"
 
 #: ../lib/gui.c:639
 msgid "Xfce4 Dictionary"
-msgstr "Dicionário Xfce4"
+msgstr "Xfce4 Dictionary"
 
 #: ../lib/gui.c:648
 msgid "Copyright © 2006-2008 Enrico Tröger"
@@ -237,35 +238,35 @@ msgstr "Copyright © 2006-2008 Enrico Tröger"
 
 #: ../lib/gui.c:651
 msgid "translator-credits"
-msgstr "Nuno Miguel <nunis@netcabo.pt>"
+msgstr "Yuko Iwamatsu, Nobuhiro Iwamatsu"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
-msgstr "dict.leo.org - Alemão <-> Inglês"
+msgstr "dict.leo.org - ドイツ語 <-> 英語"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org - Alemão <-> Francês"
+msgstr "dict.leo.org - ドイツ語 <-> フランス語"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org - Alemão <-> Espanhol"
+msgstr "dict.leo.org - ドイツ語 <-> スペイン語"
 
 #: ../lib/prefs.c:58
 msgid "dict.leo.org - German <-> Italian"
-msgstr "dict.leo.org - Alemão <-> Italiano"
+msgstr "dict.leo.org - ドイツ語 <-> イタリア語"
 
 #: ../lib/prefs.c:59
 msgid "dict.leo.org - German <-> Chinese"
-msgstr "dict.leo.org - Alemão <-> Chinês"
+msgstr "dict.leo.org - ドイツ語 <-> 中国語"
 
 #: ../lib/prefs.c:60
 msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Dicionário:"
+msgstr "dist.cc - Dictionary"
 
 #: ../lib/prefs.c:61
 msgid "Dictionary.com"
-msgstr "Dicionário.com"
+msgstr "Dictionary.com"
 
 #: ../lib/prefs.c:62
 msgid "TheFreeDictionary.com"
@@ -273,40 +274,40 @@ msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:63
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr "Wikipedia, a enciclopédia livre (EN)"
+msgstr "Wikipedia, フリー百科事典 (英語)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr "Wiktionary, o dicionário livre (EN)"
+msgstr "Wiktionary、フリー辞書 (英語)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr "Dicionário Online Merriam-Webster"
+msgstr "Merriam-Webster オンライン辞書"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
-msgstr "Limpar"
+msgstr "クリア"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr "Seleccionou um dicionário inválido."
+msgstr "無効の辞書を選びました。"
 
 #: ../lib/prefs.c:112
 msgid "You must set a valid search URL."
-msgstr "Tem de indicar um URL de busca válido."
+msgstr "有効な検索URLを設定しなければなりません。"
 
 #: ../lib/prefs.c:309
 msgid "General"
-msgstr "Geral"
+msgstr "一般"
 
 #: ../lib/prefs.c:311
 msgid "<b>Default search method:</b>"
-msgstr "<b>Método por omissão de pesquisa:</b>"
+msgstr "<b>デフォルトの検索方法:</b>"
 
 #: ../lib/prefs.c:317
 #: ../lib/prefs.c:454
 msgid "Dict"
-msgstr "Dicionário"
+msgstr "辞書"
 
 #: ../lib/prefs.c:326
 #: ../lib/prefs.c:575
@@ -316,64 +317,64 @@ msgstr "Web"
 #: ../lib/prefs.c:335
 #: ../lib/prefs.c:625
 msgid "Spell Check"
-msgstr "Verificador Ortográfico"
+msgstr "スペルチェック"
 
 #: ../lib/prefs.c:344
 msgid "Last used method"
-msgstr "Último método usado"
+msgstr "最後に使った方法"
 
 #: ../lib/prefs.c:353
 msgid "<b>Colors:</b>"
-msgstr "<b>Cores:</b>"
+msgstr "<b>カラー:</b>"
 
 #: ../lib/prefs.c:359
 msgid "Link Color:"
-msgstr "Cor de Ligação:"
+msgstr "リンクカラー:"
 
 #: ../lib/prefs.c:360
 msgid "Phonetic Color:"
-msgstr "Cor Fonética:"
+msgstr "音声カラー:"
 
 #: ../lib/prefs.c:398
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>Campo de Texto do Painel:</b>"
+msgstr "<b>パネルテキストフィールド:</b>"
 
 #: ../lib/prefs.c:404
 msgid "Show text field in the panel"
-msgstr "Mostrar um campo de texto no painel"
+msgstr "テキストフィールドをパネル内に表示する"
 
 #. panel entry size
 #: ../lib/prefs.c:411
 msgid "Text field size:"
-msgstr "Tamanho do campo de texto:"
+msgstr "テキストフィールドのサイズ:"
 
 #. server address
 #: ../lib/prefs.c:457
 msgid "Server:"
-msgstr "Servidor:"
+msgstr "サーバ:"
 
 #. server port
 #: ../lib/prefs.c:469
 msgid "Server Port:"
-msgstr "Porta do Servidor:"
+msgstr "サーバポート:"
 
 #. dictionary
 #: ../lib/prefs.c:477
 #: ../lib/prefs.c:650
 msgid "Dictionary:"
-msgstr "Dicionário:"
+msgstr "辞書:"
 
 #: ../lib/prefs.c:481
 msgid "* (use all)"
-msgstr "* (usar todos)"
+msgstr "* (すべて使用)"
 
 #: ../lib/prefs.c:483
 msgid "! (use all, stop after first match)"
-msgstr "! (usar todos, pára no primeiro encontrado)"
+msgstr "! (すべて使用, 最初の一致後に終了)"
 
 #: ../lib/prefs.c:577
 msgid "<b>Web search URL:</b>"
-msgstr "<b>URL para pesquisa Web:</b>"
+msgstr "<b>Web 検索 URL:</b>"
 
 #: ../lib/prefs.c:583
 msgid "URL:"
@@ -381,28 +382,17 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:603
 msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "Digite um URL dum site web que ofereça serviços de tradução ou dicionários. Use {word} como um substituto para a palavra pesquisada."
+msgstr "翻訳または辞書サービスを提供する Web サイトへの URL を入力します。検索する単語のプレースホルダとして {単語} を使用してください。"
 
 #: ../lib/prefs.c:627
 msgid "Spell Check Program:"
-msgstr "Programa Verificador Ortográfico:"
+msgstr "スペルチェックプログラム:"
 
 #: ../lib/prefs.c:644
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>O programa de correcção ortográfica pode ser 'enchant', 'aspell', 'ispell' ou qualquer outro programa que seja compatível com o comando ispell.\n"
-"O ícone mostra se o comando introduzido existe.</i>"
-
-#~ msgid "Show help options"
-#~ msgstr "Apresentar as opções de ajuda"
-#~ msgid "Xfce4 Dictionary Preferences"
-#~ msgstr "Preferências do Dicionário Xfce4"
-#~ msgid "Developer"
-#~ msgstr "Programador"
-#~ msgid "Text to search:"
-#~ msgstr "Texto a procurar:"
-#~ msgid "Aspell"
-#~ msgstr "Aspell"
+"<i>スペルチェックプログラムは、ispell コマンドに互換性がある 'enchant'、'aspell'、'ispell' または他のスペルチェックプログラムが利用できます。\n"
+"アイコンは、入力されたコマンドが存在するかどうかを示します。</i>"
 

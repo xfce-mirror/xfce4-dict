@@ -1,3 +1,9 @@
+2008-11-09  Maximilian Schleiss <maximilian@xfce.org>
+
+	* ca.po: Catalan translation udpate (Carles Muñoz Gorriz)
+	* ja.po; LINGUAS: Japanese translation added (Nobuhiro Iwamatsu)
+	* pt_PT.po: European Portuguese translation update (Nuno Miguel)
+
 2008-11-07  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
 	* xfce4-dict.pot, *.po: Issued make update-po because of a typo in an
