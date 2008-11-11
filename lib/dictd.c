@@ -476,7 +476,11 @@ static gchar *get_answer(DictData *dd, gint fd)
 			sol = TRUE;
 		}
 		if (c == '\n') /* last char of line, so the next run is first char of next line */
+		{
 			fol = TRUE;
+			sol = FALSE;
+			tol = FALSE;
+		}
 
 		g_string_append_c(str, c);
 		if (tol)
