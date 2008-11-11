@@ -102,34 +102,46 @@ static void send_command(gint fd, const gchar *str)
 }
 
 
-static gchar *phon_find_start(gchar *buf, gchar *end_char, const gchar **end_str)
+static gchar *phon_find_start(gchar *buf, gchar **start_str, gchar **end_str)
 {
 	gchar *start;
 
-	start = strchr(buf, '\\');
-	if (start != NULL)
+	/* we check only once for the various (\, / and [...]) formats for phonetic information
+	 * per line, for further occurences on the same line we use the same format */
+	if (**start_str == '\0')
 	{
-		*end_char = '\\';
-		*end_str = "\\";
-	}
-	else
-	{
-		start = strchr(buf, '/');
+		start = strchr(buf, '\\');
 		if (start != NULL)
 		{
-			*end_char = '/';
-			*end_str = "/";
+			*start_str = *end_str = "\\";
 		}
 		else
 		{
-			start = strchr(buf, '[');
+			start = strchr(buf, '/');
 			if (start != NULL)
 			{
-				*end_char = ']';
-				*end_str = "]";
+				*start_str = *end_str = "/";
+			}
+			else
+			{
+				start = strchr(buf, '[');
+				if (start != NULL)
+				{
+					*start_str = "[";
+					*end_str = "]";
+				}
 			}
 		}
 	}
+	else
+	{
+		start = strchr(buf, **start_str);
+		if (start != NULL)
+		{
+			*start_str = *end_str = *start_str;
+		}
+	}
+
 	return start;
 }
 
@@ -142,11 +154,13 @@ static void parse_header(DictData *dd, GString *buffer, GString *target)
 	gchar *end;
 	gsize len;
 	gchar end_char;
-	const gchar *end_str;
+	gchar *start_str = "";
+	gchar *end_str = "";
 
 	while (buffer->len > 0)
 	{
-		start = phon_find_start(buffer->str, &end_char, &end_str);
+		start = phon_find_start(buffer->str, &start_str, &end_str);
+		end_char = *end_str;
 		len = 0;
 
 		if (start == NULL)
@@ -157,33 +171,28 @@ static void parse_header(DictData *dd, GString *buffer, GString *target)
 			g_string_erase(buffer, 0, -1); /* remove already handled text */
 			return;
 		}
-		/* get length of text *before* the next '\' */
+		/* get length of text *before* the end char */
 		while (len < buffer->len && (buffer->str + len) != start)
 			len++;
 
 		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, buffer->str, len);
-		len++; /* skip the '\' */
+		len++; /* skip the end char */
 		g_string_erase(buffer, 0, len); /* remove already handled text */
 
 		start = buffer->str; /* set new start */
 		end = strchr(start, end_char);
 		if (start > end)
 		{
-			/* slashes don't match, skip this part */
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, end_str, 1);
+			/* start & end chars don't match, skip this part */
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, start_str, 1);
 			continue;
 		}
-		len = end - buffer->str; /* length of the link */
+		len = end - buffer->str; /* length of the phonetic string */
 
 		gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
 				buffer->str, len, "phonetic", NULL);
 
-		/* we only highlight the first match, so add remaining add the remaining text
-		 * to the body to get at least possible links parsed and return */
-		g_string_prepend(target, buffer->str + len + 1);
-		g_string_erase(buffer, 0, -1); /* remove already handled text */
-
-		break;
+		g_string_erase(buffer, 0, len + 1); /* remove already handled text */
 	}
 }
 
