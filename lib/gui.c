@@ -79,15 +79,14 @@ static void textview_follow_if_link(GtkWidget *text_view, GtkTextIter *iter, Dic
 static gboolean textview_key_press_event(GtkWidget *text_view, GdkEventKey *event, DictData *dd)
 {
 	GtkTextIter iter;
-	GtkTextBuffer *buffer;
 
 	switch (event->keyval)
 	{
 		case GDK_Return:
 		case GDK_KP_Enter:
 		{
-			buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(text_view));
-			gtk_text_buffer_get_iter_at_mark(buffer, &iter, gtk_text_buffer_get_insert(buffer));
+			gtk_text_buffer_get_iter_at_mark(dd->main_textbuffer, &iter,
+				gtk_text_buffer_get_insert(dd->main_textbuffer));
 			textview_follow_if_link(text_view, &iter, dd);
 			break;
 		}
@@ -102,7 +101,6 @@ static gboolean textview_key_press_event(GtkWidget *text_view, GdkEventKey *even
 static gboolean textview_event_after(GtkWidget *text_view, GdkEvent *ev, DictData *dd)
 {
 	GtkTextIter start, end, iter;
-	GtkTextBuffer *buffer;
 	GdkEventButton *event;
 	gint x, y;
 
@@ -114,10 +112,8 @@ static gboolean textview_event_after(GtkWidget *text_view, GdkEvent *ev, DictDat
 	if (event->button != 1)
 		return FALSE;
 
-	buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(text_view));
-
 	/* we shouldn't follow a link if the user has selected something */
-	gtk_text_buffer_get_selection_bounds(buffer, &start, &end);
+	gtk_text_buffer_get_selection_bounds(dd->main_textbuffer, &start, &end);
 	if (gtk_text_iter_get_offset(&start) != gtk_text_iter_get_offset(&end))
 		return FALSE;
 
@@ -202,6 +198,71 @@ static gboolean textview_visibility_notify_event(GtkWidget *text_view, GdkEventV
 		GTK_TEXT_WINDOW_WIDGET, wx, wy, &bx, &by);
 
 	textview_set_cursor_if_appropriate(GTK_TEXT_VIEW(text_view), bx, by);
+
+	return FALSE;
+}
+
+
+static void textview_popup_item_cb(GtkWidget *widget, DictData *dd)
+{
+	gchar *word;
+	GtkTextIter start, end;
+
+	if (! gtk_text_buffer_get_selection_bounds(dd->main_textbuffer, &start, &end))
+	{
+		gint wx, wy, bx, by;
+
+		gdk_window_get_pointer(dd->main_textview->window, &wx, &wy, NULL);
+
+		gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(dd->main_textview),
+			GTK_TEXT_WINDOW_WIDGET, wx, wy, &bx, &by);
+
+		gtk_text_buffer_get_iter_at_mark(dd->main_textbuffer, &start, dd->mark_click);
+		if (! gtk_text_iter_starts_word(&start))
+			gtk_text_iter_backward_word_start(&start);
+
+		end = start;
+
+		if (gtk_text_iter_inside_word(&end))
+			gtk_text_iter_forward_word_end(&end);
+	}
+
+	word = gtk_text_buffer_get_text(dd->main_textbuffer, &start, &end, FALSE);
+
+	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), word);
+	dict_search_word(dd, word);
+	gtk_widget_grab_focus(dd->main_entry);
+
+	g_free(word);
+}
+
+
+static void textview_populate_popup_cb(GtkTextView *textview, GtkMenu *menu, DictData *dd)
+{
+	GtkWidget *search = gtk_image_menu_item_new_from_stock(GTK_STOCK_FIND, NULL);
+	GtkWidget *sep = gtk_separator_menu_item_new();
+
+	gtk_widget_show(sep);
+	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), sep);
+
+	gtk_widget_show(search);
+	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), search);
+
+	g_signal_connect(search, "activate", G_CALLBACK(textview_popup_item_cb), dd);
+}
+
+
+static gboolean textview_button_press_cb(GtkTextView *view, GdkEventButton *event, DictData *dd)
+{
+	if (event->button == 3)
+	{
+		gint x, y;
+		GtkTextIter iter;
+
+		gtk_text_view_window_to_buffer_coords(view, GTK_TEXT_WINDOW_TEXT, event->x, event->y, &x, &y);
+		gtk_text_view_get_iter_at_location(view, &iter, x, y);
+		gtk_text_buffer_move_mark(dd->main_textbuffer, dd->mark_click, &iter);
+	}
 
 	return FALSE;
 }
@@ -590,6 +651,17 @@ void dict_gui_create_main_window(DictData *dd)
 			G_CALLBACK(textview_motion_notify_event), NULL);
 		g_signal_connect(dd->main_textview, "visibility-notify-event",
 			G_CALLBACK(textview_visibility_notify_event), NULL);
+	}
+	/* support for 'Search' menu item in the textview popup menu */
+	{
+		GtkTextIter start;
+		gtk_text_buffer_get_bounds(dd->main_textbuffer, &start, &start);
+		dd->mark_click = gtk_text_buffer_create_mark(dd->main_textbuffer, NULL, &start, TRUE);
+
+		g_signal_connect(dd->main_textview, "button-press-event",
+			G_CALLBACK(textview_button_press_cb), dd);
+		g_signal_connect(dd->main_textview, "populate-popup",
+			G_CALLBACK(textview_populate_popup_cb), dd);
 	}
 
 	gtk_widget_show(dd->main_textview);

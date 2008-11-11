@@ -99,6 +99,7 @@ typedef struct
 	GtkTextIter textiter;
 	GtkTextTag *link_tag;
 	GtkTextTag *phon_tag;
+	GtkTextMark *mark_click;
 	GdkPixbuf *icon;
 
 	GdkColor *link_color;
