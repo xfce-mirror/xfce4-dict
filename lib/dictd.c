@@ -102,6 +102,38 @@ static void send_command(gint fd, const gchar *str)
 }
 
 
+static gchar *phon_find_start(gchar *buf, gchar *end_char, const gchar **end_str)
+{
+	gchar *start;
+
+	start = strchr(buf, '\\');
+	if (start != NULL)
+	{
+		*end_char = '\\';
+		*end_str = "\\";
+	}
+	else
+	{
+		start = strchr(buf, '/');
+		if (start != NULL)
+		{
+			*end_char = '/';
+			*end_str = "/";
+		}
+		else
+		{
+			start = strchr(buf, '[');
+			if (start != NULL)
+			{
+				*end_char = ']';
+				*end_str = "]";
+			}
+		}
+	}
+	return start;
+}
+
+
 /* We parse the first line differently as there are usually no links
  * but instead phonetic information */
 static void parse_header(DictData *dd, GString *buffer, GString *target)
@@ -109,26 +141,21 @@ static void parse_header(DictData *dd, GString *buffer, GString *target)
 	gchar *start;
 	gchar *end;
 	gsize len;
-	gchar end_char = '\\';
+	gchar end_char;
+	const gchar *end_str;
 
 	while (buffer->len > 0)
 	{
-		start = strchr(buffer->str, '\\');
+		start = phon_find_start(buffer->str, &end_char, &end_str);
 		len = 0;
 
 		if (start == NULL)
 		{
-			start = strchr(buffer->str, '['); /* alternative way of specifiying phonetics */
-			if (start != NULL)
-				end_char = ']';
-			else
-			{
-				/* no phonetics at all, so add the text to the body to get at least possible
-				 * links parsed and return */
-				g_string_prepend(target, buffer->str);
-				g_string_erase(buffer, 0, -1); /* remove already handled text */
-				return;
-			}
+			/* no phonetics at all, so add the text to the body to get at least possible
+			 * links parsed and return */
+			g_string_prepend(target, buffer->str);
+			g_string_erase(buffer, 0, -1); /* remove already handled text */
+			return;
 		}
 		/* get length of text *before* the next '\' */
 		while (len < buffer->len && (buffer->str + len) != start)
@@ -143,8 +170,7 @@ static void parse_header(DictData *dd, GString *buffer, GString *target)
 		if (start > end)
 		{
 			/* slashes don't match, skip this part */
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter,
-				(end_char == ']') ? "\\" : "]", 1);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, end_str, 1);
 			continue;
 		}
 		len = end - buffer->str; /* length of the link */
