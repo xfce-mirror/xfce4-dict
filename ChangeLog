@@ -1,3 +1,15 @@
+2008-11-11  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Add a 'Search' menu item to the textview popup menu for quick search
+   of any text in search results.
+ * Improve parsing of phonetic information, also allowing the /.../
+   format, used in the Jargon dictionary.
+ * Parse also phonetic information endorsed by slashes.
+   Refactor some code.
+ * Fix cut server responses when there is a leading number in the word
+   definition (e.g. in 'moby-thes').
+
+
 2008-11-10  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * New release: 0.5.0.

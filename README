@@ -45,7 +45,7 @@ Panel Plugin
 ------------
 
 With the panel plugin enabled, you can also easily select a word in an
-email or on a webpage and drag it onto the dict icon in your panel, then
+email or on a web page and drag it onto the dict icon in your panel, then
 the plugin begins to search and shows you the results.
 
 The plugin also provides a text field within the panel to directly enter
@@ -72,13 +72,13 @@ in RFC 2229.
 Search result highlighting
 ``````````````````````````
 
-Sometimes defintions in certain dictionaries contain special markups
+Sometimes definitions in certain dictionaries contain special markups
 to give additional information. Two of them are:
  * Cross-references
      These are some kind of links in definitions to link to other
-     defintions.
+     definitions.
      Xfce4-dict will highlight these definitions and make them clickable
-     to easily jump (by searching) to this highlighted defition.
+     to easily jump (by searching) to this highlighted definition.
  * Phonetic hints
     These are mostly phonetic spellings found in translation
     dictionaries to illustrate how a word is pronounced.
