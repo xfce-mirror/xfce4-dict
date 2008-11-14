@@ -139,13 +139,13 @@ gint main(gint argc, gchar *argv[])
 
 	if (show_version)
 	{
-		printf(PACKAGE " " VERSION " ");
-		printf(_("(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"),
-				__DATE__, GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION,
-				GLIB_MAJOR_VERSION, GLIB_MINOR_VERSION, GLIB_MICRO_VERSION);
-		printf("\n");
+		g_print("%s %s (Xfce %s)\n\n", PACKAGE, PACKAGE_VERSION, xfce_version_string());
+		g_print("%s\n", "Copyright (c) 2006-2008");
+		g_print("\tEnrico Tröger <enrico@xfce.org>\n\n");
+		g_print(_("Please report bugs to <%s>."), PACKAGE_BUGREPORT);
+		g_print("\n");
 
-		exit(0);
+		return EXIT_SUCCESS;
 	}
 
 	flags = get_flags();
