@@ -198,8 +198,7 @@ void dict_spell_start_query(DictData *dd, const gchar *word)
 		argv[3] = g_strdup(dd->spell_dictionary);
 		argv[4] = NULL;
 
-		if (g_spawn_async_with_pipes(NULL, argv, NULL,
-				G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD, NULL, NULL, NULL,
+		if (g_spawn_async_with_pipes(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL,
 				&stdin_fd, &stdout_fd, &stderr_fd, &error))
 		{
 			iod = g_new(iodata, 1);
