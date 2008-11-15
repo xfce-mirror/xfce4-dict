@@ -3,6 +3,7 @@
  * Avoid leaving zombie processes when using spell checking (bug 4615).
  * Fix crashes when using the dictionary refresh button in the prefs
    dialog and while using enchant as spell checker.
+ * Sort the spell check dictionary list in the prefs dialog.
 
 
 2008-11-14  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

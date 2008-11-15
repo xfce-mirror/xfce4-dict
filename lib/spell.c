@@ -257,6 +257,12 @@ static gchar *get_enchant_dict_string(GPtrArray *dicts, const gchar *str)
 }
 
 
+static gint sort_dicts(gconstpointer a, gconstpointer b)
+{	/* casting mania ;-) */
+	return strcmp((gchar*)((GPtrArray*)a)->pdata, (gchar*)((GPtrArray*)b)->pdata);
+}
+
+
 static gchar **get_enchant_dicts(const gchar *str)
 {
 	gchar **list = g_strsplit_set(str, "\r\n", -1);
@@ -273,6 +279,9 @@ static gchar **get_enchant_dicts(const gchar *str)
 
 	g_strfreev(list);
 
+	/* sort the dictionary list */
+	g_ptr_array_sort(dicts, sort_dicts);
+	
 	list = g_new0(gchar *, dicts->len + 1);
 	for (i = 0; i < dicts->len; i++)
 	{
