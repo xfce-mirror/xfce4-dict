@@ -273,11 +273,12 @@ static gchar **get_enchant_dicts(const gchar *str)
 
 	g_strfreev(list);
 
-	list = g_new0(gchar *, dicts->len);
+	list = g_new0(gchar *, dicts->len + 1);
 	for (i = 0; i < dicts->len; i++)
 	{
 		list[i] = g_ptr_array_index(dicts, i);
 	}
+	list[i] = NULL;
 	g_ptr_array_free(dicts, TRUE);
 
 	return list;
