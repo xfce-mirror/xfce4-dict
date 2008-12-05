@@ -1,0 +1,442 @@
+# Catalan translation of the xfce4-dict-plugin package.
+# Copyright (C) 2006-2007 Enrico Tröger
+# This file is distributed under the same license as the xfce4-dict-plugin
+# package.
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
+"PO-Revision-Date: 2008-11-08 21:21+0100\n"
+"Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
+"Language-Team: Catalan <xfce-i18n@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+msgid "A plugin to query different dictionaries."
+msgstr "Un connector per fer consultes a diversos diccionaris."
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
+msgid "Dictionary"
+msgstr "Diccionari"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:346
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
+#: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
+msgid "Ready."
+msgstr "Llest."
+
+#: ../panel-plugin/xfce4-dict-plugin.c:412
+msgid "Look up a word"
+msgstr "Cerca una paraula"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:491
+msgid "Search term"
+msgstr "Cerca amb:"
+
+#: ../src/xfce4-dict.c:50
+msgid "Search the given text using a Dict server(RFC 2229)"
+msgstr "Cerca el text emprant un servidor Dict (RFC 2229)"
+
+#: ../src/xfce4-dict.c:51
+msgid "Search the given text using a web-based search engine"
+msgstr "Cerca el text emprant un enginy de cerca basat en la web"
+
+#: ../src/xfce4-dict.c:52
+msgid "Check the given text with a spell checker"
+msgstr "Comprova el text amb un verificador ortogràfic"
+
+#: ../src/xfce4-dict.c:53
+msgid "Grab the focus on the text field in the panel"
+msgstr "Enfoca el camp de text del plafó"
+
+#: ../src/xfce4-dict.c:54
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr ""
+"Inicia com aplicació autònoma fins i tot si el connector del quadre està "
+"carregat"
+
+#: ../src/xfce4-dict.c:55
+msgid "Grabs the PRIMARY selection content and uses it as search text"
+msgstr ""
+"Agafa el contingut de la selecció primària i empra-la com a text per la cerca"
+
+#: ../src/xfce4-dict.c:56
+msgid "Show version information"
+msgstr "Mostra informació de la versió"
+
+#: ../src/xfce4-dict.c:129
+msgid "[TEXT]"
+msgstr "[TEXT]"
+
+#: ../src/xfce4-dict.c:143
+#, c-format
+msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
+msgstr "(compilat el %s amb GTK %d.%d.%d, GLib %d.%d.%d)"
+
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:647
+msgid "A client program to query different dictionaries."
+msgstr "Un programa client per fer consultes a diversos diccionaris."
+
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "Client de diccionari"
+
+#: ../lib/spell.c:83
+#, c-format
+msgid "%d suggestion found."
+msgid_plural "%d suggestions found."
+msgstr[0] "%d suggeriment trobat."
+msgstr[1] "%d suggeriments trobats."
+
+#: ../lib/spell.c:88
+#, c-format
+msgid "Suggestions for \"%s\":"
+msgstr "Suggeriment per «%s»:"
+
+#: ../lib/spell.c:101
+#, c-format
+msgid "\"%s\" is spelled correctly."
+msgstr "«%s» està escrit correctament."
+
+#: ../lib/spell.c:109
+#, c-format
+msgid "No suggestions could be found for \"%s\"."
+msgstr "No s'ha trobat cp suggeriment per «%s»."
+
+#. translation hint:
+#. * Error while executing <spell command, e.g. "aspell"> (<error message>)
+#: ../lib/spell.c:138
+#, c-format
+msgid "Error while executing \"%s\" (%s)."
+msgstr "Error al executar «%s»: (%s)."
+
+#: ../lib/spell.c:175
+msgid "Please set the spell check command in the preferences dialog."
+msgstr ""
+"Introduïu l'ordre per la verificació ortogràfica el el diàleg de "
+"preferències."
+
+#: ../lib/spell.c:181 ../lib/common.c:202
+msgid "Invalid input."
+msgstr "L'entrada no és vàlida."
+
+#: ../lib/spell.c:216
+#, c-format
+msgid "Process failed (%s)"
+msgstr "Ha fallat el procés (%s)"
+
+#: ../lib/common.c:168
+msgid "The search URL is empty. Please check your preferences."
+msgstr "La URL de cerca està buida. Comproveu les vostres preferències."
+
+#: ../lib/common.c:173
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "No es pot obrir el navegador. Comproveu les vostres preferències."
+
+#: ../lib/common.c:212
+msgid "Invalid non-UTF8 input."
+msgstr "Entrada no UTF8 invàlida."
+
+#: ../lib/dictd.c:343 ../lib/dictd.c:633 ../lib/dictd.c:642 ../lib/dictd.c:724
+#: ../lib/dictd.c:733
+msgid "Could not connect to server."
+msgstr "No s'ha pogut connectar al servidor."
+
+#: ../lib/dictd.c:349
+msgid "Server not ready."
+msgstr "El servidor està disponible."
+
+#: ../lib/dictd.c:356
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "El diccionari indicat no és vàlid. Comproveu les vostres preferències."
+
+#: ../lib/dictd.c:364 ../lib/dictd.c:409 ../lib/dictd.c:755
+msgid "Unknown error while quering the server."
+msgstr "Error desconegut al fer la consulta al servidor."
+
+#: ../lib/dictd.c:380
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "No hi ha cap coincidència per «%s»."
+
+#: ../lib/dictd.c:390
+#, c-format
+msgid "Do you want to search \"%s\" on the Web using "
+msgstr "Voleu cercar «%s» a la web emprant"
+
+#: ../lib/dictd.c:414
+#, c-format
+msgid "%d definition found."
+msgid_plural "%d definitions found."
+msgstr[0] "%d definició trobada."
+msgstr[1] "%d definicions trobades."
+
+#: ../lib/dictd.c:604
+#, c-format
+msgid "Querying %s..."
+msgstr "Consultant %s…"
+
+#: ../lib/dictd.c:659
+msgid "An error occured while querying server information."
+msgstr "S'ha produït un error al consultar la informació del servidor."
+
+#: ../lib/dictd.c:670
+#, c-format
+msgid "Server Information for \"%s\""
+msgstr "Informació del servidor per «%s»"
+
+#: ../lib/dictd.c:750
+msgid "The server doesn't offer any databases."
+msgstr "El servidor no ha ofert cap base de dades."
+
+#: ../lib/gui.c:415
+msgid "_File"
+msgstr "_Fitxer"
+
+#: ../lib/gui.c:431
+msgid "_Help"
+msgstr "A_juda"
+
+#: ../lib/gui.c:525
+msgid "Search with:"
+msgstr "Cerca amb:"
+
+#: ../lib/gui.c:529
+msgid "_Dict"
+msgstr "_Dict"
+
+#: ../lib/gui.c:535
+msgid "_Web"
+msgstr "_Web"
+
+#: ../lib/gui.c:541
+msgid "_Spell Check"
+msgstr "_Revisa l'ortografia"
+
+#: ../lib/gui.c:639
+msgid "Xfce4 Dictionary"
+msgstr "Diccionari Xfce4"
+
+#: ../lib/gui.c:648
+msgid "Copyright © 2006-2008 Enrico Tröger"
+msgstr "Copyright © 2006-2008 Enrico Tröger"
+
+#: ../lib/gui.c:651
+msgid "translator-credits"
+msgstr "Carles Muñoz Gorriz <carlesmu@internautas.org>"
+
+#: ../lib/prefs.c:55
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Alemany <-> Anglès"
+
+#: ../lib/prefs.c:56
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Alemany <-> Francès"
+
+#: ../lib/prefs.c:57
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Alemany <-> Espanyol"
+
+#: ../lib/prefs.c:58
+msgid "dict.leo.org - German <-> Italian"
+msgstr "dict.leo.org - Alemany <-> Italià"
+
+#: ../lib/prefs.c:59
+msgid "dict.leo.org - German <-> Chinese"
+msgstr "dict.leo.org - Alemany <-> Xinès"
+
+#: ../lib/prefs.c:60
+msgid "dist.cc - Dictionary"
+msgstr "dist.cc - Diccionari"
+
+#: ../lib/prefs.c:61
+msgid "Dictionary.com"
+msgstr "Dictionary.com"
+
+#: ../lib/prefs.c:62
+msgid "TheFreeDictionary.com"
+msgstr "TheFreeDictionary.com"
+
+#: ../lib/prefs.c:63
+msgid "Wikipedia, the free encyclopedia (EN)"
+msgstr "Wikipedia, la enciclopèdia lliure (EN)"
+
+#: ../lib/prefs.c:64
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr "Wiktionary, el diccionari lliure (EN)"
+
+#: ../lib/prefs.c:65
+msgid "Merriam-Webster Online Dictionary"
+msgstr "Diccionari en línia Merriam-Webster"
+
+#: ../lib/prefs.c:66
+msgid "Clear"
+msgstr "Neteja"
+
+#: ../lib/prefs.c:101
+msgid "You have chosen an invalid dictionary."
+msgstr "Heu triat un diccionari no vàlid."
+
+#: ../lib/prefs.c:112
+msgid "You must set a valid search URL."
+msgstr "Heu de proporcionar una URL de cerca vàlida."
+
+#: ../lib/prefs.c:309
+msgid "General"
+msgstr "General"
+
+#: ../lib/prefs.c:311
+msgid "<b>Default search method:</b>"
+msgstr "<b>Mètode de cerca per defecte:</b>"
+
+#: ../lib/prefs.c:317 ../lib/prefs.c:454
+msgid "Dict"
+msgstr "Dict"
+
+#: ../lib/prefs.c:326 ../lib/prefs.c:575
+msgid "Web"
+msgstr "Web"
+
+#: ../lib/prefs.c:335 ../lib/prefs.c:625
+msgid "Spell Check"
+msgstr "Revisa l'ortografia"
+
+#: ../lib/prefs.c:344
+msgid "Last used method"
+msgstr "Darrer mètode emprat"
+
+#: ../lib/prefs.c:353
+msgid "<b>Colors:</b>"
+msgstr "<b>Colors:</b>"
+
+#: ../lib/prefs.c:359
+msgid "Link Color:"
+msgstr "Color d'enllaç:"
+
+#: ../lib/prefs.c:360
+msgid "Phonetic Color:"
+msgstr "Color fonètic:"
+
+#: ../lib/prefs.c:398
+msgid "<b>Panel Text Field:</b>"
+msgstr "<b>Camp de text del plafó:</b>"
+
+#: ../lib/prefs.c:404
+msgid "Show text field in the panel"
+msgstr "Mostra el text al quadre"
+
+#. panel entry size
+#: ../lib/prefs.c:411
+msgid "Text field size:"
+msgstr "Mida del camp de text:"
+
+#. server address
+#: ../lib/prefs.c:457
+msgid "Server:"
+msgstr "Servidor:"
+
+#. server port
+#: ../lib/prefs.c:469
+msgid "Server Port:"
+msgstr "Port del servidor:"
+
+#. dictionary
+#: ../lib/prefs.c:477 ../lib/prefs.c:650
+msgid "Dictionary:"
+msgstr "Diccionari:"
+
+#: ../lib/prefs.c:481
+msgid "* (use all)"
+msgstr "* (empra'ls tots)"
+
+#: ../lib/prefs.c:483
+msgid "! (use all, stop after first match)"
+msgstr "! (empra'ls tots, atura després de la primera coincidència)"
+
+#: ../lib/prefs.c:577
+msgid "<b>Web search URL:</b>"
+msgstr "<b>URL de la cerca en web:</b>"
+
+#: ../lib/prefs.c:583
+msgid "URL:"
+msgstr "URL:"
+
+#: ../lib/prefs.c:603
+msgid ""
+"Enter an URL to a web site which offer translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Introduïu una URL d'un lloc web que ofereixi serveis de traducció o de "
+"diccionaris. Empreu {word} com com a paràmetre de substitució per la paraula "
+"a cercar."
+
+#: ../lib/prefs.c:627
+msgid "Spell Check Program:"
+msgstr "Programa per verificar l'ortografia:"
+
+#: ../lib/prefs.c:644
+msgid ""
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
+"The icon shows whether the entered command exists.</i>"
+msgstr ""
+"<i>El programa de verificació ortogràfica pot ser «enchant», «aspell«, «ispell» "
+"o qualsevulla altri que sigui compatible amb ml l'ordre «ispell».\n"
+"La icona mostra si l'ordre introduïda existeix.</i>"
+
+#, fuzzy
+#~ msgid "Xfce4 Dictionary Preferences"
+#~ msgstr "Diccionari:"
+
+#~ msgid "Developer"
+#~ msgstr "Desenvolupador"
+
+#~ msgid "Text to search:"
+#~ msgstr "Text a cercar:"
+
+#, fuzzy
+#~ msgid "Aspell"
+#~ msgstr "Empra «aspell»"
+
+#~ msgid "Properties"
+#~ msgstr "Propietats"
+
+#~ msgid "Use a DICT server"
+#~ msgstr "Empra un servidor DICT"
+
+#~ msgid "Use another website"
+#~ msgstr "Empra un altre lloc web"
+
+#~ msgid "Use a web site"
+#~ msgstr "Empra un lloc web"
+
+#~ msgid ""
+#~ "This option can only be used when the panel has a horizontal orientation."
+#~ msgstr ""
+#~ "Aquesta opció es tant sols es pot emprar quan el quadre està orientat "
+#~ "horitzontalment."
+
+#~ msgid "Usage: %s [options]\n"
+#~ msgstr "Ús: %s [OPCIONS]\n"
+
+#~ msgid "Options:\n"
+#~ msgstr "Opcions:\n"
+
+#~ msgid "    -h, --help          show this help and exit\n"
+#~ msgstr "    -h, --help          mostra aquesta ajuda i surt\n"
+
+#~ msgid ""
+#~ "If called without any options, the xfce4-dict-plugin main window is "
+#~ "shown.\n"
+#~ msgstr ""
+#~ "Si es crida sense opcins, es mostra la finestra principal de l'xfce4-dict-"
+#~ "plugin.\n"

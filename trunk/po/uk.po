@@ -1,0 +1,389 @@
+# Ukrainian translation of xfce4-dict-plugin.
+# Copyright (C) 2006-2007 Enrico Tröger
+# This file is distributed under the same license as the xfce4-dict-plugin package.
+#
+# Dmitry Nikitin <luckas_fb@mail.ru>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-dict-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
+"PO-Revision-Date: 2008-11-17 12:33+0200\n"
+"Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
+"Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+msgid "A plugin to query different dictionaries."
+msgstr "Плагін для для запиту різних словників."
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
+msgid "Dictionary"
+msgstr "Словник"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:346
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
+#: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
+msgid "Ready."
+msgstr "Готово."
+
+#: ../panel-plugin/xfce4-dict-plugin.c:412
+msgid "Look up a word"
+msgstr "Дивись вище слово"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:491
+msgid "Search term"
+msgstr "Ключове слово"
+
+#: ../src/xfce4-dict.c:50
+msgid "Search the given text using a Dict server(RFC 2229)"
+msgstr "Шукати введений текст використовуючи сервер Dict (RFC 2229)"
+
+#: ../src/xfce4-dict.c:51
+msgid "Search the given text using a web-based search engine"
+msgstr "Шукати введений текст використовуючи пошуковий рушій базований на WEB"
+
+#: ../src/xfce4-dict.c:52
+msgid "Check the given text with a spell checker"
+msgstr "Перевірити даний текст на орфографію"
+
+#: ../src/xfce4-dict.c:53
+msgid "Grab the focus on the text field in the panel"
+msgstr "Захоплювати фокус текстового поля в панелі"
+
+#: ../src/xfce4-dict.c:54
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr "Запустити автономну програму навіть якщо панель плагіну завантажена"
+
+#: ../src/xfce4-dict.c:55
+msgid "Grabs the PRIMARY selection content and uses it as search text"
+msgstr "Захопити вибраний ПЕРВИННИЙ зміст і використати його як текст для пошуку"
+
+#: ../src/xfce4-dict.c:56
+msgid "Show version information"
+msgstr "Показати інформацію про версію"
+
+#: ../src/xfce4-dict.c:129
+msgid "[TEXT]"
+msgstr "[ТЕКСТ]"
+
+#: ../src/xfce4-dict.c:143
+#, c-format
+msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
+msgstr "(зібрано на %s з GTK %d.%d.%d, GLib %d.%d.%d)"
+
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:647
+msgid "A client program to query different dictionaries."
+msgstr "Клієнтська програма для запиту різних словників."
+
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "Клієнт словника"
+
+#: ../lib/spell.c:83
+#, c-format
+msgid "%d suggestion found."
+msgid_plural "%d suggestions found."
+msgstr[0] "%d відповідності знайдено."
+msgstr[1] "%d відповідностей знайдено."
+msgstr[2] "%d відповідності(тей) знайдено."
+
+#: ../lib/spell.c:88
+#, c-format
+msgid "Suggestions for \"%s\":"
+msgstr "Відповідності для \"%s\":"
+
+#: ../lib/spell.c:101
+#, c-format
+msgid "\"%s\" is spelled correctly."
+msgstr "\"%s\" написано правильно."
+
+#: ../lib/spell.c:109
+#, c-format
+msgid "No suggestions could be found for \"%s\"."
+msgstr "Неможливо знайти відповідності для \"%s\"."
+
+#. translation hint:
+#. * Error while executing <spell command, e.g. "aspell"> (<error message>)
+#: ../lib/spell.c:138
+#, c-format
+msgid "Error while executing \"%s\" (%s)."
+msgstr "Помилка при виконанні \"%s\" (%s)."
+
+#: ../lib/spell.c:175
+msgid "Please set the spell check command in the preferences dialog."
+msgstr "Будь ласка, призначте команду для перевірки орфографії в діалогу властивостей."
+
+#: ../lib/spell.c:181 ../lib/common.c:202
+msgid "Invalid input."
+msgstr "Неправильний ввід."
+
+#: ../lib/spell.c:216
+#, c-format
+msgid "Process failed (%s)"
+msgstr "Помилка процесу (%s)"
+
+#: ../lib/common.c:168
+msgid "The search URL is empty. Please check your preferences."
+msgstr "Посилання на пошуковик відсутнє. Будь-ласка перевірте Ваші налаштування."
+
+#: ../lib/common.c:173
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "Переглядач Web не вдалось відкрити. Будь-ласка перевірте Ваші налаштування."
+
+#: ../lib/common.c:212
+msgid "Invalid non-UTF8 input."
+msgstr "Неправильний не-UTF8 ввід."
+
+#: ../lib/dictd.c:343 ../lib/dictd.c:633 ../lib/dictd.c:642 ../lib/dictd.c:724
+#: ../lib/dictd.c:733
+msgid "Could not connect to server."
+msgstr "Неможливо з'єднатися з сервером."
+
+#: ../lib/dictd.c:349
+msgid "Server not ready."
+msgstr "Сервер не готовий."
+
+#: ../lib/dictd.c:356
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Призначено неправильний словник. Будь-ласка перевірте Ваші налаштування."
+
+#: ../lib/dictd.c:364 ../lib/dictd.c:409 ../lib/dictd.c:755
+msgid "Unknown error while quering the server."
+msgstr "Невідома помилка при запиті сервера."
+
+#: ../lib/dictd.c:380
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Не знайдено входжень для \"%s\"."
+
+#: ../lib/dictd.c:390
+#, c-format
+msgid "Do you want to search \"%s\" on the Web using "
+msgstr "Ви бажаєте шукати \"%s\" у Web використовуючи "
+
+#: ../lib/dictd.c:414
+#, c-format
+msgid "%d definition found."
+msgid_plural "%d definitions found."
+msgstr[0] "%d відповідності знайдено."
+msgstr[1] "%d відповідностей знайдено."
+msgstr[2] "%d відповідності(тей) знайдено."
+
+#: ../lib/dictd.c:604
+#, c-format
+msgid "Querying %s..."
+msgstr "Запит %s..."
+
+#: ../lib/dictd.c:659
+msgid "An error occured while querying server information."
+msgstr "Отримано помилку при запиті сервера інформації."
+
+#: ../lib/dictd.c:670
+#, c-format
+msgid "Server Information for \"%s\""
+msgstr "Сервер інформації для \"%s\""
+
+#: ../lib/dictd.c:750
+msgid "The server doesn't offer any databases."
+msgstr "Сервер не підтримує жодних баз даних."
+
+#: ../lib/gui.c:415
+msgid "_File"
+msgstr "_Файл"
+
+#: ../lib/gui.c:431
+msgid "_Help"
+msgstr "_Довідка"
+
+#: ../lib/gui.c:525
+msgid "Search with:"
+msgstr "Шукати з:"
+
+#: ../lib/gui.c:529
+msgid "_Dict"
+msgstr "_Словник"
+
+#: ../lib/gui.c:535
+msgid "_Web"
+msgstr "_Веб"
+
+#: ../lib/gui.c:541
+msgid "_Spell Check"
+msgstr "_Перевірка орфографії"
+
+#: ../lib/gui.c:639
+msgid "Xfce4 Dictionary"
+msgstr "Словник Xfce4"
+
+#: ../lib/gui.c:648
+msgid "Copyright © 2006-2008 Enrico Tröger"
+msgstr "Права застережено © 2006-2008 Enrico Tröger"
+
+#: ../lib/gui.c:651
+msgid "translator-credits"
+msgstr "Dmitry Nikitin <luckas_fb@mai.ru>"
+
+#: ../lib/prefs.c:55
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Німецька <-> Англійська"
+
+#: ../lib/prefs.c:56
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Німецька <-> Французька"
+
+#: ../lib/prefs.c:57
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Німецька <-> Іспанська"
+
+#: ../lib/prefs.c:58
+msgid "dict.leo.org - German <-> Italian"
+msgstr "dict.leo.org - Німецька <-> Англійська"
+
+#: ../lib/prefs.c:59
+msgid "dict.leo.org - German <-> Chinese"
+msgstr "dict.leo.org - Німецька <-> Англійська"
+
+#: ../lib/prefs.c:60
+msgid "dist.cc - Dictionary"
+msgstr "dist.cc - Словник"
+
+#: ../lib/prefs.c:61
+msgid "Dictionary.com"
+msgstr "Dictionary.com"
+
+#: ../lib/prefs.c:62
+msgid "TheFreeDictionary.com"
+msgstr "TheFreeDictionary.com"
+
+#: ../lib/prefs.c:63
+msgid "Wikipedia, the free encyclopedia (EN)"
+msgstr "Вікіпедія, вільна енциклопедія (UK)"
+
+#: ../lib/prefs.c:64
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr "Вікшінарі, вільний словник (UK)"
+
+#: ../lib/prefs.c:65
+msgid "Merriam-Webster Online Dictionary"
+msgstr "Merriam-Webster інтерактивний словник"
+
+#: ../lib/prefs.c:66
+msgid "Clear"
+msgstr "Очистити"
+
+#: ../lib/prefs.c:101
+msgid "You have chosen an invalid dictionary."
+msgstr "Ви вибрали неправильний словник."
+
+#: ../lib/prefs.c:112
+msgid "You must set a valid search URL."
+msgstr "Вам потрібно призначити правильне посилання на пошуковик."
+
+#: ../lib/prefs.c:309
+msgid "General"
+msgstr "Основне"
+
+#: ../lib/prefs.c:311
+msgid "<b>Default search method:</b>"
+msgstr "<b>Типовий метод пошуку:</b>"
+
+#: ../lib/prefs.c:317 ../lib/prefs.c:454
+msgid "Dict"
+msgstr "Словник"
+
+#: ../lib/prefs.c:326 ../lib/prefs.c:575
+msgid "Web"
+msgstr "Веб"
+
+#: ../lib/prefs.c:335 ../lib/prefs.c:625
+msgid "Spell Check"
+msgstr "Перевірка орфографії"
+
+#: ../lib/prefs.c:344
+msgid "Last used method"
+msgstr "Останній використовуваний метод"
+
+#: ../lib/prefs.c:353
+msgid "<b>Colors:</b>"
+msgstr "<b>Кольори:</b>"
+
+#: ../lib/prefs.c:359
+msgid "Link Color:"
+msgstr "Колір посилання:"
+
+#: ../lib/prefs.c:360
+msgid "Phonetic Color:"
+msgstr "Колір фонетики:"
+
+#: ../lib/prefs.c:398
+msgid "<b>Panel Text Field:</b>"
+msgstr "<b>Панель текстового поля:</b>"
+
+#: ../lib/prefs.c:404
+msgid "Show text field in the panel"
+msgstr "Показувати текстове поле в панелі"
+
+#. panel entry size
+#: ../lib/prefs.c:411
+msgid "Text field size:"
+msgstr "Розмір текстового поля:"
+
+#. server address
+#: ../lib/prefs.c:457
+msgid "Server:"
+msgstr "Сервер:"
+
+#. server port
+#: ../lib/prefs.c:469
+msgid "Server Port:"
+msgstr "Порт сервера:"
+
+#. dictionary
+#: ../lib/prefs.c:477 ../lib/prefs.c:650
+msgid "Dictionary:"
+msgstr "Словник:"
+
+#: ../lib/prefs.c:481
+msgid "* (use all)"
+msgstr "* (використовувати все)"
+
+#: ../lib/prefs.c:483
+msgid "! (use all, stop after first match)"
+msgstr "! (використовувати все, зупинятись на першому збігові)"
+
+#: ../lib/prefs.c:577
+msgid "<b>Web search URL:</b>"
+msgstr "<b>Пошук Web посилань URL:</b>"
+
+#: ../lib/prefs.c:583
+msgid "URL:"
+msgstr "Посилання URL:"
+
+#: ../lib/prefs.c:603
+msgid ""
+"Enter an URL to a web site which offer translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Введіть URL для Web сайту, що надає послуги перекладу або словника. "
+"Використовуйте {слово} як макет для пошуку слова."
+
+#: ../lib/prefs.c:627
+msgid "Spell Check Program:"
+msgstr "Програма перевірки орфографіїl:"
+
+#: ../lib/prefs.c:644
+msgid ""
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
+"The icon shows whether the entered command exists.</i>"
+msgstr ""
+"<i>Програмою перевірки орфографії може бути'enchant', 'aspell', 'ispell' "
+"або будь які інші програми, які сумісні з командами ispell.\n"
+"Значок показує наявність введеної команди в системі.</i>"
+
