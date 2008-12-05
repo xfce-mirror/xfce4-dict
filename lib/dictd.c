@@ -222,6 +222,7 @@ static gboolean ignore_short_link(const gchar *str)
 	if (strcmp("f", str) == 0 ||
 		strcmp("m", str) == 0 ||
 		strcmp("n", str) == 0 ||
+		strcmp("vr", str) == 0 ||
 		strcmp("vt", str) == 0 ||
 		strcmp("pl", str) == 0)
 	{
