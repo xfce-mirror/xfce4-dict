@@ -3,6 +3,7 @@
  * When highlighting cross-references, ignore also {vr}.
  * Follow the 'Desktop Menu Specification' and change the category
    for the .desktop to 'Office'.
+ * New release: 0.5.2.
 
 
 2008-11-23  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
