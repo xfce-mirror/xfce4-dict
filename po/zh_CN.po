@@ -1,0 +1,231 @@
+# Chinese translations for xfce package.
+# Copyright (C) 2008 THE xfce'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce package.
+# Hunt Xu <huntxu@live.cn>", 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce 4-dict\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-07 16:16+0100\n"
+"PO-Revision-Date: 2008-12-06 04:59+0800\n"
+"Last-Translator: Hunt Xu <huntxu@live.cn>\n"
+"Language-Team: Chinese (simplified)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+msgid "A plugin to query different dictionaries."
+msgstr "查询不同词典的插件。"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2
+#: ../lib/gui.c:467
+#: ../lib/prefs.c:277
+msgid "Dictionary"
+msgstr "词典。"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:346
+#: ../panel-plugin/xfce4-dict-plugin.c:472
+#: ../src/xfce4-dict.c:201
+#: ../lib/spell.c:212
+#: ../lib/dictd.c:377
+#: ../lib/gui.c:267
+msgid "Ready."
+msgstr "就绪。"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:412
+msgid "Look up a word"
+msgstr "查找单词"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:443
+#: ../lib/gui.c:491
+msgid "Search term"
+msgstr "查找短语"
+
+#: ../src/xfce4-dict.c:50
+msgid "Search the given text using a Dict server(RFC 2229)"
+msgstr "使用词典服务器查找给定文本(RFC 2229)"
+
+#: ../src/xfce4-dict.c:51
+msgid "Search the given text using a web-based search engine"
+msgstr "使用网络搜索引擎查找给定文本"
+
+#: ../src/xfce4-dict.c:52
+msgid "Check the given text with a spell checker"
+msgstr "对给定文本使用拼写检查"
+
+#: ../src/xfce4-dict.c:53
+msgid "Grab the focus on the text field in the panel"
+msgstr "捕获在面板的文本框的焦点"
+
+#: ../src/xfce4-dict.c:54
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr "在面板启动时仍强制启动独立的程序"
+
+#: ../src/xfce4-dict.c:55
+msgid "Grabs the PRIMARY selection content and uses it as search text"
+msgstr "捕获之前选择的内容并作为搜索内容"
+
+#: ../src/xfce4-dict.c:56
+msgid "Show version information"
+msgstr "显示版本信息"
+
+#: ../src/xfce4-dict.c:129
+msgid "[TEXT]"
+msgstr "[内容]"
+
+#: ../src/xfce4-dict.c:143
+#, c-format
+msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
+msgstr "(于 %s 上编译，GTK 版本%d.%d.%d，GLib 版本%d.%d.%d)"
+
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:647
+msgid "A client program to query different dictionaries."
+msgstr "用于查询不同词典的客户端程序"
+
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "词典客户端"
+
+#: ../lib/spell.c:83
+#, c-format
+msgid "%d suggestion found."
+msgid_plural "%d suggestions found."
+msgstr[0] "找到 %d 条建议。"
+
+#: ../lib/spell.c:88
+#, c-format
+msgid "Suggestions for \"%s\":"
+msgstr "对 \"%s\"的拼写建议:"
+
+#: ../lib/spell.c:101
+#, c-format
+msgid "\"%s\" is spelled correctly."
+msgstr "\"%s\" 拼写正确。"
+
+#: ../lib/spell.c:109
+#, c-format
+msgid "No suggestions could be found for \"%s\"."
+msgstr "找不到对 \"%s\" 的拼写建议。"
+
+#. translation hint:
+#. * Error while executing <spell command, e.g. "aspell"> (<error message>)
+#: ../lib/spell.c:138
+#, c-format
+msgid "Error while executing \"%s\" (%s)."
+msgstr "执行 \"%s\" 时发生错误(%s)。"
+
+#: ../lib/spell.c:175
+msgid "Please set the spell check command in the preferences dialog."
+msgstr "请在首选项对话框中设定拼写检查命令。"
+
+#: ../lib/spell.c:181
+#: ../lib/common.c:202
+msgid "Invalid input."
+msgstr "无效输入。"
+
+#: ../lib/spell.c:216
+#, c-format
+msgid "Process failed (%s)"
+msgstr "执行失败(%s)。"
+
+#: ../lib/common.c:168
+msgid "The search URL is empty. Please check your preferences."
+msgstr "搜索的URL为空。请检查你的首选项。"
+
+#: ../lib/common.c:173
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "无法打开浏览器。请检查你的首选项。"
+
+#: ../lib/common.c:212
+msgid "Invalid non-UTF8 input."
+msgstr "非法的非UTF-8输入。"
+
+#: ../lib/dictd.c:343
+#: ../lib/dictd.c:633
+#: ../lib/dictd.c:642
+#: ../lib/dictd.c:724
+#: ../lib/dictd.c:733
+msgid "Could not connect to server."
+msgstr "无法连接至服务器。"
+
+#: ../lib/dictd.c:349
+msgid "Server not ready."
+msgstr "服务器未就绪。"
+
+#: ../lib/dictd.c:356
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "指定词典无效。请检查你的首选项。"
+
+#: ../lib/dictd.c:364
+#: ../lib/dictd.c:409
+#: ../lib/dictd.c:755
+msgid "Unknown error while quering the server."
+msgstr "在服务器上查询时发生未知错误。"
+
+#: ../lib/dictd.c:380
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "找不到与 \"%s\" 相匹配的条目。"
+
+#: ../lib/dictd.c:390
+#, c-format
+msgid "Do you want to search \"%s\" on the Web using "
+msgstr "您要在 Web 上查找 \"%s\"，使用"
+
+#: ../lib/dictd.c:414
+#, c-format
+msgid "%d definition found."
+msgid_plural "%d definitions found."
+msgstr[0] "找到 %d 个定义。"
+
+#: ../lib/dictd.c:604
+#, c-format
+msgid "Querying %s..."
+msgstr "正在查询 %s..."
+
+#: ../lib/dictd.c:659
+msgid "An error occured while querying server information."
+msgstr "查询服务器信息时发生错误。"
+
+#: ../lib/dictd.c:670
+#, c-format
+msgid "Server Information for \"%s\""
+msgstr "\"%s\"的服务器信息"
+
+#: ../lib/dictd.c:750
+msgid "The server doesn't offer any databases."
+msgstr "服务器不提供任何数据库。"
+
+#: ../lib/gui.c:415
+msgid "_File"
+msgstr "文件(_F)"
+
+#: ../lib/gui.c:431
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: ../lib/gui.c:525
+msgid "Search with:"
+msgstr "搜索使用："
+
+#: ../lib/gui.c:529
+msgid "_Dict"
+msgstr "词典(_D)"
+
+#: ../lib/gui.c:535
+msgid "_Web"
+msgstr "_Web"
+
+#: ../lib/gui.c:541
+msgid "_Spell Check"
+msgstr "拼写检查(_S)"
+
+#: ../lib/gui.c:639
+msgid "Xfce4 Dictionary"
+msgstr "Xfce4 词典"
+
