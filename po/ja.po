@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-07 16:16+0100\n"
-"PO-Revision-Date: 2008-11-09 14:11+0900\n"
-"Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
+"POT-Creation-Date: 2008-12-09 15:28+0900\n"
+"PO-Revision-Date: 2008-12-10 17:44+0900\n"
+"Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr "別の辞書を照会するためのプラグインです。"
+msgstr "いろいろな辞書を照会するプラグインです。"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:467
+#: ../lib/gui.c:528
 #: ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr "辞書"
@@ -31,62 +31,69 @@ msgstr "辞書"
 #: ../panel-plugin/xfce4-dict-plugin.c:346
 #: ../panel-plugin/xfce4-dict-plugin.c:472
 #: ../src/xfce4-dict.c:201
-#: ../lib/spell.c:212
-#: ../lib/dictd.c:377
-#: ../lib/gui.c:267
+#: ../lib/spell.c:211
+#: ../lib/dictd.c:413
+#: ../lib/gui.c:328
 msgid "Ready."
 msgstr "準備が完了しました。"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
-msgstr "単語を調べる"
+msgstr "単語を調べます"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:443
-#: ../lib/gui.c:491
+#: ../lib/gui.c:552
 msgid "Search term"
-msgstr "検索用語"
+msgstr "検索したい言葉を入力してください"
 
+# CLI --help
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "指定されたテキストを Dict サーバー (RFC 2229) で検索する"
 
+# CLI --help
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a web-based search engine"
 msgstr "指定されたテキストを Web ベースの検索エンジンで検索する"
 
+# CLI --help
 #: ../src/xfce4-dict.c:52
 msgid "Check the given text with a spell checker"
 msgstr "指定されたテキストをスペルチェッカーでチェックする"
 
+# CLI --help
 #: ../src/xfce4-dict.c:53
 msgid "Grab the focus on the text field in the panel"
 msgstr "パネル内のテキストフィールドにフォーカスを取得する"
 
+# CLI --help
 #: ../src/xfce4-dict.c:54
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "パネルプラグインが読み込まれている場合でも、スタンドアロンアプリケーションを起動する"
 
+# CLI --help
 #: ../src/xfce4-dict.c:55
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "現在選択されている内容を取得し、検索テキストとして使用する"
 
+# CLI --help
 #: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "バージョン情報を表示する"
 
 #: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
-msgstr "[TEXT"
+msgstr "[TEXT]"
 
-#: ../src/xfce4-dict.c:143
+#: ../src/xfce4-dict.c:145
 #, c-format
-msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-msgstr "(GTK %2$d.%3$d.%4$d、GLib %5$d.%6$d.%7$d により %1$s にビルド)"
+msgid "Please report bugs to <%s>."
+msgstr "バグは <%s> へ報告してください。"
 
 #: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:647
+#: ../lib/gui.c:719
 msgid "A client program to query different dictionaries."
-msgstr "別の辞書を照会するためのクライアントプログラムです。"
+msgstr "いろいろな辞書を照会できるクライアントプログラムです。"
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
@@ -123,14 +130,14 @@ msgstr "\"%s\" の実行中にエラーが発生しました (%s)。"
 
 #: ../lib/spell.c:175
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "環境設定ダイアログで aspell コマンドを設定してください。"
+msgstr "設定ダイアログで aspell コマンドを設定してください。"
 
 #: ../lib/spell.c:181
 #: ../lib/common.c:202
 msgid "Invalid input."
 msgstr "不正な入力です。"
 
-#: ../lib/spell.c:216
+#: ../lib/spell.c:215
 #, c-format
 msgid "Process failed (%s)"
 msgstr "処理失敗 (%s)"
@@ -147,98 +154,101 @@ msgstr "ブラウザを開くことができませんでした。環境設定を
 msgid "Invalid non-UTF8 input."
 msgstr "不正な non-UTF8 入力です。"
 
-#: ../lib/dictd.c:343
-#: ../lib/dictd.c:633
-#: ../lib/dictd.c:642
-#: ../lib/dictd.c:724
-#: ../lib/dictd.c:733
+#: ../lib/dictd.c:379
+#: ../lib/dictd.c:673
+#: ../lib/dictd.c:682
+#: ../lib/dictd.c:764
+#: ../lib/dictd.c:773
 msgid "Could not connect to server."
 msgstr "サーバーに接続できませんでした。"
 
-#: ../lib/dictd.c:349
+#: ../lib/dictd.c:385
 msgid "Server not ready."
 msgstr "サーバーが準備できていません。"
 
-#: ../lib/dictd.c:356
+#: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "無効な辞書が指定されています。環境設定を確認してください。"
 
-#: ../lib/dictd.c:364
-#: ../lib/dictd.c:409
-#: ../lib/dictd.c:755
+#: ../lib/dictd.c:400
+#: ../lib/dictd.c:445
+#: ../lib/dictd.c:795
 msgid "Unknown error while quering the server."
 msgstr "サーバへの問い合わせ中の不明なエラーです。"
 
-#: ../lib/dictd.c:380
+#: ../lib/dictd.c:416
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "\"%s\" に一致するものは見つかりませんでした。"
 
-#: ../lib/dictd.c:390
+#: ../lib/dictd.c:426
 #, c-format
 msgid "Do you want to search \"%s\" on the Web using "
-msgstr "ウェブを使用するのときに \"%s\" を捜しますか?"
+msgstr "ウェブを使用するときに \"%s\" を捜しますか?"
 
-#: ../lib/dictd.c:414
+#: ../lib/dictd.c:450
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d 個の定義が見つかりました。"
 msgstr[1] "%d 個の定義が見つかりました。"
 
-#: ../lib/dictd.c:604
+#: ../lib/dictd.c:644
 #, c-format
 msgid "Querying %s..."
-msgstr "%s を問い合わせ中..."
+msgstr "%s に問い合わせています..."
 
-#: ../lib/dictd.c:659
+#: ../lib/dictd.c:699
 msgid "An error occured while querying server information."
-msgstr "エラーがサーバへの問い合わせ中に発生しました。"
+msgstr "サーバへの問い合わせ中にエラーが発生しました。"
 
-#: ../lib/dictd.c:670
+#: ../lib/dictd.c:710
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "\"%s\" の サーバ情報"
 
-#: ../lib/dictd.c:750
+#: ../lib/dictd.c:790
 msgid "The server doesn't offer any databases."
-msgstr "ファイル(_F)"
+msgstr "サーバにはデータベースが用意されていません。"
 
-#: ../lib/gui.c:415
+#: ../lib/gui.c:476
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: ../lib/gui.c:431
+#: ../lib/gui.c:492
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../lib/gui.c:525
+#: ../lib/gui.c:586
 msgid "Search with:"
 msgstr "検索方法:"
 
-#: ../lib/gui.c:529
+#: ../lib/gui.c:590
 msgid "_Dict"
 msgstr "辞書(_D)"
 
-#: ../lib/gui.c:535
+#: ../lib/gui.c:596
 msgid "_Web"
 msgstr "Web(_W)"
 
-#: ../lib/gui.c:541
+#: ../lib/gui.c:602
 msgid "_Spell Check"
 msgstr "スペルチェック(_S)"
 
-#: ../lib/gui.c:639
+#: ../lib/gui.c:711
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Dictionary"
 
-#: ../lib/gui.c:648
+#: ../lib/gui.c:720
 msgid "Copyright © 2006-2008 Enrico Tröger"
 msgstr "Copyright © 2006-2008 Enrico Tröger"
 
-#: ../lib/gui.c:651
+#: ../lib/gui.c:723
 msgid "translator-credits"
-msgstr "Yuko Iwamatsu, Nobuhiro Iwamatsu"
+msgstr ""
+"Yuko Iwamatsu <nigauri@gmail>\n"
+"Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
+"Masato Hashimoto <cabezon.hashimoto@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -278,7 +288,7 @@ msgstr "Wikipedia, フリー百科事典 (英語)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr "Wiktionary、フリー辞書 (英語)"
+msgstr "Wiktionary, フリー辞書 (英語)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
@@ -290,11 +300,11 @@ msgstr "クリア"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr "無効の辞書を選びました。"
+msgstr "無効な辞書が選ばれました。"
 
 #: ../lib/prefs.c:112
 msgid "You must set a valid search URL."
-msgstr "有効な検索URLを設定しなければなりません。"
+msgstr "有効な検索 URL を設定しなければなりません。"
 
 #: ../lib/prefs.c:309
 msgid "General"
@@ -382,7 +392,7 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:603
 msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "翻訳または辞書サービスを提供する Web サイトへの URL を入力します。検索する単語のプレースホルダとして {単語} を使用してください。"
+msgstr "翻訳または辞書サービスを提供する Web サイトへの URL を入力します。検索する単語のプレースホルダとして {word} を使用してください。"
 
 #: ../lib/prefs.c:627
 msgid "Spell Check Program:"
