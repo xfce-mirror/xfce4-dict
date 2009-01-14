@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright 2006-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *  Copyright 2006-2009 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -569,7 +569,7 @@ static gchar *get_answer(DictData *dd, gint fd)
 }
 
 
-static void ask_server(DictData *dd)
+static gpointer ask_server(DictData *dd)
 {
 	gint fd, i;
 	static gchar cmd[BUF_SIZE];
@@ -579,7 +579,7 @@ static void ask_server(DictData *dd)
 		dd->query_status = NO_CONNECTION;
 		g_idle_add((GSourceFunc) process_server_response, dd);
 		g_thread_exit(NULL);
-		return;
+		return NULL;
 	}
 	dd->query_is_running = TRUE;
 	dd->query_status = NO_CONNECTION;
@@ -608,6 +608,7 @@ static void ask_server(DictData *dd)
 	g_idle_add((GSourceFunc) process_server_response, dd);
 
 	g_thread_exit(NULL);
+	return NULL;
 }
 
 

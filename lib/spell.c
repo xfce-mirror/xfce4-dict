@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright 2006-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *  Copyright 2006-2009 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -281,7 +281,7 @@ static gchar **get_enchant_dicts(const gchar *str)
 
 	/* sort the dictionary list */
 	g_ptr_array_sort(dicts, sort_dicts);
-	
+
 	list = g_new0(gchar *, dicts->len + 1);
 	for (i = 0; i < dicts->len; i++)
 	{
