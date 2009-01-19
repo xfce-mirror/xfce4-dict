@@ -74,6 +74,7 @@ typedef struct
 	gchar *spell_bin;
 	gchar *spell_dictionary;
 
+	gboolean verbose_mode;
 	gboolean is_plugin;	/* specify whether the panel plugin loaded or not */
 
 	/* status values */

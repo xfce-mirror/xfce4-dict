@@ -44,6 +44,7 @@ static gboolean focus_panel_entry = FALSE;
 static gboolean mode_dict = FALSE;
 static gboolean mode_web = FALSE;
 static gboolean mode_spell = FALSE;
+static gboolean verbose_mode = FALSE;
 
 static GOptionEntry cli_options[] =
 {
@@ -53,6 +54,7 @@ static GOptionEntry cli_options[] =
 	{ "text-field", 't', 0, G_OPTION_ARG_NONE, &focus_panel_entry, N_("Grab the focus on the text field in the panel"), NULL },
 	{ "ignore-plugin", 'i', 0, G_OPTION_ARG_NONE, &ignore_plugin, N_("Start stand-alone application even if the panel plugin is loaded"), NULL },
 	{ "clipboard", 'c', 0, G_OPTION_ARG_NONE, &use_clipboard, N_("Grabs the PRIMARY selection content and uses it as search text"), NULL },
+	{ "verbose", 'v', 0, G_OPTION_ARG_NONE, &verbose_mode, N_("Be verbose"), NULL },
 	{ "version", 'V', 0, G_OPTION_ARG_NONE, &show_version, N_("Show version information"), NULL },
 	{ NULL, 0, 0, 0, NULL, NULL, NULL }
 };
@@ -175,6 +177,7 @@ gint main(gint argc, gchar *argv[])
 
 	dd = dict_create_dictdata();
 	dd->is_plugin = FALSE;
+	dd->verbose_mode = verbose_mode;
 
 	g_thread_init(NULL);
 

@@ -3,6 +3,9 @@
  * Improve some strings, thanks to Jérôme Guelfucci for the suggestions.
  * Use less spacing for spell checker results and don't display any
    failed searches if used as fallback for a dictionary search.
+ * Properly escape URIs when using Web based search
+   (works only with GLib >= 2.16).
+ * Add '--verbose' command line option for the stand-alone application.
 
 
 2008-12-05  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

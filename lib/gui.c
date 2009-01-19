@@ -288,6 +288,8 @@ void dict_gui_status_add(DictData *dd, const gchar *format, ...)
 
 	gtk_statusbar_pop(GTK_STATUSBAR(dd->statusbar), 1);
 	gtk_statusbar_push(GTK_STATUSBAR(dd->statusbar), 1, string);
+	if (dd->verbose_mode)
+		g_message("%s", string);
 }
 
 

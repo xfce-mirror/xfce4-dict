@@ -162,7 +162,18 @@ gboolean dict_start_web_query(DictData *dd, const gchar *word)
 	gboolean success = TRUE;
 	gchar *uri;
 
+#if GLIB_CHECK_VERSION(2, 16, 0)
+	gchar *tmp = str_replace(g_strdup(dd->web_url), "{word}", dd->searched_word);
+	uri = g_uri_escape_string(tmp,
+			G_URI_RESERVED_CHARS_GENERIC_DELIMITERS G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS,
+			FALSE);
+	if (uri != NULL)
+		g_free(tmp);
+	else
+		uri = tmp;
+#else
 	uri = str_replace(g_strdup(dd->web_url), "{word}", dd->searched_word);
+#endif
 	if (! NZV(uri))
 	{
 		xfce_err(_("The search URL is empty. Please check your preferences."));
