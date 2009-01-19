@@ -210,7 +210,7 @@ void dict_search_word(DictData *dd, const gchar *word)
 	/* sanity checks */
 	if (! NZV(word))
 	{
-		dict_gui_status_add(dd, _("Invalid input."));
+		dict_gui_status_add(dd, _("Invalid input"));
 		return;
 	}
 
@@ -220,7 +220,7 @@ void dict_search_word(DictData *dd, const gchar *word)
 		dd->searched_word = g_locale_to_utf8(word, -1, NULL, NULL, NULL);
 		if (dd->searched_word == NULL || ! g_utf8_validate(dd->searched_word, -1, NULL))
 		{
-			dict_gui_status_add(dd, _("Invalid non-UTF8 input."));
+			dict_gui_status_add(dd, _("Invalid non-UTF8 input"));
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
 			dict_gui_set_panel_entry_text(dd, "");
 			return;

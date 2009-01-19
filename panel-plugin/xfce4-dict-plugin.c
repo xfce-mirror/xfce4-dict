@@ -343,7 +343,7 @@ static void entry_icon_pressed_cb(SexyIconEntry *entry, gint pos, gint button, D
 		dict_gui_clear_text_buffer(dpd->dd);
 		gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), "");
 		dict_gui_set_panel_entry_text(dpd->dd, "");
-		dict_gui_status_add(dpd->dd, _("Ready."));
+		dict_gui_status_add(dpd->dd, _("Ready"));
 	}
 }
 
@@ -469,6 +469,6 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->panel_button, "drag-data-received", G_CALLBACK(dict_plugin_drag_data_received), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_plugin_drag_data_received), dpd);
 
-	dict_gui_status_add(dpd->dd, _("Ready."));
+	dict_gui_status_add(dpd->dd, _("Ready"));
 }
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(dict_plugin_construct);

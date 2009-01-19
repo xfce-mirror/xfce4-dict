@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-07 16:16+0100\n"
+"POT-Creation-Date: 2009-01-19 19:35+0100\n"
 "PO-Revision-Date: 2007-11-16 22:02+0300\n"
 "Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
 "Language-Team: Latvian <rprieditis@inbox.lv>\n"
@@ -21,64 +21,69 @@ msgid "A plugin to query different dictionaries."
 msgstr "Spraudnis Dict serveru vaicāšanai."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:467 ../lib/prefs.c:277
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:531 ../lib/prefs.c:277
 #, fuzzy
 msgid "Dictionary"
 msgstr "Vārdnīca :"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:201
-#: ../lib/spell.c:212 ../lib/dictd.c:377 ../lib/gui.c:267
-msgid "Ready."
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../lib/spell.c:215 ../lib/gui.c:331
+#, fuzzy
+msgid "Ready"
 msgstr "Gatavs."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
 msgstr "Meklēt vārdu"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:491
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:555
 msgid "Search term"
 msgstr ""
 
-#: ../src/xfce4-dict.c:50
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr ""
 
-#: ../src/xfce4-dict.c:51
+#: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
 msgstr ""
 
-#: ../src/xfce4-dict.c:52
+#: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
 msgstr ""
 
-#: ../src/xfce4-dict.c:53
+#: ../src/xfce4-dict.c:54
 #, fuzzy
 msgid "Grab the focus on the text field in the panel"
 msgstr "Rādit teksta lauku panelī."
 
-#: ../src/xfce4-dict.c:54
+#: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr ""
 
-#: ../src/xfce4-dict.c:55
+#: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr ""
 
-#: ../src/xfce4-dict.c:56
+#: ../src/xfce4-dict.c:57
+msgid "Be verbose"
+msgstr ""
+
+#: ../src/xfce4-dict.c:58
 msgid "Show version information"
 msgstr ""
 
-#: ../src/xfce4-dict.c:129
+#: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
 msgstr ""
 
-#: ../src/xfce4-dict.c:143
+#: ../src/xfce4-dict.c:147
 #, c-format
-msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
+msgid "Please report bugs to <%s>."
 msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:647
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
 msgstr ""
 
@@ -87,150 +92,155 @@ msgstr ""
 msgid "Dictionary Client"
 msgstr "Vārdnīcu spraudnis"
 
-#: ../lib/spell.c:83
+#: ../lib/spell.c:85
 #, fuzzy, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
 msgstr[0] "%d definīcija(as) atrasta(as)."
 msgstr[1] "%d definīcija(as) atrasta(as)."
 
-#: ../lib/spell.c:88
+#: ../lib/spell.c:90
 #, c-format
 msgid "Suggestions for \"%s\":"
 msgstr ""
 
-#: ../lib/spell.c:101
+#: ../lib/spell.c:103
 #, c-format
 msgid "\"%s\" is spelled correctly."
 msgstr ""
 
-#: ../lib/spell.c:109
+#: ../lib/spell.c:111
 #, fuzzy, c-format
 msgid "No suggestions could be found for \"%s\"."
 msgstr "Nekas netika atrasts uz \"%s\""
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:138
+#: ../lib/spell.c:140
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr ""
 
-#: ../lib/spell.c:175
+#: ../lib/spell.c:177
 msgid "Please set the spell check command in the preferences dialog."
 msgstr ""
 
-#: ../lib/spell.c:181 ../lib/common.c:202
-msgid "Invalid input."
+#: ../lib/spell.c:183 ../lib/common.c:213
+#, fuzzy
+msgid "Invalid input"
 msgstr "Nederīgs ievads"
 
-#: ../lib/spell.c:216
+#: ../lib/spell.c:219
 #, c-format
 msgid "Process failed (%s)"
 msgstr ""
 
-#: ../lib/common.c:168
+#: ../lib/common.c:179
 #, fuzzy
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Pārlūks nav atverams. Lūdzu pārbaudiet uzstādījumus."
 
-#: ../lib/common.c:173
+#: ../lib/common.c:184
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Pārlūks nav atverams. Lūdzu pārbaudiet uzstādījumus."
 
-#: ../lib/common.c:212
-msgid "Invalid non-UTF8 input."
+#: ../lib/common.c:223
+#, fuzzy
+msgid "Invalid non-UTF8 input"
 msgstr "Nederīgs ne-UTF8 ievads."
 
-#: ../lib/dictd.c:343 ../lib/dictd.c:633 ../lib/dictd.c:642 ../lib/dictd.c:724
-#: ../lib/dictd.c:733
+#: ../lib/dictd.c:379 ../lib/dictd.c:674 ../lib/dictd.c:683 ../lib/dictd.c:765
+#: ../lib/dictd.c:774
 msgid "Could not connect to server."
 msgstr "Nevarēju savienoties ar serveri"
 
-#: ../lib/dictd.c:349
-msgid "Server not ready."
+#: ../lib/dictd.c:385
+#, fuzzy
+msgid "The server is not ready."
 msgstr "Serveris nav gatavs."
 
-#: ../lib/dictd.c:356
+#: ../lib/dictd.c:392
 #, fuzzy
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Pārlūks nav atverams. Lūdzu pārbaudiet uzstādījumus."
 
-#: ../lib/dictd.c:364 ../lib/dictd.c:409 ../lib/dictd.c:755
+#: ../lib/dictd.c:400 ../lib/dictd.c:445 ../lib/dictd.c:796
 msgid "Unknown error while quering the server."
 msgstr "Nezināma kļūda vaicājot serveri."
 
-#: ../lib/dictd.c:380
+#: ../lib/dictd.c:415
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Nekas netika atrasts uz \"%s\""
 
-#: ../lib/dictd.c:390
+#. for translators: the first wildcard is the search term, the second wildcard
+#. * is the name of the preferred web search engine
+#: ../lib/dictd.c:429
 #, c-format
-msgid "Do you want to search \"%s\" on the Web using "
+msgid "Search \"%s\" using \"%s\""
 msgstr ""
 
-#: ../lib/dictd.c:414
+#: ../lib/dictd.c:450
 #, fuzzy, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d definīcija(as) atrasta(as)."
 msgstr[1] "%d definīcija(as) atrasta(as)."
 
-#: ../lib/dictd.c:604
+#: ../lib/dictd.c:645
 #, fuzzy, c-format
 msgid "Querying %s..."
 msgstr "Vaicāju serverim %s..."
 
-#: ../lib/dictd.c:659
+#: ../lib/dictd.c:700
 #, fuzzy
 msgid "An error occured while querying server information."
 msgstr "Nezināma kļūda vaicājot serveri."
 
-#: ../lib/dictd.c:670
+#: ../lib/dictd.c:711
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr ""
 
-#: ../lib/dictd.c:750
+#: ../lib/dictd.c:791
 msgid "The server doesn't offer any databases."
 msgstr "Serveris nepiedāvā nevienu datubāzi."
 
-#: ../lib/gui.c:415
+#: ../lib/gui.c:479
 msgid "_File"
 msgstr ""
 
-#: ../lib/gui.c:431
+#: ../lib/gui.c:495
 msgid "_Help"
 msgstr ""
 
-#: ../lib/gui.c:525
+#: ../lib/gui.c:589
 msgid "Search with:"
 msgstr ""
 
-#: ../lib/gui.c:529
+#: ../lib/gui.c:593
 #, fuzzy
-msgid "_Dict"
-msgstr "Vārdnīca"
+msgid "_Dictionary Server"
+msgstr "Vārdnīca :"
 
-#: ../lib/gui.c:535
-msgid "_Web"
+#: ../lib/gui.c:599
+msgid "_Web Service"
 msgstr ""
 
-#: ../lib/gui.c:541
-msgid "_Spell Check"
+#: ../lib/gui.c:605
+msgid "_Spell Checker"
 msgstr ""
 
-#: ../lib/gui.c:639
+#: ../lib/gui.c:718
 #, fuzzy
 msgid "Xfce4 Dictionary"
 msgstr "Vārdnīca :"
 
-#: ../lib/gui.c:648
-msgid "Copyright © 2006-2008 Enrico Tröger"
+#: ../lib/gui.c:727
+msgid "Copyright © 2006-2009 Enrico Tröger"
 msgstr ""
 
-#: ../lib/gui.c:651
+#: ../lib/gui.c:730
 msgid "translator-credits"
 msgstr ""
 
@@ -305,15 +315,16 @@ msgid "<b>Default search method:</b>"
 msgstr ""
 
 #: ../lib/prefs.c:317 ../lib/prefs.c:454
-msgid "Dict"
-msgstr "Vārdnīca"
+#, fuzzy
+msgid "Dictionary Server"
+msgstr "Vārdnīca :"
 
 #: ../lib/prefs.c:326 ../lib/prefs.c:575
-msgid "Web"
+msgid "Web Service"
 msgstr ""
 
 #: ../lib/prefs.c:335 ../lib/prefs.c:625
-msgid "Spell Check"
+msgid "Spell Checker"
 msgstr ""
 
 #: ../lib/prefs.c:344
@@ -399,6 +410,13 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+
+#, fuzzy
+#~ msgid "_Dict"
+#~ msgstr "Vārdnīca"
+
+#~ msgid "Dict"
+#~ msgstr "Vārdnīca"
 
 #, fuzzy
 #~ msgid "Xfce4 Dictionary Preferences"

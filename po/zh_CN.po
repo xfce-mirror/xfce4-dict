@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-07 16:16+0100\n"
+"POT-Creation-Date: 2009-01-19 19:35+0100\n"
 "PO-Revision-Date: 2008-12-06 04:59+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (simplified)\n"
@@ -21,69 +21,67 @@ msgid "A plugin to query different dictionaries."
 msgstr "查询不同词典的插件。"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:467
-#: ../lib/prefs.c:277
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:531 ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr "词典。"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472
-#: ../src/xfce4-dict.c:201
-#: ../lib/spell.c:212
-#: ../lib/dictd.c:377
-#: ../lib/gui.c:267
-msgid "Ready."
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../lib/spell.c:215 ../lib/gui.c:331
+#, fuzzy
+msgid "Ready"
 msgstr "就绪。"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
 msgstr "查找单词"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443
-#: ../lib/gui.c:491
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:555
 msgid "Search term"
 msgstr "查找短语"
 
-#: ../src/xfce4-dict.c:50
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "使用词典服务器查找给定文本(RFC 2229)"
 
-#: ../src/xfce4-dict.c:51
+#: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
 msgstr "使用网络搜索引擎查找给定文本"
 
-#: ../src/xfce4-dict.c:52
+#: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
 msgstr "对给定文本使用拼写检查"
 
-#: ../src/xfce4-dict.c:53
+#: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
 msgstr "捕获在面板的文本框的焦点"
 
-#: ../src/xfce4-dict.c:54
+#: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "在面板启动时仍强制启动独立的程序"
 
-#: ../src/xfce4-dict.c:55
+#: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "捕获之前选择的内容并作为搜索内容"
 
-#: ../src/xfce4-dict.c:56
+#: ../src/xfce4-dict.c:57
+msgid "Be verbose"
+msgstr ""
+
+#: ../src/xfce4-dict.c:58
 msgid "Show version information"
 msgstr "显示版本信息"
 
-#: ../src/xfce4-dict.c:129
+#: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
 msgstr "[内容]"
 
-#: ../src/xfce4-dict.c:143
+#: ../src/xfce4-dict.c:147
 #, c-format
-msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-msgstr "(于 %s 上编译，GTK 版本%d.%d.%d，GLib 版本%d.%d.%d)"
+msgid "Please report bugs to <%s>."
+msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:647
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
 msgstr "用于查询不同词典的客户端程序"
 
@@ -91,141 +89,323 @@ msgstr "用于查询不同词典的客户端程序"
 msgid "Dictionary Client"
 msgstr "词典客户端"
 
-#: ../lib/spell.c:83
+#: ../lib/spell.c:85
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
 msgstr[0] "找到 %d 条建议。"
 
-#: ../lib/spell.c:88
+#: ../lib/spell.c:90
 #, c-format
 msgid "Suggestions for \"%s\":"
 msgstr "对 \"%s\"的拼写建议:"
 
-#: ../lib/spell.c:101
+#: ../lib/spell.c:103
 #, c-format
 msgid "\"%s\" is spelled correctly."
 msgstr "\"%s\" 拼写正确。"
 
-#: ../lib/spell.c:109
+#: ../lib/spell.c:111
 #, c-format
 msgid "No suggestions could be found for \"%s\"."
 msgstr "找不到对 \"%s\" 的拼写建议。"
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:138
+#: ../lib/spell.c:140
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "执行 \"%s\" 时发生错误(%s)。"
 
-#: ../lib/spell.c:175
+#: ../lib/spell.c:177
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "请在首选项对话框中设定拼写检查命令。"
 
-#: ../lib/spell.c:181
-#: ../lib/common.c:202
-msgid "Invalid input."
+#: ../lib/spell.c:183 ../lib/common.c:213
+#, fuzzy
+msgid "Invalid input"
 msgstr "无效输入。"
 
-#: ../lib/spell.c:216
+#: ../lib/spell.c:219
 #, c-format
 msgid "Process failed (%s)"
 msgstr "执行失败(%s)。"
 
-#: ../lib/common.c:168
+#: ../lib/common.c:179
 msgid "The search URL is empty. Please check your preferences."
 msgstr "搜索的URL为空。请检查你的首选项。"
 
-#: ../lib/common.c:173
+#: ../lib/common.c:184
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "无法打开浏览器。请检查你的首选项。"
 
-#: ../lib/common.c:212
-msgid "Invalid non-UTF8 input."
+#: ../lib/common.c:223
+#, fuzzy
+msgid "Invalid non-UTF8 input"
 msgstr "非法的非UTF-8输入。"
 
-#: ../lib/dictd.c:343
-#: ../lib/dictd.c:633
-#: ../lib/dictd.c:642
-#: ../lib/dictd.c:724
-#: ../lib/dictd.c:733
+#: ../lib/dictd.c:379 ../lib/dictd.c:674 ../lib/dictd.c:683 ../lib/dictd.c:765
+#: ../lib/dictd.c:774
 msgid "Could not connect to server."
 msgstr "无法连接至服务器。"
 
-#: ../lib/dictd.c:349
-msgid "Server not ready."
+#: ../lib/dictd.c:385
+#, fuzzy
+msgid "The server is not ready."
 msgstr "服务器未就绪。"
 
-#: ../lib/dictd.c:356
+#: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "指定词典无效。请检查你的首选项。"
 
-#: ../lib/dictd.c:364
-#: ../lib/dictd.c:409
-#: ../lib/dictd.c:755
+#: ../lib/dictd.c:400 ../lib/dictd.c:445 ../lib/dictd.c:796
 msgid "Unknown error while quering the server."
 msgstr "在服务器上查询时发生未知错误。"
 
-#: ../lib/dictd.c:380
+#: ../lib/dictd.c:415
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "找不到与 \"%s\" 相匹配的条目。"
 
-#: ../lib/dictd.c:390
+#. for translators: the first wildcard is the search term, the second wildcard
+#. * is the name of the preferred web search engine
+#: ../lib/dictd.c:429
 #, c-format
-msgid "Do you want to search \"%s\" on the Web using "
-msgstr "您要在 Web 上查找 \"%s\"，使用"
+msgid "Search \"%s\" using \"%s\""
+msgstr ""
 
-#: ../lib/dictd.c:414
+#: ../lib/dictd.c:450
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "找到 %d 个定义。"
 
-#: ../lib/dictd.c:604
+#: ../lib/dictd.c:645
 #, c-format
 msgid "Querying %s..."
 msgstr "正在查询 %s..."
 
-#: ../lib/dictd.c:659
+#: ../lib/dictd.c:700
 msgid "An error occured while querying server information."
 msgstr "查询服务器信息时发生错误。"
 
-#: ../lib/dictd.c:670
+#: ../lib/dictd.c:711
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "\"%s\"的服务器信息"
 
-#: ../lib/dictd.c:750
+#: ../lib/dictd.c:791
 msgid "The server doesn't offer any databases."
 msgstr "服务器不提供任何数据库。"
 
-#: ../lib/gui.c:415
+#: ../lib/gui.c:479
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../lib/gui.c:431
+#: ../lib/gui.c:495
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../lib/gui.c:525
+#: ../lib/gui.c:589
 msgid "Search with:"
 msgstr "搜索使用："
 
-#: ../lib/gui.c:529
-msgid "_Dict"
-msgstr "词典(_D)"
+#: ../lib/gui.c:593
+#, fuzzy
+msgid "_Dictionary Server"
+msgstr "词典。"
 
-#: ../lib/gui.c:535
-msgid "_Web"
-msgstr "_Web"
+#: ../lib/gui.c:599
+msgid "_Web Service"
+msgstr ""
 
-#: ../lib/gui.c:541
-msgid "_Spell Check"
+#: ../lib/gui.c:605
+#, fuzzy
+msgid "_Spell Checker"
 msgstr "拼写检查(_S)"
 
-#: ../lib/gui.c:639
+#: ../lib/gui.c:718
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 词典"
 
+#: ../lib/gui.c:727
+msgid "Copyright © 2006-2009 Enrico Tröger"
+msgstr ""
+
+#: ../lib/gui.c:730
+msgid "translator-credits"
+msgstr ""
+
+#: ../lib/prefs.c:55
+msgid "dict.leo.org - German <-> English"
+msgstr ""
+
+#: ../lib/prefs.c:56
+msgid "dict.leo.org - German <-> French"
+msgstr ""
+
+#: ../lib/prefs.c:57
+msgid "dict.leo.org - German <-> Spanish"
+msgstr ""
+
+#: ../lib/prefs.c:58
+msgid "dict.leo.org - German <-> Italian"
+msgstr ""
+
+#: ../lib/prefs.c:59
+msgid "dict.leo.org - German <-> Chinese"
+msgstr ""
+
+#: ../lib/prefs.c:60
+#, fuzzy
+msgid "dist.cc - Dictionary"
+msgstr "词典。"
+
+#: ../lib/prefs.c:61
+#, fuzzy
+msgid "Dictionary.com"
+msgstr "词典。"
+
+#: ../lib/prefs.c:62
+#, fuzzy
+msgid "TheFreeDictionary.com"
+msgstr "词典。"
+
+#: ../lib/prefs.c:63
+msgid "Wikipedia, the free encyclopedia (EN)"
+msgstr ""
+
+#: ../lib/prefs.c:64
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr ""
+
+#: ../lib/prefs.c:65
+msgid "Merriam-Webster Online Dictionary"
+msgstr ""
+
+#: ../lib/prefs.c:66
+msgid "Clear"
+msgstr ""
+
+#: ../lib/prefs.c:101
+msgid "You have chosen an invalid dictionary."
+msgstr ""
+
+#: ../lib/prefs.c:112
+msgid "You must set a valid search URL."
+msgstr ""
+
+#: ../lib/prefs.c:309
+msgid "General"
+msgstr ""
+
+#: ../lib/prefs.c:311
+msgid "<b>Default search method:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:317 ../lib/prefs.c:454
+#, fuzzy
+msgid "Dictionary Server"
+msgstr "词典。"
+
+#: ../lib/prefs.c:326 ../lib/prefs.c:575
+msgid "Web Service"
+msgstr ""
+
+#: ../lib/prefs.c:335 ../lib/prefs.c:625
+#, fuzzy
+msgid "Spell Checker"
+msgstr "拼写检查(_S)"
+
+#: ../lib/prefs.c:344
+msgid "Last used method"
+msgstr ""
+
+#: ../lib/prefs.c:353
+msgid "<b>Colors:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:359
+msgid "Link Color:"
+msgstr ""
+
+#: ../lib/prefs.c:360
+msgid "Phonetic Color:"
+msgstr ""
+
+#: ../lib/prefs.c:398
+msgid "<b>Panel Text Field:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:404
+#, fuzzy
+msgid "Show text field in the panel"
+msgstr "捕获在面板的文本框的焦点"
+
+#. panel entry size
+#: ../lib/prefs.c:411
+msgid "Text field size:"
+msgstr ""
+
+#. server address
+#: ../lib/prefs.c:457
+msgid "Server:"
+msgstr ""
+
+#. server port
+#: ../lib/prefs.c:469
+#, fuzzy
+msgid "Server Port:"
+msgstr "服务器未就绪。"
+
+#. dictionary
+#: ../lib/prefs.c:477 ../lib/prefs.c:650
+#, fuzzy
+msgid "Dictionary:"
+msgstr "词典。"
+
+#: ../lib/prefs.c:481
+msgid "* (use all)"
+msgstr ""
+
+#: ../lib/prefs.c:483
+msgid "! (use all, stop after first match)"
+msgstr ""
+
+#: ../lib/prefs.c:577
+msgid "<b>Web search URL:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:583
+msgid "URL:"
+msgstr ""
+
+#: ../lib/prefs.c:603
+msgid ""
+"Enter an URL to a web site which offer translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
+msgstr ""
+
+#: ../lib/prefs.c:627
+#, fuzzy
+msgid "Spell Check Program:"
+msgstr "拼写检查(_S)"
+
+#: ../lib/prefs.c:644
+msgid ""
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
+"The icon shows whether the entered command exists.</i>"
+msgstr ""
+
+#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
+#~ msgstr "(于 %s 上编译，GTK 版本%d.%d.%d，GLib 版本%d.%d.%d)"
+
+#~ msgid "Do you want to search \"%s\" on the Web using "
+#~ msgstr "您要在 Web 上查找 \"%s\"，使用"
+
+#~ msgid "_Dict"
+#~ msgstr "词典(_D)"
+
+#~ msgid "_Web"
+#~ msgstr "_Web"

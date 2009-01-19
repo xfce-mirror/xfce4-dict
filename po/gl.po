@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-07 16:16+0100\n"
+"POT-Creation-Date: 2009-01-19 19:35+0100\n"
 "PO-Revision-Date: 2008-12-06 15:27+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -25,69 +25,68 @@ msgid "A plugin to query different dictionaries."
 msgstr "Un plugin para consultar diferentes diccionarios."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:467
-#: ../lib/prefs.c:277
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:531 ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr "Diccionario"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472
-#: ../src/xfce4-dict.c:201
-#: ../lib/spell.c:212
-#: ../lib/dictd.c:377
-#: ../lib/gui.c:267
-msgid "Ready."
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../lib/spell.c:215 ../lib/gui.c:331
+#, fuzzy
+msgid "Ready"
 msgstr "Preparado."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
 msgstr "Buscar unha palabra"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443
-#: ../lib/gui.c:491
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:555
 msgid "Search term"
 msgstr "Buscar termo"
 
-#: ../src/xfce4-dict.c:50
+#: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Buscar o texto proporcionado usando un servidor Dict (RFC 2229)"
 
-#: ../src/xfce4-dict.c:51
+#: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
 msgstr "Buscar o texto proporcionado usando un motor de busca na web"
 
-#: ../src/xfce4-dict.c:52
+#: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
 msgstr "Comprobar o texto proporcionado cun corrector ortográfico"
 
-#: ../src/xfce4-dict.c:53
+#: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
 msgstr ""
 
-#: ../src/xfce4-dict.c:54
-msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Iniciar a aplicación independente incluso se se cargou o plugin do panel"
-
 #: ../src/xfce4-dict.c:55
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr ""
+"Iniciar a aplicación independente incluso se se cargou o plugin do panel"
+
+#: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr ""
 
-#: ../src/xfce4-dict.c:56
+#: ../src/xfce4-dict.c:57
+msgid "Be verbose"
+msgstr ""
+
+#: ../src/xfce4-dict.c:58
 msgid "Show version information"
 msgstr "Mostrar información da versión"
 
-#: ../src/xfce4-dict.c:129
+#: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
 msgstr "[TEXTO]"
 
-#: ../src/xfce4-dict.c:143
+#: ../src/xfce4-dict.c:147
 #, c-format
-msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-msgstr "(construido en %s con GTK %d.%d.%d, GLib %d.%d.%d)"
+msgid "Please report bugs to <%s>."
+msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:647
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
 msgstr "Un programa cliente para consultar diferentes diccionarios."
 
@@ -95,151 +94,155 @@ msgstr "Un programa cliente para consultar diferentes diccionarios."
 msgid "Dictionary Client"
 msgstr "Cliente de diccionario"
 
-#: ../lib/spell.c:83
+#: ../lib/spell.c:85
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
 msgstr[0] "Atopouse %d suxestión."
 msgstr[1] "Atopáronse %d suxestións."
 
-#: ../lib/spell.c:88
+#: ../lib/spell.c:90
 #, c-format
 msgid "Suggestions for \"%s\":"
 msgstr "Suxestións para \"%s\":"
 
-#: ../lib/spell.c:101
+#: ../lib/spell.c:103
 #, c-format
 msgid "\"%s\" is spelled correctly."
 msgstr "\"%s\" está escrito correctamente."
 
-#: ../lib/spell.c:109
+#: ../lib/spell.c:111
 #, c-format
 msgid "No suggestions could be found for \"%s\"."
 msgstr "Non se atoparon suxestións para \"%s\"."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:138
+#: ../lib/spell.c:140
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "Erro ó executar \"%s\" (%s)."
 
-#: ../lib/spell.c:175
+#: ../lib/spell.c:177
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Configure o comando do corrector ortográfico no diálogo de preferencias."
+msgstr ""
+"Configure o comando do corrector ortográfico no diálogo de preferencias."
 
-#: ../lib/spell.c:181
-#: ../lib/common.c:202
-msgid "Invalid input."
+#: ../lib/spell.c:183 ../lib/common.c:213
+#, fuzzy
+msgid "Invalid input"
 msgstr "Entrada incorrecta."
 
-#: ../lib/spell.c:216
+#: ../lib/spell.c:219
 #, c-format
 msgid "Process failed (%s)"
 msgstr "O proceso fallou (%s)"
 
-#: ../lib/common.c:168
+#: ../lib/common.c:179
 msgid "The search URL is empty. Please check your preferences."
 msgstr "O URL de busca está baleiro. Comprobe as súas preferencias."
 
-#: ../lib/common.c:173
+#: ../lib/common.c:184
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Non se puido abrir o navegador. Comprobe as súas preferencias."
 
-#: ../lib/common.c:212
-msgid "Invalid non-UTF8 input."
+#: ../lib/common.c:223
+#, fuzzy
+msgid "Invalid non-UTF8 input"
 msgstr "Entrada non UTF8 incorrecta."
 
-#: ../lib/dictd.c:343
-#: ../lib/dictd.c:633
-#: ../lib/dictd.c:642
-#: ../lib/dictd.c:724
-#: ../lib/dictd.c:733
+#: ../lib/dictd.c:379 ../lib/dictd.c:674 ../lib/dictd.c:683 ../lib/dictd.c:765
+#: ../lib/dictd.c:774
 msgid "Could not connect to server."
 msgstr "Non se puido conectar ó servidor."
 
-#: ../lib/dictd.c:349
-msgid "Server not ready."
+#: ../lib/dictd.c:385
+#, fuzzy
+msgid "The server is not ready."
 msgstr "Servidor non preparado."
 
-#: ../lib/dictd.c:356
+#: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Especificouse un diccionario incorrecto. Comprobe as súas preferencias."
+msgstr ""
+"Especificouse un diccionario incorrecto. Comprobe as súas preferencias."
 
-#: ../lib/dictd.c:364
-#: ../lib/dictd.c:409
-#: ../lib/dictd.c:755
+#: ../lib/dictd.c:400 ../lib/dictd.c:445 ../lib/dictd.c:796
 msgid "Unknown error while quering the server."
 msgstr "Erro descoñecido mentres se consultaba ó servidor."
 
-#: ../lib/dictd.c:380
+#: ../lib/dictd.c:415
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Non se atoparon coincidencias para \"%s\"."
 
-#: ../lib/dictd.c:390
+#. for translators: the first wildcard is the search term, the second wildcard
+#. * is the name of the preferred web search engine
+#: ../lib/dictd.c:429
 #, c-format
-msgid "Do you want to search \"%s\" on the Web using "
-msgstr "Desexa buscar \"%s\" na Web usando "
+msgid "Search \"%s\" using \"%s\""
+msgstr ""
 
-#: ../lib/dictd.c:414
+#: ../lib/dictd.c:450
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "Atopouse %d definición."
 msgstr[1] "Atopáronse %d definicións."
 
-#: ../lib/dictd.c:604
+#: ../lib/dictd.c:645
 #, c-format
 msgid "Querying %s..."
 msgstr "Consultando %s..."
 
-#: ../lib/dictd.c:659
+#: ../lib/dictd.c:700
 msgid "An error occured while querying server information."
 msgstr "Ocorreu un erro mentres se consultaba a información do servidor."
 
-#: ../lib/dictd.c:670
+#: ../lib/dictd.c:711
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Información de servidor de \"%s\""
 
-#: ../lib/dictd.c:750
+#: ../lib/dictd.c:791
 msgid "The server doesn't offer any databases."
 msgstr "O servidor non ofrece ningunha base de datos."
 
-#: ../lib/gui.c:415
+#: ../lib/gui.c:479
 msgid "_File"
 msgstr "_Ficheiro"
 
-#: ../lib/gui.c:431
+#: ../lib/gui.c:495
 msgid "_Help"
 msgstr "A_xuda"
 
-#: ../lib/gui.c:525
+#: ../lib/gui.c:589
 msgid "Search with:"
 msgstr "Buscar con:"
 
-#: ../lib/gui.c:529
-msgid "_Dict"
+#: ../lib/gui.c:593
+#, fuzzy
+msgid "_Dictionary Server"
+msgstr "Diccionario"
+
+#: ../lib/gui.c:599
+msgid "_Web Service"
 msgstr ""
 
-#: ../lib/gui.c:535
-msgid "_Web"
-msgstr "_Web"
+#: ../lib/gui.c:605
+#, fuzzy
+msgid "_Spell Checker"
+msgstr "Programa do corrector ortográfico:"
 
-#: ../lib/gui.c:541
-msgid "_Spell Check"
-msgstr ""
-
-#: ../lib/gui.c:639
+#: ../lib/gui.c:718
 msgid "Xfce4 Dictionary"
 msgstr "Diccionario de Xfce4"
 
-#: ../lib/gui.c:648
-msgid "Copyright © 2006-2008 Enrico Tröger"
+#: ../lib/gui.c:727
+#, fuzzy
+msgid "Copyright © 2006-2009 Enrico Tröger"
 msgstr "Copyright © 2006-2008 Enrico Tröger"
 
-#: ../lib/gui.c:651
+#: ../lib/gui.c:730
 msgid "translator-credits"
 msgstr ""
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2008.\n"
@@ -310,20 +313,19 @@ msgstr "Xeral"
 msgid "<b>Default search method:</b>"
 msgstr "<b>Método de busca predeterminado:</b>"
 
-#: ../lib/prefs.c:317
-#: ../lib/prefs.c:454
-msgid "Dict"
-msgstr "Dict"
+#: ../lib/prefs.c:317 ../lib/prefs.c:454
+#, fuzzy
+msgid "Dictionary Server"
+msgstr "Diccionario"
 
-#: ../lib/prefs.c:326
-#: ../lib/prefs.c:575
-msgid "Web"
-msgstr "Web"
-
-#: ../lib/prefs.c:335
-#: ../lib/prefs.c:625
-msgid "Spell Check"
+#: ../lib/prefs.c:326 ../lib/prefs.c:575
+msgid "Web Service"
 msgstr ""
+
+#: ../lib/prefs.c:335 ../lib/prefs.c:625
+#, fuzzy
+msgid "Spell Checker"
+msgstr "Programa do corrector ortográfico:"
 
 #: ../lib/prefs.c:344
 msgid "Last used method"
@@ -365,8 +367,7 @@ msgid "Server Port:"
 msgstr "Porto do Servidor:"
 
 #. dictionary
-#: ../lib/prefs.c:477
-#: ../lib/prefs.c:650
+#: ../lib/prefs.c:477 ../lib/prefs.c:650
 msgid "Dictionary:"
 msgstr "Diccionario:"
 
@@ -387,7 +388,9 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:603
-msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
+msgid ""
+"Enter an URL to a web site which offer translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
 msgstr ""
 
 #: ../lib/prefs.c:627
@@ -396,11 +399,29 @@ msgstr "Programa do corrector ortográfico:"
 
 #: ../lib/prefs.c:644
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>O programa de corrección de ortografía pode ser 'enchant', 'aspell', 'ispell' ou calquera outro programa de corrección de ortografía que sexa compatible co comando ispell.\n"
+"<i>O programa de corrección de ortografía pode ser 'enchant', 'aspell', "
+"'ispell' ou calquera outro programa de corrección de ortografía que sexa "
+"compatible co comando ispell.\n"
 "A icona mostra se o comando introducido existe.</i>"
+
+#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
+#~ msgstr "(construido en %s con GTK %d.%d.%d, GLib %d.%d.%d)"
+
+#~ msgid "Do you want to search \"%s\" on the Web using "
+#~ msgstr "Desexa buscar \"%s\" na Web usando "
+
+#~ msgid "_Web"
+#~ msgstr "_Web"
+
+#~ msgid "Dict"
+#~ msgstr "Dict"
+
+#~ msgid "Web"
+#~ msgstr "Web"
 
 #~ msgid "Show help options"
 #~ msgstr "Mostrar as opcións de axuda"
@@ -408,10 +429,12 @@ msgstr ""
 #, fuzzy
 #~ msgid "Xfce4 Dictionary Preferences"
 #~ msgstr "Diccionario de Xfce4"
+
 #~ msgid "Developer"
 #~ msgstr "Desenvolvedor"
+
 #~ msgid "Text to search:"
 #~ msgstr "Texto a buscar:"
+
 #~ msgid "Aspell"
 #~ msgstr "Aspell"
-

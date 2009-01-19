@@ -382,7 +382,7 @@ static gboolean process_server_response(DictData *dd)
 		}
 		case SERVER_NOT_READY:
 		{
-			dict_gui_status_add(dd, _("Server not ready."));
+			dict_gui_status_add(dd, _("The server is not ready."));
 			g_free(dd->query_buffer);
 			return FALSE;
 		}

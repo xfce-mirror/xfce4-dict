@@ -201,7 +201,7 @@ gint main(gint argc, gchar *argv[])
 		dict_search_word(dd, search_text);
 	}
 	else
-		dict_gui_status_add(dd, _("Ready."));
+		dict_gui_status_add(dd, _("Ready"));
 
 	g_free(search_text);
 

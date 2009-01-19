@@ -328,7 +328,7 @@ static void entry_icon_pressed_cb(SexyIconEntry *entry, gint icon_pos, gint butt
 		dict_gui_clear_text_buffer(dd);
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
 		dict_gui_set_panel_entry_text(dd, "");
-		dict_gui_status_add(dd, _("Ready."));
+		dict_gui_status_add(dd, _("Ready"));
 	}
 }
 

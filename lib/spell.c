@@ -180,7 +180,7 @@ void dict_spell_start_query(DictData *dd, const gchar *word, gboolean quiet)
 
 	if (! NZV(word))
 	{
-		dict_gui_status_add(dd, _("Invalid input."));
+		dict_gui_status_add(dd, _("Invalid input"));
 		return;
 	}
 
@@ -212,7 +212,7 @@ void dict_spell_start_query(DictData *dd, const gchar *word, gboolean quiet)
 			set_up_io_channel(stdout_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read, iod);
 			set_up_io_channel(stderr_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read_err, dd);
 			if (! quiet)
-				dict_gui_status_add(dd, _("Ready."));
+				dict_gui_status_add(dd, _("Ready"));
 		}
 		else
 		{
