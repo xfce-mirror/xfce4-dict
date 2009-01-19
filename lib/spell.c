@@ -44,6 +44,7 @@ typedef struct
 {
 	DictData *dd;
 	gchar *word;
+	gboolean quiet;
 } iodata;
 
 
@@ -80,9 +81,10 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				gint count;
 				tmp = strchr(msg + 2, ' ') + 1;
 				count = atoi(tmp);
-				dict_gui_status_add(dd, ngettext("%d suggestion found.",
-												 "%d suggestions found.",
-												 count), count);
+				if (! iod->quiet)
+					dict_gui_status_add(dd, ngettext("%d suggestion found.",
+													"%d suggestions found.",
+													count), count);
 
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("Suggestions for \"%s\":"), iod->word);
@@ -93,23 +95,23 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 
 				tmp = strchr(msg, ':') + 2;
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, g_strchomp(tmp), -1);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
-			else if (msg[0] == '*')
+			else if (msg[0] == '*' && ! iod->quiet)
 			{
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("\"%s\" is spelled correctly."), iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				g_free(tmp);
 			}
-			else if (msg[0] == '#')
+			else if (msg[0] == '#' && ! iod->quiet)
 			{
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\"."),
 					iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				g_free(tmp);
 			}
 			g_free(msg);
@@ -157,7 +159,7 @@ static gboolean iofunc_write(GIOChannel *ioc, GIOCondition cond, gpointer data)
 }
 
 
-void dict_spell_start_query(DictData *dd, const gchar *word)
+void dict_spell_start_query(DictData *dd, const gchar *word, gboolean quiet)
 {
 	GError  *error = NULL;
 	gchar  **argv;
@@ -202,13 +204,15 @@ void dict_spell_start_query(DictData *dd, const gchar *word)
 				&stdin_fd, &stdout_fd, &stderr_fd, &error))
 		{
 			iod = g_new(iodata, 1);
+			iod->quiet = quiet;
 			iod->dd = dd;
 			iod->word = g_strdup(tts[i]);
 
 			set_up_io_channel(stdin_fd, G_IO_OUT, iofunc_write, g_strdup(tts[i]));
 			set_up_io_channel(stdout_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read, iod);
 			set_up_io_channel(stderr_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read_err, dd);
-			dict_gui_status_add(dd, _("Ready."));
+			if (! quiet)
+				dict_gui_status_add(dd, _("Ready."));
 		}
 		else
 		{

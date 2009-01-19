@@ -410,11 +410,12 @@ static gboolean process_server_response(DictData *dd)
 
 	if (dd->query_status == NOTHING_FOUND)
 	{
-		dict_gui_status_add(dd, _("Ready."));
 
 		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 		tmp = g_strdup_printf(_("No matches could be found for \"%s\"."), dd->searched_word);
-		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
+		gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+			tmp, -1, "error", NULL);
+		dict_gui_status_add(dd, "%s", tmp);
 		g_free(tmp);
 		g_free(dd->query_buffer);
 
@@ -423,19 +424,18 @@ static gboolean process_server_response(DictData *dd)
 		if (NZV(dd->web_url))
 		{
 			gchar *text = g_strdup_printf(
-				_("Do you want to search \"%s\" on the Web using "), dd->searched_word);
+				/* for translators: the first wildcard is the search term, the second wildcard
+				 * is the name of the preferred web search engine */
+				_("Search \"%s\" using \"%s\""), dd->searched_word, dict_prefs_get_web_url_label(dd));
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, text, -1);
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\"", 1);
 			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
-				dict_prefs_get_web_url_label(dd), -1, "link", NULL);
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\"?", 2);
+				text, -1, "link", NULL);
 			g_free(text);
 		}
 		if (NZV(dd->spell_bin))
 		{
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
-			dict_spell_start_query(dd, dd->searched_word);
+			dict_spell_start_query(dd, dd->searched_word, TRUE);
 		}
 
 		return FALSE;

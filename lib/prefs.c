@@ -314,7 +314,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 0);
 
-		radio_button = gtk_radio_button_new_with_label(NULL, _("Dict"));
+		radio_button = gtk_radio_button_new_with_label(NULL, _("Dictionary Server"));
 		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
 		if (dd->mode_default == DICTMODE_DICT)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
@@ -323,7 +323,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_DICT));
 		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(search_method_changed), dd);
 
-		radio_button = gtk_radio_button_new_with_label(search_method, _("Web"));
+		radio_button = gtk_radio_button_new_with_label(search_method, _("Web Service"));
 		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
 		if (dd->mode_default == DICTMODE_WEB)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
@@ -332,7 +332,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_WEB));
 		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(search_method_changed), dd);
 
-		radio_button = gtk_radio_button_new_with_label(search_method, _("Spell Check"));
+		radio_button = gtk_radio_button_new_with_label(search_method, _("Spell Checker"));
 		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
 		if (dd->mode_default == DICTMODE_SPELL)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
@@ -451,7 +451,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
-			notebook_vbox, gtk_label_new(_("Dict")), NOTEBOOK_PAGE_DICTD);
+			notebook_vbox, gtk_label_new(_("Dictionary Server")), NOTEBOOK_PAGE_DICTD);
 
 		/* server address */
 		label1 = gtk_label_new_with_mnemonic(_("Server:"));
@@ -572,7 +572,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
-			notebook_vbox, gtk_label_new(_("Web")), NOTEBOOK_PAGE_WEB);
+			notebook_vbox, gtk_label_new(_("Web Service")), NOTEBOOK_PAGE_WEB);
 
 		label = gtk_label_new(_("<b>Web search URL:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
@@ -622,7 +622,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
-			notebook_vbox, gtk_label_new(_("Spell Check")), NOTEBOOK_PAGE_SPELL);
+			notebook_vbox, gtk_label_new(_("Spell Checker")), NOTEBOOK_PAGE_SPELL);
 
 		label1 = gtk_label_new_with_mnemonic(_("Spell Check Program:"));
 		gtk_widget_show(label1);

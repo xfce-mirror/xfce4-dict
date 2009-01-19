@@ -236,7 +236,7 @@ void dict_search_word(DictData *dd, const gchar *word)
 		}
 		case DICTMODE_SPELL:
 		{
-			dict_spell_start_query(dd, dd->searched_word);
+			dict_spell_start_query(dd, dd->searched_word, FALSE);
 			break;
 		}
 		default:

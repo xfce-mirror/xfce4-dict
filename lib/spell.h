@@ -22,7 +22,7 @@
 #define SPELL_H 1
 
 
-void dict_spell_start_query(DictData *dd, const gchar *word);
+void dict_spell_start_query(DictData *dd, const gchar *word, gboolean quiet);
 
 void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo);
 

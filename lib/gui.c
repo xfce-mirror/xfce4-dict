@@ -42,6 +42,7 @@ static gboolean hovering_over_link = FALSE;
 static GdkCursor *hand_cursor = NULL;
 static GdkCursor *regular_cursor = NULL;
 static gboolean entry_is_dirty = FALSE;
+static const GdkColor error_color = { 0, 0x8000, 0, 0 }; /* dark red */
 
 
 /* all textview_* functions are from the gtk-demo app to get links in the textview working */
@@ -587,19 +588,19 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(label);
 	gtk_box_pack_start(GTK_BOX(method_chooser), label, FALSE, FALSE, 6);
 
-	radio = gtk_radio_button_new_with_mnemonic(NULL, _("_Dict"));
+	radio = gtk_radio_button_new_with_mnemonic(NULL, _("_Dictionary Server"));
 	gtk_widget_show(radio);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_DICT));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_dict_toggled), dd);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
-	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_Web"));
+	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_Web Service"));
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_WEB));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_web_toggled), dd);
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
-	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_Spell Check"));
+	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_Spell Checker"));
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_SPELL));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_spell_toggled), dd);
 	gtk_widget_show(radio);
@@ -629,6 +630,10 @@ void dict_gui_create_main_window(DictData *dd)
 			"style", PANGO_STYLE_ITALIC,
 			"indent", 10,
 			"pixels-below-lines", 5, NULL);
+	gtk_text_buffer_create_tag(dd->main_textbuffer,
+			"error",
+			"style", PANGO_STYLE_ITALIC,
+			"foreground-gdk", &error_color, NULL);
 	dd->phon_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			"phonetic",
 			"style", PANGO_STYLE_ITALIC,
