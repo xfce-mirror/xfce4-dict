@@ -426,7 +426,8 @@ static gboolean process_server_response(DictData *dd)
 			gchar *text = g_strdup_printf(
 				/* for translators: the first wildcard is the search term, the second wildcard
 				 * is the name of the preferred web search engine */
-				_("Search \"%s\" using \"%s\""), dd->searched_word, dict_prefs_get_web_url_label(dd));
+				_("Search \"%s\" using \"%s\""),
+				dd->searched_word, _(dict_prefs_get_web_url_label(dd)));
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
 			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
 				text, -1, "link", NULL);
