@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the xfce4-dict-plugin package.
 # Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007.
 # Søren Waaben Hansen <soren@minorflaw.dk>, 2008.
-# Per Kongstad <p_kongstad@op.pl>, 2008.
+# Per Kongstad <p_kongstad@op.pl>, 2008. 09.
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict 0.5.0\n"
+"Project-Id-Version: xfce4-dict 0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2008-10-30 21:59+0100\n"
+"PO-Revision-Date: 2009-01-23 11:20+0100\n"
 "Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -25,22 +25,26 @@ msgid "A plugin to query different dictionaries."
 msgstr "Et udvidelsesmodul, der slår op i forskellige ordbøger."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:531 ../lib/prefs.c:277
+#: ../src/xfce4-dict.desktop.in.h:2
+#: ../lib/gui.c:531
+#: ../lib/prefs.c:277
 msgid "Dictionary"
 msgstr "Ordbog"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
-#: ../lib/spell.c:215 ../lib/gui.c:331
-#, fuzzy
+#: ../panel-plugin/xfce4-dict-plugin.c:472
+#: ../src/xfce4-dict.c:204
+#: ../lib/spell.c:215
+#: ../lib/gui.c:331
 msgid "Ready"
-msgstr "Klar."
+msgstr "Klar"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
 msgstr "Slå et ord op"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:555
+#: ../panel-plugin/xfce4-dict-plugin.c:443
+#: ../lib/gui.c:555
 msgid "Search term"
 msgstr "Søgetekst"
 
@@ -70,7 +74,7 @@ msgstr "Grib det FØRSTE-valgte indhold og brug det som søgetekst"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Vær uddybende"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
@@ -83,9 +87,10 @@ msgstr "[TEXT]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "Rapportér venligst fejl til <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:726
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
 msgstr "Et klientprogram til at lave opslag i forskellige ordbøger."
 
@@ -126,10 +131,10 @@ msgstr "Fejl ved kørsel af \"%s\" (%s)."
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Vælg venligst stavekontrolkommandoen i indstillingsvinduet."
 
-#: ../lib/spell.c:183 ../lib/common.c:213
-#, fuzzy
+#: ../lib/spell.c:183
+#: ../lib/common.c:213
 msgid "Invalid input"
-msgstr "Ugyldige inddata."
+msgstr "Ugyldig inddata"
 
 #: ../lib/spell.c:219
 #, c-format
@@ -145,17 +150,18 @@ msgid "Browser could not be opened. Please check your preferences."
 msgstr "Browseren kunne ikke åbnes. Kontrollér venligst dine indstillinger."
 
 #: ../lib/common.c:223
-#, fuzzy
 msgid "Invalid non-UTF8 input"
-msgstr "Ugyldige ikke-UTF8-inddata."
+msgstr "Ugyldig ikke-UTF8-inddata"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:674 ../lib/dictd.c:683 ../lib/dictd.c:765
+#: ../lib/dictd.c:379
+#: ../lib/dictd.c:674
+#: ../lib/dictd.c:683
+#: ../lib/dictd.c:765
 #: ../lib/dictd.c:774
 msgid "Could not connect to server."
 msgstr "Kunne ikke tilslutte til serveren."
 
 #: ../lib/dictd.c:385
-#, fuzzy
 msgid "The server is not ready."
 msgstr "Serveren er ikke klar."
 
@@ -163,7 +169,9 @@ msgstr "Serveren er ikke klar."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Ugyldig ordbog valgt. Kontrollér venligst dine indstillinger."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:445 ../lib/dictd.c:796
+#: ../lib/dictd.c:400
+#: ../lib/dictd.c:445
+#: ../lib/dictd.c:796
 msgid "Unknown error while quering the server."
 msgstr "Ukendt fejl ved forespørgsel til serveren."
 
@@ -177,7 +185,7 @@ msgstr "Ingen resultater fundet for \"%s\"."
 #: ../lib/dictd.c:429
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Søg \"%s\" ved brug af \"%s\""
 
 #: ../lib/dictd.c:450
 #, c-format
@@ -217,16 +225,14 @@ msgid "Search with:"
 msgstr "Søg med:"
 
 #: ../lib/gui.c:593
-#, fuzzy
 msgid "_Dictionary Server"
-msgstr "Ordbog"
+msgstr "_Ordbogsserver"
 
 #: ../lib/gui.c:599
 msgid "_Web Service"
-msgstr ""
+msgstr "_Internetservice"
 
 #: ../lib/gui.c:605
-#, fuzzy
 msgid "_Spell Checker"
 msgstr "_Stavekontrol"
 
@@ -235,9 +241,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 ordbog"
 
 #: ../lib/gui.c:727
-#, fuzzy
 msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Ophavsret © 2006-2008 Enrico Tröger"
+msgstr "Ophavsret © 2006-2009 Enrico Tröger"
 
 #: ../lib/gui.c:730
 msgid "translator-credits"
@@ -312,17 +317,18 @@ msgstr "Generelt"
 msgid "<b>Default search method:</b>"
 msgstr "<b>Standardsøgemetode:</b>"
 
-#: ../lib/prefs.c:317 ../lib/prefs.c:454
-#, fuzzy
+#: ../lib/prefs.c:317
+#: ../lib/prefs.c:454
 msgid "Dictionary Server"
-msgstr "Ordbog"
+msgstr "Ordbogsserver"
 
-#: ../lib/prefs.c:326 ../lib/prefs.c:575
+#: ../lib/prefs.c:326
+#: ../lib/prefs.c:575
 msgid "Web Service"
-msgstr ""
+msgstr "Internetservice"
 
-#: ../lib/prefs.c:335 ../lib/prefs.c:625
-#, fuzzy
+#: ../lib/prefs.c:335
+#: ../lib/prefs.c:625
 msgid "Spell Checker"
 msgstr "Stavekontrol"
 
@@ -366,7 +372,8 @@ msgid "Server Port:"
 msgstr "Serverport:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:650
+#: ../lib/prefs.c:477
+#: ../lib/prefs.c:650
 msgid "Dictionary:"
 msgstr "Ordbog:"
 
@@ -387,12 +394,8 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:603
-msgid ""
-"Enter an URL to a web site which offer translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Indtast en URL til et netsted, der tilbyder ordbogs-tjenester. Brug {word} "
-"som pladsholder for det søgte ord."
+msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Indtast en URL til et netsted, der tilbyder ordbogs-tjenester. Brug {word} som pladsholder for det søgte ord."
 
 #: ../lib/prefs.c:627
 msgid "Spell Check Program:"
@@ -400,34 +403,9 @@ msgstr "Stavekontrolprogram:"
 
 #: ../lib/prefs.c:644
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Stavekontrolprogrammet kan være 'enchant', 'aspell', 'ispell' eller et "
-"andet stavekontrolprogram som er kompatibelt med ispell-kommandoen\n"
+"<i>Stavekontrolprogrammet kan være 'enchant', 'aspell', 'ispell' eller et andet stavekontrolprogram som er kompatibelt med ispell-kommandoen\n"
 "Ikonet viser om den angivne kommando findes.</i>"
 
-#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-#~ msgstr "(kompileret fra %s med GTK %d.%d.%d, GLib %d.%d.%d)"
-
-#~ msgid "Do you want to search \"%s\" on the Web using "
-#~ msgstr "Ønsker du at søge efter \"%s\" på internettet ved brug af "
-
-#~ msgid "_Dict"
-#~ msgstr "_Ordbog"
-
-#~ msgid "_Web"
-#~ msgstr "_Internet"
-
-#~ msgid "Dict"
-#~ msgstr "Dict"
-
-#~ msgid "Web"
-#~ msgstr "Internet"
-
-#~ msgid "Show help options"
-#~ msgstr "Vis hjælpemuligheder"
-
-#~ msgid "Xfce4 Dictionary Preferences"
-#~ msgstr "Indstillinger til Xfce4's ordbog"
