@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2008-12-10 17:44+0900\n"
+"POT-Creation-Date: 2009-01-24 16:48+0900\n"
+"PO-Revision-Date: 2009-01-21 00:14+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,9 +29,8 @@ msgstr "辞書"
 #: ../panel-plugin/xfce4-dict-plugin.c:346
 #: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
 #: ../lib/spell.c:215 ../lib/gui.c:331
-#, fuzzy
 msgid "Ready"
-msgstr "準備が完了しました。"
+msgstr "準備ができました。"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
@@ -49,7 +48,7 @@ msgstr "指定されたテキストを Dict サーバー (RFC 2229) で検索す
 # CLI --help
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr "指定されたテキストを Web ベースの検索エンジンで検索する"
+msgstr "指定されたテキストをウェブベースの検索エンジンで検索する"
 
 # CLI --help
 #: ../src/xfce4-dict.c:53
@@ -75,7 +74,7 @@ msgstr "現在選択されている内容を取得し、検索テキストとし
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "詳細を出力する"
 
 # CLI --help
 #: ../src/xfce4-dict.c:58
@@ -133,7 +132,6 @@ msgid "Please set the spell check command in the preferences dialog."
 msgstr "設定ダイアログで aspell コマンドを設定してください。"
 
 #: ../lib/spell.c:183 ../lib/common.c:213
-#, fuzzy
 msgid "Invalid input"
 msgstr "不正な入力です。"
 
@@ -151,17 +149,15 @@ msgid "Browser could not be opened. Please check your preferences."
 msgstr "ブラウザを開くことができませんでした。環境設定を確認してください。"
 
 #: ../lib/common.c:223
-#, fuzzy
 msgid "Invalid non-UTF8 input"
 msgstr "不正な non-UTF8 入力です。"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:674 ../lib/dictd.c:683 ../lib/dictd.c:765
-#: ../lib/dictd.c:774
+#: ../lib/dictd.c:379 ../lib/dictd.c:675 ../lib/dictd.c:684 ../lib/dictd.c:766
+#: ../lib/dictd.c:775
 msgid "Could not connect to server."
 msgstr "サーバーに接続できませんでした。"
 
 #: ../lib/dictd.c:385
-#, fuzzy
 msgid "The server is not ready."
 msgstr "サーバーが準備できていません。"
 
@@ -169,7 +165,7 @@ msgstr "サーバーが準備できていません。"
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "無効な辞書が指定されています。環境設定を確認してください。"
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:445 ../lib/dictd.c:796
+#: ../lib/dictd.c:400 ../lib/dictd.c:446 ../lib/dictd.c:797
 msgid "Unknown error while quering the server."
 msgstr "サーバへの問い合わせ中の不明なエラーです。"
 
@@ -183,30 +179,30 @@ msgstr "\"%s\" に一致するものは見つかりませんでした。"
 #: ../lib/dictd.c:429
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "\"%2$s\" を使用して \"%1$s\" を検索してみる"
 
-#: ../lib/dictd.c:450
+#: ../lib/dictd.c:451
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d 個の定義が見つかりました。"
 msgstr[1] "%d 個の定義が見つかりました。"
 
-#: ../lib/dictd.c:645
+#: ../lib/dictd.c:646
 #, c-format
 msgid "Querying %s..."
 msgstr "%s に問い合わせています..."
 
-#: ../lib/dictd.c:700
+#: ../lib/dictd.c:701
 msgid "An error occured while querying server information."
 msgstr "サーバへの問い合わせ中にエラーが発生しました。"
 
-#: ../lib/dictd.c:711
+#: ../lib/dictd.c:712
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "\"%s\" の サーバ情報"
 
-#: ../lib/dictd.c:791
+#: ../lib/dictd.c:792
 msgid "The server doesn't offer any databases."
 msgstr "サーバにはデータベースが用意されていません。"
 
@@ -223,27 +219,24 @@ msgid "Search with:"
 msgstr "検索方法:"
 
 #: ../lib/gui.c:593
-#, fuzzy
 msgid "_Dictionary Server"
-msgstr "辞書"
+msgstr "辞書サーバ(_D)"
 
 #: ../lib/gui.c:599
 msgid "_Web Service"
-msgstr ""
+msgstr "ウェブサービス(_W)"
 
 #: ../lib/gui.c:605
-#, fuzzy
 msgid "_Spell Checker"
-msgstr "スペルチェック(_S)"
+msgstr "スペルチェッカ(_S)"
 
 #: ../lib/gui.c:718
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Dictionary"
 
 #: ../lib/gui.c:727
-#, fuzzy
 msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Copyright © 2006-2008 Enrico Tröger"
+msgstr "Copyright © 2006-2009 Enrico Tröger"
 
 #: ../lib/gui.c:730
 msgid "translator-credits"
@@ -317,18 +310,16 @@ msgid "<b>Default search method:</b>"
 msgstr "<b>デフォルトの検索方法:</b>"
 
 #: ../lib/prefs.c:317 ../lib/prefs.c:454
-#, fuzzy
 msgid "Dictionary Server"
-msgstr "辞書"
+msgstr "辞書サーバ"
 
 #: ../lib/prefs.c:326 ../lib/prefs.c:575
 msgid "Web Service"
-msgstr ""
+msgstr "ウェブサービス"
 
 #: ../lib/prefs.c:335 ../lib/prefs.c:625
-#, fuzzy
 msgid "Spell Checker"
-msgstr "スペルチェック"
+msgstr "スペルチェッカ"
 
 #: ../lib/prefs.c:344
 msgid "Last used method"
@@ -384,7 +375,7 @@ msgstr "! (すべて使用, 最初の一致後に終了)"
 
 #: ../lib/prefs.c:577
 msgid "<b>Web search URL:</b>"
-msgstr "<b>Web 検索 URL:</b>"
+msgstr "<b>ウェブ検索 URL:</b>"
 
 #: ../lib/prefs.c:583
 msgid "URL:"
@@ -395,7 +386,7 @@ msgid ""
 "Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"翻訳または辞書サービスを提供する Web サイトへの URL を入力します。検索する単"
+"翻訳または辞書サービスを提供するウェブサイトへの URL を入力します。検索する単"
 "語のプレースホルダとして {word} を使用してください。"
 
 #: ../lib/prefs.c:627
@@ -412,18 +403,3 @@ msgstr ""
 "'enchant'、'aspell'、'ispell' または他のスペルチェックプログラムが利用できま"
 "す。\n"
 "アイコンは、入力されたコマンドが存在するかどうかを示します。</i>"
-
-#~ msgid "Do you want to search \"%s\" on the Web using "
-#~ msgstr "ウェブを使用するときに \"%s\" を捜しますか?"
-
-#~ msgid "_Dict"
-#~ msgstr "辞書(_D)"
-
-#~ msgid "_Web"
-#~ msgstr "Web(_W)"
-
-#~ msgid "Dict"
-#~ msgstr "辞書"
-
-#~ msgid "Web"
-#~ msgstr "Web"
