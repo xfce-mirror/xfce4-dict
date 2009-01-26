@@ -8,15 +8,14 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2008-11-17 12:33+0200\n"
+"PO-Revision-Date: 2009-01-26 12:01+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
@@ -30,9 +29,8 @@ msgstr "Словник"
 #: ../panel-plugin/xfce4-dict-plugin.c:346
 #: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
 #: ../lib/spell.c:215 ../lib/gui.c:331
-#, fuzzy
 msgid "Ready"
-msgstr "Готово."
+msgstr "Готово"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
@@ -64,12 +62,11 @@ msgstr "Запустити автономну програму навіть як
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
-"Захопити вибраний ПЕРВИННИЙ зміст і використати його як текст для пошуку"
+msgstr "Захопити вибраний ПЕРВИННИЙ зміст і використати його як текст для пошуку"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Детальніше"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
@@ -82,7 +79,7 @@ msgstr "[ТЕКСТ]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "Звіти про помилки для <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
@@ -129,9 +126,8 @@ msgstr ""
 "властивостей."
 
 #: ../lib/spell.c:183 ../lib/common.c:213
-#, fuzzy
 msgid "Invalid input"
-msgstr "Неправильний ввід."
+msgstr "Неправильний ввід"
 
 #: ../lib/spell.c:219
 #, c-format
@@ -140,18 +136,15 @@ msgstr "Помилка процесу (%s)"
 
 #: ../lib/common.c:179
 msgid "The search URL is empty. Please check your preferences."
-msgstr ""
-"Посилання на пошуковик відсутнє. Будь-ласка перевірте Ваші налаштування."
+msgstr "Посилання на пошуковик відсутнє. Будь-ласка перевірте Ваші налаштування."
 
 #: ../lib/common.c:184
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
-"Переглядач Web не вдалось відкрити. Будь-ласка перевірте Ваші налаштування."
+msgstr "Переглядач Web не вдалось відкрити. Будь-ласка перевірте Ваші налаштування."
 
 #: ../lib/common.c:223
-#, fuzzy
 msgid "Invalid non-UTF8 input"
-msgstr "Неправильний не-UTF8 ввід."
+msgstr "Неправильний не-UTF8 ввід"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:674 ../lib/dictd.c:683 ../lib/dictd.c:765
 #: ../lib/dictd.c:774
@@ -159,14 +152,12 @@ msgid "Could not connect to server."
 msgstr "Неможливо з'єднатися з сервером."
 
 #: ../lib/dictd.c:385
-#, fuzzy
 msgid "The server is not ready."
 msgstr "Сервер не готовий."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr ""
-"Призначено неправильний словник. Будь-ласка перевірте Ваші налаштування."
+msgstr "Призначено неправильний словник. Будь-ласка перевірте Ваші налаштування."
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:445 ../lib/dictd.c:796
 msgid "Unknown error while quering the server."
@@ -182,7 +173,7 @@ msgstr "Не знайдено входжень для \"%s\"."
 #: ../lib/dictd.c:429
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Шукати \"%s\" використовуючи \"%s\""
 
 #: ../lib/dictd.c:450
 #, c-format
@@ -223,25 +214,22 @@ msgid "Search with:"
 msgstr "Шукати з:"
 
 #: ../lib/gui.c:593
-#, fuzzy
 msgid "_Dictionary Server"
-msgstr "Словник"
+msgstr "Сервер сло_вника"
 
 #: ../lib/gui.c:599
 msgid "_Web Service"
-msgstr ""
+msgstr "В_еб сервіс"
 
 #: ../lib/gui.c:605
-#, fuzzy
 msgid "_Spell Checker"
-msgstr "_Перевірка орфографії"
+msgstr "Перев_ірка орфографії"
 
 #: ../lib/gui.c:718
 msgid "Xfce4 Dictionary"
 msgstr "Словник Xfce4"
 
 #: ../lib/gui.c:727
-#, fuzzy
 msgid "Copyright © 2006-2009 Enrico Tröger"
 msgstr "Права застережено © 2006-2008 Enrico Tröger"
 
@@ -314,16 +302,14 @@ msgid "<b>Default search method:</b>"
 msgstr "<b>Типовий метод пошуку:</b>"
 
 #: ../lib/prefs.c:317 ../lib/prefs.c:454
-#, fuzzy
 msgid "Dictionary Server"
-msgstr "Словник"
+msgstr "Сервер словника"
 
 #: ../lib/prefs.c:326 ../lib/prefs.c:575
 msgid "Web Service"
-msgstr ""
+msgstr "Веб сервіс"
 
 #: ../lib/prefs.c:335 ../lib/prefs.c:625
-#, fuzzy
 msgid "Spell Checker"
 msgstr "Перевірка орфографії"
 
@@ -409,20 +395,3 @@ msgstr ""
 "будь які інші програми, які сумісні з командами ispell.\n"
 "Значок показує наявність введеної команди в системі.</i>"
 
-#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-#~ msgstr "(зібрано на %s з GTK %d.%d.%d, GLib %d.%d.%d)"
-
-#~ msgid "Do you want to search \"%s\" on the Web using "
-#~ msgstr "Ви бажаєте шукати \"%s\" у Web використовуючи "
-
-#~ msgid "_Dict"
-#~ msgstr "_Словник"
-
-#~ msgid "_Web"
-#~ msgstr "_Веб"
-
-#~ msgid "Dict"
-#~ msgstr "Словник"
-
-#~ msgid "Web"
-#~ msgstr "Веб"
