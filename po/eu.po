@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Piarres Beobide <pi@beobide.net>, 2007, 2008.
+# Piarres Beobide <pi@beobide.net>, 2007, 2008, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict 0.5.0\n"
+"Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2008-11-05 16:14+0200\n"
+"PO-Revision-Date: 2009-01-28 01:18+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.2.0\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
@@ -30,7 +30,6 @@ msgstr "Hiztegia"
 #: ../panel-plugin/xfce4-dict-plugin.c:346
 #: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
 #: ../lib/spell.c:215 ../lib/gui.c:331
-#, fuzzy
 msgid "Ready"
 msgstr "Prest."
 
@@ -68,7 +67,7 @@ msgstr "Lehen mailako hautapena hartu eta bilaketa testu bezala erabiltzen du"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Xehetasun asko"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
@@ -81,7 +80,7 @@ msgstr "[TESTUA]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "Programa erroreen berri <%s>-ra bidali (ingelesez)"
 
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
@@ -125,7 +124,6 @@ msgid "Please set the spell check command in the preferences dialog."
 msgstr "Mesedez ezarri egiaztapen ortografiko komandoa hobespenetan."
 
 #: ../lib/spell.c:183 ../lib/common.c:213
-#, fuzzy
 msgid "Invalid input"
 msgstr "Sarrera baliogabea."
 
@@ -143,7 +141,6 @@ msgid "Browser could not be opened. Please check your preferences."
 msgstr "Nabigatzailea ezin da ireki. Mesedez egiaztatu zure hobespenak."
 
 #: ../lib/common.c:223
-#, fuzzy
 msgid "Invalid non-UTF8 input"
 msgstr "Ez-UTF8 sarrera baliogabea"
 
@@ -153,7 +150,6 @@ msgid "Could not connect to server."
 msgstr "Ezin da zerbitzarira konektatu."
 
 #: ../lib/dictd.c:385
-#, fuzzy
 msgid "The server is not ready."
 msgstr "Zerbitzaria ez dago prest."
 
@@ -175,7 +171,7 @@ msgstr "Ez da parekatzerik aurkitu \"%s\"-rentzat."
 #: ../lib/dictd.c:429
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Bilatu \"%s\" \"%s\" erabiliaz"
 
 #: ../lib/dictd.c:450
 #, c-format
@@ -215,16 +211,14 @@ msgid "Search with:"
 msgstr "Bilatu honekin:"
 
 #: ../lib/gui.c:593
-#, fuzzy
 msgid "_Dictionary Server"
-msgstr "Hiztegia"
+msgstr "_Hiztegi zerbitzaria"
 
 #: ../lib/gui.c:599
 msgid "_Web Service"
-msgstr ""
+msgstr "_Web zerbitzua"
 
 #: ../lib/gui.c:605
-#, fuzzy
 msgid "_Spell Checker"
 msgstr "_Ortografia-egiaztatzea"
 
@@ -233,9 +227,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Hiztegia"
 
 #: ../lib/gui.c:727
-#, fuzzy
 msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Copyright © 2006-2008 Enrico Tröger"
+msgstr "Copyright © 2006-2009 Enrico Tröger"
 
 #: ../lib/gui.c:730
 msgid "translator-credits"
@@ -306,16 +299,14 @@ msgid "<b>Default search method:</b>"
 msgstr "<b>Lehenetsitako bilaketa metodoa:</b>"
 
 #: ../lib/prefs.c:317 ../lib/prefs.c:454
-#, fuzzy
 msgid "Dictionary Server"
-msgstr "Hiztegia"
+msgstr "Hiztegi zerbitzaria"
 
 #: ../lib/prefs.c:326 ../lib/prefs.c:575
 msgid "Web Service"
-msgstr ""
+msgstr "Web zerbitzua"
 
 #: ../lib/prefs.c:335 ../lib/prefs.c:625
-#, fuzzy
 msgid "Spell Checker"
 msgstr "Ortografia-egiaztatzea"
 
@@ -401,29 +392,3 @@ msgstr ""
 "komandoarekin bateragarri den beste edozein izan daiteke.\n"
 "Ikonoak idatzitako komandoa existitzen den erakusten du.</i>"
 
-#~ msgid "Show help options"
-#~ msgstr "Ikusi laguntza aukerak"
-
-#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-#~ msgstr "(%s-ean GTK %d.%d.%d, GLib %d.%d.%d erabiliaz konpilaturik)"
-
-#~ msgid "Do you want to search \"%s\" on the Web using "
-#~ msgstr "\"%s\" webean hau erabiliaz bilatu nahi duzu: "
-
-#~ msgid "_Dict"
-#~ msgstr "_Dict"
-
-#~ msgid "_Web"
-#~ msgstr "_Web"
-
-#~ msgid "Xfce4 Dictionary Preferences"
-#~ msgstr "Xfce4 hiztegi hobespenak"
-
-#~ msgid "Dict"
-#~ msgstr "Dict"
-
-#~ msgid "Web"
-#~ msgstr "Web"
-
-#~ msgid "Phonectic Color:"
-#~ msgstr "Kolore fonetikoa:"
