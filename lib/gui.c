@@ -61,13 +61,14 @@ static void textview_follow_if_link(GtkWidget *text_view, GtkTextIter *iter, Dic
 		{
 			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), found_link);
 			dict_search_word(dd, found_link);
-
 			break;
 		}
 		g_object_get(G_OBJECT(tag), "name", &found_link, NULL);
 		if (found_link != NULL && strcmp("link", found_link) == 0)
 		{
-			dict_start_web_query(dd, dd->searched_word);
+			gboolean browser_started = dict_start_web_query(dd, dd->searched_word);
+			if (browser_started && dd->is_plugin)
+				gtk_widget_hide(dd->window);
 			g_free(found_link);
 			break;
 		}
