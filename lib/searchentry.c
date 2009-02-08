@@ -28,10 +28,6 @@
 #include "sexy-icon-entry.h"
 
 
-static void xfd_search_entry_class_init			(XfdSearchEntryClass *klass);
-static void xfd_search_entry_init      			(XfdSearchEntry *self);
-
-
 enum
 {
     ACTIVE_CHANGED,
@@ -41,30 +37,7 @@ enum
 static guint signals[LAST_SIGNAL];
 
 
-GType xfd_search_entry_get_type(void)
-{
-	static GType self_type = 0;
-	if (! self_type)
-	{
-		static const GTypeInfo self_info =
-		{
-			sizeof(XfdSearchEntryClass),
-			NULL, /* base_init */
-			NULL, /* base_finalize */
-			(GClassInitFunc)xfd_search_entry_class_init,
-			NULL, /* class_finalize */
-			NULL, /* class_data */
-			sizeof(XfdSearchEntry),
-			0,
-			(GInstanceInitFunc)xfd_search_entry_init,
-			NULL /* value_table */
-		};
-
-		self_type = g_type_register_static(GTK_TYPE_COMBO_BOX_ENTRY, "XfdSearchEntry", &self_info, 0);
-	}
-
-	return self_type;
-}
+G_DEFINE_TYPE(XfdSearchEntry, xfd_search_entry, GTK_TYPE_COMBO_BOX_ENTRY)
 
 
 static void xfd_search_entry_class_init(XfdSearchEntryClass *klass)
