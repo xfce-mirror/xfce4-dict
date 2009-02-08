@@ -91,6 +91,10 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				gtk_text_buffer_insert_with_tags_by_name(
 					dd->main_textbuffer, &dd->textiter, tmp, -1, "bold", NULL);
 				g_free(tmp);
+				/* TODO include the dictionary string into the above message */
+				tmp = g_strdup_printf(" (%s)", dd->spell_dictionary);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
+				g_free(tmp);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 
 				tmp = strchr(msg, ':') + 2;
@@ -102,8 +106,11 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("\"%s\" is spelled correctly."), iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				g_free(tmp);
+				tmp = g_strdup_printf(" (%s)", dd->spell_dictionary);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
+				g_free(tmp);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
 			else if (msg[0] == '#' && ! iod->quiet)
 			{
@@ -111,8 +118,11 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\"."),
 					iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				g_free(tmp);
+				tmp = g_strdup_printf(" (%s)", dd->spell_dictionary);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
+				g_free(tmp);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
 			g_free(msg);
 		}
