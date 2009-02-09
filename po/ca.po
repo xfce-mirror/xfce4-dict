@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2008-11-08 21:21+0100\n"
+"PO-Revision-Date: 2009-01-20 15:21+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,9 +31,8 @@ msgstr "Diccionari"
 #: ../panel-plugin/xfce4-dict-plugin.c:346
 #: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
 #: ../lib/spell.c:215 ../lib/gui.c:331
-#, fuzzy
 msgid "Ready"
-msgstr "Llest."
+msgstr "Preparat"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
@@ -41,7 +40,7 @@ msgstr "Cerca una paraula"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:555
 msgid "Search term"
-msgstr "Cerca amb:"
+msgstr "Cerca un terme"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -72,7 +71,7 @@ msgstr ""
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Mostra més informació"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
@@ -85,7 +84,7 @@ msgstr "[TEXT]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "Envieu els errors a <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
@@ -131,9 +130,8 @@ msgstr ""
 "preferències."
 
 #: ../lib/spell.c:183 ../lib/common.c:213
-#, fuzzy
 msgid "Invalid input"
-msgstr "L'entrada no és vàlida."
+msgstr "L'entrada no és vàlida"
 
 #: ../lib/spell.c:219
 #, c-format
@@ -149,9 +147,8 @@ msgid "Browser could not be opened. Please check your preferences."
 msgstr "No es pot obrir el navegador. Comproveu les vostres preferències."
 
 #: ../lib/common.c:223
-#, fuzzy
 msgid "Invalid non-UTF8 input"
-msgstr "Entrada no UTF8 invàlida."
+msgstr "Entrada no UTF8 no vàlida"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:674 ../lib/dictd.c:683 ../lib/dictd.c:765
 #: ../lib/dictd.c:774
@@ -159,9 +156,8 @@ msgid "Could not connect to server."
 msgstr "No s'ha pogut connectar al servidor."
 
 #: ../lib/dictd.c:385
-#, fuzzy
 msgid "The server is not ready."
-msgstr "El servidor està disponible."
+msgstr "El servidor està preparat."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
@@ -181,7 +177,7 @@ msgstr "No hi ha cap coincidència per «%s»."
 #: ../lib/dictd.c:429
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Cerca «%s» emprant «%s»"
 
 #: ../lib/dictd.c:450
 #, c-format
@@ -221,27 +217,24 @@ msgid "Search with:"
 msgstr "Cerca amb:"
 
 #: ../lib/gui.c:593
-#, fuzzy
 msgid "_Dictionary Server"
-msgstr "Diccionari"
+msgstr "Servidor de _diccionari"
 
 #: ../lib/gui.c:599
 msgid "_Web Service"
-msgstr ""
+msgstr "Servei _web"
 
 #: ../lib/gui.c:605
-#, fuzzy
 msgid "_Spell Checker"
-msgstr "_Revisa l'ortografia"
+msgstr "_Comprovador d'ortografia"
 
 #: ../lib/gui.c:718
 msgid "Xfce4 Dictionary"
 msgstr "Diccionari Xfce4"
 
 #: ../lib/gui.c:727
-#, fuzzy
 msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Copyright © 2006-2008 Enrico Tröger"
+msgstr "Copyright © 2006-2009 Enrico Tröger"
 
 #: ../lib/gui.c:730
 msgid "translator-credits"
@@ -312,18 +305,16 @@ msgid "<b>Default search method:</b>"
 msgstr "<b>Mètode de cerca per defecte:</b>"
 
 #: ../lib/prefs.c:317 ../lib/prefs.c:454
-#, fuzzy
 msgid "Dictionary Server"
-msgstr "Diccionari"
+msgstr "Servidor de diccionari"
 
 #: ../lib/prefs.c:326 ../lib/prefs.c:575
 msgid "Web Service"
-msgstr ""
+msgstr "Servei web"
 
 #: ../lib/prefs.c:335 ../lib/prefs.c:625
-#, fuzzy
 msgid "Spell Checker"
-msgstr "Revisa l'ortografia"
+msgstr "Comprovador d'ortografia"
 
 #: ../lib/prefs.c:344
 msgid "Last used method"

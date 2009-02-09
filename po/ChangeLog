@@ -1,3 +1,7 @@
+2009-02-09  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+	* ca.po: Catalan translation update (Carles Muñoz Gorriz)
+
 2009-02-09  Alexander Toresson <eulex@xfce.org>
 
 	* sv.po: Swedish translation update (Daniel Nylander)
@@ -60,7 +64,7 @@
 
 2008-11-12  Piarres Beobide <pi@beobide.net>
 
-	    * eu.po: Basque translation update
+	* eu.po: Basque translation update
 
 2008-11-09  Maximilian Schleiss <maximilian@xfce.org>
 
