@@ -1,14 +1,14 @@
 # Swedish translation for xfce4-dict.
-# Copyright (C) 2008 Free Software Foundation, Inc.
+# Copyright (C) 2008, 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-dict package.
-# Daniel Nylander <po@danielnylander.se>, 2008.
+# Daniel Nylander <po@danielnylander.se>, 2008, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2008-12-14 16:00+0100\n"
+"POT-Creation-Date: 2009-02-09 00:26+0100\n"
+"PO-Revision-Date: 2009-02-09 01:11+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -18,369 +18,389 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr ""
+msgstr "En insticksmodul för att fråga olika ordböcker."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:531 ../lib/prefs.c:277
+#: ../src/xfce4-dict.desktop.in.h:2
+#: ../lib/gui.c:532
+#: ../lib/prefs.c:277
 msgid "Dictionary"
-msgstr ""
+msgstr "Ordbok"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
-#: ../lib/spell.c:215 ../lib/gui.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:472
+#: ../src/xfce4-dict.c:204
+#: ../lib/spell.c:225
+#: ../lib/gui.c:332
 msgid "Ready"
-msgstr ""
+msgstr "Redo"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
-msgstr ""
+msgstr "Slå upp ett ord"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:555
+#: ../panel-plugin/xfce4-dict-plugin.c:443
+#: ../lib/gui.c:556
 msgid "Search term"
-msgstr ""
+msgstr "Sökterm"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
+msgstr "Sök efter angiven text med en Dict-server (RFC 2229)"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr ""
+msgstr "Sök efter angiven text med en webbaserad sökmotor"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr ""
+msgstr "Kontrollera angiven text med hjälp av stavningskontroll"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
-msgstr ""
+msgstr "Fånga fokus på textfältet i panelen"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
+msgstr "Starta fristående program även om panelinsticksmodulen är inläst"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "Fångar det PRIMÄRA markerade innehållet och använder det som söktext"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Var informativ"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
-msgstr ""
+msgstr "Visa versionsinformation"
 
 #: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
-msgstr ""
+msgstr "[TEXT]"
 
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "Rapportera fel till <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:726
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:727
 msgid "A client program to query different dictionaries."
-msgstr ""
+msgstr "Ett klientprogram för att fråga olika ordböcker."
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
-msgstr ""
+msgstr "Ordboksklient"
 
 #: ../lib/spell.c:85
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d förslag hittades."
+msgstr[1] "%d förslag hittades."
 
 #: ../lib/spell.c:90
 #, c-format
 msgid "Suggestions for \"%s\":"
-msgstr ""
+msgstr "Förslag för \"%s\":"
 
-#: ../lib/spell.c:103
+#: ../lib/spell.c:107
 #, c-format
 msgid "\"%s\" is spelled correctly."
-msgstr ""
+msgstr "\"%s\" är korrekt stavad."
 
-#: ../lib/spell.c:111
+#: ../lib/spell.c:118
 #, c-format
 msgid "No suggestions could be found for \"%s\"."
-msgstr ""
+msgstr "Inga förslag kunde hittas för \"%s\"."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:140
+#: ../lib/spell.c:150
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr ""
+msgstr "Fel vid körning av \"%s\" (%s)."
 
-#: ../lib/spell.c:177
+#: ../lib/spell.c:187
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
+msgstr "Ställ in kommandot för stavningskontroll i inställningsdialogen."
 
-#: ../lib/spell.c:183 ../lib/common.c:213
+#: ../lib/spell.c:193
+#: ../lib/common.c:213
 msgid "Invalid input"
-msgstr ""
+msgstr "Ogiltig inmatning"
 
-#: ../lib/spell.c:219
+#: ../lib/spell.c:229
 #, c-format
 msgid "Process failed (%s)"
-msgstr ""
+msgstr "Process misslyckades (%s)"
 
 #: ../lib/common.c:179
 msgid "The search URL is empty. Please check your preferences."
-msgstr ""
+msgstr "Sök-URL:en är tom. Kontrollera dina inställningar."
 
 #: ../lib/common.c:184
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
+msgstr "Webbläsaren kunde inte öppnas. Kontrollera dina inställningar."
 
 #: ../lib/common.c:223
 msgid "Invalid non-UTF8 input"
-msgstr ""
+msgstr "Ogiltig inmatning i icke-UTF8"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:674 ../lib/dictd.c:683 ../lib/dictd.c:765
-#: ../lib/dictd.c:774
+#: ../lib/dictd.c:379
+#: ../lib/dictd.c:675
+#: ../lib/dictd.c:684
+#: ../lib/dictd.c:766
+#: ../lib/dictd.c:775
 msgid "Could not connect to server."
-msgstr ""
+msgstr "Kunde inte ansluta till servern."
 
 #: ../lib/dictd.c:385
 msgid "The server is not ready."
-msgstr ""
+msgstr "Servern är inte redo."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr ""
+msgstr "Ogiltig ordbok angiven. Kontrollera dina inställningar."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:445 ../lib/dictd.c:796
+#: ../lib/dictd.c:400
+#: ../lib/dictd.c:446
+#: ../lib/dictd.c:797
 msgid "Unknown error while quering the server."
-msgstr ""
+msgstr "Okänt fel vid fråga till servern."
 
 #: ../lib/dictd.c:415
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr ""
+msgstr "Inga sökträffar kunde hittas för \"%s\"."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
 #: ../lib/dictd.c:429
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Sök efter \"%s\" med \"%s\""
 
-#: ../lib/dictd.c:450
+#: ../lib/dictd.c:451
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d definition hittades."
+msgstr[1] "%d definitioner hittades."
 
-#: ../lib/dictd.c:645
+#: ../lib/dictd.c:646
 #, c-format
 msgid "Querying %s..."
-msgstr ""
+msgstr "Frågar %s..."
 
-#: ../lib/dictd.c:700
+#: ../lib/dictd.c:701
 msgid "An error occured while querying server information."
-msgstr ""
+msgstr "Ett fel inträffade vid fråga om serverinformation."
 
-#: ../lib/dictd.c:711
+#: ../lib/dictd.c:712
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr ""
+msgstr "Serverinformation för \"%s\""
 
-#: ../lib/dictd.c:791
+#: ../lib/dictd.c:792
 msgid "The server doesn't offer any databases."
-msgstr ""
+msgstr "Servern erbjuder inga databaser."
 
-#: ../lib/gui.c:479
+#: ../lib/gui.c:480
 msgid "_File"
-msgstr ""
+msgstr "_Arkiv"
 
-#: ../lib/gui.c:495
+#: ../lib/gui.c:496
 msgid "_Help"
-msgstr ""
+msgstr "_Hjälp"
 
-#: ../lib/gui.c:589
+#: ../lib/gui.c:590
 msgid "Search with:"
-msgstr ""
+msgstr "Sök med:"
 
-#: ../lib/gui.c:593
+#: ../lib/gui.c:594
 msgid "_Dictionary Server"
-msgstr ""
+msgstr "_Ordboksserver"
 
-#: ../lib/gui.c:599
+#: ../lib/gui.c:600
 msgid "_Web Service"
-msgstr ""
+msgstr "_Webbtjänst"
 
-#: ../lib/gui.c:605
+#: ../lib/gui.c:606
 msgid "_Spell Checker"
-msgstr ""
+msgstr "_Stavningskontroll"
 
-#: ../lib/gui.c:718
+#: ../lib/gui.c:719
 msgid "Xfce4 Dictionary"
-msgstr ""
+msgstr "Xfce4-ordbok"
 
-#: ../lib/gui.c:727
+#: ../lib/gui.c:728
 msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr ""
+msgstr "Copyright © 2006-2009 Enrico Tröger"
 
-#: ../lib/gui.c:730
+#: ../lib/gui.c:731
 msgid "translator-credits"
 msgstr ""
+"Daniel Nylander <po@danielnylander.se>\n"
+"\n"
+"Skicka synpunkter på översättningen till\n"
+"<tp-sv@listor.tp-sv.se>."
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
-msgstr ""
+msgstr "dict.leo.org - Tyska <-> Engelska"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> French"
-msgstr ""
+msgstr "dict.leo.org - Tyska <-> Franska"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Spanish"
-msgstr ""
+msgstr "dict.leo.org - Tyska <-> Spanska"
 
 #: ../lib/prefs.c:58
 msgid "dict.leo.org - German <-> Italian"
-msgstr ""
+msgstr "dict.leo.org - Tyska <-> Italienska"
 
 #: ../lib/prefs.c:59
 msgid "dict.leo.org - German <-> Chinese"
-msgstr ""
+msgstr "dict.leo.org - Tyska <-> Kinesiska"
 
 #: ../lib/prefs.c:60
 msgid "dist.cc - Dictionary"
-msgstr ""
+msgstr "dist.cc - Ordbok"
 
 #: ../lib/prefs.c:61
 msgid "Dictionary.com"
-msgstr ""
+msgstr "Dictionary.com"
 
 #: ../lib/prefs.c:62
 msgid "TheFreeDictionary.com"
-msgstr ""
+msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:63
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr ""
+msgstr "Wikipedia, den fria encyklopedin (EN)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr ""
+msgstr "Wiktionary, den fria ordboken (EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr ""
+msgstr "Merriam-Webster Online Dictionary"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
-msgstr ""
+msgstr "Töm"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr ""
+msgstr "Du har valt en ogiltig ordbok."
 
 #: ../lib/prefs.c:112
 msgid "You must set a valid search URL."
-msgstr ""
+msgstr "Du måste ange en giltig sök-URL."
 
 #: ../lib/prefs.c:309
 msgid "General"
-msgstr ""
+msgstr "Allmänt"
 
 #: ../lib/prefs.c:311
 msgid "<b>Default search method:</b>"
-msgstr ""
+msgstr "<b>Standardmetod för sökning:</b>"
 
-#: ../lib/prefs.c:317 ../lib/prefs.c:454
+#: ../lib/prefs.c:317
+#: ../lib/prefs.c:454
 msgid "Dictionary Server"
-msgstr ""
+msgstr "Ordboksserver"
 
-#: ../lib/prefs.c:326 ../lib/prefs.c:575
+#: ../lib/prefs.c:326
+#: ../lib/prefs.c:575
 msgid "Web Service"
-msgstr ""
+msgstr "Webbtjänst"
 
-#: ../lib/prefs.c:335 ../lib/prefs.c:625
+#: ../lib/prefs.c:335
+#: ../lib/prefs.c:625
 msgid "Spell Checker"
-msgstr ""
+msgstr "Stavningskontroll"
 
 #: ../lib/prefs.c:344
 msgid "Last used method"
-msgstr ""
+msgstr "Senast använda metod"
 
 #: ../lib/prefs.c:353
 msgid "<b>Colors:</b>"
-msgstr ""
+msgstr "<b>Färger:</b>"
 
 #: ../lib/prefs.c:359
 msgid "Link Color:"
-msgstr ""
+msgstr "Länkfärg:"
 
 #: ../lib/prefs.c:360
 msgid "Phonetic Color:"
-msgstr ""
+msgstr "Fonetisk färg:"
 
 #: ../lib/prefs.c:398
 msgid "<b>Panel Text Field:</b>"
-msgstr ""
+msgstr "<b>Textfält i panel:</b>"
 
 #: ../lib/prefs.c:404
 msgid "Show text field in the panel"
-msgstr ""
+msgstr "Visa textfält i panelen"
 
 #. panel entry size
 #: ../lib/prefs.c:411
 msgid "Text field size:"
-msgstr ""
+msgstr "Storlek för textfält:"
 
 #. server address
 #: ../lib/prefs.c:457
 msgid "Server:"
-msgstr ""
+msgstr "Server:"
 
 #. server port
 #: ../lib/prefs.c:469
 msgid "Server Port:"
-msgstr ""
+msgstr "Serverport:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:650
+#: ../lib/prefs.c:477
+#: ../lib/prefs.c:650
 msgid "Dictionary:"
-msgstr ""
+msgstr "Ordbok:"
 
 #: ../lib/prefs.c:481
 msgid "* (use all)"
-msgstr ""
+msgstr "* (använd alla)"
 
 #: ../lib/prefs.c:483
 msgid "! (use all, stop after first match)"
-msgstr ""
+msgstr "! (använd alla, stoppa efter första sökträffen)"
 
 #: ../lib/prefs.c:577
 msgid "<b>Web search URL:</b>"
-msgstr ""
+msgstr "<b>URL för webbsökning:</b>"
 
 #: ../lib/prefs.c:583
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../lib/prefs.c:603
-msgid ""
-"Enter an URL to a web site which offer translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
+msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Ange en URL till en webbsida som erbjuder översättnings- eller ordbokstjänster. Använd {word} som platshållare för det eftersökta ordet."
 
 #: ../lib/prefs.c:627
 msgid "Spell Check Program:"
-msgstr ""
+msgstr "Stavningskontrollprogram:"
 
 #: ../lib/prefs.c:644
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+"<i>Stavningskontrollprogrammet kan vara \"enchant\", \"aspell\", \"ispell\" eller något annat stavningskontrollprogram som är kompatibelt med ispell-kommandot.\n"
+"Ikonen visar huruvida det angivna kommandot finns.</i>"
+
