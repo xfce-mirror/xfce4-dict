@@ -77,12 +77,34 @@ to give additional information. Two of them are:
  * Cross-references
      These are some kind of links in definitions to link to other
      definitions.
-     Xfce4-dict will highlight these definitions and make them clickable
+     Xfce4-dict will highlight these definitions and make them click-able
      to easily jump (by searching) to this highlighted definition.
  * Phonetic hints
     These are mostly phonetic spellings found in translation
     dictionaries to illustrate how a word is pronounced.
     Xfce4-dict will highlight these with a green colour.
+
+
+Local dictionary server
+```````````````````````
+
+Instead of using remote dictionary servers like dict.org which
+always need a network connection and then still might be slow,
+you can also run your own dictionary server on your machine. This
+way you always have fast access and you can install all the
+dictionaries you need.
+
+Most distributions provide a package called "dictd" which contains
+the server. Additionally you should install some dictionaries you
+need like WordNet, Jargon or some translation dictionaries. On
+Debian and Ubuntu-like systems these packages are called "dict-wn"
+(WordNet), dict-jargon, dict-de-en or similar. Basically it is enough
+to install the "dictd" packages along with some dictionaries to get
+a running local server. In the Xfce4-dict preferences dialog,
+simply use "localhost" as the server name.
+
+If you need more information about setting up a local dictionary server,
+please see http://docs.kde.org/kde3/en/kdenetwork/kdict/dictd-mini-howto.html.
 
 
 Web-based dictionaries
