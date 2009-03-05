@@ -40,7 +40,6 @@
 
 static gboolean hovering_over_link = FALSE;
 static GdkCursor *hand_cursor = NULL;
-static GdkCursor *regular_cursor = NULL;
 static gboolean entry_is_dirty = FALSE;
 static const GdkColor error_color = { 0, 0x8000, 0, 0 }; /* dark red */
 
@@ -130,13 +129,13 @@ static gboolean textview_event_after(GtkWidget *text_view, GdkEvent *ev, DictDat
 }
 
 
-static void textview_set_cursor_if_appropriate(GtkTextView *text_view, gint x, gint y)
+static void textview_set_cursor_if_appropriate(GtkTextView *view, gint x, gint y, GdkWindow *win)
 {
 	GSList *tags = NULL, *tagp = NULL;
 	GtkTextIter iter;
 	gboolean hovering = FALSE;
 
-	gtk_text_view_get_iter_at_location(text_view, &iter, x, y);
+	gtk_text_view_get_iter_at_location(view, &iter, x, y);
 
 	tags = gtk_text_iter_get_tags(&iter);
 	for (tagp = tags;  tagp != NULL;  tagp = tagp->next)
@@ -163,11 +162,9 @@ static void textview_set_cursor_if_appropriate(GtkTextView *text_view, gint x, g
 		hovering_over_link = hovering;
 
 		if (hovering_over_link)
-			gdk_window_set_cursor(gtk_text_view_get_window(
-				text_view, GTK_TEXT_WINDOW_TEXT), hand_cursor);
+			gdk_window_set_cursor(win, hand_cursor);
 		else
-			gdk_window_set_cursor(gtk_text_view_get_window(
-				text_view, GTK_TEXT_WINDOW_TEXT), regular_cursor);
+			gdk_window_set_cursor(win, NULL);
 	}
 
 	if (tags)
@@ -182,7 +179,7 @@ static gboolean textview_motion_notify_event(GtkWidget *text_view, GdkEventMotio
 	gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(text_view), GTK_TEXT_WINDOW_WIDGET,
 		event->x, event->y, &x, &y);
 
-	textview_set_cursor_if_appropriate(GTK_TEXT_VIEW(text_view), x, y);
+	textview_set_cursor_if_appropriate(GTK_TEXT_VIEW(text_view), x, y, event->window);
 
 	gdk_window_get_pointer(text_view->window, NULL, NULL, NULL);
 
@@ -199,7 +196,7 @@ static gboolean textview_visibility_notify_event(GtkWidget *text_view, GdkEventV
 	gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(text_view),
 		GTK_TEXT_WINDOW_WIDGET, wx, wy, &bx, &by);
 
-	textview_set_cursor_if_appropriate(GTK_TEXT_VIEW(text_view), bx, by);
+	textview_set_cursor_if_appropriate(GTK_TEXT_VIEW(text_view), bx, by, event->window);
 
 	return FALSE;
 }
@@ -515,9 +512,6 @@ void dict_gui_finalize(DictData *dd)
 {
 	if (hand_cursor)
 		gdk_cursor_unref(hand_cursor);
-
-	if (regular_cursor)
-		gdk_cursor_unref(regular_cursor);
 }
 
 
@@ -649,7 +643,6 @@ void dict_gui_create_main_window(DictData *dd)
 	/* support for links (cross-references) for dictd responses */
 	{
 		hand_cursor = gdk_cursor_new(GDK_HAND2);
-		regular_cursor = gdk_cursor_new(GDK_XTERM);
 
 		g_signal_connect(dd->main_textview, "key-press-event",
 			G_CALLBACK(textview_key_press_event), dd);

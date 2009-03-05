@@ -1,3 +1,9 @@
+2009-03-05  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Don't allocate the default cursor unnecessarily and reuse the
+   GdkWindow we already got in the event handlers.
+
+
 2009-02-08  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Print the used dictionary in the spell checker results.
