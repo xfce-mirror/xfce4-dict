@@ -6,15 +6,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
+"Project-Id-Version: xfce4-dict 0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2009-02-05 19:11+0100\n"
+"PO-Revision-Date: 2009-03-13 19:56+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20)) ? 1 : 2));\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 #, fuzzy
@@ -94,16 +95,16 @@ msgid "A client program to query different dictionaries."
 msgstr ""
 
 #: ../src/xfce4-dict.desktop.in.h:3
-#, fuzzy
 msgid "Dictionary Client"
-msgstr "Wtyczka słownika"
+msgstr "Klient słownika"
 
 #: ../lib/spell.c:85
-#, fuzzy, c-format
+#, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "%d definicji znaleziono."
-msgstr[1] "%d definicji znaleziono."
+msgstr[0] "Znaleziono %d sugestię"
+msgstr[1] "Znaleziono %d sugestie"
+msgstr[2] "Znaleziono %d sugestii"
 
 #: ../lib/spell.c:90
 #, c-format
@@ -116,9 +117,9 @@ msgid "\"%s\" is spelled correctly."
 msgstr "Pisownia wyrazu „%s” jest prawidłowa."
 
 #: ../lib/spell.c:111
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\"."
-msgstr "Brak trafień dla \"%s\"."
+msgstr "Nie znaleziono sugestii dla „%s”."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -129,13 +130,12 @@ msgstr "Wystąpił błąd podczas uruchamiania „%s”: %s."
 
 #: ../lib/spell.c:177
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
+msgstr "Proszę wprowadzić polecenie sprawdzania pisowni w oknie preferencji."
 
 #: ../lib/spell.c:183
 #: ../lib/common.c:213
-#, fuzzy
 msgid "Invalid input"
-msgstr "Błędne dane."
+msgstr "Błędne dane"
 
 #: ../lib/spell.c:219
 #, c-format
@@ -149,7 +149,7 @@ msgstr "Nie można otworzyć przeglądarki, sprawdź swoje ustawienia."
 
 #: ../lib/common.c:184
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Nie można otworzyć przeglądarki. Proszę sprawdzić preferencje."
+msgstr "Nie można otworzyć przeglądarki. Proszę sprawdzić preferencje programu."
 
 #: ../lib/common.c:223
 #, fuzzy
@@ -171,18 +171,18 @@ msgstr "Serwer nie jest gotowy."
 #: ../lib/dictd.c:392
 #, fuzzy
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Nie można otworzyć przeglądarki, sprawdź swoje ustawienia."
+msgstr "Określono niepoprawny słownik. Proszę sprawdzić preferencje programu."
 
 #: ../lib/dictd.c:400
 #: ../lib/dictd.c:445
 #: ../lib/dictd.c:796
 msgid "Unknown error while quering the server."
-msgstr "Wystąpił nieznany błąd podczas przesyłania danych do serwera."
+msgstr "Wystąpił nieznany błąd podczas odpytywania serwera."
 
 #: ../lib/dictd.c:415
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Brak trafień dla \"%s\"."
+msgstr "Brak trafień dla „%s”."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
@@ -192,26 +192,26 @@ msgid "Search \"%s\" using \"%s\""
 msgstr ""
 
 #: ../lib/dictd.c:450
-#, fuzzy, c-format
+#, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d definicji znaleziono."
-msgstr[1] "%d definicji znaleziono."
+msgstr[0] "Znaleziono %d definicję"
+msgstr[1] "Znaleziono %d definicje"
+msgstr[2] "Znaleziono %d definicji"
 
 #: ../lib/dictd.c:645
-#, fuzzy, c-format
+#, c-format
 msgid "Querying %s..."
-msgstr "Odpytuję serwer %s..."
+msgstr "Odpytywanie serwera %s..."
 
 #: ../lib/dictd.c:700
-#, fuzzy
 msgid "An error occured while querying server information."
-msgstr "Nieznany błąd odpytywania serwera.."
+msgstr "Wystąpił błąd podczas odpytywania serwera."
 
 #: ../lib/dictd.c:711
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr ""
+msgstr "Informacje serwera dla „%s”"
 
 #: ../lib/dictd.c:791
 msgid "The server doesn't offer any databases."
@@ -227,7 +227,7 @@ msgstr "Pomo_c"
 
 #: ../lib/gui.c:589
 msgid "Search with:"
-msgstr ""
+msgstr "Wyszukiwanie za pomocą:"
 
 #: ../lib/gui.c:593
 msgid "_Dictionary Server"
@@ -235,7 +235,7 @@ msgstr "Serwer _słownika"
 
 #: ../lib/gui.c:599
 msgid "_Web Service"
-msgstr ""
+msgstr "Usługa _internetowa"
 
 #: ../lib/gui.c:605
 msgid "_Spell Checker"
@@ -243,7 +243,7 @@ msgstr "_Sprawdzanie pisowni"
 
 #: ../lib/gui.c:718
 msgid "Xfce4 Dictionary"
-msgstr "Słownik"
+msgstr "Xfce4 Dictionary"
 
 #: ../lib/gui.c:727
 msgid "Copyright © 2006-2009 Enrico Tröger"
@@ -252,20 +252,20 @@ msgstr "Copyright © 2006-2009 Enrico Tröger"
 #: ../lib/gui.c:730
 msgid "translator-credits"
 msgstr ""
-"Piotr Maliński <riklaunim@gmail.com>,\n"
-"Piotr Sokół <piotr.sokol@10g.pl>."
+"Piotr Maliński <riklaunim@gmail.com>\n"
+"Piotr Sokół <piotr.sokol@10g.pl>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
-msgstr "dict.leo.org ‒ Niemiecki <-> Angielski"
+msgstr "dict.leo.org ‒ niemiecki <-> angielski"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org ‒ Niemiecki <-> Francuski"
+msgstr "dict.leo.org ‒ niemiecki <-> francuski"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org ‒ Niemiecki <-> Hiszpański"
+msgstr "dict.leo.org ‒ niemiecki <-> hiszpański"
 
 #: ../lib/prefs.c:58
 msgid "dict.leo.org - German <-> Italian"
@@ -276,9 +276,8 @@ msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org ‒ niemiecki <-> chiński"
 
 #: ../lib/prefs.c:60
-#, fuzzy
 msgid "dist.cc - Dictionary"
-msgstr "Słownik :"
+msgstr "Słownik dist.cc"
 
 #: ../lib/prefs.c:61
 msgid "Dictionary.com"
@@ -298,7 +297,7 @@ msgstr "Wikisłownik, wolny słownik (EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr ""
+msgstr "Słownik Merriam-Webster"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
@@ -310,7 +309,7 @@ msgstr "Wybrano błędny słownik."
 
 #: ../lib/prefs.c:112
 msgid "You must set a valid search URL."
-msgstr ""
+msgstr "Proszę wprowadzić poprawny adres URL."
 
 #: ../lib/prefs.c:309
 msgid "General"
@@ -328,7 +327,7 @@ msgstr "Serwer słownika"
 #: ../lib/prefs.c:326
 #: ../lib/prefs.c:575
 msgid "Web Service"
-msgstr ""
+msgstr "Usługa internetowa"
 
 #: ../lib/prefs.c:335
 #: ../lib/prefs.c:625
@@ -397,22 +396,20 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:603
-#, fuzzy
 msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr ""
-"Podaj adres URL do strony oferującej usługi tłumacza.\n"
-"Użyj {word} jako zmienną przechowującą słowo do tłumaczenia."
+msgstr "Proszę wprowadzić adres URL strony oferującej usługę tłumaczenia lub słownika. Jako zmienną przechowującą słowo kluczowe należy użyć wyrażenia „{word}”."
 
 #: ../lib/prefs.c:627
 msgid "Spell Check Program:"
-msgstr "Program sprawdzający pisownie:"
+msgstr "Polecenie:"
 
 #: ../lib/prefs.c:644
-#, fuzzy
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>Jako program sprawdzający pisownie można użyć „enchant”, „ispell” lub inny program kompatybilny ze składnią programu ispell.\n"
+msgstr ""
+"<i>Jako program sprawdzający pisownie można użyć „enchant”, „ispell” lub inny program kompatybilny ze składnią ispell.\n"
+"Ikona wskazuje czy wprowadzone polecenie jest poprawne.</i>"
 
 #, fuzzy
 #~ msgid "_Dict"
