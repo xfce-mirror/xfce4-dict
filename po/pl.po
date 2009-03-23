@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2009-03-13 19:56+0100\n"
+"PO-Revision-Date: 2009-03-18 21:46+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -18,9 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20)) ? 1 : 2));\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
-#, fuzzy
 msgid "A plugin to query different dictionaries."
-msgstr "Wtyczka do odpytywania serwera Dict."
+msgstr "Klient wielu słowników"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2
@@ -39,38 +38,36 @@ msgstr "Gotowy"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
-msgstr "Wyszukaj słowa"
+msgstr "Uruchamia słownik"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:443
 #: ../lib/gui.c:555
-#, fuzzy
 msgid "Search term"
-msgstr "Poszukiwany wyraz"
+msgstr "Poszukiwany ciąg"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
+msgstr "Wyszukuje określony ciąg używając serwera Dict (RFC 2229)"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr ""
+msgstr "Wyszukuje określony ciąg używając usługi internetowej"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr ""
+msgstr "Sprawdza poprawność pisowni określonego ciągu"
 
 #: ../src/xfce4-dict.c:54
-#, fuzzy
 msgid "Grab the focus on the text field in the panel"
-msgstr "Pokaż pole tekstowe w panelu"
+msgstr "Zaznacza pole tekstowe panelu"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
+msgstr "Uruchamia program nawet gdy aplet panelu jest wczytany"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "Używa zawartości schowka jako poszukiwanego ciągu"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -92,7 +89,7 @@ msgstr "Proszę zgłaszać błędy na adres <%s>."
 #: ../src/xfce4-dict.desktop.in.h:1
 #: ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
-msgstr ""
+msgstr "Klient wielu słowników"
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
@@ -114,7 +111,7 @@ msgstr "Sugestie pisowni wyrazu „%s”:"
 #: ../lib/spell.c:103
 #, c-format
 msgid "\"%s\" is spelled correctly."
-msgstr "Pisownia wyrazu „%s” jest prawidłowa."
+msgstr "Pisownia wyrazu „%s” jest poprawna."
 
 #: ../lib/spell.c:111
 #, c-format
@@ -135,7 +132,7 @@ msgstr "Proszę wprowadzić polecenie sprawdzania pisowni w oknie preferencji."
 #: ../lib/spell.c:183
 #: ../lib/common.c:213
 msgid "Invalid input"
-msgstr "Błędne dane"
+msgstr "Niepoprawne dane"
 
 #: ../lib/spell.c:219
 #, c-format
@@ -143,18 +140,16 @@ msgid "Process failed (%s)"
 msgstr ""
 
 #: ../lib/common.c:179
-#, fuzzy
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Nie można otworzyć przeglądarki, sprawdź swoje ustawienia."
+msgstr "Adres URL usługi internetowej jest pusty. Proszę sprawdzić preferencje programu"
 
 #: ../lib/common.c:184
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Nie można otworzyć przeglądarki. Proszę sprawdzić preferencje programu."
 
 #: ../lib/common.c:223
-#, fuzzy
 msgid "Invalid non-UTF8 input"
-msgstr "Błedne danej wejściowe o nie-UTF8 kodowaniu."
+msgstr "Niepoprawne dane wejściowe o kodowaniu innym niż UTF8"
 
 #: ../lib/dictd.c:379
 #: ../lib/dictd.c:674
@@ -169,7 +164,6 @@ msgid "The server is not ready."
 msgstr "Serwer nie jest gotowy."
 
 #: ../lib/dictd.c:392
-#, fuzzy
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Określono niepoprawny słownik. Proszę sprawdzić preferencje programu."
 
@@ -182,7 +176,7 @@ msgstr "Wystąpił nieznany błąd podczas odpytywania serwera."
 #: ../lib/dictd.c:415
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Brak trafień dla „%s”."
+msgstr "Nie znaleziono definicji wyrazu „%s”."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
@@ -227,7 +221,7 @@ msgstr "Pomo_c"
 
 #: ../lib/gui.c:589
 msgid "Search with:"
-msgstr "Wyszukiwanie za pomocą:"
+msgstr "Metoda wyszukiwania:"
 
 #: ../lib/gui.c:593
 msgid "_Dictionary Server"
@@ -344,24 +338,24 @@ msgstr "<b>Kolory</b>"
 
 #: ../lib/prefs.c:359
 msgid "Link Color:"
-msgstr ""
+msgstr "Odnośniki:"
 
 #: ../lib/prefs.c:360
 msgid "Phonetic Color:"
-msgstr ""
+msgstr "Zapis fonetyczny:"
 
 #: ../lib/prefs.c:398
 msgid "<b>Panel Text Field:</b>"
-msgstr ""
+msgstr "<b>Pole tekstowe panelu</b>"
 
 #: ../lib/prefs.c:404
 msgid "Show text field in the panel"
-msgstr "Pokaż pole tekstowe w panelu"
+msgstr "Wyświetlanie"
 
 #. panel entry size
 #: ../lib/prefs.c:411
 msgid "Text field size:"
-msgstr "Rozmiar pola tekstowego:"
+msgstr "Rozmiar:"
 
 #. server address
 #: ../lib/prefs.c:457
@@ -381,11 +375,11 @@ msgstr "Słownik:"
 
 #: ../lib/prefs.c:481
 msgid "* (use all)"
-msgstr "* (użyj wszystkich)"
+msgstr "* (wszystkie)"
 
 #: ../lib/prefs.c:483
 msgid "! (use all, stop after first match)"
-msgstr "! (użyj wszystkich, przerwij przy pierwszym trafieniu)"
+msgstr "! (wszystkie, przerwanie po pierwszym trafieniu)"
 
 #: ../lib/prefs.c:577
 msgid "<b>Web search URL:</b>"
