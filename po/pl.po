@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2009-03-18 21:46+0100\n"
+"PO-Revision-Date: 2009-03-30 00:05+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,7 @@ msgstr "Używa zawartości schowka jako poszukiwanego ciągu"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Wypisuje szczegółowe komunikaty"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
@@ -391,7 +391,7 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:603
 msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "Proszę wprowadzić adres URL strony oferującej usługę tłumaczenia lub słownika. Jako zmienną przechowującą słowo kluczowe należy użyć wyrażenia „{word}”."
+msgstr "Proszę wprowadzić adres URL strony oferującej usługę tłumaczenia lub słownika. Jako zmienną przesyłającą wyszukiwane słowo należy użyć wyrażenia „{word}”."
 
 #: ../lib/prefs.c:627
 msgid "Spell Check Program:"
