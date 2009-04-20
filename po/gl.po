@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2009-04-14 21:49+0100\n"
+"PO-Revision-Date: 2009-04-17 21:25+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -22,14 +22,14 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr "Un plugin para consultar diferentes diccionarios."
+msgstr "Un engadido para consultar diferentes dicionarios."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2
 #: ../lib/gui.c:531
 #: ../lib/prefs.c:277
 msgid "Dictionary"
-msgstr "Diccionario"
+msgstr "Dicionario"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
 #: ../panel-plugin/xfce4-dict-plugin.c:472
@@ -62,15 +62,15 @@ msgstr "Comprobar o texto proporcionado cun corrector ortográfico"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
-msgstr ""
+msgstr "Pon o foco no campo de texto do panel"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Iniciar a aplicación independente incluso se se cargou o plugin do panel"
+msgstr "Iniciar a aplicación independente incluso se se cargou o engadido do panel"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "Obtén o contido da selección PRIMARIA e úsao como texto a buscar"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -92,11 +92,11 @@ msgstr "Por favor, comuníquelle os erros a <%s>."
 #: ../src/xfce4-dict.desktop.in.h:1
 #: ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
-msgstr "Un programa cliente para consultar diferentes diccionarios."
+msgstr "Un programa cliente para consultar diferentes dicionarios."
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
-msgstr "Cliente de diccionario"
+msgstr "Cliente de dicionario"
 
 #: ../lib/spell.c:85
 #, c-format
@@ -125,7 +125,7 @@ msgstr "Non se atoparon suxestións para \"%s\"."
 #: ../lib/spell.c:140
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Erro ó executar \"%s\" (%s)."
+msgstr "Produciuse un erro ao executar \"%s\" (%s)."
 
 #: ../lib/spell.c:177
 msgid "Please set the spell check command in the preferences dialog."
@@ -167,7 +167,7 @@ msgstr "O servidor non está preparado."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Especificouse un diccionario incorrecto. Comprobe as súas preferencias."
+msgstr "Especificouse un dicionario incorrecto. Comprobe as súas preferencias."
 
 #: ../lib/dictd.c:400
 #: ../lib/dictd.c:445
@@ -226,7 +226,7 @@ msgstr "Buscar con:"
 
 #: ../lib/gui.c:593
 msgid "_Dictionary Server"
-msgstr "_Servidor de diccionario"
+msgstr "_Servidor de dicionario"
 
 #: ../lib/gui.c:599
 msgid "_Web Service"
@@ -238,7 +238,7 @@ msgstr "_Corrector ortográfico"
 
 #: ../lib/gui.c:718
 msgid "Xfce4 Dictionary"
-msgstr "Diccionario de Xfce4"
+msgstr "Dicionario de Xfce4"
 
 #: ../lib/gui.c:727
 msgid "Copyright © 2006-2009 Enrico Tröger"
@@ -247,7 +247,7 @@ msgstr "Copyright © 2006-2009 Enrico Tröger"
 #: ../lib/gui.c:730
 msgid "translator-credits"
 msgstr ""
-"Leandro Regueiro <leandro.regueiro@gmail.com>, 2008.\n"
+"Leandro Regueiro <leandro.regueiro@gmail.com>, 2008, 2009.\n"
 "\n"
 "Proxecto Trasno http://trasno.net"
 
@@ -273,7 +273,7 @@ msgstr "dict.leo.org - Alemán <-> Chinés"
 
 #: ../lib/prefs.c:60
 msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Diccionario"
+msgstr "dist.cc - Dicionario"
 
 #: ../lib/prefs.c:61
 msgid "Dictionary.com"
@@ -289,11 +289,11 @@ msgstr "Wikipedia, a enciclopedia libre (inglés)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr "Wiktionary, o diccionario libre (inglés)"
+msgstr "Wiktionary, o dicionario libre (inglés)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr "Diccionario en liña Merriam-Webster"
+msgstr "Dicionario en liña Merriam-Webster"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
@@ -301,7 +301,7 @@ msgstr "Limpar"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr "Escolleu un diccionario incorrecto."
+msgstr "Escolleu un dicionario incorrecto."
 
 #: ../lib/prefs.c:112
 msgid "You must set a valid search URL."
@@ -318,7 +318,7 @@ msgstr "<b>Método de busca predeterminado:</b>"
 #: ../lib/prefs.c:317
 #: ../lib/prefs.c:454
 msgid "Dictionary Server"
-msgstr "Servidor de diccionarios"
+msgstr "Servidor de dicionarios"
 
 #: ../lib/prefs.c:326
 #: ../lib/prefs.c:575
@@ -347,9 +347,8 @@ msgid "Phonetic Color:"
 msgstr "Cor fonética:"
 
 #: ../lib/prefs.c:398
-#, fuzzy
 msgid "<b>Panel Text Field:</b>"
-msgstr "Texto da etiqueta do campo do formulario"
+msgstr "<b>Campo de texto do panel:</b>"
 
 #: ../lib/prefs.c:404
 msgid "Show text field in the panel"
@@ -368,13 +367,13 @@ msgstr "Servidor:"
 #. server port
 #: ../lib/prefs.c:469
 msgid "Server Port:"
-msgstr "Porto do Servidor:"
+msgstr "Porto do servidor:"
 
 #. dictionary
 #: ../lib/prefs.c:477
 #: ../lib/prefs.c:650
 msgid "Dictionary:"
-msgstr "Diccionario:"
+msgstr "Dicionario:"
 
 #: ../lib/prefs.c:481
 msgid "* (use all)"
@@ -394,7 +393,7 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:603
 msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr ""
+msgstr "Introduza un URL dun sitio web que ofreza servizos de dicionarios ou de tradución. Use {word} como comodín para a palabra a buscar."
 
 #: ../lib/prefs.c:627
 msgid "Spell Check Program:"
