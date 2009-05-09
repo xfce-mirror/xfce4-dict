@@ -262,6 +262,8 @@ static gboolean textview_button_press_cb(GtkTextView *view, GdkEventButton *even
 		gtk_text_view_window_to_buffer_coords(view, GTK_TEXT_WINDOW_TEXT, event->x, event->y, &x, &y);
 		gtk_text_view_get_iter_at_location(view, &iter, x, y);
 		gtk_text_buffer_move_mark(dd->main_textbuffer, dd->mark_click, &iter);
+
+		gdk_window_set_cursor(event->window, regular_cursor);
 	}
 
 	return FALSE;
