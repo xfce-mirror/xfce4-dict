@@ -40,6 +40,7 @@
 
 static gboolean hovering_over_link = FALSE;
 static GdkCursor *hand_cursor = NULL;
+static GdkCursor *regular_cursor = NULL;
 static gboolean entry_is_dirty = FALSE;
 static const GdkColor error_color = { 0, 0x8000, 0, 0 }; /* dark red */
 
@@ -164,7 +165,7 @@ static void textview_set_cursor_if_appropriate(GtkTextView *view, gint x, gint y
 		if (hovering_over_link)
 			gdk_window_set_cursor(win, hand_cursor);
 		else
-			gdk_window_set_cursor(win, NULL);
+			gdk_window_set_cursor(win, regular_cursor);
 	}
 
 	if (tags)
@@ -512,6 +513,8 @@ void dict_gui_finalize(DictData *dd)
 {
 	if (hand_cursor)
 		gdk_cursor_unref(hand_cursor);
+	if (regular_cursor)
+		gdk_cursor_unref(regular_cursor);
 }
 
 
@@ -643,6 +646,7 @@ void dict_gui_create_main_window(DictData *dd)
 	/* support for links (cross-references) for dictd responses */
 	{
 		hand_cursor = gdk_cursor_new(GDK_HAND2);
+		regular_cursor = gdk_cursor_new(GDK_XTERM);
 
 		g_signal_connect(dd->main_textview, "key-press-event",
 			G_CALLBACK(textview_key_press_event), dd);

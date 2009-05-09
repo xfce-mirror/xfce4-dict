@@ -1,3 +1,9 @@
+2009-04-19  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * Partly revert last change and use the proper cursor for the textview
+   window again.
+
+
 2009-03-05  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Don't allocate the default cursor unnecessarily and reuse the
