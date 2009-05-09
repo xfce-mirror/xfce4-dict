@@ -1,3 +1,8 @@
+2009-05-09  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * New release: 0.5.3.
+
+
 2009-04-20  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * Reset the cursor after right-clicking on links in the textview.
