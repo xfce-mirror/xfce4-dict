@@ -367,6 +367,7 @@ void dict_read_rc_file(DictData *dd)
 	gint mode_default = DICTMODE_LAST_USED;
 	gint port = 2628;
 	gint panel_entry_size = 150;
+	gint wpm = 400;
 	gboolean show_panel_entry = FALSE;
 	gchar *spell_bin_default = get_spell_program();
 	gchar *spell_dictionary_default = get_default_lang();
@@ -378,6 +379,7 @@ void dict_read_rc_file(DictData *dd)
 	const gchar *geo = "-1;0;0;0;0;";
 	const gchar *link_color_str = "#0000ff";
 	const gchar *phon_color_str = "#006300";
+	const gchar *speedreader_font = "Sans 32";
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
 	{
@@ -394,6 +396,9 @@ void dict_read_rc_file(DictData *dd)
 
 		link_color_str = xfce_rc_read_entry(rc, "link_color", link_color_str);
 		phon_color_str = xfce_rc_read_entry(rc, "phonetic_color", phon_color_str);
+
+		speedreader_font = xfce_rc_read_entry(rc, "speedreader_font", speedreader_font);
+		wpm = xfce_rc_read_int_entry(rc, "speedreader_wpm", wpm);
 
 		geo = xfce_rc_read_entry(rc, "geometry", geo);
 		parse_geometry(dd, geo);
@@ -431,6 +436,9 @@ void dict_read_rc_file(DictData *dd)
 	dd->phon_color = g_new0(GdkColor, 1);
 	gdk_color_parse(phon_color_str, dd->phon_color);
 
+	dd->speedreader_wpm = wpm;
+	dd->speedreader_font = g_strdup(speedreader_font);
+
 	xfce_rc_close(rc);
 }
 
@@ -464,6 +472,9 @@ void dict_write_rc_file(DictData *dd)
 			dd->geometry[0], dd->geometry[1], dd->geometry[2], dd->geometry[3], dd->geometry[4]);
 		xfce_rc_write_entry(rc, "geometry", geometry_string);
 
+		xfce_rc_write_entry(rc, "speedreader_font", dd->speedreader_font);
+		xfce_rc_write_int_entry(rc, "speedreader_wpm", dd->speedreader_wpm);
+
 		g_free(link_color_str);
 		g_free(phon_color_str);
 		g_free(geometry_string);
@@ -486,6 +497,7 @@ void dict_free_data(DictData *dd)
 	g_free(dd->server);
 	g_free(dd->web_url);
 	g_free(dd->spell_bin);
+	g_free(dd->speedreader_font);
 
 	g_free(dd->link_color);
 	g_free(dd->phon_color);

@@ -35,6 +35,7 @@
 #include "sexy-icon-entry.h"
 #include "searchentry.h"
 #include "inline-icon.h"
+#include "speedreader.h"
 
 
 
@@ -392,7 +393,7 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 
 	if (button == NULL)
 	{
-		button = gtk_button_new_from_stock("gtk-find");
+		button = gtk_button_new_from_stock(GTK_STOCK_FIND);
 		gtk_widget_show(button);
 		gtk_box_pack_start(GTK_BOX(box), button, FALSE, FALSE, 0);
 		g_signal_connect(button, "clicked", G_CALLBACK(entry_button_clicked_cb), dd);
@@ -405,7 +406,7 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 	{
 		case DICTMODE_DICT:
 		{
-			image = gtk_image_new_from_stock("gtk-find", GTK_ICON_SIZE_BUTTON);
+			image = gtk_image_new_from_stock(GTK_STOCK_FIND, GTK_ICON_SIZE_BUTTON);
 			break;
 		}
 		case DICTMODE_WEB:
@@ -415,7 +416,7 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 		}
 		case DICTMODE_SPELL:
 		{
-			image = gtk_image_new_from_stock("gtk-spell-check", GTK_ICON_SIZE_BUTTON);
+			image = gtk_image_new_from_stock(GTK_STOCK_SPELL_CHECK, GTK_ICON_SIZE_BUTTON);
 			break;
 		}
 		default:
@@ -467,7 +468,14 @@ const guint8 *dict_gui_get_icon_data(void)
 }
 
 
- static GtkWidget *create_file_menu(DictData *dd)
+static void speedreader_clicked_cb(GtkButton *button, DictData *dd)
+{
+	GtkWidget *dialog = xfd_speed_reader_new(GTK_WINDOW(dd->window), dd);
+	gtk_widget_show(dialog);
+}
+
+
+static GtkWidget *create_file_menu(DictData *dd)
 {
 	GtkWidget *menubar, *file, *file_menu, *help, *help_menu, *menu_item;
 	GtkAccelGroup *accel_group;
@@ -481,6 +489,16 @@ const guint8 *dict_gui_get_icon_data(void)
 
 	file_menu = gtk_menu_new();
 	gtk_menu_item_set_submenu(GTK_MENU_ITEM(file), file_menu);
+
+	menu_item = gtk_image_menu_item_new_with_mnemonic(_("Speed _Reader"));
+	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menu_item),
+		gtk_image_new_from_stock(GTK_STOCK_JUSTIFY_CENTER, GTK_ICON_SIZE_MENU));
+	gtk_widget_add_accelerator(menu_item, "activate", accel_group,
+			GDK_r, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
+	g_signal_connect(menu_item, "activate", G_CALLBACK(speedreader_clicked_cb), dd);
+	gtk_container_add(GTK_CONTAINER(file_menu), menu_item);
+
+	gtk_container_add(GTK_CONTAINER(file_menu), gtk_separator_menu_item_new());
 
 	dd->pref_menu_item = gtk_image_menu_item_new_from_stock("gtk-preferences", accel_group);
 	gtk_widget_add_accelerator(dd->pref_menu_item, "activate", accel_group,
@@ -525,11 +543,11 @@ void dict_gui_create_main_window(DictData *dd)
 	GtkWidget *main_box, *entry_box, *label_box;
 	GtkWidget *sep, *align, *scrolledwindow_results;
 	GdkPixbuf *icon;
-	GtkWidget *method_chooser, *radio, *label;
+	GtkWidget *method_chooser, *radio, *label, *button;
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(dd->window), _("Dictionary"));
-	gtk_window_set_default_size(GTK_WINDOW(dd->window), 500, 300);
+	gtk_window_set_default_size(GTK_WINDOW(dd->window), 580, 360);
 	gtk_widget_set_name(dd->window, "Xfce4Dict");
 
 	icon = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
@@ -543,14 +561,14 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_box_pack_start(GTK_BOX(main_box), create_file_menu(dd), FALSE, TRUE, 0);
 
 	/* entry box (label, entry, buttons) */
-	entry_box = gtk_hbox_new(FALSE, 10);
+	entry_box = gtk_hbox_new(FALSE, 5);
 	gtk_widget_show(entry_box);
 	gtk_container_set_border_width(GTK_CONTAINER(entry_box), 2);
 	gtk_box_pack_start(GTK_BOX(main_box), entry_box, FALSE, TRUE, 5);
 
 	label_box = gtk_hbox_new(FALSE, 5);
 	gtk_widget_show(label_box);
-	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 0);
+	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 5);
 
 	dd->main_combo = xfd_search_entry_new(_("Search term"));
 	gtk_widget_show(dd->main_combo);
@@ -570,16 +588,27 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_alignment_set_padding(GTK_ALIGNMENT(align), 0, 0, 10, 0);
 	gtk_widget_show(align);
 	gtk_container_add(GTK_CONTAINER(align), gtk_label_new(""));
-	gtk_box_pack_start(GTK_BOX(entry_box), align, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(entry_box), align, FALSE, FALSE, 5);
 
-	dd->close_button = gtk_button_new_from_stock((dd->is_plugin) ? "gtk-close" : "gtk-quit");
-	gtk_widget_show(dd->close_button);
-	gtk_box_pack_end(GTK_BOX(entry_box), dd->close_button, FALSE, FALSE, 2);
-
-	/* insert it here and it will(hopefully) be placed before the Close button */
 	sep = gtk_vseparator_new();
 	gtk_widget_show(sep);
-	gtk_box_pack_end(GTK_BOX(entry_box), sep, FALSE, FALSE, 5);
+	gtk_box_pack_start(GTK_BOX(entry_box), sep, FALSE, FALSE, 2);
+
+	button = gtk_button_new_with_mnemonic("_Speed Reader");
+	gtk_button_set_image(GTK_BUTTON(button),
+		gtk_image_new_from_stock(GTK_STOCK_JUSTIFY_CENTER, GTK_ICON_SIZE_MENU));
+	g_signal_connect(button, "clicked", G_CALLBACK(speedreader_clicked_cb), dd);
+	gtk_widget_show(button);
+	gtk_box_pack_start(GTK_BOX(entry_box), button, FALSE, FALSE, 2);
+
+	sep = gtk_vseparator_new();
+	gtk_widget_show(sep);
+	gtk_box_pack_start(GTK_BOX(entry_box), sep, FALSE, FALSE, 2);
+
+	dd->close_button = gtk_button_new_from_stock(
+		(dd->is_plugin) ? GTK_STOCK_CLOSE : GTK_STOCK_QUIT);
+	gtk_widget_show(dd->close_button);
+	gtk_box_pack_end(GTK_BOX(entry_box), dd->close_button, FALSE, FALSE, 0);
 
 	/* search method chooser */
 	method_chooser = gtk_hbox_new(FALSE, 0);

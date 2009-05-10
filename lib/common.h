@@ -105,6 +105,10 @@ typedef struct
 
 	GdkColor *link_color;
 	GdkColor *phon_color;
+
+	/* speed reader */
+	gint speedreader_wpm;
+	gchar *speedreader_font;
 } DictData;
 
 
