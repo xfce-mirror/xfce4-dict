@@ -107,7 +107,6 @@ static gboolean sr_timer(gpointer data)
 	if (priv->word_idx < priv->words_len && NZV(priv->words[priv->word_idx]))
 	{
 		gtk_label_set_text(GTK_LABEL(priv->display_label), priv->words[priv->word_idx]);
-		g_message("-%s-", priv->words[priv->word_idx]);
 	}
 
 	priv->word_idx++;
