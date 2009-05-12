@@ -377,6 +377,8 @@ void dict_read_rc_file(DictData *dd)
 	const gchar *geo = "-1;0;0;0;0;";
 	const gchar *link_color_str = "#0000ff";
 	const gchar *phon_color_str = "#006300";
+	const gchar *error_color_str = "#800000";
+	const gchar *success_color_str = "#107000";
 	const gchar *speedreader_font = "Sans 32";
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
@@ -394,6 +396,8 @@ void dict_read_rc_file(DictData *dd)
 
 		link_color_str = xfce_rc_read_entry(rc, "link_color", link_color_str);
 		phon_color_str = xfce_rc_read_entry(rc, "phonetic_color", phon_color_str);
+		error_color_str = xfce_rc_read_entry(rc, "error_color", error_color_str);
+		success_color_str = xfce_rc_read_entry(rc, "success_color", success_color_str);
 
 		speedreader_font = xfce_rc_read_entry(rc, "speedreader_font", speedreader_font);
 		wpm = xfce_rc_read_int_entry(rc, "speedreader_wpm", wpm);
@@ -433,6 +437,10 @@ void dict_read_rc_file(DictData *dd)
 	gdk_color_parse(link_color_str, dd->link_color);
 	dd->phon_color = g_new0(GdkColor, 1);
 	gdk_color_parse(phon_color_str, dd->phon_color);
+	dd->error_color = g_new0(GdkColor, 1);
+	gdk_color_parse(error_color_str, dd->error_color);
+	dd->success_color = g_new0(GdkColor, 1);
+	gdk_color_parse(success_color_str, dd->success_color);
 
 	dd->speedreader_wpm = wpm;
 	dd->speedreader_font = g_strdup(speedreader_font);
@@ -447,7 +455,8 @@ void dict_write_rc_file(DictData *dd)
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", FALSE)) != NULL)
 	{
-		gchar *geometry_string, *link_color_str, *phon_color_str;
+		gchar *geometry_string;
+		gchar *link_color_str, *phon_color_str, *error_color_str, *success_color_str;
 
 		xfce_rc_write_int_entry(rc, "mode_in_use", dd->mode_in_use);
 		xfce_rc_write_int_entry(rc, "mode_default", dd->mode_default);
@@ -463,8 +472,12 @@ void dict_write_rc_file(DictData *dd)
 
 		link_color_str = get_hex_from_color(dd->link_color);
 		phon_color_str = get_hex_from_color(dd->phon_color);
+		error_color_str = get_hex_from_color(dd->error_color);
+		success_color_str = get_hex_from_color(dd->success_color);
 		xfce_rc_write_entry(rc, "link_color", link_color_str);
 		xfce_rc_write_entry(rc, "phonetic_color", phon_color_str);
+		xfce_rc_write_entry(rc, "error_color", error_color_str);
+		xfce_rc_write_entry(rc, "success_color", success_color_str);
 
 		geometry_string = g_strdup_printf("%d;%d;%d;%d;%d;",
 			dd->geometry[0], dd->geometry[1], dd->geometry[2], dd->geometry[3], dd->geometry[4]);
@@ -475,6 +488,8 @@ void dict_write_rc_file(DictData *dd)
 
 		g_free(link_color_str);
 		g_free(phon_color_str);
+		g_free(error_color_str);
+		g_free(success_color_str);
 		g_free(geometry_string);
 
 		xfce_rc_close(rc);
@@ -499,6 +514,8 @@ void dict_free_data(DictData *dd)
 
 	g_free(dd->link_color);
 	g_free(dd->phon_color);
+	g_free(dd->success_color);
+	g_free(dd->error_color);
 
 	if (dd->icon != NULL)
 		g_object_unref(dd->icon);

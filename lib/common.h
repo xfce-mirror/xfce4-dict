@@ -105,11 +105,15 @@ typedef struct
 	GtkTextIter textiter;
 	GtkTextTag *link_tag;
 	GtkTextTag *phon_tag;
+	GtkTextTag *error_tag;
+	GtkTextTag *success_tag;
 	GtkTextMark *mark_click;
 	GdkPixbuf *icon;
 
 	GdkColor *link_color;
 	GdkColor *phon_color;
+	GdkColor *error_color;
+	GdkColor *success_color;
 
 	/* speed reader */
 	gint speedreader_wpm;

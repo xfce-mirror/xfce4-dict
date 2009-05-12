@@ -45,8 +45,6 @@ static gboolean hovering_over_link = FALSE;
 static GdkCursor *hand_cursor = NULL;
 static GdkCursor *regular_cursor = NULL;
 static gboolean entry_is_dirty = FALSE;
-static const GdkColor error_color = { 0, 0x8000, 0, 0 }; /* dark red */
-static const GdkColor success_color = { 0, 0x1000, 0x7000, 0 };
 
 
 /* all textview_* functions are from the gtk-demo app to get links in the textview working */
@@ -691,13 +689,13 @@ void dict_gui_create_main_window(DictData *dd)
 			"style", PANGO_STYLE_ITALIC,
 			"indent", 10,
 			"pixels-below-lines", 5, NULL);
-	gtk_text_buffer_create_tag(dd->main_textbuffer,
+	dd->error_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			TAG_ERROR,
 			"style", PANGO_STYLE_ITALIC,
-			"foreground-gdk", &error_color, NULL);
-	gtk_text_buffer_create_tag(dd->main_textbuffer,
+			"foreground-gdk", dd->error_color, NULL);
+	dd->success_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			TAG_SUCCESS,
-			"foreground-gdk", &success_color, NULL);
+			"foreground-gdk", dd->success_color, NULL);
 	dd->phon_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			TAG_PHONETIC,
 			"style", PANGO_STYLE_ITALIC,

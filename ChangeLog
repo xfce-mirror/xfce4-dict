@@ -5,6 +5,8 @@
    Add 'success' colour to mark found search terms.
    Colourise search terms according to the search result for better
    visual feedback.
+ * lib/common.c, lib/common.h, lib/gui.c, lib/prefs.c:
+   Make error and success colours configurable.
 
 
 2009-05-10  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

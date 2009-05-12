@@ -155,6 +155,8 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 	}
 	g_object_set(G_OBJECT(dd->link_tag), "foreground-gdk", dd->link_color, NULL);
 	g_object_set(G_OBJECT(dd->phon_tag), "foreground-gdk", dd->phon_color, NULL);
+	g_object_set(G_OBJECT(dd->error_tag), "foreground-gdk", dd->error_color, NULL);
+	g_object_set(G_OBJECT(dd->success_tag), "foreground-gdk", dd->success_color, NULL);
 
 	/* save settings */
 	dict_write_rc_file(dd);
@@ -297,7 +299,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	 */
 #define PAGE_GENERAL /* only for navigation in Geany's symbol list ;-) */
 	{
-		GtkWidget *radio_button, *label, *table, *color_link, *color_phon;
+		GtkWidget *radio_button, *label, *table, *label4;
+		GtkWidget *color_link, *color_phon, *color_success, *color_error;
 		GSList *search_method;
 
 		notebook_vbox = gtk_vbox_new(FALSE, 2);
@@ -358,12 +361,18 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		label1 = gtk_label_new(_("Link Color:"));
 		label2 = gtk_label_new(_("Phonetic Color:"));
+		label3 = gtk_label_new(_("Success Color:"));
+		label4 = gtk_label_new(_("Error Color:"));
 		color_link = gtk_color_button_new_with_color(dd->link_color);
 		color_phon = gtk_color_button_new_with_color(dd->phon_color);
+		color_error = gtk_color_button_new_with_color(dd->error_color);
+		color_success = gtk_color_button_new_with_color(dd->success_color);
 		g_signal_connect(color_link, "color-set", G_CALLBACK(color_set_cb), dd->link_color);
 		g_signal_connect(color_phon, "color-set", G_CALLBACK(color_set_cb), dd->phon_color);
+		g_signal_connect(color_error, "color-set", G_CALLBACK(color_set_cb), dd->error_color);
+		g_signal_connect(color_success, "color-set", G_CALLBACK(color_set_cb), dd->success_color);
 
-		table = gtk_table_new(2, 2, FALSE);
+		table = gtk_table_new(2, 4, FALSE);
 		gtk_widget_show(table);
 		gtk_table_set_row_spacings(GTK_TABLE(table), 5);
 		gtk_table_set_col_spacings(GTK_TABLE(table), 5);
@@ -383,6 +392,24 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_misc_set_alignment(GTK_MISC(label2), 1, 0);
 
 		gtk_table_attach(GTK_TABLE(table), color_phon, 1, 2, 1, 2,
+						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_table_attach(GTK_TABLE(table), label3, 2, 3, 0, 1,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 5);
+		gtk_misc_set_alignment(GTK_MISC(label3), 1, 0);
+
+		gtk_table_attach(GTK_TABLE(table), color_success, 3, 4, 0, 1,
+						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
+						(GtkAttachOptions) (0), 5, 5);
+
+		gtk_table_attach(GTK_TABLE(table), label4, 2, 3, 1, 2,
+						(GtkAttachOptions) (GTK_FILL),
+						(GtkAttachOptions) (0), 5, 0);
+		gtk_misc_set_alignment(GTK_MISC(label4), 1, 0);
+
+		gtk_table_attach(GTK_TABLE(table), color_error, 3, 4, 1, 2,
 						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
 						(GtkAttachOptions) (0), 5, 5);
 
