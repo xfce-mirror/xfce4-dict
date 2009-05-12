@@ -35,8 +35,6 @@
 
 #include <libxfcegui4/libxfcegui4.h>
 
-
-
 #include "common.h"
 #include "spell.h"
 #include "dictd.h"
@@ -547,5 +545,4 @@ DictData *dict_create_dictdata()
 
 	return dd;
 }
-
 

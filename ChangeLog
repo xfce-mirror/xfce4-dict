@@ -1,3 +1,12 @@
+2009-05-12  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * lib/common.c, lib/common.h, lib/dictd.c, lib/gui.c, lib/gui.h,
+   lib/spell.c:
+   Add 'success' colour to mark found search terms.
+   Colourise search terms according to the search result for better
+   visual feedback.
+
+
 2009-05-10  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * lib/Makefile.am, lib/common.c, lib/common.h, lib/gui.c,

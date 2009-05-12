@@ -55,6 +55,11 @@ enum
 	SERVER_NOT_READY
 };
 
+#define TAG_ERROR "error"
+#define TAG_SUCCESS "success"
+#define TAG_LINK "link"
+#define TAG_BOLD "bold"
+#define TAG_PHONETIC "phonetic"
 
 typedef struct
 {

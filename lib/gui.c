@@ -26,6 +26,8 @@
 #endif
 
 #include <string.h>
+#include <stdarg.h>
+
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 #include <libxfcegui4/libxfcegui4.h>
@@ -44,6 +46,7 @@ static GdkCursor *hand_cursor = NULL;
 static GdkCursor *regular_cursor = NULL;
 static gboolean entry_is_dirty = FALSE;
 static const GdkColor error_color = { 0, 0x8000, 0, 0 }; /* dark red */
+static const GdkColor success_color = { 0, 0x1000, 0x7000, 0 };
 
 
 /* all textview_* functions are from the gtk-demo app to get links in the textview working */
@@ -268,6 +271,33 @@ static gboolean textview_button_press_cb(GtkTextView *view, GdkEventButton *even
 	}
 
 	return FALSE;
+}
+
+
+void dict_gui_textview_apply_tag_to_word(GtkTextBuffer *buffer, const gchar *word,
+										 GtkTextIter *pos, const gchar *first_tag, ...)
+{
+	GtkTextIter start, end;
+	gchar *s;
+
+	g_return_if_fail(word != NULL);
+	g_return_if_fail(first_tag != NULL);
+
+	/* This is a bit ugly but works:
+	 * we search the passed word backwards from 'pos' and apply the tag to it. */
+	if (gtk_text_iter_backward_search(pos, word, GTK_TEXT_SEARCH_TEXT_ONLY, &start, &end, NULL))
+	{
+		va_list args;
+
+		gtk_text_buffer_apply_tag_by_name(buffer, first_tag, &start, &end);
+
+		va_start(args, first_tag);
+		for (; s = va_arg(args, gchar*), s != NULL;)
+		{
+			gtk_text_buffer_apply_tag_by_name(buffer, s, &start, &end);
+		}
+		va_end(args);
+	}
 }
 
 
@@ -656,21 +686,24 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(dd->main_textview), GTK_WRAP_WORD);
 	dd->main_textbuffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(dd->main_textview));
 	gtk_text_buffer_create_tag(dd->main_textbuffer,
-			"bold",
+			TAG_BOLD,
 			"weight", PANGO_WEIGHT_BOLD,
 			"style", PANGO_STYLE_ITALIC,
 			"indent", 10,
 			"pixels-below-lines", 5, NULL);
 	gtk_text_buffer_create_tag(dd->main_textbuffer,
-			"error",
+			TAG_ERROR,
 			"style", PANGO_STYLE_ITALIC,
 			"foreground-gdk", &error_color, NULL);
+	gtk_text_buffer_create_tag(dd->main_textbuffer,
+			TAG_SUCCESS,
+			"foreground-gdk", &success_color, NULL);
 	dd->phon_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
-			"phonetic",
+			TAG_PHONETIC,
 			"style", PANGO_STYLE_ITALIC,
 			"foreground-gdk", dd->phon_color, NULL);
 	dd->link_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
-			"link",
+			TAG_LINK,
 			"underline", PANGO_UNDERLINE_SINGLE,
 			"foreground-gdk", dd->link_color, NULL);
 

@@ -190,7 +190,7 @@ static void parse_header(DictData *dd, GString *buffer, GString *target)
 		len = end - buffer->str; /* length of the phonetic string */
 
 		gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
-				buffer->str, len, "phonetic", NULL);
+				buffer->str, len, TAG_PHONETIC, NULL);
 
 		g_string_erase(buffer, 0, len + 1); /* remove already handled text */
 	}
@@ -205,7 +205,7 @@ static GtkTextTag *create_tag(DictData *dd, const gchar *link_str)
 		"underline", PANGO_UNDERLINE_SINGLE,
 		"foreground-gdk", dd->link_color, NULL);
 
-	g_object_set_data_full(G_OBJECT(tag), "link", g_strdup(link_str), g_free);
+	g_object_set_data_full(G_OBJECT(tag), TAG_LINK, g_strdup(link_str), g_free);
 
 	return tag;
 }
@@ -413,8 +413,9 @@ static gboolean process_server_response(DictData *dd)
 
 		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 		tmp = g_strdup_printf(_("No matches could be found for \"%s\"."), dd->searched_word);
-		gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
-			tmp, -1, "error", NULL);
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
+		dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, dd->searched_word, &dd->textiter,
+			TAG_ERROR, TAG_BOLD, NULL);
 		dict_gui_status_add(dd, "%s", tmp);
 		g_free(tmp);
 		g_free(dd->query_buffer);
@@ -423,14 +424,18 @@ static gboolean process_server_response(DictData *dd)
 		 * spell check and offer a Web search*/
 		if (NZV(dd->web_url))
 		{
+			gchar *label = _(dict_prefs_get_web_url_label(dd));
 			gchar *text = g_strdup_printf(
 				/* for translators: the first wildcard is the search term, the second wildcard
 				 * is the name of the preferred web search engine */
 				_("Search \"%s\" using \"%s\""),
-				dd->searched_word, _(dict_prefs_get_web_url_label(dd)));
+				dd->searched_word, label);
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
-			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
-				text, -1, "link", NULL);
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, text, -1);
+			dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, label,
+				&dd->textiter, TAG_LINK, NULL);
+			dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, dd->searched_word,
+				&dd->textiter, TAG_ERROR, TAG_BOLD, NULL);
 			g_free(text);
 		}
 		if (NZV(dd->spell_bin))

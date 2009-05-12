@@ -32,5 +32,8 @@ void dict_gui_query_geometry(DictData *dd);
 void dict_gui_finalize(DictData *dd);
 const guint8 *dict_gui_get_icon_data(void);
 
+void dict_gui_textview_apply_tag_to_word(GtkTextBuffer *buffer, const gchar *word,
+										 GtkTextIter *pos, const gchar *first_tag, ...);
+
 
 #endif

@@ -90,6 +90,8 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				tmp = g_strdup_printf(_("Suggestions for \"%s\":"), iod->word);
 				gtk_text_buffer_insert_with_tags_by_name(
 					dd->main_textbuffer, &dd->textiter, tmp, -1, "bold", NULL);
+				dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, iod->word, &dd->textiter,
+					TAG_ERROR, TAG_BOLD, NULL);
 				g_free(tmp);
 				/* TODO include the dictionary string into the above message */
 				tmp = g_strdup_printf(" (%s)", dd->spell_dictionary);
@@ -106,6 +108,8 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("\"%s\" is spelled correctly."), iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
+				dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, iod->word, &dd->textiter,
+					TAG_SUCCESS, TAG_BOLD, NULL);
 				g_free(tmp);
 				tmp = g_strdup_printf(" (%s)", dd->spell_dictionary);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
@@ -118,6 +122,8 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\"."),
 					iod->word);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
+				dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, iod->word, &dd->textiter,
+					TAG_ERROR, TAG_BOLD, NULL);
 				g_free(tmp);
 				tmp = g_strdup_printf(" (%s)", dd->spell_dictionary);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
