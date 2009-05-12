@@ -7,6 +7,10 @@
    visual feedback.
  * lib/common.c, lib/common.h, lib/gui.c, lib/prefs.c:
    Make error and success colours configurable.
+ * lib/gui.c, lib/speedreader.c:
+   Fix mnemonic of Speed Reader button.
+   Fix one more cursor issue when clicking links.
+   Improve splitting of the input text for speed reading.
 
 
 2009-05-10  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

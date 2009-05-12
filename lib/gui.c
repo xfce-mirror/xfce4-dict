@@ -71,6 +71,9 @@ static void textview_follow_if_link(GtkWidget *text_view, GtkTextIter *iter, Dic
 			gboolean browser_started = dict_start_web_query(dd, dd->searched_word);
 			if (browser_started && dd->is_plugin)
 				gtk_widget_hide(dd->window);
+
+			gdk_window_set_cursor(gtk_text_view_get_window(
+					GTK_TEXT_VIEW(text_view), GTK_TEXT_WINDOW_TEXT), regular_cursor);
 			g_free(found_link);
 			break;
 		}
@@ -622,7 +625,7 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(sep);
 	gtk_box_pack_start(GTK_BOX(entry_box), sep, FALSE, FALSE, 2);
 
-	button = gtk_button_new_with_mnemonic("_Speed Reader");
+	button = gtk_button_new_with_mnemonic("Speed _Reader");
 	gtk_button_set_image(GTK_BUTTON(button),
 		gtk_image_new_from_stock(GTK_STOCK_JUSTIFY_CENTER, GTK_ICON_SIZE_MENU));
 	g_signal_connect(button, "clicked", G_CALLBACK(speedreader_clicked_cb), dd);

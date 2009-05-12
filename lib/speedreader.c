@@ -90,6 +90,106 @@ static void xfd_speed_reader_class_init(XfdSpeedReaderClass *klass)
 }
 
 
+/* Based on GLib's g_strsplit_set() but slightly modified to split exactly what we need for
+ * speed reading (e.g. splitting but not removing dashes). */
+static gchar **sr_strsplit_set(const gchar *string, const gchar *delimiters)
+{
+	gboolean delim_table[256];
+	GSList *tokens, *list;
+	gint n_tokens;
+	guint x;
+	const gchar *s;
+	const gchar *current;
+	gchar *token;
+	gchar **result;
+
+	g_return_val_if_fail(string != NULL, NULL);
+	g_return_val_if_fail(delimiters != NULL, NULL);
+
+	if (*string == '\0')
+	{
+		result = g_new(char *, 1);
+		result[0] = NULL;
+		return result;
+	}
+
+	memset(delim_table, FALSE, sizeof (delim_table));
+	for (s = delimiters; *s != '\0'; ++s)
+		delim_table[*(guchar *)s] = TRUE;
+
+	tokens = NULL;
+	n_tokens = 0;
+
+	s = current = string;
+	while (*s != '\0')
+	{
+		if (delim_table[*(guchar *)s])
+		{
+			x = (*s == '-') ? 1 : 0;
+			token = g_strndup(current, s - current + x);
+			tokens = g_slist_prepend(tokens, token);
+			++n_tokens;
+
+			current = s + 1;
+		}
+		++s;
+	}
+
+	token = g_strndup(current, s - current);
+	tokens = g_slist_prepend(tokens, token);
+	++n_tokens;
+
+	result = g_new(gchar *, n_tokens + 1);
+
+	result[n_tokens] = NULL;
+	for (list = tokens; list != NULL; list = list->next)
+		result[--n_tokens] = list->data;
+
+	g_slist_free(tokens);
+
+	return result;
+}
+
+
+static gchar *sr_replace_unicode_charatcers(const gchar *text)
+{
+	GString *str;
+	gchar *result;
+	gunichar c;
+
+	if (! g_utf8_validate(text, -1, NULL))
+		return g_strdup(text);
+
+	str = g_string_new(NULL);
+
+	while (*text)
+	{
+		c = g_utf8_get_char(text);
+
+		switch (g_unichar_type(c))
+		{
+			case G_UNICODE_DASH_PUNCTUATION:
+				g_string_append_c(str, '-');
+				break;
+			case G_UNICODE_SPACE_SEPARATOR:
+				g_string_append_c(str, ' ');
+				break;
+			case G_UNICODE_PARAGRAPH_SEPARATOR:
+			case G_UNICODE_LINE_SEPARATOR:
+				g_string_append_c(str, '\n');
+				break;
+			default:
+				g_string_append_unichar(str, c);
+		}
+		text = g_utf8_next_char(text);
+	}
+
+	result = g_string_free(str, (str->len == 0));
+
+	return (result) ? result : g_strdup(text);
+}
+
+
 static gboolean sr_timer(gpointer data)
 {
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(data);
@@ -122,7 +222,7 @@ static void sr_start(XfdSpeedReader *dialog)
 	gint interval;
 	const gchar *fontname;
 	PangoFontDescription *pfd;
-	gchar *text;
+	gchar *text, *cleaned_text;
 	GtkTextIter start, end;
 
 	/* clear the label text */
@@ -157,10 +257,14 @@ static void sr_start(XfdSpeedReader *dialog)
 
 	/* prepare word list and start the timer */
 	priv->word_idx = 0;
-	priv->words = g_strsplit_set(text, " ,.-_=\"\t\n\r", -1);
+	cleaned_text = sr_replace_unicode_charatcers(text); /* replace Unicode dashes and spaces */
+	priv->words = sr_strsplit_set(cleaned_text, " -_=\"\t\n\r");
 	priv->words_len = g_strv_length(priv->words);
 
 	priv->timer_id = g_timeout_add(interval, sr_timer, dialog);
+
+	g_free(text);
+	g_free(cleaned_text);
 }
 
 
