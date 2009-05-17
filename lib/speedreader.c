@@ -346,7 +346,7 @@ static void sr_open_clicked_cb(GtkButton *button, XfdSpeedReader *window)
 			g_free(text);
 		}
 		else
-			xfce_err("The file '%s' could not be loaded.", filename);
+			xfce_err(_("The file '%s' could not be loaded."), filename);
 
 		g_free(filename);
 	}
