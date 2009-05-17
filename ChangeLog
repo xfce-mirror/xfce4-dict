@@ -2,6 +2,9 @@
 
  * lib/gui.c, lib/speedreader.c:
    Mark some strings as translatable (closes #5360).
+ * lib/common.c, lib/common.h, lib/dictd.c, lib/gui.c, lib/prefs.c:
+   Rename some variables.
+   Rename the colour button labels in the preferences dialog.
 
 
 2009-05-12  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

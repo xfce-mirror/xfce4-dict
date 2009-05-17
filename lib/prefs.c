@@ -153,10 +153,10 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 		dd->panel_entry_size = gtk_spin_button_get_value_as_int(
 					GTK_SPIN_BUTTON(g_object_get_data(G_OBJECT(dlg), "panel_entry_size_spinner")));
 	}
-	g_object_set(G_OBJECT(dd->link_tag), "foreground-gdk", dd->link_color, NULL);
-	g_object_set(G_OBJECT(dd->phon_tag), "foreground-gdk", dd->phon_color, NULL);
-	g_object_set(G_OBJECT(dd->error_tag), "foreground-gdk", dd->error_color, NULL);
-	g_object_set(G_OBJECT(dd->success_tag), "foreground-gdk", dd->success_color, NULL);
+	g_object_set(G_OBJECT(dd->link_tag), "foreground-gdk", dd->color_link, NULL);
+	g_object_set(G_OBJECT(dd->phon_tag), "foreground-gdk", dd->color_phonetic, NULL);
+	g_object_set(G_OBJECT(dd->error_tag), "foreground-gdk", dd->color_incorrect, NULL);
+	g_object_set(G_OBJECT(dd->success_tag), "foreground-gdk", dd->color_correct, NULL);
 
 	/* save settings */
 	dict_write_rc_file(dd);
@@ -359,18 +359,18 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 5);
 
-		label1 = gtk_label_new(_("Link Color:"));
-		label2 = gtk_label_new(_("Phonetic Color:"));
-		label3 = gtk_label_new(_("Success Color:"));
-		label4 = gtk_label_new(_("Error Color:"));
-		color_link = gtk_color_button_new_with_color(dd->link_color);
-		color_phon = gtk_color_button_new_with_color(dd->phon_color);
-		color_error = gtk_color_button_new_with_color(dd->error_color);
-		color_success = gtk_color_button_new_with_color(dd->success_color);
-		g_signal_connect(color_link, "color-set", G_CALLBACK(color_set_cb), dd->link_color);
-		g_signal_connect(color_phon, "color-set", G_CALLBACK(color_set_cb), dd->phon_color);
-		g_signal_connect(color_error, "color-set", G_CALLBACK(color_set_cb), dd->error_color);
-		g_signal_connect(color_success, "color-set", G_CALLBACK(color_set_cb), dd->success_color);
+		label1 = gtk_label_new(_("Links:"));
+		label2 = gtk_label_new(_("Phonetics:"));
+		label3 = gtk_label_new(_("Spelled correctly:"));
+		label4 = gtk_label_new(_("Spelled incorrectly:"));
+		color_link = gtk_color_button_new_with_color(dd->color_link);
+		color_phon = gtk_color_button_new_with_color(dd->color_phonetic);
+		color_error = gtk_color_button_new_with_color(dd->color_incorrect);
+		color_success = gtk_color_button_new_with_color(dd->color_correct);
+		g_signal_connect(color_link, "color-set", G_CALLBACK(color_set_cb), dd->color_link);
+		g_signal_connect(color_phon, "color-set", G_CALLBACK(color_set_cb), dd->color_phonetic);
+		g_signal_connect(color_error, "color-set", G_CALLBACK(color_set_cb), dd->color_incorrect);
+		g_signal_connect(color_success, "color-set", G_CALLBACK(color_set_cb), dd->color_correct);
 
 		table = gtk_table_new(2, 4, FALSE);
 		gtk_widget_show(table);

@@ -695,18 +695,18 @@ void dict_gui_create_main_window(DictData *dd)
 	dd->error_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			TAG_ERROR,
 			"style", PANGO_STYLE_ITALIC,
-			"foreground-gdk", dd->error_color, NULL);
+			"foreground-gdk", dd->color_incorrect, NULL);
 	dd->success_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			TAG_SUCCESS,
-			"foreground-gdk", dd->success_color, NULL);
+			"foreground-gdk", dd->color_correct, NULL);
 	dd->phon_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			TAG_PHONETIC,
 			"style", PANGO_STYLE_ITALIC,
-			"foreground-gdk", dd->phon_color, NULL);
+			"foreground-gdk", dd->color_phonetic, NULL);
 	dd->link_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			TAG_LINK,
 			"underline", PANGO_UNDERLINE_SINGLE,
-			"foreground-gdk", dd->link_color, NULL);
+			"foreground-gdk", dd->color_link, NULL);
 
 	/* support for links (cross-references) for dictd responses */
 	{

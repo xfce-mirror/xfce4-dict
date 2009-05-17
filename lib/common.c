@@ -433,14 +433,14 @@ void dict_read_rc_file(DictData *dd)
 	else
 		dd->spell_dictionary = spell_dictionary_default;
 
-	dd->link_color = g_new0(GdkColor, 1);
-	gdk_color_parse(link_color_str, dd->link_color);
-	dd->phon_color = g_new0(GdkColor, 1);
-	gdk_color_parse(phon_color_str, dd->phon_color);
-	dd->error_color = g_new0(GdkColor, 1);
-	gdk_color_parse(error_color_str, dd->error_color);
-	dd->success_color = g_new0(GdkColor, 1);
-	gdk_color_parse(success_color_str, dd->success_color);
+	dd->color_link = g_new0(GdkColor, 1);
+	gdk_color_parse(link_color_str, dd->color_link);
+	dd->color_phonetic = g_new0(GdkColor, 1);
+	gdk_color_parse(phon_color_str, dd->color_phonetic);
+	dd->color_incorrect = g_new0(GdkColor, 1);
+	gdk_color_parse(error_color_str, dd->color_incorrect);
+	dd->color_correct = g_new0(GdkColor, 1);
+	gdk_color_parse(success_color_str, dd->color_correct);
 
 	dd->speedreader_wpm = wpm;
 	dd->speedreader_font = g_strdup(speedreader_font);
@@ -470,10 +470,10 @@ void dict_write_rc_file(DictData *dd)
 		xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);
 		xfce_rc_write_entry(rc, "spell_dictionary", dd->spell_dictionary);
 
-		link_color_str = get_hex_from_color(dd->link_color);
-		phon_color_str = get_hex_from_color(dd->phon_color);
-		error_color_str = get_hex_from_color(dd->error_color);
-		success_color_str = get_hex_from_color(dd->success_color);
+		link_color_str = get_hex_from_color(dd->color_link);
+		phon_color_str = get_hex_from_color(dd->color_phonetic);
+		error_color_str = get_hex_from_color(dd->color_incorrect);
+		success_color_str = get_hex_from_color(dd->color_correct);
 		xfce_rc_write_entry(rc, "link_color", link_color_str);
 		xfce_rc_write_entry(rc, "phonetic_color", phon_color_str);
 		xfce_rc_write_entry(rc, "error_color", error_color_str);
@@ -512,10 +512,10 @@ void dict_free_data(DictData *dd)
 	g_free(dd->spell_bin);
 	g_free(dd->speedreader_font);
 
-	g_free(dd->link_color);
-	g_free(dd->phon_color);
-	g_free(dd->success_color);
-	g_free(dd->error_color);
+	g_free(dd->color_link);
+	g_free(dd->color_phonetic);
+	g_free(dd->color_correct);
+	g_free(dd->color_incorrect);
 
 	if (dd->icon != NULL)
 		g_object_unref(dd->icon);
