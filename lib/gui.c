@@ -309,6 +309,19 @@ static gboolean textview_query_tooltip_cb(GtkWidget *widget, gint x, gint y, gbo
 #endif
 
 
+static void textview_apply_or_remove_tags(GtkTextBuffer *buffer, const gchar *tag,
+										  GtkTextIter *start, GtkTextIter *end)
+{
+	g_return_if_fail(tag != NULL);
+
+	if (*tag == '\0')
+		gtk_text_buffer_remove_all_tags(buffer, start, end);
+	else
+		gtk_text_buffer_apply_tag_by_name(buffer, tag, start, end);
+}
+
+
+/* An empty string as tag name will clear all tags on the given word */
 void dict_gui_textview_apply_tag_to_word(GtkTextBuffer *buffer, const gchar *word,
 										 GtkTextIter *pos, const gchar *first_tag, ...)
 {
@@ -324,12 +337,12 @@ void dict_gui_textview_apply_tag_to_word(GtkTextBuffer *buffer, const gchar *wor
 	{
 		va_list args;
 
-		gtk_text_buffer_apply_tag_by_name(buffer, first_tag, &start, &end);
+		textview_apply_or_remove_tags(buffer, first_tag, &start, &end);
 
 		va_start(args, first_tag);
 		for (; s = va_arg(args, gchar*), s != NULL;)
 		{
-			gtk_text_buffer_apply_tag_by_name(buffer, s, &start, &end);
+			textview_apply_or_remove_tags(buffer, s, &start, &end);
 		}
 		va_end(args);
 	}

@@ -83,19 +83,16 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				count = atoi(tmp);
 				if (! iod->quiet)
 					dict_gui_status_add(dd, ngettext("%d suggestion found.",
-													"%d suggestions found.",
-													count), count);
+													 "%d suggestions found.",
+													 count), count);
 
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
-				tmp = g_strdup_printf(_("Suggestions for \"%s\":"), iod->word);
+				tmp = g_strdup_printf(_("Suggestions for \"%s\" (%s):"),
+					iod->word, dd->spell_dictionary);
 				gtk_text_buffer_insert_with_tags_by_name(
 					dd->main_textbuffer, &dd->textiter, tmp, -1, "bold", NULL);
 				dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, iod->word, &dd->textiter,
 					TAG_ERROR, TAG_BOLD, NULL);
-				g_free(tmp);
-				/* TODO include the dictionary string into the above message */
-				tmp = g_strdup_printf(" (%s)", dd->spell_dictionary);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				g_free(tmp);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 
@@ -106,27 +103,22 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 			else if (msg[0] == '*' && ! iod->quiet)
 			{
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
-				tmp = g_strdup_printf(_("\"%s\" is spelled correctly."), iod->word);
+				tmp = g_strdup_printf(_("\"%s\" is spelled correctly (%s)."),
+					iod->word, dd->spell_dictionary);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, iod->word, &dd->textiter,
 					TAG_SUCCESS, TAG_BOLD, NULL);
-				g_free(tmp);
-				tmp = g_strdup_printf(" (%s)", dd->spell_dictionary);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				g_free(tmp);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
 			else if (msg[0] == '#' && ! iod->quiet)
 			{
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
-				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\"."),
-					iod->word);
+				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\" (%s)."),
+					iod->word, dd->spell_dictionary);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, iod->word, &dd->textiter,
 					TAG_ERROR, TAG_BOLD, NULL);
-				g_free(tmp);
-				tmp = g_strdup_printf(" (%s)", dd->spell_dictionary);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, tmp, -1);
 				g_free(tmp);
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
@@ -220,7 +212,8 @@ void dict_spell_start_query(DictData *dd, const gchar *word, gboolean quiet)
 				&stdin_fd, &stdout_fd, &stderr_fd, &error))
 		{
 			iod = g_new(iodata, 1);
-			iod->quiet = quiet;
+			/* if we have more than search term, show them all even if quiet mode was requested */
+			iod->quiet = quiet && (tts_len == 1);
 			iod->dd = dd;
 			iod->word = g_strdup(tts[i]);
 
