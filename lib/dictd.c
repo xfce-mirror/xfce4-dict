@@ -30,7 +30,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <gtk/gtk.h>
-#include <libxfcegui4/libxfcegui4.h>
+#include <glib/gi18n.h>
 
 #include <signal.h>
 #include <sys/types.h>
@@ -676,7 +676,7 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 
 	if ((fd = open_socket(server, port)) == -1)
 	{
-		xfce_err(_("Could not connect to server."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Could not connect to server."));
 		return;
 	}
 
@@ -685,7 +685,7 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	g_free(get_answer(dd, fd));
 	if (dd->query_status != NO_ERROR)
 	{
-		xfce_err(_("Could not connect to server."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Could not connect to server."));
 		return;
 	}
 
@@ -702,7 +702,8 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 
 	if (strncmp("114", buffer, 3) != 0)
 	{
-		xfce_err(_("An error occured while querying server information."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR,
+			_("An error occured while querying server information."));
 		return;
 	}
 
@@ -767,7 +768,7 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 
 	if ((fd = open_socket(server, port)) == -1)
 	{
-		xfce_err(_("Could not connect to server."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Could not connect to server."));
 		return;
 	}
 
@@ -776,7 +777,7 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	g_free(get_answer(dd, fd));
 	if (dd->query_status != NO_ERROR)
 	{
-		xfce_err(_("Could not connect to server."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Could not connect to server."));
 		return;
 	}
 
@@ -793,12 +794,12 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 
 	if (strncmp("554", buffer, 3) == 0)
 	{
-		xfce_err(_("The server doesn't offer any databases."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("The server doesn't offer any databases."));
 		return;
 	}
 	else if (strncmp("110", buffer, 3) != 0 && strncmp("554", buffer, 3) != 0)
 	{
-		xfce_err(_("Unknown error while quering the server."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Unknown error while quering the server."));
 		return;
 	}
 

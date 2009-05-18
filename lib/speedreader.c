@@ -22,8 +22,7 @@
 #endif
 
 #include <gtk/gtk.h>
-
-#include <libxfcegui4/libxfcegui4.h>
+#include <glib/gi18n.h>
 
 #include "common.h"
 #include "wraplabel.h"
@@ -236,7 +235,7 @@ static void sr_start(XfdSpeedReader *dialog)
 	{
 		gtk_dialog_response(GTK_DIALOG(dialog), RESPONSE_STOP);
 		/* FIXME use an own error dialog implementation */
-		xfce_err(_("You must enter a text."));
+		dict_show_msgbox(priv->dd, GTK_MESSAGE_ERROR, _("You must enter a text."));
 		return;
 	}
 
@@ -346,7 +345,8 @@ static void sr_open_clicked_cb(GtkButton *button, XfdSpeedReader *window)
 			g_free(text);
 		}
 		else
-			xfce_err(_("The file '%s' could not be loaded."), filename);
+			dict_show_msgbox(priv->dd, GTK_MESSAGE_ERROR,
+				_("The file '%s' could not be loaded."), filename);
 
 		g_free(filename);
 	}

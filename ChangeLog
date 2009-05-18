@@ -8,6 +8,9 @@
    Allow clearing tags for a specific word (unused so far).
    If the search term contains more than word and the dictionary search
    fails, show the spell check results of all parts of the search term.
+ * lib/common.c, lib/common.h, lib/dictd.c, lib/prefs.c,
+   lib/speedreader.c:
+   Implement own error dialog.
 
 
 2009-05-17  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

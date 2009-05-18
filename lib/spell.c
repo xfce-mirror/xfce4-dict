@@ -32,8 +32,7 @@
 #include <string.h>
 
 #include <gtk/gtk.h>
-
-#include <libxfcegui4/libxfcegui4.h>
+#include <glib/gi18n.h>
 
 #include "common.h"
 #include "spell.h"

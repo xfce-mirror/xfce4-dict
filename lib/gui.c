@@ -30,7 +30,7 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#include <libxfcegui4/libxfcegui4.h>
+#include <libxfce4util/libxfce4util.h>
 
 #include "common.h"
 #include "gui.h"

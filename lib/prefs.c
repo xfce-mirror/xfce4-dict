@@ -98,7 +98,7 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 		GTK_COMBO_BOX(g_object_get_data(G_OBJECT(dlg), "dict_combo")));
 	if (! NZV(dictionary) || dictionary[0] == '-')
 	{
-		xfce_err(_("You have chosen an invalid dictionary."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("You have chosen an invalid dictionary."));
 		g_free(dictionary);
 		gtk_notebook_set_current_page(
 			GTK_NOTEBOOK(g_object_get_data(G_OBJECT(dlg), "notebook")), NOTEBOOK_PAGE_DICTD);
@@ -109,7 +109,7 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 			GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "web_entry"))));
 	if (! NZV(search_url) || search_url[0] == '-')
 	{
-		xfce_err(_("You must set a valid search URL."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("You must set a valid search URL."));
 		g_free(search_url);
 		gtk_notebook_set_current_page(
 			GTK_NOTEBOOK(g_object_get_data(G_OBJECT(dlg), "notebook")), NOTEBOOK_PAGE_WEB);

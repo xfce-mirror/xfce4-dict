@@ -30,10 +30,11 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdarg.h>
 #include <math.h>
 #include <gtk/gtk.h>
 
-#include <libxfcegui4/libxfcegui4.h>
+#include <libxfce4util/libxfce4util.h>
 
 #include "common.h"
 #include "spell.h"
@@ -184,12 +185,14 @@ gboolean dict_start_web_query(DictData *dd, const gchar *word)
 
 	if (! NZV(uri))
 	{
-		xfce_err(_("The search URL is empty. Please check your preferences."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR,
+			_("The search URL is empty. Please check your preferences."));
 		success = FALSE;
 	}
 	else if (! open_browser(dd, uri))
 	{
-		xfce_err(_("Browser could not be opened. Please check your preferences."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR,
+			_("Browser could not be opened. Please check your preferences."));
 		success = FALSE;
 	}
 	g_free(uri);
@@ -572,4 +575,43 @@ DictData *dict_create_dictdata()
 
 	return dd;
 }
+
+
+void dict_show_msgbox(DictData *dd, gint type, const gchar *text, ...)
+{
+	GtkWidget *dialog;
+	GtkWindow *parent;
+	GString *str;
+	va_list args;
+	const gchar *title;
+
+	str = g_string_new(NULL);
+
+	va_start(args, text);
+	g_string_append_vprintf(str, text, args);
+	va_end(args);
+
+	switch (type)
+	{
+		case GTK_MESSAGE_ERROR:
+			title = _("Error");
+			break;
+		case GTK_MESSAGE_WARNING:
+			title = _("warning");
+			break;
+		default:
+			title = "";
+	}
+
+	parent = (dd->window) ? GTK_WINDOW(dd->window) : NULL;
+	dialog = gtk_message_dialog_new(parent, GTK_DIALOG_DESTROY_WITH_PARENT,
+                                  type, GTK_BUTTONS_OK, "%s", str->str);
+	gtk_window_set_title(GTK_WINDOW(dialog), title);
+
+	gtk_dialog_run(GTK_DIALOG(dialog));
+	gtk_widget_destroy(dialog);
+
+	g_string_free(str, TRUE);
+}
+
 
