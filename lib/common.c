@@ -155,9 +155,8 @@ static gboolean open_browser(DictData *dd, const gchar *uri)
 }
 
 
-gboolean dict_start_web_query(DictData *dd, const gchar *word)
+gchar *dict_get_web_query_uri(DictData *dd, const gchar *word)
 {
-	gboolean success = TRUE;
 	gchar *uri;
 
 #if GLIB_CHECK_VERSION(2, 16, 0)
@@ -172,6 +171,17 @@ gboolean dict_start_web_query(DictData *dd, const gchar *word)
 #else
 	uri = str_replace(g_strdup(dd->web_url), "{word}", dd->searched_word);
 #endif
+
+	return uri;
+}
+
+
+gboolean dict_start_web_query(DictData *dd, const gchar *word)
+{
+	gboolean success = TRUE;
+	gchar *uri = dict_get_web_query_uri(dd, word);
+
+
 	if (! NZV(uri))
 	{
 		xfce_err(_("The search URL is empty. Please check your preferences."));

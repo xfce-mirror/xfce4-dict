@@ -161,6 +161,7 @@ static void textview_set_cursor_if_appropriate(GtkTextView *view, gint x, gint y
 			g_free(name);
 			break;
 		}
+		g_free(name);
 	}
 
 	if (hovering != hovering_over_link)
@@ -186,8 +187,6 @@ static gboolean textview_motion_notify_event(GtkWidget *text_view, GdkEventMotio
 		event->x, event->y, &x, &y);
 
 	textview_set_cursor_if_appropriate(GTK_TEXT_VIEW(text_view), x, y, event->window);
-
-	gdk_window_get_pointer(text_view->window, NULL, NULL, NULL);
 
 	return FALSE;
 }
@@ -273,6 +272,41 @@ static gboolean textview_button_press_cb(GtkTextView *view, GdkEventButton *even
 
 	return FALSE;
 }
+
+
+#if GTK_CHECK_VERSION(2, 12, 0)
+static gboolean textview_query_tooltip_cb(GtkWidget *widget, gint x, gint y, gboolean keyboard_mode,
+										  GtkTooltip *tooltip, DictData *dd)
+{
+	gint tx, ty;
+	GSList *tags = NULL, *tagp = NULL;
+	GtkTextIter iter;
+
+	gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(widget),
+		GTK_TEXT_WINDOW_WIDGET, x, y, &tx, &ty);
+
+	gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(widget), &iter, tx, ty);
+
+	tags = gtk_text_iter_get_tags(&iter);
+	for (tagp = tags;  tagp != NULL;  tagp = tagp->next)
+	{
+		GtkTextTag *tag = tagp->data;
+		gchar *name;
+
+		g_object_get(G_OBJECT(tag), "name", &name, NULL);
+		if (name != NULL && strcmp("link", name) == 0)
+		{
+			gchar *target_uri = dict_get_web_query_uri(dd, dd->searched_word);
+			gtk_tooltip_set_markup(tooltip, target_uri);
+			g_free(name);
+			g_free(target_uri);
+			return TRUE;
+		}
+		g_free(name);
+	}
+	return FALSE;
+}
+#endif
 
 
 void dict_gui_textview_apply_tag_to_word(GtkTextBuffer *buffer, const gchar *word,
@@ -733,6 +767,11 @@ void dict_gui_create_main_window(DictData *dd)
 		g_signal_connect(dd->main_textview, "populate-popup",
 			G_CALLBACK(textview_populate_popup_cb), dd);
 	}
+	/* tooltips */
+#if GTK_CHECK_VERSION(2, 12, 0)
+	gtk_widget_set_has_tooltip(dd->main_textview, TRUE);
+	g_signal_connect(dd->main_textview, "query-tooltip", G_CALLBACK(textview_query_tooltip_cb), dd);
+#endif
 
 	gtk_widget_show(dd->main_textview);
 	gtk_container_add(GTK_CONTAINER(scrolledwindow_results), dd->main_textview);

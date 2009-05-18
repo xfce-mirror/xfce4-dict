@@ -431,11 +431,10 @@ static gboolean process_server_response(DictData *dd)
 				_("Search \"%s\" using \"%s\""),
 				dd->searched_word, label);
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, text, -1);
-			dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, label,
-				&dd->textiter, TAG_LINK, NULL);
-			dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, dd->searched_word,
-				&dd->textiter, TAG_ERROR, TAG_BOLD, NULL);
+			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+				text, -1, TAG_LINK, NULL);
+			/*dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, dd->searched_word,
+				&dd->textiter, TAG_BOLD, NULL);*/
 			g_free(text);
 		}
 		if (NZV(dd->spell_bin))
