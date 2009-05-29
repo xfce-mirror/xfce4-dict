@@ -59,9 +59,15 @@ struct _XfdSpeedReaderPrivate
 enum
 {
 	RESPONSE_START,
-	RESPONSE_STOP,
+	RESPONSE_STOP
 };
 
+enum
+{
+	XSR_STATE_INITIAL,
+	XSR_STATE_RUNNING,
+	XSR_STATE_FINISHED
+};
 
 G_DEFINE_TYPE(XfdSpeedReader, xfd_speed_reader, GTK_TYPE_DIALOG);
 
@@ -230,6 +236,31 @@ static gchar *sr_replace_unicode_characters(const gchar *text, gboolean mark_par
 }
 
 
+static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state)
+{
+	gchar *title, *state_str, *name;
+
+	switch (state)
+	{
+		case XSR_STATE_RUNNING:
+			state_str = _("Running");
+			break;
+		case XSR_STATE_FINISHED:
+			state_str = _("Finished");
+			break;
+		default:
+			state_str = "";
+	}
+
+	name = _("Speed Reader");
+	title = g_strdup_printf("%s%s%s", name, (NZV(state_str)) ? " - " : "", state_str);
+
+	gtk_window_set_title(GTK_WINDOW(dialog), title);
+
+	g_free(title);
+}
+
+
 static gboolean sr_timer(gpointer data)
 {
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(data);
@@ -237,6 +268,7 @@ static gboolean sr_timer(gpointer data)
 	if (priv->word_idx >= priv->words_len)
 	{
 		sr_stop(XFD_SPEED_READER(data));
+		xfd_speed_reader_set_window_title(XFD_SPEED_READER(data), XSR_STATE_FINISHED);
 		return FALSE;
 	}
 
@@ -275,10 +307,11 @@ static void sr_start(XfdSpeedReader *dialog)
 	if (! NZV(text))
 	{
 		gtk_dialog_response(GTK_DIALOG(dialog), RESPONSE_STOP);
-		/* FIXME use an own error dialog implementation */
 		dict_show_msgbox(priv->dd, GTK_MESSAGE_ERROR, _("You must enter a text."));
 		return;
 	}
+
+	xfd_speed_reader_set_window_title(dialog, XSR_STATE_RUNNING);
 
 	/* mark paragraphs? */
 	priv->dd->speedreader_mark_paragraphs = gtk_toggle_button_get_active(
@@ -325,6 +358,7 @@ static void sr_stop(XfdSpeedReader *dialog)
 		g_strfreev(priv->words);
 		priv->words = NULL;
 	}
+	xfd_speed_reader_set_window_title(dialog, XSR_STATE_INITIAL);
 }
 
 
@@ -414,7 +448,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	GtkSizeGroup *sizegroup;
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 
-	gtk_window_set_title(GTK_WINDOW(dialog), _("Speed Reader"));
+	xfd_speed_reader_set_window_title(dialog, XSR_STATE_INITIAL);
 	gtk_window_set_destroy_with_parent(GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_default_size(GTK_WINDOW(dialog), 400, 300);
 	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_CLOSE);

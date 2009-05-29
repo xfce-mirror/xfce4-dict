@@ -4,6 +4,8 @@
    Don't treat quotes as word separators.
    Add an option to mark paragraphs when Speed Reading.
    Fix input focus in the Speed Reader dialog and enable word wrap.
+   Display the speed reading status in the window title to make it
+   more clear when the speed reading has finished.
 
 
 2009-05-18  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
