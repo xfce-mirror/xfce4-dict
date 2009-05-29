@@ -455,6 +455,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	g_object_unref(G_OBJECT(sizegroup));
 
 	textview = gtk_text_view_new();
+	gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(textview), GTK_WRAP_WORD);
 	priv->buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(textview));
 	gtk_text_buffer_set_text(priv->buffer,
 		_("Enter some text here you would like to read.\n\n"
@@ -503,8 +504,6 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_button_set_image(GTK_BUTTON(priv->button_stop),
 		gtk_image_new_from_stock(GTK_STOCK_MEDIA_STOP, GTK_ICON_SIZE_MENU));
 
-	gtk_widget_grab_focus(textview);
-
 	g_signal_connect(dialog, "response", G_CALLBACK(xfd_speed_reader_response_cb), NULL);
 
 	vbox = gtk_vbox_new(FALSE, 6);
@@ -525,6 +524,9 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	priv->second_page = vbox;
 
 	gtk_widget_show_all(priv->first_page);
+
+	gtk_widget_grab_focus(textview);
+
 	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), priv->first_page, TRUE, TRUE, 6);
 	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), priv->second_page, TRUE, TRUE, 6);
 }
