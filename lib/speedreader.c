@@ -44,6 +44,7 @@ struct _XfdSpeedReaderPrivate
 
 	GtkWidget *spin_wpm;
 	GtkWidget *button_font;
+	GtkWidget *check_mark_paragraphs;
 	GtkWidget *display_label;
 	GtkTextBuffer *buffer;
 
@@ -150,11 +151,14 @@ static gchar **sr_strsplit_set(const gchar *string, const gchar *delimiters)
 }
 
 
-static gchar *sr_replace_unicode_charatcers(const gchar *text)
+static gchar *sr_replace_unicode_characters(const gchar *text, gboolean mark_paragraphs)
 {
 	GString *str;
 	gchar *result;
-	gunichar c;
+	gunichar c = 0, last_c, x;
+	gboolean last_line_was_empty = FALSE;
+
+	g_return_val_if_fail(text != NULL, NULL);
 
 	if (! g_utf8_validate(text, -1, NULL))
 		return g_strdup(text);
@@ -163,6 +167,7 @@ static gchar *sr_replace_unicode_charatcers(const gchar *text)
 
 	while (*text)
 	{
+		last_c = c;
 		c = g_utf8_get_char(text);
 
 		switch (g_unichar_type(c))
@@ -174,9 +179,45 @@ static gchar *sr_replace_unicode_charatcers(const gchar *text)
 				g_string_append_c(str, ' ');
 				break;
 			case G_UNICODE_PARAGRAPH_SEPARATOR:
+				if (mark_paragraphs)
+					g_string_append_unichar(str, 182); /* 182 = ¶ */
+				/* intended fall-through */
 			case G_UNICODE_LINE_SEPARATOR:
 				g_string_append_c(str, '\n');
 				break;
+			case G_UNICODE_CONTROL:
+			{
+				/* if not \n or \r, add it literally */
+				if (! mark_paragraphs || strchr("\n\r", c) == NULL)
+				{
+					g_string_append_unichar(str, c);
+				}
+				else /* add pilcrows for paragraphs */
+				{
+					if ((last_c == '\r' && c == '\n') || /* CRLF */
+						(last_c == '\r' && c != '\n') || /* CR */
+						(last_c != '\r' && c == '\n'))   /* LF */
+					{
+						if (c == '\n')
+							/* skip to the next character */
+							x = g_utf8_get_char(g_utf8_next_char(text));
+						else
+							x = c;
+
+						if (strchr("\r\n", x))
+						{
+							last_line_was_empty = TRUE;
+						}
+						else if (last_line_was_empty)
+						{
+							last_line_was_empty = FALSE;
+							g_string_append(str, "¶\n");
+						}
+					}
+					g_string_append_unichar(str, c);
+				}
+				break;
+			}
 			default:
 				g_string_append_unichar(str, c);
 		}
@@ -239,6 +280,10 @@ static void sr_start(XfdSpeedReader *dialog)
 		return;
 	}
 
+	/* mark paragraphs? */
+	priv->dd->speedreader_mark_paragraphs = gtk_toggle_button_get_active(
+		GTK_TOGGLE_BUTTON(priv->check_mark_paragraphs));
+
 	/* set the font */
 	fontname = gtk_font_button_get_font_name(GTK_FONT_BUTTON(priv->button_font));
 	pfd = pango_font_description_from_string(fontname);
@@ -256,8 +301,9 @@ static void sr_start(XfdSpeedReader *dialog)
 
 	/* prepare word list and start the timer */
 	priv->word_idx = 0;
-	cleaned_text = sr_replace_unicode_charatcers(text); /* replace Unicode dashes and spaces */
-	priv->words = sr_strsplit_set(cleaned_text, " -_=\"\t\n\r");
+	/* replace Unicode dashes and spaces and mark paragraphs */
+	cleaned_text = sr_replace_unicode_characters(text, priv->dd->speedreader_mark_paragraphs);
+	priv->words = sr_strsplit_set(cleaned_text, " -_=\t\n\r");
 	priv->words_len = g_strv_length(priv->words);
 
 	priv->timer_id = g_timeout_add(interval, sr_timer, dialog);
@@ -386,9 +432,12 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	priv->spin_wpm = gtk_spin_button_new_with_range(5.0, 10000.0, 5);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label_words), priv->spin_wpm);
 
+	priv->check_mark_paragraphs = gtk_check_button_new_with_mnemonic(_("_Mark Paragraphs"));
+
 	hbox_words = gtk_hbox_new(FALSE, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_words), label_words, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_words), priv->spin_wpm, FALSE, FALSE, 6);
+	gtk_box_pack_start(GTK_BOX(hbox_words), priv->check_mark_paragraphs, FALSE, FALSE, 12);
 
 	label_font = gtk_label_new_with_mnemonic(_("_Font Size:"));
 	gtk_misc_set_alignment(GTK_MISC(label_font), 1, 0.5);
@@ -488,6 +537,8 @@ GtkWidget *xfd_speed_reader_new(GtkWindow *parent, DictData *dd)
 
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(priv->spin_wpm), dd->speedreader_wpm);
 	gtk_font_button_set_font_name(GTK_FONT_BUTTON(priv->button_font), dd->speedreader_font);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(priv->check_mark_paragraphs),
+		dd->speedreader_mark_paragraphs);
 
 	priv->dd = dd;
 

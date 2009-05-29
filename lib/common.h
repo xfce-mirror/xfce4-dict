@@ -118,6 +118,7 @@ typedef struct
 	/* speed reader */
 	gint speedreader_wpm;
 	gchar *speedreader_font;
+	gboolean speedreader_mark_paragraphs;
 } DictData;
 
 

@@ -379,6 +379,7 @@ void dict_read_rc_file(DictData *dd)
 	gint port = 2628;
 	gint panel_entry_size = 150;
 	gint wpm = 400;
+	gboolean mark_paragraphs = FALSE;
 	gboolean show_panel_entry = FALSE;
 	gchar *spell_bin_default = get_spell_program();
 	gchar *spell_dictionary_default = get_default_lang();
@@ -414,6 +415,7 @@ void dict_read_rc_file(DictData *dd)
 
 		speedreader_font = xfce_rc_read_entry(rc, "speedreader_font", speedreader_font);
 		wpm = xfce_rc_read_int_entry(rc, "speedreader_wpm", wpm);
+		mark_paragraphs = xfce_rc_read_bool_entry(rc, "speedreader_mark_paragraphs", mark_paragraphs);
 
 		geo = xfce_rc_read_entry(rc, "geometry", geo);
 		parse_geometry(dd, geo);
@@ -455,6 +457,7 @@ void dict_read_rc_file(DictData *dd)
 	dd->color_correct = g_new0(GdkColor, 1);
 	gdk_color_parse(success_color_str, dd->color_correct);
 
+	dd->speedreader_mark_paragraphs = mark_paragraphs;
 	dd->speedreader_wpm = wpm;
 	dd->speedreader_font = g_strdup(speedreader_font);
 
@@ -498,6 +501,7 @@ void dict_write_rc_file(DictData *dd)
 
 		xfce_rc_write_entry(rc, "speedreader_font", dd->speedreader_font);
 		xfce_rc_write_int_entry(rc, "speedreader_wpm", dd->speedreader_wpm);
+		xfce_rc_write_bool_entry(rc, "speedreader_mark_paragraphs", dd->speedreader_mark_paragraphs);
 
 		g_free(link_color_str);
 		g_free(phon_color_str);
