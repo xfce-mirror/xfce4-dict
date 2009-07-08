@@ -90,7 +90,7 @@ static void search_method_changed(GtkRadioButton *radiobutton, DictData *dd)
 
 void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 {
-	gchar *dictionary, *search_url;
+	gchar *dictionary;
 
 	/* check some values before actually saving the settings in case we need to return to
 	 * the dialog */
@@ -103,17 +103,6 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 		gtk_notebook_set_current_page(
 			GTK_NOTEBOOK(g_object_get_data(G_OBJECT(dlg), "notebook")), NOTEBOOK_PAGE_DICTD);
 		gtk_widget_grab_focus(GTK_WIDGET(g_object_get_data(G_OBJECT(dlg), "dict_combo")));
-		return;
-	}
-	search_url = g_strdup(gtk_entry_get_text(
-			GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "web_entry"))));
-	if (! NZV(search_url) || search_url[0] == '-')
-	{
-		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("You must set a valid search URL."));
-		g_free(search_url);
-		gtk_notebook_set_current_page(
-			GTK_NOTEBOOK(g_object_get_data(G_OBJECT(dlg), "notebook")), NOTEBOOK_PAGE_WEB);
-		gtk_widget_grab_focus(GTK_WIDGET(g_object_get_data(G_OBJECT(dlg), "web_entry")));
 		return;
 	}
 
@@ -130,7 +119,9 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 
 	/* MODE WEB */
 	g_free(dd->web_url);
-	dd->web_url = search_url;
+	dd->web_url = g_strdup(gtk_entry_get_text(
+			GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "web_entry"))));
+	gtk_widget_set_sensitive(dd->radio_button_web, NZV(dd->web_url));
 
 	/* MODE SPELL */
 	dictionary = gtk_combo_box_get_active_text(

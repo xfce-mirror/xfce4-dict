@@ -427,6 +427,9 @@ void dict_read_rc_file(DictData *dd)
 	else
 		dd->mode_in_use = dd->mode_default;
 
+	if (! NZV(weburl) && dd->mode_in_use == DICTMODE_WEB)
+		dd->mode_in_use = DICTMODE_DICT;
+
 	dd->web_url = g_strdup(weburl);
 	dd->show_panel_entry = show_panel_entry;
 	dd->panel_entry_size = panel_entry_size;
