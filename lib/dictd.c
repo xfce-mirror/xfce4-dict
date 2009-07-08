@@ -313,7 +313,7 @@ static gint process_response_content(DictData *dd, gchar **lines, gint line_no, 
 
 	if (g_strv_length(dict_parts) > 3)
 	{	gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
-			g_strstrip(dict_parts[3]), -1, "bold", NULL);
+			g_strstrip(dict_parts[3]), -1, TAG_BOLD, NULL);
 
 		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, " (", 2);
 		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter,
@@ -410,6 +410,9 @@ static gboolean process_server_response(DictData *dd)
 
 	if (dd->query_status == NOTHING_FOUND)
 	{
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
+		gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+			_("Dictionary Results:"), -1, TAG_HEADING, NULL);
 
 		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 		tmp = g_strdup_printf(_("No matches could be found for \"%s\"."), dd->searched_word);
@@ -430,9 +433,15 @@ static gboolean process_server_response(DictData *dd)
 				 * is the name of the preferred web search engine */
 				_("Search \"%s\" using \"%s\""),
 				dd->searched_word, label);
+
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
 			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+				_("Web Search:"), -1, TAG_HEADING, NULL);
+
+			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
+			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
 				text, -1, TAG_LINK, NULL);
+			//~ gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			/*dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, dd->searched_word,
 				&dd->textiter, TAG_BOLD, NULL);*/
 			g_free(text);

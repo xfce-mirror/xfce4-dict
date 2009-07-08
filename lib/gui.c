@@ -736,10 +736,14 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(dd->main_textview), GTK_WRAP_WORD);
 	dd->main_textbuffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(dd->main_textview));
 	gtk_text_buffer_create_tag(dd->main_textbuffer,
+			TAG_HEADING,
+			"weight", PANGO_WEIGHT_BOLD,
+			"pixels-below-lines", 5, NULL);
+	gtk_text_buffer_create_tag(dd->main_textbuffer,
 			TAG_BOLD,
 			"weight", PANGO_WEIGHT_BOLD,
-			"style", PANGO_STYLE_ITALIC,
 			"indent", 10,
+			"style", PANGO_STYLE_ITALIC,
 			"pixels-below-lines", 5, NULL);
 	dd->error_tag = gtk_text_buffer_create_tag(dd->main_textbuffer,
 			TAG_ERROR,

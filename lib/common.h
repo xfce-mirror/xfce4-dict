@@ -55,6 +55,7 @@ enum
 	SERVER_NOT_READY
 };
 
+#define TAG_HEADING "heading"
 #define TAG_ERROR "error"
 #define TAG_SUCCESS "success"
 #define TAG_LINK "link"

@@ -44,6 +44,7 @@ typedef struct
 	DictData *dd;
 	gchar *word;
 	gboolean quiet;
+	gboolean header_printed;
 } iodata;
 
 
@@ -65,6 +66,19 @@ static GIOChannel *set_up_io_channel(gint fd, GIOCondition cond, GIOFunc func, g
 }
 
 
+static void print_header(iodata *iod)
+{
+	if (! iod->header_printed)
+	{
+		gtk_text_buffer_insert(iod->dd->main_textbuffer, &iod->dd->textiter, "\n", 1);
+		gtk_text_buffer_insert_with_tags_by_name(iod->dd->main_textbuffer, &iod->dd->textiter,
+			_("Spell Checker Results:"), -1, TAG_HEADING, NULL);
+
+		iod->header_printed = TRUE;
+	}
+}
+
+
 static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 {
 	iodata *iod = data;
@@ -75,21 +89,23 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 
 		while (g_io_channel_read_line(ioc, &msg, NULL, NULL, NULL) && msg != NULL)
 		{
+			print_header(iod);
+
 			if (msg[0] == '&')
 			{	/* & cmd 17 7: ... */
 				gint count;
 				tmp = strchr(msg + 2, ' ') + 1;
 				count = atoi(tmp);
+
 				if (! iod->quiet)
 					dict_gui_status_add(dd, ngettext("%d suggestion found.",
 													 "%d suggestions found.",
 													 count), count);
-
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
+				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
 				tmp = g_strdup_printf(_("Suggestions for \"%s\" (%s):"),
 					iod->word, dd->spell_dictionary);
 				gtk_text_buffer_insert_with_tags_by_name(
-					dd->main_textbuffer, &dd->textiter, tmp, -1, "bold", NULL);
+					dd->main_textbuffer, &dd->textiter, tmp, -1, TAG_BOLD, NULL);
 				dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, iod->word, &dd->textiter,
 					TAG_ERROR, TAG_BOLD, NULL);
 				g_free(tmp);
@@ -97,7 +113,6 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 
 				tmp = strchr(msg, ':') + 2;
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, g_strchomp(tmp), -1);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
 			else if (msg[0] == '*' && ! iod->quiet)
 			{
@@ -108,7 +123,6 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, iod->word, &dd->textiter,
 					TAG_SUCCESS, TAG_BOLD, NULL);
 				g_free(tmp);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
 			else if (msg[0] == '#' && ! iod->quiet)
 			{
@@ -119,7 +133,6 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 				dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, iod->word, &dd->textiter,
 					TAG_ERROR, TAG_BOLD, NULL);
 				g_free(tmp);
-				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			}
 			g_free(msg);
 		}
@@ -177,6 +190,7 @@ void dict_spell_start_query(DictData *dd, const gchar *word, gboolean quiet)
 	guint	 i;
 	gsize	 tts_len;
 	gchar  **tts; /* text to search */
+	gboolean header_printed = FALSE;
 	iodata	*iod;
 
 	if (! NZV(dd->spell_bin))
@@ -211,14 +225,16 @@ void dict_spell_start_query(DictData *dd, const gchar *word, gboolean quiet)
 				&stdin_fd, &stdout_fd, &stderr_fd, &error))
 		{
 			iod = g_new(iodata, 1);
-			/* if we have more than search term, show them all even if quiet mode was requested */
+			/* if we have more than one search term, show them all even if in quiet mode */
 			iod->quiet = quiet && (tts_len == 1);
 			iod->dd = dd;
 			iod->word = g_strdup(tts[i]);
+			iod->header_printed = header_printed;
 
 			set_up_io_channel(stdin_fd, G_IO_OUT, iofunc_write, g_strdup(tts[i]));
 			set_up_io_channel(stdout_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read, iod);
 			set_up_io_channel(stderr_fd, G_IO_IN|G_IO_PRI|G_IO_HUP|G_IO_ERR|G_IO_NVAL, iofunc_read_err, dd);
+			header_printed = TRUE;
 			if (! quiet)
 				dict_gui_status_add(dd, _("Ready"));
 		}
