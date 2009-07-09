@@ -43,6 +43,7 @@ struct _XfdSpeedReaderPrivate
 	GtkWidget *button_stop;
 
 	GtkWidget *spin_wpm;
+	GtkWidget *spin_grouping;
 	GtkWidget *button_font;
 	GtkWidget *check_mark_paragraphs;
 	GtkWidget *display_label;
@@ -52,6 +53,9 @@ struct _XfdSpeedReaderPrivate
 	gint word_idx;
 	gint words_len;
 	gchar **words;
+
+	GString *group;
+	gsize group_size;
 
 	DictData *dd;
 };
@@ -264,6 +268,7 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 static gboolean sr_timer(gpointer data)
 {
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(data);
+	gsize i;
 
 	if (priv->word_idx >= priv->words_len)
 	{
@@ -272,16 +277,23 @@ static gboolean sr_timer(gpointer data)
 		return FALSE;
 	}
 
-	/* skip empty elements */
-	while (priv->word_idx < priv->words_len && ! NZV(priv->words[priv->word_idx]))
-		priv->word_idx++;
-
-	if (priv->word_idx < priv->words_len && NZV(priv->words[priv->word_idx]))
+	for (i = 0; (i < priv->group_size) && (priv->word_idx < priv->words_len); i++)
 	{
-		gtk_label_set_text(GTK_LABEL(priv->display_label), priv->words[priv->word_idx]);
-	}
+		/* skip empty elements */
+		while (priv->word_idx < priv->words_len && ! NZV(priv->words[priv->word_idx]))
+			priv->word_idx++;
 
-	priv->word_idx++;
+		if (priv->word_idx < priv->words_len)
+		{
+			g_string_append(priv->group, priv->words[priv->word_idx]);
+			if (i < (priv->group_size - 1))
+				g_string_append_c(priv->group, ' ');
+		}
+		priv->word_idx++;
+	}
+	if (NZV(priv->group->str))
+		gtk_label_set_text(GTK_LABEL(priv->display_label), priv->group->str);
+	g_string_erase(priv->group, 0, -1);
 
 	return TRUE;
 }
@@ -290,7 +302,7 @@ static gboolean sr_timer(gpointer data)
 static void sr_start(XfdSpeedReader *dialog)
 {
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
-	gint wpm;
+	gint wpm = 400, grouping;
 	gint interval;
 	const gchar *fontname;
 	PangoFontDescription *pfd;
@@ -323,17 +335,25 @@ static void sr_start(XfdSpeedReader *dialog)
 	gtk_widget_modify_font(priv->display_label, pfd);
 	pango_font_description_free(pfd);
 
+	/* word grouping */
+	grouping = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(priv->spin_grouping));
+	if (grouping >= 1 && grouping < 100) /* paranoia */
+		priv->group_size = grouping;
+
 	/* calculate the rate */
 	wpm = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(priv->spin_wpm));
-	interval = 60000 / wpm;
+	if (wpm >= 1)
+		interval = 60000 / wpm;
 
 	/* save the settings */
 	priv->dd->speedreader_wpm = wpm;
+	priv->dd->speedreader_grouping = grouping;
 	g_free(priv->dd->speedreader_font);
 	priv->dd->speedreader_font = g_strdup(fontname);
 
 	/* prepare word list and start the timer */
 	priv->word_idx = 0;
+	priv->group = g_string_new(NULL);
 	/* replace Unicode dashes and spaces and mark paragraphs */
 	cleaned_text = sr_replace_unicode_characters(text, priv->dd->speedreader_mark_paragraphs);
 	priv->words = sr_strsplit_set(cleaned_text, " -_=\t\n\r");
@@ -355,6 +375,8 @@ static void sr_stop(XfdSpeedReader *dialog)
 		g_source_remove(priv->timer_id);
 		priv->timer_id = 0;
 
+		g_string_free(priv->group, TRUE);
+		priv->group = NULL;
 		g_strfreev(priv->words);
 		priv->words = NULL;
 	}
@@ -440,17 +462,30 @@ static void sr_clear_clicked_cb(GtkButton *button, GtkTextBuffer *buffer)
 }
 
 
+static void sr_spin_grouping_changed_cb(GtkSpinButton *button, GtkLabel *label)
+{
+	gint count = gtk_spin_button_get_value_as_int(button);
+	gchar *text = g_strdup_printf(ngettext(
+		"(display %d word at a time)",
+		"(display %d words at a time)", count),
+		count);
+
+	gtk_label_set_text(label, text);
+	g_free(text);
+}
+
+
 static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 {
-	GtkWidget *label_intro, *label_words, *label_font;
-	GtkWidget *vbox, *hbox_words, *hbox_font, *swin, *textview;
+	GtkWidget *label_intro, *label_words, *label_font, *label_grouping, *label_grouping_desc;
+	GtkWidget *vbox, *hbox_words, *hbox_font, *hbox_grouping, *swin, *textview;
 	GtkWidget *vbox_text_buttons, *hbox_text, *button_clear, *button_open;
 	GtkSizeGroup *sizegroup;
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 
 	xfd_speed_reader_set_window_title(dialog, XSR_STATE_INITIAL);
 	gtk_window_set_destroy_with_parent(GTK_WINDOW(dialog), TRUE);
-	gtk_window_set_default_size(GTK_WINDOW(dialog), 400, 300);
+	gtk_window_set_default_size(GTK_WINDOW(dialog), 400, 330);
 	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_CLOSE);
 	gtk_dialog_set_has_separator(GTK_DIALOG(dialog), FALSE);
 	gtk_widget_set_name(GTK_WIDGET(dialog), "Xfce4Dict");
@@ -460,7 +495,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 		_("This is an easy speed reading utility to help train you to read faster. "
 		  "It does this by flashing words at a rapid rate on the screen."));
 
-	label_words = gtk_label_new_with_mnemonic(_("_Words per minute:"));
+	label_words = gtk_label_new_with_mnemonic(_("_Words per Minute:"));
 	gtk_misc_set_alignment(GTK_MISC(label_words), 1, 0.5);
 
 	priv->spin_wpm = gtk_spin_button_new_with_range(5.0, 10000.0, 5);
@@ -472,6 +507,24 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_box_pack_start(GTK_BOX(hbox_words), label_words, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_words), priv->spin_wpm, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_words), priv->check_mark_paragraphs, FALSE, FALSE, 12);
+
+	label_grouping = gtk_label_new_with_mnemonic(_("Word _Grouping:"));
+	gtk_misc_set_alignment(GTK_MISC(label_grouping), 1, 0.5);
+
+	label_grouping_desc = gtk_label_new(NULL);
+
+	priv->spin_grouping = gtk_spin_button_new_with_range(1.0, 100.0, 1);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label_grouping), priv->spin_grouping);
+	//~ g_signal_connect(priv->spin_grouping, "value-changed",
+		//~ G_CALLBACK(sr_spin_grouping_changed_cb), label_grouping_desc);
+	g_signal_connect(priv->spin_grouping, "value-changed",
+		G_CALLBACK(sr_spin_grouping_changed_cb), label_grouping_desc);
+	sr_spin_grouping_changed_cb(GTK_SPIN_BUTTON(priv->spin_grouping), GTK_LABEL(label_grouping_desc));
+
+	hbox_grouping = gtk_hbox_new(FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(hbox_grouping), label_grouping, FALSE, FALSE, 6);
+	gtk_box_pack_start(GTK_BOX(hbox_grouping), priv->spin_grouping, FALSE, FALSE, 6);
+	gtk_box_pack_start(GTK_BOX(hbox_grouping), label_grouping_desc, FALSE, FALSE, 6);
 
 	label_font = gtk_label_new_with_mnemonic(_("_Font Size:"));
 	gtk_misc_set_alignment(GTK_MISC(label_font), 1, 0.5);
@@ -485,6 +538,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 
 	sizegroup = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 	gtk_size_group_add_widget(sizegroup, label_words);
+	gtk_size_group_add_widget(sizegroup, label_grouping);
 	gtk_size_group_add_widget(sizegroup, label_font);
 	g_object_unref(G_OBJECT(sizegroup));
 
@@ -541,9 +595,10 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	g_signal_connect(dialog, "response", G_CALLBACK(xfd_speed_reader_response_cb), NULL);
 
 	vbox = gtk_vbox_new(FALSE, 6);
-	gtk_box_pack_start(GTK_BOX(vbox), label_intro, FALSE, FALSE, 6);
-	gtk_box_pack_start(GTK_BOX(vbox), hbox_words, FALSE, FALSE, 6);
-	gtk_box_pack_start(GTK_BOX(vbox), hbox_font, FALSE, FALSE, 6);
+	gtk_box_pack_start(GTK_BOX(vbox), label_intro, FALSE, FALSE, 5);
+	gtk_box_pack_start(GTK_BOX(vbox), hbox_words, FALSE, FALSE, 3);
+	gtk_box_pack_start(GTK_BOX(vbox), hbox_grouping, FALSE, FALSE, 3);
+	gtk_box_pack_start(GTK_BOX(vbox), hbox_font, FALSE, FALSE, 3);
 	gtk_box_pack_start(GTK_BOX(vbox), hbox_text, TRUE, TRUE, 0);
 
 	priv->first_page = vbox;
@@ -572,6 +627,7 @@ GtkWidget *xfd_speed_reader_new(GtkWindow *parent, DictData *dd)
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(priv->spin_wpm), dd->speedreader_wpm);
+	gtk_spin_button_set_value(GTK_SPIN_BUTTON(priv->spin_grouping), dd->speedreader_grouping);
 	gtk_font_button_set_font_name(GTK_FONT_BUTTON(priv->button_font), dd->speedreader_font);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(priv->check_mark_paragraphs),
 		dd->speedreader_mark_paragraphs);

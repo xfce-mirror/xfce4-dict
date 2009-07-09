@@ -1,3 +1,9 @@
+2009-07-09  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * lib/common.c, lib/common.h, lib/speedreader.c:
+   Implement word grouping option for Speed Reading.
+
+
 2009-07-07  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * lib/common.c, lib/common.h, lib/gui.c, lib/prefs.c:
