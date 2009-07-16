@@ -1,3 +1,10 @@
+2009-07-16  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * lib/spell.c:
+   Don't print the spell check header if in quiet mode and the word
+   is spelled correctly.
+
+
 2009-07-09  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * lib/common.c, lib/common.h, lib/speedreader.c:

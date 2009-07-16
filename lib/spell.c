@@ -89,13 +89,13 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 
 		while (g_io_channel_read_line(ioc, &msg, NULL, NULL, NULL) && msg != NULL)
 		{
-			print_header(iod);
-
 			if (msg[0] == '&')
 			{	/* & cmd 17 7: ... */
 				gint count;
 				tmp = strchr(msg + 2, ' ') + 1;
 				count = atoi(tmp);
+
+				print_header(iod);
 
 				if (! iod->quiet)
 					dict_gui_status_add(dd, ngettext("%d suggestion found.",
@@ -116,6 +116,8 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 			}
 			else if (msg[0] == '*' && ! iod->quiet)
 			{
+				print_header(iod);
+
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("\"%s\" is spelled correctly (%s)."),
 					iod->word, dd->spell_dictionary);
@@ -126,6 +128,8 @@ static gboolean iofunc_read(GIOChannel *ioc, GIOCondition cond, gpointer data)
 			}
 			else if (msg[0] == '#' && ! iod->quiet)
 			{
+				print_header(iod);
+
 				gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 				tmp = g_strdup_printf(_("No suggestions could be found for \"%s\" (%s)."),
 					iod->word, dd->spell_dictionary);
