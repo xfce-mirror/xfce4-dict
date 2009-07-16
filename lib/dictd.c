@@ -441,9 +441,6 @@ static gboolean process_server_response(DictData *dd)
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
 			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
 				text, -1, TAG_LINK, NULL);
-			//~ gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
-			/*dict_gui_textview_apply_tag_to_word(dd->main_textbuffer, dd->searched_word,
-				&dd->textiter, TAG_BOLD, NULL);*/
 			g_free(text);
 		}
 		if (NZV(dd->spell_bin))

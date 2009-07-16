@@ -515,8 +515,6 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 
 	priv->spin_grouping = gtk_spin_button_new_with_range(1.0, 100.0, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label_grouping), priv->spin_grouping);
-	//~ g_signal_connect(priv->spin_grouping, "value-changed",
-		//~ G_CALLBACK(sr_spin_grouping_changed_cb), label_grouping_desc);
 	g_signal_connect(priv->spin_grouping, "value-changed",
 		G_CALLBACK(sr_spin_grouping_changed_cb), label_grouping_desc);
 	sr_spin_grouping_changed_cb(GTK_SPIN_BUTTON(priv->spin_grouping), GTK_LABEL(label_grouping_desc));
