@@ -50,8 +50,8 @@ struct _XfdSpeedReaderPrivate
 	GtkTextBuffer *buffer;
 
 	guint timer_id;
-	gint word_idx;
-	gint words_len;
+	guint word_idx;
+	gsize words_len;
 	gchar **words;
 
 	GString *group;
@@ -265,6 +265,16 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 }
 
 
+static void sr_set_label_text(XfdSpeedReader *dialog)
+{
+	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
+	
+	if (NZV(priv->group->str))
+		gtk_label_set_text(GTK_LABEL(priv->display_label), priv->group->str);
+	g_string_erase(priv->group, 0, -1);
+}
+
+
 static gboolean sr_timer(gpointer data)
 {
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(data);
@@ -285,16 +295,33 @@ static gboolean sr_timer(gpointer data)
 
 		if (priv->word_idx < priv->words_len)
 		{
-			g_string_append(priv->group, priv->words[priv->word_idx]);
-			if (i < (priv->group_size - 1))
-				g_string_append_c(priv->group, ' ');
+			if (g_utf8_get_char(priv->words[priv->word_idx]) == 182)
+			{	/* paragraph sign inside the group */
+				g_string_append_unichar(priv->group, 182);
+				sr_set_label_text(data);
+				priv->word_idx++;
+				return TRUE;				
+			}
+			if ((priv->word_idx + 1) < priv->words_len &&
+				g_utf8_get_char(priv->words[priv->word_idx + 1]) == 182)
+			{	/* paragraph sign in the next group, so move it to this group */
+				g_string_append(priv->group, priv->words[priv->word_idx]);
+				g_string_append_unichar(priv->group, 182);
+				sr_set_label_text(data);
+				priv->word_idx += 2;
+				return TRUE;				
+			}
+			else
+			{
+				g_string_append(priv->group, priv->words[priv->word_idx]);
+				if (i < (priv->group_size - 1))
+					g_string_append_c(priv->group, ' ');
+			}
 		}
 		priv->word_idx++;
 	}
-	if (NZV(priv->group->str))
-		gtk_label_set_text(GTK_LABEL(priv->display_label), priv->group->str);
-	g_string_erase(priv->group, 0, -1);
-
+	sr_set_label_text(data);
+	
 	return TRUE;
 }
 

@@ -3,6 +3,8 @@
  * lib/spell.c:
    Don't print the spell check header if in quiet mode and the word
    is spelled correctly.
+ * lib/speedreader.c:
+   Display paragraph signs at the end of the current word group.
 
 
 2009-07-09  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
