@@ -1,82 +1,77 @@
-# Hungarian  translation of the xfce4-dict-plugin package.
-# Copyright (C) 2006-2007 Enrico Tröger
-# This file is distributed under the same license as the xfce4-dict-plugin package.
-# SZERVÁC Attila <sas@321.hu>, 2006.
+# Hungarian translation of xfce4-dict
+# Copyright 2009. Free Software Foundation, Inc.
+# This file is distributed under the same license as the xfce4-dict package.
 #
+# SZERVÁC Attila <sas@321.hu>, 2006.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
+"Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2009-05-25 18:11+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
-"Language-Team: Hungarian\n"
+"POT-Creation-Date: 2009-07-23 12:19+0200\n"
+"PO-Revision-Date: 2009-07-24 00:35+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <gnome at gnome dot hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Poedit-Country: HUNGARY\n"
-"X-Poedit-Language: Hungarian\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr "Egy beillesztés különböző szótárak lekérdezésére."
+msgstr "Különböző szótárak lekérdezése"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:531
-#: ../lib/prefs.c:277
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Szótár"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472
-#: ../src/xfce4-dict.c:204
-#: ../lib/spell.c:215
-#: ../lib/gui.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Kész"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
-msgstr "Egy szó keresése"
+msgstr "Szó keresése"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443
-#: ../lib/gui.c:555
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
 msgid "Search term"
-msgstr "Keresési kifejezés:"
+msgstr "Keresőkifejezés"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr "Keresd az adott szöveget egy Dict szerveren(RFC 2229)"
+msgstr "A megadott szöveg keresése Dict kiszolgáló használatával"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr "Keresd az adott szöveget egy web-alapú keresővel"
+msgstr "A megadott szöveg keresése webes keresőmotorral"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr "Ellenőrizd az adott szöveget egy helyesírás-ellenőrzővel"
+msgstr "A megadott szöveg helyesírásának ellenőrzése"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
-msgstr "Húzd a fókuszt a szövegmezőre a panelban"
+msgstr "Fókusz megragadása a panelen lévő szövegmezőn"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Az önálló alkalmazást indítsd, ha a panel beillesztés be is van töltve"
+msgstr "Önálló alkalmazás indítása, még ha a panelbővítmény fut is"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Az ELSŐDLEGES kijelölés tartalmára keres"
+msgstr "Az elsődleges kijelölés használata keresőkifejezésként"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr "Légy bőbeszédű"
+msgstr "Részletes kimenet"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
-msgstr "Verzió adatok mutatása"
+msgstr "Verzióinformációk megjelenítése"
 
 #: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
@@ -85,190 +80,288 @@ msgstr "[SZÖVEG]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Kérlek, jelentsd a hibákat itt: <%s>."
+msgstr "A hibákat ide jelentse: <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:726
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
 msgid "A client program to query different dictionaries."
-msgstr "Egy kliens program különféle szótárak lekérdezéséhez."
+msgstr "Kliensprogram különböző szótárak lekérdezéséhez."
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
-msgstr "Szótár kliens"
+msgstr "Szótárkliens"
 
-#: ../lib/spell.c:85
+#: ../lib/spell.c:75
+msgid "Spell Checker Results:"
+msgstr "Helyesírás-ellenőrzés eredményei:"
+
+#: ../lib/spell.c:101
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "%d javaslatot találtam."
-msgstr[1] "%d javaslatot találtam."
+msgstr[0] "%d javaslat található"
+msgstr[1] "%d javaslat található"
 
-#: ../lib/spell.c:90
+#: ../lib/spell.c:105
 #, c-format
-msgid "Suggestions for \"%s\":"
-msgstr "Javaslatok ehhez: \"%s\":"
+msgid "Suggestions for \"%s\" (%s):"
+msgstr "Javaslatok erre: „%s” (%s)"
 
-#: ../lib/spell.c:103
+#: ../lib/spell.c:122
 #, c-format
-msgid "\"%s\" is spelled correctly."
-msgstr "\"%s\" írása helyes."
+msgid "\"%s\" is spelled correctly (%s)."
+msgstr "„%s” helyesen van írva (%s)"
 
-#: ../lib/spell.c:111
+#: ../lib/spell.c:134
 #, c-format
-msgid "No suggestions could be found for \"%s\"."
-msgstr "Nincs javaslat \"%s\" kifejezésre"
+msgid "No suggestions could be found for \"%s\" (%s)."
+msgstr "Nem találhatók javaslatok ehhez: „%s” (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:140
+#: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Hiba \"%s\" futtatásakor (%s)."
+msgstr "Hiba „%s” végrehajtásakor (%s)."
 
-#: ../lib/spell.c:177
+#: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Állítsd be a helyesírás-ellenőrző parancsot a jellemzők párbeszédben."
+msgstr "Állítsa be a helyesírás-ellenőrzés parancsát a beállítások ablakban."
 
-#: ../lib/spell.c:183
-#: ../lib/common.c:213
+#: ../lib/spell.c:208 ../lib/common.c:224
 msgid "Invalid input"
 msgstr "Érvénytelen bemenet"
 
-#: ../lib/spell.c:219
+#: ../lib/spell.c:247
 #, c-format
 msgid "Process failed (%s)"
 msgstr "A folyamat meghiúsult (%s)"
 
-#: ../lib/common.c:179
+#: ../lib/speedreader.c:250
+msgid "Running"
+msgstr "Fut"
+
+#: ../lib/speedreader.c:253
+msgid "Finished"
+msgstr "Befejeződött"
+
+#: ../lib/speedreader.c:259
+msgid "Speed Reader"
+msgstr "Gyorsolvasó"
+
+#: ../lib/speedreader.c:349
+msgid "You must enter a text."
+msgstr "Adjon meg egy szöveget."
+
+#: ../lib/speedreader.c:449
+msgid "Choose a file to load"
+msgstr "Válassza ki a betöltendő fájlt"
+
+#: ../lib/speedreader.c:478
+#, c-format
+msgid "The file '%s' could not be loaded."
+msgstr "A fájl („%s”) nem tölthető be."
+
+#: ../lib/speedreader.c:496
+#, c-format
+msgid "(display %d word at a time)"
+msgid_plural "(display %d words at a time)"
+msgstr[0] "(%d szó megjelenítése egyszerre)"
+msgstr[1] "(%d szó megjelenítése egyszerre)"
+
+#: ../lib/speedreader.c:522
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr "Ez egy egyszerű gyorsolvasó segédprogram, amely segíti a gyors olvasás gyakorlását. Ezt szavak gyors felvillantásával éri el a képernyőn."
+
+#: ../lib/speedreader.c:525
+msgid "_Words per Minute:"
+msgstr "Sza_vak száma percenként:"
+
+#: ../lib/speedreader.c:531
+msgid "_Mark Paragraphs"
+msgstr "Beke_zdések jelölése"
+
+#: ../lib/speedreader.c:538
+msgid "Word _Grouping:"
+msgstr "Sza_vak csoportosítása:"
+
+#: ../lib/speedreader.c:554
+msgid "_Font Size:"
+msgstr "Betű_méret:"
+
+#: ../lib/speedreader.c:574
+msgid ""
+"Enter some text here you would like to read.\n"
+"\n"
+"Be relaxed and make yourself comfortable, then press Start to begin speed "
+"reading."
+msgstr ""
+"Adja meg itt a felolvasni kívánt szöveget.\n"
+"\n"
+"Helyezze magát kényelembe, majd nyomja meg az Indítás gombot a gyorsolvasás megkezdéséhez."
+
+#: ../lib/speedreader.c:590
+msgid "Load the contents of a file"
+msgstr "Fájl tartalmának betöltése"
+
+#: ../lib/speedreader.c:598
+msgid "Clear the contents of the text field"
+msgstr "A szövegmező tartalmának törlése"
+
+#: ../lib/speedreader.c:609
+msgid "_Start"
+msgstr "In_dítás"
+
+#: ../lib/speedreader.c:610
+msgid "St_op"
+msgstr "_Leállítás"
+
+#: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
-msgstr "A kereső URL üres. Kérlek, ellenőrizd a beállításokat."
+msgstr "A keresési URL üres. Ellenőrizze beállításait."
 
-#: ../lib/common.c:184
+#: ../lib/common.c:195
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "A böngésző nem nyitható meg. Ellenőrizd a beállításokat"
+msgstr "A böngésző nem nyitható meg. Ellenőrizze beállításait."
 
-#: ../lib/common.c:223
+#: ../lib/common.c:234
 msgid "Invalid non-UTF8 input"
-msgstr "Érvénytelen nem-UTF8 bemenet"
+msgstr "Érvénytelen nem UTF-8 bevitel"
 
-#: ../lib/dictd.c:379
-#: ../lib/dictd.c:674
-#: ../lib/dictd.c:683
-#: ../lib/dictd.c:765
-#: ../lib/dictd.c:774
+#: ../lib/common.c:608
+msgid "Error"
+msgstr "Hiba"
+
+#: ../lib/common.c:611
+msgid "warning"
+msgstr "figyelmeztetés"
+
+#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
+#: ../lib/dictd.c:786
 msgid "Could not connect to server."
-msgstr "Sikertelen kapcsolódás a kiszolgálóhoz"
+msgstr "Nem sikerült csatlakozni a kiszolgálóhoz."
 
 #: ../lib/dictd.c:385
 msgid "The server is not ready."
-msgstr "A kiszolgáló nem érhető el"
+msgstr "A kiszolgáló nem áll készen."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "A megadott szótár érvénytelen. Ellenőrizd a beállításokat."
+msgstr "A megadott szótár érvénytelen. Ellenőrizze beállításait."
 
-#: ../lib/dictd.c:400
-#: ../lib/dictd.c:445
-#: ../lib/dictd.c:796
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
 msgid "Unknown error while quering the server."
-msgstr "Ismeretlen hiba a kiszolgáló lekérdezésekor"
+msgstr "Ismeretlen hiba a kiszolgáló lekérdezésekor."
 
 #: ../lib/dictd.c:415
+msgid "Dictionary Results:"
+msgstr "Szótári találatok:"
+
+#: ../lib/dictd.c:418
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Nincs találat \"%s\" kifejezésre"
+msgstr "Nincs találat erre: „%s”."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:429
+#: ../lib/dictd.c:434
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr "\"%s\" keresése ezzel: \"%s\""
+msgstr "„%s” keresése ezzel: „%s”"
 
-#: ../lib/dictd.c:450
+#: ../lib/dictd.c:439
+msgid "Web Search:"
+msgstr "Webkeresés:"
+
+#: ../lib/dictd.c:461
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d meghatározást találtam."
-msgstr[1] "%d meghatározást találtam."
+msgstr[0] "%d meghatározás található"
+msgstr[1] "%d meghatározás található"
 
-#: ../lib/dictd.c:645
+#: ../lib/dictd.c:656
 #, c-format
 msgid "Querying %s..."
-msgstr "%s lekérdezése..."
+msgstr "%s lekérdezése…"
 
-#: ../lib/dictd.c:700
+#: ../lib/dictd.c:712
 msgid "An error occured while querying server information."
-msgstr "Hiba történt a kiszolgáló adatainak lekérésekor."
+msgstr "Hiba történt a kiszolgálóinformációk lekérdezésekor."
 
-#: ../lib/dictd.c:711
+#: ../lib/dictd.c:723
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "Kiszolgáló adatok ehhez: \"%s\""
+msgstr "„%s” kiszolgálóinformációi"
 
-#: ../lib/dictd.c:791
+#: ../lib/dictd.c:803
 msgid "The server doesn't offer any databases."
-msgstr "A kiszolgáló nem ér el adatbázist"
+msgstr "A kiszolgáló nem ajánl fel adatbázisokat."
 
-#: ../lib/gui.c:479
+#: ../lib/gui.c:566
 msgid "_File"
 msgstr "_Fájl"
 
-#: ../lib/gui.c:495
+#: ../lib/gui.c:571 ../lib/gui.c:675
+msgid "Speed _Reader"
+msgstr "_Gyorsolvasó"
+
+#: ../lib/gui.c:592
 msgid "_Help"
 msgstr "_Súgó"
 
-#: ../lib/gui.c:589
+#: ../lib/gui.c:696
 msgid "Search with:"
 msgstr "Keresés ezzel:"
 
-#: ../lib/gui.c:593
+#: ../lib/gui.c:700
 msgid "_Dictionary Server"
-msgstr "_Szótár-kiszolgáló"
+msgstr "_Szótárkiszolgáló"
 
-#: ../lib/gui.c:599
+#: ../lib/gui.c:706
 msgid "_Web Service"
-msgstr "_Web szolgáltatás"
+msgstr "_Webszolgáltatás"
 
-#: ../lib/gui.c:605
+#: ../lib/gui.c:714
 msgid "_Spell Checker"
 msgstr "_Helyesírás-ellenőrző"
 
-#: ../lib/gui.c:718
+#: ../lib/gui.c:839
 msgid "Xfce4 Dictionary"
-msgstr "Xfce4 Szótár"
+msgstr "Xfce 4 szótár"
 
-#: ../lib/gui.c:727
+#: ../lib/gui.c:848
 msgid "Copyright © 2006-2009 Enrico Tröger"
 msgstr "Copyright © 2006-2009 Enrico Tröger"
 
-#: ../lib/gui.c:730
+#: ../lib/gui.c:851
 msgid "translator-credits"
-msgstr "SZERVÁC Attila"
+msgstr "Kelemen Gábor <kelemeng@gnome.hu>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
-msgstr "dict.leo.org - Német <-> Angol"
+msgstr "dict.leo.org – német <-> English"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org - Német <-> Francia"
+msgstr "dict.leo.org – német <-> francia"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org - Német <-> Spanyol"
+msgstr "dict.leo.org – német <-> spanyol"
 
 #: ../lib/prefs.c:58
 msgid "dict.leo.org - German <-> Italian"
-msgstr "dict.leo.org - Német <-> Olasz"
+msgstr "dict.leo.org – német <-> olasz"
 
 #: ../lib/prefs.c:59
 msgid "dict.leo.org - German <-> Chinese"
-msgstr "dict.leo.org - Német <-> Kínai"
+msgstr "dict.leo.org – német <-> kínai"
 
 #: ../lib/prefs.c:60
 msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Szótár"
+msgstr "dist.cc - szótár"
 
 #: ../lib/prefs.c:61
 msgid "Dictionary.com"
@@ -288,170 +381,122 @@ msgstr "Wiktionary, a szabad szótár (EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr "Merriam-Webster Online szótár"
+msgstr "Merriam-Webster online szótár"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
-msgstr "Tisztít"
+msgstr "Törlés"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr "Érvénytelen szótárat választottál."
+msgstr "Érvénytelen szótárat választott."
 
-#: ../lib/prefs.c:112
-msgid "You must set a valid search URL."
-msgstr "Érvényes kereső URL-t kell megadnod."
-
-#: ../lib/prefs.c:309
+#: ../lib/prefs.c:303
 msgid "General"
 msgstr "Általános"
 
-#: ../lib/prefs.c:311
+#: ../lib/prefs.c:305
 msgid "<b>Default search method:</b>"
-msgstr "<b>Alap keresési mód:</b>"
+msgstr "<b>Alapértelmezett keresési módszer:</b>"
 
-#: ../lib/prefs.c:317
-#: ../lib/prefs.c:454
+#: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
-msgstr "Szótár-kiszolgáló"
+msgstr "Szótárkiszolgáló"
 
-#: ../lib/prefs.c:326
-#: ../lib/prefs.c:575
+#: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
-msgstr "Web szolgáltatás"
+msgstr "Webszolgáltatás"
 
-#: ../lib/prefs.c:335
-#: ../lib/prefs.c:625
+#: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
 msgstr "Helyesírás-ellenőrző"
 
-#: ../lib/prefs.c:344
+#: ../lib/prefs.c:338
 msgid "Last used method"
-msgstr "Utolsó használt mód"
+msgstr "Utoljára használt módszer"
 
-#: ../lib/prefs.c:353
+#: ../lib/prefs.c:347
 msgid "<b>Colors:</b>"
 msgstr "<b>Színek:</b>"
 
-#: ../lib/prefs.c:359
-msgid "Link Color:"
-msgstr "Hivatkozásszín:"
+#: ../lib/prefs.c:353
+msgid "Links:"
+msgstr "Hivatkozások:"
 
-#: ../lib/prefs.c:360
-msgid "Phonetic Color:"
-msgstr "Kiejtési szín:"
+#: ../lib/prefs.c:354
+msgid "Phonetics:"
+msgstr "Fonetikus szimbólumok:"
 
-#: ../lib/prefs.c:398
+#: ../lib/prefs.c:355
+msgid "Spelled correctly:"
+msgstr "Helyesen írt:"
+
+#: ../lib/prefs.c:356
+msgid "Spelled incorrectly:"
+msgstr "Helytelenül írt:"
+
+#: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>Panel szöveg mező:</b>"
+msgstr "<b>Panel szövegmezője:</b>"
 
-#: ../lib/prefs.c:404
+#: ../lib/prefs.c:422
 msgid "Show text field in the panel"
-msgstr "Szöveg mező a panelon"
+msgstr "Szövegmező megjelenítése a panelen"
 
 #. panel entry size
-#: ../lib/prefs.c:411
+#: ../lib/prefs.c:429
 msgid "Text field size:"
-msgstr "Szöveg mező mérete:"
+msgstr "Szövegmező mérete:"
 
 #. server address
-#: ../lib/prefs.c:457
+#: ../lib/prefs.c:475
 msgid "Server:"
 msgstr "Kiszolgáló:"
 
 #. server port
-#: ../lib/prefs.c:469
+#: ../lib/prefs.c:487
 msgid "Server Port:"
-msgstr "Kiszolgáló port:"
+msgstr "Kiszolgáló portja:"
 
 #. dictionary
-#: ../lib/prefs.c:477
-#: ../lib/prefs.c:650
+#: ../lib/prefs.c:495 ../lib/prefs.c:668
 msgid "Dictionary:"
 msgstr "Szótár:"
 
-#: ../lib/prefs.c:481
+#: ../lib/prefs.c:499
 msgid "* (use all)"
-msgstr "* (mindet használja)"
+msgstr "* (összes használata)"
 
-#: ../lib/prefs.c:483
+#: ../lib/prefs.c:501
 msgid "! (use all, stop after first match)"
-msgstr "! (mindet használja, az elsőnél megáll)"
+msgstr "! (összes használata, első találat után megáll)"
 
-#: ../lib/prefs.c:577
+#: ../lib/prefs.c:595
 msgid "<b>Web search URL:</b>"
-msgstr "<b>Web kereső URL:</b>"
+msgstr "<b>Webkereső URL:</b>"
 
-#: ../lib/prefs.c:583
+#: ../lib/prefs.c:601
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:603
-msgid "Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."
+#: ../lib/prefs.c:621
+msgid ""
+"Enter an URL to a web site which offer translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
 msgstr ""
-"Adj meg egy fordítás-szolgáltatást nyújtó web-lap URL-t.\n"
-"Használd a {szó}-t a keresett szóhoz."
+"Adja meg egy weboldal URL-címét, amely fordítási vagy szótárszolgáltatásokat nyújt. "
+"A {word} helykitöltővel jelezze a keresett szó helyét."
 
-#: ../lib/prefs.c:627
+#: ../lib/prefs.c:645
 msgid "Spell Check Program:"
 msgstr "Helyesírás-ellenőrző program:"
 
-#: ../lib/prefs.c:644
+#: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>A helyesírás-ellenőrző program lehet az 'enchant', 'aspell', 'ispell' vagy bármely más, ami kompatibilis az ispell paranccsal.\n"
-"Az ikon mutatja, hogy létezik-e a parancs.</i>"
-
-#, fuzzy
-#~ msgid "_Dict"
-#~ msgstr "Dict"
-
-#, fuzzy
-#~ msgid "_Web"
-#~ msgstr "Web"
-#~ msgid "Dict"
-#~ msgstr "Dict"
-#~ msgid "Web"
-#~ msgstr "Web"
-#~ msgid "Show help options"
-#~ msgstr "Súgó lehetőségek mutatása"
-
-#, fuzzy
-#~ msgid "Xfce4 Dictionary Preferences"
-#~ msgstr "Xfce4 Szótár"
-#~ msgid "Developer"
-#~ msgstr "Fejlesztő"
-#~ msgid "Text to search:"
-#~ msgstr "Keresendő szöveg:"
-#~ msgid "Aspell"
-#~ msgstr "Aspell"
-#~ msgid "Properties"
-#~ msgstr "Tulajdonságok"
-#~ msgid "Use a DICT server"
-#~ msgstr "DICT kiszolgáló használata"
-#~ msgid "Use another website"
-#~ msgstr "Más kiszolgáló"
-#~ msgid "Use a web site"
-#~ msgstr "Egy weblap használata"
-#~ msgid ""
-#~ "This option can only be used when the panel has a horizontal orientation."
-#~ msgstr "A lehetőség csak a panel vízszintes fekvésénél használható."
-#~ msgid "Usage: %s [options]\n"
-#~ msgstr "Használat: %s [opciók]\n"
-#~ msgid "Options:\n"
-#~ msgstr "Opciók:\n"
-#~ msgid "    -h, --help          show this help and exit\n"
-#~ msgstr "    -h, --help          kiírja e súgót és kilép\n"
-#~ msgid ""
-#~ "If called without any options, the xfce4-dict-plugin main window is "
-#~ "shown.\n"
-#~ msgstr "Opciók nélkül ay xfce4-dict-plugin fő ablak jelenik meg.\n"
-#~ msgid "Input is too long."
-#~ msgstr "Túl hosszú bevitel"
-#~ msgid "Answer was too long, it has been truncated (%d definition(s) found)."
-#~ msgstr "A válasz túl hosszú, levágtam (%d meghatározást találtam)"
-#~ msgid "-- The received list was too long. It has been truncated."
-#~ msgstr "-- A kapott lista túl hosszú. Levágtam."
+"<i>A helyesírás-ellenőrző az „enchant”, „aspell”, „ispell”, vagy bármely más ispell-kompatibilis helyesírás-ellenőrző program lehet.\n"
+"Az ikon megjeleníti, hogy a megadott parancs létezik-e.</i>"
 
