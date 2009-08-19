@@ -8,7 +8,7 @@
 # Written for Xfce by Benedikt Meurer <benny@xfce.org>.
 #
 
-XDT_REQUIRED_VERSION="4.7.0"
+export XDT_REQUIRED_VERSION="4.7.0"
 
 (type xdt-autogen) >/dev/null 2>&1 || {
   cat >&2 <<EOF
