@@ -618,7 +618,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		g_object_set_data(G_OBJECT(dialog), "web_entry", web_entry);
 
-		label1 = xfd_wrap_label_new(_("Enter an URL to a web site which offer translation or dictionary services. Use {word} as placeholder for the searched word."));
+		label1 = xfd_wrap_label_new(_("Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."));
 		gtk_misc_set_alignment(GTK_MISC(label1), 0, 0);
 		gtk_widget_show(label1);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label1, FALSE, FALSE, 0);
