@@ -1,37 +1,38 @@
 # Latvian translation of the xfce4-dict-plugin package.
 # opyright (C) 2006-2007 Enrico TrÃ¶ger
 # This file is distributed under the same license as the fce4-dict-plugin package.
-# Rihards Prieditis <rprieditis@inbox.lv>, 2007.
 #
+# Rihards Prieditis <rprieditis@inbox.lv>, 2007.
+# Rihards Prieditis <rprieditis@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-19 19:35+0100\n"
-"PO-Revision-Date: 2007-11-16 22:02+0300\n"
-"Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
-"Language-Team: Latvian <rprieditis@inbox.lv>\n"
+"PO-Revision-Date: 2009-10-16 17:54+0100\n"
+"Last-Translator: Rihards Prieditis <rprieditis@gmail.com>\n"
+"Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
-#, fuzzy
 msgid "A plugin to query different dictionaries."
-msgstr "Spraudnis Dict serveru vaicāšanai."
+msgstr "Spraudnis, lai vaicātu dažādām vārdnīcām."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:531 ../lib/prefs.c:277
-#, fuzzy
 msgid "Dictionary"
-msgstr "Vārdnīca :"
+msgstr "Vārdnīca"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
 #: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
 #: ../lib/spell.c:215 ../lib/gui.c:331
-#, fuzzy
 msgid "Ready"
-msgstr "Gatavs."
+msgstr "Gatavs"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:412
 msgid "Look up a word"
@@ -39,130 +40,122 @@ msgstr "Meklēt vārdu"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:555
 msgid "Search term"
-msgstr ""
+msgstr "Meklēšanas termins"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
+msgstr "Meklēt doto vārdu izmantojot Dict serveri (RFC 2229)"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr ""
+msgstr "Meklēt doto tekstu izmantojot tīmekļa-bāzes meklēšanas dzinēju"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr ""
+msgstr "Pārbaudīt doto tekstu ar pareizrakstības pārbaudītāju"
 
 #: ../src/xfce4-dict.c:54
-#, fuzzy
 msgid "Grab the focus on the text field in the panel"
-msgstr "Rādit teksta lauku panelī."
+msgstr "Noķert fokusu paneļa teksta laukā"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
+msgstr "Palaist lietotni pat ja paneļa spraudnis ir ielādēts"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "Paķer PRIMĀRO atlasi saturam un izmanto to kā meklēšanas tekstu"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Būt detalizētam"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
-msgstr ""
+msgstr "Rādīt versijas informāciju"
 
 #: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
-msgstr ""
+msgstr "[TEKSTS]"
 
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "Lūdzu ziņojiet par kļūdām uz <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:726
 msgid "A client program to query different dictionaries."
-msgstr ""
+msgstr "Klienta programma, lai vaicātu dažādas vārdnīcas."
 
 #: ../src/xfce4-dict.desktop.in.h:3
-#, fuzzy
 msgid "Dictionary Client"
-msgstr "Vārdnīcu spraudnis"
+msgstr "Vārdnīcu klients"
 
-#: ../lib/spell.c:85
-#, fuzzy, c-format
+#: ../lib/spell.c:85, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "%d definīcija(as) atrasta(as)."
+msgstr[0] "%d ierosinājumi atrasti."
 msgstr[1] "%d definīcija(as) atrasta(as)."
+msgstr[2] "%d definīcija(as) atrasta(as)."
 
 #: ../lib/spell.c:90
 #, c-format
 msgid "Suggestions for \"%s\":"
-msgstr ""
+msgstr "Ierosinājumi priekš \"%s\":"
 
 #: ../lib/spell.c:103
 #, c-format
 msgid "\"%s\" is spelled correctly."
-msgstr ""
+msgstr "\"%s\" ir ar pareizrakstības kļūdu."
 
-#: ../lib/spell.c:111
-#, fuzzy, c-format
+#: ../lib/spell.c:111, c-format
 msgid "No suggestions could be found for \"%s\"."
-msgstr "Nekas netika atrasts uz \"%s\""
+msgstr "Netika atrasti nekādi ierosinājumi priekš \"%s\"."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:140
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr ""
+msgstr "Kļūda izpildot \"%s\" (%s)."
 
 #: ../lib/spell.c:177
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
+msgstr "Lūdzu uzstādiet pareizrakstības pārbaudes komandu uzstādījumu logā."
 
 #: ../lib/spell.c:183 ../lib/common.c:213
-#, fuzzy
 msgid "Invalid input"
 msgstr "Nederīgs ievads"
 
 #: ../lib/spell.c:219
 #, c-format
 msgid "Process failed (%s)"
-msgstr ""
+msgstr "Process neizdevās (%s)"
 
 #: ../lib/common.c:179
-#, fuzzy
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Pārlūks nav atverams. Lūdzu pārbaudiet uzstādījumus."
+msgstr "Meklēšanas URL ir tukšs. Lūdzu pārbaudiet uzstādījumus."
 
 #: ../lib/common.c:184
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Pārlūks nav atverams. Lūdzu pārbaudiet uzstādījumus."
 
 #: ../lib/common.c:223
-#, fuzzy
 msgid "Invalid non-UTF8 input"
-msgstr "Nederīgs ne-UTF8 ievads."
+msgstr "Nederīgs ne-UTF8 ievads"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:674 ../lib/dictd.c:683 ../lib/dictd.c:765
 #: ../lib/dictd.c:774
 msgid "Could not connect to server."
-msgstr "Nevarēju savienoties ar serveri"
+msgstr "Nevarēju savienoties ar serveri."
 
 #: ../lib/dictd.c:385
-#, fuzzy
 msgid "The server is not ready."
 msgstr "Serveris nav gatavs."
 
 #: ../lib/dictd.c:392
-#, fuzzy
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Pārlūks nav atverams. Lūdzu pārbaudiet uzstādījumus."
+msgstr "Norādīta nederīga vārdnīca. Lūdzu pārbaudiet uzstādījumus."
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:445 ../lib/dictd.c:796
 msgid "Unknown error while quering the server."
@@ -171,36 +164,34 @@ msgstr "Nezināma kļūda vaicājot serveri."
 #: ../lib/dictd.c:415
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Nekas netika atrasts uz \"%s\""
+msgstr "Nekas netika atrasts uz \"%s\"."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
 #: ../lib/dictd.c:429
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Meklēt \"%s\" izmantojot \"%s\""
 
-#: ../lib/dictd.c:450
-#, fuzzy, c-format
+#: ../lib/dictd.c:450, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d definīcija(as) atrasta(as)."
+msgstr[0] "%d definīcija atrasta."
 msgstr[1] "%d definīcija(as) atrasta(as)."
+msgstr[2] "%d definīcija(as) atrasta(as)."
 
-#: ../lib/dictd.c:645
-#, fuzzy, c-format
+#: ../lib/dictd.c:645, c-format
 msgid "Querying %s..."
-msgstr "Vaicāju serverim %s..."
+msgstr "Vaicā %s...."
 
 #: ../lib/dictd.c:700
-#, fuzzy
 msgid "An error occured while querying server information."
-msgstr "Nezināma kļūda vaicājot serveri."
+msgstr "Notika kļūda pie servera informācijas vaicāšanas."
 
 #: ../lib/dictd.c:711
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr ""
+msgstr "Servera informācija priekš \"%s\""
 
 #: ../lib/dictd.c:791
 msgid "The server doesn't offer any databases."
@@ -208,41 +199,39 @@ msgstr "Serveris nepiedāvā nevienu datubāzi."
 
 #: ../lib/gui.c:479
 msgid "_File"
-msgstr ""
+msgstr "_Fails"
 
 #: ../lib/gui.c:495
 msgid "_Help"
-msgstr ""
+msgstr "_Palīdzība"
 
 #: ../lib/gui.c:589
 msgid "Search with:"
-msgstr ""
+msgstr "Meklēt ar:"
 
 #: ../lib/gui.c:593
-#, fuzzy
 msgid "_Dictionary Server"
-msgstr "Vārdnīca :"
+msgstr "Vārdnīcu _serveris"
 
 #: ../lib/gui.c:599
 msgid "_Web Service"
-msgstr ""
+msgstr "_Tīmekļa pakalpojums"
 
 #: ../lib/gui.c:605
 msgid "_Spell Checker"
-msgstr ""
+msgstr "_Pareizrakstības pārbaudītājs"
 
 #: ../lib/gui.c:718
-#, fuzzy
 msgid "Xfce4 Dictionary"
-msgstr "Vārdnīca :"
+msgstr "Xfce4 vārdnīca"
 
 #: ../lib/gui.c:727
 msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr ""
+msgstr "Autortiesības © 2006-2009 Enrico Tröger"
 
 #: ../lib/gui.c:730
 msgid "translator-credits"
-msgstr ""
+msgstr "Rihards Priedītis"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -257,123 +246,112 @@ msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Vācu <-> Spāņu"
 
 #: ../lib/prefs.c:58
-#, fuzzy
 msgid "dict.leo.org - German <-> Italian"
-msgstr "dict.leo.org - Vācu <-> Angļu"
+msgstr "dict.leo.org - Vācu <-> Itāļu"
 
 #: ../lib/prefs.c:59
-#, fuzzy
 msgid "dict.leo.org - German <-> Chinese"
-msgstr "dict.leo.org - Vācu <-> Angļu"
+msgstr "dict.leo.org - Vācu <-> Ķīniešu"
 
 #: ../lib/prefs.c:60
-#, fuzzy
 msgid "dist.cc - Dictionary"
-msgstr "Vārdnīca :"
+msgstr "dist.cc - Vārdnīca"
 
 #: ../lib/prefs.c:61
-#, fuzzy
 msgid "Dictionary.com"
-msgstr "Vārdnīca :"
+msgstr "Dictionary.com"
 
 #: ../lib/prefs.c:62
-#, fuzzy
 msgid "TheFreeDictionary.com"
-msgstr "Vārdnīca :"
+msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:63
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr ""
+msgstr "Wikipedia, brīvā enciklopēdija (Angliski)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr ""
+msgstr "Wiktionary, brīvā vārdnīca (Angliski)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr ""
+msgstr "Merriam-Webster tiešsaistes vārdnīca"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
-msgstr ""
+msgstr "Notīrīt"
 
 #: ../lib/prefs.c:101
-#, fuzzy
 msgid "You have chosen an invalid dictionary."
-msgstr "Jūs esat izvēlējies nederīgu vārdnīcas ierakstu."
+msgstr "Jūs esat izvēlējies nederīgu vārdnīcu."
 
 #: ../lib/prefs.c:112
 msgid "You must set a valid search URL."
-msgstr ""
+msgstr "Jums ir jānorāda derīgs meklēšanas URL."
 
 #: ../lib/prefs.c:309
 msgid "General"
-msgstr ""
+msgstr "Vispārēji"
 
 #: ../lib/prefs.c:311
 msgid "<b>Default search method:</b>"
-msgstr ""
+msgstr "<b>Noklusēta meklēšanas metode:</b>"
 
 #: ../lib/prefs.c:317 ../lib/prefs.c:454
-#, fuzzy
 msgid "Dictionary Server"
-msgstr "Vārdnīca :"
+msgstr "Vārdnīcu serveris"
 
 #: ../lib/prefs.c:326 ../lib/prefs.c:575
 msgid "Web Service"
-msgstr ""
+msgstr "Tīmekļa pakalpojums"
 
 #: ../lib/prefs.c:335 ../lib/prefs.c:625
 msgid "Spell Checker"
-msgstr ""
+msgstr "Pareizrakstības pārbaudītājs"
 
 #: ../lib/prefs.c:344
 msgid "Last used method"
-msgstr ""
+msgstr "Pēdējā izmantotā metode"
 
 #: ../lib/prefs.c:353
 msgid "<b>Colors:</b>"
-msgstr ""
+msgstr "<b>Krāsas:</b>"
 
 #: ../lib/prefs.c:359
 msgid "Link Color:"
-msgstr ""
+msgstr "Saites krāsa:"
 
 #: ../lib/prefs.c:360
 msgid "Phonetic Color:"
-msgstr ""
+msgstr "Fonētikas krāsa: "
 
 #: ../lib/prefs.c:398
 msgid "<b>Panel Text Field:</b>"
-msgstr ""
+msgstr "<b>Paneļa teksta lauks:</b>"
 
 #: ../lib/prefs.c:404
 msgid "Show text field in the panel"
-msgstr "Rādit teksta lauku panelī."
+msgstr "Rādīt teksta lauku panelī"
 
 #. panel entry size
 #: ../lib/prefs.c:411
-#, fuzzy
 msgid "Text field size:"
-msgstr "Teksta lauka izmērs :"
+msgstr "Teksta lauka izmērs:"
 
 #. server address
 #: ../lib/prefs.c:457
-#, fuzzy
 msgid "Server:"
-msgstr "Serveris :"
+msgstr "Serveris:"
 
 #. server port
 #: ../lib/prefs.c:469
-#, fuzzy
 msgid "Server Port:"
-msgstr "Servera Ports :"
+msgstr "Servera ports:"
 
 #. dictionary
 #: ../lib/prefs.c:477 ../lib/prefs.c:650
-#, fuzzy
 msgid "Dictionary:"
-msgstr "Vārdnīca :"
+msgstr "Vārdnīca:"
 
 #: ../lib/prefs.c:481
 msgid "* (use all)"
@@ -385,24 +363,23 @@ msgstr "! (izmantot visu, apstāties pie pirmā rezultāta)"
 
 #: ../lib/prefs.c:577
 msgid "<b>Web search URL:</b>"
-msgstr ""
+msgstr "<b>Tīmekļa meklēšanas URL:</b>"
 
 #: ../lib/prefs.c:583
 msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:603
-#, fuzzy
 msgid ""
 "Enter an URL to a web site which offer translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"Ievadiet URL uz mājas lapu, kura piedāvā tūlkošanas pakalpojumus\n"
+"Ievadiet URL uz mājas lapu, kura piedāvā tulkošanas pakalpojumus. "
 "Izmantojiet {word}, kā aizvietotāju meklējamajam vārdam."
 
 #: ../lib/prefs.c:627
 msgid "Spell Check Program:"
-msgstr ""
+msgstr "Pareizrakstības pārbaudes programma:"
 
 #: ../lib/prefs.c:644
 msgid ""
@@ -410,6 +387,10 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+"<i>Pareizrakstības pārbaudes programma var būt \"enchant\", \"aspell\", "
+"\"ispell\", vai jebkura cita pārbaudes programma, kura ir sader ar ispell "
+"komandām.\n"
+"Ikona parāda vai ievadītā komanda eksistē.</i>"
 
 #, fuzzy
 #~ msgid "_Dict"
