@@ -23,7 +23,7 @@ msgstr "查询不同词典的插件。"
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:531 ../lib/prefs.c:277
 msgid "Dictionary"
-msgstr "词典。"
+msgstr "词典"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
 #: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
@@ -228,8 +228,7 @@ msgstr "Copyright © 2006-2009 Enrico Tröger"
 
 #: ../lib/gui.c:730
 msgid "translator-credits"
-msgstr ""
-"Hunt Xu <huntxu@live.cn>"
+msgstr "Hunt Xu <huntxu@live.cn>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -384,8 +383,8 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>用于拼写检查的程序可以是 'enchant', 'aspell', 'ispell' 或其他 "
-"兼容 ispell 命令的拼写检查程序。\n"
+"<i>用于拼写检查的程序可以是 'enchant', 'aspell', 'ispell' 或其他 兼容 ispell "
+"命令的拼写检查程序。\n"
 "图标将显示输入的命令是否存在。</i>"
 
 #~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
