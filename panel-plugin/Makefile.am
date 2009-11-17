@@ -17,6 +17,7 @@ xfce4_dict_plugin_LDADD =						\
 	$(LIBXFCE4PANEL_LIBS)						\
 	$(LIBXFCEGUI4_LIBS)							\
 	@GTHREAD_LIBS@								\
+	@X11_LIBS@								\
 	$(top_builddir)/lib/libdict.la
 
 
