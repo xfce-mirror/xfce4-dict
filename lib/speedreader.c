@@ -349,7 +349,7 @@ static gboolean sr_timer(gpointer data)
 static void sr_start(XfdSpeedReader *dialog)
 {
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
-	gint wpm = 400, grouping;
+	gint wpm, grouping;
 	gint interval;
 	const gchar *fontname;
 	PangoFontDescription *pfd;
@@ -389,8 +389,9 @@ static void sr_start(XfdSpeedReader *dialog)
 
 	/* calculate the rate */
 	wpm = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(priv->spin_wpm));
-	if (wpm >= 1)
-		interval = 60000 / wpm;
+	if (wpm < 1)
+		wpm = 400;
+	interval = 60000 / wpm;
 
 	/* save the settings */
 	priv->dd->speedreader_wpm = wpm;
