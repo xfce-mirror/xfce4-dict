@@ -1,3 +1,11 @@
+2009-12-30  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * lib/speedreader.c:
+   After the Speed Reading has finished, make the Stop button a
+   Back button.
+   Implement a Pause/Resume button for the Speed Reader.
+
+
 2009-07-16  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * lib/spell.c:

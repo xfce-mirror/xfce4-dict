@@ -41,6 +41,7 @@ struct _XfdSpeedReaderPrivate
 
 	GtkWidget *button_start;
 	GtkWidget *button_stop;
+	GtkWidget *button_pause;
 
 	GtkWidget *spin_wpm;
 	GtkWidget *spin_grouping;
@@ -57,13 +58,16 @@ struct _XfdSpeedReaderPrivate
 	GString *group;
 	gsize group_size;
 
+	gboolean paused;
+
 	DictData *dd;
 };
 
 enum
 {
 	RESPONSE_START,
-	RESPONSE_STOP
+	RESPONSE_STOP,
+	RESPONSE_PAUSE
 };
 
 enum
@@ -73,10 +77,15 @@ enum
 	XSR_STATE_FINISHED
 };
 
+#define XFD_TITLE_PAUSE _("P_ause")
+#define XFD_TITLE_RESUME _("_Resume")
+
+
 G_DEFINE_TYPE(XfdSpeedReader, xfd_speed_reader, GTK_TYPE_DIALOG);
 
 static void sr_stop(XfdSpeedReader *dialog);
 static void sr_stop_timer(XfdSpeedReader *dialog);
+static void sr_pause(XfdSpeedReader *dialog, gboolean paused);
 
 
 static void xfd_speed_reader_finalize(GObject *object)
@@ -245,6 +254,7 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 {
 	gchar *title, *state_str, *name;
 	const gchar *button_label = GTK_STOCK_MEDIA_STOP;
+	gboolean pausable = TRUE;
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 
 	switch (state)
@@ -255,6 +265,7 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 		case XSR_STATE_FINISHED:
 			state_str = _("Finished");
 			button_label = GTK_STOCK_GO_BACK;
+			pausable = FALSE;
 			break;
 		default:
 			state_str = "";
@@ -265,6 +276,7 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 
 	gtk_window_set_title(GTK_WINDOW(dialog), title);
 	gtk_button_set_label(GTK_BUTTON(priv->button_stop), button_label);
+	gtk_widget_set_sensitive(priv->button_pause, pausable);
 
 	g_free(title);
 }
@@ -284,6 +296,9 @@ static gboolean sr_timer(gpointer data)
 {
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(data);
 	gsize i;
+
+	if (priv->paused)
+		return TRUE;
 
 	if (priv->word_idx >= priv->words_len)
 	{
@@ -392,6 +407,7 @@ static void sr_start(XfdSpeedReader *dialog)
 	priv->words_len = g_strv_length(priv->words);
 
 	priv->timer_id = g_timeout_add(interval, sr_timer, dialog);
+	sr_pause(dialog, FALSE);
 
 	g_free(text);
 	g_free(cleaned_text);
@@ -418,7 +434,29 @@ static void sr_stop_timer(XfdSpeedReader *dialog)
 static void sr_stop(XfdSpeedReader *dialog)
 {
 	sr_stop_timer(dialog);
+	sr_pause(dialog, FALSE);
 	xfd_speed_reader_set_window_title(dialog, XSR_STATE_INITIAL);
+}
+
+
+static void sr_pause(XfdSpeedReader *dialog, gboolean paused)
+{
+	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
+
+	if (paused)
+	{
+		gtk_button_set_image(GTK_BUTTON(priv->button_pause),
+			gtk_image_new_from_stock(GTK_STOCK_MEDIA_PLAY, GTK_ICON_SIZE_MENU));
+		gtk_button_set_label(GTK_BUTTON(priv->button_pause), XFD_TITLE_RESUME);
+	}
+	else
+	{
+		gtk_button_set_image(GTK_BUTTON(priv->button_pause),
+			gtk_image_new_from_stock(GTK_STOCK_MEDIA_PAUSE, GTK_ICON_SIZE_MENU));
+		gtk_button_set_label(GTK_BUTTON(priv->button_pause), XFD_TITLE_PAUSE);
+	}
+	/* set the new value */
+	priv->paused = paused;
 }
 
 
@@ -430,25 +468,32 @@ static void xfd_speed_reader_response_cb(XfdSpeedReader *dialog, gint response, 
 	{
 		gtk_widget_destroy(GTK_WIDGET(dialog));
 	}
-	else if  (response == RESPONSE_START)
+	else if (response == RESPONSE_START)
 	{
 		gtk_widget_hide(priv->button_start);
 		gtk_widget_show(priv->button_stop);
+		gtk_widget_show(priv->button_pause);
 
 		gtk_widget_hide(priv->first_page);
 		gtk_widget_show(priv->second_page);
 
 		sr_start(dialog);
 	}
-	else if  (response == RESPONSE_STOP)
+	else if (response == RESPONSE_STOP)
 	{
 		gtk_widget_hide(priv->button_stop);
+		gtk_widget_hide(priv->button_pause);
 		gtk_widget_show(priv->button_start);
 
 		gtk_widget_hide(priv->second_page);
 		gtk_widget_show(priv->first_page);
 
 		sr_stop(dialog);
+	}
+	else if (response == RESPONSE_PAUSE)
+	{
+		/* update the GUI */
+		sr_pause(dialog, ! priv->paused);
 	}
 }
 
@@ -616,15 +661,19 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_box_pack_start(GTK_BOX(hbox_text), swin, TRUE, TRUE, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_text), vbox_text_buttons, FALSE, FALSE, 3);
 
+	priv->button_pause = gtk_dialog_add_button(GTK_DIALOG(dialog), _("P_ause"), RESPONSE_PAUSE);
 	priv->button_start = gtk_dialog_add_button(GTK_DIALOG(dialog), _("_Start"), RESPONSE_START);
 	priv->button_stop = gtk_dialog_add_button(GTK_DIALOG(dialog), GTK_STOCK_MEDIA_STOP, RESPONSE_STOP);
 	gtk_dialog_add_button(GTK_DIALOG(dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
 
+	gtk_widget_hide(priv->button_pause);
 	gtk_widget_hide(priv->button_stop);
 
 	gtk_button_set_image(GTK_BUTTON(priv->button_start),
 		gtk_image_new_from_stock(GTK_STOCK_MEDIA_PLAY, GTK_ICON_SIZE_MENU));
-	gtk_button_set_use_stock(GTK_BUTTON(priv->button_stop), TRUE);
+	gtk_button_set_image(GTK_BUTTON(priv->button_pause),
+		gtk_image_new_from_stock(GTK_STOCK_MEDIA_PAUSE, GTK_ICON_SIZE_MENU));
+	gtk_button_set_use_stock(GTK_BUTTON(priv->button_pause), TRUE);
 
 	g_signal_connect(dialog, "response", G_CALLBACK(xfd_speed_reader_response_cb), NULL);
 
