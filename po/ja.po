@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
-"PO-Revision-Date: 2009-08-28 00:45+0900\n"
+"POT-Creation-Date: 2009-12-31 12:32+0900\n"
+"PO-Revision-Date: 2009-12-31 12:32+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -111,19 +111,19 @@ msgstr[0] "%d 個の候補が見つかりました。"
 msgstr[1] "%d 個の候補が見つかりました。"
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "\"%s\" の候補:"
+msgstr "\"%s\" (%s) の候補:"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" は正しいスペルです。"
+msgstr "\"%s\" は正しいスペルです (%s)。"
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "\"%s\" の候補はありませんでした。"
+msgstr "\"%s\" (%s) の候補はありませんでした。"
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -145,13 +145,13 @@ msgstr "不正な入力です。"
 msgid "Process failed (%s)"
 msgstr "処理失敗 (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
 msgid "P_ause"
-msgstr ""
+msgstr "一時停止(_A)"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "再開(_R)"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
@@ -169,23 +169,23 @@ msgstr "スピードリーダ"
 msgid "You must enter a text."
 msgstr "文字列を入力してください。"
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
 msgstr "ロードするファイルの選択"
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "ファイル '%s' を読み込めませんでした。"
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:553
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(一度に %d 個表示します)"
 msgstr[1] "(一度に %d 個表示します)"
 
-#: ../lib/speedreader.c:577
+#: ../lib/speedreader.c:578
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
@@ -193,24 +193,24 @@ msgstr ""
 "これは速読練習用の簡単なユーティリティです。画面に文字列を一つずつ、高速に表"
 "示します。"
 
-#: ../lib/speedreader.c:580
+#: ../lib/speedreader.c:581
 msgid "_Words per Minute:"
 msgstr "1分あたりの単語数(_W):"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:587
 msgid "_Mark Paragraphs"
 msgstr "段落に印をつける(_M)"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:594
 msgid "Word _Grouping:"
 msgstr "単語のグルーピング(_G):"
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:610
 msgid "_Font Size:"
 msgstr "フォントサイズ(_F):"
 
 # Default strings to be displayed in the Speed Reader. Each ja strings should be separated by space because Speed Reader displays strings separated by space in turn.
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:630
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -221,17 +221,17 @@ msgstr ""
 "\n"
 "体を楽に、 リラックスして ください。 「スタート」ボタンを 押すと 開始します。"
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:646
 msgid "Load the contents of a file"
 msgstr "文字列をファイルから読み込みます"
 
 # tooltip
-#: ../lib/speedreader.c:653
+#: ../lib/speedreader.c:654
 msgid "Clear the contents of the text field"
 msgstr "テキストフィールドの内容をクリアします"
 
 # Start speed reading
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:666
 msgid "_Start"
 msgstr "スタート(_S)"
 
@@ -445,7 +445,6 @@ msgid "Links:"
 msgstr "リンク:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
 msgstr "発音の色:"
 
@@ -502,7 +501,6 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
@@ -530,7 +528,3 @@ msgstr ""
 
 #~ msgid "Link Color:"
 #~ msgstr "リンクの色:"
-
-# Stop speed reading
-#~ msgid "St_op"
-#~ msgstr "ストップ(_O)"
