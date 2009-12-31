@@ -125,7 +125,7 @@ using "Preferred Applications" in the Xfce settings manager.
 
 
 Spell checking based search
---------------------------
+---------------------------
 
 It is also possible to verify the spelling of word using spell checking
 programs like enchant or aspell (or its predecessor ispell).
@@ -133,3 +133,16 @@ To get this working you need to have the enchant, aspell or
 ispell binary in your binary search path and at least one dictionary
 working. If you have multiple dictionaries installed, you can
 select the one to use in the preferences dialog.
+
+
+Speed Reader
+------------
+
+With the builtin Speed Reader you can train and improve your
+skills in fast reading texts. You just specify a text, define
+how many words should be displayed at once (word grouping)
+and how many words should be displayed per minute (speed rate).
+Then the words of the specified text are displayed so you can read them.
+The higher the speed rate is the faster you can read.
+
+

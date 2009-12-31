@@ -2,6 +2,7 @@
 
  * lib/dict.c:
    Always display spell check results on failed dictionary searches.
+ * New release: 0.6.0.
 
 
 2009-12-30  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
