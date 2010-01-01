@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright 2008-2009 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *  Copyright 2008-2010 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
  *  Copyright 2006      Darren Salt
  *  Copyright 2002-2006 Olivier Fourdan
  *

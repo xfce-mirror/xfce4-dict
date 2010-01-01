@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright 2006-2009 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *  Copyright 2006-2010 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -845,7 +845,7 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 		"destroy-with-parent", TRUE,
 		"authors", authors,
 		"comments", _("A client program to query different dictionaries."),
-		"copyright", _("Copyright \302\251 2006-2009 Enrico Tröger"),
+		"copyright", _("Copyright \302\251 2006-2010 Enrico Tröger"),
 		"website", "http://goodies.xfce.org/projects/applications/xfce4-dict",
 		"logo", logo,
 		"translator-credits", _("translator-credits"),

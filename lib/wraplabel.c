@@ -1,7 +1,7 @@
 /*
  *      wraplabel.c
  *
- *      Copyright 2008-2009 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
+ *      Copyright 2008-2010 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>
  *      Copyright 2008-2009 Nick Treleaven <nick(dot)treleaven(at)btinternet(dot)com>
  *
  *      This program is free software; you can redistribute it and/or modify
