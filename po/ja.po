@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-31 12:32+0900\n"
-"PO-Revision-Date: 2009-12-31 12:32+0900\n"
+"POT-Creation-Date: 2010-01-04 00:04+0900\n"
+"PO-Revision-Date: 2010-01-04 00:04+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -350,8 +350,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Dictionary"
 
 #: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgid "Copyright © 2006-2010 Enrico Tröger"
+msgstr "Copyright © 2006-2010 Enrico Tröger"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
