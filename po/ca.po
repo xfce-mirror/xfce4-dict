@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-30 14:17+0100\n"
-"PO-Revision-Date: 2009-01-20 15:21+0100\n"
-"Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
+"PO-Revision-Date: 2010-01-03 15:32+0100\n"
+"Last-Translator: Harald Servat <redcrash@gmail.com>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,9 +95,8 @@ msgid "Dictionary Client"
 msgstr "Client de diccionari"
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Comprovador d'ortografia"
+msgstr "Resultats del comprovador ortogràfic:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -107,19 +106,19 @@ msgstr[0] "%d suggeriment trobat."
 msgstr[1] "%d suggeriments trobats."
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Suggeriment per «%s»:"
+msgstr "Suggeriment per «%s» (%s):"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "«%s» està escrit correctament."
+msgstr "«%s» està escrit correctament (%s)."
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "No s'ha trobat cp suggeriment per «%s»."
+msgstr "No s'ha trobat cap suggeriment per «%s» (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -145,65 +144,67 @@ msgstr "Ha fallat el procés (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:664
 msgid "P_ause"
-msgstr ""
+msgstr "P_ausa"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Reiniciar"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Executant"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Finalitzat"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Lector ràpid"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Heu d'introduir un text."
 
 #: ../lib/speedreader.c:505
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Seleccioneu un fitxer per a carregar"
 
 #: ../lib/speedreader.c:534
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "El fitxer «%s» no s'ha pogut carregar."
 
 #: ../lib/speedreader.c:552
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(mostra %d paraula al mateix temps)"
+msgstr[1] "(mostra %d paraules al mateix temps)"
 
 #: ../lib/speedreader.c:577
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr ""
+"Aquesta és una utilitat de lectura ràpida per a entrenar-vos a llegir ràpid. "
+"Funciona il·luminant paraules ràpidament a la pantalla."
 
 #: ../lib/speedreader.c:580
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_Paraules per minut:"
 
 #: ../lib/speedreader.c:586
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Marcar paràgrafs"
 
 #: ../lib/speedreader.c:593
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "A_grupament de paraules:"
 
 #: ../lib/speedreader.c:609
 msgid "_Font Size:"
-msgstr ""
+msgstr "Mida de la _font:"
 
 #: ../lib/speedreader.c:629
 msgid ""
@@ -212,19 +213,22 @@ msgid ""
 "Be relaxed and make yourself comfortable, then press Start to begin speed "
 "reading."
 msgstr ""
+"Introduïu un text que volgueu llegir.\n"
+"\n"
+"Relaxeu-vos i poseu-vos còmode, aleshores premeu Començar per a començar a "
+"llegir ràpid."
 
 #: ../lib/speedreader.c:645
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Carregar els continguts d'un fitxer"
 
 #: ../lib/speedreader.c:653
-#, fuzzy
 msgid "Clear the contents of the text field"
-msgstr "Enfoca el camp de text del plafó"
+msgstr "Buida els continguts del camp de text"
 
 #: ../lib/speedreader.c:665
 msgid "_Start"
-msgstr ""
+msgstr "_Començar"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
@@ -240,11 +244,11 @@ msgstr "Entrada no UTF8 no vàlida"
 
 #: ../lib/common.c:608
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: ../lib/common.c:611
 msgid "warning"
-msgstr ""
+msgstr "avís"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
 #: ../lib/dictd.c:786
@@ -264,9 +268,8 @@ msgid "Unknown error while quering the server."
 msgstr "Error desconegut al fer la consulta al servidor."
 
 #: ../lib/dictd.c:415
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Diccionari:"
+msgstr "Resultats del diccionari:"
 
 #: ../lib/dictd.c:418
 #, c-format
@@ -281,9 +284,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Cerca «%s» emprant «%s»"
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "Servei web"
+msgstr "Cerca Web:"
 
 #: ../lib/dictd.c:461
 #, c-format
@@ -316,7 +318,7 @@ msgstr "_Fitxer"
 
 #: ../lib/gui.c:571 ../lib/gui.c:675
 msgid "Speed _Reader"
-msgstr ""
+msgstr "_Lector ràpid"
 
 #: ../lib/gui.c:592
 msgid "_Help"
@@ -432,22 +434,19 @@ msgstr "<b>Colors:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Enllaços"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Color fonètic:"
+msgstr "Fonètica:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "«%s» està escrit correctament."
+msgstr "Escrit correctament:"
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "«%s» està escrit correctament."
+msgstr "Escrit incorrectament:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -494,12 +493,11 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"Introduïu una URL d'un lloc web que ofereixi serveis de traducció o de "
+"Introduïu la URL d'un lloc web que ofereixi serveis de traducció o de "
 "diccionaris. Empreu {word} com com a paràmetre de substitució per la paraula "
 "a cercar."
 
