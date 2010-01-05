@@ -1,16 +1,16 @@
 # Catalan translation of the xfce4-dict-plugin package.
-# Copyright (C) 2006-2007 Enrico Tröger
+# Copyright (C) 2006-2010 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin
 # package.
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008.
-#
+# Harald Servat <redcrash@gmail.com>, 2009-2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
-"PO-Revision-Date: 2010-01-03 15:32+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.xfce.org\n"
+"POT-Creation-Date: 2010-01-05 10:29-0100\n"
+"PO-Revision-Date: 2010-01-05 12:32+0100\n"
 "Last-Translator: Harald Servat <redcrash@gmail.com>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgstr "L'entrada no és vàlida"
 msgid "Process failed (%s)"
 msgstr "Ha fallat el procés (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
 msgid "P_ause"
 msgstr "P_ausa"
 
@@ -166,23 +166,23 @@ msgstr "Lector ràpid"
 msgid "You must enter a text."
 msgstr "Heu d'introduir un text."
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
 msgstr "Seleccioneu un fitxer per a carregar"
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "El fitxer «%s» no s'ha pogut carregar."
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:553
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(mostra %d paraula al mateix temps)"
 msgstr[1] "(mostra %d paraules al mateix temps)"
 
-#: ../lib/speedreader.c:577
+#: ../lib/speedreader.c:578
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
@@ -190,23 +190,23 @@ msgstr ""
 "Aquesta és una utilitat de lectura ràpida per a entrenar-vos a llegir ràpid. "
 "Funciona il·luminant paraules ràpidament a la pantalla."
 
-#: ../lib/speedreader.c:580
+#: ../lib/speedreader.c:581
 msgid "_Words per Minute:"
 msgstr "_Paraules per minut:"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:587
 msgid "_Mark Paragraphs"
 msgstr "_Marcar paràgrafs"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:594
 msgid "Word _Grouping:"
 msgstr "A_grupament de paraules:"
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:610
 msgid "_Font Size:"
 msgstr "Mida de la _font:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:630
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -218,15 +218,15 @@ msgstr ""
 "Relaxeu-vos i poseu-vos còmode, aleshores premeu Començar per a començar a "
 "llegir ràpid."
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:646
 msgid "Load the contents of a file"
 msgstr "Carregar els continguts d'un fitxer"
 
-#: ../lib/speedreader.c:653
+#: ../lib/speedreader.c:654
 msgid "Clear the contents of the text field"
 msgstr "Buida els continguts del camp de text"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:666
 msgid "_Start"
 msgstr "_Començar"
 
@@ -345,12 +345,14 @@ msgid "Xfce4 Dictionary"
 msgstr "Diccionari Xfce4"
 
 #: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgid "Copyright © 2006-2010 Enrico Tröger"
+msgstr "Copyright © 2006-2010 Enrico Tröger"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
-msgstr "Carles Muñoz Gorriz <carlesmu@internautas.org>"
+msgstr ""
+"Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008\n"
+"Harald Servat <redcrash@gmail.com>, 2009-2010."
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -511,8 +513,8 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>El programa de verificació ortogràfica pot ser «enchant», «aspell«, «ispell» "
-"o qualsevulla altri que sigui compatible amb ml l'ordre «ispell».\n"
+"<i>El programa de verificació ortogràfica pot ser «enchant», «aspell«, "
+"«ispell» o qualsevulla altri que sigui compatible amb ml l'ordre «ispell».\n"
 "La icona mostra si l'ordre introduïda existeix.</i>"
 
 #~ msgid "You must set a valid search URL."
