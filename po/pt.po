@@ -5,11 +5,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict-plugin 0.5.3\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
-"PO-Revision-Date: 2009-12-30 16:31-0000\n"
-"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
+"Project-Id-Version: xfce4-dict-plugin 0.6.0\n"
+"Report-Msgid-Bugs-To: http://bugzilla.xfce.org\n"
+"POT-Creation-Date: 2010-01-06 10:38+0000\n"
+"PO-Revision-Date: 2010-01-06 12:31-0000\n"
+"Last-Translator: Sergio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -144,7 +144,7 @@ msgid "Process failed (%s)"
 msgstr "Processo falhou (%s)"
 
 #: ../lib/speedreader.c:80
-#: ../lib/speedreader.c:664
+#: ../lib/speedreader.c:665
 msgid "P_ause"
 msgstr "P_ausa"
 
@@ -168,43 +168,43 @@ msgstr "Speed Reader"
 msgid "You must enter a text."
 msgstr "Tem que introduzir um texto."
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
 msgstr "Escolha o ficheiro a carregar"
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "O ficheiro '%s' não pôde ser carregado."
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:553
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(apresentar %d palavra de cada vez)"
 msgstr[1] "(apresentar %d palavras de cada vez)"
 
-#: ../lib/speedreader.c:577
+#: ../lib/speedreader.c:578
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Este é um utilitário de leitura para o treinar a ler rapidamente. Funciona através de palavras a piscar no ecrã a uma velocidade rápida."
 
-#: ../lib/speedreader.c:580
+#: ../lib/speedreader.c:581
 msgid "_Words per Minute:"
 msgstr "_Palavras por Minuto:"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:587
 msgid "_Mark Paragraphs"
 msgstr "_Marcar Parágrafos"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:594
 msgid "Word _Grouping:"
 msgstr "A_grupamento de Palavras:"
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:610
 msgid "_Font Size:"
 msgstr "Tamanho da _Fonte:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:630
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -214,15 +214,15 @@ msgstr ""
 "\n"
 "Agora, relaxe e ponha-se confortável, pressione Iniciar para começar a leitura rápida."
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:646
 msgid "Load the contents of a file"
 msgstr "Carregar conteúdo de um ficheiro"
 
-#: ../lib/speedreader.c:653
+#: ../lib/speedreader.c:654
 msgid "Clear the contents of the text field"
 msgstr "Limpar conteúdo do campo de texto"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:666
 msgid "_Start"
 msgstr "_Iniciar"
 
@@ -347,8 +347,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Dicionário Xfce4"
 
 #: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgid "Copyright © 2006-2010 Enrico Tröger"
+msgstr "Copyright 2008-2010 Enrico Tröger"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
