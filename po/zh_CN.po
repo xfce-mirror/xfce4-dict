@@ -1,14 +1,14 @@
 # Chinese translations for xfce package.
 # Copyright (C) 2008 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
-# Hunt Xu <huntxu@live.cn>, 2008, 2009.
+# Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
-"PO-Revision-Date: 2010-01-01 18:44+0800\n"
+"POT-Creation-Date: 2010-01-14 12:01+0100\n"
+"PO-Revision-Date: 2010-01-14 22:32+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (simplified) <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -133,7 +133,7 @@ msgstr "无效输入"
 msgid "Process failed (%s)"
 msgstr "执行失败(%s)。"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
 msgid "P_ause"
 msgstr "暂停(_A)"
 
@@ -157,22 +157,22 @@ msgstr "语速训练器"
 msgid "You must enter a text."
 msgstr "您必须输入一段文本。"
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
 msgstr "选择要载入的文件"
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "无法载入文件 '%s'。"
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:553
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(一次显示 %d 个单词)"
 
-#: ../lib/speedreader.c:577
+#: ../lib/speedreader.c:578
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
@@ -180,23 +180,23 @@ msgstr ""
 "这是一个简单的帮助训练阅读以提高您的语速的工具。其原理是以一定的速率在屏幕上"
 "闪过不同的单词。"
 
-#: ../lib/speedreader.c:580
+#: ../lib/speedreader.c:581
 msgid "_Words per Minute:"
 msgstr "每分钟单词数(_W):"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:587
 msgid "_Mark Paragraphs"
 msgstr "标记段落(_M)"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:594
 msgid "Word _Grouping:"
 msgstr "单词分组(_G):"
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:610
 msgid "_Font Size:"
 msgstr "字体大小(_F):"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:630
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -207,15 +207,15 @@ msgstr ""
 "\n"
 "放松，让自己处于舒适的状态，然后点击开始进行训练。"
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:646
 msgid "Load the contents of a file"
 msgstr "读取文件内容"
 
-#: ../lib/speedreader.c:653
+#: ../lib/speedreader.c:654
 msgid "Clear the contents of the text field"
 msgstr "清空文本框"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:666
 msgid "_Start"
 msgstr "开始(_S)"
 
@@ -333,12 +333,12 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 词典"
 
 #: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgid "Copyright © 2006-2010 Enrico Tröger"
+msgstr "Copyright © 2006-2010 Enrico Tröger"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
-msgstr "Hunt Xu <huntxu@live.cn>"
+msgstr "Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010."
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
