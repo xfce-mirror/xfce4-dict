@@ -308,7 +308,7 @@ msgstr "_Ficheiro"
 
 #: ../lib/gui.c:571 ../lib/gui.c:675
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Lector _rápido"
 
 #: ../lib/gui.c:592
 msgid "_Help"
