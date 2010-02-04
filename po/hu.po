@@ -333,9 +333,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce 4 szótár"
 
 #: ../lib/gui.c:848
-#, fuzzy
 msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgstr "Copyright © 2006-2010 Enrico Tröger"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
@@ -482,9 +481,8 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "Adja meg egy weboldal URL-címét, amely fordítási vagy szótárszolgáltatásokat nyújt. A {word} helykitöltővel jelezze a keresett szó helyét."
+msgstr "Adja meg egy fordítási vagy szótárszolgáltatásokat nyújtó weboldal URL-címét. A {word} helykitöltővel jelezze a keresett szó helyét."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
