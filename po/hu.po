@@ -1,21 +1,21 @@
 # Hungarian translation of xfce4-dict
 # Copyright 2009. Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-dict package.
-#
+# 
 # SZERVÁC Attila <sas@321.hu>, 2006.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
+"POT-Creation-Date: 2010-02-05 00:00+0100\n"
 "PO-Revision-Date: 2009-07-24 00:35+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
@@ -136,13 +136,13 @@ msgstr "Érvénytelen bemenet"
 msgid "Process failed (%s)"
 msgstr "A folyamat meghiúsult (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
 msgid "P_ause"
-msgstr ""
+msgstr "S_zünet"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Folytatás"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
@@ -160,67 +160,61 @@ msgstr "Gyorsolvasó"
 msgid "You must enter a text."
 msgstr "Adjon meg egy szöveget."
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
 msgstr "Válassza ki a betöltendő fájlt"
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "A fájl („%s”) nem tölthető be."
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:553
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(%d szó megjelenítése egyszerre)"
 msgstr[1] "(%d szó megjelenítése egyszerre)"
 
-#: ../lib/speedreader.c:577
-msgid ""
-"This is an easy speed reading utility to help train you to read faster. It "
-"does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Ez egy egyszerű gyorsolvasó segédprogram, amely segíti a gyors olvasás "
-"gyakorlását. Ezt szavak gyors felvillantásával éri el a képernyőn."
+#: ../lib/speedreader.c:578
+msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+msgstr "Ez egy egyszerű gyorsolvasó segédprogram, amely segíti a gyors olvasás gyakorlását. Ezt szavak gyors felvillantásával éri el a képernyőn."
 
-#: ../lib/speedreader.c:580
+#: ../lib/speedreader.c:581
 msgid "_Words per Minute:"
 msgstr "Sza_vak száma percenként:"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:587
 msgid "_Mark Paragraphs"
 msgstr "Beke_zdések jelölése"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:594
 msgid "Word _Grouping:"
 msgstr "Sza_vak csoportosítása:"
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:610
 msgid "_Font Size:"
 msgstr "Betű_méret:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:630
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
 "Adja meg itt a felolvasni kívánt szöveget.\n"
 "\n"
-"Helyezze magát kényelembe, majd nyomja meg az Indítás gombot a gyorsolvasás "
-"megkezdéséhez."
+"Helyezze magát kényelembe, majd nyomja meg az Indítás gombot a gyorsolvasás megkezdéséhez."
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:646
 msgid "Load the contents of a file"
 msgstr "Fájl tartalmának betöltése"
 
-#: ../lib/speedreader.c:653
+#: ../lib/speedreader.c:654
 msgid "Clear the contents of the text field"
 msgstr "A szövegmező tartalmának törlése"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:666
 msgid "_Start"
 msgstr "In_dítás"
 
@@ -339,7 +333,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce 4 szótár"
 
 #: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
+#, fuzzy
+msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Copyright © 2006-2009 Enrico Tröger"
 
 #: ../lib/gui.c:851
@@ -488,12 +483,8 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:621
 #, fuzzy
-msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Adja meg egy weboldal URL-címét, amely fordítási vagy szótárszolgáltatásokat "
-"nyújt. A {word} helykitöltővel jelezze a keresett szó helyét."
+msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Adja meg egy weboldal URL-címét, amely fordítási vagy szótárszolgáltatásokat nyújt. A {word} helykitöltővel jelezze a keresett szó helyét."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -501,12 +492,10 @@ msgstr "Helyesírás-ellenőrző program:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>A helyesírás-ellenőrző az „enchant”, „aspell”, „ispell”, vagy bármely más "
-"ispell-kompatibilis helyesírás-ellenőrző program lehet.\n"
+"<i>A helyesírás-ellenőrző az „enchant”, „aspell”, „ispell”, vagy bármely más ispell-kompatibilis helyesírás-ellenőrző program lehet.\n"
 "Az ikon megjeleníti, hogy a megadott parancs létezik-e.</i>"
 
 #~ msgid "St_op"
