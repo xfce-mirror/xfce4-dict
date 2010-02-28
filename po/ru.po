@@ -2,9 +2,6 @@
 # Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin package.
 # Jeff Bailes <thepizzaking@gmail.com>, 2007.
-#, fuzzy
-# 
-# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
@@ -219,7 +216,7 @@ msgstr "Перехватывать фокус поля ввода на пане�
 
 #: ../lib/speedreader.c:666
 msgid "_Start"
-msgstr ""
+msgstr "_Начало"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
@@ -235,11 +232,11 @@ msgstr "Неверный текст не в кодировке UTF8"
 
 #: ../lib/common.c:608
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 #: ../lib/common.c:611
 msgid "warning"
-msgstr ""
+msgstr "внимание"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
 #: ../lib/dictd.c:786
@@ -429,7 +426,7 @@ msgstr "<b>Цвета:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Ссылки:"
 
 #: ../lib/prefs.c:354
 #, fuzzy
