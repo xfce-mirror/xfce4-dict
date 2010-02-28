@@ -2,24 +2,23 @@
 # Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin package.
 # Jeff Bailes <thepizzaking@gmail.com>, 2007.
-# , fuzzy
-#
-#
+#, fuzzy
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
+"POT-Creation-Date: 2010-02-28 18:01+0100\n"
 "PO-Revision-Date: 2009-11-28 22:29+0600\n"
 "Last-Translator: Urmas <dwqwt3i02@sneakemail.com>\n"
 "Language-Team: None <->\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
@@ -141,40 +140,40 @@ msgstr "Неверный ввод"
 msgid "Process failed (%s)"
 msgstr "Процесс завершился с ошибкой (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
 msgid "P_ause"
-msgstr ""
+msgstr "П_ауза"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Продолжить"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Запущен"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Окончено"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Обучение скорочтению"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Необходимо ввести текст"
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Выберите файл для загрузки"
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "Фйал '%s' не может быть загружен"
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:553
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -182,46 +181,43 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: ../lib/speedreader.c:577
-msgid ""
-"This is an easy speed reading utility to help train you to read faster. It "
-"does this by flashing words at a rapid rate on the screen."
-msgstr ""
+#: ../lib/speedreader.c:578
+msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+msgstr "Эта простая программа предназначена для того, чтобы научить вас скорочтению. Вам будут показываться слова на экране"
 
-#: ../lib/speedreader.c:580
+#: ../lib/speedreader.c:581
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_Слов в минуту"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:587
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Отметить параграфы"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:594
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "Группировка _слов:"
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:610
 msgid "_Font Size:"
-msgstr ""
+msgstr "_Размер шрифта:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:630
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:646
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Загрузить содержимое файла"
 
-#: ../lib/speedreader.c:653
+#: ../lib/speedreader.c:654
 #, fuzzy
 msgid "Clear the contents of the text field"
 msgstr "Перехватывать фокус поля ввода на панели"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:666
 msgid "_Start"
 msgstr ""
 
@@ -343,7 +339,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Словарь Xfce4"
 
 #: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
+#, fuzzy
+msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Copyright © 2006-2009 Энрико Трёгер"
 
 #: ../lib/gui.c:851
@@ -495,12 +492,8 @@ msgstr "Адрес:"
 
 #: ../lib/prefs.c:621
 #, fuzzy
-msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Введите адрес службы поиска или словарей. Используйте слово {word}, чтобы "
-"представить искомое слово."
+msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Введите адрес службы поиска или словарей. Используйте слово {word}, чтобы представить искомое слово."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -508,12 +501,10 @@ msgstr "Проверка орфографии:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Можно использовать программы проверки орфографии «enchant», «aspell», "
-"«ispell» или другие совместимые с ispell.\n"
+"<i>Можно использовать программы проверки орфографии «enchant», «aspell», «ispell» или другие совместимые с ispell.\n"
 "Значок показывает, существует ли указанная команда.</i>"
 
 #~ msgid "You must set a valid search URL."
@@ -525,11 +516,9 @@ msgstr ""
 #~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 #~ msgstr "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 
-#, fuzzy
 #~ msgid "_Dict"
 #~ msgstr "Dict"
 
-#, fuzzy
 #~ msgid "_Web"
 #~ msgstr "Web"
 
@@ -542,7 +531,6 @@ msgstr ""
 #~ msgid "Show help options"
 #~ msgstr "Show help options"
 
-#, fuzzy
 #~ msgid "Xfce4 Dictionary Preferences"
 #~ msgstr "Xfce4 Dictionary"
 
@@ -567,7 +555,5 @@ msgstr ""
 #~ msgid "Use a web site"
 #~ msgstr "Use a web site"
 
-#~ msgid ""
-#~ "This option can only be used when the panel has a horizontal orientation."
-#~ msgstr ""
-#~ "This option can only be used when the panel has a horizontal orientation."
+#~ msgid "This option can only be used when the panel has a horizontal orientation."
+#~ msgstr "This option can only be used when the panel has a horizontal orientation."
