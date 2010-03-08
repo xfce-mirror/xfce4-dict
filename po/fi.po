@@ -1,14 +1,14 @@
-# Finnish translation for Xfce4 Screenshooter Plugin
-# Copyright (C) 2006-2009 Enrico Tröger
+# Finnish translation for xfce4-dict.
+# Copyright (C) 2006-2010 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict package.
-# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2009.
+# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
-"PO-Revision-Date: 2009-03-28 23:00+0200\n"
+"POT-Creation-Date: 2010-03-08 12:01+0100\n"
+"PO-Revision-Date: 2010-03-08 17:41+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -89,9 +89,8 @@ msgid "Dictionary Client"
 msgstr "Sanakirjasovellus"
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Oikoluku"
+msgstr "Oikoluvun tulokset:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -101,19 +100,19 @@ msgstr[0] "Löytyi %d ehdotus."
 msgstr[1] "Löytyi %d ehdotusta."
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Ehdotukset haulle \"%s\":"
+msgstr "Ehdotukset sanalle \"%s\" (%s):"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" on kirjoitettu oikein."
+msgstr "\"%s\" on kirjoitettu oikein (%s)."
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Haulle \"%s\" ei löytynyt ehdotuksia."
+msgstr "Sanalle \"%s\" ei löytynyt ehdotuksia (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -135,88 +134,93 @@ msgstr "Syöte ei kelpaa"
 msgid "Process failed (%s)"
 msgstr "Prosessi kaatui (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
 msgid "P_ause"
-msgstr ""
+msgstr "_Tauko"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Jatka"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Käynnissä"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Valmis"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Pikalukija"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Syötä ensin tekstiä."
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Valitse ladattava tiedosto"
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "Tiedostoa \"%s\" ei voi ladata."
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:553
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(näytä %d sana kerrallaan)"
+msgstr[1] "(näytä %d sanaa kerrallaan)"
 
-#: ../lib/speedreader.c:577
+#: ../lib/speedreader.c:578
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr ""
+"Tämä yksinkertainen pikalukutyökalu opettaa sinut nopeammaksi lukijaksi. "
+"Se vaihtaa sanoja ruudulla nopeaan tahtiin."
 
-#: ../lib/speedreader.c:580
+#: ../lib/speedreader.c:581
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "Sanoja _minuutissa:"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:587
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "M_erkitse kappaleet"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:594
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "Sanojen _ryhmitys:"
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:610
 msgid "_Font Size:"
-msgstr ""
+msgstr "Kirjasimen k_oko:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:630
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed "
 "reading."
 msgstr ""
+"Syötä tähän teksti, jonka haluat lukea.\n"
+"\n"
+"Rentoudu ja ota miellyttävä asento, ja aloita sitten pikalukeminen "
+"napsauttamalla Käynnistä."
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:646
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Lataa tiedoston sisältö"
 
-#: ../lib/speedreader.c:653
-#, fuzzy
+#: ../lib/speedreader.c:654
 msgid "Clear the contents of the text field"
-msgstr "Kohdista paneelin tekstikenttään"
+msgstr "Tyhjennä tekstikentän sisältö"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:666
 msgid "_Start"
-msgstr ""
+msgstr "_Käynnistä"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
@@ -232,11 +236,11 @@ msgstr "Syöte ei kelpaa (ei ole UTF8)"
 
 #: ../lib/common.c:608
 msgid "Error"
-msgstr ""
+msgstr "Virhe"
 
 #: ../lib/common.c:611
 msgid "warning"
-msgstr ""
+msgstr "varoitus"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
 #: ../lib/dictd.c:786
@@ -253,17 +257,16 @@ msgstr "Sanakirja ei kelpaa. Tarkista asetukset."
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
 msgid "Unknown error while quering the server."
-msgstr "Tuntematon virhe palvelinhaun aikana."
+msgstr "Tuntematon virhe palvelinkyselyn aikana."
 
 #: ../lib/dictd.c:415
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Sanakirja:"
+msgstr "Sanahaun tulokset:"
 
 #: ../lib/dictd.c:418
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Ei tuloksia haulle \"%s\"."
+msgstr "Haku \"%s\" ei tuottanut tuloksia."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
@@ -273,9 +276,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Hae \"%s\" hakukoneella \"%s\""
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "Verkkopalvelu"
+msgstr "Verkkohaku:"
 
 #: ../lib/dictd.c:461
 #, c-format
@@ -308,7 +310,7 @@ msgstr "_Tiedosto"
 
 #: ../lib/gui.c:571 ../lib/gui.c:675
 msgid "Speed _Reader"
-msgstr ""
+msgstr "_Pikalukija"
 
 #: ../lib/gui.c:592
 msgid "_Help"
@@ -328,15 +330,15 @@ msgstr "_Verkkopalvelu"
 
 #: ../lib/gui.c:714
 msgid "_Spell Checker"
-msgstr "_Oikoluku"
+msgstr "Oi_koluku"
 
 #: ../lib/gui.c:839
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 sanakirja"
 
 #: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Tekijänoikeus © 2006-2009 Enrico Tröger"
+msgid "Copyright © 2006-2010 Enrico Tröger"
+msgstr "Tekijänoikeus © 2006-2010 Enrico Tröger"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
@@ -424,22 +426,19 @@ msgstr "<b>Värit:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Linkit:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
 msgstr "Ääntämisohjeet:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "\"%s\" on kirjoitettu oikein."
+msgstr "Oikein kirjoitettu:"
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "\"%s\" on kirjoitettu oikein."
+msgstr "Väärin kirjoitettu:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -486,13 +485,12 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
 "Syötä URL, joka osoittaa käännös- tai sanakirjapalveluita tarjoavalle "
-"verkkosivulle. Merkkijono {word} korvataan hakusanalla."
+"verkkosivulle. Merkkijono {word} korvataan haettavalla sanalla."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -507,9 +505,3 @@ msgstr ""
 "<i>Oikolukusovellus voi olla \"enchant\", \"aspell\", \"ispell\" tai mikä "
 "tahansa ispell-yhteensopiva sovellus.\n"
 "Kuvake näyttää, löytyykö syötetty komento järjestelmästä.</i>"
-
-#~ msgid "You must set a valid search URL."
-#~ msgstr "Syötä kelvollinen haku-URL."
-
-#~ msgid "Link Color:"
-#~ msgstr "Linkit:"
