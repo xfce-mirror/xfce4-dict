@@ -209,13 +209,12 @@ msgid "Load the contents of a file"
 msgstr "Cargar los contenidos de un archivo"
 
 #: ../lib/speedreader.c:654
-#, fuzzy
 msgid "Clear the contents of the text field"
-msgstr "Obtener el foco en el campo de texto en el panel"
+msgstr "Limpiar los contenidos del campo de texto"
 
 #: ../lib/speedreader.c:666
 msgid "_Start"
-msgstr ""
+msgstr "_Comenzar"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
@@ -231,11 +230,11 @@ msgstr "Entrada no UTF8 no válida"
 
 #: ../lib/common.c:608
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: ../lib/common.c:611
 msgid "warning"
-msgstr ""
+msgstr "Aviso"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
 #: ../lib/dictd.c:786
@@ -255,9 +254,8 @@ msgid "Unknown error while quering the server."
 msgstr "Error desconocido al hacer la consulta al servidor."
 
 #: ../lib/dictd.c:415
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Diccionario:"
+msgstr "Resultados de diccionario:"
 
 #: ../lib/dictd.c:418
 #, c-format
@@ -272,9 +270,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Buscar \"%s\" usando \"%s\""
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "Servicio web"
+msgstr "Búsqueda web:"
 
 #: ../lib/dictd.c:461
 #, c-format
@@ -307,7 +304,7 @@ msgstr "_Archivo"
 
 #: ../lib/gui.c:571 ../lib/gui.c:675
 msgid "Speed _Reader"
-msgstr ""
+msgstr "_Lectura rápida"
 
 #: ../lib/gui.c:592
 msgid "_Help"
@@ -334,9 +331,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Diccionario Xfce4"
 
 #: ../lib/gui.c:848
-#, fuzzy
 msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgstr "Copyright © 2006-2010 Enrico Tröger"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
@@ -424,22 +420,19 @@ msgstr "<b>Colores:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Enlaces:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Color para fonética:"
+msgstr "Fonética:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "\"%s\" está correctamente escrito."
+msgstr "Correctamente escrito:"
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "\"%s\" está correctamente escrito."
+msgstr "Incorrectamente escrito:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -486,9 +479,8 @@ msgid "URL:"
 msgstr "URL :"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "Introduzca una URL a un sitio web que ofrezca servicios de traducción o de diccionario. Use {word} en el lugar donde iría palabra buscada."
+msgstr "Introduzca la URL de un sitio web que ofrezca servicios de traducción o de diccionario. Use {word} en el lugar donde iría palabra buscada."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
