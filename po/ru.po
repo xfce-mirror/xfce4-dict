@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-28 18:01+0100\n"
+"POT-Creation-Date: 2010-03-27 12:01+0100\n"
 "PO-Revision-Date: 2009-11-28 22:29+0600\n"
 "Last-Translator: Urmas <dwqwt3i02@sneakemail.com>\n"
 "Language-Team: None <->\n"
@@ -199,11 +199,15 @@ msgid "_Font Size:"
 msgstr "_Размер шрифта:"
 
 #: ../lib/speedreader.c:630
+#, fuzzy
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
+"Введите сюда текст, который Вы хотите прочитать.\n"
+"\n"
+" Расслабьтесь, устройтесь поудобнее и нажмите кнопку Пуск для начала быстрого чтения."
 
 #: ../lib/speedreader.c:646
 msgid "Load the contents of a file"
@@ -273,9 +277,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Поиск «%s» в «%s»"
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "Интернет"
+msgstr "Поиск в Интернете:"
 
 #: ../lib/dictd.c:461
 #, c-format
@@ -308,8 +311,9 @@ msgid "_File"
 msgstr "_Файл"
 
 #: ../lib/gui.c:571 ../lib/gui.c:675
+#, fuzzy
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Быстрое чтение"
 
 #: ../lib/gui.c:592
 msgid "_Help"
