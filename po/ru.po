@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-27 12:01+0100\n"
+"POT-Creation-Date: 2010-04-23 04:01+0000\n"
 "PO-Revision-Date: 2009-11-28 22:29+0600\n"
 "Last-Translator: Urmas <dwqwt3i02@sneakemail.com>\n"
 "Language-Team: None <->\n"
@@ -90,9 +90,8 @@ msgid "Dictionary Client"
 msgstr "Клиент служб словарей"
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Проверка орфографии"
+msgstr "Результаты проверки орфографии:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -105,7 +104,7 @@ msgstr[2] "Найдено %d вариантов."
 #: ../lib/spell.c:105
 #, fuzzy, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Варианты написания «%s»:"
+msgstr "Варианты написания для «%s» (%s):"
 
 #: ../lib/spell.c:122
 #, fuzzy, c-format
@@ -115,7 +114,7 @@ msgstr "«%s» написано верно."
 #: ../lib/spell.c:134
 #, fuzzy, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Не найдено вариантов написания «%s»."
+msgstr "Не найдено вариантов написания «%s» (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -199,7 +198,6 @@ msgid "_Font Size:"
 msgstr "_Размер шрифта:"
 
 #: ../lib/speedreader.c:630
-#, fuzzy
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -214,9 +212,8 @@ msgid "Load the contents of a file"
 msgstr "Загрузить содержимое файла"
 
 #: ../lib/speedreader.c:654
-#, fuzzy
 msgid "Clear the contents of the text field"
-msgstr "Перехватывать фокус поля ввода на панели"
+msgstr "Очистить содержимое текстового поля"
 
 #: ../lib/speedreader.c:666
 msgid "_Start"
@@ -311,7 +308,6 @@ msgid "_File"
 msgstr "_Файл"
 
 #: ../lib/gui.c:571 ../lib/gui.c:675
-#, fuzzy
 msgid "Speed _Reader"
 msgstr "Быстрое чтение"
 
@@ -340,7 +336,6 @@ msgid "Xfce4 Dictionary"
 msgstr "Словарь Xfce4"
 
 #: ../lib/gui.c:848
-#, fuzzy
 msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Copyright © 2006-2009 Энрико Трёгер"
 
@@ -433,19 +428,16 @@ msgid "Links:"
 msgstr "Ссылки:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Цвет транскрипции:"
+msgstr "Фонетика:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "«%s» написано верно."
+msgstr "Написано верно:"
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "«%s» написано верно."
+msgstr "Написано неверно:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -492,7 +484,6 @@ msgid "URL:"
 msgstr "Адрес:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
 msgstr "Введите адрес службы поиска или словарей. Используйте слово {word}, чтобы представить искомое слово."
 
