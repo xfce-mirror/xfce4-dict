@@ -2,33 +2,39 @@
 # Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin package.
 # Fabio Riga <usul@aruba.it>, 2007.
-# Cristian Marchi <cri.penta@gmail.com>
+# Cristian Marchi <cri.penta@gmail.com>, 2010
 # Gianluca Foddis <gianluca.foddis@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-30 14:17+0100\n"
-"PO-Revision-Date: 2009-12-16 14:21+0100\n"
-"Last-Translator: Gianluca Foddis <gianluca.foddis@gmail.com>\n"
+"PO-Revision-Date: 2010-04-23 18:52+0100\n"
+"Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-it-translators@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+# GLOSSARIO
+# spell = ortografia
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "Un'estensione per interrogare diversi dizionari"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2
+#: ../lib/gui.c:627
+#: ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Dizionario"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
-#: ../lib/spell.c:243 ../lib/gui.c:411
+#: ../panel-plugin/xfce4-dict-plugin.c:472
+#: ../src/xfce4-dict.c:204
+#: ../lib/spell.c:243
+#: ../lib/gui.c:411
 msgid "Ready"
 msgstr "Pronto"
 
@@ -36,7 +42,8 @@ msgstr "Pronto"
 msgid "Look up a word"
 msgstr "Cerca una parola"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:443
+#: ../lib/gui.c:651
 msgid "Search term"
 msgstr "Cerca termine"
 
@@ -58,9 +65,7 @@ msgstr "Cattura il fuoco sul campo di testo nel pannello"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
-"Avvia l'applicazione indipendente anche se è già caricato il plugin del "
-"pannello"
+msgstr "Avvia l'applicazione in modo indipendente anche se è già caricato il plugin del pannello"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -68,7 +73,7 @@ msgstr "Utilizza la selezione PRIMARIA come testo da ricercare"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr "Sii prolisso"
+msgstr "Output prolisso"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
@@ -83,7 +88,8 @@ msgstr "[TESTO]"
 msgid "Please report bugs to <%s>."
 msgstr "Segnalare i problemi a <%s>"
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:847
 msgid "A client program to query different dictionaries."
 msgstr "Un programma che permette di consultare diversi dizionari"
 
@@ -92,9 +98,8 @@ msgid "Dictionary Client"
 msgstr "Client dizionario"
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Controllo spelling"
+msgstr "Risultati del controllo ortografico:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -104,19 +109,19 @@ msgstr[0] "%d suggerimento trovato."
 msgstr[1] "%d suggerimenti trovati."
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Suggerimenti per \"%s\":"
+msgstr "Suggerimenti per \"%s\" (%s):"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "L'ortografia di \"%s\" è corretta."
+msgstr "L'ortografia di \"%s\" è corretta (%s)."
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Nessun suggerimento trovato per \"%s\"."
+msgstr "Nessun suggerimento trovato per \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -127,11 +132,10 @@ msgstr "Errore nell'esecuzione di \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
-"Impostare il comando di controllo dell'ortografia nel dialogo delle "
-"preferenze."
+msgstr "Impostare il comando di controllo dell'ortografia nel dialogo delle preferenze."
 
-#: ../lib/spell.c:208 ../lib/common.c:224
+#: ../lib/spell.c:208
+#: ../lib/common.c:224
 msgid "Invalid input"
 msgstr "Input non valido"
 
@@ -140,88 +144,88 @@ msgstr "Input non valido"
 msgid "Process failed (%s)"
 msgstr "Processo fallito (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80
+#: ../lib/speedreader.c:664
 msgid "P_ause"
-msgstr ""
+msgstr "P_ausa"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Riprendi"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "In esecuzione"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Terminato"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Lettura veloce"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Inserire un testo."
 
 #: ../lib/speedreader.c:505
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Selezionare un file da caricare"
 
 #: ../lib/speedreader.c:534
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "Il file «%s» non può essere caricato"
 
 #: ../lib/speedreader.c:552
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Visualizza %d parola alla volta"
+msgstr[1] "Visualizza %d parole alla volta"
 
 #: ../lib/speedreader.c:577
-msgid ""
-"This is an easy speed reading utility to help train you to read faster. It "
-"does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+msgstr "Questa è una semplice utilità per la lettura veloce che aiuta ad allenarsi a leggere più rapidamente. Lo fa mostrando le parole sullo schermo in successione con una elevata frequenza."
 
 #: ../lib/speedreader.c:580
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_Parole per minuto"
 
 #: ../lib/speedreader.c:586
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Segna i paragrafi"
 
 #: ../lib/speedreader.c:593
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "Ra_ggruppamento parole:"
 
 #: ../lib/speedreader.c:609
 msgid "_Font Size:"
-msgstr ""
+msgstr "_Dimensione cara_ttere:"
 
 #: ../lib/speedreader.c:629
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
+"Inserire qui il testo che si desidera leggere.\n"
+"\n"
+"Rilassarsi e mettersi comodi, poi premere «Avvia» per iniziare la lettura veloce."
 
 #: ../lib/speedreader.c:645
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Carica il contenuto di un file"
 
 #: ../lib/speedreader.c:653
-#, fuzzy
 msgid "Clear the contents of the text field"
-msgstr "Cattura il fuoco sul campo di testo nel pannello"
+msgstr "Pulisce il contenuto del campo di testo"
 
 #: ../lib/speedreader.c:665
 msgid "_Start"
-msgstr ""
+msgstr "_Avvia"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
@@ -237,13 +241,16 @@ msgstr "Input non UTF8 non valido."
 
 #: ../lib/common.c:608
 msgid "Error"
-msgstr ""
+msgstr "Errore"
 
 #: ../lib/common.c:611
 msgid "warning"
-msgstr ""
+msgstr "avviso"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
+#: ../lib/dictd.c:379
+#: ../lib/dictd.c:685
+#: ../lib/dictd.c:694
+#: ../lib/dictd.c:777
 #: ../lib/dictd.c:786
 msgid "Could not connect to server."
 msgstr "Impossibile connettersi al server."
@@ -256,14 +263,15 @@ msgstr "Il server non è pronto."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Il dizionario specificato non è valido. Controllare le preferenze."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
+#: ../lib/dictd.c:400
+#: ../lib/dictd.c:456
+#: ../lib/dictd.c:808
 msgid "Unknown error while quering the server."
 msgstr "Errore sconosciuto durante la richiesta al server."
 
 #: ../lib/dictd.c:415
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Dizionario:"
+msgstr "Risultati del dizionario:"
 
 #: ../lib/dictd.c:418
 #, c-format
@@ -278,9 +286,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Cerca \"%s\" usando \"%s\""
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "Servizio web"
+msgstr "Ricerca web:"
 
 #: ../lib/dictd.c:461
 #, c-format
@@ -296,8 +303,7 @@ msgstr "Interrogazione di %s in corso..."
 
 #: ../lib/dictd.c:712
 msgid "An error occured while querying server information."
-msgstr ""
-"Si è verificato un errore durante la richiesta delle informazioni del server."
+msgstr "Si è verificato un errore durante la richiesta delle informazioni del server."
 
 #: ../lib/dictd.c:723
 #, c-format
@@ -312,9 +318,10 @@ msgstr "Il server non contiene nessun database."
 msgid "_File"
 msgstr "_File"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571
+#: ../lib/gui.c:675
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Lettura _veloce"
 
 #: ../lib/gui.c:592
 msgid "_Help"
@@ -410,17 +417,20 @@ msgstr "Generali"
 msgid "<b>Default search method:</b>"
 msgstr "<b>Metodo di ricerca predefinito:</b>"
 
-#: ../lib/prefs.c:311 ../lib/prefs.c:472
+#: ../lib/prefs.c:311
+#: ../lib/prefs.c:472
 msgid "Dictionary Server"
 msgstr "Server dizionario"
 
-#: ../lib/prefs.c:320 ../lib/prefs.c:593
+#: ../lib/prefs.c:320
+#: ../lib/prefs.c:593
 msgid "Web Service"
 msgstr "Servizio web"
 
-#: ../lib/prefs.c:329 ../lib/prefs.c:643
+#: ../lib/prefs.c:329
+#: ../lib/prefs.c:643
 msgid "Spell Checker"
-msgstr "Controllo spelling"
+msgstr "Controllo ortografico"
 
 #: ../lib/prefs.c:338
 msgid "Last used method"
@@ -432,22 +442,19 @@ msgstr "<b>Colori:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Collegamenti:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Colore della fonetica:"
+msgstr "Fonetica:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "L'ortografia di \"%s\" è corretta."
+msgstr "Ortografia corretta:"
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "L'ortografia di \"%s\" è corretta."
+msgstr "Ortografia errata:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -473,7 +480,8 @@ msgid "Server Port:"
 msgstr "Porta del server:"
 
 #. dictionary
-#: ../lib/prefs.c:495 ../lib/prefs.c:668
+#: ../lib/prefs.c:495
+#: ../lib/prefs.c:668
 msgid "Dictionary:"
 msgstr "Dizionario:"
 
@@ -494,59 +502,42 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
-msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Inserire una URL per un sito che offre servizi di traduzione. Utilizzare la "
-"stringa {word} come segnaposto per la parola cercata.\n"
-"Usare {parola} come rimpiazzo per la parola cercata."
+msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Inserire l'URL di un sito web che offre servizi di traduzione o di dizionario. Utilizzare la stringa {word} come segnaposto per la parola cercata."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
-msgstr "Programma di controllo dello spelling:"
+msgstr "Programma di controllo ortografico:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Il programma di controllo dello spelling può essere \"enchant\", \"aspell"
-"\", \"ispell\" o qualsiasi altro programma di spelling compatibile con il "
-"comando \"ispell\".\n"
+"<i>Il programma di controllo ortografico può essere \"enchant\", \"aspell\", \"ispell\" o qualsiasi altro programma di spelling compatibile con il comando \"ispell\".\n"
 "L'icona mostra se il comando inserito esiste.</i>"
 
 #~ msgid "You must set a valid search URL."
 #~ msgstr "È necessario impostare una URL di ricerca valida."
-
 #~ msgid "Link Color:"
 #~ msgstr "Colore del collegamento:"
-
 #~ msgid "Properties"
 #~ msgstr "Proprietà"
-
 #~ msgid "Use a DICT server"
 #~ msgstr "Usa un server DICT"
-
 #~ msgid "Use another website"
 #~ msgstr "Usa un altro sito"
-
 #~ msgid "Use a web site"
 #~ msgstr "Usa un sito internet"
-
 #~ msgid ""
 #~ "This option can only be used when the panel has a horizontal orientation."
 #~ msgstr ""
 #~ "Questa opzione è utilizzabile solo se il pannello è orientato "
 #~ "orizzontalmente."
-
 #~ msgid "Text to search:"
 #~ msgstr "Testo da cercare:"
-
 #~ msgid "Developer"
 #~ msgstr "Sviluppatore"
-
 #~ msgid "Dict"
 #~ msgstr "Dict"
+
