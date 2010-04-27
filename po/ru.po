@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-23 04:01+0000\n"
+"POT-Creation-Date: 2010-04-27 04:01+0000\n"
 "PO-Revision-Date: 2009-11-28 22:29+0600\n"
 "Last-Translator: Urmas <dwqwt3i02@sneakemail.com>\n"
 "Language-Team: None <->\n"
@@ -102,17 +102,17 @@ msgstr[1] "Найдено %d варианта."
 msgstr[2] "Найдено %d вариантов."
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
 msgstr "Варианты написания для «%s» (%s):"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "«%s» написано верно."
+msgstr "«%s» написано верно (%s)."
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
 msgstr "Не найдено вариантов написания «%s» (%s)."
 
@@ -257,9 +257,8 @@ msgid "Unknown error while quering the server."
 msgstr "Неизвестная ошибка при запросе к серверу."
 
 #: ../lib/dictd.c:415
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Словарь:"
+msgstr "Результаты:"
 
 #: ../lib/dictd.c:418
 #, c-format
