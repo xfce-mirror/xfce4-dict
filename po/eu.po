@@ -272,9 +272,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Bilatu \"%s\" \"%s\" erabiliaz"
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "Web zerbitzua"
+msgstr "Web bilaketa:"
 
 #: ../lib/dictd.c:461
 #, c-format
@@ -307,7 +306,7 @@ msgstr "_Fitxategia"
 
 #: ../lib/gui.c:571 ../lib/gui.c:675
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Iraku_rle abiadura"
 
 #: ../lib/gui.c:592
 msgid "_Help"
@@ -334,9 +333,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Hiztegia"
 
 #: ../lib/gui.c:848
-#, fuzzy
 msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgstr "Copyright © 2006-2010 Enrico Tröger"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
@@ -424,22 +422,19 @@ msgstr "<b>Koloreak:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Loturak:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Kolore fonetikoa:"
+msgstr "Fonetika:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "\"%s\" behar bezala idatzirik dago."
+msgstr "Behar bezala idatzirik dago."
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "\"%s\" behar bezala idatzirik dago."
+msgstr "Ez dago behar bezala idatzirik."
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -486,7 +481,6 @@ msgid "URL:"
 msgstr "URLa:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
 msgstr "Idatzi itzulpena edo hiztegi zerbitzuak eskaintzen dituen webgune baten URLa. {word} erabili bilatu behar den hitza zehazteko."
 
