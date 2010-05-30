@@ -615,16 +615,6 @@ void dict_gui_finalize(DictData *dd)
 		gdk_cursor_unref(regular_cursor);
 }
 
-static gboolean window_key_release_cb(GtkWidget *widget, GdkEventKey *event, DictData *dd)
-{
-	if (event->keyval == GDK_Escape)
-	{
-		/* quit on Escape */
-		g_signal_emit_by_name(dd->close_button, "clicked");
-	}
-	return FALSE;
-}
-
 
 void dict_gui_create_main_window(DictData *dd)
 {
@@ -632,6 +622,7 @@ void dict_gui_create_main_window(DictData *dd)
 	GtkWidget *sep, *align, *scrolledwindow_results;
 	GdkPixbuf *icon;
 	GtkWidget *method_chooser, *radio, *label, *button;
+	GtkAccelGroup *accel_group = gtk_accel_group_new();
 
 	dd->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(dd->window), _("Dictionary"));
@@ -641,8 +632,6 @@ void dict_gui_create_main_window(DictData *dd)
 	icon = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
 	gtk_window_set_icon(GTK_WINDOW(dd->window), icon);
 	g_object_unref(icon);
-
-	g_signal_connect(dd->window, "key-release-event", G_CALLBACK(window_key_release_cb), dd);
 
 	main_box = gtk_vbox_new(FALSE, 0);
 	gtk_widget_show(main_box);
@@ -826,6 +815,9 @@ void dict_gui_create_main_window(DictData *dd)
 		if (dd->geometry[4] == 1)
 			gtk_window_maximize(GTK_WINDOW(dd->window));
 	}
+	/* quit on Escape */
+	gtk_widget_add_accelerator(dd->close_button, "clicked", accel_group, GDK_Escape, 0, 0);
+	gtk_window_add_accel_group(GTK_WINDOW(dd->window), accel_group);
 }
 
 
