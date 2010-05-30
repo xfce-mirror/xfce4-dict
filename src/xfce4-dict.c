@@ -154,11 +154,7 @@ gint main(gint argc, gchar *argv[])
 
 	if (use_clipboard)
 	{
-		search_text = gtk_clipboard_wait_for_text(gtk_clipboard_get(
-						gdk_atom_intern("PRIMARY", FALSE)));
-		if (! search_text)
-			search_text = gtk_clipboard_wait_for_text(gtk_clipboard_get(
-							gdk_atom_intern("CLIPBOARD", FALSE)));
+		search_text = dict_get_clipboard_contents();
 	}
 	else
 	{

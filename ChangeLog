@@ -4,6 +4,9 @@
    Quit/Close main window if Escape is pressed.
  * lib/speedreader.c:
    Add a paste button to the Speed Reader.
+ * lib/common.c, lib/common.h, lib/speedreader.c, src/xfce4-dict.c:
+   When pasting text, always first query the PRIMARY clipboard
+   and in case we didn't find anything, query the main clipboard.
 
 
 2010-01-01  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

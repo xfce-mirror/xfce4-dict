@@ -626,3 +626,12 @@ void dict_show_msgbox(DictData *dd, gint type, const gchar *text, ...)
 }
 
 
+gchar *dict_get_clipboard_contents(void)
+{
+	gchar *text = gtk_clipboard_wait_for_text(gtk_clipboard_get(GDK_SELECTION_PRIMARY));
+
+	if (! text)
+		text = gtk_clipboard_wait_for_text(gtk_clipboard_get(GDK_SELECTION_PRIMARY));
+
+	return text;
+}

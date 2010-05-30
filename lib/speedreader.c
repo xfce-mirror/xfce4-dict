@@ -548,9 +548,14 @@ static void sr_clear_clicked_cb(GtkButton *button, GtkTextBuffer *buffer)
 
 static void sr_paste_clicked_cb(GtkButton *button, GtkTextBuffer *buffer)
 {
-	GtkClipboard *clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);
+	gchar *text;
 	gtk_text_buffer_set_text(buffer, "", 0);
-	gtk_text_buffer_paste_clipboard(buffer, clipboard, NULL, TRUE);
+	text = dict_get_clipboard_contents();
+	if (text != NULL)
+	{
+		gtk_text_buffer_set_text(buffer, text, -1);
+		g_free(text);
+	}
 }
 
 

@@ -136,6 +136,7 @@ void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gi
 DictData *dict_create_dictdata();
 gboolean dict_start_web_query(DictData *dd, const gchar *word);
 gchar *dict_get_web_query_uri(DictData *dd, const gchar *word);
+gchar *dict_get_clipboard_contents(void);
 
 void dict_show_msgbox(DictData *dd, gint type, const gchar *text, ...) G_GNUC_PRINTF (3, 4);
 
