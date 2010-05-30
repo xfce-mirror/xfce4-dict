@@ -1,3 +1,9 @@
+2010-05-29  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * lib/gui.c:
+   Quit/Close main window if Escape is pressed.
+
+
 2010-01-01  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
 
  * *:
