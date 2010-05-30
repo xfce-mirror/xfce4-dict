@@ -2,6 +2,8 @@
 
  * lib/gui.c:
    Quit/Close main window if Escape is pressed.
+ * lib/speedreader.c:
+   Add a paste button to the Speed Reader.
 
 
 2010-01-01  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>

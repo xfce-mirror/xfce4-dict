@@ -546,6 +546,14 @@ static void sr_clear_clicked_cb(GtkButton *button, GtkTextBuffer *buffer)
 }
 
 
+static void sr_paste_clicked_cb(GtkButton *button, GtkTextBuffer *buffer)
+{
+	GtkClipboard *clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);
+	gtk_text_buffer_set_text(buffer, "", 0);
+	gtk_text_buffer_paste_clipboard(buffer, clipboard, NULL, TRUE);
+}
+
+
 static void sr_spin_grouping_changed_cb(GtkSpinButton *button, GtkLabel *label)
 {
 	gint count = gtk_spin_button_get_value_as_int(button);
@@ -563,7 +571,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 {
 	GtkWidget *label_intro, *label_words, *label_font, *label_grouping, *label_grouping_desc;
 	GtkWidget *vbox, *hbox_words, *hbox_font, *hbox_grouping, *swin, *textview;
-	GtkWidget *vbox_text_buttons, *hbox_text, *button_clear, *button_open;
+	GtkWidget *vbox_text_buttons, *hbox_text, *button_clear, *button_paste, *button_open;
 	GtkSizeGroup *sizegroup;
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 
@@ -646,6 +654,15 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_widget_set_tooltip_text(button_open, _("Load the contents of a file"));
 #endif
 
+	button_paste = gtk_button_new();
+	gtk_button_set_image(GTK_BUTTON(button_paste),
+		gtk_image_new_from_stock(GTK_STOCK_PASTE, GTK_ICON_SIZE_MENU));
+	g_signal_connect(button_paste, "clicked", G_CALLBACK(sr_paste_clicked_cb), priv->buffer);
+#if GTK_CHECK_VERSION(2, 12, 0)
+	gtk_widget_set_tooltip_text(button_paste,
+		_("Clear the contents of the text field and paste the contents of the clipboard"));
+#endif
+
 	button_clear = gtk_button_new();
 	gtk_button_set_image(GTK_BUTTON(button_clear),
 		gtk_image_new_from_stock(GTK_STOCK_CLEAR, GTK_ICON_SIZE_MENU));
@@ -656,6 +673,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 
 	vbox_text_buttons = gtk_vbox_new(FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_open, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_paste, FALSE, FALSE, 0);
 	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_clear, FALSE, FALSE, 0);
 
 	hbox_text = gtk_hbox_new(FALSE, 0);
