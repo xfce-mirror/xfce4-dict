@@ -315,7 +315,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(radio_button);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_DICT));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(search_method_changed), dd);
+		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
 		radio_button = gtk_radio_button_new_with_label(search_method, _("Web Service"));
 		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
@@ -324,7 +324,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(radio_button);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_WEB));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(search_method_changed), dd);
+		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
 		radio_button = gtk_radio_button_new_with_label(search_method, _("Spell Checker"));
 		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
@@ -333,7 +333,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(radio_button);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_SPELL));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(search_method_changed), dd);
+		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
 		radio_button = gtk_radio_button_new_with_label(search_method, _("Last used method"));
 		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
@@ -342,7 +342,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(radio_button);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), radio_button, FALSE, FALSE, 0);
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_LAST_USED));
-		g_signal_connect(G_OBJECT(radio_button), "toggled", G_CALLBACK(search_method_changed), dd);
+		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
 		label = gtk_label_new(_("<b>Colors:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);

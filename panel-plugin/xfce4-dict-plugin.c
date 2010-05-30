@@ -220,7 +220,7 @@ static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 	XSelectInput(GDK_DISPLAY(), xwin, PropertyChangeMask);
 	XSetSelectionOwner(GDK_DISPLAY(), selection_atom, xwin, GDK_CURRENT_TIME);
 
-	g_signal_connect(G_OBJECT(win), "client-event", G_CALLBACK(dict_plugin_message_received), dpd);
+	g_signal_connect(win, "client-event", G_CALLBACK(dict_plugin_message_received), dpd);
 
 	return TRUE;
 }
@@ -420,7 +420,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 
 	dict_gui_create_main_window(dpd->dd);
 
-	g_signal_connect(dpd->dd->window, "delete_event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
+	g_signal_connect(dpd->dd->window, "delete-event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
 	g_signal_connect(dpd->dd->close_button, "clicked", G_CALLBACK(dict_plugin_close_button_clicked), dpd);
 	g_signal_connect(plugin, "free-data", G_CALLBACK(dict_plugin_free_data), dpd);
 	g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_plugin_panel_set_size), dpd);
