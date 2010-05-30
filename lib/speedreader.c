@@ -465,7 +465,7 @@ static void xfd_speed_reader_response_cb(XfdSpeedReader *dialog, gint response, 
 {
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 
-	if (response == GTK_RESPONSE_CLOSE)
+	if (response == GTK_RESPONSE_CLOSE || response == GTK_RESPONSE_DELETE_EVENT)
 	{
 		gtk_widget_destroy(GTK_WIDGET(dialog));
 	}
