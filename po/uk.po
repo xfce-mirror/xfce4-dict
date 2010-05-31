@@ -7,27 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-16 06:01+0100\n"
+"POT-Creation-Date: 2010-05-31 22:01+0000\n"
 "PO-Revision-Date: 2009-01-26 12:01+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "Плагін для для запиту різних словників."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Словник"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Готово"
@@ -36,7 +36,7 @@ msgstr "Готово"
 msgid "Look up a word"
 msgstr "Дивись вище слово"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Ключове слово"
 
@@ -81,7 +81,7 @@ msgstr "[ТЕКСТ]"
 msgid "Please report bugs to <%s>."
 msgstr "Звіти про помилки для <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "Клієнтська програма для запиту різних словників."
 
@@ -136,7 +136,7 @@ msgstr "Неправильний ввід"
 msgid "Process failed (%s)"
 msgstr "Помилка процесу (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:688
 msgid "P_ause"
 msgstr "При_зупинити"
 
@@ -169,7 +169,7 @@ msgstr "Виберіть файл для завантаження"
 msgid "The file '%s' could not be loaded."
 msgstr "Файл '%s' не може бути завантажений."
 
-#: ../lib/speedreader.c:553
+#: ../lib/speedreader.c:566
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -177,27 +177,27 @@ msgstr[0] "(показати %d слово за раз)"
 msgstr[1] "(показати %d слова за раз)"
 msgstr[2] "(показати %d слів за раз)"
 
-#: ../lib/speedreader.c:578
+#: ../lib/speedreader.c:591
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Це проста утиліта швидкості читання для допомоги в підготовці читати швидше. Вона робить це за допомогою миготливих слів з великою швидкістю на екрані."
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:594
 msgid "_Words per Minute:"
 msgstr "_Слів за хвилину:"
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:600
 msgid "_Mark Paragraphs"
 msgstr "_Позначати параграфи"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:607
 msgid "Word _Grouping:"
 msgstr "_Групування слів:"
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:623
 msgid "_Font Size:"
 msgstr "_Розмір шрифта:"
 
-#: ../lib/speedreader.c:630
+#: ../lib/speedreader.c:643
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -207,15 +207,19 @@ msgstr ""
 "\n"
 "Розслабтеся і почувайте себе комфортно, потім натисніть кнопку Пуск, щоб почати підраховувати швидкість читання."
 
-#: ../lib/speedreader.c:646
+#: ../lib/speedreader.c:659
 msgid "Load the contents of a file"
 msgstr "Завантажити вміст файлу"
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:668
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Очистити вміст текстового поля і вставити вміст буфера обміну"
+
+#: ../lib/speedreader.c:676
 msgid "Clear the contents of the text field"
 msgstr "Очищати вміст текстового поля"
 
-#: ../lib/speedreader.c:666
+#: ../lib/speedreader.c:689
 msgid "_Start"
 msgstr "_Почати"
 
@@ -306,7 +310,7 @@ msgstr "Сервер не підтримує жодних баз даних."
 msgid "_File"
 msgstr "_Файл"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr "Швидкість _читання"
 
@@ -314,31 +318,31 @@ msgstr "Швидкість _читання"
 msgid "_Help"
 msgstr "_Довідка"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Шукати з:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "Сервер сло_вника"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "В_еб сервіс"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "Перев_ірка орфографії"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Словник Xfce4"
 
-#: ../lib/gui.c:848
+#: ../lib/gui.c:852
 msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Права застережено © 2006-2010 Enrico Tröger"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr "Dmitry Nikitin <luckas_fb@mai.ru>"
 
