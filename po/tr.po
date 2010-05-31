@@ -1,10 +1,9 @@
-#
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-10 16:03+0000\n"
+"POT-Creation-Date: 2010-05-31 16:01+0000\n"
 "PO-Revision-Date: 2010-05-10 23:37+0300\n"
 "Last-Translator: Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org,xfce-i18n@xfce.org>\n"
@@ -20,12 +19,12 @@ msgid "A plugin to query different dictionaries."
 msgstr "Çeşitli sözlükleri sorgulamak için eklenti."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Sözlük"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Hazır"
@@ -34,7 +33,7 @@ msgstr "Hazır"
 msgid "Look up a word"
 msgstr "Kelime ara"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Aranacak ifade"
 
@@ -79,7 +78,7 @@ msgstr "[YAZI]"
 msgid "Please report bugs to <%s>."
 msgstr "Lütfen hatalı <%s> adresine bildirin."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "Çeşitli sözlükleri sorgulamak için istemci uygulama."
 
@@ -133,7 +132,7 @@ msgstr "Geçersiz girdi"
 msgid "Process failed (%s)"
 msgstr "Süreç başarısız (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:688
 msgid "P_ause"
 msgstr "Dur_akla"
 
@@ -166,34 +165,34 @@ msgstr "Yüklenecek bir dosya seç"
 msgid "The file '%s' could not be loaded."
 msgstr "'%s' dosyası yüklenemedi."
 
-#: ../lib/speedreader.c:553
+#: ../lib/speedreader.c:566
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(bir seferde %d kelime göster)"
 msgstr[1] "(bir seferde %d kelime göster)"
 
-#: ../lib/speedreader.c:578
+#: ../lib/speedreader.c:591
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Bu, daha hızlı okumanız için size yardım edecek bir kolay hızlı okuma uygulamasıdır. Ekranda bir hız oranında kelimeler yanıp yanar."
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:594
 msgid "_Words per Minute:"
 msgstr "Dakikadaki _Kelime:"
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:600
 msgid "_Mark Paragraphs"
 msgstr "Paragrafları _işaretle"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:607
 msgid "Word _Grouping:"
 msgstr "Kelime_Toplama:"
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:623
 msgid "_Font Size:"
 msgstr "_Yazıtipi boyutu:"
 
-#: ../lib/speedreader.c:630
+#: ../lib/speedreader.c:643
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -203,15 +202,19 @@ msgstr ""
 "\n"
 " Rahat ve sakin olun, sonra hızlı okumaya başlamak için Başlat'a basın."
 
-#: ../lib/speedreader.c:646
+#: ../lib/speedreader.c:659
 msgid "Load the contents of a file"
 msgstr "Bir dosyanın içeriğini yükle"
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:668
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Metin alanının içeriğini temizle ve pano içeriğini yapıştır"
+
+#: ../lib/speedreader.c:676
 msgid "Clear the contents of the text field"
 msgstr "Metin alanının içeriğini temizle"
 
-#: ../lib/speedreader.c:666
+#: ../lib/speedreader.c:689
 msgid "_Start"
 msgstr "_Başlat"
 
@@ -301,7 +304,7 @@ msgstr "Sunucu herhangi bir veritabanı sunmuyor."
 msgid "_File"
 msgstr "_Dosya"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr "_Okuma Hızı"
 
@@ -309,35 +312,33 @@ msgstr "_Okuma Hızı"
 msgid "_Help"
 msgstr "_Yardım"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Kullanarak ara:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "_Sözlük Sunucusu"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "_Web Servisi"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "_Yazım Denetçisi"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Sözlük"
 
-#: ../lib/gui.c:848
+#: ../lib/gui.c:852
 msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Telif Hakkı © 2006-2010 Enrico Tröger"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
-msgstr ""
-"Samed Beyribey <ras0ir@eventualis.org> "
-"Ayhan YALÇINSOY<ayhanyalcinsoy@gmail.com>"
+msgstr "Samed Beyribey <ras0ir@eventualis.org> Ayhan YALÇINSOY<ayhanyalcinsoy@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
