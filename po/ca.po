@@ -4,12 +4,12 @@
 # package.
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008.
 # Harald Servat <redcrash@gmail.com>, 2009-2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
-"Report-Msgid-Bugs-To: http://bugzilla.xfce.org\n"
-"POT-Creation-Date: 2010-01-05 10:29-0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-02 10:01+0000\n"
 "PO-Revision-Date: 2010-01-05 12:32+0100\n"
 "Last-Translator: Harald Servat <redcrash@gmail.com>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
@@ -24,12 +24,12 @@ msgid "A plugin to query different dictionaries."
 msgstr "Un connector per fer consultes a diversos diccionaris."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Diccionari"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Preparat"
@@ -38,7 +38,7 @@ msgstr "Preparat"
 msgid "Look up a word"
 msgstr "Cerca una paraula"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Cerca un terme"
 
@@ -60,14 +60,11 @@ msgstr "Enfoca el camp de text del plafó"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
-"Inicia com aplicació autònoma fins i tot si el connector del quadre està "
-"carregat"
+msgstr "Inicia com aplicació autònoma fins i tot si el connector del quadre està carregat"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
-"Agafa el contingut de la selecció primària i empra-la com a text per la cerca"
+msgstr "Agafa el contingut de la selecció primària i empra-la com a text per la cerca"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -86,7 +83,7 @@ msgstr "[TEXT]"
 msgid "Please report bugs to <%s>."
 msgstr "Envieu els errors a <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "Un programa client per fer consultes a diversos diccionaris."
 
@@ -129,9 +126,7 @@ msgstr "Error al executar «%s»: (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
-"Introduïu l'ordre per la verificació ortogràfica el el diàleg de "
-"preferències."
+msgstr "Introduïu l'ordre per la verificació ortogràfica el el diàleg de preferències."
 
 #: ../lib/spell.c:208 ../lib/common.c:224
 msgid "Invalid input"
@@ -142,7 +137,7 @@ msgstr "L'entrada no és vàlida"
 msgid "Process failed (%s)"
 msgstr "Ha fallat el procés (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:688
 msgid "P_ause"
 msgstr "P_ausa"
 
@@ -175,58 +170,56 @@ msgstr "Seleccioneu un fitxer per a carregar"
 msgid "The file '%s' could not be loaded."
 msgstr "El fitxer «%s» no s'ha pogut carregar."
 
-#: ../lib/speedreader.c:553
+#: ../lib/speedreader.c:566
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(mostra %d paraula al mateix temps)"
 msgstr[1] "(mostra %d paraules al mateix temps)"
 
-#: ../lib/speedreader.c:578
-msgid ""
-"This is an easy speed reading utility to help train you to read faster. It "
-"does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Aquesta és una utilitat de lectura ràpida per a entrenar-vos a llegir ràpid. "
-"Funciona il·luminant paraules ràpidament a la pantalla."
+#: ../lib/speedreader.c:591
+msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+msgstr "Aquesta és una utilitat de lectura ràpida per a entrenar-vos a llegir ràpid. Funciona il·luminant paraules ràpidament a la pantalla."
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:594
 msgid "_Words per Minute:"
 msgstr "_Paraules per minut:"
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:600
 msgid "_Mark Paragraphs"
 msgstr "_Marcar paràgrafs"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:607
 msgid "Word _Grouping:"
 msgstr "A_grupament de paraules:"
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:623
 msgid "_Font Size:"
 msgstr "Mida de la _font:"
 
-#: ../lib/speedreader.c:630
+#: ../lib/speedreader.c:643
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
 "Introduïu un text que volgueu llegir.\n"
 "\n"
-"Relaxeu-vos i poseu-vos còmode, aleshores premeu Començar per a començar a "
-"llegir ràpid."
+"Relaxeu-vos i poseu-vos còmode, aleshores premeu Començar per a començar a llegir ràpid."
 
-#: ../lib/speedreader.c:646
+#: ../lib/speedreader.c:659
 msgid "Load the contents of a file"
 msgstr "Carregar els continguts d'un fitxer"
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:668
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Buida els continguts del camp de text i enganxa el contingut del porta-retalls"
+
+#: ../lib/speedreader.c:676
 msgid "Clear the contents of the text field"
 msgstr "Buida els continguts del camp de text"
 
-#: ../lib/speedreader.c:666
+#: ../lib/speedreader.c:689
 msgid "_Start"
 msgstr "_Començar"
 
@@ -316,7 +309,7 @@ msgstr "El servidor no ha ofert cap base de dades."
 msgid "_File"
 msgstr "_Fitxer"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr "_Lector ràpid"
 
@@ -324,31 +317,31 @@ msgstr "_Lector ràpid"
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Cerca amb:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "Servidor de _diccionari"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "Servei _web"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "_Comprovador d'ortografia"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Diccionari Xfce4"
 
-#: ../lib/gui.c:848
+#: ../lib/gui.c:852
 msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Copyright © 2006-2010 Enrico Tröger"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr ""
 "Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008\n"
@@ -495,13 +488,8 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Introduïu la URL d'un lloc web que ofereixi serveis de traducció o de "
-"diccionaris. Empreu {word} com com a paràmetre de substitució per la paraula "
-"a cercar."
+msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Introduïu la URL d'un lloc web que ofereixi serveis de traducció o de diccionaris. Empreu {word} com com a paràmetre de substitució per la paraula a cercar."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -509,12 +497,10 @@ msgstr "Programa per verificar l'ortografia:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>El programa de verificació ortogràfica pot ser «enchant», «aspell«, "
-"«ispell» o qualsevulla altri que sigui compatible amb ml l'ordre «ispell».\n"
+"<i>El programa de verificació ortogràfica pot ser «enchant», «aspell«, «ispell» o qualsevulla altri que sigui compatible amb ml l'ordre «ispell».\n"
 "La icona mostra si l'ordre introduïda existeix.</i>"
 
 #~ msgid "You must set a valid search URL."
@@ -541,7 +527,6 @@ msgstr ""
 #~ msgid "Web"
 #~ msgstr "Web"
 
-#, fuzzy
 #~ msgid "Xfce4 Dictionary Preferences"
 #~ msgstr "Diccionari:"
 
@@ -551,7 +536,6 @@ msgstr ""
 #~ msgid "Text to search:"
 #~ msgstr "Text a cercar:"
 
-#, fuzzy
 #~ msgid "Aspell"
 #~ msgstr "Empra «aspell»"
 
@@ -567,11 +551,8 @@ msgstr ""
 #~ msgid "Use a web site"
 #~ msgstr "Empra un lloc web"
 
-#~ msgid ""
-#~ "This option can only be used when the panel has a horizontal orientation."
-#~ msgstr ""
-#~ "Aquesta opció es tant sols es pot emprar quan el quadre està orientat "
-#~ "horitzontalment."
+#~ msgid "This option can only be used when the panel has a horizontal orientation."
+#~ msgstr "Aquesta opció es tant sols es pot emprar quan el quadre està orientat horitzontalment."
 
 #~ msgid "Usage: %s [options]\n"
 #~ msgstr "Ús: %s [OPCIONS]\n"
@@ -582,9 +563,5 @@ msgstr ""
 #~ msgid "    -h, --help          show this help and exit\n"
 #~ msgstr "    -h, --help          mostra aquesta ajuda i surt\n"
 
-#~ msgid ""
-#~ "If called without any options, the xfce4-dict-plugin main window is "
-#~ "shown.\n"
-#~ msgstr ""
-#~ "Si es crida sense opcins, es mostra la finestra principal de l'xfce4-dict-"
-#~ "plugin.\n"
+#~ msgid "If called without any options, the xfce4-dict-plugin main window is shown.\n"
+#~ msgstr "Si es crida sense opcins, es mostra la finestra principal de l'xfce4-dict-plugin.\n"
