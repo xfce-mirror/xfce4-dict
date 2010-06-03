@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-27 16:01+0000\n"
+"POT-Creation-Date: 2010-06-03 16:01+0000\n"
 "PO-Revision-Date: 2010-04-23 18:52+0100\n"
 "Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-it-translators@googlegroups.com>\n"
@@ -24,12 +24,12 @@ msgid "A plugin to query different dictionaries."
 msgstr "Un'estensione per interrogare diversi dizionari"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Dizionario"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Pronto"
@@ -38,7 +38,7 @@ msgstr "Pronto"
 msgid "Look up a word"
 msgstr "Cerca una parola"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Cerca termine"
 
@@ -83,7 +83,7 @@ msgstr "[TESTO]"
 msgid "Please report bugs to <%s>."
 msgstr "Segnalare i problemi a <%s>"
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "Un programma che permette di consultare diversi dizionari"
 
@@ -137,7 +137,7 @@ msgstr "Input non valido"
 msgid "Process failed (%s)"
 msgstr "Processo fallito (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:688
 msgid "P_ause"
 msgstr "P_ausa"
 
@@ -170,34 +170,34 @@ msgstr "Selezionare un file da caricare"
 msgid "The file '%s' could not be loaded."
 msgstr "Il file «%s» non può essere caricato"
 
-#: ../lib/speedreader.c:553
+#: ../lib/speedreader.c:566
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "Visualizza %d parola alla volta"
 msgstr[1] "Visualizza %d parole alla volta"
 
-#: ../lib/speedreader.c:578
+#: ../lib/speedreader.c:591
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Questa è una semplice utilità per la lettura veloce che aiuta ad allenarsi a leggere più rapidamente. Lo fa mostrando le parole sullo schermo in successione con una elevata frequenza."
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:594
 msgid "_Words per Minute:"
 msgstr "_Parole per minuto"
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:600
 msgid "_Mark Paragraphs"
 msgstr "_Segna i paragrafi"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:607
 msgid "Word _Grouping:"
 msgstr "Ra_ggruppamento parole:"
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:623
 msgid "_Font Size:"
 msgstr "_Dimensione cara_ttere:"
 
-#: ../lib/speedreader.c:630
+#: ../lib/speedreader.c:643
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -207,15 +207,19 @@ msgstr ""
 "\n"
 "Rilassarsi e mettersi comodi, poi premere «Avvia» per iniziare la lettura veloce."
 
-#: ../lib/speedreader.c:646
+#: ../lib/speedreader.c:659
 msgid "Load the contents of a file"
 msgstr "Carica il contenuto di un file"
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:668
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Pulisce il contenuto del campo di testo e incolla il contenuto della memoria"
+
+#: ../lib/speedreader.c:676
 msgid "Clear the contents of the text field"
 msgstr "Pulisce il contenuto del campo di testo"
 
-#: ../lib/speedreader.c:666
+#: ../lib/speedreader.c:689
 msgid "_Start"
 msgstr "_Avvia"
 
@@ -305,7 +309,7 @@ msgstr "Il server non contiene nessun database."
 msgid "_File"
 msgstr "_File"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr "Lettura _veloce"
 
@@ -313,31 +317,31 @@ msgstr "Lettura _veloce"
 msgid "_Help"
 msgstr "A_iuto"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Cerca con:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "Server _dizionario"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "Servizio _web"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "Controllo o_rtografico"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Dizionario di Xfce4"
 
-#: ../lib/gui.c:848
+#: ../lib/gui.c:852
 msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Copyright © 2006-2010 Enrico Tröger"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr ""
 "Cristian Marchi, 2009\n"
