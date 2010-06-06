@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.3\n"
-"Report-Msgid-Bugs-To: http://bugzilla.xfce.prg\n"
-"POT-Creation-Date: 2010-01-04 19:20+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-02 04:01+0000\n"
 "PO-Revision-Date: 2009-12-30 14:51+0100\n"
 "Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -25,12 +25,12 @@ msgid "A plugin to query different dictionaries."
 msgstr "Et udvidelsesmodul, der slår op i forskellige ordbøger."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Ordbog"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Klar"
@@ -39,7 +39,7 @@ msgstr "Klar"
 msgid "Look up a word"
 msgstr "Slå et ord op"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Søgetekst"
 
@@ -84,7 +84,7 @@ msgstr "[TEXT]"
 msgid "Please report bugs to <%s>."
 msgstr "Rapportér venligst fejl til <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "Et klientprogram til at lave opslag i forskellige ordbøger."
 
@@ -138,7 +138,7 @@ msgstr "Ugyldig inddata"
 msgid "Process failed (%s)"
 msgstr "Procesfejl (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:688
 msgid "P_ause"
 msgstr "P_ause"
 
@@ -171,34 +171,34 @@ msgstr "Vælg en fil til indlæstning"
 msgid "The file '%s' could not be loaded."
 msgstr "Filen '%s' kunne ikke indlæses."
 
-#: ../lib/speedreader.c:553
+#: ../lib/speedreader.c:566
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(vis %d ord ad gangen)"
 msgstr[1] "(vis %d ord ad gangen)"
 
-#: ../lib/speedreader.c:578
+#: ../lib/speedreader.c:591
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Dette er et nemt værktøj til læsehastighedsmåling for at hjælpe dig med at læse hurtigere. Det sker ved at vise ord med hurtig frekvens på skærmen."
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:594
 msgid "_Words per Minute:"
 msgstr "_Ord per minut:"
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:600
 msgid "_Mark Paragraphs"
 msgstr "_Markér afsnit"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:607
 msgid "Word _Grouping:"
 msgstr "_Gruppering af ord:"
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:623
 msgid "_Font Size:"
 msgstr "_Størrelse af skrifttype:"
 
-#: ../lib/speedreader.c:630
+#: ../lib/speedreader.c:643
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -208,15 +208,19 @@ msgstr ""
 "\n"
 "Vær afslappet og have det komfortabelt, før du trykker Begynd for at starte læsehastighedsmåling."
 
-#: ../lib/speedreader.c:646
+#: ../lib/speedreader.c:659
 msgid "Load the contents of a file"
 msgstr "Indlæs indholdet af en fil"
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:668
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Ryd indholdet af tekstfeltet og indsæt indholdet af udklipsholderen"
+
+#: ../lib/speedreader.c:676
 msgid "Clear the contents of the text field"
 msgstr "Ryd indholdet af tekstfeltet"
 
-#: ../lib/speedreader.c:666
+#: ../lib/speedreader.c:689
 msgid "_Start"
 msgstr "_Begynd"
 
@@ -306,7 +310,7 @@ msgstr "Serveren tilbyder ikke nogle databaser."
 msgid "_File"
 msgstr "_Fil"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr "Læse_hastighedsmåler"
 
@@ -314,27 +318,31 @@ msgstr "Læse_hastighedsmåler"
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Søg med:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "_Ordbogsserver"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "_Internetservice"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "_Stavekontrol"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 ordbog"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:852
+msgid "Copyright © 2006-2010 Enrico Tröger"
+msgstr "Ophavsret © 2006-2010 Enrico Tröger"
+
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr ""
 "Søren Waaben Hansen <soren@minorflaw.dk>\n"
@@ -498,10 +506,6 @@ msgid ""
 msgstr ""
 "<i>Stavekontrolprogrammet kan være 'enchant', 'aspell', 'ispell' eller et andet stavekontrolprogram som er kompatibelt med ispell-kommandoen\n"
 "Ikonet viser om den angivne kommando findes.</i>"
-
-#: ../lib/gui.c:848
-msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Ophavsret © 2006-2010 Enrico Tröger"
 
 #~ msgid "You must set a valid search URL."
 #~ msgstr "Du skal skrive en gyldig søge-URL."
