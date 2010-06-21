@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-20 18:00+0100\n"
+"POT-Creation-Date: 2010-06-21 16:01+0000\n"
 "PO-Revision-Date: 2009-07-15 17:45+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -25,12 +25,12 @@ msgid "A plugin to query different dictionaries."
 msgstr "Un engadido para consultar diferentes dicionarios."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Dicionario"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Preparado"
@@ -39,7 +39,7 @@ msgstr "Preparado"
 msgid "Look up a word"
 msgstr "Buscar unha palabra"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Buscar termo"
 
@@ -84,7 +84,7 @@ msgstr "[TEXTO]"
 msgid "Please report bugs to <%s>."
 msgstr "Por favor, comuníquelle os erros a <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "Un programa cliente para consultar diferentes dicionarios."
 
@@ -138,7 +138,7 @@ msgstr "Entrada incorrecta"
 msgid "Process failed (%s)"
 msgstr "O proceso fallou (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "P_ausar"
 
@@ -171,34 +171,34 @@ msgstr "Escolla un ficheiro para cargalo"
 msgid "The file '%s' could not be loaded."
 msgstr "Non se puido cargar o ficheiro '%s'."
 
-#: ../lib/speedreader.c:553
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(mostrar %d palabra cada vez)"
 msgstr[1] "(mostrar %d palabras cada vez)"
 
-#: ../lib/speedreader.c:578
+#: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Esta é unha sinxela utilidade de velocidade de lectura para axudarlle a adestrarse para ler máis rápido. Isto faise mostrando palabras rapidamente na pantalla."
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
 msgstr "_Palabras por minuto:"
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
 msgstr "_Marcar os parágrafos"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
 msgstr "A_grupamento de palabras:"
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
 msgstr "_Tamaño da letra:"
 
-#: ../lib/speedreader.c:630
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -208,15 +208,19 @@ msgstr ""
 "\n"
 "Reláxese e póñase cómodo, despois prema en Comezar para comezar a lectura rápida."
 
-#: ../lib/speedreader.c:646
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Cargar o contido dun ficheiro"
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:663
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Limpar o contido do campo de texto e pegar o contido do portarretallos"
+
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr "Limpar o contido do campo de texto"
 
-#: ../lib/speedreader.c:666
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "_Comezar"
 
@@ -306,7 +310,7 @@ msgstr "O servidor non ofrece ningunha base de datos."
 msgid "_File"
 msgstr "_Ficheiro"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr "Lector _rápido"
 
@@ -314,31 +318,31 @@ msgstr "Lector _rápido"
 msgid "_Help"
 msgstr "A_xuda"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Buscar con:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "_Servidor de dicionario"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "_Servizo web"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "_Corrector ortográfico"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Dicionario de Xfce4"
 
-#: ../lib/gui.c:848
+#: ../lib/gui.c:852
 msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Copyright © 2006-2010 Enrico Tröger"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr ""
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2008, 2009.\n"
