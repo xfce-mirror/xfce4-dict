@@ -1,5 +1,5 @@
 # Kazakh translation for xfce4-dict.
-# Copyright (C) 2010 The Stardict team
+# Copyright (C) 2010 The Xfce team
 # This file is distributed under the same license as the xfce4-dict package.
 # Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010.
 #
