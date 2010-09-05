@@ -302,9 +302,10 @@ static void dict_plugin_properties_dialog_response(GtkWidget *dlg, gint response
 }
 
 
-static void dict_plugin_properties_dialog(XfcePanelPlugin *plugin, DictPanelData *dpd)
+static void dict_plugin_properties_dialog(GtkWidget *widget, DictPanelData *dpd)
 {
 	GtkWidget *dlg;
+	XfcePanelPlugin *plugin = dpd->plugin;
 
 	xfce_panel_plugin_block_menu(plugin);
 
