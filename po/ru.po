@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-16 04:03+0000\n"
+"POT-Creation-Date: 2010-09-14 04:02+0000\n"
 "PO-Revision-Date: 2009-11-28 22:29+0600\n"
 "Last-Translator: Urmas <dwqwt3i02@sneakemail.com>\n"
 "Language-Team: None <->\n"
@@ -22,21 +22,21 @@ msgid "A plugin to query different dictionaries."
 msgstr "Модуль для работы с различными словарями."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Словарь"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Готово"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Поиск слова"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Искать"
 
@@ -81,7 +81,7 @@ msgstr "[ТЕКСТ]"
 msgid "Please report bugs to <%s>."
 msgstr "Сообщайте об ошибках по адресу <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "Программа для обращения к различным словарям."
 
@@ -136,7 +136,7 @@ msgstr "Неверный ввод"
 msgid "Process failed (%s)"
 msgstr "Процесс завершился с ошибкой (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "П_ауза"
 
@@ -169,7 +169,7 @@ msgstr "Выберите файл для загрузки"
 msgid "The file '%s' could not be loaded."
 msgstr "Фйал '%s' не может быть загружен"
 
-#: ../lib/speedreader.c:553
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -177,27 +177,27 @@ msgstr[0] "Отображать %d слов за раз"
 msgstr[1] "Отображать %d слова за раз"
 msgstr[2] "Показать %d слов за раз"
 
-#: ../lib/speedreader.c:578
+#: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Эта простая программа предназначена для того, чтобы научить вас скорочтению. Вам будут показываться слова на экране"
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
 msgstr "_Слов в минуту"
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
 msgstr "_Отметить параграфы"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
 msgstr "Группировка _слов:"
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
 msgstr "_Размер шрифта:"
 
-#: ../lib/speedreader.c:630
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -207,15 +207,19 @@ msgstr ""
 "\n"
 " Расслабьтесь, устройтесь поудобнее и нажмите кнопку Пуск для начала быстрого чтения."
 
-#: ../lib/speedreader.c:646
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Загрузить содержимое файла"
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:663
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Заменить содержимое текстового поля содержимым буфера обмена"
+
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr "Очистить содержимое текстового поля"
 
-#: ../lib/speedreader.c:666
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "_Начало"
 
@@ -306,7 +310,7 @@ msgstr "На сервере отсутсвуют базы данных."
 msgid "_File"
 msgstr "_Файл"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr "Быстрое чтение"
 
@@ -314,31 +318,31 @@ msgstr "Быстрое чтение"
 msgid "_Help"
 msgstr "_Справка"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Где искать:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "В _службах словарей"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "В _интернете"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "_Проверка орфографии"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Словарь Xfce4"
 
-#: ../lib/gui.c:848
+#: ../lib/gui.c:852
 msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Copyright © 2006-2009 Энрико Трёгер"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr "Alexandr Ponomarenko, 2009"
 
