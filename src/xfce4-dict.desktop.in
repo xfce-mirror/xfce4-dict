@@ -8,4 +8,4 @@ Icon=xfce4-dict
 Exec=xfce4-dict
 Terminal=false
 StartupNotify=true
-Categories=Office;Dictionary;GTK;
+Categories=Office;TextTools;Dictionary;GTK;
