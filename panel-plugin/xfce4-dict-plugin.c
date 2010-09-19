@@ -371,7 +371,7 @@ static gboolean entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, Di
 }
 
 
-static void entry_changed_cb(GtkEditable *editable, DictData *dd)
+static void entry_changed_cb(GtkEditable *editable, DictPanelData *dpd)
 {
 	entry_is_dirty = TRUE;
 }
