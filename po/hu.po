@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-05 00:00+0100\n"
+"POT-Creation-Date: 2010-11-03 11:02+0000\n"
 "PO-Revision-Date: 2009-07-24 00:35+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
@@ -23,21 +23,21 @@ msgid "A plugin to query different dictionaries."
 msgstr "Különböző szótárak lekérdezése"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Szótár"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Kész"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Szó keresése"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Keresőkifejezés"
 
@@ -82,7 +82,7 @@ msgstr "[SZÖVEG]"
 msgid "Please report bugs to <%s>."
 msgstr "A hibákat ide jelentse: <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "Kliensprogram különböző szótárak lekérdezéséhez."
 
@@ -136,7 +136,7 @@ msgstr "Érvénytelen bemenet"
 msgid "Process failed (%s)"
 msgstr "A folyamat meghiúsult (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "S_zünet"
 
@@ -169,34 +169,34 @@ msgstr "Válassza ki a betöltendő fájlt"
 msgid "The file '%s' could not be loaded."
 msgstr "A fájl („%s”) nem tölthető be."
 
-#: ../lib/speedreader.c:553
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(%d szó megjelenítése egyszerre)"
 msgstr[1] "(%d szó megjelenítése egyszerre)"
 
-#: ../lib/speedreader.c:578
+#: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Ez egy egyszerű gyorsolvasó segédprogram, amely segíti a gyors olvasás gyakorlását. Ezt szavak gyors felvillantásával éri el a képernyőn."
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
 msgstr "Sza_vak száma percenként:"
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
 msgstr "Beke_zdések jelölése"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
 msgstr "Sza_vak csoportosítása:"
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
 msgstr "Betű_méret:"
 
-#: ../lib/speedreader.c:630
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -206,15 +206,19 @@ msgstr ""
 "\n"
 "Helyezze magát kényelembe, majd nyomja meg az Indítás gombot a gyorsolvasás megkezdéséhez."
 
-#: ../lib/speedreader.c:646
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Fájl tartalmának betöltése"
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:663
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "A szövegmező tartalmának törlése, és a vágólap tartalmának beillesztése"
+
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr "A szövegmező tartalmának törlése"
 
-#: ../lib/speedreader.c:666
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "In_dítás"
 
@@ -304,7 +308,7 @@ msgstr "A kiszolgáló nem ajánl fel adatbázisokat."
 msgid "_File"
 msgstr "_Fájl"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr "_Gyorsolvasó"
 
@@ -312,31 +316,31 @@ msgstr "_Gyorsolvasó"
 msgid "_Help"
 msgstr "_Súgó"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Keresés ezzel:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "_Szótárkiszolgáló"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "_Webszolgáltatás"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "_Helyesírás-ellenőrző"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Xfce 4 szótár"
 
-#: ../lib/gui.c:848
+#: ../lib/gui.c:852
 msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Copyright © 2006-2010 Enrico Tröger"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr "Kelemen Gábor <kelemeng@gnome.hu>"
 
