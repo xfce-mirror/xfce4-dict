@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-05 04:01+0000\n"
+"POT-Creation-Date: 2010-11-03 05:02+0000\n"
 "PO-Revision-Date: 2009-01-28 01:18+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
@@ -23,21 +23,21 @@ msgid "A plugin to query different dictionaries."
 msgstr "Hiztegi ezberdinak galdekatzeko plugina."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Hiztegia"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Prest."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Hitz bat bilatu"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Bilaketa terminoa"
 
@@ -82,7 +82,7 @@ msgstr "[TESTUA]"
 msgid "Please report bugs to <%s>."
 msgstr "Programa erroreen berri <%s>-ra bidali (ingelesez)"
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "Hiztegi ezberdinak galdekatzeko bezero programa bat."
 
@@ -136,7 +136,7 @@ msgstr "Sarrera baliogabea."
 msgid "Process failed (%s)"
 msgstr "Prozesuak huts egin du (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:665
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "P_ausatu"
 
@@ -169,34 +169,34 @@ msgstr "Hautatu kargatzeko fitxategia"
 msgid "The file '%s' could not be loaded."
 msgstr "'%s' fitxategia ezin da kargatu."
 
-#: ../lib/speedreader.c:553
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(Bistarazi hitz %d batera)"
 msgstr[1] "(Bistarazi %d hitz batera)"
 
-#: ../lib/speedreader.c:578
+#: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Hau irakurketa bizkor lanabes bat da azkarrago irakurtzen laguntzeko. Hau hitzak abiadura handian pantailan bistaratzen egiten du."
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
 msgstr "_Hitz minutuko:"
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
 msgstr "_Markatu paragrafoak"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
 msgstr "Hitz _taldekatzea:"
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
 msgstr "_Letra-tipo tamaina:"
 
-#: ../lib/speedreader.c:630
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -206,15 +206,19 @@ msgstr ""
 "\n"
 "Erlaxatu eta komodo ipini zaitez eta Hasi sakatu irakurketa bizkorra abiarazteko."
 
-#: ../lib/speedreader.c:646
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Kargatu fitxategi bateko edukiak"
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:663
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Garbitu testu eremuko edukia eta itsatsi arbelekoa"
+
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr "Garbitu testu eremuko edukia"
 
-#: ../lib/speedreader.c:666
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "_Hasi"
 
@@ -304,7 +308,7 @@ msgstr "Zerbitzariak ez du datubaserik eskaintzen."
 msgid "_File"
 msgstr "_Fitxategia"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr "Iraku_rle abiadura"
 
@@ -312,31 +316,31 @@ msgstr "Iraku_rle abiadura"
 msgid "_Help"
 msgstr "_Laguntza"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Bilatu honekin:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "_Hiztegi zerbitzaria"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "_Web zerbitzua"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "_Ortografia-egiaztatzea"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Hiztegia"
 
-#: ../lib/gui.c:848
+#: ../lib/gui.c:852
 msgid "Copyright © 2006-2010 Enrico Tröger"
 msgstr "Copyright © 2006-2010 Enrico Tröger"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr "Piarres Beobide <pi@beobide.net>"
 
