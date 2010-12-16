@@ -2,14 +2,14 @@
 # Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin package.
 # Jeff Bailes <thepizzaking@gmail.com>, 2007.
-# , fuzzy
-#
-#
+#, fuzzy
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
+"POT-Creation-Date: 2010-12-16 05:02+0000\n"
 "PO-Revision-Date: 2009-08-18 12:55+1000\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB\n"
@@ -23,21 +23,21 @@ msgid "A plugin to query different dictionaries."
 msgstr "A plugin to query different dictionaries."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Dictionary"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Ready"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Look up a word"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Search term"
 
@@ -82,7 +82,7 @@ msgstr "[TEXT]"
 msgid "Please report bugs to <%s>."
 msgstr "Please report bugs to <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr "A client program to query different dictionaries."
 
@@ -91,9 +91,8 @@ msgid "Dictionary Client"
 msgstr "Dictionary Client"
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Spell Checker"
+msgstr "Spell Checker Results:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -103,19 +102,19 @@ msgstr[0] "%d suggestion found."
 msgstr[1] "%d suggestions found."
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Suggestions for \"%s\":"
+msgstr "Suggestions for \"%s\" (%s):"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" is spelt correctly."
+msgstr "\"%s\" is spelt correctly (%s)."
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "No suggestions could be found for \"%s\"."
+msgstr "No suggestions could be found for \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -137,88 +136,91 @@ msgstr "Invalid input"
 msgid "Process failed (%s)"
 msgstr "Process failed (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr ""
+msgstr "P_ause"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Resume"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Running"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Finished"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Speed Reader"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "You must enter a text."
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Choose a file to load"
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "The file '%s' could not be loaded."
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../lib/speedreader.c:577
-msgid ""
-"This is an easy speed reading utility to help train you to read faster. It "
-"does this by flashing words at a rapid rate on the screen."
-msgstr ""
-
-#: ../lib/speedreader.c:580
-msgid "_Words per Minute:"
-msgstr ""
+msgstr[0] "(display %d word at a time)"
+msgstr[1] "(display %d words at a time)"
 
 #: ../lib/speedreader.c:586
+msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+msgstr "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+
+#: ../lib/speedreader.c:589
+msgid "_Words per Minute:"
+msgstr "_Words per Minute:"
+
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Mark Paragraphs"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "Word _Grouping:"
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr ""
+msgstr "_Font Size:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
+"Enter some text here you would like to read.\n"
+"\n"
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Load the contents of a file"
 
-#: ../lib/speedreader.c:653
-#, fuzzy
+#: ../lib/speedreader.c:663
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Clear the contents of the text field and paste the contents of the clipboard"
+
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
-msgstr "Grab the focus on the text field in the panel"
+msgstr "Clear the contents of the text field"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr ""
+msgstr "_Start"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
@@ -234,11 +236,11 @@ msgstr "Invalid non-UTF8 input"
 
 #: ../lib/common.c:608
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: ../lib/common.c:611
 msgid "warning"
-msgstr ""
+msgstr "warning"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
 #: ../lib/dictd.c:786
@@ -258,9 +260,8 @@ msgid "Unknown error while quering the server."
 msgstr "Unknown error while quering the server."
 
 #: ../lib/dictd.c:415
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Dictionary:"
+msgstr "Dictionary Results:"
 
 #: ../lib/dictd.c:418
 #, c-format
@@ -275,9 +276,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Search \"%s\" using \"%s\""
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "Web Service"
+msgstr "Web Search:"
 
 #: ../lib/dictd.c:461
 #, c-format
@@ -308,39 +308,39 @@ msgstr "The server doesn't offer any databases."
 msgid "_File"
 msgstr "_File"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Speed _Reader"
 
 #: ../lib/gui.c:592
 msgid "_Help"
 msgstr "_Help"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr "Search with:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr "_Dictionary Server"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr "_Web Service"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr "_Spell Checker"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Dictionary"
 
-#: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+#: ../lib/gui.c:852
+msgid "Copyright © 2006-2010 Enrico Tröger"
+msgstr "Copyright © 2006-2010 Enrico Tröger"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr "Jeff Bailes <thepizzaking@gmail.com>, 2009"
 
@@ -426,22 +426,19 @@ msgstr "<b>Colours:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Links:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Phonetic Colour:"
+msgstr "Phonetics:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "\"%s\" is spelt correctly."
+msgstr "Spelt correctly:"
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "\"%s\" is spelt correctly."
+msgstr "Spelt incorrectly:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -488,13 +485,8 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
-msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
+msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -502,12 +494,10 @@ msgstr "Spell Check Program:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 
 #~ msgid "You must set a valid search URL."
@@ -519,11 +509,9 @@ msgstr ""
 #~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 #~ msgstr "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 
-#, fuzzy
 #~ msgid "_Dict"
 #~ msgstr "Dict"
 
-#, fuzzy
 #~ msgid "_Web"
 #~ msgstr "Web"
 
@@ -536,7 +524,6 @@ msgstr ""
 #~ msgid "Show help options"
 #~ msgstr "Show help options"
 
-#, fuzzy
 #~ msgid "Xfce4 Dictionary Preferences"
 #~ msgstr "Xfce4 Dictionary"
 
@@ -561,7 +548,5 @@ msgstr ""
 #~ msgid "Use a web site"
 #~ msgstr "Use a web site"
 
-#~ msgid ""
-#~ "This option can only be used when the panel has a horizontal orientation."
-#~ msgstr ""
-#~ "This option can only be used when the panel has a horizontal orientation."
+#~ msgid "This option can only be used when the panel has a horizontal orientation."
+#~ msgstr "This option can only be used when the panel has a horizontal orientation."
