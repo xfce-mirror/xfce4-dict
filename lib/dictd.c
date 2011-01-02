@@ -610,8 +610,8 @@ static gpointer ask_server(DictData *dd)
 		dd->dictionary[i] = ' ';
 
 		dd->query_buffer = get_answer(dd, fd);
-		send_command(fd, "QUIT");
 	}
+	send_command(fd, "QUIT");
 	close(fd);
 
 	dd->query_is_running = FALSE;
