@@ -584,6 +584,7 @@ static gpointer ask_server(DictData *dd)
 {
 	gint fd, i;
 	static gchar cmd[BUF_SIZE];
+	gchar *tmp_buf;
 
 	if ((fd = open_socket(dd->server, dd->port)) == -1)
 	{
@@ -595,12 +596,14 @@ static gpointer ask_server(DictData *dd)
 	dd->query_is_running = TRUE;
 	dd->query_status = NO_CONNECTION;
 
-	g_free(get_answer(dd, fd));
+	tmp_buf = get_answer(dd, fd);
+	g_free(tmp_buf);
 	if (dd->query_status == NO_ERROR)
 	{
 		/* take only the first part of the dictionary string, so let the string end at the space */
 		i = 0;
-		while (dd->dictionary[i] != ' ') i++;
+		while (dd->dictionary[i] != ' ')
+			i++;
 		dd->dictionary[i] = '\0';
 
 		g_snprintf(cmd, BUF_SIZE, "DEFINE %s \"%s\"", dd->dictionary, dd->searched_word);
