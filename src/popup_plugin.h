@@ -22,6 +22,6 @@
 #define POPUP_PLUGIN_H 1
 
 
-gboolean dict_find_panel_plugin(gboolean focus_panel_entry, const gchar *text);
+gboolean dict_find_panel_plugin(gchar flags, const gchar *text);
 
 #endif

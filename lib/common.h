@@ -133,7 +133,7 @@ void dict_search_word(DictData *dd, const gchar *word);
 void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gint x, gint y,
 							 GtkSelectionData *data, guint info, guint ltime, DictData *dd);
 
-DictData *dict_create_dictdata();
+DictData *dict_create_dictdata(void);
 gboolean dict_start_web_query(DictData *dd, const gchar *word);
 gchar *dict_get_web_query_uri(DictData *dd, const gchar *word);
 gchar *dict_get_clipboard_contents(void);

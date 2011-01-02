@@ -623,7 +623,7 @@ static gpointer ask_server(DictData *dd)
 }
 
 
-void signal_cb(gint sig)
+static void signal_cb(gint sig)
 {
 	/* do nothing here and hope we never get called */
 }

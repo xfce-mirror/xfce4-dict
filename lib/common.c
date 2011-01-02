@@ -573,7 +573,7 @@ void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gi
 }
 
 
-DictData *dict_create_dictdata()
+DictData *dict_create_dictdata(void)
 {
 	DictData *dd = g_new0(DictData, 1);
 

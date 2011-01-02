@@ -226,7 +226,7 @@ static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 }
 
 
-void dict_plugin_close_button_clicked(GtkWidget *button, DictPanelData *dpd)
+static void dict_plugin_close_button_clicked(GtkWidget *button, DictPanelData *dpd)
 {
 	gtk_widget_hide(dpd->dd->window);
 }

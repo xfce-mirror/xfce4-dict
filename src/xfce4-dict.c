@@ -76,7 +76,7 @@ static void close_button_clicked(GtkWidget *button, DictData *dd)
 }
 
 
-void pref_dialog_activated(GtkMenuItem *menuitem, DictData *dd)
+static void pref_dialog_activated(GtkMenuItem *menuitem, DictData *dd)
 {
 	GtkWidget *dlg;
 
