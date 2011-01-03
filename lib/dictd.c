@@ -397,7 +397,7 @@ static gboolean process_server_response(DictData *dd)
 
 	if (! NZV(dd->query_buffer))
 	{
-		dict_gui_status_add(dd, _("Unknown error while quering the server."));
+		dict_gui_status_add(dd, _("Unknown error while querying the server."));
 		g_free(dd->query_buffer);
 		return FALSE;
 	}
@@ -453,7 +453,7 @@ static gboolean process_server_response(DictData *dd)
 	}
 	else if (strncmp("150", answer, 3) != 0 && dd->query_status != NOTHING_FOUND)
 	{
-		dict_gui_status_add(dd, _("Unknown error while quering the server."));
+		dict_gui_status_add(dd, _("Unknown error while querying the server."));
 		g_free(dd->query_buffer);
 		return FALSE;
 	}
@@ -494,14 +494,18 @@ static gboolean process_server_response(DictData *dd)
 }
 
 
-static gchar *get_answer(DictData *dd, gint fd)
+static gint get_answer(gint fd, gchar **buffer)
 {
 	gboolean fol = TRUE;
 	gboolean sol = FALSE;
 	gboolean tol = FALSE;
-	GString *str = g_string_sized_new(100);
+	GString *str;
 	gchar c;
 	gchar ec[3];
+	gint query_status;
+
+	if (buffer != NULL)
+		str = g_string_sized_new(100);
 
 	alarm(10); /* abort after 10 seconds, there should went wrong something */
 	while (read(fd, &c, 1) > 0)
@@ -529,7 +533,9 @@ static gchar *get_answer(DictData *dd, gint fd)
 			tol = FALSE;
 		}
 
-		g_string_append_c(str, c);
+		if (buffer != NULL)
+			g_string_append_c(str, c);
+
 		if (tol)
 		{
 			if (strncmp(ec, "250", 3) == 0 || 	/* ok */
@@ -538,45 +544,50 @@ static gchar *get_answer(DictData *dd, gint fd)
 			{
 				break;
 			}
-			else if (strncmp(ec, "220", 3) == 0) /* server ready */
+			else if (strncmp(ec, "220", 3) == 0 ||	/* server ready */
+					 strncmp(ec, "221", 3) == 0)	/* good bye */
 			{
-				dd->query_status = NO_ERROR;
+				query_status = NO_ERROR;
 				break;
 			}
 			else if (strncmp(ec, "420", 3) == 0 ||
 					 strncmp(ec, "421", 3) == 0) /* server not ready (server down or shutdown) */
 			{
-				dd->query_status = SERVER_NOT_READY;
+				query_status = SERVER_NOT_READY;
 				break;
 			}
 			else if (strncmp(ec, "500", 3) == 0 ||
 					 strncmp(ec, "501", 3) == 0) /* bad command or parameters */
 			{
-				dd->query_status = BAD_COMMAND;
+				query_status = BAD_COMMAND;
 				break;
 			}
 			else if (strncmp(ec, "550", 3) == 0) /* invalid database */
 			{
-				dd->query_status = UNKNOWN_DATABASE;
+				query_status = UNKNOWN_DATABASE;
 				break;
 			}
 			else if (strncmp(ec, "552", 3) == 0) /* nothing found */
 			{
-				dd->query_status = NOTHING_FOUND;
+				query_status = NOTHING_FOUND;
 				break;
 			}
 			else if (strncmp(ec, "554", 3) == 0) /* no databases present */
 			{
-				dd->query_status = NO_DATABASES;
+				query_status = NO_DATABASES;
 				break;
 			}
 		}
 	}
 	alarm(0);
 
-	g_string_append_c(str, '\0');
+	if (buffer != NULL)
+	{
+		g_string_append_c(str, '\0');
+		*buffer = g_string_free(str, FALSE);
+	}
 
-	return g_string_free(str, FALSE);
+	return query_status;
 }
 
 
@@ -584,7 +595,6 @@ static gpointer ask_server(DictData *dd)
 {
 	gint fd, i;
 	static gchar cmd[BUF_SIZE];
-	gchar *tmp_buf;
 
 	if ((fd = open_socket(dd->server, dd->port)) == -1)
 	{
@@ -596,8 +606,7 @@ static gpointer ask_server(DictData *dd)
 	dd->query_is_running = TRUE;
 	dd->query_status = NO_CONNECTION;
 
-	tmp_buf = get_answer(dd, fd);
-	g_free(tmp_buf);
+	dd->query_status = get_answer(fd, NULL);
 	if (dd->query_status == NO_ERROR)
 	{
 		/* take only the first part of the dictionary string, so let the string end at the space */
@@ -612,9 +621,10 @@ static gpointer ask_server(DictData *dd)
 		/* and now, "append" again the rest of the dictionary string again */
 		dd->dictionary[i] = ' ';
 
-		dd->query_buffer = get_answer(dd, fd);
+		dd->query_status = get_answer(fd, &(dd->query_buffer));
 	}
 	send_command(fd, "QUIT");
+	get_answer(fd, NULL);
 	close(fd);
 
 	dd->query_is_running = FALSE;
@@ -691,7 +701,7 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 
 	dd->query_status = NO_CONNECTION;
 
-	g_free(get_answer(dd, fd));
+	dd->query_status = get_answer(fd, NULL);
 	if (dd->query_status != NO_ERROR)
 	{
 		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Could not connect to server."));
@@ -701,12 +711,15 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	send_command(fd, "SHOW SERVER");
 
 	/* read all server output */
-	answer = buffer = get_answer(dd, fd);
+	dd->query_status = get_answer(fd, &answer);
+	buffer = answer;
 	send_command(fd, "QUIT");
+	get_answer(fd, NULL);
 	close(fd);
 
 	/* go to next line */
-	while (*buffer != '\n') buffer++;
+	while (*buffer != '\n')
+		buffer++;
 	buffer++;
 
 	if (strncmp("114", buffer, 3) != 0)
@@ -717,7 +730,9 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	}
 
 	/* go to next line */
-	while (*buffer != '\n') buffer++;
+	while (*buffer != '\n')
+		buffer++;
+
 	buffer++;
 
 	end = strstr(buffer, ".\r\n250");
@@ -783,7 +798,7 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 
 	dd->query_status = NO_CONNECTION;
 
-	g_free(get_answer(dd, fd));
+	dd->query_status = get_answer(fd, NULL);
 	if (dd->query_status != NO_ERROR)
 	{
 		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Could not connect to server."));
@@ -793,12 +808,15 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	send_command(fd, "SHOW DATABASES");
 
 	/* read all server output */
-	answer = buffer = get_answer(dd, fd);
+	dd->query_status = get_answer(fd, &answer);
+	buffer = answer;
 	send_command(fd, "QUIT");
+	get_answer(fd, NULL);
 	close(fd);
 
 	/* go to next line */
-	while (*buffer != '\n') buffer++;
+	while (*buffer != '\n')
+		buffer++;
 	buffer++;
 
 	if (strncmp("554", buffer, 3) == 0)
@@ -808,12 +826,13 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	}
 	else if (strncmp("110", buffer, 3) != 0 && strncmp("554", buffer, 3) != 0)
 	{
-		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Unknown error while quering the server."));
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Unknown error while querying the server."));
 		return;
 	}
 
 	/* go to next line */
-	while (*buffer != '\n') buffer++;
+	while (*buffer != '\n')
+		buffer++;
 	buffer++;
 
 	/* clear the combo box */
