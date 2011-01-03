@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-02 04:01+0000\n"
+"POT-Creation-Date: 2011-01-03 11:04+0000\n"
 "PO-Revision-Date: 2009-12-30 14:51+0100\n"
 "Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -29,17 +29,17 @@ msgstr "Et udvidelsesmodul, der slår op i forskellige ordbøger."
 msgid "Dictionary"
 msgstr "Ordbog"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Klar"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Slå et ord op"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Søgetekst"
 
@@ -138,7 +138,7 @@ msgstr "Ugyldig inddata"
 msgid "Process failed (%s)"
 msgstr "Procesfejl (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:688
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "P_ause"
 
@@ -171,34 +171,34 @@ msgstr "Vælg en fil til indlæstning"
 msgid "The file '%s' could not be loaded."
 msgstr "Filen '%s' kunne ikke indlæses."
 
-#: ../lib/speedreader.c:566
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(vis %d ord ad gangen)"
 msgstr[1] "(vis %d ord ad gangen)"
 
-#: ../lib/speedreader.c:591
+#: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Dette er et nemt værktøj til læsehastighedsmåling for at hjælpe dig med at læse hurtigere. Det sker ved at vise ord med hurtig frekvens på skærmen."
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
 msgstr "_Ord per minut:"
 
-#: ../lib/speedreader.c:600
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
 msgstr "_Markér afsnit"
 
-#: ../lib/speedreader.c:607
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
 msgstr "_Gruppering af ord:"
 
-#: ../lib/speedreader.c:623
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
 msgstr "_Størrelse af skrifttype:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -208,19 +208,19 @@ msgstr ""
 "\n"
 "Vær afslappet og have det komfortabelt, før du trykker Begynd for at starte læsehastighedsmåling."
 
-#: ../lib/speedreader.c:659
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Indlæs indholdet af en fil"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:663
 msgid "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Ryd indholdet af tekstfeltet og indsæt indholdet af udklipsholderen"
 
-#: ../lib/speedreader.c:676
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr "Ryd indholdet af tekstfeltet"
 
-#: ../lib/speedreader.c:689
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "_Begynd"
 
@@ -244,8 +244,8 @@ msgstr "Fejl"
 msgid "warning"
 msgstr "advarsel"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Kunne ikke tilslutte til serveren."
 
@@ -257,8 +257,8 @@ msgstr "Serveren er ikke klar."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Ugyldig ordbog valgt. Kontrollér venligst dine indstillinger."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
 msgstr "Ukendt fejl ved forespørgsel til serveren."
 
 #: ../lib/dictd.c:415
@@ -288,21 +288,21 @@ msgid_plural "%d definitions found."
 msgstr[0] "%d definition fundet."
 msgstr[1] "%d definitioner fundet."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "Forespørger %s..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "En fejl opstod ved forespørgsel om servereninformation."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Serverinformation for \"%s\""
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "Serveren tilbyder ikke nogle databaser."
 
@@ -339,8 +339,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 ordbog"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Ophavsret © 2006-2010 Enrico Tröger"
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Ophavsret © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
