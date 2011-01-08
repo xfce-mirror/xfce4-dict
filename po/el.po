@@ -1,203 +1,198 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-06 11:04+0000\n"
+"POT-Creation-Date: 2011-01-08 17:04+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: George Vasilakos <forfolias@linuxteam.cs.teilar.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Country: GREECE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Greek\n"
-"X-Poedit-Country: GREECE\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr ""
+msgstr "Ένα πρόσθετο για να εκτελείτε ερωτήματα σε διάφορα λεξικά"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:628
-#: ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
-msgstr ""
+msgstr "Λεξικό"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473
-#: ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243
-#: ../lib/gui.c:411
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
-msgstr ""
+msgstr "Έτοιμο"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
-msgstr ""
+msgstr "Αναζητήσετε μια λέξη"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444
-#: ../lib/gui.c:652
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
-msgstr ""
+msgstr "Αναζήτηση όρου"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
+msgstr "Αναζήτηση του κειμένου που δόθηκε χρησιμοποιώντας ένα διακομιστή Dict (RFC 2229)"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr ""
+msgstr "Αναζήτηση του κειμένου που δόθηκε χρησιμοποιώντας μια μηχανή αναζήτησης διαδικτύου"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr ""
+msgstr "Έλεγχος του κειμένου που δόθηκε χρησιμοποιώντας ορθογράφο"
 
 #: ../src/xfce4-dict.c:54
+#, fuzzy
 msgid "Grab the focus on the text field in the panel"
-msgstr ""
+msgstr "Αρπάξτε την εστίαση στο πεδίο κειμένου του ταμπλό"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
+msgstr "Εκκίνηση αυτόνομης εφαρμογής, ακόμη και αν το πρόσθετο του ταμπλό είναι φορτωμένο"
 
 #: ../src/xfce4-dict.c:56
+#, fuzzy
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "Αρπάζει το πρωτεύον επιλεγμένο περιεχόμενο και το χρησιμοποιεί ως κείμενο αναζήτησης"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Αναλυτικά"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
-msgstr ""
+msgstr "Εμφάνιση πληροφοριών έκδοσης"
 
 #: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
-msgstr ""
+msgstr "[ΚΕΙΜΕΝΟ]"
 
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "Παρακαλώ, αναφέρετε σφάλματα στο <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:851
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
-msgstr ""
+msgstr "Ένα πρόγραμμα πελάτης για να εκτελείτε ερωτήματα σε διάφορα λεξικά"
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
-msgstr ""
+msgstr "Πελάτης λεξικού"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
-msgstr ""
+msgstr "Αποτελέσματα ορθογραφικού ελέγχου:"
 
 #: ../lib/spell.c:101
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d πρόταση βρέθηκε."
+msgstr[1] "%d προτάσεις βρέθηκαν."
 
 #: ../lib/spell.c:105
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr ""
+msgstr "Πρόταση για \"%s\" (%s):"
 
 #: ../lib/spell.c:122
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr ""
+msgstr "\"%s\" συλλαβίζεται σωστά (%s)."
 
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr ""
+msgstr "Δε βρέθηκαν προτάσεις για \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr ""
+msgstr "Σφάλμα κατά την εκτέλεση \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
+msgstr "Παρακαλώ ορίστε την εντολή ορθογραφικού ελέγχου στις ρυθμίσεις."
 
-#: ../lib/spell.c:208
-#: ../lib/common.c:224
+#: ../lib/spell.c:208 ../lib/common.c:224
 msgid "Invalid input"
-msgstr ""
+msgstr "Μη έγκυρη είσοδος"
 
 #: ../lib/spell.c:247
 #, c-format
 msgid "Process failed (%s)"
-msgstr ""
+msgstr "Αποτυχία διεργασίας (%s)"
 
-#: ../lib/speedreader.c:80
-#: ../lib/speedreader.c:683
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr ""
+msgstr "_Παύση"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Συνέχεια"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Τρέχει"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Τελείωσε"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Γρήγορος αναγνώστης"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Πρέπει να εισάγετε ένα κείμενο."
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Επιλέξτε ένα αρχείο προς φόρτωμα"
 
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "Το αρχείο '%s' δεν ήταν δυνατό να φορτωθεί."
 
 #: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(εμφάνιση %d λέξης τη φορά)"
+msgstr[1] "(εμφάνιση %d λέξεων τη φορά)"
 
 #: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "Αυτό είναι ένα εύκολο εργαλείο γρήγορης ανάγνωσης για να σας βοηθήσει να διαβάζετε πιο γρήγορα. Αυτό επιτυγχάνεται με το να αναβοσβήνει λέξεις με ταχείς ρυθμούς στην οθόνη."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_Λέξεις ανά λεπτό:"
 
 #: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Επισήμανση παραγράφων"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "_Ομαδοποίηση λέξεων"
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr ""
+msgstr "_Μέγεθος γραμματοσειράς:"
 
 #: ../lib/speedreader.c:638
 msgid ""
@@ -205,34 +200,38 @@ msgid ""
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
+"Εισάγετε κάποιο κείμενο προς ανάγνωση εδώ.\n"
+" Χαλαρώστε και νιώστε άνετα, στη συνέχεια πατήστε Εκκίνηση για να ξεκινήσει η γρήγορη ανάγνωση."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Φορτώνει τα περιεχόμενα ενός αρχείου"
 
 #: ../lib/speedreader.c:663
 msgid "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr ""
+msgstr "Καθάρισμα του περιεχόμενου του πεδίου κειμένου και επικόλληση του περιεχόμενου του προχείρου"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
-msgstr ""
+msgstr "Καθαρίζει το περιεχόμενο ενός πεδίου κειμένου"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr ""
+msgstr "_Εκκίνηση"
 
 #: ../lib/common.c:189
+#, fuzzy
 msgid "The search URL is empty. Please check your preferences."
-msgstr ""
+msgstr "Η διεύθυνση URL αναζήτησης είναι άδεια. Ελέγξτε τις ρυθμίσεις σας."
 
 #: ../lib/common.c:195
+#, fuzzy
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
+msgstr "Ο περιηγητής ιστού δεν μπορούσε να ανοιχθεί. Ελέγξτε τις ρυθμίσεις σας."
 
 #: ../lib/common.c:234
 msgid "Invalid non-UTF8 input"
-msgstr ""
+msgstr "Άκυρη μη-UTF8 είσοδος"
 
 #: ../lib/common.c:608
 msgid "Error"
@@ -240,61 +239,57 @@ msgstr "Σφάλμα"
 
 #: ../lib/common.c:611
 msgid "warning"
-msgstr ""
+msgstr "προειδοποίηση"
 
-#: ../lib/dictd.c:379
-#: ../lib/dictd.c:698
-#: ../lib/dictd.c:707
-#: ../lib/dictd.c:795
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
 #: ../lib/dictd.c:804
 msgid "Could not connect to server."
-msgstr ""
+msgstr "Δεν είναι δυνατή η σύνδεση με τον διακομιστή."
 
 #: ../lib/dictd.c:385
 msgid "The server is not ready."
-msgstr ""
+msgstr "Ο διακομιστής δεν είναι έτοιμος."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr ""
 
-#: ../lib/dictd.c:400
-#: ../lib/dictd.c:456
-#: ../lib/dictd.c:829
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+#, fuzzy
 msgid "Unknown error while querying the server."
-msgstr ""
+msgstr "Άγνωστο σφάλμα κατά την αναζήτηση του διακομιστή."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
-msgstr ""
+msgstr "Αποτελέσματα λεξικού :"
 
 #: ../lib/dictd.c:418
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr ""
+msgstr "Δεν βρέθηκαν αποτελέσματα  για το \"%s\"."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
 #: ../lib/dictd.c:434
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Αναζήτηση του \"%s\" χρησιμοποιώντας το \"%s\""
 
 #: ../lib/dictd.c:439
 msgid "Web Search:"
-msgstr ""
+msgstr "Αναζήτηση στο διαδίκτυο:"
 
 #: ../lib/dictd.c:461
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ορισμός βρέθηκε."
+msgstr[1] "%d ορισμοί βρέθηκαν."
 
 #: ../lib/dictd.c:669
-#, c-format
+#, c-format, fuzzy
 msgid "Querying %s..."
-msgstr ""
+msgstr "Ερώτηση για %s..."
 
 #: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
@@ -311,200 +306,205 @@ msgstr ""
 
 #: ../lib/gui.c:566
 msgid "_File"
-msgstr ""
+msgstr "_Αρχείο"
 
-#: ../lib/gui.c:571
-#: ../lib/gui.c:676
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Γρήγορος _αναγνώστης"
 
 #: ../lib/gui.c:592
 msgid "_Help"
-msgstr ""
+msgstr "_Βοήθεια"
 
 #: ../lib/gui.c:697
 msgid "Search with:"
-msgstr ""
+msgstr "Αναζήτηση με:"
 
 #: ../lib/gui.c:701
 msgid "_Dictionary Server"
-msgstr ""
+msgstr "_Διακομιστής λεξικου"
 
 #: ../lib/gui.c:707
 msgid "_Web Service"
-msgstr ""
+msgstr "_Υπηρεσία διαδικτύου"
 
 #: ../lib/gui.c:715
 msgid "_Spell Checker"
-msgstr ""
+msgstr "_Ορθογράφος"
 
 #: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
-msgstr ""
+msgstr "Λεξικό Xfce4"
 
 #: ../lib/gui.c:852
+#, fuzzy
 msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr ""
+msgstr "Copyright © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
-msgstr ""
+msgstr "Βασιλάκος Γεώργιος <forfolias@gmail.com>"
 
 #: ../lib/prefs.c:55
+#, fuzzy
 msgid "dict.leo.org - German <-> English"
-msgstr ""
+msgstr "dict.leo.org - German <-> English"
 
 #: ../lib/prefs.c:56
+#, fuzzy
 msgid "dict.leo.org - German <-> French"
-msgstr ""
+msgstr "dict.leo.org - German <-> French"
 
 #: ../lib/prefs.c:57
+#, fuzzy
 msgid "dict.leo.org - German <-> Spanish"
-msgstr ""
+msgstr "dict.leo.org - German <-> Spanish"
 
 #: ../lib/prefs.c:58
+#, fuzzy
 msgid "dict.leo.org - German <-> Italian"
-msgstr ""
+msgstr "dict.leo.org - German <-> Italian"
 
 #: ../lib/prefs.c:59
+#, fuzzy
 msgid "dict.leo.org - German <-> Chinese"
-msgstr ""
+msgstr "dict.leo.org - German <-> Chinese"
 
 #: ../lib/prefs.c:60
+#, fuzzy
 msgid "dist.cc - Dictionary"
-msgstr ""
+msgstr "dist.cc - Dictionary"
 
 #: ../lib/prefs.c:61
+#, fuzzy
 msgid "Dictionary.com"
-msgstr ""
+msgstr "Dictionary.com"
 
 #: ../lib/prefs.c:62
+#, fuzzy
 msgid "TheFreeDictionary.com"
-msgstr ""
+msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:63
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr ""
+msgstr "Wikipedia, η δωρεάν εγκυκλοπαίδεια (EN)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr ""
+msgstr "Wiktionary, το δωρεάν λεξικό (EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr ""
+msgstr "Διαδικτυακό Λεξικό Merriam-Webster"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
-msgstr ""
+msgstr "Καθαρισμός"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr ""
+msgstr "Έχετε επιλέξει ένα μη έγκυρο λεξικό."
 
 #: ../lib/prefs.c:303
 msgid "General"
-msgstr ""
+msgstr "Γενικά"
 
 #: ../lib/prefs.c:305
 msgid "<b>Default search method:</b>"
-msgstr ""
+msgstr "<b>Προεπιλεγμένη μέθοδος αναζήτησης:</b>"
 
-#: ../lib/prefs.c:311
-#: ../lib/prefs.c:472
+#: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
-msgstr ""
+msgstr "Διακομιστής λεξικού"
 
-#: ../lib/prefs.c:320
-#: ../lib/prefs.c:593
+#: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
-msgstr ""
+msgstr "Υπηρεσία διαδικτύου"
 
-#: ../lib/prefs.c:329
-#: ../lib/prefs.c:643
+#: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
-msgstr ""
+msgstr "Ορθογράφος"
 
 #: ../lib/prefs.c:338
 msgid "Last used method"
-msgstr ""
+msgstr "Τελευταία χρησιμοποιούμενη μέθοδος"
 
 #: ../lib/prefs.c:347
 msgid "<b>Colors:</b>"
-msgstr ""
+msgstr "<b>Χρώματα:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Σύνδεσμοι:"
 
 #: ../lib/prefs.c:354
 msgid "Phonetics:"
-msgstr ""
+msgstr "Φωνητικά σύμβολα:"
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
-msgstr ""
+msgstr "Συλλαβισμένη σωστά:"
 
 #: ../lib/prefs.c:356
 msgid "Spelled incorrectly:"
-msgstr ""
+msgstr "Συλλαβισμένη λάθος:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
-msgstr ""
+msgstr "<b>Πεδίο κειμένου ταμπλό:</b>"
 
 #: ../lib/prefs.c:422
 msgid "Show text field in the panel"
-msgstr ""
+msgstr "Εμφάνιση πεδίο κειμένου στο ταμπλό"
 
 #. panel entry size
 #: ../lib/prefs.c:429
 msgid "Text field size:"
-msgstr ""
+msgstr "Μέγεθος πεδίου κειμένου:"
 
 #. server address
 #: ../lib/prefs.c:475
 msgid "Server:"
-msgstr ""
+msgstr "Διακομιστής:"
 
 #. server port
 #: ../lib/prefs.c:487
 msgid "Server Port:"
-msgstr ""
+msgstr "Θύρα διακομιστή:"
 
 #. dictionary
-#: ../lib/prefs.c:495
-#: ../lib/prefs.c:668
+#: ../lib/prefs.c:495 ../lib/prefs.c:668
 msgid "Dictionary:"
-msgstr ""
+msgstr "Λεξικό:"
 
 #: ../lib/prefs.c:499
 msgid "* (use all)"
-msgstr ""
+msgstr "* (χρήση όλων)"
 
 #: ../lib/prefs.c:501
 msgid "! (use all, stop after first match)"
-msgstr ""
+msgstr "! (χρήση όλων, διακοπή στο πρώτο αποτέλεσμα)"
 
 #: ../lib/prefs.c:595
 msgid "<b>Web search URL:</b>"
-msgstr ""
+msgstr "<b>Διεύθυνση URL της διαδικτυακής αναζήτησης:</b>"
 
 #: ../lib/prefs.c:601
 msgid "URL:"
-msgstr ""
+msgstr "Διεύθυνση URL:"
 
 #: ../lib/prefs.c:621
 msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr ""
+msgstr "Εισάγετε τη διεύθυνση URL ενός ιστοτόπου που προσφέρει μεταφραστικές υπηρεσίες ή λεξικό. Χρησιμοποιήστε το {λέξη} ως σύμβολο κράτησης θέσης για την αναζήτηση λέξεων."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
-msgstr ""
+msgstr "Πρόγραμμα ορθογραφικού ελέγχου:"
 
 #: ../lib/prefs.c:662
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-
+"<i>Το πρόγραμμα ορθογραφικού ελέγχου 'enchant', 'aspell', 'ispell' η οποιοδήποτε πρόγραμμα ορθογραφικού ελέγχου που είναι συμβατόμε την εντολή ispell.\n"
+"Το εικονίδιο δείχνει αν η εντολή που έχετε εισάγει υπάρχει.</i>"
