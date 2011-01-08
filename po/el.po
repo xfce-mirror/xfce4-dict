@@ -10,9 +10,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Country: GREECE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
@@ -50,18 +50,16 @@ msgid "Check the given text with a spell checker"
 msgstr "Έλεγχος του κειμένου που δόθηκε χρησιμοποιώντας ορθογράφο"
 
 #: ../src/xfce4-dict.c:54
-#, fuzzy
 msgid "Grab the focus on the text field in the panel"
-msgstr "Αρπάξτε την εστίαση στο πεδίο κειμένου του ταμπλό"
+msgstr "Αρπαγή της εστίασης στο πεδίο κειμένου του ταμπλό"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Εκκίνηση αυτόνομης εφαρμογής, ακόμη και αν το πρόσθετο του ταμπλό είναι φορτωμένο"
 
 #: ../src/xfce4-dict.c:56
-#, fuzzy
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Αρπάζει το πρωτεύον επιλεγμένο περιεχόμενο και το χρησιμοποιεί ως κείμενο αναζήτησης"
+msgstr "Αρπαγή του πρώτου επιλεγμένου περιεχομένου και χρήση του ως κείμενο αναζήτησης"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -220,12 +218,10 @@ msgid "_Start"
 msgstr "_Εκκίνηση"
 
 #: ../lib/common.c:189
-#, fuzzy
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Η διεύθυνση URL αναζήτησης είναι άδεια. Ελέγξτε τις ρυθμίσεις σας."
 
 #: ../lib/common.c:195
-#, fuzzy
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Ο περιηγητής ιστού δεν μπορούσε να ανοιχθεί. Ελέγξτε τις ρυθμίσεις σας."
 
@@ -252,12 +248,11 @@ msgstr "Ο διακομιστής δεν είναι έτοιμος."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr ""
+msgstr "Ορίστηκε ένα μη έγκυρο λεξικό. Ελέγξτε τις προτιμήσεις σας."
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
-#, fuzzy
 msgid "Unknown error while querying the server."
-msgstr "Άγνωστο σφάλμα κατά την αναζήτηση του διακομιστή."
+msgstr "Άγνωστο σφάλμα κατά το ερώτημα στο διακομιστή."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
@@ -287,22 +282,22 @@ msgstr[0] "%d ορισμός βρέθηκε."
 msgstr[1] "%d ορισμοί βρέθηκαν."
 
 #: ../lib/dictd.c:669
-#, c-format, fuzzy
+#, c-format
 msgid "Querying %s..."
-msgstr "Ερώτηση για %s..."
+msgstr "Ερώτημα %s..."
 
 #: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
-msgstr ""
+msgstr "Παρουσιάστηκε σφάλμα κατά το ερώτημα πληροφοριών διακομιστή."
 
 #: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr ""
+msgstr "Πληροφορίες διακομιστή για \"%s\""
 
 #: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
-msgstr ""
+msgstr "Ο διακομιστής δεν προσφέρει βάσεις δεδομένων."
 
 #: ../lib/gui.c:566
 msgid "_File"
@@ -337,7 +332,6 @@ msgid "Xfce4 Dictionary"
 msgstr "Λεξικό Xfce4"
 
 #: ../lib/gui.c:852
-#, fuzzy
 msgid "Copyright © 2006-2011 Enrico Tröger"
 msgstr "Copyright © 2006-2011 Enrico Tröger"
 
@@ -346,42 +340,34 @@ msgid "translator-credits"
 msgstr "Βασιλάκος Γεώργιος <forfolias@gmail.com>"
 
 #: ../lib/prefs.c:55
-#, fuzzy
 msgid "dict.leo.org - German <-> English"
-msgstr "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Γερμανικά <-> Αγγλικά"
 
 #: ../lib/prefs.c:56
-#, fuzzy
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Γερμανικά <-> Γαλλικά"
 
 #: ../lib/prefs.c:57
-#, fuzzy
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Γερμανικά <-> Ισπανικά"
 
 #: ../lib/prefs.c:58
-#, fuzzy
 msgid "dict.leo.org - German <-> Italian"
-msgstr "dict.leo.org - German <-> Italian"
+msgstr "dict.leo.org - Γερμανικά <-> Ιταλικά"
 
 #: ../lib/prefs.c:59
-#, fuzzy
 msgid "dict.leo.org - German <-> Chinese"
-msgstr "dict.leo.org - German <-> Chinese"
+msgstr "dict.leo.org - Γερμανικά <-> Κινέζικα"
 
 #: ../lib/prefs.c:60
-#, fuzzy
 msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Dictionary"
+msgstr "dist.cc - Λεξικό"
 
 #: ../lib/prefs.c:61
-#, fuzzy
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
 #: ../lib/prefs.c:62
-#, fuzzy
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
