@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-03 16:01+0000\n"
+"POT-Creation-Date: 2011-01-09 05:04+0000\n"
 "PO-Revision-Date: 2010-04-23 18:52+0100\n"
 "Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-it-translators@googlegroups.com>\n"
@@ -28,17 +28,17 @@ msgstr "Un'estensione per interrogare diversi dizionari"
 msgid "Dictionary"
 msgstr "Dizionario"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Pronto"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Cerca una parola"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Cerca termine"
 
@@ -137,7 +137,7 @@ msgstr "Input non valido"
 msgid "Process failed (%s)"
 msgstr "Processo fallito (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:688
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "P_ausa"
 
@@ -170,34 +170,34 @@ msgstr "Selezionare un file da caricare"
 msgid "The file '%s' could not be loaded."
 msgstr "Il file «%s» non può essere caricato"
 
-#: ../lib/speedreader.c:566
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "Visualizza %d parola alla volta"
 msgstr[1] "Visualizza %d parole alla volta"
 
-#: ../lib/speedreader.c:591
+#: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Questa è una semplice utilità per la lettura veloce che aiuta ad allenarsi a leggere più rapidamente. Lo fa mostrando le parole sullo schermo in successione con una elevata frequenza."
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
 msgstr "_Parole per minuto"
 
-#: ../lib/speedreader.c:600
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
 msgstr "_Segna i paragrafi"
 
-#: ../lib/speedreader.c:607
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
 msgstr "Ra_ggruppamento parole:"
 
-#: ../lib/speedreader.c:623
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
 msgstr "_Dimensione cara_ttere:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -207,19 +207,19 @@ msgstr ""
 "\n"
 "Rilassarsi e mettersi comodi, poi premere «Avvia» per iniziare la lettura veloce."
 
-#: ../lib/speedreader.c:659
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Carica il contenuto di un file"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:663
 msgid "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Pulisce il contenuto del campo di testo e incolla il contenuto della memoria"
 
-#: ../lib/speedreader.c:676
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr "Pulisce il contenuto del campo di testo"
 
-#: ../lib/speedreader.c:689
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "_Avvia"
 
@@ -243,8 +243,8 @@ msgstr "Errore"
 msgid "warning"
 msgstr "avviso"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Impossibile connettersi al server."
 
@@ -256,9 +256,9 @@ msgstr "Il server non è pronto."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Il dizionario specificato non è valido. Controllare le preferenze."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
-msgstr "Errore sconosciuto durante la richiesta al server."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
+msgstr "Errore sconosciuto durante l'interrogazione del server."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
@@ -287,21 +287,21 @@ msgid_plural "%d definitions found."
 msgstr[0] "%d definizione trovata."
 msgstr[1] "%d definizioni trovate."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "Interrogazione di %s in corso..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "Si è verificato un errore durante la richiesta delle informazioni del server."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informazioni del server per \"%s\""
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "Il server non contiene nessun database."
 
@@ -338,8 +338,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Dizionario di Xfce4"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Copyright © 2006-2010 Enrico Tröger"
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Copyright © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
