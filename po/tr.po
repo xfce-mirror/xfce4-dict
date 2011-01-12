@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-31 16:01+0000\n"
+"POT-Creation-Date: 2011-01-12 17:04+0000\n"
 "PO-Revision-Date: 2010-05-10 23:37+0300\n"
 "Last-Translator: Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org,xfce-i18n@xfce.org>\n"
@@ -23,17 +23,17 @@ msgstr "Çeşitli sözlükleri sorgulamak için eklenti."
 msgid "Dictionary"
 msgstr "Sözlük"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Hazır"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Kelime ara"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Aranacak ifade"
 
@@ -132,7 +132,7 @@ msgstr "Geçersiz girdi"
 msgid "Process failed (%s)"
 msgstr "Süreç başarısız (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:688
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "Dur_akla"
 
@@ -165,34 +165,34 @@ msgstr "Yüklenecek bir dosya seç"
 msgid "The file '%s' could not be loaded."
 msgstr "'%s' dosyası yüklenemedi."
 
-#: ../lib/speedreader.c:566
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(bir seferde %d kelime göster)"
 msgstr[1] "(bir seferde %d kelime göster)"
 
-#: ../lib/speedreader.c:591
+#: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Bu, daha hızlı okumanız için size yardım edecek bir kolay hızlı okuma uygulamasıdır. Ekranda bir hız oranında kelimeler yanıp yanar."
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
 msgstr "Dakikadaki _Kelime:"
 
-#: ../lib/speedreader.c:600
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
 msgstr "Paragrafları _işaretle"
 
-#: ../lib/speedreader.c:607
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
 msgstr "Kelime_Toplama:"
 
-#: ../lib/speedreader.c:623
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
 msgstr "_Yazıtipi boyutu:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -202,19 +202,19 @@ msgstr ""
 "\n"
 " Rahat ve sakin olun, sonra hızlı okumaya başlamak için Başlat'a basın."
 
-#: ../lib/speedreader.c:659
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Bir dosyanın içeriğini yükle"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:663
 msgid "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Metin alanının içeriğini temizle ve pano içeriğini yapıştır"
 
-#: ../lib/speedreader.c:676
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr "Metin alanının içeriğini temizle"
 
-#: ../lib/speedreader.c:689
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "_Başlat"
 
@@ -238,8 +238,8 @@ msgstr "Hata"
 msgid "warning"
 msgstr "uyarı"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Sunucuya bağlanılamadı."
 
@@ -251,9 +251,9 @@ msgstr "Sunucu hazır değil."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Geçersiz sözlük belirtildi. Lütfen ayarlarınızı kontrol edin."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
-msgstr "Sunucu sorgulanırken bilinmeyen bir hata meydana geldi."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
+msgstr "Sorgu uygulanırken bilinmeyen bir hata meydana geldi."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
@@ -282,21 +282,21 @@ msgid_plural "%d definitions found."
 msgstr[0] "%d tanım bulundu."
 msgstr[1] "%d tanım bulundu."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "%s sorgulanıyor..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "Sunucu bilgisi sorgulanırken hata oluştu."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "\"%s\" için sunucu bilgisi"
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "Sunucu herhangi bir veritabanı sunmuyor."
 
@@ -333,7 +333,7 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Sözlük"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
+msgid "Copyright © 2006-2011 Enrico Tröger"
 msgstr "Telif Hakkı © 2006-2010 Enrico Tröger"
 
 #: ../lib/gui.c:855
