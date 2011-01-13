@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-02 10:01+0000\n"
+"POT-Creation-Date: 2011-01-13 05:04+0000\n"
 "PO-Revision-Date: 2010-01-05 12:32+0100\n"
 "Last-Translator: Harald Servat <redcrash@gmail.com>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
@@ -28,17 +28,17 @@ msgstr "Un connector per fer consultes a diversos diccionaris."
 msgid "Dictionary"
 msgstr "Diccionari"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Preparat"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Cerca una paraula"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Cerca un terme"
 
@@ -137,7 +137,7 @@ msgstr "L'entrada no és vàlida"
 msgid "Process failed (%s)"
 msgstr "Ha fallat el procés (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:688
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "P_ausa"
 
@@ -170,34 +170,34 @@ msgstr "Seleccioneu un fitxer per a carregar"
 msgid "The file '%s' could not be loaded."
 msgstr "El fitxer «%s» no s'ha pogut carregar."
 
-#: ../lib/speedreader.c:566
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(mostra %d paraula al mateix temps)"
 msgstr[1] "(mostra %d paraules al mateix temps)"
 
-#: ../lib/speedreader.c:591
+#: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr "Aquesta és una utilitat de lectura ràpida per a entrenar-vos a llegir ràpid. Funciona il·luminant paraules ràpidament a la pantalla."
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
 msgstr "_Paraules per minut:"
 
-#: ../lib/speedreader.c:600
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
 msgstr "_Marcar paràgrafs"
 
-#: ../lib/speedreader.c:607
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
 msgstr "A_grupament de paraules:"
 
-#: ../lib/speedreader.c:623
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
 msgstr "Mida de la _font:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -207,19 +207,19 @@ msgstr ""
 "\n"
 "Relaxeu-vos i poseu-vos còmode, aleshores premeu Començar per a començar a llegir ràpid."
 
-#: ../lib/speedreader.c:659
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Carregar els continguts d'un fitxer"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:663
 msgid "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Buida els continguts del camp de text i enganxa el contingut del porta-retalls"
 
-#: ../lib/speedreader.c:676
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr "Buida els continguts del camp de text"
 
-#: ../lib/speedreader.c:689
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "_Començar"
 
@@ -243,8 +243,8 @@ msgstr "Error"
 msgid "warning"
 msgstr "avís"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "No s'ha pogut connectar al servidor."
 
@@ -256,9 +256,9 @@ msgstr "El servidor està preparat."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "El diccionari indicat no és vàlid. Comproveu les vostres preferències."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
-msgstr "Error desconegut al fer la consulta al servidor."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
+msgstr "Error desconegut mentre es feia la consulta al servidor."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
@@ -287,21 +287,21 @@ msgid_plural "%d definitions found."
 msgstr[0] "%d definició trobada."
 msgstr[1] "%d definicions trobades."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "Consultant %s…"
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "S'ha produït un error al consultar la informació del servidor."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informació del servidor per «%s»"
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "El servidor no ha ofert cap base de dades."
 
@@ -338,8 +338,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Diccionari Xfce4"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Copyright © 2006-2010 Enrico Tröger"
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Copyright © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
