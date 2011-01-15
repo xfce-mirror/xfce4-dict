@@ -1,7 +1,7 @@
 # Finnish translation for xfce4-dict.
-# Copyright (C) 2006-2010 Enrico Tröger
+# Copyright (C) 2006-2011 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict package.
-# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2010.
+# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2011.
 #
 msgid ""
 msgstr ""
