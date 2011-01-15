@@ -1,14 +1,14 @@
 # Czech translation of the xfce4-dict-plugin package.
 # Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin package.
-# Michal Várady <miko.vaji@gmail.com>, 2006-2010.
+# Michal Várady <miko.vaji@gmail.com>, 2006-2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 17:02+0000\n"
-"PO-Revision-Date: 2010-12-06 22:18+0100\n"
+"POT-Creation-Date: 2011-01-15 17:04+0000\n"
+"PO-Revision-Date: 2011-01-15 22:10+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -251,10 +251,10 @@ msgid "warning"
 msgstr "varování"
 
 #: ../lib/dictd.c:379
-#: ../lib/dictd.c:685
-#: ../lib/dictd.c:694
-#: ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:698
+#: ../lib/dictd.c:707
+#: ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Nelze se připojit k serveru"
 
@@ -268,8 +268,8 @@ msgstr "Zvolili jste naplatný slovník. Ověřte nastavení."
 
 #: ../lib/dictd.c:400
 #: ../lib/dictd.c:456
-#: ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
+#: ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
 msgstr "Při dotazu na server nastala neznámá chyba."
 
 #: ../lib/dictd.c:415
@@ -300,21 +300,21 @@ msgstr[0] "Nalezena %d definice."
 msgstr[1] "Nalezeny %d definice."
 msgstr[2] "Nalezeno %d definicí."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "Posílám dotaz na server %s..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "Při dotazu na informaci serveru nastala neznámá chyba."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informace serveru pro „%s“"
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "Server nenabízí žádné databáze."
 
@@ -352,8 +352,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Slovník Xfce4"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Copyright © 2006-2010 Enrico Tröger"
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Copyright © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
@@ -521,40 +521,56 @@ msgstr ""
 
 #~ msgid "You must set a valid search URL."
 #~ msgstr "Nastavte platnou vyhledávací adresu URL."
+
 #~ msgid "Link Color:"
 #~ msgstr "Barva odkazu:"
+
 #~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 #~ msgstr "(sestaveno na %s s GTK %d.%d.%d, GLib %d.%d.%d)"
+
 #~ msgid "Do you want to search \"%s\" on the Web using "
 #~ msgstr "Chcete hledat \"%s\" na webu pomocí "
+
 #~ msgid "_Dict"
 #~ msgstr "Slo_vníku"
+
 #~ msgid "_Web"
 #~ msgstr "_Webu"
+
 #~ msgid "Dict"
 #~ msgstr "Dict"
+
 #~ msgid "Web"
 #~ msgstr "Web"
+
 #~ msgid "Show help options"
 #~ msgstr "Zobrazit volby nápovědy"
+
 #~ msgid "Xfce4 Dictionary Preferences"
 #~ msgstr "Předvolby slovníku Xfce4"
+
 #~ msgid "Developer"
 #~ msgstr "Vývojář"
+
 #~ msgid "Text to search:"
 #~ msgstr "Text pro vyhledání:"
+
 #~ msgid "Aspell"
 #~ msgstr "Aspell"
+
 #~ msgid "Properties"
 #~ msgstr "Vlastnosti"
+
 #~ msgid "Use a DICT server"
 #~ msgstr "Použít server DICT"
+
 #~ msgid "Use another website"
 #~ msgstr "Použít jinou webovou stránku"
+
 #~ msgid "Use a web site"
 #~ msgstr "Použít webovou stránku"
+
 #~ msgid ""
 #~ "This option can only be used when the panel has a horizontal orientation."
 #~ msgstr ""
 #~ "Tuto možnost lze použít pouze tehdy, je-li panel ve vodorovné pozici."
-
