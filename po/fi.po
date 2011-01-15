@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-11 04:02+0000\n"
-"PO-Revision-Date: 2010-10-11 12:47+0600\n"
+"POT-Creation-Date: 2011-01-15 17:04+0000\n"
+"PO-Revision-Date: 2011-01-15 22:38+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -247,8 +247,8 @@ msgstr "Virhe"
 msgid "warning"
 msgstr "varoitus"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Palvelimeen ei saa yhteyttä."
 
@@ -260,8 +260,8 @@ msgstr "Palvelin ei ole valmis."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Sanakirja ei kelpaa. Tarkista asetukset."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
 msgstr "Tuntematon virhe palvelinkyselyn aikana."
 
 #: ../lib/dictd.c:415
@@ -291,21 +291,21 @@ msgid_plural "%d definitions found."
 msgstr[0] "Löytyi %d määritys."
 msgstr[1] "Löytyi %d määritystä."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "Haetaan kohteesta %s..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "Virhe palvelimen tietoja kyseltäessä."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Palvelimen tiedot kohteelle \"%s\""
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "Palvelin ei tarjoa tietokantoja."
 
@@ -342,8 +342,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 sanakirja"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Tekijänoikeus © 2006-2010 Enrico Tröger"
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Tekijänoikeus © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
