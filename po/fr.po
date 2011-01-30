@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 10:02+0000\n"
+"POT-Creation-Date: 2011-01-30 05:03+0000\n"
 "PO-Revision-Date: 2010-07-27 21:13+0100\n"
 "Last-Translator: Durand-Favreau Arnaud <biginoz@free.fr>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
@@ -246,8 +246,8 @@ msgstr "Erreur"
 msgid "warning"
 msgstr "avertissement"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Impossible de se connecter au serveur."
 
@@ -259,9 +259,9 @@ msgstr "Le serveur n'est pas prêt."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Dictionnaire incorrect. Veuillez vérifier les préférences."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
-msgstr "Erreur inconnue pendant la requête au serveur."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
+msgstr "Erreur inconnue lors d'une requête au serveur."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
@@ -290,21 +290,21 @@ msgid_plural "%d definitions found."
 msgstr[0] "%d définition trouvée."
 msgstr[1] "%d définitions trouvées."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "Requête à %s..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "Une erreur est survenue lors de la demande d'informations au serveur."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informations pour le serveur \"%s\""
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "Le serveur ne fournit aucune base de données."
 
@@ -341,8 +341,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Dictionnaire Xfce4"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Copyright © 2006-2010 Enrico Tröger"
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Copyright © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
