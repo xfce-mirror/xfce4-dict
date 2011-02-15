@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-14 04:02+0000\n"
+"POT-Creation-Date: 2011-02-15 05:03+0000\n"
 "PO-Revision-Date: 2009-11-28 22:29+0600\n"
 "Last-Translator: Urmas <dwqwt3i02@sneakemail.com>\n"
 "Language-Team: None <->\n"
@@ -243,8 +243,8 @@ msgstr "Ошибка"
 msgid "warning"
 msgstr "внимание"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Не удалось соединиться с сервером."
 
@@ -256,8 +256,8 @@ msgstr "Сервер не готов."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Указан неверный словарь. Проверьте настройки."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
 msgstr "Неизвестная ошибка при запросе к серверу."
 
 #: ../lib/dictd.c:415
@@ -288,21 +288,21 @@ msgstr[0] "Найдено %d определение."
 msgstr[1] "Найдено %d определения."
 msgstr[2] "Найдено %d определений."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "Запрос к %s..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "Произошла ошибка при получении данных о сервере."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Свойства сервера «%s»"
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "На сервере отсутсвуют базы данных."
 
@@ -339,8 +339,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Словарь Xfce4"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Энрико Трёгер"
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Copyright © 2006-2011 Энрико Трёгер"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
