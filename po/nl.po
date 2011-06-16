@@ -8,15 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-30 10:03+0000\n"
-"PO-Revision-Date: 2009-08-18 10:58-0800\n"
+"POT-Creation-Date: 2011-06-16 10:02+0000\n"
+"PO-Revision-Date: 2011-06-16 12:12+0200\n"
 "Last-Translator: Pjotr\n"
-"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"Language-Team: Dutch (Flemish)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\\n\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
@@ -61,8 +60,8 @@ msgstr "Plaats de focus op het tekst-invoerveld in de werkbalk"
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr ""
-"Start de onafhankelijke toepassing ook als de plugin voor de werkbalk geladen "
-"is"
+"Start de onafhankelijke toepassing ook als de plugin voor de werkbalk "
+"geladen is"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -185,8 +184,8 @@ msgid ""
 "does this by flashing words at a rapid rate on the screen."
 msgstr ""
 "Dit is een makkelijk snelleesgereedschapje, om u te helpen met oefenen om "
-"sneller te lezen. Het doet dit door woorden in hoog tempo op het scherm "
-"op te laten flitsen."
+"sneller te lezen. Het doet dit door woorden in hoog tempo op het scherm op "
+"te laten flitsen."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -213,8 +212,8 @@ msgid ""
 msgstr ""
 "Voer hier wat tekst in, die u zou willen lezen.\n"
 "\n"
-"Wees ontspannen en maak het uzelf gemakkelijk; druk daarna op Start om "
-"te beginnen met snellezen."
+"Wees ontspannen en maak het uzelf gemakkelijk; druk daarna op Start om te "
+"beginnen met snellezen."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -224,7 +223,8 @@ msgstr "De inhoud van een bestand laden"
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr ""
-"Maak de inhoud van het tekstveld leeg en plak daarin de inhoud van het klembord"
+"Maak de inhoud van het tekstveld leeg en plak daarin de inhoud van het "
+"klembord"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -240,7 +240,7 @@ msgstr "De zoek-URL is leeg. Controleer a.u.b. uw voorkeuren."
 
 #: ../lib/common.c:195
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "De browser kon niet geopend worden. Controleer a.u.b. uw Voorkeuren."
+msgstr "De browser kon niet geopend worden. Controleer a.u.b. uw voorkeuren."
 
 #: ../lib/common.c:234
 msgid "Invalid non-UTF8 input"
@@ -322,7 +322,7 @@ msgstr "_Bestand"
 
 #: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
-msgstr "Snelleze_r"
+msgstr "Snel_lezer"
 
 #: ../lib/gui.c:592
 msgid "_Help"
@@ -354,7 +354,8 @@ msgstr "Auteursrecht © 2006-2009 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
-msgstr "Vincent Tunru <projects@vinnl.nl>, Pjotr"
+msgstr "Vincent Tunru <projects@vinnl.nl>\n"
+"Pjotr"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -418,7 +419,7 @@ msgstr "<b>Standaard-zoekmethode:</b>"
 
 #: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
-msgstr "Woordenboek-server"
+msgstr "Woordenboekserver"
 
 #: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
@@ -522,28 +523,28 @@ msgstr ""
 #~ msgstr "Geef een geldige zoek-URL in."
 
 #~ msgid "Link Color:"
-#~ msgstr "Koppelingskleur:"
+#~ msgstr "Koppelingkleur:"
 
 #~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
 #~ msgstr "(gebouwd op %s met GTK %d.%d.%d, GLib %d.%d.%d)"
 
 #~ msgid "Do you want to search \"%s\" on the Web using "
-#~ msgstr "Wil u \"%s\" op het Web opzoeken met"
+#~ msgstr "Wilt u \"%s\" op het Web opzoeken met"
 
 #~ msgid "_Dict"
-#~ msgstr "W_oordenboek"
+#~ msgstr "Woorden_boek"
 
 #~ msgid "_Web"
 #~ msgstr "_Web"
 
 #~ msgid "Dict"
-#~ msgstr "Dict"
+#~ msgstr "Woordenboek"
 
 #~ msgid "Web"
 #~ msgstr "Web"
 
 #~ msgid "Xfce4 Dictionary Preferences"
-#~ msgstr "Woordenboek-voorkeuren"
+#~ msgstr "Woordenboekvoorkeuren"
 
 #~ msgid "Developer"
 #~ msgstr "Ontwikkelaar"
