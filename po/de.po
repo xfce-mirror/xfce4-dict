@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-23 16:01+0000\n"
+"POT-Creation-Date: 2011-06-20 16:03+0000\n"
 "PO-Revision-Date: 2010-01-01 15:59+0100\n"
 "Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
 "Language-Team: German <xfce-i18n@xfce.org>\n"
@@ -28,17 +28,17 @@ msgstr "Ein Plugin zum Abfragen verschiedener Wörterbücher."
 msgid "Dictionary"
 msgstr "Wörterbuch"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:200
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
 msgstr "Bereit"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Ein Wort nachschlagen"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:652
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
 msgstr "Suchbegriff"
 
@@ -242,8 +242,8 @@ msgstr "Fehler"
 msgid "warning"
 msgstr "Warnung"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Konnte keine Verbindung zum Server herstellen."
 
@@ -255,8 +255,8 @@ msgstr "Der Server ist nicht bereit."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Es wurde ein ungültiges Verzeichnis angegeben. Bitte überprüfen Sie Ihre Einstellungen."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
 msgstr "Unbekannter Fehler beim Abfragen des Servers."
 
 #: ../lib/dictd.c:415
@@ -286,21 +286,21 @@ msgid_plural "%d definitions found."
 msgstr[0] "%d Definition gefunden."
 msgstr[1] "%d Definitionen gefunden."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "Frage Server %s ab..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "Unbekannter Fehler beim Abfragen des Servers."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Serverinformationen für »%s«"
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "Der Server bietet keine Datenbanken an."
 
@@ -337,7 +337,7 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Wörterbuch"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
+msgid "Copyright © 2006-2011 Enrico Tröger"
 msgstr "Copyright © 2006-2010 Enrico Tröger"
 
 #: ../lib/gui.c:855
