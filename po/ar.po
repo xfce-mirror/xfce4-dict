@@ -1,8 +1,9 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
+"POT-Creation-Date: 2011-06-24 16:02+0000\n"
 "PO-Revision-Date: 2008-07-15 14:41+0200\n"
 "Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -13,46 +14,46 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr ""
+msgstr "إضافة للمساعد في الاستعلام بقواميس مختلفة."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
 msgid "Dictionary"
-msgstr ""
+msgstr "قاموس"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:411
 msgid "Ready"
-msgstr ""
+msgstr "استعداد"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
-msgstr ""
+msgstr "بحث عن كلمة"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
 msgid "Search term"
-msgstr ""
+msgstr "البحث عن مصطلح"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
+msgstr "البحث في نص معين باستخدام ملقم قاموس (RFC 2229)"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr ""
+msgstr "ابحث عن نص معين باستخدام محرك بحث على شبكة الإنترنت"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr ""
+msgstr "التحقق من نص معين مع المدقق الإملائي"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
-msgstr ""
+msgstr "الاستيلاء على التركيز على حقل النص في لوحة"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
+msgstr "بدء التطبيق بشكل مستقل حتى لو تم تحميل لوحة البرنامج المساعدة"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -75,7 +76,7 @@ msgstr ""
 msgid "Please report bugs to <%s>."
 msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
 msgstr ""
 
@@ -129,7 +130,7 @@ msgstr ""
 msgid "Process failed (%s)"
 msgstr ""
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr ""
 
@@ -153,61 +154,62 @@ msgstr ""
 msgid "You must enter a text."
 msgstr ""
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
 msgstr ""
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr ""
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../lib/speedreader.c:577
-msgid ""
-"This is an easy speed reading utility to help train you to read faster. It "
-"does this by flashing words at a rapid rate on the screen."
+#: ../lib/speedreader.c:586
+msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 msgstr ""
 
-#: ../lib/speedreader.c:580
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
 msgstr ""
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
 msgstr ""
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
 msgstr ""
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
 msgstr ""
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr ""
 
-#: ../lib/speedreader.c:653
+#: ../lib/speedreader.c:663
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr ""
+
+#: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr ""
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr ""
 
@@ -231,8 +233,8 @@ msgstr ""
 msgid "warning"
 msgstr ""
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr ""
 
@@ -244,8 +246,8 @@ msgstr ""
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr ""
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
 msgstr ""
 
 #: ../lib/dictd.c:415
@@ -275,21 +277,21 @@ msgid_plural "%d definitions found."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr ""
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr ""
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr ""
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr ""
 
@@ -297,7 +299,7 @@ msgstr ""
 msgid "_File"
 msgstr ""
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
 msgstr ""
 
@@ -305,31 +307,31 @@ msgstr ""
 msgid "_Help"
 msgstr ""
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:697
 msgid "Search with:"
 msgstr ""
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:701
 msgid "_Dictionary Server"
 msgstr ""
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:707
 msgid "_Web Service"
 msgstr ""
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:715
 msgid "_Spell Checker"
 msgstr ""
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
 msgstr ""
 
-#: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
+#: ../lib/gui.c:852
+msgid "Copyright © 2006-2011 Enrico Tröger"
 msgstr ""
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:855
 msgid "translator-credits"
 msgstr ""
 
@@ -474,9 +476,7 @@ msgid "URL:"
 msgstr ""
 
 #: ../lib/prefs.c:621
-msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
+msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
 msgstr ""
 
 #: ../lib/prefs.c:645
@@ -485,7 +485,6 @@ msgstr ""
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
