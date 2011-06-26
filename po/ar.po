@@ -267,7 +267,6 @@ msgid "Search \"%s\" using \"%s\""
 msgstr ""
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
 msgstr "البحث في الويب :"
 
@@ -299,7 +298,7 @@ msgstr ""
 
 #: ../lib/gui.c:566
 msgid "_File"
-msgstr ""
+msgstr "ملف"
 
 #: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
@@ -307,91 +306,91 @@ msgstr ""
 
 #: ../lib/gui.c:592
 msgid "_Help"
-msgstr ""
+msgstr "مساعدة"
 
 #: ../lib/gui.c:697
 msgid "Search with:"
-msgstr ""
+msgstr "بحث باستخدام"
 
 #: ../lib/gui.c:701
 msgid "_Dictionary Server"
-msgstr ""
+msgstr "خدمة القاموس"
 
 #: ../lib/gui.c:707
 msgid "_Web Service"
-msgstr ""
+msgstr "خدمة الانترنت"
 
 #: ../lib/gui.c:715
 msgid "_Spell Checker"
-msgstr ""
+msgstr "مدقق املائي"
 
 #: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
-msgstr ""
+msgstr "قاموس Xfce4"
 
 #: ../lib/gui.c:852
 msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr ""
+msgstr "Copyright © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
-msgstr ""
+msgstr "المترجم - الاعتمادات"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
-msgstr ""
+msgstr "dict.leo.org - German <-> English"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> French"
-msgstr ""
+msgstr "dict.leo.org - German <-> French"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Spanish"
-msgstr ""
+msgstr "dict.leo.org - German <-> Spanish"
 
 #: ../lib/prefs.c:58
 msgid "dict.leo.org - German <-> Italian"
-msgstr ""
+msgstr "dict.leo.org - German <-> Italian"
 
 #: ../lib/prefs.c:59
 msgid "dict.leo.org - German <-> Chinese"
-msgstr ""
+msgstr "dict.leo.org - German <-> Chinese"
 
 #: ../lib/prefs.c:60
 msgid "dist.cc - Dictionary"
-msgstr ""
+msgstr "dist.cc - قاموس"
 
 #: ../lib/prefs.c:61
 msgid "Dictionary.com"
-msgstr ""
+msgstr "Dictionary.com"
 
 #: ../lib/prefs.c:62
 msgid "TheFreeDictionary.com"
-msgstr ""
+msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:63
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr ""
+msgstr "Wikipedia, the free encyclopedia (EN)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr ""
+msgstr "Wiktionary, the free dictionary (EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr ""
+msgstr "Merriam-Webster Online Dictionary"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
-msgstr ""
+msgstr "مسح"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr ""
+msgstr "اخترت قاموس غير صالح"
 
 #: ../lib/prefs.c:303
 msgid "General"
-msgstr ""
+msgstr "عام"
 
 #: ../lib/prefs.c:305
 msgid "<b>Default search method:</b>"
@@ -399,62 +398,62 @@ msgstr ""
 
 #: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
-msgstr ""
+msgstr "خادم القاموس"
 
 #: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
-msgstr ""
+msgstr "خدمة الإنترنت"
 
 #: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
-msgstr ""
+msgstr "مدقق الإملائي"
 
 #: ../lib/prefs.c:338
 msgid "Last used method"
-msgstr ""
+msgstr "استخدم أخر طريقة المستخدمة"
 
 #: ../lib/prefs.c:347
 msgid "<b>Colors:</b>"
-msgstr ""
+msgstr "<b>لون:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "الروابط :"
 
 #: ../lib/prefs.c:354
 msgid "Phonetics:"
-msgstr ""
+msgstr "الصوتيات :"
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
-msgstr ""
+msgstr "مكتوبة بشكل صحيح :"
 
 #: ../lib/prefs.c:356
 msgid "Spelled incorrectly:"
-msgstr ""
+msgstr "مكتوبة بشكل غير صحيح :"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
-msgstr ""
+msgstr "<b>لوحة حقل نص:</b>"
 
 #: ../lib/prefs.c:422
 msgid "Show text field in the panel"
-msgstr ""
+msgstr "عرض حقل النص في لوحة"
 
 #. panel entry size
 #: ../lib/prefs.c:429
 msgid "Text field size:"
-msgstr ""
+msgstr "حجم حقل النص :"
 
 #. server address
 #: ../lib/prefs.c:475
 msgid "Server:"
-msgstr ""
+msgstr "الخادم :"
 
 #. server port
 #: ../lib/prefs.c:487
 msgid "Server Port:"
-msgstr ""
+msgstr "منفذ الخادم:"
 
 #. dictionary
 #: ../lib/prefs.c:495 ../lib/prefs.c:668
