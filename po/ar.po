@@ -467,22 +467,18 @@ msgid "* (use all)"
 msgstr "* (استخدم الجميع)"
 
 #: ../lib/prefs.c:501
-#, fuzzy
 msgid "! (use all, stop after first match)"
 msgstr "! (استخدام الكل، ووقف بعد المباراة الاولى)"
 
 #: ../lib/prefs.c:595
-#, fuzzy
 msgid "<b>Web search URL:</b>"
 msgstr "<b>رابط صفحة البحث:</b>"
 
 #: ../lib/prefs.c:601
-#, fuzzy
 msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
 msgstr "أدخل URL لموقع الويب الذي يقدم خدمات الترجمة أو القاموس. استخدام {كلمة} لكلمة البحث."
 
@@ -491,7 +487,6 @@ msgid "Spell Check Program:"
 msgstr "برنامج المدقق الإملائي:"
 
 #: ../lib/prefs.c:662
-#, fuzzy
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
