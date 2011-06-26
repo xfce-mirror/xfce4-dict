@@ -164,11 +164,11 @@ msgid "The file '%s' could not be loaded."
 msgstr "الملف '%s' لا يمكن تحميله"
 
 #: ../lib/speedreader.c:561
-#, c-format
+#, c-format, fuzzy
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(عرض %d كلمة كل مره)"
+msgstr[1] "(عرض %d كلمات كل مره)"
 
 #: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
@@ -274,11 +274,11 @@ msgid "Web Search:"
 msgstr "البحث في الويب :"
 
 #: ../lib/dictd.c:461
-#, c-format
+#, c-format, fuzzy
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d العثور على تعريف"
+msgstr[1] "%d العثور على تعريفات"
 
 #: ../lib/dictd.c:669
 #, c-format
@@ -467,27 +467,34 @@ msgid "* (use all)"
 msgstr "* (استخدم الجميع)"
 
 #: ../lib/prefs.c:501
+#, fuzzy
 msgid "! (use all, stop after first match)"
-msgstr ""
+msgstr "! (استخدام الكل، ووقف بعد المباراة الاولى)"
 
 #: ../lib/prefs.c:595
+#, fuzzy
 msgid "<b>Web search URL:</b>"
-msgstr ""
+msgstr "<b>رابط صفحة البحث:</b>"
 
 #: ../lib/prefs.c:601
+#, fuzzy
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../lib/prefs.c:621
+#, fuzzy
 msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr ""
+msgstr "أدخل URL لموقع الويب الذي يقدم خدمات الترجمة أو القاموس. استخدام {كلمة} لكلمة البحث."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
-msgstr ""
+msgstr "برنامج المدقق الإملائي:"
 
 #: ../lib/prefs.c:662
+#, fuzzy
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+"<I>يمكن استخدام برنامج التدقيق الإملائي 'enchant', 'aspell', 'ispell'  أو أي برنامج آخر للتدقيق الإملائي الذي يتوافق مع أوامر ispell.\n"
+"الايقونة توضح ما إذا كان أمر الادخال موجود.</i>"
