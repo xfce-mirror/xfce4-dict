@@ -191,7 +191,6 @@ msgid "_Font Size:"
 msgstr "حجم الخط"
 
 #: ../lib/speedreader.c:638
-#, fuzzy
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
@@ -259,14 +258,14 @@ msgid "Dictionary Results:"
 msgstr "النتائج  القاموس:"
 
 #: ../lib/dictd.c:418
-#, c-format, fuzzy
+#, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "لا يوجد تطابق \"%s\"."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
 #: ../lib/dictd.c:434
-#, c-format, fuzzy
+#, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "بحث \"%s\" باستخدام \"%s\""
 
@@ -291,7 +290,7 @@ msgid "An error occured while querying server information."
 msgstr "حدث خطأ أثناء الاستعلام عن معلومات الملقم."
 
 #: ../lib/dictd.c:741
-#, c-format, fuzzy
+#, c-format
 msgid "Server Information for \"%s\""
 msgstr "معلومات الخادم ل \"%s\""
 
