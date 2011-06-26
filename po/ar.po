@@ -60,7 +60,6 @@ msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr ""
 
 #: ../src/xfce4-dict.c:57
-#, fuzzy
 msgid "Be verbose"
 msgstr "يكون مطول"
 
@@ -75,31 +74,31 @@ msgstr "[النص]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "الرجاء الابلاغ عن عله <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
 msgid "A client program to query different dictionaries."
-msgstr ""
+msgstr "عميل برنامج للاستعلام بقواميس مختلفة."
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
-msgstr ""
+msgstr "عميل القاموس"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
 msgstr "نتائج التدقيق الإملائي :"
 
 #: ../lib/spell.c:101
-#, c-format
+#, c-format, fuzzy
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d اقتراح موجود."
+msgstr[1] "%d اقتراحات موجودة."
 
 #: ../lib/spell.c:105
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr ""
+msgstr "اقتراح ل \"%s\" (%s):"
 
 #: ../lib/spell.c:122
 #, c-format
