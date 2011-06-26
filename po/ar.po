@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-24 16:02+0000\n"
+"POT-Creation-Date: 2011-06-26 04:03+0000\n"
 "PO-Revision-Date: 2008-07-15 14:41+0200\n"
 "Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -60,16 +60,17 @@ msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr ""
 
 #: ../src/xfce4-dict.c:57
+#, fuzzy
 msgid "Be verbose"
-msgstr ""
+msgstr "يكون مطول"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
-msgstr ""
+msgstr "عرض معلومات الإصدار"
 
 #: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
-msgstr ""
+msgstr "[النص]"
 
 #: ../src/xfce4-dict.c:147
 #, c-format
@@ -86,7 +87,7 @@ msgstr ""
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
-msgstr ""
+msgstr "نتائج التدقيق الإملائي :"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -123,7 +124,7 @@ msgstr ""
 
 #: ../lib/spell.c:208 ../lib/common.c:224
 msgid "Invalid input"
-msgstr ""
+msgstr "الإدخال غير صالحة"
 
 #: ../lib/spell.c:247
 #, c-format
@@ -140,23 +141,24 @@ msgstr ""
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "تشغيل"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "انتهى"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "سرعة القارئ"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "يجب إدخال النص."
 
 #: ../lib/speedreader.c:506
+#, fuzzy
 msgid "Choose a file to load"
-msgstr ""
+msgstr "اختيار ملف لتحميل"
 
 #: ../lib/speedreader.c:535
 #, c-format
