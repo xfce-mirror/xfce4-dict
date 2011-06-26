@@ -191,11 +191,15 @@ msgid "_Font Size:"
 msgstr "حجم الخط"
 
 #: ../lib/speedreader.c:638
+#, fuzzy
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
+"إدخال نص هنا ترغب في قرائته.\n"
+"\n"
+" استرخ وخذ راحتك ، ثم اضغط على بدء لاختبار سرعة القراءة."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -255,16 +259,16 @@ msgid "Dictionary Results:"
 msgstr "النتائج  القاموس:"
 
 #: ../lib/dictd.c:418
-#, c-format
+#, c-format, fuzzy
 msgid "No matches could be found for \"%s\"."
-msgstr ""
+msgstr "لا يوجد تطابق \"%s\"."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
 #: ../lib/dictd.c:434
-#, c-format
+#, c-format, fuzzy
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "بحث \"%s\" باستخدام \"%s\""
 
 #: ../lib/dictd.c:439
 msgid "Web Search:"
@@ -280,21 +284,20 @@ msgstr[1] ""
 #: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
-msgstr ""
+msgstr "الاستعلام عن %s..."
 
 #: ../lib/dictd.c:728
-#, fuzzy
 msgid "An error occured while querying server information."
 msgstr "حدث خطأ أثناء الاستعلام عن معلومات الملقم."
 
 #: ../lib/dictd.c:741
-#, c-format
+#, c-format, fuzzy
 msgid "Server Information for \"%s\""
-msgstr ""
+msgstr "معلومات الخادم ل \"%s\""
 
 #: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
-msgstr ""
+msgstr "الملقم لا يوفر أي نوع من قواعد البيانات."
 
 #: ../lib/gui.c:566
 msgid "_File"
@@ -302,7 +305,7 @@ msgstr "ملف"
 
 #: ../lib/gui.c:571 ../lib/gui.c:676
 msgid "Speed _Reader"
-msgstr ""
+msgstr "سرعة القراءة"
 
 #: ../lib/gui.c:592
 msgid "_Help"
@@ -394,7 +397,7 @@ msgstr "عام"
 
 #: ../lib/prefs.c:305
 msgid "<b>Default search method:</b>"
-msgstr ""
+msgstr "<b>طريقة البحث الافتراضية:</b>"
 
 #: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
@@ -458,11 +461,11 @@ msgstr "منفذ الخادم:"
 #. dictionary
 #: ../lib/prefs.c:495 ../lib/prefs.c:668
 msgid "Dictionary:"
-msgstr ""
+msgstr "القاموس :"
 
 #: ../lib/prefs.c:499
 msgid "* (use all)"
-msgstr ""
+msgstr "* (استخدم الجميع)"
 
 #: ../lib/prefs.c:501
 msgid "! (use all, stop after first match)"
