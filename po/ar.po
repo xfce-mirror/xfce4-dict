@@ -103,23 +103,23 @@ msgstr "اقتراح ل \"%s\" (%s):"
 #: ../lib/spell.c:122
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr ""
+msgstr "\"%s\" مكتوبة بشكل صحيح (%s)."
 
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr ""
+msgstr "لا توجد اقتراحات ل \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr ""
+msgstr "خطأ اثناء التنفيذ \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
+msgstr "الرجاء تفعيل  الأمر التدقيق الإملائي في مربع الحوار تفضيلات."
 
 #: ../lib/spell.c:208 ../lib/common.c:224
 msgid "Invalid input"
@@ -128,15 +128,15 @@ msgstr "الإدخال غير صالحة"
 #: ../lib/spell.c:247
 #, c-format
 msgid "Process failed (%s)"
-msgstr ""
+msgstr "فشلت العملية (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr ""
+msgstr "ايقاف"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "استئناف"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
@@ -155,7 +155,6 @@ msgid "You must enter a text."
 msgstr "يجب إدخال النص."
 
 #: ../lib/speedreader.c:506
-#, fuzzy
 msgid "Choose a file to load"
 msgstr "اختيار ملف لتحميل"
 
@@ -177,11 +176,11 @@ msgstr ""
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "كلمة كل دقيقة:"
 
 #: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "علم الفقرات"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
@@ -189,7 +188,7 @@ msgstr ""
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr ""
+msgstr "حجم الخط"
 
 #: ../lib/speedreader.c:638
 msgid ""
@@ -200,7 +199,7 @@ msgstr ""
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "تحميل محتويات الملف"
 
 #: ../lib/speedreader.c:663
 msgid "Clear the contents of the text field and paste the contents of the clipboard"
@@ -208,11 +207,11 @@ msgstr ""
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
-msgstr ""
+msgstr "مسح حقل النص"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr ""
+msgstr "بدء"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
