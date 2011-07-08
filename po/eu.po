@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-03 05:02+0000\n"
+"POT-Creation-Date: 2011-07-08 04:03+0000\n"
 "PO-Revision-Date: 2009-01-28 01:18+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
@@ -242,8 +242,8 @@ msgstr "Errorea"
 msgid "warning"
 msgstr "abisua"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Ezin da zerbitzarira konektatu."
 
@@ -255,8 +255,8 @@ msgstr "Zerbitzaria ez dago prest."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Okerreko hiztegia zehazturik. Mesedez egiaztatu zure hobespenak."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
 msgstr "Errore ezezaguna zerbitzaria galdekatzerakoan."
 
 #: ../lib/dictd.c:415
@@ -286,21 +286,21 @@ msgid_plural "%d definitions found."
 msgstr[0] "definizio %d aurkitu da"
 msgstr[1] "%d definizio aurkitu dira"
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "%s galdekatzen..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "Errore bat gertatu da zerbitzaria galdekatzerakoan."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "\"%s\"-rentzat zerbitzari argibideak"
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "Zerbitzariak ez du datubaserik eskaintzen."
 
@@ -337,8 +337,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Hiztegia"
 
 #: ../lib/gui.c:852
-msgid "Copyright © 2006-2010 Enrico Tröger"
-msgstr "Copyright © 2006-2010 Enrico Tröger"
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Copyright © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
