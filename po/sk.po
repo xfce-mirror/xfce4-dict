@@ -1,0 +1,519 @@
+# Slovak translations for xfce4-dict package
+# Slovenské preklady pre balík xfce4-dict.
+# Copyright (C) 2011 THE xfce4-dict'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-dict package.
+# Automatically generated, 2011.
+# Slavko <linux@slavino.sk>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-dict VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-21 10:03+0000\n"
+"PO-Revision-Date: 2011-07-21 15:41+0200\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
+"Language-Team: Slovak <nomail>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Language: sk\n"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+msgid "A plugin to query different dictionaries."
+msgstr "Zásuvný modul na hľadanie v rôznych slovníkoch."
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
+msgid "Dictionary"
+msgstr "Slovník"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:411
+msgid "Ready"
+msgstr "Pripravený"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:413
+msgid "Look up a word"
+msgstr "Nájsť slovo"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
+msgid "Search term"
+msgstr "Hľadať termín"
+
+#: ../src/xfce4-dict.c:51
+msgid "Search the given text using a Dict server(RFC 2229)"
+msgstr "Hľadať zadaný text pomocou servera Dict (RFC 2229)"
+
+#: ../src/xfce4-dict.c:52
+msgid "Search the given text using a web-based search engine"
+msgstr "Hľadať zadaný text pomocou  webového vyhľadávacieho stroja"
+
+#: ../src/xfce4-dict.c:53
+msgid "Check the given text with a spell checker"
+msgstr "Skontrolovať preklepy v zadanom texte"
+
+#: ../src/xfce4-dict.c:54
+msgid "Grab the focus on the text field in the panel"
+msgstr "Zamerať textové pole v paneli"
+
+#: ../src/xfce4-dict.c:55
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr "Spustiť samostatnú aplikáciu, hoci je načítaný zásuvný modul"
+
+#: ../src/xfce4-dict.c:56
+msgid "Grabs the PRIMARY selection content and uses it as search text"
+msgstr "Použiť obsah PRIMÁRNEJ schránky a použiť ho ako hľadaný text"
+
+#: ../src/xfce4-dict.c:57
+msgid "Be verbose"
+msgstr "Podrobný výpis"
+
+#: ../src/xfce4-dict.c:58
+msgid "Show version information"
+msgstr "Zobrazí informácie o verzii"
+
+#: ../src/xfce4-dict.c:131
+msgid "[TEXT]"
+msgstr "[TEXT]"
+
+#: ../src/xfce4-dict.c:147
+#, c-format
+msgid "Please report bugs to <%s>."
+msgstr "Prosím, chyby hláste na <%s>."
+
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
+msgid "A client program to query different dictionaries."
+msgstr "Klientský program na vyhľadávanie v rôznych slovníkoch."
+
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "Klient slovníka"
+
+#: ../lib/spell.c:75
+msgid "Spell Checker Results:"
+msgstr "Výsledky kontroly preklepov:"
+
+#: ../lib/spell.c:101
+#, c-format
+msgid "%d suggestion found."
+msgid_plural "%d suggestions found."
+msgstr[0] "Nájdený %d návrh."
+msgstr[1] "Nájdené %d návrhy."
+msgstr[2] "Nájdených %d návrhov."
+
+#: ../lib/spell.c:105
+#, c-format
+msgid "Suggestions for \"%s\" (%s):"
+msgstr "Návrhy pre \"%s\" (%s):"
+
+#: ../lib/spell.c:122
+#, c-format
+msgid "\"%s\" is spelled correctly (%s)."
+msgstr "\"%s\" je napísané správne (%s)."
+
+#: ../lib/spell.c:134
+#, c-format
+msgid "No suggestions could be found for \"%s\" (%s)."
+msgstr "Nenájdené žiadne návrhy pre \"%s\" (%s)."
+
+#. translation hint:
+#. * Error while executing <spell command, e.g. "aspell"> (<error message>)
+#: ../lib/spell.c:164
+#, c-format
+msgid "Error while executing \"%s\" (%s)."
+msgstr "Chyba pri spustení \"%s\" (%s)."
+
+#: ../lib/spell.c:202
+msgid "Please set the spell check command in the preferences dialog."
+msgstr "Prosím, nastavte príkaz kontroly preklepov v dialógu Nastavenia."
+
+#: ../lib/spell.c:208 ../lib/common.c:224
+msgid "Invalid input"
+msgstr "Neplatný vstup"
+
+#: ../lib/spell.c:247
+#, c-format
+msgid "Process failed (%s)"
+msgstr "Proces zlyhal (%s)"
+
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
+msgid "P_ause"
+msgstr "Pr_erušiť"
+
+#: ../lib/speedreader.c:81
+msgid "_Resume"
+msgstr "Pok_račovať"
+
+#: ../lib/speedreader.c:263
+msgid "Running"
+msgstr "Spustené"
+
+#: ../lib/speedreader.c:266
+msgid "Finished"
+msgstr "Dokončené"
+
+#: ../lib/speedreader.c:274
+msgid "Speed Reader"
+msgstr "Rýchločítanie"
+
+#: ../lib/speedreader.c:369
+msgid "You must enter a text."
+msgstr "Musíte zadať text"
+
+#: ../lib/speedreader.c:506
+msgid "Choose a file to load"
+msgstr "vyberte súbor na načítanie"
+
+#: ../lib/speedreader.c:535
+#, c-format
+msgid "The file '%s' could not be loaded."
+msgstr "Súbor '%s' nemožno načítať."
+
+#: ../lib/speedreader.c:561
+#, c-format
+msgid "(display %d word at a time)"
+msgid_plural "(display %d words at a time)"
+msgstr[0] "(zobraziť naraz %d slovo)"
+msgstr[1] "(zobraziť naraz %d slová)"
+msgstr[2] "(zobraziť naraz %d slov)"
+
+#: ../lib/speedreader.c:586
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr ""
+"Toto je jednoduchý nástroj na rýchlo-čítanie, ktorý vám pomôže s nácvikom "
+"rýchlejšieho čítania. Pracuje na základe rýchlo zvýrazňovaných slov na "
+"obrazovke."
+
+#: ../lib/speedreader.c:589
+msgid "_Words per Minute:"
+msgstr "_Slov za minútu:"
+
+#: ../lib/speedreader.c:595
+msgid "_Mark Paragraphs"
+msgstr "_Označiť odseky"
+
+#: ../lib/speedreader.c:602
+msgid "Word _Grouping:"
+msgstr "Zoskupovanie slov:"
+
+#: ../lib/speedreader.c:618
+msgid "_Font Size:"
+msgstr "Veľkosť _písma:"
+
+#: ../lib/speedreader.c:638
+msgid ""
+"Enter some text here you would like to read.\n"
+"\n"
+"Be relaxed and make yourself comfortable, then press Start to begin speed "
+"reading."
+msgstr ""
+"zadajte tu nejaký text, ktorý by ste chceli čítať.\n"
+"\n"
+"Uvoľnite sa a urobte si pohodlie, potom stlačte Štart a začne rýchle čítanie."
+
+#: ../lib/speedreader.c:654
+msgid "Load the contents of a file"
+msgstr "Načítať obsah súboru"
+
+#: ../lib/speedreader.c:663
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Vymaže obsah textového poľa a vloží obsah schránky"
+
+#: ../lib/speedreader.c:671
+msgid "Clear the contents of the text field"
+msgstr "Vymaže obsah textového poľa"
+
+#: ../lib/speedreader.c:684
+msgid "_Start"
+msgstr "_Spustiť"
+
+#: ../lib/common.c:189
+msgid "The search URL is empty. Please check your preferences."
+msgstr "URL hľadania je prázdne. Prosím, skontrolujte svoje nastavenia."
+
+#: ../lib/common.c:195
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "Nemožno otvoriť prehliadač. Prosím, skontrolujte svoje nastavenia."
+
+#: ../lib/common.c:234
+msgid "Invalid non-UTF8 input"
+msgstr "Neplatný vstup v inom kódovaní ako UTF-8"
+
+#: ../lib/common.c:608
+msgid "Error"
+msgstr "Chyba"
+
+#: ../lib/common.c:611
+msgid "warning"
+msgstr "varovanie"
+
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
+msgid "Could not connect to server."
+msgstr "Nemožno sa pripojiť k serveru."
+
+#: ../lib/dictd.c:385
+msgid "The server is not ready."
+msgstr "Server nie je pripravený."
+
+#: ../lib/dictd.c:392
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Zadaný neplatný slovník. Prosím, skontrolujte svoje nastavenia."
+
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
+msgstr "Neznáma chyba pri hľadaní na serveri."
+
+#: ../lib/dictd.c:415
+msgid "Dictionary Results:"
+msgstr "Výsledky slovníka:"
+
+#: ../lib/dictd.c:418
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Nenájdené žiadne zhody pre \"%s\"."
+
+#. for translators: the first wildcard is the search term, the second wildcard
+#. * is the name of the preferred web search engine
+#: ../lib/dictd.c:434
+#, c-format
+msgid "Search \"%s\" using \"%s\""
+msgstr "Hľadať \"%s\" pomocou \"%s\""
+
+#: ../lib/dictd.c:439
+msgid "Web Search:"
+msgstr "Webové hľadanie:"
+
+#: ../lib/dictd.c:461
+#, c-format
+msgid "%d definition found."
+msgid_plural "%d definitions found."
+msgstr[0] "%d nájdená definícia."
+msgstr[1] "%d nájdené definície."
+msgstr[2] "%d nájdených definícií."
+
+#: ../lib/dictd.c:669
+#, c-format
+msgid "Querying %s..."
+msgstr "Hľadanie %s..."
+
+#: ../lib/dictd.c:728
+msgid "An error occured while querying server information."
+msgstr "nastala chyba pri zisťovaní informácií servera."
+
+#: ../lib/dictd.c:741
+#, c-format
+msgid "Server Information for \"%s\""
+msgstr "Informácie servera \"%s\""
+
+#: ../lib/dictd.c:824
+msgid "The server doesn't offer any databases."
+msgstr "Server neposkytuje žiadnu databázu."
+
+#: ../lib/gui.c:566
+msgid "_File"
+msgstr "_Súbor"
+
+#: ../lib/gui.c:571 ../lib/gui.c:676
+msgid "Speed _Reader"
+msgstr "_Rýchlo-čítanie"
+
+#: ../lib/gui.c:592
+msgid "_Help"
+msgstr "_Pomocník"
+
+#: ../lib/gui.c:697
+msgid "Search with:"
+msgstr "Hľadať pomocou:"
+
+#: ../lib/gui.c:701
+msgid "_Dictionary Server"
+msgstr "_Server slovníkía"
+
+#: ../lib/gui.c:707
+msgid "_Web Service"
+msgstr "_Webová služba"
+
+#: ../lib/gui.c:715
+msgid "_Spell Checker"
+msgstr "_Kontrola preklepov"
+
+#: ../lib/gui.c:843
+msgid "Xfce4 Dictionary"
+msgstr "Slovník Xfce4"
+
+#: ../lib/gui.c:852
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Copyright © 2006-2011 Enrico Tröger"
+
+#: ../lib/gui.c:855
+msgid "translator-credits"
+msgstr "Slavko <linux@slavino.sk>"
+
+#: ../lib/prefs.c:55
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org – Nemčina  <-> Angličtina"
+
+#: ../lib/prefs.c:56
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org – Nemčina <-> Francúština"
+
+#: ../lib/prefs.c:57
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org – Nemčina <-> Španielčina"
+
+#: ../lib/prefs.c:58
+msgid "dict.leo.org - German <-> Italian"
+msgstr "dict.leo.org – Nemčina <-> Taliančina"
+
+#: ../lib/prefs.c:59
+msgid "dict.leo.org - German <-> Chinese"
+msgstr "dict.leo.org – Nemčina <-> Čínština"
+
+#: ../lib/prefs.c:60
+msgid "dist.cc - Dictionary"
+msgstr "dist.cc – Slovník"
+
+#: ../lib/prefs.c:61
+msgid "Dictionary.com"
+msgstr "Dictionary.com"
+
+#: ../lib/prefs.c:62
+msgid "TheFreeDictionary.com"
+msgstr "TheFreeDictionary.com"
+
+#: ../lib/prefs.c:63
+msgid "Wikipedia, the free encyclopedia (EN)"
+msgstr "Wikipedia, slobodná encyklopédia (En)"
+
+#: ../lib/prefs.c:64
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr "Wiktionary, slobodný slovník (En)"
+
+#: ../lib/prefs.c:65
+msgid "Merriam-Webster Online Dictionary"
+msgstr "Online slovník Merriam-Webster"
+
+#: ../lib/prefs.c:66
+msgid "Clear"
+msgstr "Vymazať"
+
+#: ../lib/prefs.c:101
+msgid "You have chosen an invalid dictionary."
+msgstr "Zvolili ste si neplatný slovník."
+
+#: ../lib/prefs.c:303
+msgid "General"
+msgstr "Všeobecné"
+
+#: ../lib/prefs.c:305
+msgid "<b>Default search method:</b>"
+msgstr "<b>Predvolená met=óda hľadania:</b>"
+
+#: ../lib/prefs.c:311 ../lib/prefs.c:472
+msgid "Dictionary Server"
+msgstr "Server slovníka"
+
+#: ../lib/prefs.c:320 ../lib/prefs.c:593
+msgid "Web Service"
+msgstr "Webová služba"
+
+#: ../lib/prefs.c:329 ../lib/prefs.c:643
+msgid "Spell Checker"
+msgstr "Kontrola preklepov"
+
+#: ../lib/prefs.c:338
+msgid "Last used method"
+msgstr "Naposledy použitá metóda"
+
+#: ../lib/prefs.c:347
+msgid "<b>Colors:</b>"
+msgstr "<b>Farby:</b>"
+
+#: ../lib/prefs.c:353
+msgid "Links:"
+msgstr "Odkazy:"
+
+#: ../lib/prefs.c:354
+msgid "Phonetics:"
+msgstr "Výslovnosť:"
+
+#: ../lib/prefs.c:355
+msgid "Spelled correctly:"
+msgstr "Napísané správne:"
+
+#: ../lib/prefs.c:356
+msgid "Spelled incorrectly:"
+msgstr "Napísané nesprávne:"
+
+#: ../lib/prefs.c:416
+msgid "<b>Panel Text Field:</b>"
+msgstr "<b>Textové pole panela:</b>"
+
+#: ../lib/prefs.c:422
+msgid "Show text field in the panel"
+msgstr "Zobraziť textové pole v paneli"
+
+#. panel entry size
+#: ../lib/prefs.c:429
+msgid "Text field size:"
+msgstr "Dĺžka textového poľa:"
+
+#. server address
+#: ../lib/prefs.c:475
+msgid "Server:"
+msgstr "Server:"
+
+#. server port
+#: ../lib/prefs.c:487
+msgid "Server Port:"
+msgstr "Port servera:"
+
+#. dictionary
+#: ../lib/prefs.c:495 ../lib/prefs.c:668
+msgid "Dictionary:"
+msgstr "Slovník:"
+
+#: ../lib/prefs.c:499
+msgid "* (use all)"
+msgstr "* (použiť všetky)"
+
+#: ../lib/prefs.c:501
+msgid "! (use all, stop after first match)"
+msgstr "* (použiť všetky, zastaviť pri prvej zhode)"
+
+#: ../lib/prefs.c:595
+msgid "<b>Web search URL:</b>"
+msgstr "<b>URL webového hľadania:</b>"
+
+#: ../lib/prefs.c:601
+msgid "URL:"
+msgstr "URL:"
+
+#: ../lib/prefs.c:621
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Zadajte URL webovej stánky, ktorá poskytuje prekladové alebo slovníkové "
+"služby. Použite {word} ako zástupný reťazec hľadaného slova."
+
+#: ../lib/prefs.c:645
+msgid "Spell Check Program:"
+msgstr "Program kontroly preklepov:"
+
+#: ../lib/prefs.c:662
+msgid ""
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
+"The icon shows whether the entered command exists.</i>"
+msgstr ""
+"<i>Program na kontrolu preklepov môže byť „enchant”, „aspell”, „ispell” "
+"alebo akýkoľvek iný program kontroly preklepov, ktorý je kompatibilný s "
+"príkazmi ispell.\n"
+"Ikona udáva, či zadaný príkaz existuje.</i>"
