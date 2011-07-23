@@ -4,20 +4,20 @@
 # This file is distributed under the same license as the xfce4-dict package.
 # Automatically generated, 2011.
 # Slavko <linux@slavino.sk>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 10:03+0000\n"
+"POT-Creation-Date: 2011-07-23 04:03+0000\n"
 "PO-Revision-Date: 2011-07-21 15:41+0200\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak <nomail>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "Language: sk\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
@@ -164,7 +164,7 @@ msgstr "Musíte zadať text"
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr "vyberte súbor na načítanie"
+msgstr "Vyberte súbor na načítanie"
 
 #: ../lib/speedreader.c:535
 #, c-format
@@ -180,13 +180,8 @@ msgstr[1] "(zobraziť naraz %d slová)"
 msgstr[2] "(zobraziť naraz %d slov)"
 
 #: ../lib/speedreader.c:586
-msgid ""
-"This is an easy speed reading utility to help train you to read faster. It "
-"does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Toto je jednoduchý nástroj na rýchlo-čítanie, ktorý vám pomôže s nácvikom "
-"rýchlejšieho čítania. Pracuje na základe rýchlo zvýrazňovaných slov na "
-"obrazovke."
+msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+msgstr "Toto je jednoduchý nástroj na rýchlo-čítanie, ktorý vám pomôže s nácvikom rýchlejšieho čítania. Pracuje na základe rýchlo zvýrazňovaných slov na obrazovke."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -208,10 +203,9 @@ msgstr "Veľkosť _písma:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
-"zadajte tu nejaký text, ktorý by ste chceli čítať.\n"
+"Tu zadajte nejaký text, ktorý by ste chceli čítať.\n"
 "\n"
 "Uvoľnite sa a urobte si pohodlie, potom stlačte Štart a začne rýchle čítanie."
 
@@ -220,8 +214,7 @@ msgid "Load the contents of a file"
 msgstr "Načítať obsah súboru"
 
 #: ../lib/speedreader.c:663
-msgid ""
-"Clear the contents of the text field and paste the contents of the clipboard"
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Vymaže obsah textového poľa a vloží obsah schránky"
 
 #: ../lib/speedreader.c:671
@@ -304,7 +297,7 @@ msgstr "Hľadanie %s..."
 
 #: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
-msgstr "nastala chyba pri zisťovaní informácií servera."
+msgstr "Nastala chyba pri zisťovaní informácií servera."
 
 #: ../lib/dictd.c:741
 #, c-format
@@ -333,7 +326,7 @@ msgstr "Hľadať pomocou:"
 
 #: ../lib/gui.c:701
 msgid "_Dictionary Server"
-msgstr "_Server slovníkía"
+msgstr "_Server slovníka"
 
 #: ../lib/gui.c:707
 msgid "_Web Service"
@@ -361,7 +354,7 @@ msgstr "dict.leo.org – Nemčina  <-> Angličtina"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org – Nemčina <-> Francúština"
+msgstr "dict.leo.org – Nemčina <-> Francúzština"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Spanish"
@@ -413,7 +406,7 @@ msgstr "Všeobecné"
 
 #: ../lib/prefs.c:305
 msgid "<b>Default search method:</b>"
-msgstr "<b>Predvolená met=óda hľadania:</b>"
+msgstr "<b>Predvolená metóda hľadania:</b>"
 
 #: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
@@ -496,12 +489,8 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Zadajte URL webovej stánky, ktorá poskytuje prekladové alebo slovníkové "
-"služby. Použite {word} ako zástupný reťazec hľadaného slova."
+msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Zadajte URL webovej stánky, ktorá poskytuje prekladové alebo slovníkové služby. Použite {word} ako zástupný reťazec hľadaného slova."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -509,11 +498,8 @@ msgstr "Program kontroly preklepov:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Program na kontrolu preklepov môže byť „enchant”, „aspell”, „ispell” "
-"alebo akýkoľvek iný program kontroly preklepov, ktorý je kompatibilný s "
-"príkazmi ispell.\n"
+"<i>Program na kontrolu preklepov môže byť „enchant”, „aspell”, „ispell” alebo akýkoľvek iný program kontroly preklepov, ktorý je kompatibilný s príkazmi ispell.\n"
 "Ikona udáva, či zadaný príkaz existuje.</i>"
