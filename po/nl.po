@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-16 10:02+0000\n"
-"PO-Revision-Date: 2011-06-16 12:12+0200\n"
+"POT-Creation-Date: 2011-09-08 16:02+0000\n"
+"PO-Revision-Date: 2011-09-08 12:12+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
 "MIME-Version: 1.0\n"
@@ -346,7 +346,7 @@ msgstr "_Spellingcontrole"
 
 #: ../lib/gui.c:843
 msgid "Xfce4 Dictionary"
-msgstr "Xfce4 Woordenboek"
+msgstr "Xfce4 woordenboek"
 
 #: ../lib/gui.c:852
 msgid "Copyright © 2006-2011 Enrico Tröger"
@@ -354,7 +354,8 @@ msgstr "Auteursrecht © 2006-2009 Enrico Tröger"
 
 #: ../lib/gui.c:855
 msgid "translator-credits"
-msgstr "Vincent Tunru <projects@vinnl.nl>\n"
+msgstr ""
+"Vincent Tunru <projects@vinnl.nl>\n"
 "Pjotr"
 
 #: ../lib/prefs.c:55
