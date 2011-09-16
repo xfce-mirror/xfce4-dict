@@ -242,7 +242,7 @@ static gboolean textview_visibility_notify_event(GtkWidget *text_view, GdkEventV
 }
 
 
-static void textview_popup_search_item_cb(GtkWidget *widget, DictData *dd)
+static gchar *textview_get_text_at_cursor(DictData *dd)
 {
 	gchar *word;
 	GtkTextIter start, end;
@@ -268,11 +268,40 @@ static void textview_popup_search_item_cb(GtkWidget *widget, DictData *dd)
 
 	word = gtk_text_buffer_get_text(dd->main_textbuffer, &start, &end, FALSE);
 
-	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), word);
-	dict_search_word(dd, word);
-	gtk_widget_grab_focus(dd->main_entry);
+	return word;
+}
 
-	g_free(word);
+
+static void textview_popup_search_item_cb(GtkWidget *widget, DictData *dd)
+{
+	gchar *word;
+
+	word = textview_get_text_at_cursor(dd);
+
+	if (word != NULL)
+	{
+		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), word);
+		dict_search_word(dd, word);
+		gtk_widget_grab_focus(dd->main_entry);
+
+		g_free(word);
+	}
+}
+
+
+static gboolean textview_is_text_at_cursor(DictData *dd)
+{
+	gchar *text;
+
+	text = textview_get_text_at_cursor(dd);
+	if (text != NULL)
+	{
+		gboolean non_empty_text = NZV(text);
+		g_free(text);
+		return non_empty_text;
+	}
+	else
+		return FALSE;
 }
 
 
@@ -321,10 +350,11 @@ static void textview_populate_popup_cb(GtkTextView *textview, GtkMenu *menu, Dic
 
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(copy_link), copy_link_image);
 	gtk_widget_show(copy_link);
-	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), copy_link);
 	gtk_widget_set_sensitive(GTK_WIDGET(copy_link), textview_is_hyperlink_at_cursor(dd));
+	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), copy_link);
 
 	gtk_widget_show(search);
+	gtk_widget_set_sensitive(GTK_WIDGET(search), textview_is_text_at_cursor(dd));
 	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), search);
 
 	g_signal_connect(search, "activate", G_CALLBACK(textview_popup_search_item_cb), dd);
