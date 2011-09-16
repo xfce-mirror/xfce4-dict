@@ -48,6 +48,41 @@ static gboolean entry_is_dirty = FALSE;
 
 
 /* all textview_* functions are from the gtk-demo app to get links in the textview working */
+static gchar *textview_get_hyperlink_at_iter(GtkWidget *text_view, GtkTextIter *iter, DictData *dd)
+{
+	GSList *tags = NULL, *tagp = NULL;
+	gchar *found_link = NULL;
+	gchar *result = NULL;
+
+	tags = gtk_text_iter_get_tags(iter);
+	for (tagp = tags;  tagp != NULL;  tagp = tagp->next)
+	{
+		GtkTextTag *tag = tagp->data;
+
+		found_link = g_object_get_data(G_OBJECT(tag), "link");
+		if (found_link != NULL)
+		{
+			result = g_strdup(found_link);
+			break;
+		}
+		g_object_get(G_OBJECT(tag), "name", &found_link, NULL);
+		if (found_link != NULL)
+		{
+			if (strcmp("link", found_link) == 0)
+			{
+				result = dict_get_web_query_uri(dd, dd->searched_word);
+				break;
+			}
+			g_free(found_link);
+		}
+	}
+	if (tags)
+		g_slist_free(tags);
+
+	return result;
+}
+
+
 static void textview_follow_if_link(GtkWidget *text_view, GtkTextIter *iter, DictData *dd)
 {
 	GSList *tags = NULL, *tagp = NULL;
@@ -207,7 +242,7 @@ static gboolean textview_visibility_notify_event(GtkWidget *text_view, GdkEventV
 }
 
 
-static void textview_popup_item_cb(GtkWidget *widget, DictData *dd)
+static void textview_popup_search_item_cb(GtkWidget *widget, DictData *dd)
 {
 	gchar *word;
 	GtkTextIter start, end;
@@ -241,18 +276,59 @@ static void textview_popup_item_cb(GtkWidget *widget, DictData *dd)
 }
 
 
+static void textview_popup_copylink_item_cb(GtkWidget *widget, DictData *dd)
+{
+	GtkClipboard *clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);
+	GtkTextIter iter;
+	gchar *hyperlink;
+
+	gtk_text_buffer_get_iter_at_mark(dd->main_textbuffer, &iter, dd->mark_click);
+	hyperlink = textview_get_hyperlink_at_iter(dd->main_textview, &iter, dd);
+	if (hyperlink != NULL)
+	{
+		gtk_clipboard_set_text(clipboard, hyperlink, -1);
+		g_free(hyperlink);
+	}
+}
+
+
+static gboolean textview_is_hyperlink_at_cursor(DictData *dd)
+{
+	GtkTextIter iter;
+	gchar *hyperlink;
+
+	gtk_text_buffer_get_iter_at_mark(dd->main_textbuffer, &iter, dd->mark_click);
+	hyperlink = textview_get_hyperlink_at_iter(dd->main_textview, &iter, dd);
+	if (hyperlink != NULL)
+	{
+		g_free(hyperlink);
+		return TRUE;
+	}
+	else
+		return FALSE;
+}
+
+
 static void textview_populate_popup_cb(GtkTextView *textview, GtkMenu *menu, DictData *dd)
 {
 	GtkWidget *search = gtk_image_menu_item_new_from_stock(GTK_STOCK_FIND, NULL);
+	GtkWidget *copy_link = gtk_image_menu_item_new_with_label(_("Copy Link"));
 	GtkWidget *sep = gtk_separator_menu_item_new();
+	GtkWidget *copy_link_image = gtk_image_new_from_stock(GTK_STOCK_COPY, GTK_ICON_SIZE_MENU);
 
 	gtk_widget_show(sep);
 	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), sep);
 
+	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(copy_link), copy_link_image);
+	gtk_widget_show(copy_link);
+	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), copy_link);
+	gtk_widget_set_sensitive(GTK_WIDGET(copy_link), textview_is_hyperlink_at_cursor(dd));
+
 	gtk_widget_show(search);
 	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), search);
 
-	g_signal_connect(search, "activate", G_CALLBACK(textview_popup_item_cb), dd);
+	g_signal_connect(search, "activate", G_CALLBACK(textview_popup_search_item_cb), dd);
+	g_signal_connect(copy_link, "activate", G_CALLBACK(textview_popup_copylink_item_cb), dd);
 }
 
 
@@ -776,7 +852,7 @@ void dict_gui_create_main_window(DictData *dd)
 		g_signal_connect(dd->main_textview, "visibility-notify-event",
 			G_CALLBACK(textview_visibility_notify_event), NULL);
 	}
-	/* support for 'Search' menu item in the textview popup menu */
+	/* support for 'Search' and 'Copy Link' menu items in the textview popup menu */
 	{
 		GtkTextIter start;
 		gtk_text_buffer_get_bounds(dd->main_textbuffer, &start, &start);
