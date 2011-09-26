@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-12 17:04+0000\n"
+"POT-Creation-Date: 2011-09-25 22:03+0000\n"
 "PO-Revision-Date: 2010-05-10 23:37+0300\n"
 "Last-Translator: Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org,xfce-i18n@xfce.org>\n"
@@ -19,13 +19,13 @@ msgid "A plugin to query different dictionaries."
 msgstr "Çeşitli sözlükleri sorgulamak için eklenti."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Sözlük"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:347
 #: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:411
+#: ../lib/spell.c:243 ../lib/gui.c:517
 msgid "Ready"
 msgstr "Hazır"
 
@@ -33,7 +33,7 @@ msgstr "Hazır"
 msgid "Look up a word"
 msgstr "Kelime ara"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
 msgid "Search term"
 msgstr "Aranacak ifade"
 
@@ -78,7 +78,7 @@ msgstr "[YAZI]"
 msgid "Please report bugs to <%s>."
 msgstr "Lütfen hatalı <%s> adresine bildirin."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
 msgid "A client program to query different dictionaries."
 msgstr "Çeşitli sözlükleri sorgulamak için istemci uygulama."
 
@@ -300,43 +300,47 @@ msgstr "\"%s\" için sunucu bilgisi"
 msgid "The server doesn't offer any databases."
 msgstr "Sunucu herhangi bir veritabanı sunmuyor."
 
-#: ../lib/gui.c:566
+#: ../lib/gui.c:344
+msgid "Copy Link"
+msgstr "Bağlantıyı Kopyala"
+
+#: ../lib/gui.c:672
 msgid "_File"
 msgstr "_Dosya"
 
-#: ../lib/gui.c:571 ../lib/gui.c:676
+#: ../lib/gui.c:677 ../lib/gui.c:782
 msgid "Speed _Reader"
 msgstr "_Okuma Hızı"
 
-#: ../lib/gui.c:592
+#: ../lib/gui.c:698
 msgid "_Help"
 msgstr "_Yardım"
 
-#: ../lib/gui.c:697
+#: ../lib/gui.c:803
 msgid "Search with:"
 msgstr "Kullanarak ara:"
 
-#: ../lib/gui.c:701
+#: ../lib/gui.c:807
 msgid "_Dictionary Server"
 msgstr "_Sözlük Sunucusu"
 
-#: ../lib/gui.c:707
+#: ../lib/gui.c:813
 msgid "_Web Service"
 msgstr "_Web Servisi"
 
-#: ../lib/gui.c:715
+#: ../lib/gui.c:821
 msgid "_Spell Checker"
 msgstr "_Yazım Denetçisi"
 
-#: ../lib/gui.c:843
+#: ../lib/gui.c:949
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Sözlük"
 
-#: ../lib/gui.c:852
+#: ../lib/gui.c:958
 msgid "Copyright © 2006-2011 Enrico Tröger"
 msgstr "Telif Hakkı © 2006-2010 Enrico Tröger"
 
-#: ../lib/gui.c:855
+#: ../lib/gui.c:961
 msgid "translator-credits"
 msgstr "Samed Beyribey <ras0ir@eventualis.org> Ayhan YALÇINSOY<ayhanyalcinsoy@gmail.com>"
 
