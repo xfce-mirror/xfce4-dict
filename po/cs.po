@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 17:04+0000\n"
-"PO-Revision-Date: 2011-01-15 22:10+0100\n"
+"POT-Creation-Date: 2011-12-18 09:39+0000\n"
+"PO-Revision-Date: 2011-12-18 12:01+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <xfce-i18n@xfce.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +23,7 @@ msgstr "Zásuvný modul pro získávání dat za slovníků."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:628
+#: ../lib/gui.c:734
 #: ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Slovník"
@@ -31,7 +32,7 @@ msgstr "Slovník"
 #: ../panel-plugin/xfce4-dict-plugin.c:473
 #: ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243
-#: ../lib/gui.c:411
+#: ../lib/gui.c:517
 msgid "Ready"
 msgstr "Připraven"
 
@@ -40,7 +41,7 @@ msgid "Look up a word"
 msgstr "Vyhledat slovo"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:444
-#: ../lib/gui.c:652
+#: ../lib/gui.c:758
 msgid "Search term"
 msgstr "Hledat pojem"
 
@@ -86,7 +87,7 @@ msgid "Please report bugs to <%s>."
 msgstr "Prosíme, abyste chyby hlásili na adresu <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:851
+#: ../lib/gui.c:957
 msgid "A client program to query different dictionaries."
 msgstr "Klientský program pro získávání dat z různých slovníků."
 
@@ -318,44 +319,48 @@ msgstr "Informace serveru pro „%s“"
 msgid "The server doesn't offer any databases."
 msgstr "Server nenabízí žádné databáze."
 
-#: ../lib/gui.c:566
+#: ../lib/gui.c:344
+msgid "Copy Link"
+msgstr "Kopírovat odkaz"
+
+#: ../lib/gui.c:672
 msgid "_File"
 msgstr "_Soubor"
 
-#: ../lib/gui.c:571
-#: ../lib/gui.c:676
+#: ../lib/gui.c:677
+#: ../lib/gui.c:782
 msgid "Speed _Reader"
 msgstr "_Rychločtení"
 
-#: ../lib/gui.c:592
+#: ../lib/gui.c:698
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: ../lib/gui.c:697
+#: ../lib/gui.c:803
 msgid "Search with:"
 msgstr "Hledat pomocí:"
 
-#: ../lib/gui.c:701
+#: ../lib/gui.c:807
 msgid "_Dictionary Server"
 msgstr "_Server slovníku"
 
-#: ../lib/gui.c:707
+#: ../lib/gui.c:813
 msgid "_Web Service"
 msgstr "_Webová služba"
 
-#: ../lib/gui.c:715
+#: ../lib/gui.c:821
 msgid "_Spell Checker"
 msgstr "_Kontrola pravopisu"
 
-#: ../lib/gui.c:843
+#: ../lib/gui.c:949
 msgid "Xfce4 Dictionary"
 msgstr "Slovník Xfce4"
 
-#: ../lib/gui.c:852
+#: ../lib/gui.c:958
 msgid "Copyright © 2006-2011 Enrico Tröger"
 msgstr "Copyright © 2006-2011 Enrico Tröger"
 
-#: ../lib/gui.c:855
+#: ../lib/gui.c:961
 msgid "translator-credits"
 msgstr "Michal Várady <miko.vaji@gmail.com>"
 
