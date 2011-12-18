@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2011-12-18 10:04+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: is <translation-team-is@lists.sourceforge.net>\n"
-"Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: is\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
-msgstr ""
+msgstr "Fletta upp orði"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
 msgid "Search term"
