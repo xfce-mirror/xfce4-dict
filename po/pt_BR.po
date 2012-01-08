@@ -6,18 +6,19 @@
 # Vladimir Melo <vladimirmelo@foresightlinux.org>, 2007.
 # Og Maciel <ogmaciel@gnome.org>, 2008.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 14:17+0100\n"
+"POT-Creation-Date: 2012-01-08 17:36+0000\n"
 "PO-Revision-Date: 2009-02-04 20:07-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
@@ -25,21 +26,21 @@ msgid "A plugin to query different dictionaries."
 msgstr "Um plug-in para consultar dicionários diferentes."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Dicionário"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:346
-#: ../panel-plugin/xfce4-dict-plugin.c:472 ../src/xfce4-dict.c:204
-#: ../lib/spell.c:243 ../lib/gui.c:411
+#: ../panel-plugin/xfce4-dict-plugin.c:347
+#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:517
 msgid "Ready"
 msgstr "Pronto"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:412
+#: ../panel-plugin/xfce4-dict-plugin.c:413
 msgid "Look up a word"
 msgstr "Procurar uma palavra"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:443 ../lib/gui.c:651
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
 msgid "Search term"
 msgstr "Termo da pesquisa"
 
@@ -86,7 +87,7 @@ msgstr "[TEXTO]"
 msgid "Please report bugs to <%s>."
 msgstr "Por favor relatar erros para <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
 msgid "A client program to query different dictionaries."
 msgstr "Um programa para consultar dicionários diferentes."
 
@@ -95,9 +96,8 @@ msgid "Dictionary Client"
 msgstr "Dicionário"
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Corretor ortográfico"
+msgstr "Resultados do Corretor ortográfico:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -107,9 +107,9 @@ msgstr[0] "%d sugestão encontrada."
 msgstr[1] "%d sugestões encontradas."
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Sugestões para  \"%s\"."
+msgstr "Sugestões para  \"%s\" (%s):"
 
 #: ../lib/spell.c:122
 #, fuzzy, c-format
@@ -117,9 +117,9 @@ msgid "\"%s\" is spelled correctly (%s)."
 msgstr " \"%s\" está escrito de forma correta."
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Nenhuma sugestão foi encontrada para \"%s\"."
+msgstr "Nenhuma sugestão foi encontrada para \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -143,88 +143,97 @@ msgstr "Entrada inválida"
 msgid "Process failed (%s)"
 msgstr "O processo falhou (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:664
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr ""
+msgstr "P_ausar"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Retomar"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Rodando"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Terminado"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Leitor rápido"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Você precisa digitar um texto."
 
-#: ../lib/speedreader.c:505
+#: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Escolha um arquivo para carregar."
 
-#: ../lib/speedreader.c:534
+#: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "O arquivo \"%s\" não pôde ser carregado"
 
-#: ../lib/speedreader.c:552
+#: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(mostrar %d palavra por vez)"
+msgstr[1] "(mostrar %d palavras por vez)"
 
-#: ../lib/speedreader.c:577
+#: ../lib/speedreader.c:586
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "Este é um utilitário fácil para leitura rápida que o ajuda a treinar a ler mais rápido. Ele faz isso mostrando palavras na tela usando uma taxa de atualização veloz."
 
-#: ../lib/speedreader.c:580
+#: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_Palavras por minuto:"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Marcar parágrafos"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "A_grupamento de palavras:"
 
-#: ../lib/speedreader.c:609
+#: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr ""
+msgstr "Tamanho da _fonte:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed "
 "reading."
 msgstr ""
+"Entre com algum texto que você gostaria de ler aqui.\n"
+"\n"
+"Relaxe e fique confortável, só então pressione Iniciar para começar a leitura rápida."
 
-#: ../lib/speedreader.c:645
+#: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Carrega o conteudo de um arquivo"
 
-#: ../lib/speedreader.c:653
+#: ../lib/speedreader.c:663
+#, fuzzy
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Obter o foco no campo de texto no painel"
+
+#: ../lib/speedreader.c:671
 #, fuzzy
 msgid "Clear the contents of the text field"
 msgstr "Obter o foco no campo de texto no painel"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr ""
+msgstr "I_niciar"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
@@ -242,14 +251,14 @@ msgstr "Entrada não-UTF8 inválida"
 
 #: ../lib/common.c:608
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 #: ../lib/common.c:611
 msgid "warning"
-msgstr ""
+msgstr "aviso"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:685 ../lib/dictd.c:694 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Não foi possível conectar ao servidor."
 
@@ -262,14 +271,13 @@ msgid "Invalid dictionary specified. Please check your preferences."
 msgstr ""
 "Dicionário especificado inválido. Por favor, verifique suas preferências."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
-msgid "Unknown error while quering the server."
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
 msgstr "Erro desconhecido ao consultar o servidor."
 
 #: ../lib/dictd.c:415
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Dicionário:"
+msgstr "Resultados do dicionário:"
 
 #: ../lib/dictd.c:418
 #, c-format
@@ -284,9 +292,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Pesquisar por \"%s\" usando \"%s\""
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "Serviço web"
+msgstr "Pesquisa na web:"
 
 #: ../lib/dictd.c:461
 #, c-format
@@ -295,61 +302,65 @@ msgid_plural "%d definitions found."
 msgstr[0] "%d definição encontrada."
 msgstr[1] "%d definições encontradas."
 
-#: ../lib/dictd.c:656
+#: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
 msgstr "Consultando %s..."
 
-#: ../lib/dictd.c:712
+#: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
 msgstr "Um erro aconteceu ao consultar informações do servidor."
 
-#: ../lib/dictd.c:723
+#: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informações do servidor para  \"%s\""
 
-#: ../lib/dictd.c:803
+#: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
 msgstr "O servidor não oferece nenhum banco de dados."
 
-#: ../lib/gui.c:566
+#: ../lib/gui.c:344
+msgid "Copy Link"
+msgstr "Copiar link"
+
+#: ../lib/gui.c:672
 msgid "_File"
 msgstr "_Arquivo"
 
-#: ../lib/gui.c:571 ../lib/gui.c:675
+#: ../lib/gui.c:677 ../lib/gui.c:782
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Leitor _Rápido"
 
-#: ../lib/gui.c:592
+#: ../lib/gui.c:698
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../lib/gui.c:696
+#: ../lib/gui.c:803
 msgid "Search with:"
 msgstr "Pesquisar:"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:807
 msgid "_Dictionary Server"
 msgstr "Servidor de _dicionário"
 
-#: ../lib/gui.c:706
+#: ../lib/gui.c:813
 msgid "_Web Service"
 msgstr "Serviço _web"
 
-#: ../lib/gui.c:714
+#: ../lib/gui.c:821
 msgid "_Spell Checker"
 msgstr "_Corretor ortográfico"
 
-#: ../lib/gui.c:839
+#: ../lib/gui.c:949
 msgid "Xfce4 Dictionary"
 msgstr "Dicionário do Xfce4"
 
-#: ../lib/gui.c:848
-msgid "Copyright © 2006-2009 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+#: ../lib/gui.c:958
+msgid "Copyright © 2006-2011 Enrico Tröger"
+msgstr "Copyright © 2006-2011 Enrico Tröger"
 
-#: ../lib/gui.c:851
+#: ../lib/gui.c:961
 msgid "translator-credits"
 msgstr ""
 "Bruno Jesus <00cpxxx@gmail.com>\n"
@@ -440,22 +451,19 @@ msgstr "<b>Cores:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Links:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Cor da fonética:"
+msgstr "Fonética:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr " \"%s\" está escrito de forma correta."
+msgstr "Escrito corretamente:"
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr " \"%s\" está escrito de forma correta."
+msgstr "Escrito incorretamente:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -502,7 +510,6 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
