@@ -112,9 +112,9 @@ msgid "Suggestions for \"%s\" (%s):"
 msgstr "Sugestões para  \"%s\" (%s):"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr " \"%s\" está escrito de forma correta."
+msgstr " \"%s\" está escrito corretamente (%)."
 
 #: ../lib/spell.c:134
 #, c-format
@@ -221,15 +221,13 @@ msgid "Load the contents of a file"
 msgstr "Carrega o conteudo de um arquivo"
 
 #: ../lib/speedreader.c:663
-#, fuzzy
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Obter o foco no campo de texto no painel"
+msgstr "Limpa o conteudo do campo de texto e cola o conteudo da área de transferência"
 
 #: ../lib/speedreader.c:671
-#, fuzzy
 msgid "Clear the contents of the text field"
-msgstr "Obter o foco no campo de texto no painel"
+msgstr "Limpar o conteudo do campo de texto"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
