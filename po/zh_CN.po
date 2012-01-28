@@ -3,13 +3,13 @@
 # This file is distributed under the same license as
 # the xfce4-dict package.
 # Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.
-# Chipong Luo <chipong_l@yahoo.com>, 2011.
+# Chipong Luo <chipong_l@yahoo.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-25 04:01+0000\n"
+"POT-Creation-Date: 2012-01-28 08:39+0000\n"
 "PO-Revision-Date: 2010-01-14 22:32+0800\n"
 "Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
@@ -43,15 +43,15 @@ msgstr "搜索短语"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr "使用词典服务器(RFC 2229)搜索给定的文本"
+msgstr "使用词典服务器(RFC 2229)搜索给定的文字"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr "使用基于网络的搜索引擎搜索给定的文本"
+msgstr "使用基于网络的搜索引擎搜索给定的文字"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr "使用拼写检查器检查给定的文本"
+msgstr "使用拼写检查器检查给定的文字"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
@@ -63,7 +63,7 @@ msgstr "即使面板已载入也启动的独立应用程序"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "捕获之前选择的内容并作为搜索内容"
+msgstr "捕获之前选择的内容并作为搜索文字"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -75,7 +75,7 @@ msgstr "显示版本信息"
 
 #: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
-msgstr "[文本]"
+msgstr "[文字]"
 
 #: ../src/xfce4-dict.c:147
 #, c-format
@@ -84,7 +84,7 @@ msgstr "请向 <%s> 报告缺陷。"
 
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
 msgid "A client program to query different dictionaries."
-msgstr "用于查询不同词典的客户端程序"
+msgstr "查询不同词典的客户端程序。"
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
@@ -103,7 +103,7 @@ msgstr[0] "找到 %d 条建议。"
 #: ../lib/spell.c:105
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "对 “%s”(%s) 的拼写建议："
+msgstr "对 “%s”(%s) 的建议："
 
 #: ../lib/spell.c:122
 #, c-format
@@ -113,18 +113,18 @@ msgstr "“%s” 拼写正确(%s)。"
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "找不到 “%s”(%s) 的相关拼写建议。"
+msgstr "未能找到对 “%s”(%s) 的建议。"
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "执行 “%s” 时出错(%s)。"
+msgstr "执行 “%s”(%s)时出错。"
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "请在首选项对话框中设定拼写检查命令。"
+msgstr "请在首选项对话框中设置拼写检查命令。"
 
 #: ../lib/spell.c:208 ../lib/common.c:224
 msgid "Invalid input"
@@ -133,7 +133,7 @@ msgstr "无效输入"
 #: ../lib/spell.c:247
 #, c-format
 msgid "Process failed (%s)"
-msgstr "无法执行(%s)。"
+msgstr "无法执行(%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
@@ -157,7 +157,7 @@ msgstr "语速训练器"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr "您必须输入一段文本。"
+msgstr "您必须输入一段文字。"
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
@@ -166,7 +166,7 @@ msgstr "选择要载入的文件"
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "无法载入 ‘%s’ 文件。"
+msgstr "未能载入 ‘%s’ 文件。"
 
 #: ../lib/speedreader.c:561
 #, c-format
@@ -179,8 +179,8 @@ msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr ""
-"这是一个简单的帮助您读得更快的语速训练工具。其原理是在屏幕上快速"
-"闪过不同的单词。"
+"这是一个简单的帮助您读得更快的语速训练工具。"
+"其原理是在屏幕上快速闪过不同的单词。"
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -192,7 +192,7 @@ msgstr "标记段落(_M)"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr "单词分组(_G)："
+msgstr "单词组(_G)："
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
@@ -205,13 +205,14 @@ msgid ""
 "Be relaxed and make yourself comfortable, then press Start to begin speed "
 "reading."
 msgstr ""
-"在此输入一些您要阅读的内容。\n"
+"在此输入一些您要阅读的文字。\n"
 "\n"
-"放松并处于舒适状态，然后点击开始进行语速训练。"
+"放松并处于舒适状态，然后点击开始进行"
+"语速训练。"
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
-msgstr "读取文件内容"
+msgstr "载入文件的内容"
 
 #: ../lib/speedreader.c:663
 msgid ""
@@ -228,11 +229,11 @@ msgstr "开始(_S)"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
-msgstr "搜索地址是空的。请检查您的首选项设置。"
+msgstr "搜索 URL 是空的。请检查您的首选项。"
 
 #: ../lib/common.c:195
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "无法打开浏览器。请检查您的首选项设置。"
+msgstr "未能打开浏览器。请检查您的首选项。"
 
 #: ../lib/common.c:234
 msgid "Invalid non-UTF8 input"
@@ -249,7 +250,7 @@ msgstr "警告"
 #: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
 #: ../lib/dictd.c:804
 msgid "Could not connect to server."
-msgstr "无法与服务器连接。"
+msgstr "未能与服务器连接。"
 
 #: ../lib/dictd.c:385
 msgid "The server is not ready."
@@ -257,7 +258,7 @@ msgstr "服务器未就绪。"
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "指定的词典无效。请检查您的首选项设置。"
+msgstr "指定的词典无效。请检查您的首选项。"
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
 msgid "Unknown error while querying the server."
@@ -270,7 +271,7 @@ msgstr "词典结果："
 #: ../lib/dictd.c:418
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "找不到与 “%s” 相匹配的条目。"
+msgstr "未能找到与 “%s” 匹配的。"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
@@ -296,7 +297,7 @@ msgstr "正在查询 %s..."
 
 #: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
-msgstr "在服务器信息中查询时发生错误。"
+msgstr "在服务器信息中查询时出错。"
 
 #: ../lib/dictd.c:741
 #, c-format
@@ -305,7 +306,7 @@ msgstr "“%s” 的服务器信息"
 
 #: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
-msgstr "服务器不提供任何数据库。"
+msgstr "服务器没有提供任何数据库。"
 
 #: ../lib/gui.c:344
 msgid "Copy Link"
@@ -337,21 +338,21 @@ msgstr "网络服务(_W)"
 
 #: ../lib/gui.c:821
 msgid "_Spell Checker"
-msgstr "拼写检查(_S)"
+msgstr "拼写检查器(_S)"
 
 #: ../lib/gui.c:949
 msgid "Xfce4 Dictionary"
-msgstr "Xfce4 词典"
+msgstr "Xfce 4 词典"
 
 #: ../lib/gui.c:958
 msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Enrico Tröger 2006-2010 版权所有"
+msgstr "Enrico Tröger 2006-2011 版权所有"
 
 #: ../lib/gui.c:961
 msgid "translator-credits"
 msgstr ""
 "Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.\n"
-"Chipong Luo <chipong_l@yahoo.com>, 2011."
+"Chipong Luo <chipong_l@yahoo.com>, 2011, 2012."
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -423,7 +424,7 @@ msgstr "网络服务"
 
 #: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
-msgstr "拼写检查"
+msgstr "拼写检查器"
 
 #: ../lib/prefs.c:338
 msgid "Last used method"
@@ -479,30 +480,31 @@ msgstr "词典："
 
 #: ../lib/prefs.c:499
 msgid "* (use all)"
-msgstr "* (使用所有)"
+msgstr "*(使用所有)"
 
 #: ../lib/prefs.c:501
 msgid "! (use all, stop after first match)"
-msgstr "!(使用所有，在第一次匹配后停止)"
+msgstr "!(使用所有，在第一个匹配处停止)"
 
 #: ../lib/prefs.c:595
 msgid "<b>Web search URL:</b>"
-msgstr "<b>网络搜索地址：</b>"
+msgstr "<b>网络搜索 URL：</b>"
 
 #: ../lib/prefs.c:601
 msgid "URL:"
-msgstr "地址："
+msgstr "URL："
 
 #: ../lib/prefs.c:621
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"输入一个提供翻译或词典服务网站的网址。使用 {word} 作为占位符代表搜索的单词。"
+"输入一个提供翻译或词典服务网站的 URL。"
+"使用 {word} 作为占位符代表搜索的单词。"
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
-msgstr "用于拼写检查的程序："
+msgstr "拼写检查程序："
 
 #: ../lib/prefs.c:662
 msgid ""
@@ -510,6 +512,7 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>拼写检查程序可以是 ‘enchant’，‘aspell’，‘ispell’ 或其它与 ispell "
-"命令兼容的拼写检查程序。\n"
+"<i>拼写检查程序可以是 ‘enchant’、"
+"‘aspell’、‘ispell’ 或任何其它与 "
+"ispell 命令兼容的拼写检查程序。\n"
 "图标将显示输入的命令是否存在。</i>"
