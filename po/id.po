@@ -7,13 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-26 05:02+0000\n"
+"POT-Creation-Date: 2012-01-29 02:03+0000\n"
 "PO-Revision-Date: 2009-01-27 22:53+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
@@ -21,13 +22,13 @@ msgid "A plugin to query different dictionaries."
 msgstr "Plugin untuk kueri berbagai kamus."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:628 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Kamus"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:347
 #: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:411
+#: ../lib/spell.c:243 ../lib/gui.c:517
 msgid "Ready"
 msgstr "Siap"
 
@@ -35,7 +36,7 @@ msgstr "Siap"
 msgid "Look up a word"
 msgstr "Mencari kata"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:652
+#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
 msgid "Search term"
 msgstr "Istilah penelusuran"
 
@@ -61,7 +62,8 @@ msgstr "Mulai aplikasi mandiri bahkan jika plugin panel dimuat"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Ambil isi seleksi UTAMA dan gunakan isi tersebut sebagai teks penelusuran"
+msgstr ""
+"Ambil isi seleksi UTAMA dan gunakan isi tersebut sebagai teks penelusuran"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -80,7 +82,7 @@ msgstr "[TEKS]"
 msgid "Please report bugs to <%s>."
 msgstr "Silakan laporkan kutu ke <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:851
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
 msgid "A client program to query different dictionaries."
 msgstr "Program klien untuk kueri beragam kamus."
 
@@ -173,8 +175,13 @@ msgid_plural "(display %d words at a time)"
 msgstr[0] "(tampilkan %d kata sekaligus)"
 
 #: ../lib/speedreader.c:586
-msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
-msgstr "Ini adalah utilitas membaca cepat mudah yang membantu anda berlatih membaca secara cepat. Caranya adalah menampilkan kilasan kata pada tingkat kecepatan tertentu di layar."
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr ""
+"Ini adalah utilitas membaca cepat mudah yang membantu anda berlatih membaca "
+"secara cepat. Caranya adalah menampilkan kilasan kata pada tingkat kecepatan "
+"tertentu di layar."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -196,17 +203,20 @@ msgstr "Ukuran _Fonta:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed "
+"reading."
 msgstr ""
 "Masukkan kalimat di sini yang ingin anda baca.\n"
-"\\Bersantailah dan buat diri anda senyaman mungkin, kemudian tekan Mulai untuk memulai membaca cepat."
+"\\Bersantailah dan buat diri anda senyaman mungkin, kemudian tekan Mulai "
+"untuk memulai membaca cepat."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Memuat isi berkas"
 
 #: ../lib/speedreader.c:663
-msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Hapus isi dari ruang teks kemudian salin isi dari papan klip"
 
 #: ../lib/speedreader.c:671
@@ -298,43 +308,47 @@ msgstr "Informasi Server untuk \"%s\""
 msgid "The server doesn't offer any databases."
 msgstr "Server tidak menawarkan basis data apapun."
 
-#: ../lib/gui.c:566
+#: ../lib/gui.c:344
+msgid "Copy Link"
+msgstr "Salin Tautan"
+
+#: ../lib/gui.c:672
 msgid "_File"
 msgstr "_Berkas"
 
-#: ../lib/gui.c:571 ../lib/gui.c:676
+#: ../lib/gui.c:677 ../lib/gui.c:782
 msgid "Speed _Reader"
 msgstr "Pembaca _Cepat"
 
-#: ../lib/gui.c:592
+#: ../lib/gui.c:698
 msgid "_Help"
 msgstr "B_antuan"
 
-#: ../lib/gui.c:697
+#: ../lib/gui.c:803
 msgid "Search with:"
 msgstr "Telusuri dengan:"
 
-#: ../lib/gui.c:701
+#: ../lib/gui.c:807
 msgid "_Dictionary Server"
 msgstr "Server _Kamus"
 
-#: ../lib/gui.c:707
+#: ../lib/gui.c:813
 msgid "_Web Service"
 msgstr "Layanan _Web"
 
-#: ../lib/gui.c:715
+#: ../lib/gui.c:821
 msgid "_Spell Checker"
 msgstr "_Pemeriksa Ejaan"
 
-#: ../lib/gui.c:843
+#: ../lib/gui.c:949
 msgid "Xfce4 Dictionary"
 msgstr "Kamus Xfce4"
 
-#: ../lib/gui.c:852
+#: ../lib/gui.c:958
 msgid "Copyright © 2006-2011 Enrico Tröger"
 msgstr "Hak Cipta © 2006-2011 Enrico Tröger"
 
-#: ../lib/gui.c:855
+#: ../lib/gui.c:961
 msgid "translator-credits"
 msgstr "Andhika Padmawan <andhika.padmawan@gmail.com>, 2008."
 
@@ -479,8 +493,12 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "Masukkan URL situs web yang menawarkan penerjemahan atau layanan kamus. Gunakan {kata} sebagai tempat peletakan kata yang ditelusuri."
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Masukkan URL situs web yang menawarkan penerjemahan atau layanan kamus. "
+"Gunakan {kata} sebagai tempat peletakan kata yang ditelusuri."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -488,10 +506,12 @@ msgstr "Program Pemeriksa Ejaan:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Program pemeriksa ejaan dapat berupa 'enchant', 'aspell', 'ispell' atau program pemeriksa ejaan lain yang serasi dengan perintah ispell.\n"
+"<i>Program pemeriksa ejaan dapat berupa 'enchant', 'aspell', 'ispell' atau "
+"program pemeriksa ejaan lain yang serasi dengan perintah ispell.\n"
 "Ikon menunjukkan apakah perintah yang dimasukkan ada.</i>"
 
 #~ msgid "You must set a valid search URL."
