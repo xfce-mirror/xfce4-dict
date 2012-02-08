@@ -3,13 +3,13 @@
 # This file is distributed under the same license as
 # the xfce4-dict package.
 # Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.
-# Chipong Luo <chipong_l@yahoo.com>, 2011, 2012.
+# Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 08:39+0000\n"
+"POT-Creation-Date: 2012-02-08 05:39+0000\n"
 "PO-Revision-Date: 2010-01-14 22:32+0800\n"
 "Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
@@ -179,8 +179,8 @@ msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr ""
-"这是一个简单的帮助您读得更快的语速训练工具。"
-"其原理是在屏幕上快速闪过不同的单词。"
+"这是一个简单的帮助您读得更快的语速训练工具。其原理是在屏幕上快速闪过不同的单"
+"词。"
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -207,8 +207,7 @@ msgid ""
 msgstr ""
 "在此输入一些您要阅读的文字。\n"
 "\n"
-"放松并处于舒适状态，然后点击开始进行"
-"语速训练。"
+"放松并处于舒适状态，然后点击开始进行语速训练。"
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -499,8 +498,7 @@ msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"输入一个提供翻译或词典服务网站的 URL。"
-"使用 {word} 作为占位符代表搜索的单词。"
+"输入一个提供翻译或词典服务网站的 URL。使用 {word} 作为占位符代表搜索的单词。"
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -512,7 +510,6 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>拼写检查程序可以是 ‘enchant’、"
-"‘aspell’、‘ispell’ 或任何其它与 "
-"ispell 命令兼容的拼写检查程序。\n"
+"<i>拼写检查程序可以是 ‘enchant’、‘aspell’、‘ispell’ 或任何其它与 ispell 命令"
+"兼容的拼写检查程序。\n"
 "图标将显示输入的命令是否存在。</i>"
