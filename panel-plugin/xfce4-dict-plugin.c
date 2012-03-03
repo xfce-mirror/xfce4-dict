@@ -85,7 +85,7 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 	gint size;
 	gint bsize = wsize;
 
-#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 	bsize /= xfce_panel_plugin_get_nrows(plugin);
 #endif
 
@@ -96,11 +96,11 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(dpd->panel_button_image), dpd->dd->icon);
 
-#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 	if (dpd->dd->show_panel_entry &&
 		xfce_panel_plugin_get_mode(dpd->plugin) != XFCE_PANEL_PLUGIN_MODE_VERTICAL)
 	{
-		xfce_panel_plugin_set_small (plugin, FALSE);
+		xfce_panel_plugin_set_small(plugin, FALSE);
 		if (xfce_panel_plugin_get_mode(dpd->plugin) == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL)
 			gtk_widget_set_size_request(dpd->dd->panel_entry, dpd->dd->panel_entry_size, -1);
 		else
@@ -111,7 +111,7 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 	else
 	{
 		gtk_widget_hide(dpd->dd->panel_entry);
-		xfce_panel_plugin_set_small (plugin, TRUE);
+		xfce_panel_plugin_set_small(plugin, TRUE);
 	}
 #else
 	if (dpd->dd->show_panel_entry &&
@@ -276,7 +276,7 @@ static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictPanelData *dpd)
 }
 
 
-#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 static void dict_plugin_panel_change_mode(XfcePanelPlugin *plugin,
 												 XfcePanelPluginMode mode, DictPanelData *dpd)
 {
@@ -444,8 +444,8 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->close_button, "clicked", G_CALLBACK(dict_plugin_close_button_clicked), dpd);
 	g_signal_connect(plugin, "free-data", G_CALLBACK(dict_plugin_free_data), dpd);
 	g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_plugin_panel_set_size), dpd);
-#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
-	g_signal_connect(plugin, "mode-changed", G_CALLBACK (dict_plugin_panel_change_mode), dpd);
+#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
+	g_signal_connect(plugin, "mode-changed", G_CALLBACK(dict_plugin_panel_change_mode), dpd);
 #else
 	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_plugin_panel_change_orientation), dpd);
 #endif
