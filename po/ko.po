@@ -513,7 +513,7 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "번역 혹은 사전 서비스를 제공하는 웹 사이트의 URL을 입력합니다. 검색 단어를 위해 {word}를 자리 표시로 사용합니다."
+msgstr "번역 또는 사전 서비스를 제공하는 웹 사이트의 URL을 입력합니다. 검색 단어를 위해 {word}를 자리 표시로 사용합니다."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
