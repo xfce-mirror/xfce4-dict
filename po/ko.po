@@ -84,7 +84,7 @@ msgstr "자세히 출력"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
-msgstr "버전 정보 보이기"
+msgstr "버전 정보 보기"
 
 #: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
