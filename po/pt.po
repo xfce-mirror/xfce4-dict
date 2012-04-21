@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-20 10:03+0000\n"
-"PO-Revision-Date: 2012-01-17 16:14-0000\n"
-"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2012-04-21 15:59+0100\n"
+"Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr "Um \"plug-in\" para consultar diversos dicionários"
+msgstr "Um \"plugin\" para consultar diversos dicionários."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2
@@ -64,7 +64,7 @@ msgstr "Obter o foco no campo de texto do painel"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Iniciar aplicação mesmo se o \"plug-in\" no painel estiver carregado"
+msgstr "Iniciar aplicação mesmo se o \"plugin\" no painel estiver carregado"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -85,12 +85,12 @@ msgstr "[TEXTO]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Por favor, reporte erros em <%s>"
+msgstr "Por favor, reporte erros em <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:1
 #: ../lib/gui.c:957
 msgid "A client program to query different dictionaries."
-msgstr "Um programa para consultar diversos dicionários"
+msgstr "Um programa para consultar diversos dicionários."
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
@@ -115,23 +115,23 @@ msgstr "Sugestões para \"%s\" (%s):"
 #: ../lib/spell.c:122
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" está bem escrito (%s)"
+msgstr "\"%s\" está bem escrito (%s)."
 
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Sem sugestões para \"%s\" (%s)"
+msgstr "Sem sugestões para \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Erro ao executar \"%s\" (%s)"
+msgstr "Erro ao executar \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Por favor, defina o comando do verificador no diálogo de preferências"
+msgstr "Por favor, defina o comando do verificador no diálogo de preferências."
 
 #: ../lib/spell.c:208
 #: ../lib/common.c:224
@@ -166,16 +166,16 @@ msgstr "Leitura rápida"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr "Tem que introduzir um texto"
+msgstr "Tem que introduzir um texto."
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr "Escolha o ficheiro a carregar"
+msgstr "Escolha o ficheiro a carregar."
 
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "O ficheiro \"%s\" não pôde ser carregado"
+msgstr "O ficheiro \"%s\" não pôde ser carregado."
 
 #: ../lib/speedreader.c:561
 #, c-format
@@ -186,7 +186,7 @@ msgstr[1] "(exibir %d palavras de cada vez)"
 
 #: ../lib/speedreader.c:586
 msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
-msgstr "Um utilitário para o treinar a ler rapidamente. Funciona através de palavras intermitentes no ecrã durante um curto intervalo"
+msgstr "Um utilitário para o treinar a ler rapidamente. Funciona através de palavras intermitentes no ecrã durante um curto intervalo."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -256,11 +256,11 @@ msgstr "aviso"
 #: ../lib/dictd.c:795
 #: ../lib/dictd.c:804
 msgid "Could not connect to server."
-msgstr "Não foi possível ligar ao servidor"
+msgstr "Não foi possível ligar ao servidor."
 
 #: ../lib/dictd.c:385
 msgid "The server is not ready."
-msgstr "O servidor não está pronto"
+msgstr "O servidor não está pronto."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
@@ -270,7 +270,7 @@ msgstr "O dicionário especificado é inválido. Por favor, verifique as prefer�
 #: ../lib/dictd.c:456
 #: ../lib/dictd.c:829
 msgid "Unknown error while querying the server."
-msgstr "Erro desconhecido ao consultar o servidor"
+msgstr "Erro desconhecido ao consultar o servidor."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
@@ -279,7 +279,7 @@ msgstr "Resultados do dicionário:"
 #: ../lib/dictd.c:418
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Sem correspondências para \"%s\""
+msgstr "Sem correspondências para \"%s\"."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
@@ -296,8 +296,8 @@ msgstr "Procura web:"
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d definição encontrada"
-msgstr[1] "%d definições encontradas"
+msgstr[0] "%d definição encontrada."
+msgstr[1] "%d definições encontradas."
 
 #: ../lib/dictd.c:669
 #, c-format
@@ -306,7 +306,7 @@ msgstr "A consultar %s..."
 
 #: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
-msgstr "Ocorreu um erro ao consultar a informação do servidor"
+msgstr "Ocorreu um erro ao consultar a informação do servidor."
 
 #: ../lib/dictd.c:741
 #, c-format
@@ -315,7 +315,7 @@ msgstr "Informações do servidor para \"%s\""
 
 #: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
-msgstr "O servidor não oferece qualquer base de dados"
+msgstr "O servidor não oferece qualquer base de dados."
 
 #: ../lib/gui.c:344
 msgid "Copy Link"
@@ -332,7 +332,7 @@ msgstr "Leitura _rápida"
 
 #: ../lib/gui.c:698
 msgid "_Help"
-msgstr "Aj_uda"
+msgstr "_Ajuda"
 
 #: ../lib/gui.c:803
 msgid "Search with:"
@@ -360,7 +360,7 @@ msgstr "Direitos de autor © 2006-2011 Enrico Tröger"
 
 #: ../lib/gui.c:961
 msgid "translator-credits"
-msgstr "Nuno Miguel <nunis@netcabo.pt>"
+msgstr "Nuno Miguel <nunomgue@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -412,7 +412,7 @@ msgstr "Limpar"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr "Escolheu um dicionário inválido"
+msgstr "Escolheu um dicionário inválido."
 
 #: ../lib/prefs.c:303
 msgid "General"
