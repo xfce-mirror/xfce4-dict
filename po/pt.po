@@ -1,14 +1,14 @@
 # European Portuguese translation of the xfce4-dict-plugin package.
 # Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict package.
-# Nuno Miguel <nunis@netcabo.pt>, 2007, 2008, 2009, 2010.
+# Nuno Miguel <nunomgue@gmail.com>, 2007-2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-20 10:03+0000\n"
-"PO-Revision-Date: 2012-04-21 15:59+0100\n"
+"PO-Revision-Date: 2012-04-23 23:26+0100\n"
 "Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -104,8 +104,8 @@ msgstr "Resultados do verificador ortográfico:"
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "%d sugestão encontrada"
-msgstr[1] "%d sugestões encontradas"
+msgstr[0] "%d sugestão encontrada."
+msgstr[1] "%d sugestões encontradas."
 
 #: ../lib/spell.c:105
 #, c-format
@@ -210,9 +210,9 @@ msgid ""
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
-"Indique aqui o texto que pretende ler\n"
+"Indique aqui o texto que pretende ler.\n"
 "\n"
-"Agora, prima Iniciar para começar a leitura rápida"
+"Relaxe e ponha-se confortável, prima Iniciar para começar a leitura rápida."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -232,11 +232,11 @@ msgstr "_Iniciar"
 
 #: ../lib/common.c:189
 msgid "The search URL is empty. Please check your preferences."
-msgstr "O URL de pesquisa está vazia. Por favor, verifique as preferências"
+msgstr "O URL de pesquisa está vazia. Por favor, verifique as preferências."
 
 #: ../lib/common.c:195
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "O navegador não pôde ser aberto. Por favor, verifique as preferências"
+msgstr "O navegador não pôde ser aberto. Por favor, verifique as preferências."
 
 #: ../lib/common.c:234
 msgid "Invalid non-UTF8 input"
@@ -264,7 +264,7 @@ msgstr "O servidor não está pronto."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "O dicionário especificado é inválido. Por favor, verifique as preferências"
+msgstr "O dicionário especificado é inválido. Por favor, verifique as preferências."
 
 #: ../lib/dictd.c:400
 #: ../lib/dictd.c:456
@@ -508,7 +508,7 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "Indique o URL de um sítio web que forneça serviços de tradução ou de dicionários. Use {word} como marcador de posição para a palavra pesquisada"
+msgstr "Indique o URL de um sítio web que forneça serviços de tradução ou de dicionários. Use {word} como marcador de posição para a palavra pesquisada."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -519,6 +519,6 @@ msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>O programa de verificação ortográfica pode ser \"enchant\", \"aspell\", \"ispell\" ou qualquer outro que seja compatível com o comando \"ispell\"\n"
-"O ícone mostra se o comando introduzido existe</i>"
+"<i>O programa de verificação ortográfica pode ser \"enchant\", \"aspell\", \"ispell\" ou qualquer outro que seja compatível com o comando \"ispell\".\n"
+"O ícone mostra se o comando introduzido existe.</i>"
 
