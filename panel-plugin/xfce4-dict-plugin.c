@@ -24,9 +24,8 @@
 #include <stdlib.h>
 #include <gtk/gtk.h>
 
-#include <libxfcegui4/libxfcegui4.h>
+#include <libxfce4ui/libxfce4ui.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
-#include <libxfce4panel/xfce-panel-convenience.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>

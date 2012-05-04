@@ -26,14 +26,14 @@ libdict_la_SOURCES =							\
 
 libdict_la_CFLAGS =								\
 	-I$(top_srcdir)								\
-	$(LIBXFCEGUI4_CFLAGS)						\
+	$(LIBXFCE4UI_CFLAGS)						\
 	$(LIBXFCE4PANEL_CFLAGS)						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
 	@GTHREAD_CFLAGS@
 
 libdict_la_LIBADD =								\
 	$(LIBXFCE4PANEL_LIBS)						\
-	$(LIBXFCEGUI4_LIBS)							\
+	$(LIBXFCE4UI_LIBS)							\
 	@GTHREAD_LIBS@
 
 

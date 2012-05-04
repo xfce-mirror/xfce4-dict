@@ -9,7 +9,7 @@ libxfce4dict_la_SOURCES =						\
 libxfce4dict_la_CFLAGS =						\
 	-I$(top_srcdir)								\
 	-I$(top_srcdir)/lib							\
-	$(LIBXFCEGUI4_CFLAGS)						\
+	$(LIBXFCE4UI_CFLAGS)						\
 	$(LIBXFCE4PANEL_CFLAGS)						\
 	-DG_LOG_DOMAIN=\"xfce4-dict-plugin\"		\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
@@ -17,7 +17,7 @@ libxfce4dict_la_CFLAGS =						\
 
 libxfce4dict_la_LIBADD =						\
 	$(LIBXFCE4PANEL_LIBS)						\
-	$(LIBXFCEGUI4_LIBS)							\
+	$(LIBXFCE4UI_LIBS)							\
 	@GTHREAD_LIBS@								\
 	@X11_LIBS@								\
 	$(top_builddir)/lib/libdict.la
