@@ -491,4 +491,4 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 
 	dict_gui_status_add(dpd->dd, _("Ready"));
 }
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(dict_plugin_construct);
+XFCE_PANEL_PLUGIN_REGISTER(dict_plugin_construct);

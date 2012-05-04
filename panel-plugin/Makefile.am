@@ -1,19 +1,21 @@
-plugindir = $(libexecdir)/xfce4/panel-plugins
-plugin_PROGRAMS = xfce4-dict-plugin
+
+plugindir = $(libdir)/xfce4/panel/plugins
+plugin_LTLIBRARIES = libxfce4dict.la
 
 
-xfce4_dict_plugin_SOURCES =						\
+libxfce4dict_la_SOURCES =						\
 	xfce4-dict-plugin.c
 
-xfce4_dict_plugin_CFLAGS =						\
+libxfce4dict_la_CFLAGS =						\
 	-I$(top_srcdir)								\
 	-I$(top_srcdir)/lib							\
 	$(LIBXFCEGUI4_CFLAGS)						\
 	$(LIBXFCE4PANEL_CFLAGS)						\
+	-DG_LOG_DOMAIN=\"xfce4-dict-plugin\"		\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
 	@GTHREAD_CFLAGS@
 
-xfce4_dict_plugin_LDADD =						\
+libxfce4dict_la_LIBADD =						\
 	$(LIBXFCE4PANEL_LIBS)						\
 	$(LIBXFCEGUI4_LIBS)							\
 	@GTHREAD_LIBS@								\
@@ -21,27 +23,19 @@ xfce4_dict_plugin_LDADD =						\
 	$(top_builddir)/lib/libdict.la
 
 
-# .desktop file
 #
-# Some automake trickery here. Because we cannot use $(libexecdir) in the
-# automake stage, we'll use sed to get the full path into the .desktop file.
-# We also need to let intltool merge the translated fields, so we add an
-# additional level of indirection: a <name>.desktop.in.in file.
+# Desktop file
 #
-desktop_in_in_files = xfce4-dict-plugin.desktop.in.in
-desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
+desktopdir =								\
+	$(datadir)/xfce4/panel/plugins
 
-desktopdir = $(datadir)/xfce4/panel-plugins
-desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+desktop_DATA =								\
+	xfce4-dict-plugin.desktop
+
 @INTLTOOL_DESKTOP_RULE@
 
-# get full path into .desktop file
-%.desktop.in: %.desktop.in.in
-	sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^" 	\
-		$< > $@
-
 EXTRA_DIST =								\
-	$(desktop_in_in_files)
+	xfce4-dict-plugin.desktop.in
 
-DISTCLEANFILES =							\
-	$(desktop_DATA) $(desktop_in_files)
+CLEANFILES =								\
+	$(desktop_DATA)
