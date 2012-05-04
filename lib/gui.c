@@ -34,8 +34,6 @@
 
 #include "common.h"
 #include "gui.h"
-#include "sexy-icon-entry.h"
-#include "searchentry.h"
 #include "inline-icon.h"
 #include "speedreader.h"
 
@@ -499,17 +497,18 @@ static void entry_activate_cb(GtkEntry *entry, DictData *dd)
 }
 
 
-static void entry_icon_pressed_cb(SexyIconEntry *entry, gint icon_pos, gint button, DictData *dd)
+static void entry_icon_release_cb(GtkEntry *entry, GtkEntryIconPosition icon_pos,
+		GdkEventButton *event, DictData *dd)
 {
-	if (button != 1)
+	if (event->button != 1)
 		return;
 
-	if (icon_pos == SEXY_ICON_ENTRY_PRIMARY)
+	if (icon_pos == GTK_ENTRY_ICON_PRIMARY)
 	{
 		entry_activate_cb(NULL, dd);
 		gtk_widget_grab_focus(dd->main_entry);
 	}
-	else if (icon_pos == SEXY_ICON_ENTRY_SECONDARY)
+	else if (icon_pos == GTK_ENTRY_ICON_SECONDARY)
 	{
 		dict_gui_clear_text_buffer(dd);
 		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
@@ -521,11 +520,14 @@ static void entry_icon_pressed_cb(SexyIconEntry *entry, gint icon_pos, gint butt
 
 static void combo_changed_cb(GtkComboBox *combo, DictData *dd)
 {
-	gchar *text = gtk_combo_box_get_active_text(combo);
+	GtkTreeIter iter;
 
-	dict_search_word(dd, text);
-
-	g_free(text);
+	if (gtk_combo_box_get_active_iter(combo, &iter))
+	{
+		gchar *text = gtk_combo_box_get_active_text(combo);
+		dict_search_word(dd, text);
+		g_free(text);
+	}
 }
 
 
@@ -755,15 +757,18 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(label_box);
 	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 5);
 
-	dd->main_combo = xfd_search_entry_new(_("Search term"));
+	dd->main_combo = gtk_combo_box_entry_new_text();
 	gtk_widget_show(dd->main_combo);
 	gtk_box_pack_start(GTK_BOX(label_box), dd->main_combo, TRUE, TRUE, 0);
-	g_signal_connect(dd->main_combo, "active-changed", G_CALLBACK(combo_changed_cb), dd);
+	g_signal_connect(dd->main_combo, "changed", G_CALLBACK(combo_changed_cb), dd);
 
 	dd->main_entry = gtk_bin_get_child(GTK_BIN(dd->main_combo));
+	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), _("Search term"));
+	gtk_entry_set_icon_from_stock(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_PRIMARY, GTK_STOCK_FIND);
+	gtk_entry_set_icon_from_stock(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_SECONDARY, GTK_STOCK_CLEAR);
 	g_signal_connect(dd->main_entry, "changed", G_CALLBACK(entry_changed_cb), dd);
 	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
-	g_signal_connect(dd->main_entry, "icon_released", G_CALLBACK(entry_icon_pressed_cb), dd);
+	g_signal_connect(dd->main_entry, "icon-release", G_CALLBACK(entry_icon_release_cb), dd);
 	g_signal_connect(dd->main_entry, "button-press-event", G_CALLBACK(entry_button_press_cb), dd);
 
 	update_search_button(dd, entry_box);

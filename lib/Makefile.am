@@ -13,10 +13,6 @@ libdict_la_SOURCES =							\
 	libdict.h									\
 	prefs.c										\
 	prefs.h										\
-	sexy-icon-entry.c							\
-	sexy-icon-entry.h							\
-	searchentry.c								\
-	searchentry.h								\
 	speedreader.c								\
 	speedreader.h								\
 	spell.c										\

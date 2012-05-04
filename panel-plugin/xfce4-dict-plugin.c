@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright 2006-2011 Enrico Tröger <enrico(at)xfce(dot)org>
+ *  Copyright 2006-2012 Enrico Tröger <enrico(at)xfce(dot)org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -38,7 +38,6 @@
 #include <string.h>
 
 #include "libdict.h"
-#include "sexy-icon-entry.h"
 
 
 typedef struct
@@ -348,17 +347,18 @@ static void entry_activate_cb(GtkEntry *entry, DictPanelData *dpd)
 }
 
 
-static void entry_icon_pressed_cb(SexyIconEntry *entry, gint pos, gint button, DictPanelData *dpd)
+static void entry_icon_release_cb(GtkEntry *entry, GtkEntryIconPosition icon_pos,
+		GdkEventButton *event, DictPanelData *dpd)
 {
-	if (button != 1)
+	if (event->button != 1)
 		return;
 
-	if (pos == SEXY_ICON_ENTRY_PRIMARY)
+	if (icon_pos == GTK_ENTRY_ICON_PRIMARY)
 	{
 		entry_activate_cb(NULL, dpd);
 		gtk_widget_grab_focus(dpd->dd->main_entry);
 	}
-	else if (pos == SEXY_ICON_ENTRY_SECONDARY)
+	else if (icon_pos == GTK_ENTRY_ICON_SECONDARY)
 	{
 		dict_gui_clear_text_buffer(dpd->dd);
 		gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), "");
@@ -461,10 +461,11 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->pref_menu_item, "activate", G_CALLBACK(dict_plugin_properties_dialog), dpd);
 
 	/* panel entry */
-	dpd->dd->panel_entry = sexy_icon_entry_new_full(NULL, "gtk-clear");
+	dpd->dd->panel_entry = gtk_entry_new();
+	gtk_entry_set_icon_from_stock(GTK_ENTRY(dpd->dd->panel_entry), GTK_ENTRY_ICON_SECONDARY, GTK_STOCK_CLEAR);
 	gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), 25);
 	gtk_entry_set_text(GTK_ENTRY(dpd->dd->panel_entry), _("Search term"));
-	g_signal_connect(dpd->dd->panel_entry, "icon_released", G_CALLBACK(entry_icon_pressed_cb), dpd);
+	g_signal_connect(dpd->dd->panel_entry, "icon-release", G_CALLBACK(entry_icon_release_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "activate", G_CALLBACK(entry_activate_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "button-press-event", G_CALLBACK(entry_buttonpress_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "changed", G_CALLBACK(entry_changed_cb), dpd);
