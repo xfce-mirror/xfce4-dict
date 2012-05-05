@@ -15,6 +15,13 @@ libxfce4dict_la_CFLAGS =						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
 	@GTHREAD_CFLAGS@
 
+libxfce4dict_la_LDFLAGS = \
+	-avoid-version								\
+	-module										\
+	-no-undefined								\
+	-export-symbols-regex '^xfce_panel_module_(preinit|init|construct)' \
+	$(PLATFORM_LDFLAGS)
+
 libxfce4dict_la_LIBADD =						\
 	$(LIBXFCE4PANEL_LIBS)						\
 	$(LIBXFCE4UI_LIBS)							\
