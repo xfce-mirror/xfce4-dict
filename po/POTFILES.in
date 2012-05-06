@@ -1,4 +1,4 @@
-panel-plugin/xfce4-dict-plugin.desktop.in.in
+panel-plugin/xfce4-dict-plugin.desktop.in
 panel-plugin/xfce4-dict-plugin.c
 src/popup_plugin.c
 src/xfce4-dict.c
