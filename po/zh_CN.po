@@ -4,41 +4,41 @@
 # the xfce4-dict package.
 # Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.
 # Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
-"Report-Msgid-Bugs-To: <xfce-i18n@xfce.org>\n"
-"POT-Creation-Date: 2012-04-20 06:36+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 00:42+0000\n"
 "PO-Revision-Date: 2010-01-14 22:32+0800\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
-"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "查询不同词典的插件。"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "词典"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:367
+#: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:517
+#: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
 msgstr "就绪"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:432
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "查找单词"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:758
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
 msgstr "搜索短语"
 
@@ -83,7 +83,7 @@ msgstr "[文字]"
 msgid "Please report bugs to <%s>."
 msgstr "请向 <%s> 报告缺陷。"
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "查询不同词典的客户端程序。"
 
@@ -127,7 +127,7 @@ msgstr "执行 “%s”(%s)时出错。"
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "请在首选项对话框中设置拼写检查命令。"
 
-#: ../lib/spell.c:208 ../lib/common.c:224
+#: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
 msgstr "无效输入"
 
@@ -227,23 +227,23 @@ msgstr "清空文本框内容"
 msgid "_Start"
 msgstr "开始(_S)"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr "搜索 URL 是空的。请检查您的首选项。"
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "未能打开浏览器。请检查您的首选项。"
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "无效的非 UTF-8 输入"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "错误"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "警告"
 
@@ -308,47 +308,47 @@ msgstr "“%s” 的服务器信息"
 msgid "The server doesn't offer any databases."
 msgstr "服务器没有提供任何数据库。"
 
-#: ../lib/gui.c:344
+#: ../lib/gui.c:342
 msgid "Copy Link"
 msgstr "复制链接"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:674
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../lib/gui.c:677 ../lib/gui.c:782
+#: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "语速训练器(_R)"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:700
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../lib/gui.c:803
+#: ../lib/gui.c:808
 msgid "Search with:"
 msgstr "搜索方式："
 
-#: ../lib/gui.c:807
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
 msgstr "词典服务器(_D)"
 
-#: ../lib/gui.c:813
+#: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr "网络服务(_W)"
 
-#: ../lib/gui.c:821
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
 msgstr "拼写检查器(_S)"
 
-#: ../lib/gui.c:949
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Xfce 4 词典"
 
-#: ../lib/gui.c:958
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Enrico Tröger 2006-2011 版权所有"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "Enrico Tröger 2006-2012 版权所有"
 
-#: ../lib/gui.c:961
+#: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr ""
 "Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.\n"
