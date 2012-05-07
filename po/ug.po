@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr "ھەر خىل لۇغەتلەرنى سۈرۈشتۈرىدىغان قىستۇرما"
+msgstr "ھەر خىل لۇغەتلەرنى سۈرۈشتۈرىدىغان قىستۇرما."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
@@ -62,7 +62,7 @@ msgstr ""
 # CLI --help
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "panel قىستۇرمىسى قاچىلانغان ئەھۋالدىمۇ ئايرىم پروگرامما سۈپىتىدە قوزغاتسۇن"
+msgstr "تاختا قىستۇرمىسى قاچىلانغان ئەھۋالدىمۇ ئايرىم پروگرامما سۈپىتىدە قوزغاتسۇن"
 
 # CLI --help
 #: ../src/xfce4-dict.c:56
@@ -71,7 +71,7 @@ msgstr ""
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "ئەتراپلىق بولۇش"
 
 # CLI --help
 #: ../src/xfce4-dict.c:58
@@ -142,7 +142,7 @@ msgstr "بىر تەرەپ قىلىش مەغلۇپ بولدى(%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:665
 msgid "P_ause"
-msgstr "توختاپ تۇر(_P)"
+msgstr "ۋاقىتلىق توختا(_A)"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
@@ -236,7 +236,7 @@ msgstr "توركۆرگۈنى ئاچقىلى بولمىدى. تەڭشىكىڭىز
 
 #: ../lib/common.c:234
 msgid "Invalid non-UTF8 input"
-msgstr ""
+msgstr "خاتا UTF8 كىرگۈزۈشى"
 
 #: ../lib/common.c:608
 msgid "Error"
@@ -270,7 +270,7 @@ msgstr "لۇغەت نەتىجىسى:"
 #: ../lib/dictd.c:418
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "\"%s\" نىنغا ماس كېلىدىغان نەرسە تېپىلمىدى."
+msgstr "\"%s\" نىڭغا ماس كېلىدىغان نەرسە تېپىلمىدى."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
@@ -305,7 +305,7 @@ msgstr "\"%s\" نىڭ مۇلازىمېتىر ئۇچۇرلىرى"
 
 #: ../lib/dictd.c:803
 msgid "The server doesn't offer any databases."
-msgstr ""
+msgstr "مۇلازىمېتىردا ھېچقانداق ساندان يوق."
 
 #: ../lib/gui.c:566
 msgid "_File"
@@ -321,7 +321,7 @@ msgstr "ياردەم(_H)"
 
 #: ../lib/gui.c:696
 msgid "Search with:"
-msgstr "تۆۋەندىكى بىلەن ئىزدە: "
+msgstr "تۆۋەندىكى بىلەن ئىزدە:"
 
 #: ../lib/gui.c:700
 msgid "_Dictionary Server"
@@ -345,27 +345,27 @@ msgstr "Copyright c 2006-2010 Enrico Troger"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
-msgstr "Gheyret T.Kenji <gheyret@gmail.com> 2010"
+msgstr "Gheyret T.Kenji <gheyret@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
-msgstr "dict.leo.org - نېمىسچە <-> ئىنگلىزچە"
+msgstr "dict.leo.org - گەرمانچە <-> ئىنگلىزچە"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org - نېمىسچە <-> فرانسۇزچە"
+msgstr "dict.leo.org - گەرمانچە <-> فىرانسۇزچە"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org - نېمىسچە <-> ئىسپانچە"
+msgstr "dict.leo.org - گەرمانچە <-> ئىسپانچە"
 
 #: ../lib/prefs.c:58
 msgid "dict.leo.org - German <-> Italian"
-msgstr "dict.leo.org - نېمىسچە <-> ئىتاليانچە"
+msgstr "dict.leo.org - گەرمانچە <-> ئىتاليانچە"
 
 #: ../lib/prefs.c:59
 msgid "dict.leo.org - German <-> Chinese"
-msgstr "dict.leo.org - نېمىسچە <-> خىتايچە"
+msgstr "dict.leo.org - گەرمانچە <-> خىتايچە"
 
 #: ../lib/prefs.c:60
 msgid "dist.cc - Dictionary"
@@ -433,7 +433,7 @@ msgstr "ئۇلانمىلار:"
 
 #: ../lib/prefs.c:354
 msgid "Phonetics:"
-msgstr ""
+msgstr "فونېتىكا:"
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
@@ -502,6 +502,5 @@ msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>كوررېكتور پروگراممىسى 'enchant'، 'aspell'، 'ispell'  ياكى باشقا ispell بىلەن ماس كېلىدىغان"
-"باشقا كوررېكتور پروگراممىسى بولسا بولىدۇ.\n"
+msgstr "<i>كوررېكتور پروگراممىسى 'enchant'، 'aspell'، 'ispell'  ياكى باشقا ispell بىلەن ماس كېلىدىغان باشقا كوررېكتور پروگراممىسى بولسا بولىدۇ.\n"
 "سىنبەلگە كىرگۈزگەن بۇيرۇق بارمۇ يوق كۆرسىتىپ تۇرىدۇ.</i>"
