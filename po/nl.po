@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-17 04:03+0000\n"
+"POT-Creation-Date: 2012-05-07 06:03+0000\n"
 "PO-Revision-Date: 2011-09-08 12:12+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
@@ -18,26 +18,26 @@ msgstr ""
 "Language: nl (Dutch)\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "Een plugin om verschillende woordenboeken te raadplegen."
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Woordenboek"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:517
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
 msgstr "Klaar"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:413
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "Een woord opzoeken"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
 msgstr "Zoekterm"
 
@@ -59,7 +59,9 @@ msgstr "Plaats de focus op het tekst-invoerveld in de werkbalk"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Start de onafhankelijke toepassing ook als de plugin voor de werkbalk geladen is"
+msgstr ""
+"Start de onafhankelijke toepassing ook als de plugin voor de werkbalk "
+"geladen is"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -82,7 +84,7 @@ msgstr "[TEKST]"
 msgid "Please report bugs to <%s>."
 msgstr "Rapporteer problemen a.u.b. aan <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "Een programma om verschillende woordenboeken te raadplegen."
 
@@ -127,7 +129,7 @@ msgstr "Fout bij het uitvoeren van \"%s\" (%s)."
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Stel een opdracht voor spellingcontrole in, in de voorkeuren-dialoog."
 
-#: ../lib/spell.c:208 ../lib/common.c:224
+#: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
 msgstr "Ongeldige invoer"
 
@@ -177,8 +179,13 @@ msgstr[0] "(toon %d woord per keer)"
 msgstr[1] "(toon %d woorden per keer"
 
 #: ../lib/speedreader.c:586
-msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
-msgstr "Dit is een makkelijk snelleesgereedschapje, om u te helpen met oefenen om sneller te lezen. Het doet dit door woorden in hoog tempo op het scherm op te laten flitsen."
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr ""
+"Dit is een makkelijk snelleesgereedschapje, om u te helpen met oefenen om "
+"sneller te lezen. Het doet dit door woorden in hoog tempo op het scherm op "
+"te laten flitsen."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -200,19 +207,24 @@ msgstr "_Lettertypegrootte:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed "
+"reading."
 msgstr ""
 "Voer hier wat tekst in, die u zou willen lezen.\n"
 "\n"
-"Wees ontspannen en maak het uzelf gemakkelijk; druk daarna op Start om te beginnen met snellezen."
+"Wees ontspannen en maak het uzelf gemakkelijk; druk daarna op Start om te "
+"beginnen met snellezen."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "De inhoud van een bestand laden"
 
 #: ../lib/speedreader.c:663
-msgid "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Maak de inhoud van het tekstveld leeg en plak daarin de inhoud van het klembord"
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
+msgstr ""
+"Maak de inhoud van het tekstveld leeg en plak daarin de inhoud van het "
+"klembord"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -222,23 +234,23 @@ msgstr "Maak de inhoud van het tekstveld leeg"
 msgid "_Start"
 msgstr "_Start"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr "De zoek-URL is leeg. Controleer a.u.b. uw voorkeuren."
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "De browser kon niet geopend worden. Controleer a.u.b. uw voorkeuren."
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "Ongeldige invoer (geen UTF-8)"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "Fout"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "waarschuwing"
 
@@ -304,47 +316,47 @@ msgstr "Server-informatie voor \"%s\""
 msgid "The server doesn't offer any databases."
 msgstr "Deze server biedt geen gegevensbanken aan."
 
-#: ../lib/gui.c:344
+#: ../lib/gui.c:342
 msgid "Copy Link"
 msgstr "Kopieer koppeling"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:674
 msgid "_File"
 msgstr "_Bestand"
 
-#: ../lib/gui.c:677 ../lib/gui.c:782
+#: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "Snel_lezer"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:700
 msgid "_Help"
 msgstr "_Hulp"
 
-#: ../lib/gui.c:803
+#: ../lib/gui.c:808
 msgid "Search with:"
 msgstr "Zoek met:"
 
-#: ../lib/gui.c:807
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
 msgstr "_Woordenboek-server"
 
-#: ../lib/gui.c:813
+#: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr "_Webdienst"
 
-#: ../lib/gui.c:821
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
 msgstr "_Spellingcontrole"
 
-#: ../lib/gui.c:949
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 woordenboek"
 
-#: ../lib/gui.c:958
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Auteursrecht © 2006-2009 Enrico Tröger"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "Auteursrecht © 2006-20012 Enrico Tröger"
 
-#: ../lib/gui.c:961
+#: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr ""
 "Vincent Tunru <projects@vinnl.nl>\n"
@@ -491,7 +503,9 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
 msgstr ""
 "Geef een URL in van een webstek die als woordenboek kan dienen.\n"
 "Gebruik {word} op de plaats van het op te zoeken woord."
@@ -502,10 +516,12 @@ msgstr "Spellingcontrole-programma:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Als spellingcontrole kan 'enchant', 'aspell', 'ispell' of andere programma's die compatibel zijn met ispell gebruikt worden.\n"
+"<i>Als spellingcontrole kan 'enchant', 'aspell', 'ispell' of andere "
+"programma's die compatibel zijn met ispell gebruikt worden.\n"
 "Het pictogram geeft aan of de ingegeven opdracht bestaat.</i>"
 
 #~ msgid "You must set a valid search URL."
