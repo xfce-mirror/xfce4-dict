@@ -12,9 +12,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict.master\n"
-"Report-Msgid-Bugs-To: xfce-i18n <xfce-i18n@xfce.org>\n"
-"POT-Creation-Date: 2012-02-27 16:03+0000\n"
-"PO-Revision-Date: 2012-02-29 05:46+0900\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 22:06+0000\n"
+"PO-Revision-Date: 2012-05-08 12:20+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: xfce-i18n <xfce-i18n@xfce.org>\n"
 "Language: ko\n"
@@ -26,31 +26,31 @@ msgstr ""
 "X-Poedit-Country: KOREA, REPUBLIC OF\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "제각기 다른 사전에 요청하는 플러그인입니다."
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:734
+#: ../lib/gui.c:736
 #: ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "사전"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492
 #: ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243
-#: ../lib/gui.c:517
+#: ../lib/gui.c:516
 msgid "Ready"
 msgstr "준비"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:413
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "단어 찾기"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444
-#: ../lib/gui.c:758
+#: ../panel-plugin/xfce4-dict-plugin.c:467
+#: ../lib/gui.c:766
 msgid "Search term"
 msgstr "용어 검색"
 
@@ -96,7 +96,7 @@ msgid "Please report bugs to <%s>."
 msgstr "<%s>로 버그를 알려주시기 바랍니다."
 
 #: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:957
+#: ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "제각기 다른 사전에 요청하기 위한 클라이언트 프로그램입니다."
 
@@ -141,7 +141,7 @@ msgid "Please set the spell check command in the preferences dialog."
 msgstr "기본 설정 대화상자에서 철자 검사 명령을 설정하여주시기 바랍니다."
 
 #: ../lib/spell.c:208
-#: ../lib/common.c:224
+#: ../lib/common.c:223
 msgid "Invalid input"
 msgstr "질못된 입력"
 
@@ -236,23 +236,23 @@ msgstr "본문 필드 내용 지우기"
 msgid "_Start"
 msgstr "시작(_S)"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr "검색 URL이 비어 있습니다. 기본 설정을 확인하시기 바랍니다."
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "브라우저를 열 수 없습니다. 기본 설정을 확인하시기 바랍니다."
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "잘못된 비 UTF8 입력입니다"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "오류"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "경고"
 
@@ -322,48 +322,48 @@ msgstr "\"%s\"에 대한 서버 정보"
 msgid "The server doesn't offer any databases."
 msgstr "서버가 어떤 데이터베이스도 제공하지 않습니다."
 
-#: ../lib/gui.c:344
+#: ../lib/gui.c:342
 msgid "Copy Link"
 msgstr "연결 복사"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:674
 msgid "_File"
 msgstr "파일(_F)"
 
-#: ../lib/gui.c:677
-#: ../lib/gui.c:782
+#: ../lib/gui.c:679
+#: ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "속독기(_R)"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:700
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: ../lib/gui.c:803
+#: ../lib/gui.c:808
 msgid "Search with:"
 msgstr "검색어:"
 
-#: ../lib/gui.c:807
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
 msgstr "사전 서버(_D)"
 
-#: ../lib/gui.c:813
+#: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr "웹 서비스(_W)"
 
-#: ../lib/gui.c:821
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
 msgstr "철자 검사기(_S)"
 
-#: ../lib/gui.c:949
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 사전"
 
-#: ../lib/gui.c:958
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Copyright © 2006-2011 Enrico Tröger"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "Copyright © 2006-2012 Enrico Tröger"
 
-#: ../lib/gui.c:961
+#: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr "Seong-ho Cho <darkcircle.0426@gmail.com>"
 
