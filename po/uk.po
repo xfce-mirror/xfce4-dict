@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-02 23:01+0000\n"
+"POT-Creation-Date: 2012-05-13 06:30+0000\n"
 "PO-Revision-Date: 2009-01-26 12:01+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -18,26 +18,26 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "Додаток для запиту різних словників."
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Словник"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:517
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
 msgstr "Готово"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:413
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "Дивись вище слово"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
 msgstr "Ключове слово"
 
@@ -83,7 +83,7 @@ msgstr "[ТЕКСТ]"
 msgid "Please report bugs to <%s>."
 msgstr "Надсилайте звіт про помилки на <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "Клієнтська програма для запиту різних словників."
 
@@ -131,7 +131,7 @@ msgstr ""
 "Будь ласка, призначте команду для перевірки орфографії в діалогу "
 "властивостей."
 
-#: ../lib/spell.c:208 ../lib/common.c:224
+#: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
 msgstr "Неправильний ввід"
 
@@ -234,25 +234,25 @@ msgstr "Очищати вміст текстового поля"
 msgid "_Start"
 msgstr "_Почати"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr ""
 "Посилання на пошуковик відсутнє. Будь-ласка перевірте Ваші налаштування."
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr ""
 "Переглядач Web не вдалось відкрити. Будь-ласка перевірте Ваші налаштування."
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "Неправильний не-UTF8 ввід"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "Помилка"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "попередження"
 
@@ -320,47 +320,47 @@ msgstr "Сервер інформації для \"%s\""
 msgid "The server doesn't offer any databases."
 msgstr "Сервер не підтримує жодних баз даних."
 
-#: ../lib/gui.c:344
+#: ../lib/gui.c:342
 msgid "Copy Link"
 msgstr "Скопіювати посилання"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:674
 msgid "_File"
 msgstr "_Файл"
 
-#: ../lib/gui.c:677 ../lib/gui.c:782
+#: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "Швидкість _читання"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:700
 msgid "_Help"
 msgstr "_Довідка"
 
-#: ../lib/gui.c:803
+#: ../lib/gui.c:808
 msgid "Search with:"
 msgstr "Шукати з:"
 
-#: ../lib/gui.c:807
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
 msgstr "Сервер сло_вника"
 
-#: ../lib/gui.c:813
+#: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr "В_еб сервіс"
 
-#: ../lib/gui.c:821
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
 msgstr "Перев_ірка орфографії"
 
-#: ../lib/gui.c:949
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Словник Xfce4"
 
-#: ../lib/gui.c:958
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Права застережено © 2006-2011 Enrico Tröger"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "Всі права застережено © 2006-2012 Enrico Tröger"
 
-#: ../lib/gui.c:961
+#: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr "Dmitry Nikitin <luckas_fb@mai.ru>"
 
