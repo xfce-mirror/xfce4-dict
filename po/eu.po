@@ -348,7 +348,6 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Hiztegia"
 
 #: ../lib/gui.c:963
-#, fuzzy
 msgid "Copyright © 2006-2012 Enrico Tröger"
 msgstr "Copyright © 2006-2012 Enrico Tröger"
 
