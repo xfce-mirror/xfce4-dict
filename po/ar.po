@@ -1,45 +1,43 @@
-# 
+# mohammad <malham1@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-08 16:03+0000\n"
-"PO-Revision-Date: 2011-08-08 16:15-0000\n"
-"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
-"Language-Team: Arabic Xfce Translation Team(فريق تعريب إكسفس) <herr.linux88@gmail.com>\n"
+"POT-Creation-Date: 2012-05-20 20:24+0000\n"
+"PO-Revision-Date: 2012-05-20 23:39+0300\n"
+"Last-Translator: mohammad <malham1@gmail.com>\n"
+"Language-Team: http://www.vertaal.com.ar/files/factory/ar/list/\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Poedit-Language: Arabic\n"
-"Plural-Forms: nplurals=2; plural=1;\n"
 "X-Poedit-Country: Morocco\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "إضافة للمساعد في الاستعلام بقواميس مختلفة."
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:628
-#: ../lib/prefs.c:270
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "قاموس"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473
-#: ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243
-#: ../lib/gui.c:411
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
 msgstr "استعداد"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:413
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "بحث عن كلمة"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444
-#: ../lib/gui.c:652
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
 msgstr "البحث عن مصطلح"
 
@@ -84,8 +82,7 @@ msgstr "[النص]"
 msgid "Please report bugs to <%s>."
 msgstr "الرجاء الابلاغ عن عله <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:851
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "عميل برنامج للاستعلام بقواميس مختلفة."
 
@@ -95,7 +92,7 @@ msgstr "عميل القاموس"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
-msgstr "نتائج التدقيق الإملائي :"
+msgstr "نتائج التدقيق الإملائي:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -128,10 +125,9 @@ msgstr "خطأ اثناء التنفيذ \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "الرجاء تفعيل  الأمر التدقيق الإملائي في مربع الحوار تفضيلات."
+msgstr "الرجاء تفعيل الأمر التدقيق الإملائي في مربع الحوار تفضيلات."
 
-#: ../lib/spell.c:208
-#: ../lib/common.c:224
+#: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
 msgstr "الإدخال غير صالحة"
 
@@ -140,14 +136,13 @@ msgstr "الإدخال غير صالحة"
 msgid "Process failed (%s)"
 msgstr "فشلت العملية (%s)"
 
-#: ../lib/speedreader.c:80
-#: ../lib/speedreader.c:683
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "ايقاف"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr "استئناف"
+msgstr "_استئناف"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
@@ -172,7 +167,7 @@ msgstr "اختيار ملف لتحميل"
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "الملف '%s' لا يمكن تحميله"
+msgstr "الملف '%s' لا يمكن تحميله."
 
 #: ../lib/speedreader.c:561
 #, c-format
@@ -182,30 +177,35 @@ msgstr[0] "(عرض %d كلمة كل مرة)"
 msgstr[1] "(عرض %d كلمات كل مرة)"
 
 #: ../lib/speedreader.c:586
-msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
-msgstr "هذه أداة القراءة السريعة للمساعدة في التدريب على قراءة أسرع. يفعل ذلك من خلال كلمات وامضة بمعدل سريع على الشاشة."
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr ""
+"هذه أداة القراءة السريعة للمساعدة في التدريب على قراءة أسرع. يفعل ذلك من "
+"خلال كلمات وامضة بمعدل سريع على الشاشة."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
-msgstr "كلمة كل دقيقة:"
+msgstr "_كلمة كل دقيقة:"
 
 #: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr "علم الفقرات"
+msgstr "_علم الفقرات"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr "تجميع الكلمات"
+msgstr "تجميع الكلمات:"
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr "حجم الخط"
+msgstr "_حجم الخط:"
 
 #: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed "
+"reading."
 msgstr ""
 "إدخال نص هنا ترغب في قرائته.\n"
 "\n"
@@ -216,7 +216,8 @@ msgid "Load the contents of a file"
 msgstr "تحميل محتويات الملف"
 
 #: ../lib/speedreader.c:663
-msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "مسح محتويات حقل النص ولصق محتويات الحافظة"
 
 #: ../lib/speedreader.c:671
@@ -225,32 +226,29 @@ msgstr "مسح حقل النص"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr "بدء"
+msgstr "_بدء"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr "عنوان الموقع البحث فارغ. يرجى التحقق من خياراتك."
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "لا يمكن فتح المتصفح. يرجى التحقق من خياراتك."
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "مدخلات UTF8 غير صالحة"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "خطأ"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "تحذير"
 
-#: ../lib/dictd.c:379
-#: ../lib/dictd.c:698
-#: ../lib/dictd.c:707
-#: ../lib/dictd.c:795
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
 #: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "تعذر الاتصال بالخادم."
@@ -263,15 +261,13 @@ msgstr "الملقم غير جاهز."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "القاموس المحدد غير صالح . يرجى التحقق من خياراتك."
 
-#: ../lib/dictd.c:400
-#: ../lib/dictd.c:456
-#: ../lib/dictd.c:829
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
 msgid "Unknown error while querying the server."
 msgstr "خطأ غير معروف أثناء الاستعلام عن الملقم."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
-msgstr "النتائج  القاموس:"
+msgstr "نتائج القاموس:"
 
 #: ../lib/dictd.c:418
 #, c-format
@@ -287,14 +283,18 @@ msgstr "بحث \"%s\" باستخدام \"%s\""
 
 #: ../lib/dictd.c:439
 msgid "Web Search:"
-msgstr "البحث في الويب :"
+msgstr "البحث في الويب:"
 
 #: ../lib/dictd.c:461
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "العثور على %d تعريف."
-msgstr[1] "العثور على %d تعريفات."
+msgstr[0] "%d تعريف عُثر عليه."
+msgstr[1] "%d تعريفان عُثر عليهما."
+msgstr[2] "%d تعاريف عُثر عليها."
+msgstr[3] "%d تعاريف عُثر عليها."
+msgstr[4] "%d تعاريف عُثر عليها."
+msgstr[5] "%d تعاريف عُثر عليها."
 
 #: ../lib/dictd.c:669
 #, c-format
@@ -314,49 +314,49 @@ msgstr "معلومات الخادم ل \"%s\""
 msgid "The server doesn't offer any databases."
 msgstr "الملقم لا يوفر أي نوع من قواعد البيانات."
 
-#: ../lib/gui.c:566
-msgid "_File"
-msgstr "ملف"
+#: ../lib/gui.c:342
+msgid "Copy Link"
+msgstr "انسخ الوصلة"
 
-#: ../lib/gui.c:571
-#: ../lib/gui.c:676
+#: ../lib/gui.c:674
+msgid "_File"
+msgstr "_ملف"
+
+#: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "سرعة القراءة"
 
-#: ../lib/gui.c:592
+#: ../lib/gui.c:700
 msgid "_Help"
-msgstr "مساعدة"
+msgstr "_مساعدة"
 
-#: ../lib/gui.c:697
+#: ../lib/gui.c:808
 msgid "Search with:"
-msgstr "بحث باستخدام"
+msgstr "بحث باستخدام:"
 
-#: ../lib/gui.c:701
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
-msgstr "خدمة القاموس"
+msgstr "_خدمة القاموس"
 
-#: ../lib/gui.c:707
+#: ../lib/gui.c:818
 msgid "_Web Service"
-msgstr "خدمة الانترنت"
+msgstr "_خدمة الانترنت"
 
-#: ../lib/gui.c:715
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
-msgstr "مدقق املائي"
+msgstr "_مدقق املائي"
 
-#: ../lib/gui.c:843
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "قاموس Xfce4"
 
-#: ../lib/gui.c:852
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Copyright © 2006-2011 Enrico Tröger"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "حقوق الطبع والنشر © 2006-2012 إنريكو تروغر"
 
-#: ../lib/gui.c:855
+#: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr ""
-"Arabic Xfce Translation Team (فريق تعريب إكسفس)\n"
-"   Karim Oulad Chalha (كريم اولاد الشلحة)   <herr.linux88@gmail.com>\n"
-"   Mohamed Al Hargan(محمد الحرقان)  <malham1@gmail.com>"
+msgstr "Karim Oulad Chalha كريم اولاد الشلحة Mohamed Al Hargan محمد الحرقان"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -400,7 +400,7 @@ msgstr "Wiktionary, القاموس الحر (إنجليزي)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr "Merriam-Webster Online Dictionary"
+msgstr "قاموس Merriam-Webster على الانترنت"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
@@ -408,7 +408,7 @@ msgstr "مسح"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr "اخترت قاموس غير صالح"
+msgstr "اخترت قاموس غير صالح."
 
 #: ../lib/prefs.c:303
 msgid "General"
@@ -418,18 +418,15 @@ msgstr "عام"
 msgid "<b>Default search method:</b>"
 msgstr "<b>طريقة البحث الافتراضية:</b>"
 
-#: ../lib/prefs.c:311
-#: ../lib/prefs.c:472
+#: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
 msgstr "خادم القاموس"
 
-#: ../lib/prefs.c:320
-#: ../lib/prefs.c:593
+#: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
 msgstr "خدمة الإنترنت"
 
-#: ../lib/prefs.c:329
-#: ../lib/prefs.c:643
+#: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
 msgstr "مدقق الإملائي"
 
@@ -443,19 +440,19 @@ msgstr "<b>لون:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr "الروابط :"
+msgstr "الروابط:"
 
 #: ../lib/prefs.c:354
 msgid "Phonetics:"
-msgstr "الصوتيات :"
+msgstr "الصوتيات:"
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
-msgstr "مكتوبة بشكل صحيح :"
+msgstr "مكتوبة بشكل صحيح:"
 
 #: ../lib/prefs.c:356
 msgid "Spelled incorrectly:"
-msgstr "مكتوبة بشكل غير صحيح :"
+msgstr "مكتوبة بشكل غير صحيح:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -468,12 +465,12 @@ msgstr "عرض حقل النص في لوحة"
 #. panel entry size
 #: ../lib/prefs.c:429
 msgid "Text field size:"
-msgstr "حجم حقل النص :"
+msgstr "حجم حقل النص:"
 
 #. server address
 #: ../lib/prefs.c:475
 msgid "Server:"
-msgstr "الخادم :"
+msgstr "الخادم:"
 
 #. server port
 #: ../lib/prefs.c:487
@@ -481,10 +478,9 @@ msgid "Server Port:"
 msgstr "منفذ الخادم:"
 
 #. dictionary
-#: ../lib/prefs.c:495
-#: ../lib/prefs.c:668
+#: ../lib/prefs.c:495 ../lib/prefs.c:668
 msgid "Dictionary:"
-msgstr "القاموس :"
+msgstr "القاموس:"
 
 #: ../lib/prefs.c:499
 msgid "* (use all)"
@@ -503,8 +499,12 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "أدخل URL لموقع الويب الذي يقدم خدمات الترجمة أو القاموس. استخدام {كلمة} لكلمة البحث."
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"أدخل URL لموقع الويب الذي يقدم خدمات الترجمة أو القاموس. استخدام {كلمة} "
+"لكلمة البحث."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -512,9 +512,10 @@ msgstr "برنامج المدقق الإملائي:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<I>يمكن استخدام برنامج التدقيق الإملائي 'enchant', 'aspell', 'ispell'  أو أي برنامج آخر للتدقيق الإملائي الذي يتوافق مع أوامر ispell.\n"
+"<i>يمكن استخدام برنامج التدقيق الإملائي 'enchant', 'aspell', 'ispell' أو أي "
+"برنامج آخر للتدقيق الإملائي الذي يتوافق مع أوامر ispell.\n"
 "الايقونة توضح ما إذا كان أمر الادخال موجود.</i>"
-
