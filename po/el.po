@@ -1,42 +1,43 @@
 #
 # Georgios Stefanakis <nonviotale@gmail.com>, 2012.
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-16 10:57+0000\n"
-"PO-Revision-Date: 2012-02-16 18:14+0200\n"
-"Last-Translator: Georgios Stefanakis <nonviotale@gmail.com>\n"
-"Language-Team: Greek, Modern (1453-) <>\n"
+"POT-Creation-Date: 2012-05-19 23:00+0000\n"
+"PO-Revision-Date: 2012-05-20 12:02+0300\n"
+"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
+"Language-Team: Ελληνικά, Σύγχρονα <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "Ένα πρόσθετο για να εκτελείτε ερωτήματα σε διάφορα λεξικά"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Λεξικό"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:517
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
 msgstr "Έτοιμο"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:413
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "Αναζητήσετε μια λέξη"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
 msgstr "Αναζήτηση όρου"
 
@@ -89,7 +90,7 @@ msgstr "[ΚΕΙΜΕΝΟ]"
 msgid "Please report bugs to <%s>."
 msgstr "Παρακαλώ, αναφέρετε σφάλματα στο <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "Ένα πρόγραμμα πελάτης για να εκτελείτε ερωτήματα σε διάφορα λεξικά"
 
@@ -134,7 +135,7 @@ msgstr "Σφάλμα κατά την εκτέλεση \"%s\" (%s)."
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Παρακαλώ ορίστε την εντολή ορθογραφικού ελέγχου στις ρυθμίσεις."
 
-#: ../lib/spell.c:208 ../lib/common.c:224
+#: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
 msgstr "Μη έγκυρη είσοδος"
 
@@ -238,24 +239,24 @@ msgstr "Καθαρίζει το περιεχόμενο ενός πεδίου κ�
 msgid "_Start"
 msgstr "_Εκκίνηση"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Η διεύθυνση URL αναζήτησης είναι άδεια. Ελέγξτε τις ρυθμίσεις σας."
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr ""
 "Ο περιηγητής ιστού δεν μπορούσε να ανοιχθεί. Ελέγξτε τις ρυθμίσεις σας."
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "Άκυρη μη-UTF8 είσοδος"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "προειδοποίηση"
 
@@ -321,51 +322,51 @@ msgstr "Πληροφορίες διακομιστή για \"%s\""
 msgid "The server doesn't offer any databases."
 msgstr "Ο διακομιστής δεν προσφέρει βάσεις δεδομένων."
 
-#: ../lib/gui.c:344
+#: ../lib/gui.c:342
 msgid "Copy Link"
 msgstr "Αντιγραφή δεσμού"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:674
 msgid "_File"
 msgstr "_Αρχείο"
 
-#: ../lib/gui.c:677 ../lib/gui.c:782
+#: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "Γρήγορος _αναγνώστης"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:700
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../lib/gui.c:803
+#: ../lib/gui.c:808
 msgid "Search with:"
 msgstr "Αναζήτηση με:"
 
-#: ../lib/gui.c:807
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
 msgstr "_Διακομιστής λεξικου"
 
-#: ../lib/gui.c:813
+#: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr "_Υπηρεσία διαδικτύου"
 
-#: ../lib/gui.c:821
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
 msgstr "_Ορθογράφος"
 
-#: ../lib/gui.c:949
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Λεξικό Xfce4"
 
-#: ../lib/gui.c:958
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Copyright © 2006-2011 Enrico Tröger"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "Πνευματικά Δικαιώματα © 2006-2012 Enrico Tröger"
 
-#: ../lib/gui.c:961
+#: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr ""
-"Βασιλάκος Γεώργιος <forfolias@gmail.com>"
-"Στεφανάκης Γεώργιος <nonviotale@gmail.com>"
+"Βασιλάκος Γεώργιος <forfolias@gmail.com>Στεφανάκης Γεώργιος "
+"<nonviotale@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
