@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-04 23:01+0000\n"
+"POT-Creation-Date: 2012-06-05 10:54+0000\n"
 "PO-Revision-Date: 2009-07-24 00:35+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
@@ -19,26 +19,26 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "Különböző szótárak lekérdezése"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Szótár"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:517
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
 msgstr "Kész"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:413
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "Szó keresése"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
 msgstr "Keresőkifejezés"
 
@@ -83,7 +83,7 @@ msgstr "[SZÖVEG]"
 msgid "Please report bugs to <%s>."
 msgstr "A hibákat ide jelentse: <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "Kliensprogram különböző szótárak lekérdezéséhez."
 
@@ -128,7 +128,7 @@ msgstr "Hiba „%s” végrehajtásakor (%s)."
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Állítsa be a helyesírás-ellenőrzés parancsát a beállítások ablakban."
 
-#: ../lib/spell.c:208 ../lib/common.c:224
+#: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
 msgstr "Érvénytelen bemenet"
 
@@ -231,23 +231,23 @@ msgstr "A szövegmező tartalmának törlése"
 msgid "_Start"
 msgstr "In_dítás"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr "A keresési URL üres. Ellenőrizze beállításait."
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "A böngésző nem nyitható meg. Ellenőrizze beállításait."
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "Érvénytelen nem UTF-8 bevitel"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "Hiba"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "figyelmeztetés"
 
@@ -313,47 +313,47 @@ msgstr "„%s” kiszolgálóinformációi"
 msgid "The server doesn't offer any databases."
 msgstr "A kiszolgáló nem ajánl fel adatbázisokat."
 
-#: ../lib/gui.c:344
+#: ../lib/gui.c:342
 msgid "Copy Link"
 msgstr "Hivatkozás másolása"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:674
 msgid "_File"
 msgstr "_Fájl"
 
-#: ../lib/gui.c:677 ../lib/gui.c:782
+#: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "_Gyorsolvasó"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:700
 msgid "_Help"
 msgstr "_Súgó"
 
-#: ../lib/gui.c:803
+#: ../lib/gui.c:808
 msgid "Search with:"
 msgstr "Keresés ezzel:"
 
-#: ../lib/gui.c:807
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
 msgstr "_Szótárkiszolgáló"
 
-#: ../lib/gui.c:813
+#: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr "_Webszolgáltatás"
 
-#: ../lib/gui.c:821
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
 msgstr "_Helyesírás-ellenőrző"
 
-#: ../lib/gui.c:949
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Xfce 4 szótár"
 
-#: ../lib/gui.c:958
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Copyright © 2006-2011 Enrico Tröger"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "Copyright © 2006-2012 Enrico Tröger"
 
-#: ../lib/gui.c:961
+#: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr "Kelemen Gábor <kelemeng@gnome.hu>"
 
