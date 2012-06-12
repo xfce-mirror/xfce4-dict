@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-09 16:54+0000\n"
+"POT-Creation-Date: 2012-06-12 14:06+0000\n"
 "PO-Revision-Date: 2011-01-15 08:58+0100\n"
 "Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <ikoli@yahoo.com>\n"
@@ -311,7 +311,7 @@ msgstr "Poslužitelj ne nudi baze podataka."
 
 #: ../lib/gui.c:342
 msgid "Copy Link"
-msgstr ""
+msgstr "Kopiraj poveznicu"
 
 #: ../lib/gui.c:674
 msgid "_File"
@@ -509,3 +509,5 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
+"<i>Program za provjeru pravopisa može biti 'enchant', 'aspell', 'ispell' ili aneki drugi program za provjeru pravopisa kojji je kompatibilan sa ispell naredbom.\n"
+"Ikona pokazuje postoji li unesena naredba.</i>"
