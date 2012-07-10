@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr "ھەر خىل لۇغەتلەرنى سۈرۈشتۈرىدىغان قىستۇرما."
+msgstr "ھەر خىل لۇغەتلەردىن ئىزدەيدىغان قىستۇرما."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:627 ../lib/prefs.c:270
@@ -71,7 +71,7 @@ msgstr ""
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr "ئەتراپلىق بولۇش"
+msgstr "ئەتراپلىق بولسۇن"
 
 # CLI --help
 #: ../src/xfce4-dict.c:58
@@ -89,11 +89,11 @@ msgstr "كەمتۈكنى <%s> غا دوكلات قىلىڭ."
 
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:847
 msgid "A client program to query different dictionaries."
-msgstr "ھەر خىل لۇغەتلەرنى سۈرۈشتۈرىدىغان client پروگراممىسى"
+msgstr "ھەر خىل لۇغەتلەرنى سۈرۈشتۈرىدىغان خېرىدار پروگراممىسى"
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
-msgstr "لۇغەت client ئى"
+msgstr "لۇغەت خېرىدارى"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -108,24 +108,24 @@ msgstr[0] "%d دانە نامزات بار ئىكەن."
 #: ../lib/spell.c:105
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "\"%s\" (%s) نىڭ نامزاتلىرى:"
+msgstr "«%s» (%s) نىڭ نامزاتلىرى:"
 
 #: ../lib/spell.c:122
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" نىڭ ئىملاسى توغرا (%s)."
+msgstr "«%s» نىڭ ئىملاسى توغرا (%s)."
 
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "\"%s\" (%s) نىڭ نامزاتلىرى تېپىلمىدى."
+msgstr "كىرگۈزگەن «%s» ئۈچۈن ھېچ قانداق نامزات تېپىلمىدى (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "\"%s\" (%s) ئىجرا قىلىۋاتقاندا خاتالىق كۆرۈلدى."
+msgstr "«%s» نى ئىجرا قىلىۋاتقاندا خاتالىق كۆرۈلدى (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
@@ -158,7 +158,7 @@ msgstr "تاماملاندى"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr "تەز ئوقۇغۇ"
+msgstr "تېز ئوقۇغۇ"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
@@ -171,7 +171,7 @@ msgstr "ئوقۇيدىغان ھۆججەتنى تاللايدۇ"
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "ھۆججەت '%s' نى ئوقۇغىلى بولمىدى."
+msgstr "ھۆججەت ‹%s› نى ئوقۇغىلى بولمىدى."
 
 #: ../lib/speedreader.c:553
 #, c-format
@@ -183,7 +183,7 @@ msgstr[0] "(بىر قېتىمدا %d دانە سوز كۆرسىتىدۇ)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "تەز ئوقۇشنى مەشىق قىلىش قورالى. ئۇ ئېكراندا سۆزلەرنى تەز سۈرەتتە يېڭىلاش ئارقىلىق تەز ئوقۇشنى مەشىق قىلىشقا ياردەم بېرىدۇ."
+msgstr "تېز ئوقۇشنى مەشىق قىلىش قورالى. ئۇ ئېكراندا سۆزلەرنى تېز سۈرەتتە يېڭىلاش ئارقىلىق تېز ئوقۇشنى مەشىق قىلىشقا ياردەم بېرىدۇ."
 
 #: ../lib/speedreader.c:581
 msgid "_Words per Minute:"
@@ -210,7 +210,7 @@ msgid ""
 "reading."
 msgstr "ئوقۇماقچى بولغان تېكىستنى بۇ يەرگە كىرگۈزۈڭ.\n"
 "\n"
-"جىددىيلەشمەڭ، ئۆزىڭىزنى ئازادە تۇتۇڭ، ئاندىن باشلا نى بېسىپ تەز ئوقۇشنى باشلاڭ."
+"جىددىيلەشمەڭ، ئۆزىڭىزنى ئازادە تۇتۇڭ، ئاندىن باشلا نى بېسىپ تېز ئوقۇشنى باشلاڭ."
 
 #: ../lib/speedreader.c:646
 msgid "Load the contents of a file"
@@ -257,7 +257,7 @@ msgstr "مۇلازىمېتىر تەييار ئەمەس."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Invalid dictionary specified. تەڭشىكىڭىزنى تەكشۈرۈپ كۆرۈڭ."
+msgstr "كۆرسىتىلگەن لۇغەت ئىناۋەتسىز. تەڭشىكىڭىزنى تەكشۈرۈپ كۆرۈڭ."
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:808
 msgid "Unknown error while quering the server."
@@ -270,14 +270,14 @@ msgstr "لۇغەت نەتىجىسى:"
 #: ../lib/dictd.c:418
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "\"%s\" نىڭغا ماس كېلىدىغان نەرسە تېپىلمىدى."
+msgstr "«%s» نىڭغا ماس كېلىدىغان نەرسە تېپىلمىدى."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
 #: ../lib/dictd.c:434
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr "\"%s\" نى ئىزدەش ئۈچۈن \"%s\" نى ئىشلەت."
+msgstr "«%s» نى ئىزدەش ئۈچۈن «%s» نى ئىشلەت."
 
 #: ../lib/dictd.c:439
 msgid "Web Search:"
@@ -287,7 +287,7 @@ msgstr "توردىن ئىزدەش:"
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d دانە تېپىلدى."
+msgstr[0] "%d مەزمۇن تېپىلدى."
 
 #: ../lib/dictd.c:656
 #, c-format
@@ -301,7 +301,7 @@ msgstr "مۇلازىمېتىر ھەققىدىكى ئۇچۇرلارنى سۈرۈ�
 #: ../lib/dictd.c:723
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "\"%s\" نىڭ مۇلازىمېتىر ئۇچۇرلىرى"
+msgstr "«%s» نىڭ مۇلازىمېتىر ئۇچۇرلىرى"
 
 #: ../lib/dictd.c:803
 msgid "The server doesn't offer any databases."
@@ -313,7 +313,7 @@ msgstr "ھۆججەت(_F)"
 
 #: ../lib/gui.c:571 ../lib/gui.c:675
 msgid "Speed _Reader"
-msgstr "تەز ئوقۇغۇ(_R)"
+msgstr "تېز ئوقۇغۇ(_R)"
 
 #: ../lib/gui.c:592
 msgid "_Help"
@@ -341,7 +341,7 @@ msgstr "Xfce4 لۇغىتى"
 
 #: ../lib/gui.c:848
 msgid "Copyright c 2006-2010 Enrico Troger"
-msgstr "Copyright c 2006-2010 Enrico Troger"
+msgstr "نەشر ھوقۇقى c 2006-2010 Enrico Troger غا تەۋە"
 
 #: ../lib/gui.c:851
 msgid "translator-credits"
@@ -445,11 +445,11 @@ msgstr "ئىملاسى خاتالىرى:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>Panel تېكىست كۆزنەكچىسى:</b>"
+msgstr "<b>كۆزنەك تېكىست كۆزنەكچىسى:</b>"
 
 #: ../lib/prefs.c:422
 msgid "Show text field in the panel"
-msgstr "Panel  دا تېكىست كۆزنەكچىسىنى كۆرسەت"
+msgstr "كۆزنەكتە تېكىست كۆزنەكچىسىنى كۆرسەت"
 
 #. panel entry size
 #: ../lib/prefs.c:429
