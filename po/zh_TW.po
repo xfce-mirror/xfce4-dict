@@ -1,0 +1,518 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-dict master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-11 08:15+0000\n"
+"PO-Revision-Date: 2012-07-11 18:36+0800\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"Language-Team: chinese-l10n <chinese-l10n@googlegroups.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
+msgid "A plugin to query different dictionaries."
+msgstr "可查詢不同字典的插件。"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2
+#: ../lib/gui.c:736
+#: ../lib/prefs.c:270
+msgid "Dictionary"
+msgstr "字典"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492
+#: ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243
+#: ../lib/gui.c:516
+msgid "Ready"
+msgstr "就緒"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:431
+msgid "Look up a word"
+msgstr ""
+
+#: ../panel-plugin/xfce4-dict-plugin.c:467
+#: ../lib/gui.c:766
+msgid "Search term"
+msgstr ""
+
+#: ../src/xfce4-dict.c:51
+msgid "Search the given text using a Dict server(RFC 2229)"
+msgstr ""
+
+#: ../src/xfce4-dict.c:52
+msgid "Search the given text using a web-based search engine"
+msgstr ""
+
+#: ../src/xfce4-dict.c:53
+msgid "Check the given text with a spell checker"
+msgstr ""
+
+#: ../src/xfce4-dict.c:54
+msgid "Grab the focus on the text field in the panel"
+msgstr ""
+
+#: ../src/xfce4-dict.c:55
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr ""
+
+#: ../src/xfce4-dict.c:56
+msgid "Grabs the PRIMARY selection content and uses it as search text"
+msgstr ""
+
+#: ../src/xfce4-dict.c:57
+msgid "Be verbose"
+msgstr ""
+
+#: ../src/xfce4-dict.c:58
+msgid "Show version information"
+msgstr ""
+
+#: ../src/xfce4-dict.c:131
+msgid "[TEXT]"
+msgstr ""
+
+#: ../src/xfce4-dict.c:147
+#, c-format
+msgid "Please report bugs to <%s>."
+msgstr ""
+
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:962
+msgid "A client program to query different dictionaries."
+msgstr ""
+
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "字典客戶端"
+
+#: ../lib/spell.c:75
+msgid "Spell Checker Results:"
+msgstr ""
+
+#: ../lib/spell.c:101
+#, c-format
+msgid "%d suggestion found."
+msgid_plural "%d suggestions found."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/spell.c:105
+#, c-format
+msgid "Suggestions for \"%s\" (%s):"
+msgstr ""
+
+#: ../lib/spell.c:122
+#, c-format
+msgid "\"%s\" is spelled correctly (%s)."
+msgstr ""
+
+#: ../lib/spell.c:134
+#, c-format
+msgid "No suggestions could be found for \"%s\" (%s)."
+msgstr ""
+
+#. translation hint:
+#. * Error while executing <spell command, e.g. "aspell"> (<error message>)
+#: ../lib/spell.c:164
+#, c-format
+msgid "Error while executing \"%s\" (%s)."
+msgstr ""
+
+#: ../lib/spell.c:202
+msgid "Please set the spell check command in the preferences dialog."
+msgstr ""
+
+#: ../lib/spell.c:208
+#: ../lib/common.c:223
+msgid "Invalid input"
+msgstr ""
+
+#: ../lib/spell.c:247
+#, c-format
+msgid "Process failed (%s)"
+msgstr ""
+
+#: ../lib/speedreader.c:80
+#: ../lib/speedreader.c:683
+msgid "P_ause"
+msgstr "暫停(_A)"
+
+#: ../lib/speedreader.c:81
+msgid "_Resume"
+msgstr "恢復(_R)"
+
+#: ../lib/speedreader.c:263
+msgid "Running"
+msgstr "執行中"
+
+#: ../lib/speedreader.c:266
+msgid "Finished"
+msgstr "已完成"
+
+#: ../lib/speedreader.c:274
+msgid "Speed Reader"
+msgstr ""
+
+#: ../lib/speedreader.c:369
+msgid "You must enter a text."
+msgstr ""
+
+#: ../lib/speedreader.c:506
+msgid "Choose a file to load"
+msgstr ""
+
+#: ../lib/speedreader.c:535
+#, c-format
+msgid "The file '%s' could not be loaded."
+msgstr ""
+
+#: ../lib/speedreader.c:561
+#, c-format
+msgid "(display %d word at a time)"
+msgid_plural "(display %d words at a time)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/speedreader.c:586
+msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+msgstr ""
+
+#: ../lib/speedreader.c:589
+msgid "_Words per Minute:"
+msgstr ""
+
+#: ../lib/speedreader.c:595
+msgid "_Mark Paragraphs"
+msgstr ""
+
+#: ../lib/speedreader.c:602
+msgid "Word _Grouping:"
+msgstr ""
+
+#: ../lib/speedreader.c:618
+msgid "_Font Size:"
+msgstr ""
+
+#: ../lib/speedreader.c:638
+msgid ""
+"Enter some text here you would like to read.\n"
+"\n"
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr ""
+
+#: ../lib/speedreader.c:654
+msgid "Load the contents of a file"
+msgstr ""
+
+#: ../lib/speedreader.c:663
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr ""
+
+#: ../lib/speedreader.c:671
+msgid "Clear the contents of the text field"
+msgstr ""
+
+#: ../lib/speedreader.c:684
+msgid "_Start"
+msgstr ""
+
+#: ../lib/common.c:188
+msgid "The search URL is empty. Please check your preferences."
+msgstr ""
+
+#: ../lib/common.c:194
+msgid "Browser could not be opened. Please check your preferences."
+msgstr ""
+
+#: ../lib/common.c:233
+msgid "Invalid non-UTF8 input"
+msgstr ""
+
+#: ../lib/common.c:607
+msgid "Error"
+msgstr "錯誤"
+
+#: ../lib/common.c:610
+msgid "warning"
+msgstr "警告"
+
+#: ../lib/dictd.c:379
+#: ../lib/dictd.c:698
+#: ../lib/dictd.c:707
+#: ../lib/dictd.c:795
+#: ../lib/dictd.c:804
+msgid "Could not connect to server."
+msgstr ""
+
+#: ../lib/dictd.c:385
+msgid "The server is not ready."
+msgstr ""
+
+#: ../lib/dictd.c:392
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr ""
+
+#: ../lib/dictd.c:400
+#: ../lib/dictd.c:456
+#: ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
+msgstr ""
+
+#: ../lib/dictd.c:415
+msgid "Dictionary Results:"
+msgstr ""
+
+#: ../lib/dictd.c:418
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr ""
+
+#. for translators: the first wildcard is the search term, the second wildcard
+#. * is the name of the preferred web search engine
+#: ../lib/dictd.c:434
+#, c-format
+msgid "Search \"%s\" using \"%s\""
+msgstr ""
+
+#: ../lib/dictd.c:439
+msgid "Web Search:"
+msgstr ""
+
+#: ../lib/dictd.c:461
+#, c-format
+msgid "%d definition found."
+msgid_plural "%d definitions found."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/dictd.c:669
+#, c-format
+msgid "Querying %s..."
+msgstr ""
+
+#: ../lib/dictd.c:728
+msgid "An error occured while querying server information."
+msgstr ""
+
+#: ../lib/dictd.c:741
+#, c-format
+msgid "Server Information for \"%s\""
+msgstr ""
+
+#: ../lib/dictd.c:824
+msgid "The server doesn't offer any databases."
+msgstr ""
+
+#: ../lib/gui.c:342
+msgid "Copy Link"
+msgstr ""
+
+#: ../lib/gui.c:674
+msgid "_File"
+msgstr "檔案(_F)"
+
+#: ../lib/gui.c:679
+#: ../lib/gui.c:787
+msgid "Speed _Reader"
+msgstr ""
+
+#: ../lib/gui.c:700
+msgid "_Help"
+msgstr "幫助(_H)"
+
+#: ../lib/gui.c:808
+msgid "Search with:"
+msgstr ""
+
+#: ../lib/gui.c:812
+msgid "_Dictionary Server"
+msgstr "字典伺服器(_D)"
+
+#: ../lib/gui.c:818
+msgid "_Web Service"
+msgstr "網路伺服器(_W)"
+
+#: ../lib/gui.c:826
+msgid "_Spell Checker"
+msgstr "拼字檢查(_S)"
+
+#: ../lib/gui.c:954
+msgid "Xfce4 Dictionary"
+msgstr "Xfce4 字典"
+
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "著作權 © 2006-2012 Enrico Tröger"
+
+#: ../lib/gui.c:966
+msgid "translator-credits"
+msgstr "Cheng-Chia Tseng <pswo10680@gmail.com>, 2012."
+
+#: ../lib/prefs.c:55
+msgid "dict.leo.org - German <-> English"
+msgstr ""
+
+#: ../lib/prefs.c:56
+msgid "dict.leo.org - German <-> French"
+msgstr ""
+
+#: ../lib/prefs.c:57
+msgid "dict.leo.org - German <-> Spanish"
+msgstr ""
+
+#: ../lib/prefs.c:58
+msgid "dict.leo.org - German <-> Italian"
+msgstr ""
+
+#: ../lib/prefs.c:59
+msgid "dict.leo.org - German <-> Chinese"
+msgstr ""
+
+#: ../lib/prefs.c:60
+msgid "dist.cc - Dictionary"
+msgstr ""
+
+#: ../lib/prefs.c:61
+msgid "Dictionary.com"
+msgstr ""
+
+#: ../lib/prefs.c:62
+msgid "TheFreeDictionary.com"
+msgstr ""
+
+#: ../lib/prefs.c:63
+msgid "Wikipedia, the free encyclopedia (EN)"
+msgstr ""
+
+#: ../lib/prefs.c:64
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr ""
+
+#: ../lib/prefs.c:65
+msgid "Merriam-Webster Online Dictionary"
+msgstr ""
+
+#: ../lib/prefs.c:66
+msgid "Clear"
+msgstr ""
+
+#: ../lib/prefs.c:101
+msgid "You have chosen an invalid dictionary."
+msgstr ""
+
+#: ../lib/prefs.c:303
+msgid "General"
+msgstr ""
+
+#: ../lib/prefs.c:305
+msgid "<b>Default search method:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:311
+#: ../lib/prefs.c:472
+msgid "Dictionary Server"
+msgstr ""
+
+#: ../lib/prefs.c:320
+#: ../lib/prefs.c:593
+msgid "Web Service"
+msgstr ""
+
+#: ../lib/prefs.c:329
+#: ../lib/prefs.c:643
+msgid "Spell Checker"
+msgstr ""
+
+#: ../lib/prefs.c:338
+msgid "Last used method"
+msgstr ""
+
+#: ../lib/prefs.c:347
+msgid "<b>Colors:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:353
+msgid "Links:"
+msgstr ""
+
+#: ../lib/prefs.c:354
+msgid "Phonetics:"
+msgstr ""
+
+#: ../lib/prefs.c:355
+msgid "Spelled correctly:"
+msgstr ""
+
+#: ../lib/prefs.c:356
+msgid "Spelled incorrectly:"
+msgstr ""
+
+#: ../lib/prefs.c:416
+msgid "<b>Panel Text Field:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:422
+msgid "Show text field in the panel"
+msgstr ""
+
+#. panel entry size
+#: ../lib/prefs.c:429
+msgid "Text field size:"
+msgstr ""
+
+#. server address
+#: ../lib/prefs.c:475
+msgid "Server:"
+msgstr ""
+
+#. server port
+#: ../lib/prefs.c:487
+msgid "Server Port:"
+msgstr ""
+
+#. dictionary
+#: ../lib/prefs.c:495
+#: ../lib/prefs.c:668
+msgid "Dictionary:"
+msgstr ""
+
+#: ../lib/prefs.c:499
+msgid "* (use all)"
+msgstr ""
+
+#: ../lib/prefs.c:501
+msgid "! (use all, stop after first match)"
+msgstr ""
+
+#: ../lib/prefs.c:595
+msgid "<b>Web search URL:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:601
+msgid "URL:"
+msgstr ""
+
+#: ../lib/prefs.c:621
+msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr ""
+
+#: ../lib/prefs.c:645
+msgid "Spell Check Program:"
+msgstr ""
+
+#: ../lib/prefs.c:662
+msgid ""
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"The icon shows whether the entered command exists.</i>"
+msgstr ""
+
