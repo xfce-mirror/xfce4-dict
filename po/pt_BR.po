@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-08 17:36+0000\n"
+"POT-Creation-Date: 2012-07-12 21:42+0000\n"
 "PO-Revision-Date: 2009-02-04 20:07-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -21,26 +21,26 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "Um plug-in para consultar dicionários diferentes."
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Dicionário"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:517
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
 msgstr "Pronto"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:413
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "Procurar uma palavra"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
 msgstr "Termo da pesquisa"
 
@@ -87,7 +87,7 @@ msgstr "[TEXTO]"
 msgid "Please report bugs to <%s>."
 msgstr "Por favor relatar erros para <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "Um programa para consultar dicionários diferentes."
 
@@ -134,7 +134,7 @@ msgstr ""
 "Por favor defina o comando de verificação ortográfica no diálogo de "
 "preferências."
 
-#: ../lib/spell.c:208 ../lib/common.c:224
+#: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
 msgstr "Entrada inválida"
 
@@ -187,7 +187,10 @@ msgstr[1] "(mostrar %d palavras por vez)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Este é um utilitário fácil para leitura rápida que o ajuda a treinar a ler mais rápido. Ele faz isso mostrando palavras na tela usando uma taxa de atualização veloz."
+msgstr ""
+"Este é um utilitário fácil para leitura rápida que o ajuda a treinar a ler "
+"mais rápido. Ele faz isso mostrando palavras na tela usando uma taxa de "
+"atualização veloz."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -214,7 +217,8 @@ msgid ""
 msgstr ""
 "Entre com algum texto que você gostaria de ler aqui.\n"
 "\n"
-"Relaxe e fique confortável, só então pressione Iniciar para começar a leitura rápida."
+"Relaxe e fique confortável, só então pressione Iniciar para começar a "
+"leitura rápida."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -223,7 +227,8 @@ msgstr "Carrega o conteudo de um arquivo"
 #: ../lib/speedreader.c:663
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Limpa o conteudo do campo de texto e cola o conteudo da área de transferência"
+msgstr ""
+"Limpa o conteudo do campo de texto e cola o conteudo da área de transferência"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -233,25 +238,25 @@ msgstr "Limpar o conteudo do campo de texto"
 msgid "_Start"
 msgstr "I_niciar"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr ""
 "A URL para pesquisa está vazia. Por favor, verifique suas preferências."
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr ""
 "Não foi possível abrir o navegador. Por favor verifique suas preferências."
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "Entrada não-UTF8 inválida"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "Erro"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "aviso"
 
@@ -318,47 +323,47 @@ msgstr "Informações do servidor para  \"%s\""
 msgid "The server doesn't offer any databases."
 msgstr "O servidor não oferece nenhum banco de dados."
 
-#: ../lib/gui.c:344
+#: ../lib/gui.c:342
 msgid "Copy Link"
 msgstr "Copiar link"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:674
 msgid "_File"
 msgstr "_Arquivo"
 
-#: ../lib/gui.c:677 ../lib/gui.c:782
+#: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "Leitor _Rápido"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:700
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../lib/gui.c:803
+#: ../lib/gui.c:808
 msgid "Search with:"
 msgstr "Pesquisar:"
 
-#: ../lib/gui.c:807
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
 msgstr "Servidor de _dicionário"
 
-#: ../lib/gui.c:813
+#: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr "Serviço _web"
 
-#: ../lib/gui.c:821
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
 msgstr "_Corretor ortográfico"
 
-#: ../lib/gui.c:949
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Dicionário do Xfce4"
 
-#: ../lib/gui.c:958
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Copyright © 2006-2011 Enrico Tröger"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "Copyright © 2006-2012 Enrico Tröger"
 
-#: ../lib/gui.c:961
+#: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr ""
 "Bruno Jesus <00cpxxx@gmail.com>\n"
