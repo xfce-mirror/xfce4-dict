@@ -1,16 +1,16 @@
 # Japanese translation of the xfce4-dict-plugin package.
-# Copyright (C) 2006-2008 Enrico Tröger
+# Copyright (C) 2006-2012 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin pack
 # Yuko Iwamatsu <nigauri@gmail>, 2008.
 # Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008.
-# Masato Hashimoto <cabezon.hashimoto@gmail.com>, 2009.
+# Masato Hashimoto <cabezon.hashimoto@gmail.com>, 2009, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-28 15:05+0900\n"
-"PO-Revision-Date: 2011-09-28 15:07+0900\n"
+"POT-Creation-Date: 2012-07-24 19:32+0900\n"
+"PO-Revision-Date: 2012-07-24 19:33+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-i18n@xfce.org>\n"
 "Language: ja\n"
@@ -19,31 +19,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
-msgid "A plugin to query different dictionaries."
-msgstr "いろいろな辞書を照会するプラグインです。"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:734
-#: ../lib/prefs.c:270
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "辞書"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473
-#: ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243
-#: ../lib/gui.c:517
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+msgid "A plugin to query different dictionaries."
+msgstr "いろいろな辞書を照会するプラグインです。"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
 msgstr "準備ができました。"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:413
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "単語を調べます"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444
-#: ../lib/gui.c:758
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
 msgstr "検索したい言葉を入力してください"
 
@@ -70,7 +65,9 @@ msgstr "パネル内のテキストフィールドにフォーカスを取得す
 # CLI --help
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "パネルプラグインが読み込まれている場合でも、スタンドアロンアプリケーションを起動する"
+msgstr ""
+"パネルプラグインが読み込まれている場合でも、スタンドアロンアプリケーションを"
+"起動する"
 
 # CLI --help
 #: ../src/xfce4-dict.c:56
@@ -95,14 +92,13 @@ msgstr "[TEXT]"
 msgid "Please report bugs to <%s>."
 msgstr "バグは <%s> へ報告してください。"
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:957
-msgid "A client program to query different dictionaries."
-msgstr "いろいろな辞書を照会できるクライアントプログラムです。"
-
-#: ../src/xfce4-dict.desktop.in.h:3
+#: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
 msgstr "辞書クライアント"
+
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+msgid "A client program to query different dictionaries."
+msgstr "いろいろな辞書を照会できるクライアントプログラムです。"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -141,8 +137,7 @@ msgstr "\"%s\" の実行中にエラーが発生しました (%s)。"
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "設定ダイアログで aspell コマンドを設定してください。"
 
-#: ../lib/spell.c:208
-#: ../lib/common.c:224
+#: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
 msgstr "不正な入力です。"
 
@@ -151,8 +146,7 @@ msgstr "不正な入力です。"
 msgid "Process failed (%s)"
 msgstr "処理失敗 (%s)"
 
-#: ../lib/speedreader.c:80
-#: ../lib/speedreader.c:683
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "一時停止(_A)"
 
@@ -193,8 +187,12 @@ msgstr[0] "(一度に %d 個表示します)"
 msgstr[1] "(一度に %d 個表示します)"
 
 #: ../lib/speedreader.c:586
-msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
-msgstr "これは速読練習用の簡単なユーティリティです。画面に文字列を一つずつ、高速に表示します。"
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr ""
+"これは速読練習用の簡単なユーティリティです。画面に文字列を一つずつ、高速に表"
+"示します。"
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -219,7 +217,8 @@ msgstr "フォントサイズ(_F):"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed "
+"reading."
 msgstr ""
 "ここに 読みたい 文字列を スペースで 区切って 入力して ください。\n"
 "\n"
@@ -231,7 +230,8 @@ msgstr "文字列をファイルから読み込みます"
 
 # tooltip
 #: ../lib/speedreader.c:663
-msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "テキストフィールドの内容をクリアしクリップボードの内容を貼り付けます"
 
 # tooltip
@@ -244,30 +244,27 @@ msgstr "テキストフィールドの内容をクリアします"
 msgid "_Start"
 msgstr "スタート(_S)"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr "検索 URL が空です。環境設定を確認してください。"
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "ブラウザを開くことができませんでした。環境設定を確認してください。"
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "不正な non-UTF8 入力です。"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "エラー"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "警告"
 
-#: ../lib/dictd.c:379
-#: ../lib/dictd.c:698
-#: ../lib/dictd.c:707
-#: ../lib/dictd.c:795
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
 #: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "サーバーに接続できませんでした。"
@@ -280,9 +277,7 @@ msgstr "サーバーが準備できていません。"
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "無効な辞書が指定されています。環境設定を確認してください。"
 
-#: ../lib/dictd.c:400
-#: ../lib/dictd.c:456
-#: ../lib/dictd.c:829
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
 msgid "Unknown error while querying the server."
 msgstr "サーバへの問い合わせ中の不明なエラーです。"
 
@@ -331,48 +326,47 @@ msgstr "\"%s\" の サーバ情報"
 msgid "The server doesn't offer any databases."
 msgstr "サーバにはデータベースが用意されていません。"
 
-#: ../lib/gui.c:344
+#: ../lib/gui.c:342
 msgid "Copy Link"
 msgstr "リンクをコピー"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:674
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: ../lib/gui.c:677
-#: ../lib/gui.c:782
+#: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "スピードリーダ(_R)"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:700
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../lib/gui.c:803
+#: ../lib/gui.c:808
 msgid "Search with:"
 msgstr "検索方法:"
 
-#: ../lib/gui.c:807
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
 msgstr "辞書サーバ(_D)"
 
-#: ../lib/gui.c:813
+#: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr "ウェブサービス(_W)"
 
-#: ../lib/gui.c:821
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
 msgstr "スペルチェッカ(_S)"
 
-#: ../lib/gui.c:949
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Dictionary"
 
-#: ../lib/gui.c:958
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Copyright © 2006-2011 Enrico Tröger"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "Copyright © 2006-2012 Enrico Tröger"
 
-#: ../lib/gui.c:961
+#: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr ""
 "Yuko Iwamatsu <nigauri@gmail>\n"
@@ -439,18 +433,15 @@ msgstr "一般"
 msgid "<b>Default search method:</b>"
 msgstr "<b>デフォルトの検索方法:</b>"
 
-#: ../lib/prefs.c:311
-#: ../lib/prefs.c:472
+#: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
 msgstr "辞書サーバ"
 
-#: ../lib/prefs.c:320
-#: ../lib/prefs.c:593
+#: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
 msgstr "ウェブサービス"
 
-#: ../lib/prefs.c:329
-#: ../lib/prefs.c:643
+#: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
 msgstr "スペルチェッカ"
 
@@ -502,8 +493,7 @@ msgid "Server Port:"
 msgstr "サーバポート:"
 
 #. dictionary
-#: ../lib/prefs.c:495
-#: ../lib/prefs.c:668
+#: ../lib/prefs.c:495 ../lib/prefs.c:668
 msgid "Dictionary:"
 msgstr "辞書:"
 
@@ -524,8 +514,12 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "翻訳または辞書サービスを提供するウェブサイトへの URL を入力します。検索する単語のプレースホルダとして {word} を使用してください。"
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"翻訳または辞書サービスを提供するウェブサイトへの URL を入力します。検索する単"
+"語のプレースホルダとして {word} を使用してください。"
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -533,10 +527,13 @@ msgstr "スペルチェックプログラム:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>スペルチェックプログラムは、ispell コマンドと互換性がある 'enchant'、'aspell'、'ispell'、その他のスペルチェックプログラムが利用できます。\n"
+"<i>スペルチェックプログラムは、ispell コマンドと互換性がある "
+"'enchant'、'aspell'、'ispell'、その他のスペルチェックプログラムが利用できま"
+"す。\n"
 "アイコンは、入力されたコマンドが存在するかどうかを示しています。</i>"
 
 #~ msgid "You must set a valid search URL."
