@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-10 05:30+0000\n"
+"POT-Creation-Date: 2012-07-25 03:57+0000\n"
 "PO-Revision-Date: 2011-11-09 16:10+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -30,7 +30,7 @@ msgstr "لۇغەت"
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
-msgstr "تەييار"
+msgstr "تەييار بولدۇم"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
@@ -54,11 +54,12 @@ msgstr "ئىملا تەكشۈرگۈدە كىرگۈزۈلگەن تېكىستنى 
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
-msgstr ""
+msgstr "كۆزنەكتىكى تېكىست بۆلىكىنىڭ فوكۇسنى تۇتىدۇ"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "تاختا قىستۇرمىسى قاچىلانغان ئەھۋالدىمۇ ئايرىم پروگرامما سۈپىتىدە قوزغاتسۇن"
+msgstr ""
+"تاختا قىستۇرمىسى قاچىلانغان ئەھۋالدىمۇ ئايرىم پروگرامما سۈپىتىدە قوزغاتسۇن"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -177,7 +178,9 @@ msgstr[0] "(بىر قېتىمدا %d دانە سوز كۆرسىتىدۇ)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "تېز ئوقۇشنى مەشىق قىلىش قورالى. ئۇ ئېكراندا سۆزلەرنى تېز سۈرەتتە يېڭىلاش ئارقىلىق تېز ئوقۇشنى مەشىق قىلىشقا ياردەم بېرىدۇ."
+msgstr ""
+"تېز ئوقۇشنى مەشىق قىلىش قورالى. ئۇ ئېكراندا سۆزلەرنى تېز سۈرەتتە يېڭىلاش "
+"ئارقىلىق تېز ئوقۇشنى مەشىق قىلىشقا ياردەم بېرىدۇ."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -201,9 +204,11 @@ msgid ""
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed "
 "reading."
-msgstr "ئوقۇماقچى بولغان تېكىستنى بۇ يەرگە كىرگۈزۈڭ.\n"
+msgstr ""
+"ئوقۇماقچى بولغان تېكىستنى بۇ يەرگە كىرگۈزۈڭ.\n"
 "\n"
-"جىددىيلەشمەڭ، ئۆزىڭىزنى ئازادە تۇتۇڭ، ئاندىن باشلا نى بېسىپ تېز ئوقۇشنى باشلاڭ."
+"جىددىيلەشمەڭ، ئۆزىڭىزنى ئازادە تۇتۇڭ، ئاندىن باشلا نى بېسىپ تېز ئوقۇشنى "
+"باشلاڭ."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -212,7 +217,7 @@ msgstr "ھۆججەتنىڭ مەزمۇنىنى ئوقۇيدۇ"
 #: ../lib/speedreader.c:663
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr ""
+msgstr "تېكىست رايونى تازىلاپ چاپلاش تاختىسىنىڭ مەزمۇنى چاپلايدۇ"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -257,7 +262,7 @@ msgstr "كۆرسىتىلگەن لۇغەت ئىناۋەتسىز. تەڭشىكىڭ
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
 msgid "Unknown error while querying the server."
-msgstr ""
+msgstr "لۇغەتتىن سۈرۈشتۈرۈۋاتقاندا نامەلۇم خاتالىق كۆرۈلدى."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
@@ -341,11 +346,11 @@ msgstr "Xfce4 لۇغىتى"
 
 #: ../lib/gui.c:963
 msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr ""
+msgstr "نەشر ھوقۇقى © 2006-2012 Enrico Tröger غا تەۋە"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr "Gheyret T.Kenji <gheyret@gmail.com>"
+msgstr "غەيرەت ت.كەنجى <gheyret@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -502,5 +507,7 @@ msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>كوررېكتور پروگراممىسى 'enchant'، 'aspell'، 'ispell'  ياكى باشقا ispell بىلەن ماس كېلىدىغان باشقا كوررېكتور پروگراممىسى بولسا بولىدۇ.\n"
+msgstr ""
+"<i>كوررېكتور پروگراممىسى 'enchant'، 'aspell'، 'ispell'  ياكى باشقا ispell "
+"بىلەن ماس كېلىدىغان باشقا كوررېكتور پروگراممىسى بولسا بولىدۇ.\n"
 "سىنبەلگە كىرگۈزگەن بۇيرۇق بارمۇ يوق كۆرسىتىپ تۇرىدۇ.</i>"
