@@ -2,43 +2,48 @@
 # Copyright (C) 2010 The Xfce team
 # This file is distributed under the same license as the xfce4-dict package.
 # Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 04:01+0000\n"
-"PO-Revision-Date: 2010-09-01 14:15+0600\n"
+"POT-Creation-Date: 2012-08-03 23:21+0000\n"
+"PO-Revision-Date: 2012-08-04 08:45+0600\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: kk\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Language: Kazakh\n"
 "X-Poedit-Country: KAZAKHSTAN\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr "Бірнеше сөздіктен сұрау үшін плагин."
+msgstr "Бірнеше сөздіктен сұрау үшін плагині."
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:734 ../lib/prefs.c:270
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2
+#: ../lib/gui.c:736
+#: ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Сөздік"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:347
-#: ../panel-plugin/xfce4-dict-plugin.c:473 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:517
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492
+#: ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243
+#: ../lib/gui.c:516
 msgid "Ready"
 msgstr "Дайын"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:413
+#: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
 msgstr "Сөзді іздеу"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:444 ../lib/gui.c:758
+#: ../panel-plugin/xfce4-dict-plugin.c:467
+#: ../lib/gui.c:766
 msgid "Search term"
 msgstr "Терминді іздеу"
 
@@ -83,7 +88,8 @@ msgstr "[TEXT]"
 msgid "Please report bugs to <%s>."
 msgstr "Ақаулықтар жөнінде хабарлаңыз: <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:957
+#: ../src/xfce4-dict.desktop.in.h:1
+#: ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "Әртүрлі сөздіктерден іздеу үшін клиент бағдарламасы."
 
@@ -127,7 +133,8 @@ msgstr "\"%s\" (%s) орындау қатесі."
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Баптаулар терезесенде емлені тексеру командасын орнатыңыз."
 
-#: ../lib/spell.c:208 ../lib/common.c:224
+#: ../lib/spell.c:208
+#: ../lib/common.c:223
 msgid "Invalid input"
 msgstr "Енгізу қате"
 
@@ -136,7 +143,8 @@ msgstr "Енгізу қате"
 msgid "Process failed (%s)"
 msgstr "Үрдіс сәтсіз (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
+#: ../lib/speedreader.c:80
+#: ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "А_ялдату"
 
@@ -176,12 +184,8 @@ msgid_plural "(display %d words at a time)"
 msgstr[0] "(бір уақытта %d сөз көрсету)"
 
 #: ../lib/speedreader.c:586
-msgid ""
-"This is an easy speed reading utility to help train you to read faster. It "
-"does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Бұл - сізді жылдам оқуға үйрететін қарапайым ғана қолданба. Ол осы мақсатын "
-"экранда сөздерді жылдам ауыстыру арқылы іске асырады."
+msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+msgstr "Бұл - сізді жылдам оқуға үйрететін қарапайым ғана қолданба. Ол осы мақсатын экранда сөздерді жылдам ауыстыру арқылы іске асырады."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -203,8 +207,7 @@ msgstr "Қарі_п өлшемі:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
 "Оқығыңыз келетін мәтінді осында енгізіңіз.\n"
 "\n"
@@ -215,10 +218,8 @@ msgid "Load the contents of a file"
 msgstr "Файл құрамасын жүктейді"
 
 #: ../lib/speedreader.c:663
-msgid ""
-"Clear the contents of the text field and paste the contents of the clipboard"
-msgstr ""
-"Мәтін өрісінің құрамасын тазартып, алмасу буферінің құрамасын кірістіреді"
+msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Мәтін өрісінің құрамасын тазартып, алмасу буферінің құрамасын кірістіреді"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -228,27 +229,30 @@ msgstr "Мәтін өрісінің құрамасын тазартады"
 msgid "_Start"
 msgstr "Ба_стау"
 
-#: ../lib/common.c:189
+#: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Іздеу сілтемесі бос. Баптауларыңызды тексеріңіз."
 
-#: ../lib/common.c:195
+#: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Браузерді ашу мүмкін емес. Баптауларыңызды тексеріңіз."
 
-#: ../lib/common.c:234
+#: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
 msgstr "Қате UTF8 емес енгізу"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:607
 msgid "Error"
 msgstr "Қате"
 
-#: ../lib/common.c:611
+#: ../lib/common.c:610
 msgid "warning"
 msgstr "ескерту"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:379
+#: ../lib/dictd.c:698
+#: ../lib/dictd.c:707
+#: ../lib/dictd.c:795
 #: ../lib/dictd.c:804
 msgid "Could not connect to server."
 msgstr "Сервермен байланыс орнату мүмкін емес."
@@ -261,7 +265,9 @@ msgstr "Сервер дайын емес."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Қате сөздік көрсетілген. Баптауларыңызды тексеріңіз."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+#: ../lib/dictd.c:400
+#: ../lib/dictd.c:456
+#: ../lib/dictd.c:829
 msgid "Unknown error while querying the server."
 msgstr "Серверді сұрау кезінде белгісіз қате орын алды."
 
@@ -309,49 +315,50 @@ msgstr "\"%s\" үшін сервер ақпараты"
 msgid "The server doesn't offer any databases."
 msgstr "Сервер ешбір дерекқорды ұсынып тұрған жоқ."
 
-#: ../lib/gui.c:344
+#: ../lib/gui.c:342
 msgid "Copy Link"
 msgstr "Сілтемені көшіру"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:674
 msgid "_File"
 msgstr "_Файл"
 
-#: ../lib/gui.c:677 ../lib/gui.c:782
+#: ../lib/gui.c:679
+#: ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "Жылдам _оқу"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:700
 msgid "_Help"
 msgstr "_Көмек"
 
-#: ../lib/gui.c:803
+#: ../lib/gui.c:808
 msgid "Search with:"
 msgstr "Көмегімен іздеу:"
 
-#: ../lib/gui.c:807
+#: ../lib/gui.c:812
 msgid "_Dictionary Server"
 msgstr "Сөз_діктер сервері"
 
-#: ../lib/gui.c:813
+#: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr "_Интернет қызметі"
 
-#: ../lib/gui.c:821
+#: ../lib/gui.c:826
 msgid "_Spell Checker"
 msgstr "Е_млені тексеруші"
 
-#: ../lib/gui.c:949
+#: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 сөздігі"
 
-#: ../lib/gui.c:958
-msgid "Copyright © 2006-2011 Enrico Tröger"
-msgstr "Copyright © 2006-2011 Enrico Tröger"
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr "Copyright © 2006-2012 Enrico Tröger"
 
-#: ../lib/gui.c:961
+#: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -413,15 +420,18 @@ msgstr "Жалпы"
 msgid "<b>Default search method:</b>"
 msgstr "<b>Негізгі іздеу тәсілі:</b>"
 
-#: ../lib/prefs.c:311 ../lib/prefs.c:472
+#: ../lib/prefs.c:311
+#: ../lib/prefs.c:472
 msgid "Dictionary Server"
 msgstr "Сөздік сервері"
 
-#: ../lib/prefs.c:320 ../lib/prefs.c:593
+#: ../lib/prefs.c:320
+#: ../lib/prefs.c:593
 msgid "Web Service"
 msgstr "Веб қызметі"
 
-#: ../lib/prefs.c:329 ../lib/prefs.c:643
+#: ../lib/prefs.c:329
+#: ../lib/prefs.c:643
 msgid "Spell Checker"
 msgstr "Емлені тексеруші"
 
@@ -473,7 +483,8 @@ msgid "Server Port:"
 msgstr "Сервер порты:"
 
 #. dictionary
-#: ../lib/prefs.c:495 ../lib/prefs.c:668
+#: ../lib/prefs.c:495
+#: ../lib/prefs.c:668
 msgid "Dictionary:"
 msgstr "Сөздік"
 
@@ -494,12 +505,8 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Сөздіктер қызметін ұсынатын веб сайттың іздеу сілтемесін енгізіңіз. "
-"Ізделінетін сөз орнын {word} көмегімен көрсетіңіз."
+msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgstr "Сөздіктер қызметін ұсынатын веб сайттың іздеу сілтемесін енгізіңіз. Ізделінетін сөз орнын {word} көмегімен көрсетіңіз."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -507,10 +514,9 @@ msgstr "Емлені тексеру бағдарламасы:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Емлені тексеру бағдарламасы 'enchant', 'aspell', 'ispell' немесе басқа да "
-"ispell командасымен үйлесімді емле тексеру бағдарламасы бола алады.\n"
+"<i>Емлені тексеру бағдарламасы 'enchant', 'aspell', 'ispell' немесе басқа да ispell командасымен үйлесімді емле тексеру бағдарламасы бола алады.\n"
 "Таңбаша енгізілген командасының бар-жоғын көрсетеді.</i>"
+
