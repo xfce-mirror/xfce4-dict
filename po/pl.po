@@ -211,7 +211,7 @@ msgstr ""
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Wczytaj zawartość pliku"
 
 #: ../lib/speedreader.c:663
 #, fuzzy
@@ -220,9 +220,8 @@ msgid ""
 msgstr "Zaznacza pole tekstowe panelu"
 
 #: ../lib/speedreader.c:671
-#, fuzzy
 msgid "Clear the contents of the text field"
-msgstr "Zaznacza pole tekstowe panelu"
+msgstr "Wyczyść zawartość pola tekstowego"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
@@ -249,7 +248,7 @@ msgstr "Błąd"
 
 #: ../lib/common.c:610
 msgid "warning"
-msgstr ""
+msgstr "ostrzeżenie"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
 #: ../lib/dictd.c:804
@@ -265,14 +264,12 @@ msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Określono niepoprawny słownik. Proszę sprawdzić preferencje programu."
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
-#, fuzzy
 msgid "Unknown error while querying the server."
 msgstr "Wystąpił nieznany błąd podczas odpytywania serwera."
 
 #: ../lib/dictd.c:415
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Słownik:"
+msgstr "Wyniki ze słownika:"
 
 #: ../lib/dictd.c:418
 #, c-format
@@ -284,12 +281,11 @@ msgstr "Nie znaleziono definicji wyrazu „%s”."
 #: ../lib/dictd.c:434
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Szukanie \"%s\" przy użyciu \"%s\""
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "Usługa internetowa"
+msgstr "Szukanie w Internecie:"
 
 #: ../lib/dictd.c:461
 #, c-format
@@ -319,7 +315,7 @@ msgstr "Serwer nie oferuje żadnych baz danych."
 
 #: ../lib/gui.c:342
 msgid "Copy Link"
-msgstr ""
+msgstr "Kopiuj odnośnik"
 
 #: ../lib/gui.c:674
 msgid "_File"
