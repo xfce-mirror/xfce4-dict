@@ -91,9 +91,8 @@ msgid "Dictionary Client"
 msgstr "Klient słownika"
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Sprawdzanie pisowni"
+msgstr "Wyniki sprawdzania pisowni:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -104,19 +103,19 @@ msgstr[1] "Znaleziono %d sugestie"
 msgstr[2] "Znaleziono %d sugestii"
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Sugestie pisowni wyrazu „%s”:"
+msgstr "Sugestie dla \"%s\" (%s):"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "Pisownia wyrazu „%s” jest poprawna."
+msgstr "\"%s\" jest zapisane poprawnie (%s)."
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Nie znaleziono sugestii dla „%s”."
+msgstr "Nie znaleziono sugestii dla \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -148,7 +147,7 @@ msgstr ""
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Działanie"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
@@ -350,9 +349,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Dictionary"
 
 #: ../lib/gui.c:963
-#, fuzzy
 msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgstr "Prawa autorskie © 2006-2012 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -442,7 +440,7 @@ msgstr "<b>Kolory</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Odnośniki:"
 
 #: ../lib/prefs.c:354
 #, fuzzy
@@ -450,14 +448,12 @@ msgid "Phonetics:"
 msgstr "Zapis fonetyczny:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "Pisownia wyrazu „%s” jest poprawna."
+msgstr "Poprawna pisownia:"
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "Pisownia wyrazu „%s” jest poprawna."
+msgstr "Niepoprawna pisownia:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
