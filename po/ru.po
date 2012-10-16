@@ -1,202 +1,684 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: mousepad 0.2.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-20 12:34+0100\n"
+"POT-Creation-Date: 2012-10-16 07:30+0000\n"
 "PO-Revision-Date: 2006-04-22 14:38+0600\n"
 "Last-Translator: Sergey Fedoseev <fedoseev.sergey@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
 
-msgid "%d strings replaced"
-msgstr "%d строк заменено"
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
+msgid "A plugin to query different dictionaries."
+msgstr ""
 
-msgid "'%s' already exists. Overwrite?"
-msgstr "'%s' уже существует. Переписать?"
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+msgid "Dictionary"
+msgstr "Словарь"
 
-msgid "'%s' is not supported"
-msgstr "'%s' не поддерживается"
+#: ../panel-plugin/xfce4-dict-plugin.c:366
+#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:516
+msgid "Ready"
+msgstr "Готово"
 
-msgid "/Edit/Cu_t"
-msgstr "/Правка/_Вырезать"
+#: ../panel-plugin/xfce4-dict-plugin.c:431
+msgid "Look up a word"
+msgstr ""
 
-msgid "/Edit/Select _All"
-msgstr "/Правка/В_ыделить все"
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
+msgid "Search term"
+msgstr "Поиск термина"
 
-msgid "/Edit/_Copy"
-msgstr "/Правка/_Копировать"
+#: ../src/xfce4-dict.c:51
+msgid "Search the given text using a Dict server(RFC 2229)"
+msgstr ""
 
-msgid "/Edit/_Delete"
-msgstr "/Правка/У_далить"
+#: ../src/xfce4-dict.c:52
+msgid "Search the given text using a web-based search engine"
+msgstr ""
 
-msgid "/Edit/_Paste"
-msgstr "/Правка/Вст_авить"
+#: ../src/xfce4-dict.c:53
+msgid "Check the given text with a spell checker"
+msgstr ""
 
-msgid "/Edit/_Redo"
-msgstr "/Правка/Ве_рнуть"
+#: ../src/xfce4-dict.c:54
+msgid "Grab the focus on the text field in the panel"
+msgstr ""
 
-msgid "/Edit/_Undo"
-msgstr "/Правка/_Отменить"
+#: ../src/xfce4-dict.c:55
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr ""
 
-msgid "/File/New _Window"
-msgstr "/Файл/_Новое окно"
+#: ../src/xfce4-dict.c:56
+msgid "Grabs the PRIMARY selection content and uses it as search text"
+msgstr ""
 
-msgid "/File/Save _As..."
-msgstr "/Файл/Сохранить _как..."
+#: ../src/xfce4-dict.c:57
+msgid "Be verbose"
+msgstr ""
 
-msgid "/File/_New"
-msgstr "/Файл/_Создать"
+#: ../src/xfce4-dict.c:58
+msgid "Show version information"
+msgstr ""
 
-msgid "/File/_Open..."
-msgstr "/Файл/_Открыть..."
+#: ../src/xfce4-dict.c:131
+msgid "[TEXT]"
+msgstr ""
 
-msgid "/File/_Print..."
-msgstr "/Файл/_Печать..."
+#: ../src/xfce4-dict.c:147
+#, c-format
+msgid "Please report bugs to <%s>."
+msgstr "Пожалуйста, отправляйте сообщения об ошибках на <%s>."
 
-msgid "/File/_Quit"
-msgstr "/Файл/В_ыход"
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
+msgid "A client program to query different dictionaries."
+msgstr "Клиентская программа для доступа к различным словарям."
 
-msgid "/File/_Save"
-msgstr "/Файл/Со_хранить"
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "Клиент словаря"
 
-msgid "/Help/_About"
-msgstr "/Справка/_О программе"
+#: ../lib/spell.c:75
+msgid "Spell Checker Results:"
+msgstr "Результат проверки орфографии:"
 
-msgid "/Options/_Auto Indent"
-msgstr "/Параметры/_Автоматический отступ"
+#: ../lib/spell.c:101
+#, c-format
+msgid "%d suggestion found."
+msgid_plural "%d suggestions found."
+msgstr[0] "%d предложение найдено."
+msgstr[1] "%d предложений найдено."
 
-msgid "/Options/_Font..."
-msgstr "/Параметры/_Шрифт..."
+#: ../lib/spell.c:105
+#, c-format
+msgid "Suggestions for \"%s\" (%s):"
+msgstr "Предложения для \"%s\" (%s):"
 
-msgid "/Options/_Line Numbers"
-msgstr "/Параметры/Показывать _номера строк"
+#: ../lib/spell.c:122
+#, c-format
+msgid "\"%s\" is spelled correctly (%s)."
+msgstr "\"%s\" орфографически правильно (%s)."
 
-msgid "/Options/_Word Wrap"
-msgstr "/Параметры/_Переносить слова"
+#: ../lib/spell.c:134
+#, c-format
+msgid "No suggestions could be found for \"%s\" (%s)."
+msgstr "Не найдено предложений для \"%s\" (%s)"
 
-msgid "/Search/Find _Next"
-msgstr "/Поиск/Найти след_ующее"
+#. translation hint:
+#. * Error while executing <spell command, e.g. "aspell"> (<error message>)
+#: ../lib/spell.c:164
+#, c-format
+msgid "Error while executing \"%s\" (%s)."
+msgstr "Ошибка во время исполнения \"%s\" (%s)."
 
-msgid "/Search/Find _Previous"
-msgstr "/Поиск/Найти пред_ыдущее"
+#: ../lib/spell.c:202
+msgid "Please set the spell check command in the preferences dialog."
+msgstr "Пожалуйста, укажите программу проверки орфографии в диалоге настроек."
 
-msgid "/Search/_Find..."
-msgstr "/Поиск/_Найти..."
+#: ../lib/spell.c:208 ../lib/common.c:223
+msgid "Invalid input"
+msgstr "Неправильный ввод"
 
-msgid "/Search/_Jump To..."
-msgstr "/Поиск/Перейти к _строке..."
+#: ../lib/spell.c:247
+#, c-format
+msgid "Process failed (%s)"
+msgstr ""
 
-msgid "/Search/_Replace..."
-msgstr "/Поиск/За_менить..."
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
+msgid "P_ause"
+msgstr ""
 
-msgid "/_Edit"
-msgstr "/_Правка"
+#: ../lib/speedreader.c:81
+msgid "_Resume"
+msgstr ""
 
-msgid "/_File"
-msgstr "/_Файл"
+#: ../lib/speedreader.c:263
+msgid "Running"
+msgstr ""
 
-msgid "/_Help"
-msgstr "/_Справка"
+#: ../lib/speedreader.c:266
+msgid "Finished"
+msgstr ""
 
-msgid "/_Options"
-msgstr "/П_араметры"
+#: ../lib/speedreader.c:274
+msgid "Speed Reader"
+msgstr ""
 
-msgid "/_Search"
+#: ../lib/speedreader.c:369
+msgid "You must enter a text."
+msgstr ""
+
+#: ../lib/speedreader.c:506
+msgid "Choose a file to load"
+msgstr ""
+
+#: ../lib/speedreader.c:535
+#, c-format
+msgid "The file '%s' could not be loaded."
+msgstr ""
+
+#: ../lib/speedreader.c:561
+#, c-format
+msgid "(display %d word at a time)"
+msgid_plural "(display %d words at a time)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/speedreader.c:586
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr ""
+
+#: ../lib/speedreader.c:589
+msgid "_Words per Minute:"
+msgstr ""
+
+#: ../lib/speedreader.c:595
+msgid "_Mark Paragraphs"
+msgstr ""
+
+#: ../lib/speedreader.c:602
+msgid "Word _Grouping:"
+msgstr ""
+
+#: ../lib/speedreader.c:618
+msgid "_Font Size:"
+msgstr ""
+
+#: ../lib/speedreader.c:638
+msgid ""
+"Enter some text here you would like to read.\n"
+"\n"
+"Be relaxed and make yourself comfortable, then press Start to begin speed "
+"reading."
+msgstr ""
+
+#: ../lib/speedreader.c:654
+msgid "Load the contents of a file"
+msgstr ""
+
+#: ../lib/speedreader.c:663
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
+msgstr ""
+
+#: ../lib/speedreader.c:671
+msgid "Clear the contents of the text field"
+msgstr ""
+
+#: ../lib/speedreader.c:684
+msgid "_Start"
+msgstr ""
+
+#: ../lib/common.c:188
+msgid "The search URL is empty. Please check your preferences."
+msgstr ""
+
+#: ../lib/common.c:194
+msgid "Browser could not be opened. Please check your preferences."
+msgstr ""
+
+#: ../lib/common.c:233
+msgid "Invalid non-UTF8 input"
+msgstr ""
+
+#: ../lib/common.c:607
+msgid "Error"
+msgstr ""
+
+#: ../lib/common.c:610
+msgid "warning"
+msgstr ""
+
+#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
+#: ../lib/dictd.c:804
+msgid "Could not connect to server."
+msgstr ""
+
+#: ../lib/dictd.c:385
+msgid "The server is not ready."
+msgstr ""
+
+#: ../lib/dictd.c:392
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr ""
+
+#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+msgid "Unknown error while querying the server."
+msgstr ""
+
+#: ../lib/dictd.c:415
+msgid "Dictionary Results:"
+msgstr ""
+
+#: ../lib/dictd.c:418
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr ""
+
+#. for translators: the first wildcard is the search term, the second wildcard
+#. * is the name of the preferred web search engine
+#: ../lib/dictd.c:434
+#, c-format
+msgid "Search \"%s\" using \"%s\""
+msgstr ""
+
+#: ../lib/dictd.c:439
+#, fuzzy
+msgid "Web Search:"
 msgstr "/П_оиск"
 
-msgid "A text editor for Xfce"
-msgstr "Текстовый редактор для Xfce"
+#: ../lib/dictd.c:461
+#, c-format
+msgid "%d definition found."
+msgid_plural "%d definitions found."
+msgstr[0] ""
+msgstr[1] ""
 
-msgid "About %s"
-msgstr "О программе \"%s\""
+#: ../lib/dictd.c:669
+#, c-format
+msgid "Querying %s..."
+msgstr ""
 
-msgid "Auto Detect"
-msgstr "Автоопределение"
+#: ../lib/dictd.c:728
+msgid "An error occured while querying server information."
+msgstr ""
 
-msgid "Can't convert codeset to '%s'"
-msgstr "Не удалось преобразовать кодировку в '%s'"
+#: ../lib/dictd.c:741
+#, c-format
+msgid "Server Information for \"%s\""
+msgstr ""
 
-msgid "Can't open file to write"
-msgstr "Не удалось открыть файл для записи"
+#: ../lib/dictd.c:824
+msgid "The server doesn't offer any databases."
+msgstr ""
 
-msgid "Can't open pipe to process"
-msgstr "Не удалось открыть канал к процессу"
+#: ../lib/gui.c:342
+msgid "Copy Link"
+msgstr ""
 
-msgid "Can't write file"
-msgstr "Не удалось записать файл"
+#: ../lib/gui.c:674
+#, fuzzy
+msgid "_File"
+msgstr "/_Файл"
 
-msgid "Ch_aracter Coding: "
-msgstr "Ко_дировка символов"
+#: ../lib/gui.c:679 ../lib/gui.c:787
+msgid "Speed _Reader"
+msgstr ""
 
-msgid "Code_set:"
-msgstr "_Кодировка:"
+#: ../lib/gui.c:700
+#, fuzzy
+msgid "_Help"
+msgstr "/_Справка"
 
-msgid "Current Locale (%s)"
-msgstr "Текущая локаль (%s)"
-
-msgid "Fi_nd what: "
-msgstr "На_йти: "
-
-msgid "Find"
-msgstr "Поиск"
-
-msgid "Font"
-msgstr "Шрифт"
-
-msgid "Jump To"
-msgstr "Переход"
-
-msgid "Mousepad"
-msgstr "Mousepad"
-
-msgid "Open"
-msgstr "Открытие файла"
-
-msgid "Other Codeset"
-msgstr "Другая кодировка"
-
-msgid "Re_place with: "
+#: ../lib/gui.c:808
+#, fuzzy
+msgid "Search with:"
 msgstr "З_аменить на: "
 
-msgid "Replace"
-msgstr "Замена"
-
-msgid "Replace _all at once"
-msgstr "Заменить _все"
-
-msgid "Replace?"
-msgstr "Заменить?"
-
-msgid "Save As"
-msgstr "Сохранение файла"
-
-msgid "Save changes to '%s'?"
-msgstr "Сохранить изменения в '%s'?"
-
-msgid "Search string not found"
-msgstr "Искомая строка не найдена"
-
-msgid "Simple text editor"
-msgstr "Простой текстовый редактор"
-
-msgid "Text Editor"
-msgstr "Текстовый редактор"
-
-msgid "Untitled"
-msgstr "Без имени"
-
-msgid "Warning, you are using the root account, you may harm your system."
+#: ../lib/gui.c:812
+msgid "_Dictionary Server"
 msgstr ""
-"Внимание, вы используете учетную запись суперпользователя, при этом вы "
-"можете повредить вашу систему."
 
-msgid "_Jump"
-msgstr "_Перейти"
+#: ../lib/gui.c:818
+msgid "_Web Service"
+msgstr ""
 
-msgid "_Line number: "
-msgstr "_Номер строки: "
+#: ../lib/gui.c:826
+msgid "_Spell Checker"
+msgstr ""
 
-msgid "_Match case"
-msgstr "Учитывать _регистр"
+#: ../lib/gui.c:954
+msgid "Xfce4 Dictionary"
+msgstr ""
+
+#: ../lib/gui.c:963
+msgid "Copyright © 2006-2012 Enrico Tröger"
+msgstr ""
+
+#: ../lib/gui.c:966
+msgid "translator-credits"
+msgstr ""
+
+#: ../lib/prefs.c:55
+msgid "dict.leo.org - German <-> English"
+msgstr ""
+
+#: ../lib/prefs.c:56
+msgid "dict.leo.org - German <-> French"
+msgstr ""
+
+#: ../lib/prefs.c:57
+msgid "dict.leo.org - German <-> Spanish"
+msgstr ""
+
+#: ../lib/prefs.c:58
+msgid "dict.leo.org - German <-> Italian"
+msgstr ""
+
+#: ../lib/prefs.c:59
+msgid "dict.leo.org - German <-> Chinese"
+msgstr ""
+
+#: ../lib/prefs.c:60
+msgid "dist.cc - Dictionary"
+msgstr ""
+
+#: ../lib/prefs.c:61
+msgid "Dictionary.com"
+msgstr ""
+
+#: ../lib/prefs.c:62
+msgid "TheFreeDictionary.com"
+msgstr ""
+
+#: ../lib/prefs.c:63
+msgid "Wikipedia, the free encyclopedia (EN)"
+msgstr ""
+
+#: ../lib/prefs.c:64
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr ""
+
+#: ../lib/prefs.c:65
+msgid "Merriam-Webster Online Dictionary"
+msgstr ""
+
+#: ../lib/prefs.c:66
+msgid "Clear"
+msgstr ""
+
+#: ../lib/prefs.c:101
+msgid "You have chosen an invalid dictionary."
+msgstr ""
+
+#: ../lib/prefs.c:303
+msgid "General"
+msgstr ""
+
+#: ../lib/prefs.c:305
+msgid "<b>Default search method:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:311 ../lib/prefs.c:472
+msgid "Dictionary Server"
+msgstr ""
+
+#: ../lib/prefs.c:320 ../lib/prefs.c:593
+msgid "Web Service"
+msgstr ""
+
+#: ../lib/prefs.c:329 ../lib/prefs.c:643
+msgid "Spell Checker"
+msgstr ""
+
+#: ../lib/prefs.c:338
+msgid "Last used method"
+msgstr ""
+
+#: ../lib/prefs.c:347
+msgid "<b>Colors:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:353
+msgid "Links:"
+msgstr ""
+
+#: ../lib/prefs.c:354
+msgid "Phonetics:"
+msgstr ""
+
+#: ../lib/prefs.c:355
+msgid "Spelled correctly:"
+msgstr ""
+
+#: ../lib/prefs.c:356
+msgid "Spelled incorrectly:"
+msgstr ""
+
+#: ../lib/prefs.c:416
+msgid "<b>Panel Text Field:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:422
+msgid "Show text field in the panel"
+msgstr ""
+
+#. panel entry size
+#: ../lib/prefs.c:429
+msgid "Text field size:"
+msgstr ""
+
+#. server address
+#: ../lib/prefs.c:475
+msgid "Server:"
+msgstr ""
+
+#. server port
+#: ../lib/prefs.c:487
+msgid "Server Port:"
+msgstr ""
+
+#. dictionary
+#: ../lib/prefs.c:495 ../lib/prefs.c:668
+msgid "Dictionary:"
+msgstr ""
+
+#: ../lib/prefs.c:499
+msgid "* (use all)"
+msgstr ""
+
+#: ../lib/prefs.c:501
+msgid "! (use all, stop after first match)"
+msgstr ""
+
+#: ../lib/prefs.c:595
+msgid "<b>Web search URL:</b>"
+msgstr ""
+
+#: ../lib/prefs.c:601
+msgid "URL:"
+msgstr ""
+
+#: ../lib/prefs.c:621
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
+msgstr ""
+
+#: ../lib/prefs.c:645
+msgid "Spell Check Program:"
+msgstr ""
+
+#: ../lib/prefs.c:662
+msgid ""
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
+"The icon shows whether the entered command exists.</i>"
+msgstr ""
+
+#~ msgid "%d strings replaced"
+#~ msgstr "%d строк заменено"
+
+#~ msgid "'%s' already exists. Overwrite?"
+#~ msgstr "'%s' уже существует. Переписать?"
+
+#~ msgid "'%s' is not supported"
+#~ msgstr "'%s' не поддерживается"
+
+#~ msgid "/Edit/Cu_t"
+#~ msgstr "/Правка/_Вырезать"
+
+#~ msgid "/Edit/Select _All"
+#~ msgstr "/Правка/В_ыделить все"
+
+#~ msgid "/Edit/_Copy"
+#~ msgstr "/Правка/_Копировать"
+
+#~ msgid "/Edit/_Delete"
+#~ msgstr "/Правка/У_далить"
+
+#~ msgid "/Edit/_Paste"
+#~ msgstr "/Правка/Вст_авить"
+
+#~ msgid "/Edit/_Redo"
+#~ msgstr "/Правка/Ве_рнуть"
+
+#~ msgid "/Edit/_Undo"
+#~ msgstr "/Правка/_Отменить"
+
+#~ msgid "/File/New _Window"
+#~ msgstr "/Файл/_Новое окно"
+
+#~ msgid "/File/Save _As..."
+#~ msgstr "/Файл/Сохранить _как..."
+
+#~ msgid "/File/_New"
+#~ msgstr "/Файл/_Создать"
+
+#~ msgid "/File/_Open..."
+#~ msgstr "/Файл/_Открыть..."
+
+#~ msgid "/File/_Print..."
+#~ msgstr "/Файл/_Печать..."
+
+#~ msgid "/File/_Quit"
+#~ msgstr "/Файл/В_ыход"
+
+#~ msgid "/File/_Save"
+#~ msgstr "/Файл/Со_хранить"
+
+#~ msgid "/Help/_About"
+#~ msgstr "/Справка/_О программе"
+
+#~ msgid "/Options/_Auto Indent"
+#~ msgstr "/Параметры/_Автоматический отступ"
+
+#~ msgid "/Options/_Font..."
+#~ msgstr "/Параметры/_Шрифт..."
+
+#~ msgid "/Options/_Line Numbers"
+#~ msgstr "/Параметры/Показывать _номера строк"
+
+#~ msgid "/Options/_Word Wrap"
+#~ msgstr "/Параметры/_Переносить слова"
+
+#~ msgid "/Search/Find _Next"
+#~ msgstr "/Поиск/Найти след_ующее"
+
+#~ msgid "/Search/Find _Previous"
+#~ msgstr "/Поиск/Найти пред_ыдущее"
+
+#~ msgid "/Search/_Find..."
+#~ msgstr "/Поиск/_Найти..."
+
+#~ msgid "/Search/_Jump To..."
+#~ msgstr "/Поиск/Перейти к _строке..."
+
+#~ msgid "/Search/_Replace..."
+#~ msgstr "/Поиск/За_менить..."
+
+#~ msgid "/_Edit"
+#~ msgstr "/_Правка"
+
+#~ msgid "/_Options"
+#~ msgstr "/П_араметры"
+
+#~ msgid "A text editor for Xfce"
+#~ msgstr "Текстовый редактор для Xfce"
+
+#~ msgid "About %s"
+#~ msgstr "О программе \"%s\""
+
+#~ msgid "Auto Detect"
+#~ msgstr "Автоопределение"
+
+#~ msgid "Can't convert codeset to '%s'"
+#~ msgstr "Не удалось преобразовать кодировку в '%s'"
+
+#~ msgid "Can't open file to write"
+#~ msgstr "Не удалось открыть файл для записи"
+
+#~ msgid "Can't open pipe to process"
+#~ msgstr "Не удалось открыть канал к процессу"
+
+#~ msgid "Can't write file"
+#~ msgstr "Не удалось записать файл"
+
+#~ msgid "Ch_aracter Coding: "
+#~ msgstr "Ко_дировка символов"
+
+#~ msgid "Code_set:"
+#~ msgstr "_Кодировка:"
+
+#~ msgid "Current Locale (%s)"
+#~ msgstr "Текущая локаль (%s)"
+
+#~ msgid "Fi_nd what: "
+#~ msgstr "На_йти: "
+
+#~ msgid "Find"
+#~ msgstr "Поиск"
+
+#~ msgid "Font"
+#~ msgstr "Шрифт"
+
+#~ msgid "Jump To"
+#~ msgstr "Переход"
+
+#~ msgid "Mousepad"
+#~ msgstr "Mousepad"
+
+#~ msgid "Open"
+#~ msgstr "Открытие файла"
+
+#~ msgid "Other Codeset"
+#~ msgstr "Другая кодировка"
+
+#~ msgid "Replace"
+#~ msgstr "Замена"
+
+#~ msgid "Replace _all at once"
+#~ msgstr "Заменить _все"
+
+#~ msgid "Replace?"
+#~ msgstr "Заменить?"
+
+#~ msgid "Save As"
+#~ msgstr "Сохранение файла"
+
+#~ msgid "Save changes to '%s'?"
+#~ msgstr "Сохранить изменения в '%s'?"
+
+#~ msgid "Search string not found"
+#~ msgstr "Искомая строка не найдена"
+
+#~ msgid "Simple text editor"
+#~ msgstr "Простой текстовый редактор"
+
+#~ msgid "Text Editor"
+#~ msgstr "Текстовый редактор"
+
+#~ msgid "Untitled"
+#~ msgstr "Без имени"
+
+#~ msgid "Warning, you are using the root account, you may harm your system."
+#~ msgstr ""
+#~ "Внимание, вы используете учетную запись суперпользователя, при этом вы "
+#~ "можете повредить вашу систему."
+
+#~ msgid "_Jump"
+#~ msgstr "_Перейти"
+
+#~ msgid "_Line number: "
+#~ msgstr "_Номер строки: "
+
+#~ msgid "_Match case"
+#~ msgstr "Учитывать _регистр"
