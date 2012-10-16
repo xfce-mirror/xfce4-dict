@@ -178,19 +178,19 @@ msgstr ""
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_Слов в минуту:"
 
 #: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Отметить параграфы"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "_Группировка слов:"
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr ""
+msgstr "Размер _шрифта:"
 
 #: ../lib/speedreader.c:638
 msgid ""
@@ -199,102 +199,104 @@ msgid ""
 "Be relaxed and make yourself comfortable, then press Start to begin speed "
 "reading."
 msgstr ""
+"Введите здесь небольшой текст, который хотите прочитать.\n"
+"\n"
+"Расслабьтесь и сядьте поудобнее, затем нажмите «Старт» для начала чтения на скорость."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Загружает содержимое файла"
 
 #: ../lib/speedreader.c:663
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr ""
+msgstr "Очистить содержимое текстового поля и скопировать его в буфер обмена"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
-msgstr ""
+msgstr "Очистить содержимое текстового поля"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr ""
+msgstr "_Старт"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
-msgstr ""
+msgstr "URL поиска пуст. Пожалуйста, проверьте настройки."
 
 #: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
+msgstr "Браузер не может быть открыт. Пожалуйста, проверьте настройки."
 
 #: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
-msgstr ""
+msgstr "Неправильный не-UTF-8 ввод"
 
 #: ../lib/common.c:607
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 #: ../lib/common.c:610
 msgid "warning"
-msgstr ""
+msgstr "предупреждение"
 
 #: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
 #: ../lib/dictd.c:804
 msgid "Could not connect to server."
-msgstr ""
+msgstr "Невозможно подключиться к серверу."
 
 #: ../lib/dictd.c:385
 msgid "The server is not ready."
-msgstr ""
+msgstr "Сервер не готов."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr ""
+msgstr "Указан неправильный словарь. Пожалуйста, проверьте настройки."
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
 msgid "Unknown error while querying the server."
-msgstr ""
+msgstr "Неизвестная ошибка во время отправки запроса на сервер."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
-msgstr ""
+msgstr "Результат словаря:"
 
 #: ../lib/dictd.c:418
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr ""
+msgstr "Не найдено совпадений для \"%s\"."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
 #: ../lib/dictd.c:434
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Поиск \"%s\" используя \"%s\""
 
 #: ../lib/dictd.c:439
-#, fuzzy
 msgid "Web Search:"
-msgstr "/П_оиск"
+msgstr "Поиск в Интернете:"
 
 #: ../lib/dictd.c:461
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d значение найдено."
+msgstr[1] "%d значений найдено."
 
 #: ../lib/dictd.c:669
 #, c-format
 msgid "Querying %s..."
-msgstr ""
+msgstr "Запрашиваю %s..."
 
 #: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
-msgstr ""
+msgstr "Во время запроса ифнормации о сервере произошла ошибка."
 
 #: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr ""
+msgstr "Информация о сервере для \"%s\""
 
 #: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
@@ -302,38 +304,35 @@ msgstr ""
 
 #: ../lib/gui.c:342
 msgid "Copy Link"
-msgstr ""
+msgstr "Скопировать ссылку"
 
 #: ../lib/gui.c:674
-#, fuzzy
 msgid "_File"
-msgstr "/_Файл"
+msgstr "_Файл"
 
 #: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr ""
 
 #: ../lib/gui.c:700
-#, fuzzy
 msgid "_Help"
-msgstr "/_Справка"
+msgstr "_Справка"
 
 #: ../lib/gui.c:808
-#, fuzzy
 msgid "Search with:"
-msgstr "З_аменить на: "
+msgstr "Поиск с помощью:"
 
 #: ../lib/gui.c:812
 msgid "_Dictionary Server"
-msgstr ""
+msgstr "_Сервер словвря"
 
 #: ../lib/gui.c:818
 msgid "_Web Service"
-msgstr ""
+msgstr "_Веб-сервис"
 
 #: ../lib/gui.c:826
 msgid "_Spell Checker"
-msgstr ""
+msgstr "_Программа для проверки орфографии"
 
 #: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
@@ -397,51 +396,51 @@ msgstr ""
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
-msgstr ""
+msgstr "Вы указали неправильный словарь."
 
 #: ../lib/prefs.c:303
 msgid "General"
-msgstr ""
+msgstr "Основное"
 
 #: ../lib/prefs.c:305
 msgid "<b>Default search method:</b>"
-msgstr ""
+msgstr "<b>Основной метод поиска:</b>"
 
 #: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
-msgstr ""
+msgstr "Сервер словаря"
 
 #: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
-msgstr ""
+msgstr "Веб-сервис"
 
 #: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
-msgstr ""
+msgstr "Программа для проверки орфографии"
 
 #: ../lib/prefs.c:338
 msgid "Last used method"
-msgstr ""
+msgstr "Последний использованный метод"
 
 #: ../lib/prefs.c:347
 msgid "<b>Colors:</b>"
-msgstr ""
+msgstr "<b>Цвета:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Ссылки:"
 
 #: ../lib/prefs.c:354
 msgid "Phonetics:"
-msgstr ""
+msgstr "Фонетика:"
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
-msgstr ""
+msgstr "Орфографически правильно:"
 
 #: ../lib/prefs.c:356
 msgid "Spelled incorrectly:"
-msgstr ""
+msgstr "Орфографически НЕправильно:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -449,43 +448,43 @@ msgstr ""
 
 #: ../lib/prefs.c:422
 msgid "Show text field in the panel"
-msgstr ""
+msgstr "Показывать текст на панели"
 
 #. panel entry size
 #: ../lib/prefs.c:429
 msgid "Text field size:"
-msgstr ""
+msgstr "Размер текстового поля:"
 
 #. server address
 #: ../lib/prefs.c:475
 msgid "Server:"
-msgstr ""
+msgstr "Сервер:"
 
 #. server port
 #: ../lib/prefs.c:487
 msgid "Server Port:"
-msgstr ""
+msgstr "Порт:"
 
 #. dictionary
 #: ../lib/prefs.c:495 ../lib/prefs.c:668
 msgid "Dictionary:"
-msgstr ""
+msgstr "Словарь:"
 
 #: ../lib/prefs.c:499
 msgid "* (use all)"
-msgstr ""
+msgstr "* (использовать всё)"
 
 #: ../lib/prefs.c:501
 msgid "! (use all, stop after first match)"
-msgstr ""
+msgstr "! (использовать всё, но остановиться после первого совпадения)"
 
 #: ../lib/prefs.c:595
 msgid "<b>Web search URL:</b>"
-msgstr ""
+msgstr "<b>URL для поиска в Интернете:</b>"
 
 #: ../lib/prefs.c:601
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid ""
@@ -495,7 +494,7 @@ msgstr ""
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
-msgstr ""
+msgstr "Программа проверки орфографии:"
 
 #: ../lib/prefs.c:662
 msgid ""
