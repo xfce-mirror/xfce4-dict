@@ -182,7 +182,7 @@ msgstr[2] "(wyświetla %d słów jednocześnie)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Jest to narzędzie, do pomocy w łatwej nauce szybszego czytania. Uczy tego wyświetlając na ekranie słowa z dużą częstotliwością."
+msgstr "Jest to narzędzie do pomocy w łatwej nauce szybszego czytania. Uczy tego wyświetlając na ekranie słowa z dużą częstotliwością."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
