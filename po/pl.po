@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-24 11:12+0000\n"
+"POT-Creation-Date: 2012-11-01 14:03+0000\n"
 "PO-Revision-Date: 2009-03-30 00:05+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish\n"
@@ -139,11 +139,11 @@ msgstr "Proces zakończony niepowodzeniem (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr ""
+msgstr "W_strzymaj"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Wznów"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
@@ -155,7 +155,7 @@ msgstr "Zakończono"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Szybkie czytanie"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
@@ -174,31 +174,31 @@ msgstr "Plik '%s' nie mógł zostać wczytany."
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "(wyświetla %d słowo jednocześnie)"
+msgstr[1] "(wyświetla %d słowa jednocześnie)"
+msgstr[2] "(wyświetla %d słów jednocześnie)"
 
 #: ../lib/speedreader.c:586
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "Jest to narzędzie, do pomocy w łatwej nauce szybszego czytania. Uczy tego wyświetlając na ekranie słowa z dużą częstotliwością."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_Słowa na minutę"
 
 #: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Oznacza akapity"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "Grupowanie _Słów"
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr ""
+msgstr "_Rozmiar Czcionki"
 
 #: ../lib/speedreader.c:638
 msgid ""
@@ -207,16 +207,18 @@ msgid ""
 "Be relaxed and make yourself comfortable, then press Start to begin speed "
 "reading."
 msgstr ""
+"Tutaj należy wprowadzić tekst do rpzeczytania.\n"
+"\n"
+"Należy się odprężyć i wygodnie ułożyć, następnie po wciśnięciu \"Początek\", można rozpocząć szybkie czytanie."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Wczytaj zawartość pliku"
 
 #: ../lib/speedreader.c:663
-#, fuzzy
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Zaznacza pole tekstowe panelu"
+msgstr "Czyści zawartość pola tekstowego i wkleja zawartość schowka"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -224,7 +226,7 @@ msgstr "Wyczyść zawartość pola tekstowego"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr ""
+msgstr "_Początek"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
@@ -322,7 +324,7 @@ msgstr "_Plik"
 
 #: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Szybkie _Czytanie"
 
 #: ../lib/gui.c:700
 msgid "_Help"
@@ -443,9 +445,8 @@ msgid "Links:"
 msgstr "Odnośniki:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Zapis fonetyczny:"
+msgstr "Fonetyka"
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
@@ -500,7 +501,6 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
