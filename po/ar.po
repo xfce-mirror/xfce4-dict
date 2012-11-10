@@ -1,11 +1,12 @@
 # mohammad <malham1@gmail.com>, 2012.
+# محمد الحرقان <malham1@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-20 20:24+0000\n"
-"PO-Revision-Date: 2012-05-20 23:39+0300\n"
-"Last-Translator: mohammad <malham1@gmail.com>\n"
+"POT-Creation-Date: 2012-11-10 17:24+0000\n"
+"PO-Revision-Date: 2012-11-10 20:43+0300\n"
+"Last-Translator: محمد الحرقان <malham1@gmail.com>\n"
 "Language-Team: http://www.vertaal.com.ar/files/factory/ar/list/\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -181,8 +182,8 @@ msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr ""
-"هذه أداة القراءة السريعة للمساعدة في التدريب على قراءة أسرع. يفعل ذلك من "
-"خلال كلمات وامضة بمعدل سريع على الشاشة."
+"هذه أداة القراءة السريعة للمساعدة في التدريب على قراءة أسرع. يتم ذلك من خلال "
+"كلمات وامضة بمعدل سريع على الشاشة."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -207,7 +208,7 @@ msgid ""
 "Be relaxed and make yourself comfortable, then press Start to begin speed "
 "reading."
 msgstr ""
-"إدخال نص هنا ترغب في قرائته.\n"
+"إدخال النص اللذي ترغب في قرائته هنا.\n"
 "\n"
 " استرخ وخذ راحتك ، ثم اضغط على بدء لاختبار سرعة القراءة."
 
@@ -218,7 +219,7 @@ msgstr "تحميل محتويات الملف"
 #: ../lib/speedreader.c:663
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "مسح محتويات حقل النص ولصق محتويات الحافظة"
+msgstr "مسح حقل النص ولصق محتوياته في الحافظة"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -230,7 +231,7 @@ msgstr "_بدء"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
-msgstr "عنوان الموقع البحث فارغ. يرجى التحقق من خياراتك."
+msgstr "مسار البحث فارغ. يرجى التحقق من خياراتك."
 
 #: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
@@ -255,7 +256,7 @@ msgstr "تعذر الاتصال بالخادم."
 
 #: ../lib/dictd.c:385
 msgid "The server is not ready."
-msgstr "الملقم غير جاهز."
+msgstr "الخادم غير جاهز."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
@@ -263,7 +264,7 @@ msgstr "القاموس المحدد غير صالح . يرجى التحقق من
 
 #: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
 msgid "Unknown error while querying the server."
-msgstr "خطأ غير معروف أثناء الاستعلام عن الملقم."
+msgstr "خطأ غير معروف أثناء الاستعلام عن الخادم."
 
 #: ../lib/dictd.c:415
 msgid "Dictionary Results:"
@@ -303,16 +304,16 @@ msgstr "الاستعلام عن %s..."
 
 #: ../lib/dictd.c:728
 msgid "An error occured while querying server information."
-msgstr "حدث خطأ أثناء الاستعلام عن معلومات الملقم."
+msgstr "حدث خطأ أثناء الاستعلام عن معلومات الخادم."
 
 #: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "معلومات الخادم ل \"%s\""
+msgstr "معلومات خادم \"%s\""
 
 #: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
-msgstr "الملقم لا يوفر أي نوع من قواعد البيانات."
+msgstr "الخادم لا يوفر أي نوع من قواعد البيانات."
 
 #: ../lib/gui.c:342
 msgid "Copy Link"
@@ -496,14 +497,14 @@ msgstr "<b>رابط صفحة البحث:</b>"
 
 #: ../lib/prefs.c:601
 msgid "URL:"
-msgstr "URL:"
+msgstr "المسار:"
 
 #: ../lib/prefs.c:621
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
 msgstr ""
-"أدخل URL لموقع الويب الذي يقدم خدمات الترجمة أو القاموس. استخدام {كلمة} "
+"أدخل المسار لموقع الويب الذي يقدم خدمات الترجمة أو القاموس. استخدام {كلمة} "
 "لكلمة البحث."
 
 #: ../lib/prefs.c:645
@@ -518,4 +519,4 @@ msgid ""
 msgstr ""
 "<i>يمكن استخدام برنامج التدقيق الإملائي 'enchant', 'aspell', 'ispell' أو أي "
 "برنامج آخر للتدقيق الإملائي الذي يتوافق مع أوامر ispell.\n"
-"الايقونة توضح ما إذا كان أمر الادخال موجود.</i>"
+"الايقونة توضح إذا كان أمر الادخال موجود.</i>"
