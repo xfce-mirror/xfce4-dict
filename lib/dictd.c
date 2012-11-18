@@ -502,7 +502,7 @@ static gint get_answer(gint fd, gchar **buffer)
 	GString *str;
 	gchar c;
 	gchar ec[3];
-	gint query_status;
+	gint query_status = NO_ERROR;
 
 	if (buffer != NULL)
 		str = g_string_sized_new(100);
