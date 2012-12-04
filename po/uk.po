@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-13 06:30+0000\n"
+"POT-Creation-Date: 2012-12-04 08:30+0000\n"
 "PO-Revision-Date: 2009-01-26 12:01+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr "Додаток для запиту різних словників."
+msgstr "Додаток для пошуку у різних словниках."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
@@ -35,7 +35,7 @@ msgstr "Готово"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
-msgstr "Дивись вище слово"
+msgstr "Перевірити слово"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
@@ -85,7 +85,7 @@ msgstr "Надсилайте звіт про помилки на <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
-msgstr "Клієнтська програма для запиту різних словників."
+msgstr "Клієнтська програма для пошуку у різних словниках."
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "Dictionary Client"
@@ -362,7 +362,7 @@ msgstr "Всі права застережено © 2006-2012 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr "Dmitry Nikitin <luckas_fb@mai.ru>"
+msgstr "Dmitry Nikitin <luckas_fb@mai.ru>/nYarema aka Knedlyk <yupadmin@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
