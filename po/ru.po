@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mousepad 0.2.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-16 07:30+0000\n"
+"POT-Creation-Date: 2013-01-03 05:24+0000\n"
 "PO-Revision-Date: 2006-04-22 14:38+0600\n"
 "Last-Translator: Sergey Fedoseev <fedoseev.sergey@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
-msgstr ""
+msgstr "Плагин для запросов к опрелённым словарям."
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 #: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
@@ -37,15 +37,15 @@ msgstr "Поиск термина"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
+msgstr "Искать данный декст используя сервер-словарь (RFC 2229)"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr ""
+msgstr "Искать данный декст, используя поисковый интернет-движок"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr ""
+msgstr "Проверить данный текст с помощью программы проверки орфографии"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
+msgstr "Запускать автономное приложение если загружен плагин для панели"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -65,11 +65,11 @@ msgstr ""
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
-msgstr ""
+msgstr "Показать информацию о версии"
 
 #: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
-msgstr ""
+msgstr "[TEXT]"
 
 #: ../src/xfce4-dict.c:147
 #, c-format
@@ -128,23 +128,23 @@ msgstr "Неправильный ввод"
 #: ../lib/spell.c:247
 #, c-format
 msgid "Process failed (%s)"
-msgstr ""
+msgstr "Процесс не удался (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr ""
+msgstr "_Пауза"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Восстановить"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Запущен"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Закончен"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
@@ -152,29 +152,29 @@ msgstr ""
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Вы должны ввести текст"
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Укажите файл для загрузки"
 
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "Файл «%s» не может быть загружен."
 
 #: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(показывать %d слово некоторое время)"
+msgstr[1] "(показывать %d слов некоторое время)"
 
 #: ../lib/speedreader.c:586
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "Это утилита, повышающая скорость вашего чтения. Она делает это, изменяя слова с большой скоростью на экране."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -201,7 +201,8 @@ msgid ""
 msgstr ""
 "Введите здесь небольшой текст, который хотите прочитать.\n"
 "\n"
-"Расслабьтесь и сядьте поудобнее, затем нажмите «Старт» для начала чтения на скорость."
+"Расслабьтесь и сядьте поудобнее, затем нажмите «Старт» для начала чтения на "
+"скорость."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -300,7 +301,7 @@ msgstr "Информация о сервере для \"%s\""
 
 #: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
-msgstr ""
+msgstr "Сервер не имеет своей базы данных."
 
 #: ../lib/gui.c:342
 msgid "Copy Link"
@@ -336,11 +337,11 @@ msgstr "_Программа для проверки орфографии"
 
 #: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
-msgstr ""
+msgstr "Словарь Xfce4"
 
 #: ../lib/gui.c:963
 msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr ""
+msgstr "Copyright © 2006-2012 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -368,11 +369,11 @@ msgstr ""
 
 #: ../lib/prefs.c:60
 msgid "dist.cc - Dictionary"
-msgstr ""
+msgstr "dist.cc - Словарь"
 
 #: ../lib/prefs.c:61
 msgid "Dictionary.com"
-msgstr ""
+msgstr "Dictionary.com"
 
 #: ../lib/prefs.c:62
 msgid "TheFreeDictionary.com"
@@ -380,19 +381,19 @@ msgstr ""
 
 #: ../lib/prefs.c:63
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr ""
+msgstr "Википедия, свободная энциклопедия (EN)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr ""
+msgstr "Викисловарь, свободный словарь (EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr ""
+msgstr "Онлайн словарь Merriam-Webster"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
-msgstr ""
+msgstr "Очистить"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
@@ -444,7 +445,7 @@ msgstr "Орфографически НЕправильно:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
-msgstr ""
+msgstr "<b>Текстовое поле панели:<b>"
 
 #: ../lib/prefs.c:422
 msgid "Show text field in the panel"
