@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-01 14:03+0000\n"
+"POT-Creation-Date: 2013-03-09 12:57+0000\n"
 "PO-Revision-Date: 2009-03-30 00:05+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish\n"
@@ -98,24 +98,24 @@ msgstr "Wyniki sprawdzania pisowni:"
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "Znaleziono %d sugestię"
-msgstr[1] "Znaleziono %d sugestie"
-msgstr[2] "Znaleziono %d sugestii"
+msgstr[0] "Odnaleziono %d sugestię"
+msgstr[1] "Odnaleziono %d sugestie"
+msgstr[2] "Odnaleziono %d sugestii"
 
 #: ../lib/spell.c:105
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Sugestie dla \"%s\" (%s):"
+msgstr "Sugestie dla  „%s” (%s):"
 
 #: ../lib/spell.c:122
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" jest zapisane poprawnie (%s)."
+msgstr "Wyrażenie „%s” jest zapisane poprawnie (%s)."
 
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Nie znaleziono sugestii dla \"%s\" (%s)."
+msgstr "Nie znaleziono sugestii dla „%s” (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -135,7 +135,7 @@ msgstr "Niepoprawne dane"
 #: ../lib/spell.c:247
 #, c-format
 msgid "Process failed (%s)"
-msgstr "Proces zakończony niepowodzeniem (%s)"
+msgstr "Nieudane działanie (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
@@ -159,16 +159,16 @@ msgstr "Szybkie czytanie"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr "Musisz wpisać tekst."
+msgstr "Proszę wprowadzić tekst."
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr "Wybierz plik do wczytania"
+msgstr "Proszę wybrać plik do wczytania"
 
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "Plik '%s' nie mógł zostać wczytany."
+msgstr "Nie udało się wczytać pliku „%s”."
 
 #: ../lib/speedreader.c:561
 #, c-format
@@ -182,23 +182,25 @@ msgstr[2] "(wyświetla %d słów jednocześnie)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Jest to narzędzie do pomocy w łatwej nauce szybszego czytania. Uczy tego wyświetlając na ekranie słowa z dużą częstotliwością."
+msgstr ""
+"Jest to narzędzie do pomocy w łatwej nauce szybszego czytania. Uczy tego "
+"wyświetlając na ekranie słowa z dużą częstotliwością."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
-msgstr "_Słowa na minutę"
+msgstr "_Słowa na minutę:"
 
 #: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr "_Oznacza akapity"
+msgstr "_Oznaczanie akapitów"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr "Grupowanie _Słów"
+msgstr "_Grupowanie słów"
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr "_Rozmiar Czcionki"
+msgstr "_Rozmiar czcionki"
 
 #: ../lib/speedreader.c:638
 msgid ""
@@ -209,7 +211,8 @@ msgid ""
 msgstr ""
 "Tutaj należy wprowadzić tekst do rpzeczytania.\n"
 "\n"
-"Należy się odprężyć i wygodnie ułożyć, następnie po wciśnięciu \"Początek\", można rozpocząć szybkie czytanie."
+"Należy się odprężyć i wygodnie ułożyć, następnie po wciśnięciu \"Początek\", "
+"można rozpocząć szybkie czytanie."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -226,7 +229,7 @@ msgstr "Wyczyść zawartość pola tekstowego"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr "_Początek"
+msgstr "_Rozpocznij"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
