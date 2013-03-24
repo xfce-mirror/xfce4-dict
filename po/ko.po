@@ -1,7 +1,7 @@
 # Korean translaton for the xfce4-dict package.
 # Copyright (C) 2006-2012 Enrico Tröger et al.
 # This file is distributed under the same license as the xfce4-dict package.
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012, 2013.
 #
 # Please write your name and e-mail into "translator-credits" if you update this translation script.
 #
@@ -93,7 +93,7 @@ msgstr "[TEXT]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "<%s>로 버그를 알려주시기 바랍니다."
+msgstr "<%s>로 버그를 알려주십시오."
 
 #: ../src/xfce4-dict.desktop.in.h:1
 #: ../lib/gui.c:962
@@ -112,33 +112,33 @@ msgstr "철자 검사기 결과:"
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "%d개의 제안을 찾았습니다."
+msgstr[0] "제안 %d개를 찾았습니다."
 
 #: ../lib/spell.c:105
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "\"%s\"에 대한 제안 (%s):"
+msgstr "\"%s\"에 대한 제안(%s):"
 
 #: ../lib/spell.c:122
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\"은(는) 올바른 철자입니다 (%s)."
+msgstr "\"%s\"은(는) 올바른 철자입니다(%s)."
 
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "\"%s\"에 대한 제안을 찾을 수 없습니다 (%s)."
+msgstr "\"%s\"에 대한 제안을 찾을 수 없습니다(%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "\"%s\"을(를) 실행하는 동안 오류가 발생했습니다 (%s)."
+msgstr "\"%s\"을(를) 실행하는 동안 오류가 발생했습니다(%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "기본 설정 대화상자에서 철자 검사 명령을 설정하여주시기 바랍니다."
+msgstr "기본 설정 대화상자에서 철자 검사 명령을 설정하여주십시오."
 
 #: ../lib/spell.c:208
 #: ../lib/common.c:223
@@ -148,7 +148,7 @@ msgstr "질못된 입력"
 #: ../lib/spell.c:247
 #, c-format
 msgid "Process failed (%s)"
-msgstr "처리 실패 (%s)"
+msgstr "처리 실패(%s)"
 
 #: ../lib/speedreader.c:80
 #: ../lib/speedreader.c:683
@@ -238,11 +238,11 @@ msgstr "시작(_S)"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
-msgstr "검색 URL이 비어 있습니다. 기본 설정을 확인하시기 바랍니다."
+msgstr "검색 URL이 비어 있습니다. 기본 설정을 확인하십시오."
 
 #: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "브라우저를 열 수 없습니다. 기본 설정을 확인하시기 바랍니다."
+msgstr "브라우저를 열 수 없습니다. 기본 설정을 확인하십시오."
 
 #: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
@@ -270,7 +270,7 @@ msgstr "서버가 대기중이 아닙니다."
 
 #: ../lib/dictd.c:392
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "잘못된 사전을 지정했습니다. 기본 설정을 확인하시기 바랍니다."
+msgstr "잘못된 사전을 지정했습니다. 기본 설정을 확인하십시오."
 
 #: ../lib/dictd.c:400
 #: ../lib/dictd.c:456
@@ -302,7 +302,7 @@ msgstr "웹 검색:"
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d개의 정의를 찾았습니다."
+msgstr[0] "정의 %d개를 찾았습니다."
 
 #: ../lib/dictd.c:669
 #, c-format
@@ -316,7 +316,7 @@ msgstr "서버 정보를 요청하는 동안 오류가 발생했습니다."
 #: ../lib/dictd.c:741
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "\"%s\"에 대한 서버 정보"
+msgstr "\"%s\"의 서버 정보"
 
 #: ../lib/dictd.c:824
 msgid "The server doesn't offer any databases."
@@ -401,11 +401,11 @@ msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:63
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr "위키피디아, 자유 백과사전 (EN)"
+msgstr "위키피디아, 자유 백과사전(EN)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr "윅셔너리, 자유 사전 (EN)"
+msgstr "윅셔너리, 자유 사전(EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
