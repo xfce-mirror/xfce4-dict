@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mousepad 0.2.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-03 05:24+0000\n"
+"POT-Creation-Date: 2013-03-28 06:21+0000\n"
 "PO-Revision-Date: 2006-04-22 14:38+0600\n"
 "Last-Translator: Sergey Fedoseev <fedoseev.sergey@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Быть подробнее"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
@@ -148,7 +148,7 @@ msgstr "Закончен"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Скорость чтения"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
@@ -174,7 +174,9 @@ msgstr[1] "(показывать %d слов некоторое время)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Это утилита, повышающая скорость вашего чтения. Она делает это, изменяя слова с большой скоростью на экране."
+msgstr ""
+"Это утилита, повышающая скорость вашего чтения. Она делает это, изменяя "
+"слова с большой скоростью на экране."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -313,7 +315,7 @@ msgstr "_Файл"
 
 #: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Скорость _чтения"
 
 #: ../lib/gui.c:700
 msgid "_Help"
@@ -345,27 +347,27 @@ msgstr "Copyright © 2006-2012 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr ""
+msgstr "translator-credits"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
-msgstr ""
+msgstr "dict.leo.org - German <-> English"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> French"
-msgstr ""
+msgstr "dict.leo.org - German <-> French"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Spanish"
-msgstr ""
+msgstr "dict.leo.org - German <-> Spanish"
 
 #: ../lib/prefs.c:58
 msgid "dict.leo.org - German <-> Italian"
-msgstr ""
+msgstr "dict.leo.org - German <-> Italian"
 
 #: ../lib/prefs.c:59
 msgid "dict.leo.org - German <-> Chinese"
-msgstr ""
+msgstr "dict.leo.org - German <-> Chinese"
 
 #: ../lib/prefs.c:60
 msgid "dist.cc - Dictionary"
@@ -377,7 +379,7 @@ msgstr "Dictionary.com"
 
 #: ../lib/prefs.c:62
 msgid "TheFreeDictionary.com"
-msgstr ""
+msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:63
 msgid "Wikipedia, the free encyclopedia (EN)"
@@ -491,7 +493,7 @@ msgstr "URL:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
-msgstr ""
+msgstr "Введите полный URL веб-сайта, который предоставляет доступ к словарям для перевода. Используейте {слово} чтобы найти искомое слово."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
