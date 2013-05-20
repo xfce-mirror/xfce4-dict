@@ -31,7 +31,11 @@ gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 
 man_MANS=xfce4-dict.1
 
-install-data-hook:
+install-data-hook: update-icon-cache
+
+uninstall-hook: update-icon-cache
+
+update-icon-cache:
 	@-if test -z "$(DESTDIR)"; then								\
 		echo "Updating Gtk icon cache.";						\
 		$(gtk_update_icon_cache);								\
@@ -47,4 +51,3 @@ sign:
 		gpg --detach-sign --digest-algo SHA512 $(PACKAGE)-$(VERSION).tar.gz; fi
 	if test -f $(PACKAGE)-$(VERSION).tar.bz2; then \
 		gpg --detach-sign --digest-algo SHA512 $(PACKAGE)-$(VERSION).tar.bz2; fi
-
