@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-24 19:32+0900\n"
+"POT-Creation-Date: 2013-05-20 16:06+0200\n"
 "PO-Revision-Date: 2012-07-24 19:33+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-i18n@xfce.org>\n"
@@ -264,65 +264,65 @@ msgstr "エラー"
 msgid "warning"
 msgstr "警告"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
-#: ../lib/dictd.c:804
+#: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
+#: ../lib/dictd.c:811
 msgid "Could not connect to server."
 msgstr "サーバーに接続できませんでした。"
 
-#: ../lib/dictd.c:385
+#: ../lib/dictd.c:392
 msgid "The server is not ready."
 msgstr "サーバーが準備できていません。"
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "無効な辞書が指定されています。環境設定を確認してください。"
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+#: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
 msgstr "サーバへの問い合わせ中の不明なエラーです。"
 
-#: ../lib/dictd.c:415
+#: ../lib/dictd.c:422
 msgid "Dictionary Results:"
 msgstr "辞書検索の結果:"
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:425
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "\"%s\" に一致するものは見つかりませんでした。"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:434
+#: ../lib/dictd.c:441
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "\"%2$s\" を使用して \"%1$s\" を検索してみる"
 
-#: ../lib/dictd.c:439
+#: ../lib/dictd.c:446
 msgid "Web Search:"
 msgstr "ウェブ検索:"
 
-#: ../lib/dictd.c:461
+#: ../lib/dictd.c:468
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d 個の定義が見つかりました。"
 msgstr[1] "%d 個の定義が見つかりました。"
 
-#: ../lib/dictd.c:669
+#: ../lib/dictd.c:676
 #, c-format
 msgid "Querying %s..."
 msgstr "%s に問い合わせています..."
 
-#: ../lib/dictd.c:728
+#: ../lib/dictd.c:735
 msgid "An error occured while querying server information."
 msgstr "サーバへの問い合わせ中にエラーが発生しました。"
 
-#: ../lib/dictd.c:741
+#: ../lib/dictd.c:748
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "\"%s\" の サーバ情報"
 
-#: ../lib/dictd.c:824
+#: ../lib/dictd.c:831
 msgid "The server doesn't offer any databases."
 msgstr "サーバにはデータベースが用意されていません。"
 

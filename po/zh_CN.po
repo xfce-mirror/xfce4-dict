@@ -4,29 +4,29 @@
 # the xfce4-dict package.
 # Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.
 # Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-07 00:42+0000\n"
+"POT-Creation-Date: 2013-05-20 16:06+0200\n"
 "PO-Revision-Date: 2010-01-14 22:32+0800\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-msgid "A plugin to query different dictionaries."
-msgstr "查询不同词典的插件。"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "词典"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+msgid "A plugin to query different dictionaries."
+msgstr "查询不同词典的插件。"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
@@ -83,13 +83,13 @@ msgstr "[文字]"
 msgid "Please report bugs to <%s>."
 msgstr "请向 <%s> 报告缺陷。"
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
-msgid "A client program to query different dictionaries."
-msgstr "查询不同词典的客户端程序。"
-
-#: ../src/xfce4-dict.desktop.in.h:3
+#: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
 msgstr "词典客户端"
+
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+msgid "A client program to query different dictionaries."
+msgstr "查询不同词典的客户端程序。"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -247,64 +247,64 @@ msgstr "错误"
 msgid "warning"
 msgstr "警告"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
-#: ../lib/dictd.c:804
+#: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
+#: ../lib/dictd.c:811
 msgid "Could not connect to server."
 msgstr "未能与服务器连接。"
 
-#: ../lib/dictd.c:385
+#: ../lib/dictd.c:392
 msgid "The server is not ready."
 msgstr "服务器未就绪。"
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "指定的词典无效。请检查您的首选项。"
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+#: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
 msgstr "在服务器中查询时发生未知错误。"
 
-#: ../lib/dictd.c:415
+#: ../lib/dictd.c:422
 msgid "Dictionary Results:"
 msgstr "词典结果："
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:425
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "未能找到与 “%s” 匹配的。"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:434
+#: ../lib/dictd.c:441
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "使用 “%2$s” 搜索 “%1$s”"
 
-#: ../lib/dictd.c:439
+#: ../lib/dictd.c:446
 msgid "Web Search:"
 msgstr "网络搜索："
 
-#: ../lib/dictd.c:461
+#: ../lib/dictd.c:468
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "找到 %d 个定义。"
 
-#: ../lib/dictd.c:669
+#: ../lib/dictd.c:676
 #, c-format
 msgid "Querying %s..."
 msgstr "正在查询 %s..."
 
-#: ../lib/dictd.c:728
+#: ../lib/dictd.c:735
 msgid "An error occured while querying server information."
 msgstr "在服务器信息中查询时出错。"
 
-#: ../lib/dictd.c:741
+#: ../lib/dictd.c:748
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "“%s” 的服务器信息"
 
-#: ../lib/dictd.c:824
+#: ../lib/dictd.c:831
 msgid "The server doesn't offer any databases."
 msgstr "服务器没有提供任何数据库。"
 

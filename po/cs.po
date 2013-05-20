@@ -2,29 +2,29 @@
 # Copyright (C) 2006-2007 Enrico Tröger
 # This file is distributed under the same license as the xfce4-dict-plugin package.
 # Michal Várady <miko.vaji@gmail.com>, 2006-2011.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-11 09:27+0000\n"
+"POT-Creation-Date: 2013-05-20 16:06+0200\n"
 "PO-Revision-Date: 2011-12-18 12:01+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <xfce-i18n@xfce.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-msgid "A plugin to query different dictionaries."
-msgstr "Zásuvný modul pro získávání dat za slovníků."
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Slovník"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+msgid "A plugin to query different dictionaries."
+msgstr "Zásuvný modul pro získávání dat za slovníků."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
@@ -81,13 +81,13 @@ msgstr "[TEXT]"
 msgid "Please report bugs to <%s>."
 msgstr "Prosíme, abyste chyby hlásili na adresu <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
-msgid "A client program to query different dictionaries."
-msgstr "Klientský program pro získávání dat z různých slovníků."
-
-#: ../src/xfce4-dict.desktop.in.h:3
+#: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
 msgstr "Klient slovníku"
+
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+msgid "A client program to query different dictionaries."
+msgstr "Klientský program pro získávání dat z různých slovníků."
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -251,44 +251,44 @@ msgstr "Chyba"
 msgid "warning"
 msgstr "varování"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
-#: ../lib/dictd.c:804
+#: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
+#: ../lib/dictd.c:811
 msgid "Could not connect to server."
 msgstr "Nelze se připojit k serveru"
 
-#: ../lib/dictd.c:385
+#: ../lib/dictd.c:392
 msgid "The server is not ready."
 msgstr "Server není připraven."
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Zvolili jste naplatný slovník. Ověřte nastavení."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+#: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
 msgstr "Při dotazu na server nastala neznámá chyba."
 
-#: ../lib/dictd.c:415
+#: ../lib/dictd.c:422
 msgid "Dictionary Results:"
 msgstr "Výsledky slovníku:"
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:425
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Pro „%s“ nebyly nalezeny žádné shody."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:434
+#: ../lib/dictd.c:441
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Hledat „%s“ pomocí „%s“"
 
-#: ../lib/dictd.c:439
+#: ../lib/dictd.c:446
 msgid "Web Search:"
 msgstr "Hledání na webu:"
 
-#: ../lib/dictd.c:461
+#: ../lib/dictd.c:468
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -296,21 +296,21 @@ msgstr[0] "Nalezena %d definice."
 msgstr[1] "Nalezeny %d definice."
 msgstr[2] "Nalezeno %d definicí."
 
-#: ../lib/dictd.c:669
+#: ../lib/dictd.c:676
 #, c-format
 msgid "Querying %s..."
 msgstr "Posílám dotaz na server %s..."
 
-#: ../lib/dictd.c:728
+#: ../lib/dictd.c:735
 msgid "An error occured while querying server information."
 msgstr "Při dotazu na informaci serveru nastala neznámá chyba."
 
-#: ../lib/dictd.c:741
+#: ../lib/dictd.c:748
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informace serveru pro „%s“"
 
-#: ../lib/dictd.c:824
+#: ../lib/dictd.c:831
 msgid "The server doesn't offer any databases."
 msgstr "Server nenabízí žádné databáze."
 

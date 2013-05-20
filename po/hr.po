@@ -1,30 +1,31 @@
 # Ivica Kolić <ikoli@yahoo.com>, 2011.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-12 14:06+0000\n"
+"POT-Creation-Date: 2013-05-20 16:06+0200\n"
 "PO-Revision-Date: 2011-01-15 08:58+0100\n"
 "Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <ikoli@yahoo.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Croatian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Country: CROATIa\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-msgid "A plugin to query different dictionaries."
-msgstr ""
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Rječnik"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+msgid "A plugin to query different dictionaries."
+msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
@@ -81,12 +82,12 @@ msgstr "[TEKST]"
 msgid "Please report bugs to <%s>."
 msgstr "Prijavite probleme <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
-msgid "A client program to query different dictionaries."
+#: ../src/xfce4-dict.desktop.in.h:2
+msgid "Dictionary Client"
 msgstr ""
 
-#: ../src/xfce4-dict.desktop.in.h:3
-msgid "Dictionary Client"
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+msgid "A client program to query different dictionaries."
 msgstr ""
 
 #: ../lib/spell.c:75
@@ -246,44 +247,44 @@ msgstr "Greška"
 msgid "warning"
 msgstr "upozorenje"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
-#: ../lib/dictd.c:804
+#: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
+#: ../lib/dictd.c:811
 msgid "Could not connect to server."
 msgstr "Ne modu se spojiti na poslužitelj"
 
-#: ../lib/dictd.c:385
+#: ../lib/dictd.c:392
 msgid "The server is not ready."
 msgstr "Poslužitelj nije spreman"
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Odabran je neispavan rječnik.Provjerite svoje osobitosti."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+#: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
 msgstr ""
 
-#: ../lib/dictd.c:415
+#: ../lib/dictd.c:422
 msgid "Dictionary Results:"
 msgstr "Rezultati rječnika:"
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:425
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr ""
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:434
+#: ../lib/dictd.c:441
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Traži \"%s\" koristeći \"%s\""
 
-#: ../lib/dictd.c:439
+#: ../lib/dictd.c:446
 msgid "Web Search:"
 msgstr "Web traženje:"
 
-#: ../lib/dictd.c:461
+#: ../lib/dictd.c:468
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -291,21 +292,21 @@ msgstr[0] "%d definicija nađena"
 msgstr[1] "%d definicije nađene"
 msgstr[2] "%d definicija nađeno"
 
-#: ../lib/dictd.c:669
+#: ../lib/dictd.c:676
 #, c-format
 msgid "Querying %s..."
 msgstr ""
 
-#: ../lib/dictd.c:728
+#: ../lib/dictd.c:735
 msgid "An error occured while querying server information."
 msgstr ""
 
-#: ../lib/dictd.c:741
+#: ../lib/dictd.c:748
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informacije poslužitelj za \"%s\""
 
-#: ../lib/dictd.c:824
+#: ../lib/dictd.c:831
 msgid "The server doesn't offer any databases."
 msgstr "Poslužitelj ne nudi baze podataka."
 
@@ -509,5 +510,7 @@ msgid ""
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Program za provjeru pravopisa može biti 'enchant', 'aspell', 'ispell' ili aneki drugi program za provjeru pravopisa kojji je kompatibilan sa ispell naredbom.\n"
+"<i>Program za provjeru pravopisa može biti 'enchant', 'aspell', 'ispell' ili "
+"aneki drugi program za provjeru pravopisa kojji je kompatibilan sa ispell "
+"naredbom.\n"
 "Ikona pokazuje postoji li unesena naredba.</i>"

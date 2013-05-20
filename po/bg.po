@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-10 08:15+0000\n"
+"POT-Creation-Date: 2013-05-20 16:06+0200\n"
 "PO-Revision-Date: 2013-02-10 16:17+0200\n"
 "Last-Translator: Cybercop <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian <xfce-i18n@xfce.org>\n"
@@ -20,21 +20,17 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-msgid "A plugin to query different dictionaries."
-msgstr "Плъгин за намиране на различни речници."
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2
-#: ../lib/gui.c:736
-#: ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "Речник"
 
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+msgid "A plugin to query different dictionaries."
+msgstr "Плъгин за намиране на различни речници."
+
 #: ../panel-plugin/xfce4-dict-plugin.c:366
-#: ../panel-plugin/xfce4-dict-plugin.c:492
-#: ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243
-#: ../lib/gui.c:516
+#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
+#: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
 msgstr "Готово"
 
@@ -42,8 +38,7 @@ msgstr "Готово"
 msgid "Look up a word"
 msgstr "Търсене на дума"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:467
-#: ../lib/gui.c:766
+#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
 msgid "Search term"
 msgstr "Търсене на термин"
 
@@ -65,11 +60,15 @@ msgstr "Фокусиране, върху текста в панела"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Стартиране на приложение самостоятелно, дори, ако има стартиран плъгин в панела"
+msgstr ""
+"Стартиране на приложение самостоятелно, дори, ако има стартиран плъгин в "
+"панела"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Вземане на съдържанието на ОСНОВНАТА селекция и използването му като текст за търсене."
+msgstr ""
+"Вземане на съдържанието на ОСНОВНАТА селекция и използването му като текст "
+"за търсене."
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -88,14 +87,13 @@ msgstr "[ТЕКСТ]"
 msgid "Please report bugs to <%s>."
 msgstr "Моля, докладвайте грешки на <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:1
-#: ../lib/gui.c:962
-msgid "A client program to query different dictionaries."
-msgstr "Клиентска програма за достъп до различни речници."
-
-#: ../src/xfce4-dict.desktop.in.h:3
+#: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
 msgstr "Речник"
+
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+msgid "A client program to query different dictionaries."
+msgstr "Клиентска програма за достъп до различни речници."
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -132,10 +130,10 @@ msgstr "Грешка при изпълнението на \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Моля, задайте програма за проверка на правописа от диалога за настройки."
+msgstr ""
+"Моля, задайте програма за проверка на правописа от диалога за настройки."
 
-#: ../lib/spell.c:208
-#: ../lib/common.c:223
+#: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
 msgstr "Невалиден вход"
 
@@ -144,8 +142,7 @@ msgstr "Невалиден вход"
 msgid "Process failed (%s)"
 msgstr "Неуспешен процес (%s)"
 
-#: ../lib/speedreader.c:80
-#: ../lib/speedreader.c:683
+#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
 msgstr "Пауза"
 
@@ -186,8 +183,12 @@ msgstr[0] "(показване на %d дума за определено вре
 msgstr[1] "(показване на %d думи за определено време)"
 
 #: ../lib/speedreader.c:586
-msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
-msgstr "Това е инструмент, повишаващ скоростта на четене. Това се постига чрез смяна на думите с голяма скорост на екрана."
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr ""
+"Това е инструмент, повишаващ скоростта на четене. Това се постига чрез смяна "
+"на думите с голяма скорост на екрана."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -209,19 +210,24 @@ msgstr "Размер на шрифта:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed "
+"reading."
 msgstr ""
 "Въведете тук някакъв текст, който искате да бъде прочетен.\n"
 "\n"
-"Отпуснете се, настанете се удобно, след което натиснете Старт за да започне скоростно четене."
+"Отпуснете се, настанете се удобно, след което натиснете Старт за да започне "
+"скоростно четене."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "Зареждане на съдържанието на файла"
 
 #: ../lib/speedreader.c:663
-msgid "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Изчистване на съдържанието от текстовото поле и копирането му в системният буфер"
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
+msgstr ""
+"Изчистване на съдържанието от текстовото поле и копирането му в системният "
+"буфер"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -251,70 +257,65 @@ msgstr "Грешка"
 msgid "warning"
 msgstr "внимание"
 
-#: ../lib/dictd.c:379
-#: ../lib/dictd.c:698
-#: ../lib/dictd.c:707
-#: ../lib/dictd.c:795
-#: ../lib/dictd.c:804
+#: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
+#: ../lib/dictd.c:811
 msgid "Could not connect to server."
 msgstr "Невъзможно е да се свърже със сървъра."
 
-#: ../lib/dictd.c:385
+#: ../lib/dictd.c:392
 msgid "The server is not ready."
 msgstr "Сървърът не е готов."
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Неправилно зададен речник. Моля, проверете настройките."
 
-#: ../lib/dictd.c:400
-#: ../lib/dictd.c:456
-#: ../lib/dictd.c:829
+#: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
 msgstr "Неизвестна грешка при заявки на сървъра."
 
-#: ../lib/dictd.c:415
+#: ../lib/dictd.c:422
 msgid "Dictionary Results:"
 msgstr "Речник - резултати:"
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:425
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Не е намерено съвпадение за \"%s\"."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:434
+#: ../lib/dictd.c:441
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Търсене на \"%s\" , като се използва \"%s\""
 
-#: ../lib/dictd.c:439
+#: ../lib/dictd.c:446
 msgid "Web Search:"
 msgstr "Търсене в мрежата:"
 
-#: ../lib/dictd.c:461
+#: ../lib/dictd.c:468
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "Намерено е %d значение."
 msgstr[1] "Намерени са %d значения."
 
-#: ../lib/dictd.c:669
+#: ../lib/dictd.c:676
 #, c-format
 msgid "Querying %s..."
 msgstr "Запитване %s..."
 
-#: ../lib/dictd.c:728
+#: ../lib/dictd.c:735
 msgid "An error occured while querying server information."
 msgstr "Възникна грешка при заявката към сървъра."
 
-#: ../lib/dictd.c:741
+#: ../lib/dictd.c:748
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Информация от сървъра за \"%s\""
 
-#: ../lib/dictd.c:824
+#: ../lib/dictd.c:831
 msgid "The server doesn't offer any databases."
 msgstr "Сървърът не разполага с такава база-данни."
 
@@ -326,8 +327,7 @@ msgstr "Копиране на връзката"
 msgid "_File"
 msgstr "Файл"
 
-#: ../lib/gui.c:679
-#: ../lib/gui.c:787
+#: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
 msgstr "Скорост на четеца"
 
@@ -423,18 +423,15 @@ msgstr "Основни"
 msgid "<b>Default search method:</b>"
 msgstr "<b>Метод на търсене по подразбиране:</b>"
 
-#: ../lib/prefs.c:311
-#: ../lib/prefs.c:472
+#: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
 msgstr "Сървърен речник"
 
-#: ../lib/prefs.c:320
-#: ../lib/prefs.c:593
+#: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
 msgstr "Уеб услуга"
 
-#: ../lib/prefs.c:329
-#: ../lib/prefs.c:643
+#: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
 msgstr "Програма за проверка на правописа"
 
@@ -486,8 +483,7 @@ msgid "Server Port:"
 msgstr "Порт:"
 
 #. dictionary
-#: ../lib/prefs.c:495
-#: ../lib/prefs.c:668
+#: ../lib/prefs.c:495 ../lib/prefs.c:668
 msgid "Dictionary:"
 msgstr "Речник:"
 
@@ -508,8 +504,12 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
-msgstr "Въведете URL адрес на уеб сайт, който предлага услуги за превод или речник. Използвайте {word} , като параметър за търсената дума."
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services. "
+"Use {word} as placeholder for the searched word."
+msgstr ""
+"Въведете URL адрес на уеб сайт, който предлага услуги за превод или речник. "
+"Използвайте {word} , като параметър за търсената дума."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -517,10 +517,13 @@ msgstr "Програма за проверка на правописа:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
+"spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr ""
-"<i>Програмата за проверка на правописа може да бъде 'enchant', 'aspell', 'ispell' или някоя друга програма за проверка на правопис, съвместима с  ispell команда.\n"
+"<i>Програмата за проверка на правописа може да бъде 'enchant', 'aspell', "
+"'ispell' или някоя друга програма за проверка на правопис, съвместима с  "
+"ispell команда.\n"
 "Иконата ще ви покаже, дали въведената команда съществува.</i>"
 
 #~ msgid "%d strings replaced"
@@ -690,8 +693,8 @@ msgstr ""
 
 #~ msgid "Warning, you are using the root account, you may harm your system."
 #~ msgstr ""
-#~ "Внимание, Вие използвате администраторски акаунт,"
-#~ "което може да застраши Вашата система."
+#~ "Внимание, Вие използвате администраторски акаунт,което може да застраши "
+#~ "Вашата система."
 
 #~ msgid "_Jump"
 #~ msgstr "Прескочи"

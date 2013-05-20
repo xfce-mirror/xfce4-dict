@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-24 02:45+0000\n"
+"POT-Creation-Date: 2013-05-20 16:06+0200\n"
 "PO-Revision-Date: 2011-11-09 16:10+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-msgid "A plugin to query different dictionaries."
-msgstr "ھەر خىل لۇغەتلەردىن ئىزدەيدىغان قىستۇرما."
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
 msgid "Dictionary"
 msgstr "لۇغەت"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+msgid "A plugin to query different dictionaries."
+msgstr "ھەر خىل لۇغەتلەردىن ئىزدەيدىغان قىستۇرما."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
@@ -58,11 +58,14 @@ msgstr "كۆزنەكتىكى تېكىست بۆلىكىنىڭ فوكۇسنى تۇ
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "تاختا قىستۇرمىسى قاچىلانغان ئەھۋالدىمۇ ئايرىم پروگرامما سۈپىتىدە قوزغاتسۇن"
+msgstr ""
+"تاختا قىستۇرمىسى قاچىلانغان ئەھۋالدىمۇ ئايرىم پروگرامما سۈپىتىدە قوزغاتسۇن"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "نۆۋەتتىكى تاللانغان مەزمۇننى ئېلىپ، ئۇنى ئىزدەيدىغان تېكىست سۈپىتىدە ئىشلىتىدۇ"
+msgstr ""
+"نۆۋەتتىكى تاللانغان مەزمۇننى ئېلىپ، ئۇنى ئىزدەيدىغان تېكىست سۈپىتىدە "
+"ئىشلىتىدۇ"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -81,13 +84,13 @@ msgstr "[TEXT]"
 msgid "Please report bugs to <%s>."
 msgstr "كەمتۈكنى <%s> غا دوكلات قىلىڭ."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
-msgid "A client program to query different dictionaries."
-msgstr "ھەر خىل لۇغەتلەرنى سۈرۈشتۈرىدىغان خېرىدار پروگراممىسى"
-
-#: ../src/xfce4-dict.desktop.in.h:3
+#: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
 msgstr "لۇغەت خېرىدارى"
+
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+msgid "A client program to query different dictionaries."
+msgstr "ھەر خىل لۇغەتلەرنى سۈرۈشتۈرىدىغان خېرىدار پروگراممىسى"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -177,7 +180,9 @@ msgstr[0] "(بىر قېتىمدا %d دانە سوز كۆرسىتىدۇ)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "تېز ئوقۇشنى مەشىق قىلىش قورالى. ئۇ ئېكراندا سۆزلەرنى تېز سۈرەتتە يېڭىلاش ئارقىلىق تېز ئوقۇشنى مەشىق قىلىشقا ياردەم بېرىدۇ."
+msgstr ""
+"تېز ئوقۇشنى مەشىق قىلىش قورالى. ئۇ ئېكراندا سۆزلەرنى تېز سۈرەتتە يېڭىلاش "
+"ئارقىلىق تېز ئوقۇشنى مەشىق قىلىشقا ياردەم بېرىدۇ."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -201,9 +206,11 @@ msgid ""
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed "
 "reading."
-msgstr "ئوقۇماقچى بولغان تېكىستنى بۇ يەرگە كىرگۈزۈڭ.\n"
+msgstr ""
+"ئوقۇماقچى بولغان تېكىستنى بۇ يەرگە كىرگۈزۈڭ.\n"
 "\n"
-"جىددىيلەشمەڭ، ئۆزىڭىزنى ئازادە تۇتۇڭ، ئاندىن باشلا نى بېسىپ تېز ئوقۇشنى باشلاڭ."
+"جىددىيلەشمەڭ، ئۆزىڭىزنى ئازادە تۇتۇڭ، ئاندىن باشلا نى بېسىپ تېز ئوقۇشنى "
+"باشلاڭ."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -242,64 +249,64 @@ msgstr "خاتالىق"
 msgid "warning"
 msgstr "ئاگاھلاندۇرۇش"
 
-#: ../lib/dictd.c:379 ../lib/dictd.c:698 ../lib/dictd.c:707 ../lib/dictd.c:795
-#: ../lib/dictd.c:804
+#: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
+#: ../lib/dictd.c:811
 msgid "Could not connect to server."
 msgstr "مۇلازىمېتىرغا باغلىنالمىدى."
 
-#: ../lib/dictd.c:385
+#: ../lib/dictd.c:392
 msgid "The server is not ready."
 msgstr "مۇلازىمېتىر تەييار ئەمەس."
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "كۆرسىتىلگەن لۇغەت ئىناۋەتسىز. تەڭشىكىڭىزنى تەكشۈرۈپ كۆرۈڭ."
 
-#: ../lib/dictd.c:400 ../lib/dictd.c:456 ../lib/dictd.c:829
+#: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
 msgstr "لۇغەتتىن سۈرۈشتۈرۈۋاتقاندا نامەلۇم خاتالىق كۆرۈلدى."
 
-#: ../lib/dictd.c:415
+#: ../lib/dictd.c:422
 msgid "Dictionary Results:"
 msgstr "لۇغەت نەتىجىسى:"
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:425
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "«%s» نىڭغا ماس كېلىدىغان نەرسە تېپىلمىدى."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:434
+#: ../lib/dictd.c:441
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "«%s» نى ئىزدەش ئۈچۈن «%s» نى ئىشلەت."
 
-#: ../lib/dictd.c:439
+#: ../lib/dictd.c:446
 msgid "Web Search:"
 msgstr "توردىن ئىزدەش:"
 
-#: ../lib/dictd.c:461
+#: ../lib/dictd.c:468
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d مەزمۇن تېپىلدى."
 
-#: ../lib/dictd.c:669
+#: ../lib/dictd.c:676
 #, c-format
 msgid "Querying %s..."
 msgstr "%s نى سۈرۈشتۈرۈۋاتىدۇ..."
 
-#: ../lib/dictd.c:728
+#: ../lib/dictd.c:735
 msgid "An error occured while querying server information."
 msgstr "مۇلازىمېتىر ھەققىدىكى ئۇچۇرلارنى سۈرۈشتۈرۈۋاتقاندا خاتالىقى كۆرۈلدى."
 
-#: ../lib/dictd.c:741
+#: ../lib/dictd.c:748
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "«%s» نىڭ مۇلازىمېتىر ئۇچۇرلىرى"
 
-#: ../lib/dictd.c:824
+#: ../lib/dictd.c:831
 msgid "The server doesn't offer any databases."
 msgstr "مۇلازىمېتىردا ھېچقانداق ساندان يوق."
 
@@ -491,7 +498,9 @@ msgstr "URL:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services. "
 "Use {word} as placeholder for the searched word."
-msgstr "لۇغەت ياكى تەرجىمە مۇلازىمىتىنى تەمىنلىگەن توربەتنىڭ ئادرېسىنى كىرگۈزۈڭ. ئىزدەيدىغان سۆزنى ساقلاپ قويىدىغان ئورۇن سۈپىتىدە {word} نى ئىشلىتىڭ."
+msgstr ""
+"لۇغەت ياكى تەرجىمە مۇلازىمىتىنى تەمىنلىگەن توربەتنىڭ ئادرېسىنى كىرگۈزۈڭ. "
+"ئىزدەيدىغان سۆزنى ساقلاپ قويىدىغان ئورۇن سۈپىتىدە {word} نى ئىشلىتىڭ."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -502,5 +511,7 @@ msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
 "spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>كوررېكتور پروگراممىسى 'enchant'، 'aspell'، 'ispell'  ياكى باشقا ispell بىلەن ماس كېلىدىغان باشقا كوررېكتور پروگراممىسى بولسا بولىدۇ.\n"
+msgstr ""
+"<i>كوررېكتور پروگراممىسى 'enchant'، 'aspell'، 'ispell'  ياكى باشقا ispell "
+"بىلەن ماس كېلىدىغان باشقا كوررېكتور پروگراممىسى بولسا بولىدۇ.\n"
 "سىنبەلگە كىرگۈزگەن بۇيرۇق بارمۇ يوق كۆرسىتىپ تۇرىدۇ.</i>"
