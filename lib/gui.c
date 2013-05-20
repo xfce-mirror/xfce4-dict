@@ -960,7 +960,7 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 		"destroy-with-parent", TRUE,
 		"authors", authors,
 		"comments", _("A client program to query different dictionaries."),
-		"copyright", _("Copyright \302\251 2006-2012 Enrico Tröger"),
+		"copyright", _("Copyright \302\251 2006-2013 Enrico Tröger"),
 		"website", "http://goodies.xfce.org/projects/applications/xfce4-dict",
 		"logo", logo,
 		"translator-credits", _("translator-credits"),
