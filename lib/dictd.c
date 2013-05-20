@@ -363,6 +363,13 @@ static gint process_response_content(DictData *dd, gchar **lines, gint line_no, 
 }
 
 
+static void clear_query_buffer(DictData *dd)
+{
+	g_free(dd->query_buffer);
+	dd->query_buffer = NULL;
+}
+
+
 static gboolean process_server_response(DictData *dd)
 {
 	gint max_lines, i;
@@ -383,14 +390,14 @@ static gboolean process_server_response(DictData *dd)
 		case SERVER_NOT_READY:
 		{
 			dict_gui_status_add(dd, _("The server is not ready."));
-			g_free(dd->query_buffer);
+			clear_query_buffer(dd);
 			return FALSE;
 		}
 		case UNKNOWN_DATABASE:
 		{
 			dict_gui_status_add(dd,
 				_("Invalid dictionary specified. Please check your preferences."));
-			g_free(dd->query_buffer);
+			clear_query_buffer(dd);
 			return FALSE;
 		}
 	}
@@ -398,7 +405,7 @@ static gboolean process_server_response(DictData *dd)
 	if (! NZV(dd->query_buffer))
 	{
 		dict_gui_status_add(dd, _("Unknown error while querying the server."));
-		g_free(dd->query_buffer);
+		clear_query_buffer(dd);
 		return FALSE;
 	}
 
@@ -421,7 +428,7 @@ static gboolean process_server_response(DictData *dd)
 			TAG_ERROR, TAG_BOLD, NULL);
 		dict_gui_status_add(dd, "%s", tmp);
 		g_free(tmp);
-		g_free(dd->query_buffer);
+		clear_query_buffer(dd);
 
 		/* if we had no luck searching a word, maybe we have a typo so try searching with
 		 * spell check and offer a Web search*/
@@ -454,7 +461,7 @@ static gboolean process_server_response(DictData *dd)
 	else if (strncmp("150", answer, 3) != 0 && dd->query_status != NOTHING_FOUND)
 	{
 		dict_gui_status_add(dd, _("Unknown error while querying the server."));
-		g_free(dd->query_buffer);
+		clear_query_buffer(dd);
 		return FALSE;
 	}
 	defs_found = atoi(answer + 4);
@@ -472,7 +479,7 @@ static gboolean process_server_response(DictData *dd)
 	max_lines = g_strv_length(lines);
 	if (lines == NULL || max_lines == 0)
 	{
-		g_free(dd->query_buffer);
+		clear_query_buffer(dd);
 		return FALSE;
 	}
 
@@ -485,7 +492,7 @@ static gboolean process_server_response(DictData *dd)
 		i = process_response_content(dd, lines, i, max_lines, header, body);
 	}
 	g_strfreev(lines);
-	g_free(dd->query_buffer);
+	clear_query_buffer(dd);
 
 	g_string_free(header, TRUE);
 	g_string_free(body, TRUE);
