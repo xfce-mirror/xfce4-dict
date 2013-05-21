@@ -8,26 +8,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
+"POT-Creation-Date: 2013-05-21 08:54+0000\n"
 "PO-Revision-Date: 2010-04-23 18:52+0100\n"
 "Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-it-translators@googlegroups.com>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
-msgid "Dictionary"
-msgstr "Dizionario"
 
 # GLOSSARIO
 # spell = ortografia
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 msgid "A plugin to query different dictionaries."
 msgstr "Un'estensione per interrogare diversi dizionari"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+msgid "Dictionary"
+msgstr "Dizionario"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
@@ -86,13 +86,13 @@ msgstr "[TESTO]"
 msgid "Please report bugs to <%s>."
 msgstr "Segnalare i problemi a <%s>"
 
-#: ../src/xfce4-dict.desktop.in.h:2
-msgid "Dictionary Client"
-msgstr "Client dizionario"
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "Un programma che permette di consultare diversi dizionari"
+
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "Client dizionario"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -357,8 +357,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Dizionario di Xfce4"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2012 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Copyright © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
