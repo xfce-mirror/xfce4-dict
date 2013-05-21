@@ -5,32 +5,32 @@
 # Maximilian Schleiss <maximilian@xfce.org>, 2006-2009.
 # Mike Massonnet <mmassonnet@xfce.org, 2008.
 # Jérôme Guelfucci <jerome.guelfucci@gmail.com>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
+"POT-Creation-Date: 2013-05-21 03:30+0000\n"
 "PO-Revision-Date: 2010-07-27 21:13+0100\n"
 "Last-Translator: Durand-Favreau Arnaud <biginoz@free.fr>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-Language: French\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Country: FRANCE\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
-msgid "Dictionary"
-msgstr "Dictionnaire"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 msgid "A plugin to query different dictionaries."
 msgstr "Un greffon pour consulter différents dictionnaires."
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+msgid "Dictionary"
+msgstr "Dictionnaire"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
@@ -89,13 +89,13 @@ msgstr "[TEXTE]"
 msgid "Please report bugs to <%s>."
 msgstr "Veuillez signaler tout bogue à <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:2
-msgid "Dictionary Client"
-msgstr "Client de dictionnaire"
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "Une application pour consulter différents dictionnaires."
+
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "Client de dictionnaire"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -359,8 +359,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Dictionnaire Xfce4"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2012 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Copyright © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
