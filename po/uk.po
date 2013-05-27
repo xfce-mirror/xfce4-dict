@@ -363,7 +363,8 @@ msgstr "Всі права застережено © 2006-2013 Enrico Tröger"
 #: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr ""
-"Dmitry Nikitin <luckas_fb@mai.ru>/nYarema aka Knedlyk <yupadmin@gmail.com>"
+"Dmitry Nikitin <luckas_fb@mai.ru>\n"
+"Yarema aka Knedlyk <yupadmin@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
