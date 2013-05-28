@@ -3,13 +3,13 @@
 # This file is distributed under the same license as
 # the xfce4-dict package.
 # Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.
-# Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012.
+# Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
+"POT-Creation-Date: 2013-05-27 21:30+0000\n"
 "PO-Revision-Date: 2010-01-14 22:32+0800\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
@@ -20,13 +20,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
-msgid "Dictionary"
-msgstr "词典"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 msgid "A plugin to query different dictionaries."
 msgstr "查询不同词典的插件。"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+msgid "Dictionary"
+msgstr "词典"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
@@ -83,13 +83,13 @@ msgstr "[文字]"
 msgid "Please report bugs to <%s>."
 msgstr "请向 <%s> 报告缺陷。"
 
-#: ../src/xfce4-dict.desktop.in.h:2
-msgid "Dictionary Client"
-msgstr "词典客户端"
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "查询不同词典的客户端程序。"
+
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "词典客户端"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -345,14 +345,14 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce 4 词典"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Enrico Tröger 2006-2012 版权所有"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Enrico Tröger 2006-2013 版权所有"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr ""
 "Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.\n"
-"Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012."
+"Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012, 2013."
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
