@@ -1,32 +1,32 @@
 # Hungarian translation of xfce4-dict
 # Copyright 2009. Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-dict package.
-#
+# 
 # SZERVÁC Attila <sas@321.hu>, 2006.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-dict\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
+"POT-Creation-Date: 2013-06-20 22:03+0000\n"
 "PO-Revision-Date: 2009-07-24 00:35+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
-msgid "Dictionary"
-msgstr "Szótár"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 msgid "A plugin to query different dictionaries."
 msgstr "Különböző szótárak lekérdezése"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+msgid "Dictionary"
+msgstr "Szótár"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
@@ -83,13 +83,13 @@ msgstr "[SZÖVEG]"
 msgid "Please report bugs to <%s>."
 msgstr "A hibákat ide jelentse: <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:2
-msgid "Dictionary Client"
-msgstr "Szótárkliens"
-
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
 msgstr "Kliensprogram különböző szótárak lekérdezéséhez."
+
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "Dictionary Client"
+msgstr "Szótárkliens"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -350,7 +350,7 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce 4 szótár"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2012 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
 msgstr "Copyright © 2006-2012 Enrico Tröger"
 
 #: ../lib/gui.c:966
