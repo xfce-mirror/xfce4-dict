@@ -1,23 +1,23 @@
-# Bulgarian translation of the xfce4-dict package.
-# Copyright (C) 2006-2009 Enrico Tröger
-# This file is distributed under the same license as the xfce4-dict package.
-# Kiril Kirilov (Cybercop) <cybercop_montana@abv.bg>, 2012.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# cybercop <cybercop_montana@abv.bg>, 2012
+# cybercop <cybercop_montana@abv.bg>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict-plugin 0.5.0\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2013-02-10 16:17+0200\n"
-"Last-Translator: Cybercop <cybercop_montana@abv.bg>\n"
-"Language-Team: Bulgarian <xfce-i18n@xfce.org>\n"
-"Language: bg\n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2013-07-09 17:06+0000\n"
+"Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
+"Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Country: BULGARIA\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
@@ -60,15 +60,11 @@ msgstr "Фокусиране, върху текста в панела"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
-"Стартиране на приложение самостоятелно, дори, ако има стартиран плъгин в "
-"панела"
+msgstr "Стартиране на приложение самостоятелно, дори, ако има стартиран плъгин в панела"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
-"Вземане на съдържанието на ОСНОВНАТА селекция и използването му като текст "
-"за търсене."
+msgstr "Вземане на съдържанието на ОСНОВНАТА селекция и използването му като текст за търсене."
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -130,8 +126,7 @@ msgstr "Грешка при изпълнението на \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
-"Моля, задайте програма за проверка на правописа от диалога за настройки."
+msgstr "Моля, задайте програма за проверка на правописа от диалога за настройки."
 
 #: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
@@ -186,9 +181,7 @@ msgstr[1] "(показване на %d думи за определено вре
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Това е инструмент, повишаващ скоростта на четене. Това се постига чрез смяна "
-"на думите с голяма скорост на екрана."
+msgstr "Това е инструмент, повишаващ скоростта на четене. Това се постига чрез смяна на думите с голяма скорост на екрана."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -210,13 +203,8 @@ msgstr "Размер на шрифта:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
-msgstr ""
-"Въведете тук някакъв текст, който искате да бъде прочетен.\n"
-"\n"
-"Отпуснете се, настанете се удобно, след което натиснете Старт за да започне "
-"скоростно четене."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "Въведете тук някакъв текст, който искате да бъде прочетен.\n\nОтпуснете се, настанете се удобно, след което натиснете Старт за да започне скоростно четене."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -225,9 +213,7 @@ msgstr "Зареждане на съдържанието на файла"
 #: ../lib/speedreader.c:663
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr ""
-"Изчистване на съдържанието от текстовото поле и копирането му в системният "
-"буфер"
+msgstr "Изчистване на съдържанието от текстовото поле и копирането му в системният буфер"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -356,8 +342,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Речник за Xfce4"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Авторски права © 2006-2012 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Авторски права © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -505,11 +491,9 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Въведете URL адрес на уеб сайт, който предлага услуги за превод или речник. "
-"Използвайте {word} , като параметър за търсената дума."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Въведете URL адрес на уеб сайт, който предлага услуги за превод или речник. Използвайте {word} , като параметър за търсената дума."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -517,190 +501,6 @@ msgstr "Програма за проверка на правописа:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>Програмата за проверка на правописа може да бъде 'enchant', 'aspell', "
-"'ispell' или някоя друга програма за проверка на правопис, съвместима с  "
-"ispell команда.\n"
-"Иконата ще ви покаже, дали въведената команда съществува.</i>"
-
-#~ msgid "%d strings replaced"
-#~ msgstr "%d низовете са заменени"
-
-#~ msgid "'%s' already exists. Overwrite?"
-#~ msgstr "'%s' вече съществува. Презапис?"
-
-#~ msgid "'%s' is not supported"
-#~ msgstr "'%s' не се поддържа"
-
-#~ msgid "/Edit/Cu_t"
-#~ msgstr "/Редактиране/Отрязване"
-
-#~ msgid "/Edit/Select _All"
-#~ msgstr "/Редактиране/Избор на всички"
-
-#~ msgid "/Edit/_Copy"
-#~ msgstr "/Редактиране/Копиране"
-
-#~ msgid "/Edit/_Delete"
-#~ msgstr "/Редактиране/Изтриване"
-
-#~ msgid "/Edit/_Paste"
-#~ msgstr "/Редактиране/Поставяне"
-
-#~ msgid "/Edit/_Redo"
-#~ msgstr "/Редактиране/Връщане"
-
-#~ msgid "/Edit/_Undo"
-#~ msgstr "/Редактиране/Отмяна"
-
-#~ msgid "/File/New _Window"
-#~ msgstr "/Файл/Нов прозорец"
-
-#~ msgid "/File/Save _As..."
-#~ msgstr "/Файл/Запазване като..."
-
-#~ msgid "/File/_New"
-#~ msgstr "/Файл/Нов"
-
-#~ msgid "/File/_Open..."
-#~ msgstr "/Файл/Отваряне..."
-
-#~ msgid "/File/_Print..."
-#~ msgstr "/Файл/Печат..."
-
-#~ msgid "/File/_Quit"
-#~ msgstr "/Файл/Изход"
-
-#~ msgid "/File/_Save"
-#~ msgstr "/Файл/Запазване"
-
-#~ msgid "/Help/_About"
-#~ msgstr "/Помощ/Относно"
-
-#~ msgid "/Options/_Auto Indent"
-#~ msgstr "/Опции/Автоматичен отстъп"
-
-#~ msgid "/Options/_Font..."
-#~ msgstr "/Опции/Шрифт..."
-
-#~ msgid "/Options/_Line Numbers"
-#~ msgstr "/Параметры/Показывать _номера строк"
-
-#~ msgid "/Options/_Word Wrap"
-#~ msgstr "/Опции/Пренос на дума"
-
-#~ msgid "/Search/Find _Next"
-#~ msgstr "/Търсене/Намери следващия"
-
-#~ msgid "/Search/Find _Previous"
-#~ msgstr "/Търсене/Намери предишният"
-
-#~ msgid "/Search/_Find..."
-#~ msgstr "/Търсене/Намери..."
-
-#~ msgid "/Search/_Jump To..."
-#~ msgstr "/Търсене/Прескачане до..."
-
-#~ msgid "/Search/_Replace..."
-#~ msgstr "/Търсене/Замяна..."
-
-#~ msgid "/_Edit"
-#~ msgstr "/Редактиране"
-
-#~ msgid "/_Options"
-#~ msgstr "/Опции"
-
-#~ msgid "A text editor for Xfce"
-#~ msgstr "Текстов редактор за Xfce"
-
-#~ msgid "About %s"
-#~ msgstr "Относно %s"
-
-#~ msgid "Auto Detect"
-#~ msgstr "Автоматично засичане"
-
-#~ msgid "Can't convert codeset to '%s'"
-#~ msgstr "Не може да бъде сменена кодировката в '%s'"
-
-#~ msgid "Can't open file to write"
-#~ msgstr "Не може да бъде отворен файл за запис"
-
-#~ msgid "Can't open pipe to process"
-#~ msgstr "Не може да бъде отворен канал за процеса"
-
-#~ msgid "Can't write file"
-#~ msgstr "Файлът не може да бъде записан"
-
-#~ msgid "Ch_aracter Coding: "
-#~ msgstr "Кодировъчни символи"
-
-#~ msgid "Code_set:"
-#~ msgstr "Кодировка:"
-
-#~ msgid "Current Locale (%s)"
-#~ msgstr "Текущ локал (%s)"
-
-#~ msgid "Fi_nd what: "
-#~ msgstr "Намери: "
-
-#~ msgid "Find"
-#~ msgstr "Намери"
-
-#~ msgid "Font"
-#~ msgstr "Шрифт"
-
-#~ msgid "Jump To"
-#~ msgstr "Прескочи до"
-
-#~ msgid "Mousepad"
-#~ msgstr "Мишка"
-
-#~ msgid "Open"
-#~ msgstr "Отваряне"
-
-#~ msgid "Other Codeset"
-#~ msgstr "Друга кодировка"
-
-#~ msgid "Replace"
-#~ msgstr "Замяна"
-
-#~ msgid "Replace _all at once"
-#~ msgstr "Замяна на всичко наведнъж"
-
-#~ msgid "Replace?"
-#~ msgstr "Замяна?"
-
-#~ msgid "Save As"
-#~ msgstr "Запазване като"
-
-#~ msgid "Save changes to '%s'?"
-#~ msgstr "Запазване на промените в '%s'?"
-
-#~ msgid "Search string not found"
-#~ msgstr "Търсеният низ не е намерен"
-
-#~ msgid "Simple text editor"
-#~ msgstr "Опростен текстов редактор"
-
-#~ msgid "Text Editor"
-#~ msgstr "Текстов редактор"
-
-#~ msgid "Untitled"
-#~ msgstr "Без име"
-
-#~ msgid "Warning, you are using the root account, you may harm your system."
-#~ msgstr ""
-#~ "Внимание, Вие използвате администраторски акаунт,което може да застраши "
-#~ "Вашата система."
-
-#~ msgid "_Jump"
-#~ msgstr "Прескочи"
-
-#~ msgid "_Line number: "
-#~ msgstr "Номер на ред: "
-
-#~ msgid "_Match case"
-#~ msgstr "Съвпадение"
+msgstr "<i>Програмата за проверка на правописа може да бъде 'enchant', 'aspell', 'ispell' или някоя друга програма за проверка на правопис, съвместима с  ispell команда.\nИконата ще ви покаже, дали въведената команда съществува.</i>"
