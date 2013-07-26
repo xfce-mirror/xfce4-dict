@@ -1,22 +1,22 @@
-# British English translation of the xfce4-dict-plugin package.
-# Copyright (C) 2006-2007 Enrico Tröger
-# This file is distributed under the same license as the xfce4-dict-plugin package.
-# Jeff Bailes <thepizzaking@gmail.com>, 2007.
-#
-#
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Noskcaj <noskcaj@ubuntu.com>, 2013
+# Jeff Bailes <thepizzaking@gmail.com>, 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict-plugin 0.3.0\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2009-08-18 12:55+1000\n"
-"Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
-"Language-Team: English/GB\n"
-"Language: \n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2013-07-26 21:38+0000\n"
+"Last-Translator: Noskcaj <noskcaj@ubuntu.com>\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/xfce/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
@@ -181,9 +181,7 @@ msgstr[1] "(display %d words at a time)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"This is an easy speed reading utility to help train you to read faster. It "
-"does this by flashing words at a rapid rate on the screen."
+msgstr "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -205,13 +203,8 @@ msgstr "_Font Size:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
-msgstr ""
-"Enter some text here you would like to read.\n"
-"\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "Enter some text here you would like to read.\n\nBe relaxed and make yourself comfortable, then press Start to begin speed reading."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -220,8 +213,7 @@ msgstr "Load the contents of a file"
 #: ../lib/speedreader.c:663
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr ""
-"Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Clear the contents of the text field and paste the contents of the clipboard"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -350,9 +342,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Dictionary"
 
 #: ../lib/gui.c:963
-#, fuzzy
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2011 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Copyright © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -500,11 +491,9 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -512,63 +501,6 @@ msgstr "Spell Check Program:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
-"The icon shows whether the entered command exists.</i>"
-
-#~ msgid "You must set a valid search URL."
-#~ msgstr "You must set a valid search URL."
-
-#~ msgid "Link Color:"
-#~ msgstr "Link Colour:"
-
-#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-#~ msgstr "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-
-#~ msgid "_Dict"
-#~ msgstr "Dict"
-
-#~ msgid "_Web"
-#~ msgstr "Web"
-
-#~ msgid "Dict"
-#~ msgstr "Dict"
-
-#~ msgid "Web"
-#~ msgstr "Web"
-
-#~ msgid "Show help options"
-#~ msgstr "Show help options"
-
-#~ msgid "Xfce4 Dictionary Preferences"
-#~ msgstr "Xfce4 Dictionary"
-
-#~ msgid "Developer"
-#~ msgstr "Developer"
-
-#~ msgid "Text to search:"
-#~ msgstr "Text to search:"
-
-#~ msgid "Aspell"
-#~ msgstr "Aspell"
-
-#~ msgid "Properties"
-#~ msgstr "Properties"
-
-#~ msgid "Use a DICT server"
-#~ msgstr "Use a DICT server"
-
-#~ msgid "Use another website"
-#~ msgstr "Use another website"
-
-#~ msgid "Use a web site"
-#~ msgstr "Use a web site"
-
-#~ msgid ""
-#~ "This option can only be used when the panel has a horizontal orientation."
-#~ msgstr ""
-#~ "This option can only be used when the panel has a horizontal orientation."
+msgstr "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\nThe icon shows whether the entered command exists.</i>"
