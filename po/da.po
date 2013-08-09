@@ -1,25 +1,24 @@
-# translation of xfce4-dict to Danish
-# Copyright (C) 2007 THE xfce4-dict'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-dict-plugin package.
-# Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007.
-# Søren Waaben Hansen <soren@minorflaw.dk>, 2008.
-# Per Kongstad <p_kongstad@op.pl>, 2008. 09.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Aputsiaĸ Niels Janussen <aj@isit.gl>, 2013
+# Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007
+# Søren Waaben Hansen <soren@minorflaw.dk>, 2008
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict 0.5.3\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2009-12-30 14:51+0100\n"
-"Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
-"Language: da\n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2013-08-09 00:53+0000\n"
+"Last-Translator: Aputsiaĸ Niels Janussen <aj@isit.gl>\n"
+"Language-Team: Danish (http://www.transifex.com/projects/p/xfce/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Language: Danish\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Country: DENMARK\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
@@ -183,9 +182,7 @@ msgstr[1] "(vis %d ord ad gangen)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Dette er et nemt værktøj til læsehastighedsmåling for at hjælpe dig med at "
-"læse hurtigere. Det sker ved at vise ord med hurtig frekvens på skærmen."
+msgstr "Dette er et nemt værktøj til læsehastighedsmåling for at hjælpe dig med at læse hurtigere. Det sker ved at vise ord med hurtig frekvens på skærmen."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -207,13 +204,8 @@ msgstr "_Størrelse af skrifttype:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
-msgstr ""
-"Indtast en tekst som du ønsker at læse.\n"
-"\n"
-"Vær afslappet og have det komfortabelt, før du trykker Begynd for at starte "
-"læsehastighedsmåling."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "Indtast en tekst som du ønsker at læse.\n\nVær afslappet og have det komfortabelt, før du trykker Begynd for at starte læsehastighedsmåling."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -351,17 +343,12 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 ordbog"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Ophavsret © 2006-2012 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Ophavsret © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr ""
-"Søren Waaben Hansen <soren@minorflaw.dk>\n"
-"Per Kongstad <p_kongstad@op.pl>\n"
-"\n"
-"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Mere info: http://www.dansk-gruppen.dk"
+msgstr "Søren Waaben Hansen <soren@minorflaw.dk>\nPer Kongstad <p_kongstad@op.pl>\n\nDansk-gruppen <dansk@dansk-gruppen.dk>\nMere info: http://www.dansk-gruppen.dk"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -505,11 +492,9 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Indtast URL'en til et netsted, der tilbyder ordbogstjenester. Brug {word} "
-"som pladsholder for det søgte ord."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Indtast URL'en til et netsted, der tilbyder ordbogstjenester. Brug {word} som pladsholder for det søgte ord."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -517,16 +502,6 @@ msgstr "Stavekontrolprogram:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>Stavekontrolprogrammet kan være 'enchant', 'aspell', 'ispell' eller et "
-"andet stavekontrolprogram som er kompatibelt med ispell-kommandoen\n"
-"Ikonet viser om den angivne kommando findes.</i>"
-
-#~ msgid "You must set a valid search URL."
-#~ msgstr "Du skal skrive en gyldig søge-URL."
-
-#~ msgid "Link Color:"
-#~ msgstr "Henvisningfarve:"
+msgstr "<i>Stavekontrolprogrammet kan være 'enchant', 'aspell', 'ispell' eller et andet stavekontrolprogram som er kompatibelt med ispell-kommandoen\nIkonet viser om den angivne kommando findes.</i>"
