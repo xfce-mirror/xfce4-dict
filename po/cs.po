@@ -1,20 +1,21 @@
-# Czech translation of the xfce4-dict-plugin package.
-# Copyright (C) 2006-2007 Enrico Tröger
-# This file is distributed under the same license as the xfce4-dict-plugin package.
-# Michal Várady <miko.vaji@gmail.com>, 2006-2011.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Alois Nešpor <info@aloisnespor.info>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict 0.5.0\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2011-12-18 12:01+0100\n"
-"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
-"Language-Team: Czech <xfce-i18n@xfce.org>\n"
-"Language: cs\n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2013-08-12 07:28+0000\n"
+"Last-Translator: Alois Nešpor <info@aloisnespor.info>\n"
+"Language-Team: Czech (http://www.transifex.com/projects/p/xfce/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
@@ -181,10 +182,7 @@ msgstr[2] "(zobrazit %d slov najednou)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Toto je jednoduchý nástroj pro rychločtení, který vám pomůže se cvičením "
-"rychlého čtení. Pracuje na principu rychle se zobrazujících slov na "
-"obrazovce."
+msgstr "Toto je jednoduchý nástroj pro rychločtení, který vám pomůže se cvičením rychlého čtení. Pracuje na principu rychle se zobrazujících slov na obrazovce."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -206,13 +204,8 @@ msgstr "_Velikost písma:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
-msgstr ""
-"Zadejte text, který chcete číst.\n"
-"\n"
-"Uvolněte se, pohodlně se usaďte a poté stiksněte tlačítko Start pro spuštění "
-"rychločtení."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "Zadejte text, který chcete číst.\n\nUvolněte se, pohodlně se usaďte a poté stiksněte tlačítko Start pro spuštění rychločtení."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -351,8 +344,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Slovník Xfce4"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2012 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Copyright © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -500,11 +493,9 @@ msgstr "Adresa URL:"
 
 #: ../lib/prefs.c:621
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Zadejte adresu URL webové stránky, která nabízí překlady nebo slovníkové "
-"služby. Použijte {word} jako zástupný řetězec pro hledané slovo."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Zadejte adresu URL webové stránky, která nabízí překlady nebo slovníkové služby. Použijte {word} jako zástupný řetězec pro hledané slovo."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -512,67 +503,6 @@ msgstr "Aplikace pro kontrolu pravopisu:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>Aplikace pro kontrolu pravopisu může být například 'enchant', 'aspell', "
-"'ispell' nebo jakákoliv jiná aplikace kontroly pravopisu kompatibilní s "
-"příkazem ispell.\n"
-"Ikona zobrazuje zda zadaný příkaz existuje.</i>"
-
-#~ msgid "You must set a valid search URL."
-#~ msgstr "Nastavte platnou vyhledávací adresu URL."
-
-#~ msgid "Link Color:"
-#~ msgstr "Barva odkazu:"
-
-#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-#~ msgstr "(sestaveno na %s s GTK %d.%d.%d, GLib %d.%d.%d)"
-
-#~ msgid "Do you want to search \"%s\" on the Web using "
-#~ msgstr "Chcete hledat \"%s\" na webu pomocí "
-
-#~ msgid "_Dict"
-#~ msgstr "Slo_vníku"
-
-#~ msgid "_Web"
-#~ msgstr "_Webu"
-
-#~ msgid "Dict"
-#~ msgstr "Dict"
-
-#~ msgid "Web"
-#~ msgstr "Web"
-
-#~ msgid "Show help options"
-#~ msgstr "Zobrazit volby nápovědy"
-
-#~ msgid "Xfce4 Dictionary Preferences"
-#~ msgstr "Předvolby slovníku Xfce4"
-
-#~ msgid "Developer"
-#~ msgstr "Vývojář"
-
-#~ msgid "Text to search:"
-#~ msgstr "Text pro vyhledání:"
-
-#~ msgid "Aspell"
-#~ msgstr "Aspell"
-
-#~ msgid "Properties"
-#~ msgstr "Vlastnosti"
-
-#~ msgid "Use a DICT server"
-#~ msgstr "Použít server DICT"
-
-#~ msgid "Use another website"
-#~ msgstr "Použít jinou webovou stránku"
-
-#~ msgid "Use a web site"
-#~ msgstr "Použít webovou stránku"
-
-#~ msgid ""
-#~ "This option can only be used when the panel has a horizontal orientation."
-#~ msgstr ""
-#~ "Tuto možnost lze použít pouze tehdy, je-li panel ve vodorovné pozici."
+msgstr "<i>Aplikace pro kontrolu pravopisu může být například 'enchant', 'aspell', 'ispell' nebo jakákoliv jiná aplikace kontroly pravopisu kompatibilní s příkazem ispell.\nIkona zobrazuje zda zadaný příkaz existuje.</i>"
