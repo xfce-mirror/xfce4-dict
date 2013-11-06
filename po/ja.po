@@ -1,23 +1,23 @@
-# Japanese translation of the xfce4-dict-plugin package.
-# Copyright (C) 2006-2012 Enrico Tröger
-# This file is distributed under the same license as the xfce4-dict-plugin pack
-# Yuko Iwamatsu <nigauri@gmail>, 2008.
-# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008.
-# Masato Hashimoto <cabezon.hashimoto@gmail.com>, 2009, 2012-2013.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008
+# Yuko Iwamatsu <nigauri@gmail>, 2008
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict-plugin\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-21 00:19+0900\n"
-"PO-Revision-Date: 2013-05-21 00:24+0900\n"
-"Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
-"Language-Team: Japanese <xfce-users-jp@googlegroups.com>\n"
-"Language: ja\n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2013-11-06 14:31+0000\n"
+"Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/xfce/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=0;\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
@@ -42,32 +42,26 @@ msgstr "単語を調べます"
 msgid "Search term"
 msgstr "検索したい言葉を入力してください"
 
-# CLI --help
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "指定されたテキストを Dict サーバー (RFC 2229) で検索する"
 
-# CLI --help
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
 msgstr "指定されたテキストをウェブベースの検索エンジンで検索する"
 
-# CLI --help
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
 msgstr "指定されたテキストをスペルチェッカーでチェックする"
 
-# CLI --help
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
 msgstr "パネル内のテキストフィールドにフォーカスを取得する"
 
-# CLI --help
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "パネルプラグインが読み込まれている場合でも、スタンドアロンアプリケーションを起動する"
 
-# CLI --help
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "現在選択されている内容を取得し、検索テキストとして使用する"
@@ -76,7 +70,6 @@ msgstr "現在選択されている内容を取得し、検索テキストとし
 msgid "Be verbose"
 msgstr "詳細を出力する"
 
-# CLI --help
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
 msgstr "バージョン情報を表示する"
@@ -106,8 +99,7 @@ msgstr "スペルチェックの結果:"
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "%d 個の候補が見つかりました。"
-msgstr[1] "%d 個の候補が見つかりました。"
+msgstr[0] ""
 
 #: ../lib/spell.c:105
 #, c-format
@@ -181,11 +173,12 @@ msgstr "ファイル '%s' を読み込めませんでした。"
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] "(一度に %d 個表示します)"
-msgstr[1] "(一度に %d 個表示します)"
+msgstr[0] ""
 
 #: ../lib/speedreader.c:586
-msgid "This is an easy speed reading utility to help train you to read faster. It does this by flashing words at a rapid rate on the screen."
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
 msgstr "これは速読練習用の簡単なユーティリティです。画面に文字列を一つずつ、高速に表示します。"
 
 #: ../lib/speedreader.c:589
@@ -204,34 +197,26 @@ msgstr "単語のグルーピング(_G):"
 msgid "_Font Size:"
 msgstr "フォントサイズ(_F):"
 
-# Default strings to be displayed in the Speed Reader. Each ja strings should
-# be separated by space because Speed Reader displays strings separated by
-# space in turn.
 #: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr ""
-"ここに 読みたい 文字列を スペースで 区切って 入力して ください。\n"
-"\n"
-"体を楽に、 リラックスして ください。 「スタート」ボタンを 押すと 開始します。"
+msgstr "ここに 読みたい 文字列を スペースで 区切って 入力して ください。\n\n体を楽に、 リラックスして ください。 「スタート」ボタンを 押すと 開始します。"
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
 msgstr "文字列をファイルから読み込みます"
 
-# tooltip
 #: ../lib/speedreader.c:663
-msgid "Clear the contents of the text field and paste the contents of the clipboard"
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "テキストフィールドの内容をクリアしクリップボードの内容を貼り付けます"
 
-# tooltip
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
 msgstr "テキストフィールドの内容をクリアします"
 
-# Start speed reading
 #: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "スタート(_S)"
@@ -297,8 +282,7 @@ msgstr "ウェブ検索:"
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d 個の定義が見つかりました。"
-msgstr[1] "%d 個の定義が見つかりました。"
+msgstr[0] ""
 
 #: ../lib/dictd.c:676
 #, c-format
@@ -360,10 +344,7 @@ msgstr "Copyright © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr ""
-"Yuko Iwamatsu <nigauri@gmail>\n"
-"Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
-"Masato Hashimoto <cabezon.hashimoto@gmail.com>"
+msgstr "Yuko Iwamatsu <nigauri@gmail>\nNobuhiro Iwamatsu <iwamatsu@nigauri.org>\nMasato Hashimoto <cabezon.hashimoto@gmail.com>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -506,7 +487,9 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-msgid "Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
 msgstr "翻訳または辞書サービスを提供するウェブサイトへの URL を入力します。検索する単語のプレースホルダーとして {word} を使用してください。"
 
 #: ../lib/prefs.c:645
@@ -517,12 +500,4 @@ msgstr "スペルチェックプログラム:"
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>スペルチェックプログラムは、ispell コマンドと互換性がある 'enchant'、'aspell'、'ispell'、その他のスペルチェックプログラムが利用できます。\n"
-"アイコンは、入力されたコマンドが存在するかどうかを示しています。</i>"
-
-#~ msgid "You must set a valid search URL."
-#~ msgstr "有効な検索 URL を設定しなければなりません。"
-
-#~ msgid "Link Color:"
-#~ msgstr "リンクの色:"
+msgstr "<i>スペルチェックプログラムは、ispell コマンドと互換性がある 'enchant'、'aspell'、'ispell'、その他のスペルチェックプログラムが利用できます。\nアイコンは、入力されたコマンドが存在するかどうかを示しています。</i>"
