@@ -1,20 +1,22 @@
-# Finnish translation for xfce4-dict.
-# Copyright (C) 2006-2012 Enrico Tröger
-# This file is distributed under the same license as the xfce4-dict package.
-# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2012.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2012
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict-plugin\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2012-04-27 14:22+0300\n"
-"Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
-"Language-Team: Finnish\n"
-"Language: \n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2013-11-11 19:37+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/xfce/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
@@ -179,9 +181,7 @@ msgstr[1] "(näytä %d sanaa kerrallaan)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Tämä yksinkertainen pikalukutyökalu opettaa sinut nopeammaksi lukijaksi. Se "
-"vaihtaa sanoja ruudulla nopeaan tahtiin."
+msgstr "Tämä yksinkertainen pikalukutyökalu opettaa sinut nopeammaksi lukijaksi. Se vaihtaa sanoja ruudulla nopeaan tahtiin."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -203,13 +203,8 @@ msgstr "Kirjasimen k_oko:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
-msgstr ""
-"Syötä tähän teksti, jonka haluat lukea.\n"
-"\n"
-"Rentoudu ja ota miellyttävä asento, ja aloita sitten pikalukeminen "
-"napsauttamalla Käynnistä."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "Syötä tähän teksti, jonka haluat lukea.\n\nRentoudu ja ota miellyttävä asento, ja aloita sitten pikalukeminen napsauttamalla Käynnistä."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -347,9 +342,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 sanakirja"
 
 #: ../lib/gui.c:963
-#, fuzzy
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Tekijänoikeus © 2006-2011 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Tekijänoikeus © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -497,11 +491,9 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Syötä URL, joka osoittaa käännös- tai sanakirjapalveluita tarjoavalle "
-"verkkosivulle. Merkkijono {word} korvataan haettavalla sanalla."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Syötä URL, joka osoittaa käännös- tai sanakirjapalveluita tarjoavalle verkkosivulle. Merkkijono {word} korvataan haettavalla sanalla."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -509,10 +501,6 @@ msgstr "Oikolukusovellus:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>Oikolukusovellus voi olla \"enchant\", \"aspell\", \"ispell\" tai mikä "
-"tahansa ispell-yhteensopiva sovellus.\n"
-"Kuvake näyttää, löytyykö syötetty komento järjestelmästä.</i>"
+msgstr "<i>Oikolukusovellus voi olla \"enchant\", \"aspell\", \"ispell\" tai mikä tahansa ispell-yhteensopiva sovellus.\nKuvake näyttää, löytyykö syötetty komento järjestelmästä.</i>"
