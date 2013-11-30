@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2013-11-06 14:31+0000\n"
+"PO-Revision-Date: 2013-11-30 12:24+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/xfce/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -99,7 +99,7 @@ msgstr "スペルチェックの結果:"
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] ""
+msgstr[0] "%d 個の候補が見つかりました。"
 
 #: ../lib/spell.c:105
 #, c-format
@@ -173,7 +173,7 @@ msgstr "ファイル '%s' を読み込めませんでした。"
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
+msgstr[0] "(同時に %d 個の単語を表示)"
 
 #: ../lib/speedreader.c:586
 msgid ""
@@ -282,7 +282,7 @@ msgstr "ウェブ検索:"
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] ""
+msgstr[0] "%d 個の定義が見つかりました。"
 
 #: ../lib/dictd.c:676
 #, c-format
