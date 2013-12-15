@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Sveinn í Felli <sveinki@nett.is>, 2011,2013
+# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013
+# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2013-12-03 10:01+0000\n"
-"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
+"PO-Revision-Date: 2013-12-15 14:00+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/projects/p/xfce/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,30 +99,30 @@ msgstr "Niðurstöður stafsetningarleiðréttingar:"
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d uppástunga fannst."
+msgstr[1] "%d uppástungur fundust."
 
 #: ../lib/spell.c:105
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr ""
+msgstr "Tillögur fyrir \"%s\" (%s):"
 
 #: ../lib/spell.c:122
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr ""
+msgstr "\"%s\" er rétt stafsett (%s)."
 
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr ""
+msgstr "Engar uppástungur fundust fyrir \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr ""
+msgstr "Villa við að keyra \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
@@ -134,7 +135,7 @@ msgstr "Ógilt inntak"
 #: ../lib/spell.c:247
 #, c-format
 msgid "Process failed (%s)"
-msgstr ""
+msgstr "Ferli brást (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
@@ -232,7 +233,7 @@ msgstr ""
 
 #: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
-msgstr ""
+msgstr "Ógilt ekki-UTF8 ílag"
 
 #: ../lib/common.c:607
 msgid "Error"
@@ -257,7 +258,7 @@ msgstr ""
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
-msgstr ""
+msgstr "Villa kom upp þegar reynt var að fá upplýsingar frá þjóni."
 
 #: ../lib/dictd.c:422
 msgid "Dictionary Results:"
@@ -446,16 +447,16 @@ msgstr "Rangt stafsett:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
-msgstr ""
+msgstr "<b>Textareitur skjástiku:</b>"
 
 #: ../lib/prefs.c:422
 msgid "Show text field in the panel"
-msgstr ""
+msgstr "Birta textareit á skjástiku"
 
 #. panel entry size
 #: ../lib/prefs.c:429
 msgid "Text field size:"
-msgstr ""
+msgstr "Stærð textareits:"
 
 #. server address
 #: ../lib/prefs.c:475
@@ -482,7 +483,7 @@ msgstr "! (nota allt, stöðva eftir fyrstu samsvörun)"
 
 #: ../lib/prefs.c:595
 msgid "<b>Web search URL:</b>"
-msgstr ""
+msgstr "<b>Slóð fyrir vefleit:</b>"
 
 #: ../lib/prefs.c:601
 msgid "URL:"
