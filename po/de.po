@@ -1,24 +1,22 @@
-# German translation of the xfce4-dict package.
-# Copyright (C) 2006-2009 Enrico Tröger
-# This file is distributed under the same license as the xfce4-dict package.
-# Enrico Tröger <enrico@xfce.org>, 2006-2009.
-# Fabian Nowak <timystery@arcor.de>, 2007-2010.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# to_ba, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict-plugin 0.5.0\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2010-01-01 15:59+0100\n"
-"Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
-"Language-Team: German <xfce-i18n@xfce.org>\n"
-"Language: de\n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2013-12-29 22:04+0000\n"
+"Last-Translator: to_ba\n"
+"Language-Team: German (http://www.transifex.com/projects/p/xfce/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Country: GERMANY\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
@@ -45,8 +43,7 @@ msgstr "Suchbegriff"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
-"Den angegebenen Text mithilfe eines Dict-Servers (nach RFC 2229) suchen"
+msgstr "Den angegebenen Text mithilfe eines Dict-Servers (nach RFC 2229) suchen"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
@@ -62,14 +59,11 @@ msgstr "Setzt den Fokus auf das Eingabefeld in der Leiste"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
-"Als eigenständiges Programm starten auch wenn das Leisten-Plugin geladen ist"
+msgstr "Als eigenständiges Programm starten auch wenn das Leisten-Plugin geladen ist"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
-"Holt sich den Inhalt aus der primären Zwischenablage und benutzt ihn als "
-"Suchtext"
+msgstr "Holt sich den Inhalt aus der primären Zwischenablage und benutzt ihn als Suchtext"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -131,9 +125,7 @@ msgstr "Fehler beim Ausführen von »%s« (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
-"Bitte geben Sie zuerst einen Befehl für die Rechtschreibprüfung im "
-"Einstellungsdialog an."
+msgstr "Bitte geben Sie zuerst einen Befehl für die Rechtschreibprüfung im Einstellungsdialog an."
 
 #: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
@@ -188,9 +180,7 @@ msgstr[1] "(%d Wörter gleichzeitig anzeigen)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Dies ist ein Hilfswerkzeug zum Trainieren des Schnelllesens. Dies wird durch "
-"kurzes Anzeigen von Wörtern auf dem Bildschirm bei einer hohen Rate erreicht."
+msgstr "Dies ist ein Hilfswerkzeug zum Trainieren des Schnelllesens. Dies wird durch kurzes Anzeigen von Wörtern auf dem Bildschirm bei einer hohen Rate erreicht."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -212,12 +202,8 @@ msgstr "_Schriftgröße"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
-msgstr ""
-"Geben Sie hier einen Text ein, den Sie lesen möchten.\n"
-"Seien Sie entspannt und machen Sie es sich bequem. Drücken Sie nun »Start«, "
-"um mit dem Schnelllesen zu beginnen."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "Geben Sie hier einen Text ein, den Sie lesen möchten.\nSeien Sie entspannt und machen Sie es sich bequem. Drücken Sie nun »Start«, um mit dem Schnelllesen zu beginnen."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -242,9 +228,7 @@ msgstr "Die Such-URL ist ungültig. Bitte überprüfen Sie Ihre Einstellungen."
 
 #: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
-"Es konnte kein Browser geöffnet werden. Bitte überprüfen Sie Ihre "
-"Einstellungen."
+msgstr "Es konnte kein Browser geöffnet werden. Bitte überprüfen Sie Ihre Einstellungen."
 
 #: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
@@ -269,9 +253,7 @@ msgstr "Der Server ist nicht bereit."
 
 #: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr ""
-"Es wurde ein ungültiges Verzeichnis angegeben. Bitte überprüfen Sie Ihre "
-"Einstellungen."
+msgstr "Es wurde ein ungültiges Verzeichnis angegeben. Bitte überprüfen Sie Ihre Einstellungen."
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
@@ -359,14 +341,12 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Wörterbuch"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2012 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Urheberrecht © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr ""
-"Enrico Tröger <enrico@xfce.org>\n"
-"Fabian Nowak <timystery@arcor.de>"
+msgstr "Enrico Tröger <enrico@xfce.org>\nFabian Nowak <timystery@arcor.de>"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -510,12 +490,9 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Geben Sie eine URL für eine Webseite an, die Übersetzungs- oder "
-"Wörterbuchdienste anbietet. Benutzen Sie {word} als Platzhalter für das "
-"nachzuschlagende Wort."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Geben Sie eine URL für eine Webseite an, die Übersetzungs- oder Wörterbuchdienste anbietet. Benutzen Sie {word} als Platzhalter für das nachzuschlagende Wort."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -523,90 +500,6 @@ msgstr "Rechtschreibprüfprogramm:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>Das Programm für die Rechtschreibprüfung kann »enchant«, »aspell«, "
-"»ispell« oder ein anderes Programm sein, welches zu dem ispell-Programm "
-"kompatibel ist.\n"
-"Das Symbol zeigt, ob das eingegebene Programm existiert.</i>"
-
-#~ msgid "You must set a valid search URL."
-#~ msgstr "Sie müssen eine gültige Such-URL angeben."
-
-#~ msgid "Link Color:"
-#~ msgstr "Farbe für Verweise:"
-
-#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-#~ msgstr "(kompiliert am %s mit GTK %d.%d.%d, GLib %d.%d.%d)"
-
-#~ msgid "Do you want to search \"%s\" on the Web using "
-#~ msgstr "Möchten Sie »%s« im Web suchen mit "
-
-#~ msgid "_Dict"
-#~ msgstr "_Dict"
-
-#~ msgid "_Web"
-#~ msgstr "_Web"
-
-#~ msgid "Dict"
-#~ msgstr "Dict"
-
-#~ msgid "Web"
-#~ msgstr "Web"
-
-#~ msgid "Show help options"
-#~ msgstr "Hilfeoptionen anzeigen"
-
-#~ msgid "Xfce4 Dictionary Preferences"
-#~ msgstr "Xfce4 Wörterbuch Einstellungen"
-
-#~ msgid "Developer"
-#~ msgstr "Entwickler"
-
-#~ msgid "Preferences"
-#~ msgstr "Einstellungen"
-
-#~ msgid "Aspell program:"
-#~ msgstr "Aspell Programm:"
-
-#~ msgid "Text to search:"
-#~ msgstr "Suchwort:"
-
-#~ msgid "Aspell"
-#~ msgstr "Aspell"
-
-#~ msgid "    -h, --help          show this help and exit\n"
-#~ msgstr "    -h, --help          diese Hilfe anzeigen und beenden\n"
-
-#~ msgid ""
-#~ "If called without any options, the xfce4-dict-plugin main window is "
-#~ "shown.\n"
-#~ msgstr ""
-#~ "Bei Aufruf ohne Argumente wird das Hauptfenster des xfce4-dict-plugins "
-#~ "angezeigt.\n"
-
-#~ msgid "Options:\n"
-#~ msgstr "Optionen:\n"
-
-#~ msgid "Properties"
-#~ msgstr "Einstellungen"
-
-#~ msgid ""
-#~ "This option can only be used when the panel has a horizontal orientation."
-#~ msgstr ""
-#~ "Diese Option kann nur benutzt werden, wenn die Leiste horizontal "
-#~ "ausgerichtet ist."
-
-#~ msgid "Usage: %s [options]\n"
-#~ msgstr "Verwendung: %s [Optionen]\n"
-
-#~ msgid "Use a DICT server"
-#~ msgstr "DICT-Server benutzen"
-
-#~ msgid "Use a web site"
-#~ msgstr "Webseite benutzen"
-
-#~ msgid "Use another website"
-#~ msgstr "Andere Webseite benutzen"
+msgstr "<i>Das Programm für die Rechtschreibprüfung kann »enchant«, »aspell«, »ispell« oder ein anderes Programm sein, welches zu dem ispell-Programm kompatibel ist.\nDas Symbol zeigt, ob das eingegebene Programm existiert.</i>"
