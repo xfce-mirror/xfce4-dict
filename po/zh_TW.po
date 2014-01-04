@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Walter Cheuk <wwycheuk@gmail.com>, 2013
+# Walter Cheuk <wwycheuk@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2013-10-13 00:50+0000\n"
+"PO-Revision-Date: 2014-01-04 05:30+0000\n"
 "Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -43,15 +43,15 @@ msgstr "搜尋項目"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
+msgstr "以 Dict 伺服器(RFC 2229) 搜尋給定文字"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr ""
+msgstr "以網上搜尋引擎搜尋給定文字"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr ""
+msgstr "以拼字檢查器檢查給定文字"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
+msgstr "即使已載入面板插件也啟動獨立的應用程式"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -88,11 +88,11 @@ msgstr "字典客戶端"
 
 #: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
-msgstr ""
+msgstr "查閱不同字典的用戶端程式。"
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
-msgstr ""
+msgstr "拼字檢查器結果："
 
 #: ../lib/spell.c:101
 #, c-format
@@ -124,7 +124,7 @@ msgstr "執行 \"%s\" 時出錯 (%s)。"
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
+msgstr "請在偏好設定對話窗設定拼字檢查指令。"
 
 #: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
