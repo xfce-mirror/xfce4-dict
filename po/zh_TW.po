@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2014-01-04 05:30+0000\n"
+"PO-Revision-Date: 2014-01-04 05:41+0000\n"
 "Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -178,7 +178,7 @@ msgstr[0] "(一次顯示 %d 個字)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "這是訓練您速讀的簡易程式。方法是在螢幕快速顯示文字。"
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -201,7 +201,7 @@ msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr ""
+msgstr "在此輸入想讀的文字。\n\n放鬆自己並換過舒服的位置，然後按「開始」。"
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -222,11 +222,11 @@ msgstr "開始(_S)"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
-msgstr ""
+msgstr "搜尋 URL 是空的。請檢查偏好設定。"
 
 #: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "無法開啟瀏覽器。請檢查您的偏好設定。"
+msgstr "無法開啟瀏覽器。請檢查偏好設定。"
 
 #: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
@@ -251,11 +251,11 @@ msgstr "伺服器未就緒。"
 
 #: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr ""
+msgstr "指定了無效的字典。請檢查偏好設定。"
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
-msgstr ""
+msgstr "查詢伺服器時發生不明錯誤。"
 
 #: ../lib/dictd.c:422
 msgid "Dictionary Results:"
@@ -264,7 +264,7 @@ msgstr "字典結果："
 #: ../lib/dictd.c:425
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr ""
+msgstr "找不到符合「%s」的結果。"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
@@ -281,7 +281,7 @@ msgstr "網上搜尋："
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] ""
+msgstr[0] "找到 %d 個定義。"
 
 #: ../lib/dictd.c:676
 #, c-format
@@ -290,7 +290,7 @@ msgstr "正在查詢 %s..."
 
 #: ../lib/dictd.c:735
 msgid "An error occured while querying server information."
-msgstr ""
+msgstr "查詢伺服器資訊時發生錯誤。"
 
 #: ../lib/dictd.c:748
 #, c-format
@@ -319,7 +319,7 @@ msgstr "求助(_H)"
 
 #: ../lib/gui.c:808
 msgid "Search with:"
-msgstr ""
+msgstr "以此搜尋："
 
 #: ../lib/gui.c:812
 msgid "_Dictionary Server"
@@ -339,7 +339,7 @@ msgstr "Xfce4 字典"
 
 #: ../lib/gui.c:963
 msgid "Copyright © 2006-2013 Enrico Tröger"
-msgstr "Copyright © 2006-2013 Enrico Tröger"
+msgstr "著作權 © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -415,7 +415,7 @@ msgstr "網頁服務"
 
 #: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
-msgstr ""
+msgstr "拼字檢查器"
 
 #: ../lib/prefs.c:338
 msgid "Last used method"
@@ -431,7 +431,7 @@ msgstr "連結："
 
 #: ../lib/prefs.c:354
 msgid "Phonetics:"
-msgstr ""
+msgstr "拼音："
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
@@ -489,14 +489,14 @@ msgstr "網址："
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr ""
+msgstr "輸入提供翻譯或字典服務的 URL。以 {word} 作為要搜尋字詞的替代符號。"
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
-msgstr ""
+msgstr "拼字檢查程式："
 
 #: ../lib/prefs.c:662
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>拼字檢查程式可以是「enchant」、「aspell」、「ispell」或任何其他相容於 ispell 指令的拼字檢查程式。\n圖示顯示是否有輸入的指令。</i>"
