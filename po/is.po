@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013
+# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013-2014
 # Sveinn í Felli <sv1@fellsnet.is>, 2011,2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2013-12-15 14:00+0000\n"
+"PO-Revision-Date: 2014-01-23 19:39+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/projects/p/xfce/language/is/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Orðasafn"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 msgid "A plugin to query different dictionaries."
-msgstr ""
+msgstr "Hjálparforrit (viðbót) til að leita í mismunandi orðasöfnum."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
@@ -44,15 +44,15 @@ msgstr "Leitarorð"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
+msgstr "Leita að tilteknum texta með Dict-miðlara (RFC 2229)"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
-msgstr ""
+msgstr "Leita að tilteknum texta með vefleitarvél"
 
 #: ../src/xfce4-dict.c:53
 msgid "Check the given text with a spell checker"
-msgstr ""
+msgstr "Yfirfara tiltekinn texta með stafsetningarleiðréttingarforriti"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Vera ítarlegri"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
@@ -89,7 +89,7 @@ msgstr "Orðabókarbiðlari"
 
 #: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
 msgid "A client program to query different dictionaries."
-msgstr ""
+msgstr "Biðlaraforrit til að leita í mismunandi orðasöfnum."
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
@@ -126,7 +126,7 @@ msgstr "Villa við að keyra \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
+msgstr "Stilltu skipun fyrir stafsetningaryfirferð í stillingavalmyndinni."
 
 #: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
@@ -135,7 +135,7 @@ msgstr "Ógilt inntak"
 #: ../lib/spell.c:247
 #, c-format
 msgid "Process failed (%s)"
-msgstr "Ferli brást (%s)"
+msgstr "Ferli mistókst (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
@@ -213,7 +213,7 @@ msgstr "Hlaða inn innihaldi skráar"
 #: ../lib/speedreader.c:663
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr ""
+msgstr "Hreinsa textareitinn og líma inn innihald klippispjaldsins"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -225,15 +225,15 @@ msgstr "_Byrja"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
-msgstr ""
+msgstr "Leitarslóðin er auð. Athugaðu stillingarnar þínar"
 
 #: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
+msgstr "Ekki hægt að opna vafra. Athugaðu stillingarnar þínar"
 
 #: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
-msgstr "Ógilt ekki-UTF8 ílag"
+msgstr "Ógilt ekki-UTF8 inntak"
 
 #: ../lib/common.c:607
 msgid "Error"
@@ -254,11 +254,11 @@ msgstr "Þjónninn er ekki tilbúinn."
 
 #: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr ""
+msgstr "Ógilt orðasafn tiltekið. Athugaðu stillingarnar þínar"
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
-msgstr "Villa kom upp þegar reynt var að fá upplýsingar frá þjóni."
+msgstr "Villa kom upp þegar reynt var að fá upplýsingar frá miðlara."
 
 #: ../lib/dictd.c:422
 msgid "Dictionary Results:"
