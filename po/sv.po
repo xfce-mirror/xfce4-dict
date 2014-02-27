@@ -1,21 +1,22 @@
-# Swedish translation for xfce4-dict.
-# Copyright (C) 2008, 2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the xfce4-dict package.
-# Daniel Nylander <po@danielnylander.se>, 2008, 2009.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Daniel Nylander <po@danielnylander.se>, 2008-2009
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2009-02-09 01:11+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
-"Language: sv\n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2014-02-27 20:15+0000\n"
+"Last-Translator: PavelNicklasson <pavelnicklasson@bahnhof.se>\n"
+"Language-Team: Swedish (http://www.transifex.com/projects/p/xfce/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
@@ -90,9 +91,8 @@ msgid "A client program to query different dictionaries."
 msgstr "Ett klientprogram för att fråga olika ordböcker."
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Stavningskontroll"
+msgstr "Resultat av stavningskontroll:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -102,19 +102,19 @@ msgstr[0] "%d förslag hittades."
 msgstr[1] "%d förslag hittades."
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Förslag för \"%s\":"
+msgstr "Förslag för \"%s\" (%s):"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" är korrekt stavad."
+msgstr "\"%s\" är rättstavat (%s)."
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Inga förslag kunde hittas för \"%s\"."
+msgstr "Inget förslag kunde hittas för \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -138,92 +138,89 @@ msgstr "Process misslyckades (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr ""
+msgstr "P_aus"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Återuppta"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Körs"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Färdig"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Snabbläsare"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Du måste skriva in en text."
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Välj en fil att läsa in"
 
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "Filen '%s' kunde inte läsas in."
 
 #: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(visa %d ord åt gången)"
+msgstr[1] "(visa %d ord åt gången)"
 
 #: ../lib/speedreader.c:586
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "Detta är ett enkelt snabbläsningsverktyg som övar dig att läsa snabbare. Det gör detta genom att blinka ord snabbt på skärmen."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_ord per minut:"
 
 #: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Markera stycken"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "Ord_gruppering:"
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr ""
+msgstr "_Typsnittsstorlek:"
 
 #: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
-msgstr ""
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "Skriv in en text här som du vill läsa.\n\nSlappna av och gör det bekvämt, klicka sedan Start för att börja snabbläsning."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Läs in innehållet i en fil"
 
 #: ../lib/speedreader.c:663
-#, fuzzy
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Fånga fokus på textfältet i panelen"
+msgstr "Rensar innehållet i textfältet och klistrar in urklippets innehåll"
 
 #: ../lib/speedreader.c:671
-#, fuzzy
 msgid "Clear the contents of the text field"
-msgstr "Fånga fokus på textfältet i panelen"
+msgstr "Rensa innehållet i textfältet"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr ""
+msgstr "_Start"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
@@ -239,11 +236,11 @@ msgstr "Ogiltig inmatning i icke-UTF8"
 
 #: ../lib/common.c:607
 msgid "Error"
-msgstr ""
+msgstr "Fel"
 
 #: ../lib/common.c:610
 msgid "warning"
-msgstr ""
+msgstr "Varning"
 
 #: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
 #: ../lib/dictd.c:811
@@ -259,14 +256,12 @@ msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Ogiltig ordbok angiven. Kontrollera dina inställningar."
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
-#, fuzzy
 msgid "Unknown error while querying the server."
-msgstr "Okänt fel vid fråga till servern."
+msgstr "Okänt fel då servern tillfrågades."
 
 #: ../lib/dictd.c:422
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Ordbok:"
+msgstr "Ordboksresultat:"
 
 #: ../lib/dictd.c:425
 #, c-format
@@ -281,9 +276,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Sök efter \"%s\" med \"%s\""
 
 #: ../lib/dictd.c:446
-#, fuzzy
 msgid "Web Search:"
-msgstr "Webbtjänst"
+msgstr "Webbsökning:"
 
 #: ../lib/dictd.c:468
 #, c-format
@@ -312,7 +306,7 @@ msgstr "Servern erbjuder inga databaser."
 
 #: ../lib/gui.c:342
 msgid "Copy Link"
-msgstr ""
+msgstr "Kopiera länk"
 
 #: ../lib/gui.c:674
 msgid "_File"
@@ -320,7 +314,7 @@ msgstr "_Arkiv"
 
 #: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Snabb_läsare"
 
 #: ../lib/gui.c:700
 msgid "_Help"
@@ -347,17 +341,12 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4-ordbok"
 
 #: ../lib/gui.c:963
-#, fuzzy
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Copyright © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr ""
-"Daniel Nylander <po@danielnylander.se>\n"
-"\n"
-"Skicka synpunkter på översättningen till\n"
-"<tp-sv@listor.tp-sv.se>."
+msgstr "Daniel Nylander <po@danielnylander.se>\nPåvel Nicklasson <pavel@frimix.se>\n\nSkicka synpunkter på översättningen till\n<tp-sv@listor.tp-sv.se>."
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -441,22 +430,19 @@ msgstr "<b>Färger:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Länkar:"
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Fonetisk färg:"
+msgstr "Fonetik:"
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "\"%s\" är korrekt stavad."
+msgstr "Rättstavade:"
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "\"%s\" är korrekt stavad."
+msgstr "Felstavade:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -503,13 +489,10 @@ msgid "URL:"
 msgstr "URL:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Ange en URL till en webbsida som erbjuder översättnings- eller "
-"ordbokstjänster. Använd {word} som platshållare för det eftersökta ordet."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Ange URL för en hemsida som erbjuder översättnings- eller ordbokstjänster. Använd {ord} som platshållare för ordet som söks."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -517,17 +500,6 @@ msgstr "Stavningskontrollprogram:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>Stavningskontrollprogrammet kan vara \"enchant\", \"aspell\", \"ispell\" "
-"eller något annat stavningskontrollprogram som är kompatibelt med ispell-"
-"kommandot.\n"
-"Ikonen visar huruvida det angivna kommandot finns.</i>"
-
-#~ msgid "You must set a valid search URL."
-#~ msgstr "Du måste ange en giltig sök-URL."
-
-#~ msgid "Link Color:"
-#~ msgstr "Länkfärg:"
+msgstr "<i>Stavningskontrollprogrammet kan vara \"enchant\", \"aspell\", \"ispell\" eller något annat stavningskontrollprogram som är kompatibelt med ispell-kommandot.\nIkonen visar huruvida det angivna kommandot finns.</i>"
