@@ -1,16 +1,21 @@
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict 0.5.0\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2009-09-02 12:52+0100\n"
-"Last-Translator: astur <malditoastur@gmail.com>\n"
-"Language-Team: Asturian <alministradores@softastur.org>\n"
-"Language: ast\n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2014-04-14 22:46+0000\n"
+"Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
+"Language-Team: Asturian (http://www.transifex.com/projects/p/xfce/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ast\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
@@ -26,7 +31,7 @@ msgstr "Un complementu pa consultar diferentes diccionarios."
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:516
 msgid "Ready"
-msgstr "Llisto"
+msgstr "Preparáu"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:431
 msgid "Look up a word"
@@ -54,13 +59,11 @@ msgstr "Obtener el focu nel campu de testu nel panel"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
-"Entamar como una aplicación independiente inclusu si se carga'l complementu "
-"del panel"
+msgstr "Aniciar como una aplicación independiente inclusu si se carga'l complementu del panel"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Toma'l conteníu de la Escoyeta PRIMARIA y úsalu como testu de gueta"
+msgstr "Toma'l conteníu de la escoyeta PRIMARIA y úsalu como testu de gueta"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -88,9 +91,8 @@ msgid "A client program to query different dictionaries."
 msgstr "Un programa veceru pa consultar dellos diccionarios."
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Comprobación ortográfica"
+msgstr "Resultaos del correutor:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -100,32 +102,30 @@ msgstr[0] "%d suxerencia alcontrada."
 msgstr[1] "%d suxerencies alcontraes."
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Suxerencies pa \"%s\":"
+msgstr "Suxerencies pa \"%s\" (%s):"
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" ta correutamente escritu."
+msgstr "\"%s\" ta escrito correutamente (%s)."
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Nun pudo atopase denguna suxerencia pa \"%s\"."
+msgstr "Nun pudieron alcontrase suxerencies pa \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Fallu na execución de \"%s\" (%s)."
+msgstr "Erru cuando s'executaba \"%s\" (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
-"Por favor, configura'l comandu pal correutor ortográficu nel diálogu de "
-"preferencies."
+msgstr "Por favor, configura'l comandu pal correutor ortográficu nel diálogu de preferencies."
 
 #: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
@@ -138,7 +138,7 @@ msgstr "Falló'l procesu (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr ""
+msgstr "Pos_ar"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
@@ -146,28 +146,28 @@ msgstr ""
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Executando"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Fináu"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Velocidá de llectura"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Tienes d'introducir un testu."
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Esbilla un fucheru pa cargar"
 
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "El ficheru '%s' nun pudo cargase."
 
 #: ../lib/speedreader.c:561
 #, c-format
@@ -202,8 +202,7 @@ msgstr ""
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
 
 #: ../lib/speedreader.c:654
@@ -211,15 +210,13 @@ msgid "Load the contents of a file"
 msgstr ""
 
 #: ../lib/speedreader.c:663
-#, fuzzy
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Obtener el focu nel campu de testu nel panel"
+msgstr ""
 
 #: ../lib/speedreader.c:671
-#, fuzzy
 msgid "Clear the contents of the text field"
-msgstr "Obtener el focu nel campu de testu nel panel"
+msgstr ""
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
@@ -231,8 +228,7 @@ msgstr "La URL de gueta ta erma. Por favor, comprueba les tos preferencies."
 
 #: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
-"Nun pudo abrise'l restolador. Por favor, comprueba les tos preferencies."
+msgstr "Nun pudo abrise'l restolador. Por favor, comprueba les tos preferencies."
 
 #: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
@@ -257,19 +253,15 @@ msgstr "El sirvidor nun ta disponible"
 
 #: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr ""
-"Diccionariu especificáu non válidu. Por favor, comprueba les tos "
-"preferencies."
+msgstr "Diccionariu especificáu non válidu. Por favor, comprueba les tos preferencies."
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
-#, fuzzy
 msgid "Unknown error while querying the server."
-msgstr "Fallu desconocíu al facer la consulta al sirvidor."
+msgstr ""
 
 #: ../lib/dictd.c:422
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Diccionariu:"
+msgstr ""
 
 #: ../lib/dictd.c:425
 #, c-format
@@ -284,9 +276,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr "Guetar \"%s\" usando \"%s\""
 
 #: ../lib/dictd.c:446
-#, fuzzy
 msgid "Web Search:"
-msgstr "Serviciu web"
+msgstr ""
 
 #: ../lib/dictd.c:468
 #, c-format
@@ -350,9 +341,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Diccionariu Xfce4"
 
 #: ../lib/gui.c:963
-#, fuzzy
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2009 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr ""
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -443,19 +433,16 @@ msgid "Links:"
 msgstr ""
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Color pa fonética:"
+msgstr ""
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "\"%s\" ta correutamente escritu."
+msgstr ""
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "\"%s\" ta correutamente escritu."
+msgstr ""
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -502,13 +489,10 @@ msgid "URL:"
 msgstr "URL :"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
 msgstr ""
-"Introduz una URL a un sitiu web qu'ufierte servicios de torna o de "
-"diccionariu. Usa {word} nel llugar onde diría pallabra guetada."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -516,79 +500,6 @@ msgstr "Programa correutor ortográficu:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>El programa correutor ortográficu puede ser 'enchant', 'aspell', 'ispell' "
-"o cualesquier otru correutor ortográficu compatible col comandu ispell.\n"
-"L'iconu amuesa si'l comandu introducíu esiste.</i>"
-
-#~ msgid "You must set a valid search URL."
-#~ msgstr "Tienes de configurar una URL de gueta válida."
-
-#~ msgid "Link Color:"
-#~ msgstr "Color d'enllaz:"
-
-#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-#~ msgstr "(compiláu en %s con GTK %d.%d.%d, GLib %d.%d.%d)"
-
-#~ msgid "Do you want to search \"%s\" on the Web using "
-#~ msgstr "Quies guetar \"%s\" na web usando"
-
-#~ msgid "_Dict"
-#~ msgstr "_Dict"
-
-#~ msgid "_Web"
-#~ msgstr "_Web"
-
-#~ msgid "Dict"
-#~ msgstr "Dict"
-
-#~ msgid "Web"
-#~ msgstr "Web"
-
-#~ msgid "Show help options"
-#~ msgstr "Amosar opciones de aida"
-
-#~ msgid "Text to search:"
-#~ msgstr "Testu a guetar:"
-
-#~ msgid "Developer"
-#~ msgstr "Desarrollador"
-
-#~ msgid "Aspell"
-#~ msgstr "Aspell"
-
-#~ msgid "Properties"
-#~ msgstr "Propriétés"
-
-#~ msgid "Use a DICT server"
-#~ msgstr "Utiliser un serveur Dict"
-
-#~ msgid "Use another website"
-#~ msgstr "Utiliser un autre site Web"
-
-#~ msgid "Use a web site"
-#~ msgstr "Utiliser un site Web"
-
-#~ msgid ""
-#~ "This option can only be used when the panel has a horizontal orientation."
-#~ msgstr ""
-#~ "Cette option ne s'utilise que si le panneau est orienté horizontalement."
-
-#~ msgid "Usage: %s [options]\n"
-#~ msgstr "Usage : %s [options]\n"
-
-#~ msgid "Options:\n"
-#~ msgstr "Options :\n"
-
-#~ msgid "    -h, --help          show this help and exit\n"
-#~ msgstr "    -h, --help          afficher cette aide et quitter\n"
-
-#~ msgid ""
-#~ "If called without any options, the xfce4-dict-complementu main window is "
-#~ "shown.\n"
-#~ msgstr ""
-#~ "Si appelé sans options, la fenêtre principale de xfce4-dict-complementu "
-#~ "est affichée.\n"
+msgstr "<i>El programa correutor ortográficu puede ser 'enchant', 'aspell', 'ispell' o cualesquier otru correutor ortográficu compatible col comandu ispell.\nL'iconu amuesa si'l comandu introducíu esiste.</i>"
