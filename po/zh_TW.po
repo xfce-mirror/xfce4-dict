@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Walter Cheuk <wwycheuk@gmail.com>, 2013-2014
+# 柏諺 黃 <s8321414@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2014-01-04 05:41+0000\n"
-"Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
+"PO-Revision-Date: 2014-04-16 11:45+0000\n"
+"Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +56,7 @@ msgstr "以拼字檢查器檢查給定文字"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grab the focus on the text field in the panel"
-msgstr ""
+msgstr "將焦點置於面板上的文字欄"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -63,7 +64,7 @@ msgstr "即使已載入面板插件也啟動獨立的應用程式"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "抓取主要選取內容，並將其作為搜尋文字"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
