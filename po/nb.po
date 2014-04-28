@@ -1,20 +1,22 @@
-# Norwegian Bokmal translations for xfce package.
-# Copyright (C) 2008 THE xfce'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce package.
-# Terje Uriansrud <ter@operamail.com>, 2008.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# haarek <haarektrans@gmail.com>, 2014
+# Terje Uriansrud <ter@operamail.com>, 2008
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict 0.5.0\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2008-09-11 17:37+0200\n"
-"Last-Translator: Terje Uriansrud <ter@operamail.com>\n"
-"Language-Team: Norwegian Bokmal\n"
-"Language: \n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2014-04-28 13:47+0000\n"
+"Last-Translator: haarek <haarektrans@gmail.com>\n"
+"Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
@@ -29,7 +31,6 @@ msgstr "Ordliste for hurtig tilgang til forskjellige ordlister."
 #: ../panel-plugin/xfce4-dict-plugin.c:366
 #: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
 #: ../lib/spell.c:243 ../lib/gui.c:516
-#, fuzzy
 msgid "Ready"
 msgstr "Klar"
 
@@ -80,7 +81,7 @@ msgstr "[TEKST]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "Vennligst meld feil til <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
@@ -91,9 +92,8 @@ msgid "A client program to query different dictionaries."
 msgstr "Et klientprogram for å søke i forskjellige ordlister."
 
 #: ../lib/spell.c:75
-#, fuzzy
 msgid "Spell Checker Results:"
-msgstr "Stavekontroll"
+msgstr ""
 
 #: ../lib/spell.c:101
 #, c-format
@@ -103,19 +103,19 @@ msgstr[0] "%d forslag funnet"
 msgstr[1] "%d forslag funnet"
 
 #: ../lib/spell.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Forslag for \"%s\":"
+msgstr ""
 
 #: ../lib/spell.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" er stavet korrekt."
+msgstr ""
 
 #: ../lib/spell.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Ingen forslag ble funnet for \"%s\"."
+msgstr ""
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -129,9 +129,8 @@ msgid "Please set the spell check command in the preferences dialog."
 msgstr "Vennlist angi stavekontroll kommando i vinduet for brukervalg."
 
 #: ../lib/spell.c:208 ../lib/common.c:223
-#, fuzzy
 msgid "Invalid input"
-msgstr "Ugyldig inndata"
+msgstr ""
 
 #: ../lib/spell.c:247
 #, c-format
@@ -204,8 +203,7 @@ msgstr ""
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
 
 #: ../lib/speedreader.c:654
@@ -213,15 +211,13 @@ msgid "Load the contents of a file"
 msgstr ""
 
 #: ../lib/speedreader.c:663
-#, fuzzy
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Ta fokus på tekstfeilt i panelet"
+msgstr ""
 
 #: ../lib/speedreader.c:671
-#, fuzzy
 msgid "Clear the contents of the text field"
-msgstr "Ta fokus på tekstfeilt i panelet"
+msgstr ""
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
@@ -236,13 +232,12 @@ msgid "Browser could not be opened. Please check your preferences."
 msgstr "Nettleseren kunne ikke startes. Vennlist kontroller innstillingene."
 
 #: ../lib/common.c:233
-#, fuzzy
 msgid "Invalid non-UTF8 input"
-msgstr "Ugyldig ikke-UTF8 inndata."
+msgstr ""
 
 #: ../lib/common.c:607
 msgid "Error"
-msgstr ""
+msgstr "Feil"
 
 #: ../lib/common.c:610
 msgid "warning"
@@ -254,7 +249,6 @@ msgid "Could not connect to server."
 msgstr "Klarte ikke kontakte tjener."
 
 #: ../lib/dictd.c:392
-#, fuzzy
 msgid "The server is not ready."
 msgstr "Tjeneren er ikke klar."
 
@@ -263,14 +257,12 @@ msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Ugyldig ordliste angitt. Vennliste kontroller innstillingene."
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
-#, fuzzy
 msgid "Unknown error while querying the server."
 msgstr "Ukjent feil ved spørring mot tjeneren."
 
 #: ../lib/dictd.c:422
-#, fuzzy
 msgid "Dictionary Results:"
-msgstr "Ordliste:"
+msgstr ""
 
 #: ../lib/dictd.c:425
 #, c-format
@@ -285,9 +277,8 @@ msgid "Search \"%s\" using \"%s\""
 msgstr ""
 
 #: ../lib/dictd.c:446
-#, fuzzy
 msgid "Web Search:"
-msgstr "Søk med:"
+msgstr ""
 
 #: ../lib/dictd.c:468
 #, c-format
@@ -308,7 +299,7 @@ msgstr "En feil oppsto ved spørring etter tjenerinformasjon."
 #: ../lib/dictd.c:748
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "Tjenerinformasjon for \"%s\":"
+msgstr "Tjenerinformasjon for «%s»"
 
 #: ../lib/dictd.c:831
 msgid "The server doesn't offer any databases."
@@ -335,27 +326,24 @@ msgid "Search with:"
 msgstr "Søk med:"
 
 #: ../lib/gui.c:812
-#, fuzzy
 msgid "_Dictionary Server"
-msgstr "Ordliste"
+msgstr "_Ordlistetjener"
 
 #: ../lib/gui.c:818
 msgid "_Web Service"
 msgstr ""
 
 #: ../lib/gui.c:826
-#, fuzzy
 msgid "_Spell Checker"
-msgstr "_Stavekontroll"
+msgstr ""
 
 #: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Ordliste"
 
 #: ../lib/gui.c:963
-#, fuzzy
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2008 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr ""
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -422,18 +410,16 @@ msgid "<b>Default search method:</b>"
 msgstr "<b>Forvalgt søkemetode:</b>"
 
 #: ../lib/prefs.c:311 ../lib/prefs.c:472
-#, fuzzy
 msgid "Dictionary Server"
-msgstr "Ordliste"
+msgstr "Ordlistetjener"
 
 #: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
 msgstr ""
 
 #: ../lib/prefs.c:329 ../lib/prefs.c:643
-#, fuzzy
 msgid "Spell Checker"
-msgstr "Stavekontroll"
+msgstr ""
 
 #: ../lib/prefs.c:338
 msgid "Last used method"
@@ -448,19 +434,16 @@ msgid "Links:"
 msgstr ""
 
 #: ../lib/prefs.c:354
-#, fuzzy
 msgid "Phonetics:"
-msgstr "Fonetisk farge:"
+msgstr ""
 
 #: ../lib/prefs.c:355
-#, fuzzy
 msgid "Spelled correctly:"
-msgstr "\"%s\" er stavet korrekt."
+msgstr ""
 
 #: ../lib/prefs.c:356
-#, fuzzy
 msgid "Spelled incorrectly:"
-msgstr "\"%s\" er stavet korrekt."
+msgstr ""
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -507,13 +490,10 @@ msgid "URL:"
 msgstr "Url:"
 
 #: ../lib/prefs.c:621
-#, fuzzy
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
 msgstr ""
-"Angi URL til nettsted som tilbyr oversetting eller ordlistetjenester. Bruk "
-"{word} som erstatning for søkeordet."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -521,40 +501,6 @@ msgstr "Stavekontrollprogram:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>Stavekontrollprogram kan være 'enchant', 'aspell', 'ispell' eller andre "
-"stavekontrollprogrammer som er kompatible med ispell kommandosyntaks.\n"
-"Ikonet viser om angitt kommando eksisterer.</i>"
-
-#~ msgid "You must set a valid search URL."
-#~ msgstr "Du må sette en gyldig søkeurl."
-
-#~ msgid "Link Color:"
-#~ msgstr "Lenkefarge:"
-
-#~ msgid "(built on %s with GTK %d.%d.%d, GLib %d.%d.%d)"
-#~ msgstr "(bygget på %s ,med GTK %d.%d.%d, GLib %d.%d.%d)"
-
-#~ msgid "Do you want to search \"%s\" on the Web using "
-#~ msgstr "Ønsker du å søke etter \"%s\" på nettet med "
-
-#~ msgid "_Dict"
-#~ msgstr "_Ordliste"
-
-#~ msgid "_Web"
-#~ msgstr "_Nettet"
-
-#~ msgid "Dict"
-#~ msgstr "Ordliste"
-
-#~ msgid "Web"
-#~ msgstr "Nett"
-
-#~ msgid "Show help options"
-#~ msgstr "Vis hjelpeinnstillinger"
-
-#~ msgid "Xfce4 Dictionary Preferences"
-#~ msgstr "Xfce4 Ordlisteinnstillinger"
+msgstr "<i>Stavekontrollprogram kan være 'enchant', 'aspell', 'ispell' eller andre stavekontrollprogrammer som er kompatible med ispell kommandosyntaks.\nIkonet viser om angitt kommando eksisterer.</i>"
