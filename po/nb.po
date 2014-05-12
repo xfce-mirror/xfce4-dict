@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# kingu <comradekingu@gmail.com>, 2014
 # haarek <haarektrans@gmail.com>, 2014
 # Terje Uriansrud <ter@operamail.com>, 2008
 msgid ""
@@ -10,8 +11,8 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2014-05-10 12:47+0000\n"
-"Last-Translator: haarek <haarektrans@gmail.com>\n"
+"PO-Revision-Date: 2014-05-12 11:50+0000\n"
+"Last-Translator: kingu <comradekingu@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,7 +69,7 @@ msgstr "Bruker primærvalgt tekst og bruker denne som søketekst."
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
-msgstr ""
+msgstr "Ikke fatt deg i korthet"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
@@ -93,7 +94,7 @@ msgstr "Et klientprogram for å søke i forskjellige ordlister."
 
 #: ../lib/spell.c:75
 msgid "Spell Checker Results:"
-msgstr ""
+msgstr "Stavekontroll-resultater:"
 
 #: ../lib/spell.c:101
 #, c-format
@@ -105,17 +106,17 @@ msgstr[1] "%d forslag funnet"
 #: ../lib/spell.c:105
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr ""
+msgstr "Forslag for \"%s\" (%s):"
 
 #: ../lib/spell.c:122
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr ""
+msgstr "\"%s\" er stavet rett (%s)."
 
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr ""
+msgstr "Ingen forslag funnet for \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -130,7 +131,7 @@ msgstr "Vennlist angi stavekontroll kommando i vinduet for brukervalg."
 
 #: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
-msgstr ""
+msgstr "Ugyldig inndata"
 
 #: ../lib/spell.c:247
 #, c-format
@@ -139,89 +140,89 @@ msgstr "Prosess feilet (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr ""
+msgstr "P_ause"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Fortsett"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
-msgstr ""
+msgstr "Kjører"
 
 #: ../lib/speedreader.c:266
 msgid "Finished"
-msgstr ""
+msgstr "Ferdig"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
-msgstr ""
+msgstr "Hastighetsleser"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Du må skrive inn tekst"
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Velg en fil å lese inn"
 
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "Filen '%s' kan ikke lastes inn."
 
 #: ../lib/speedreader.c:561
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(vis %d ord om gangen)"
+msgstr[1] "(vis %d ord om gangen)"
 
 #: ../lib/speedreader.c:586
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "Dette er et lettfattelig hastighetslesningsverktøy for å hjelpe deg med å lese raskere. Dette gjøres ved å blinke ord i hurtig frekvens over skjermen."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_Ord per minutt:"
 
 #: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Merk avsnitt"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "_Gruppering av ord:"
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
-msgstr ""
+msgstr "_Fontstørrelse:"
 
 #: ../lib/speedreader.c:638
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr ""
+msgstr "Skriv noe tekst her som du vil lese.\n\nVær avslappet og komfortabel, trykk så Start for å begynne hastighetslesning."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Last inn innholdet i en fil"
 
 #: ../lib/speedreader.c:663
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr ""
+msgstr "Fjern innholdet i tekstfeltet og kopier innholdet til utklippstavlen"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
-msgstr ""
+msgstr "Fjern innholdet i tekstfeltet"
 
 #: ../lib/speedreader.c:684
 msgid "_Start"
-msgstr ""
+msgstr "_Start"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
@@ -233,7 +234,7 @@ msgstr "Nettleseren kunne ikke startes. Vennlist kontroller innstillingene."
 
 #: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
-msgstr ""
+msgstr "Ugyldig ikke-UTF-8 inndata"
 
 #: ../lib/common.c:607
 msgid "Error"
@@ -241,7 +242,7 @@ msgstr "Feil"
 
 #: ../lib/common.c:610
 msgid "warning"
-msgstr ""
+msgstr "advarsel"
 
 #: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
 #: ../lib/dictd.c:811
@@ -262,7 +263,7 @@ msgstr "Ukjent feil ved spørring mot tjeneren."
 
 #: ../lib/dictd.c:422
 msgid "Dictionary Results:"
-msgstr ""
+msgstr "Resultat fra ordbok:"
 
 #: ../lib/dictd.c:425
 #, c-format
@@ -274,11 +275,11 @@ msgstr "Ingen treff ble funnet for \"%s\"."
 #: ../lib/dictd.c:441
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Søk etter \"%s\" ved bruk av \"%s\""
 
 #: ../lib/dictd.c:446
 msgid "Web Search:"
-msgstr ""
+msgstr "Nettsøk:"
 
 #: ../lib/dictd.c:468
 #, c-format
@@ -307,7 +308,7 @@ msgstr "Tjeneren tilbyr ingen databaser."
 
 #: ../lib/gui.c:342
 msgid "Copy Link"
-msgstr ""
+msgstr "Kopier lenke"
 
 #: ../lib/gui.c:674
 msgid "_File"
@@ -315,7 +316,7 @@ msgstr "_Fil"
 
 #: ../lib/gui.c:679 ../lib/gui.c:787
 msgid "Speed _Reader"
-msgstr ""
+msgstr "Hastighets_leser"
 
 #: ../lib/gui.c:700
 msgid "_Help"
@@ -331,11 +332,11 @@ msgstr "_Ordlistetjener"
 
 #: ../lib/gui.c:818
 msgid "_Web Service"
-msgstr ""
+msgstr "_Nettjeneste"
 
 #: ../lib/gui.c:826
 msgid "_Spell Checker"
-msgstr ""
+msgstr "_Stavekontroll"
 
 #: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
@@ -343,7 +344,7 @@ msgstr "Xfce4 Ordliste"
 
 #: ../lib/gui.c:963
 msgid "Copyright © 2006-2013 Enrico Tröger"
-msgstr ""
+msgstr "Kopirett © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -415,11 +416,11 @@ msgstr "Ordlistetjener"
 
 #: ../lib/prefs.c:320 ../lib/prefs.c:593
 msgid "Web Service"
-msgstr ""
+msgstr "Nettjeneste"
 
 #: ../lib/prefs.c:329 ../lib/prefs.c:643
 msgid "Spell Checker"
-msgstr ""
+msgstr "Stavekontroll"
 
 #: ../lib/prefs.c:338
 msgid "Last used method"
@@ -431,19 +432,19 @@ msgstr "<b>Farger:</b>"
 
 #: ../lib/prefs.c:353
 msgid "Links:"
-msgstr ""
+msgstr "Lenker:"
 
 #: ../lib/prefs.c:354
 msgid "Phonetics:"
-msgstr ""
+msgstr "Fonetikk:"
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
-msgstr ""
+msgstr "Korrekt stavet:"
 
 #: ../lib/prefs.c:356
 msgid "Spelled incorrectly:"
-msgstr ""
+msgstr "Feilstavet:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -493,7 +494,7 @@ msgstr "Url:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr ""
+msgstr "Skriv inn nettadresse til side som tilbyr oversettelse eller ordboktjenester. Bruk {word} som plassholder for gitt søkeord."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
