@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2014-05-22 08:23+0000\n"
+"PO-Revision-Date: 2014-05-23 09:36+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/projects/p/xfce-apps/language/is/)\n"
 "MIME-Version: 1.0\n"
@@ -60,11 +60,11 @@ msgstr "Virkja textareit á skjástiku"
 
 #: ../src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
+msgstr "Ræsa sjálfstætt forrit jafnvel þótt stikuviðbótin sé virk"
 
 #: ../src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "Tekur innihald AÐALVALS og notar það sem leitarstreng"
 
 #: ../src/xfce4-dict.c:57
 msgid "Be verbose"
@@ -181,7 +181,7 @@ msgstr[1] "(birta %d orð í einu)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "Þetta er einfalt hraðlestrartól til að æfa þig í að lesa hraðar. Það er gert með því að blikka á miklum hraða orðum á skjánum"
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -204,7 +204,7 @@ msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr ""
+msgstr "Settu hér inn einhvern texta sem þig langar að lesa.\n\nKomdu þér vel fyrir og slakaðu á, ýttu síðan á \"Byrja\" til að hefja hraðlestur."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
