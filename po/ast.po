@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
+# Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2014-04-23 11:56+0000\n"
+"PO-Revision-Date: 2014-05-28 07:11+0000\n"
 "Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/xfce-apps/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +143,7 @@ msgstr "Pos_ar"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
-msgstr ""
+msgstr "_Siguir"
 
 #: ../lib/speedreader.c:263
 msgid "Running"
@@ -173,14 +174,14 @@ msgstr "El ficheru '%s' nun pudo cargase."
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(amosar %d pallabra al mesmu tiempu)"
+msgstr[1] "(amosar %d pallabres al mesmu tiempu)"
 
 #: ../lib/speedreader.c:586
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "Esto ye un llector rápidu cenciellu p'aidar a entrenate a lleer aína. Failo amosando pallabres a un ritmu rápidu na pantalla."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -188,11 +189,11 @@ msgstr "_Pallabres per minutu:"
 
 #: ../lib/speedreader.c:595
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Marcar párrafos"
 
 #: ../lib/speedreader.c:602
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "_Grupos de pallabres:"
 
 #: ../lib/speedreader.c:618
 msgid "_Font Size:"
@@ -257,7 +258,7 @@ msgstr "Diccionariu especificáu non válidu. Por favor, comprueba les tos prefe
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
-msgstr ""
+msgstr "Fallu desconocíu entrín s'entrugaba al sirvidor."
 
 #: ../lib/dictd.c:422
 msgid "Dictionary Results:"
@@ -438,11 +439,11 @@ msgstr "Fonética:"
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
-msgstr ""
+msgstr "Escrito correutamente:"
 
 #: ../lib/prefs.c:356
 msgid "Spelled incorrectly:"
-msgstr ""
+msgstr "Escrito incorreutamente:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -492,7 +493,7 @@ msgstr "URL :"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr ""
+msgstr "Introduz la URL del sitiu web qu'ufra'l serviciu de torna o diccionariu. Usa {word} como marcador de posición pa la pallabra guetada."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
