@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Abel Martín <abel.martin.ruiz@gmail.com>, 2008
-# Pablo Lezaeta <prflr88@gmail.com>, 2013-2014
+# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2014
+# Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2014-05-19 05:10+0000\n"
-"Last-Translator: Pablo Lezaeta <prflr88@gmail.com>\n"
+"PO-Revision-Date: 2014-07-07 02:50+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce-apps/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -81,7 +82,7 @@ msgstr "[TEXTO]"
 #: ../src/xfce4-dict.c:147
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Por favor, informe de fallos a <%s>"
+msgstr "Informe de cualquier error a <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
@@ -105,28 +106,28 @@ msgstr[1] "%d sugerencias encontradas."
 #: ../lib/spell.c:105
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Sugerencias para \"%s\" (%s):"
+msgstr "Sugerencias para «%s» (%s):"
 
 #: ../lib/spell.c:122
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" está correctamente escrito (%s)."
+msgstr "«%s» está escrito correctamente (%s)."
 
 #: ../lib/spell.c:134
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "No se pudo encontrar ninguna sugerencia para \"%s\" (%s)."
+msgstr "No se encontró ninguna sugerencia para «%s» (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:164
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Error en la ejecución de \"%s\" (%s)."
+msgstr "Error en la ejecución de «%s» (%s)."
 
 #: ../lib/spell.c:202
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Por favor, configure el comando para el corrector ortográfico en el diálogo de preferencias."
+msgstr "Configure la orden del corrector ortográfico en la ventana Preferencias."
 
 #: ../lib/spell.c:208 ../lib/common.c:223
 msgid "Invalid input"
@@ -139,7 +140,7 @@ msgstr "Falló el proceso (%s)"
 
 #: ../lib/speedreader.c:80 ../lib/speedreader.c:683
 msgid "P_ause"
-msgstr "P_ausa"
+msgstr "P_ausar"
 
 #: ../lib/speedreader.c:81
 msgid "_Resume"
@@ -159,16 +160,16 @@ msgstr "Lectura rápida"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr "Debe introducir un texto"
+msgstr "Debe escribir texto."
 
 #: ../lib/speedreader.c:506
 msgid "Choose a file to load"
-msgstr "Elija un archivo para cargar"
+msgstr "Elija un archivo que cargar"
 
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "El archivo '%s' no se pudo cargar."
+msgstr "No se pudo cargar el archivo «%s»."
 
 #: ../lib/speedreader.c:561
 #, c-format
@@ -225,11 +226,11 @@ msgstr "_Comenzar"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
-msgstr "La URL de búsqueda está vacía. Por favor, compruebe sus preferencias."
+msgstr "El URL de búsqueda está vacío. Compruebe sus preferencias."
 
 #: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "No se pudo abrir el navegador. Por favor, compruebe sus preferencias."
+msgstr "No se pudo abrir el navegador. Compruebe sus preferencias."
 
 #: ../lib/common.c:233
 msgid "Invalid non-UTF8 input"
@@ -241,12 +242,12 @@ msgstr "Error"
 
 #: ../lib/common.c:610
 msgid "warning"
-msgstr "Aviso"
+msgstr "aviso"
 
 #: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
 #: ../lib/dictd.c:811
 msgid "Could not connect to server."
-msgstr "No se pudo conectar al servidor."
+msgstr "No se pudo conectar con el servidor."
 
 #: ../lib/dictd.c:392
 msgid "The server is not ready."
@@ -254,7 +255,7 @@ msgstr "El servidor no está disponible"
 
 #: ../lib/dictd.c:399
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Diccionario especificado no válido. Por favor, compruebe sus preferencias."
+msgstr "El diccionario especificado no es válido. Compruebe sus preferencias."
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
@@ -267,30 +268,30 @@ msgstr "Resultados de diccionario:"
 #: ../lib/dictd.c:425
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "No se pudo encontrar ninguna coincidencia para \"%s\"."
+msgstr "No se encontró ninguna coincidencia para «%s»."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
 #: ../lib/dictd.c:441
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr "Buscar \"%s\" usando \"%s\""
+msgstr "Buscar «%s» con %s"
 
 #: ../lib/dictd.c:446
 msgid "Web Search:"
-msgstr "Búsqueda web:"
+msgstr "Búsqueda en la web:"
 
 #: ../lib/dictd.c:468
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d definición encontrada."
-msgstr[1] "%d definiciones encontradas."
+msgstr[0] "Se encontró %d definición."
+msgstr[1] "Se encontraron %d definiciones."
 
 #: ../lib/dictd.c:676
 #, c-format
 msgid "Querying %s..."
-msgstr "Consultando %s..."
+msgstr "Consultando %s…"
 
 #: ../lib/dictd.c:735
 msgid "An error occured while querying server information."
@@ -299,7 +300,7 @@ msgstr "Ocurrió un error al obtener la información del servidor."
 #: ../lib/dictd.c:748
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "Información de servidor para \"%s\":"
+msgstr "Información del servidor de «%s»:"
 
 #: ../lib/dictd.c:831
 msgid "The server doesn't offer any databases."
@@ -307,7 +308,7 @@ msgstr "El servidor no ofrece ninguna base de datos."
 
 #: ../lib/gui.c:342
 msgid "Copy Link"
-msgstr "Copiar Enlace"
+msgstr "Copiar el enlace"
 
 #: ../lib/gui.c:674
 msgid "_File"
@@ -339,7 +340,7 @@ msgstr "_Comprobación ortográfica"
 
 #: ../lib/gui.c:954
 msgid "Xfce4 Dictionary"
-msgstr "Diccionario Xfce4"
+msgstr "Diccionario de Xfce4"
 
 #: ../lib/gui.c:963
 msgid "Copyright © 2006-2013 Enrico Tröger"
@@ -347,31 +348,31 @@ msgstr "Derechos de autor © 2006 - 2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr "Abel Martín <abel.martin.ruiz@gmail.com>, 2008"
+msgstr "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2014\nPablo Lazaeta Reyes <prflr88@gmail.com>, 2014\nAbel Martín <abel.martin.ruiz@gmail.com>, 2008"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
-msgstr "dict.leo.org - Alemán <-> Inglés"
+msgstr "dict.leo.org: alemán-ingles"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org - Alemán <-> Francés"
+msgstr "dict.leo.org: alemán-francés"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org - Alemán <-> Español"
+msgstr "dict.leo.org: alemán-español"
 
 #: ../lib/prefs.c:58
 msgid "dict.leo.org - German <-> Italian"
-msgstr "dict.leo.org - Alemán <-> Italiano"
+msgstr "dict.leo.org: alemán-italiano"
 
 #: ../lib/prefs.c:59
 msgid "dict.leo.org - German <-> Chinese"
-msgstr "dict.leo.org - Alemán <-> Chino"
+msgstr "dict.leo.org: alemán-chino"
 
 #: ../lib/prefs.c:60
 msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Diccionario"
+msgstr "dist.cc: diccionario"
 
 #: ../lib/prefs.c:61
 msgid "Dictionary.com"
@@ -387,15 +388,15 @@ msgstr "Wikipedia, la enciclopedia libre (EN)"
 
 #: ../lib/prefs.c:64
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr "Wiktionary, el diccionario libre (EN)"
+msgstr "Wikcionario, el diccionario libre (EN)"
 
 #: ../lib/prefs.c:65
 msgid "Merriam-Webster Online Dictionary"
-msgstr "Diccionario Merriam-Webster Online"
+msgstr "Diccionario Merriam-Webster en línea"
 
 #: ../lib/prefs.c:66
 msgid "Clear"
-msgstr "Limpiar"
+msgstr "Vaciar"
 
 #: ../lib/prefs.c:101
 msgid "You have chosen an invalid dictionary."
@@ -407,7 +408,7 @@ msgstr "General"
 
 #: ../lib/prefs.c:305
 msgid "<b>Default search method:</b>"
-msgstr "<b>Método de búsqueda por defecto:</b>"
+msgstr "<b>Método de búsqueda predeterminado:</b>"
 
 #: ../lib/prefs.c:311 ../lib/prefs.c:472
 msgid "Dictionary Server"
@@ -439,11 +440,11 @@ msgstr "Fonética:"
 
 #: ../lib/prefs.c:355
 msgid "Spelled correctly:"
-msgstr "Correctamente escrito:"
+msgstr "Escrito correctamente:"
 
 #: ../lib/prefs.c:356
 msgid "Spelled incorrectly:"
-msgstr "Incorrectamente escrito:"
+msgstr "Escrito incorrectamente:"
 
 #: ../lib/prefs.c:416
 msgid "<b>Panel Text Field:</b>"
@@ -487,20 +488,20 @@ msgstr "<b>URL de búsqueda web:</b>"
 
 #: ../lib/prefs.c:601
 msgid "URL:"
-msgstr "URL :"
+msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr "Introduzca la URL de un sitio web que ofrezca servicios de traducción o de diccionario. Use {word} en el lugar donde iría palabra buscada."
+msgstr "Escriba el URL de un sitio web que ofrezca servicios de traducción o de diccionario. Use {word} en el lugar donde iría la palabra buscada."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
-msgstr "Programa corrector ortográfico:"
+msgstr "Programa de corrección ortográfica:"
 
 #: ../lib/prefs.c:662
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>El programa corrector ortográfico puede ser 'enchant', 'aspell', 'ispell' o cualquier otro corrector ortográfico compatible con el comando ispell.\nEl icono muestra si el comando introducido existe.</i>"
+msgstr "<i>El programa de corrección ortográfica puede ser «enchant», «aspell», «ispell» o cualquier otro corrector ortográfico compatible con la orden ispell.\nEl icono muestra si la orden escrita existe.</i>"
