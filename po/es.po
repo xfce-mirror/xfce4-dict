@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Abel Martín <abel.martin.ruiz@gmail.com>, 2008
-# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2014
+# Adolfo Jayme Barrientos <fito@libreoffice.org>, 2014
 # Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2014-07-07 02:50+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
+"PO-Revision-Date: 2014-12-31 03:13+0000\n"
+"Last-Translator: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce-apps/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +45,7 @@ msgstr "Término de búsqueda"
 
 #: ../src/xfce4-dict.c:51
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr "Buscar el texto dado usando un servidor Dict (RFC 2229)"
+msgstr "Buscar el texto dado usando un servidor DICT (RFC 2229)"
 
 #: ../src/xfce4-dict.c:52
 msgid "Search the given text using a web-based search engine"
@@ -205,7 +205,7 @@ msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr "Introduzca aquí algún texto aquí quiera leer.\n\nRelájese y póngase cómodo, entonces pulse Comenzar para empezar la lectura rápida."
+msgstr "Introduzca aquí algún texto que quiera leer.\n\nRelájese y póngase cómodo, entonces pulse Comenzar para empezar la lectura rápida."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -226,7 +226,7 @@ msgstr "_Comenzar"
 
 #: ../lib/common.c:188
 msgid "The search URL is empty. Please check your preferences."
-msgstr "El URL de búsqueda está vacío. Compruebe sus preferencias."
+msgstr "La dirección URL de búsqueda está vacío. Compruebe sus preferencias."
 
 #: ../lib/common.c:194
 msgid "Browser could not be opened. Please check your preferences."
@@ -348,7 +348,7 @@ msgstr "Derechos de autor © 2006 - 2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2014\nPablo Lazaeta Reyes <prflr88@gmail.com>, 2014\nAbel Martín <abel.martin.ruiz@gmail.com>, 2008"
+msgstr "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2014\nPablo Roberto Francisco Lazaeta Reyes <prflr88@gmail.com>, 2014-2015\nAbel Martín <abel.martin.ruiz@gmail.com>, 2008"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> English"
@@ -504,4 +504,4 @@ msgstr "Programa de corrección ortográfica:"
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>El programa de corrección ortográfica puede ser «enchant», «aspell», «ispell» o cualquier otro corrector ortográfico compatible con la orden ispell.\nEl icono muestra si la orden escrita existe.</i>"
+msgstr "<i>El programa de corrección ortográfica puede ser «enchant», «aspell», «ispell» o cualquier otro corrector ortográfico compatible con la orden «ispell».\nEl icono muestra si la orden escrita existe.</i>"
