@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2015-02-23 11:15+0000\n"
+"PO-Revision-Date: 2015-02-23 12:29+0000\n"
 "Last-Translator: Lyubomir Vasilev\n"
 "Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce-apps/language/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -169,7 +169,7 @@ msgstr "Избор на файл за зареждане"
 #: ../lib/speedreader.c:535
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "Файлът '%s' не може да бъде зареден."
+msgstr "Файлът „%s“ не може да бъде зареден."
 
 #: ../lib/speedreader.c:561
 #, c-format
@@ -504,4 +504,4 @@ msgstr "Програма за проверка на правописа:"
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>Програмата за проверка на правописа може да бъде 'enchant', 'aspell', 'ispell' или някоя друга програма за проверка на правопис, съвместима с  ispell команда.\nИконата ще ви покаже, дали въведената команда съществува.</i>"
+msgstr "<i>Програмата за проверка на правописа може да бъде „enchant“, „aspell“, „ispell“ или друга програма за проверка на правопис, съвместима с  командата ispell.\nИконата ще ви покаже, дали въведената команда съществува.</i>"
