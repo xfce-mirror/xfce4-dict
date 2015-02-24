@@ -4,15 +4,16 @@
 # 
 # Translators:
 # Abel Martín <abel.martin.ruiz@gmail.com>, 2008
-# Adolfo Jayme Barrientos <fito@libreoffice.org>, 2014
+# Adolfo Jayme Barrientos, 2014
+# Adolfo Jayme Barrientos, 2014
 # Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2014-12-31 03:13+0000\n"
-"Last-Translator: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>\n"
+"PO-Revision-Date: 2015-02-24 17:43+0000\n"
+"Last-Translator: Manolo Díaz <diaz.manolo@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce-apps/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,7 +74,7 @@ msgstr "Mostrar información detallada"
 
 #: ../src/xfce4-dict.c:58
 msgid "Show version information"
-msgstr "Mostrar información de versión"
+msgstr "Mostrar información de la versión"
 
 #: ../src/xfce4-dict.c:131
 msgid "[TEXT]"
@@ -175,8 +176,8 @@ msgstr "No se pudo cargar el archivo «%s»."
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] "(mostrar %d palabra al mismo tiempo)"
-msgstr[1] "(mostrar %d palabras al mismo tiempo)"
+msgstr[0] "(mostrar %d palabra cada vez)"
+msgstr[1] "(mostrar %d palabras cada vez)"
 
 #: ../lib/speedreader.c:586
 msgid ""
@@ -214,7 +215,7 @@ msgstr "Cargar los contenidos de un archivo"
 #: ../lib/speedreader.c:663
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Limpiar los contenidos del campo de texto y pegar los del portapapeles"
+msgstr "Cambiar los contenidos del campo de texto por los del portapapeles"
 
 #: ../lib/speedreader.c:671
 msgid "Clear the contents of the text field"
@@ -259,7 +260,7 @@ msgstr "El diccionario especificado no es válido. Compruebe sus preferencias."
 
 #: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
 msgid "Unknown error while querying the server."
-msgstr "Error desconocido al hacer la consulta al servidor."
+msgstr "Error desconocido al consultar el servidor."
 
 #: ../lib/dictd.c:422
 msgid "Dictionary Results:"
@@ -275,7 +276,7 @@ msgstr "No se encontró ninguna coincidencia para «%s»."
 #: ../lib/dictd.c:441
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr "Buscar «%s» con %s"
+msgstr "Buscar «%s» con «%s»"
 
 #: ../lib/dictd.c:446
 msgid "Web Search:"
