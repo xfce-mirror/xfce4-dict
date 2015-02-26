@@ -1,22 +1,22 @@
-# Slovak translations for xfce4-dict package
-# Slovenské preklady pre balík xfce4-dict.
-# Copyright (C) 2011 THE xfce4-dict'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-dict package.
-# Automatically generated, 2011.
-# Slavko <linux@slavino.sk>, 2011.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Automatically generated, 2011
+# Slavko <linux@slavino.sk>, 2011,2015
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict VERSION\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 16:06+0200\n"
-"PO-Revision-Date: 2011-07-21 15:41+0200\n"
+"POT-Creation-Date: 2013-07-03 20:36+0200\n"
+"PO-Revision-Date: 2015-02-26 13:18+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
-"Language-Team: Slovak <nomail>\n"
-"Language: sk\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/xfce-apps/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
@@ -183,10 +183,7 @@ msgstr[2] "(zobraziť naraz %d slov)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"Toto je jednoduchý nástroj na rýchlo-čítanie, ktorý vám pomôže s nácvikom "
-"rýchlejšieho čítania. Pracuje na základe rýchlo zvýrazňovaných slov na "
-"obrazovke."
+msgstr "Toto je jednoduchý nástroj na rýchlo-čítanie, ktorý vám pomôže s nácvikom rýchlejšieho čítania. Pracuje na základe rýchlo zvýrazňovaných slov na obrazovke."
 
 #: ../lib/speedreader.c:589
 msgid "_Words per Minute:"
@@ -208,12 +205,8 @@ msgstr "Veľkosť _písma:"
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
-msgstr ""
-"Tu zadajte nejaký text, ktorý by ste chceli čítať.\n"
-"\n"
-"Uvoľnite sa a urobte si pohodlie, potom stlačte Štart a začne rýchle čítanie."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "Tu zadajte nejaký text, ktorý by ste chceli čítať.\n\nUvoľnite sa a urobte si pohodlie, potom stlačte Štart a začne rýchle čítanie."
 
 #: ../lib/speedreader.c:654
 msgid "Load the contents of a file"
@@ -352,9 +345,8 @@ msgid "Xfce4 Dictionary"
 msgstr "Slovník Xfce4"
 
 #: ../lib/gui.c:963
-#, fuzzy
-msgid "Copyright © 2006-2012 Enrico Tröger"
-msgstr "Copyright © 2006-2011 Enrico Tröger"
+msgid "Copyright © 2006-2013 Enrico Tröger"
+msgstr "Copyright © 2006-2013 Enrico Tröger"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -502,11 +494,9 @@ msgstr "URL:"
 
 #: ../lib/prefs.c:621
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"Zadajte URL webovej stánky, ktorá poskytuje prekladové alebo slovníkové "
-"služby. Použite {word} ako zástupný reťazec hľadaného slova."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Zadajte URL webovej stánky, ktorá poskytuje prekladové alebo slovníkové služby. Použite {word} ako zástupný reťazec hľadaného slova."
 
 #: ../lib/prefs.c:645
 msgid "Spell Check Program:"
@@ -514,11 +504,6 @@ msgstr "Program kontroly preklepov:"
 
 #: ../lib/prefs.c:662
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>Program na kontrolu preklepov môže byť „enchant”, „aspell”, „ispell” "
-"alebo akýkoľvek iný program kontroly preklepov, ktorý je kompatibilný s "
-"príkazmi ispell.\n"
-"Ikona udáva, či zadaný príkaz existuje.</i>"
+msgstr "<i>Program na kontrolu preklepov môže byť „enchant”, „aspell”, „ispell” alebo akýkoľvek iný program kontroly preklepov, ktorý je kompatibilný s príkazmi ispell.\nIkona udáva, či zadaný príkaz existuje.</i>"
