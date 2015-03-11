@@ -1,6 +1,4 @@
-/*  $Id$
- *
- *  Copyright 2008-2011 Enrico Tröger <enrico(at)xfce(dot)org>
+/*  Copyright 2008-2011 Enrico Tröger <enrico(at)xfce(dot)org>
  *  Copyright 2006      Darren Salt
  *  Copyright 2002-2006 Olivier Fourdan
  *

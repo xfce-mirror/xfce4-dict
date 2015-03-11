@@ -1,5 +1,3 @@
-
-
 noinst_LTLIBRARIES = 							\
 	libdict.la
 

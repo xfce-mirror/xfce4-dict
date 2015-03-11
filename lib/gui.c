@@ -1,6 +1,4 @@
-/*  $Id$
- *
- *  Copyright 2006-2012 Enrico Tröger <enrico(at)xfce(dot)org>
+/*  Copyright 2006-2012 Enrico Tröger <enrico(at)xfce(dot)org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -950,7 +948,9 @@ static void about_activate_link(GtkAboutDialog *about, const gchar *ref, gpointe
 
 void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 {
-	const gchar *authors[]= { "Enrico Tröger <enrico@xfce.org>", NULL };
+	const gchar *authors[]= { "Enrico Tröger <enrico@xfce.org>",
+                              "Harald Judt <hjudt@xfce.org>",
+                              NULL };
 	const gchar *title = _("Xfce4 Dictionary");
 	GdkPixbuf *logo = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
 
@@ -960,7 +960,7 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 		"destroy-with-parent", TRUE,
 		"authors", authors,
 		"comments", _("A client program to query different dictionaries."),
-		"copyright", _("Copyright \302\251 2006-2013 Enrico Tröger"),
+		"copyright", _("Copyright \302\251 2006-2015 Xfce Development Team"),
 		"website", "http://goodies.xfce.org/projects/applications/xfce4-dict",
 		"logo", logo,
 		"translator-credits", _("translator-credits"),
