@@ -10,6 +10,7 @@ Makefile.in.in
 configure.in
 libtool
 configure
+configure.ac
 Makefile
 Makefile.in
 intltool-*
@@ -29,3 +30,4 @@ install-sh
 compile
 autom4te*
 INSTALL
+xfce4-dict-*.tar.bz2
