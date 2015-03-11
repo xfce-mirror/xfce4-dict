@@ -14,6 +14,7 @@ dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2006-2012 Enrico Tröger. All rights reserved.])
 AC_INIT([xfce4-dict], [xfce4_dict_version], [http://bugzilla.xfce.org/], [xfce4-dict])
 AC_PREREQ([2.50])
+AC_CONFIG_MACRO_DIR([m4])
 
 dnl ***************************
 dnl *** Initialize automake ***
