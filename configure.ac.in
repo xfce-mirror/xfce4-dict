@@ -13,13 +13,13 @@ dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2006-2012 Enrico Tröger. All rights reserved.])
 AC_INIT([xfce4-dict], [xfce4_dict_version], [http://bugzilla.xfce.org/], [xfce4-dict])
-AC_PREREQ([2.50])
+AC_PREREQ([2.60])
 AC_CONFIG_MACRO_DIR([m4])
 
 dnl ***************************
 dnl *** Initialize automake ***
 dnl ***************************
-AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar])
+AM_INIT_AUTOMAKE([1.11 dist-bzip2 tar-ustar])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE()
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -36,7 +36,7 @@ IT_PROG_INTLTOOL([0.35.0])
 dnl ***************************
 dnl *** Disable static libs ***
 dnl ***************************
-LT_PREREQ([2.2.6])
+LT_PREREQ([2.4])
 LT_INIT([disable-static])
 
 dnl **********************************

@@ -7,7 +7,7 @@ SUBDIRS =														\
 	po
 
 AUTOMAKE_OPTIONS =												\
-	1.8															\
+	1.11														\
 	dist-bzip2
 
 distclean-local:
