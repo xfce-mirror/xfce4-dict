@@ -105,7 +105,7 @@ static gchar *phon_find_start(gchar *buf, gchar **start_str, gchar **end_str)
 	gchar *start;
 
 	/* we check only once for the various (\, / and [...]) formats for phonetic information
-	 * per line, for further occurences on the same line we use the same format */
+	 * per line, for further occurrences on the same line we use the same format */
 	if (**start_str == '\0')
 	{
 		start = strchr(buf, '\\');
@@ -293,7 +293,7 @@ static gint process_response_content(DictData *dd, gchar **lines, gint line_no, 
 									 GString *header, GString *body)
 {
 	gchar **dict_parts;
-	gboolean first_line;
+	gboolean is_header;
 
 	line_no++;
 	if (strncmp(lines[line_no], "250", 3) == 0)
@@ -325,7 +325,7 @@ static gint process_response_content(DictData *dd, gchar **lines, gint line_no, 
 
 	/* all following lines represents the translation */
 	line_no++;
-	first_line = TRUE;
+	is_header = TRUE;
 
 	while (lines[line_no] != NULL && lines[line_no][0] != '\r' && lines[line_no][0] != '\n')
 	{
@@ -340,14 +340,17 @@ static gint process_response_content(DictData *dd, gchar **lines, gint line_no, 
 			else
 				break; /* we reached the end of the test response */
 		}
-		if (first_line)
+		if (is_header && lines[line_no][0] != ' ')
 		{
 			g_string_append(header, lines[line_no]);
-			first_line = FALSE;
+			g_string_append_c(header, '\n');
 		}
 		else
+		{
 			g_string_append(body, lines[line_no]);
-		g_string_append_c(body, '\n');
+			g_string_append_c(body, '\n');
+			is_header = FALSE;
+		}
 
 		line_no++;
 	}
