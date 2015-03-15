@@ -1,0 +1,474 @@
+xfce4-dict-0.7.1
+================
+- Add NEWS file (Harald Judt)
+- Correctly separate header and body (bug #10136) (Harald Judt)
+- Update .gitignore (Harald Judt)
+- Do not build gzip tarball (Harald Judt)
+- Remove SVN $Id$ tags and update copyright year (Harald Judt)
+- Bump autotools requirements (Harald Judt)
+- Fix m4 macro dir warning (Harald Judt)
+- Fix IT_PROG_INTLTOOL warning (Harald Judt)
+- Restore git version tag (Harald Judt)
+- Remove unneeded files. (Nick Schermer)
+- Translation updates: Arabic, Asturian, Bulgarian, Chinese (China),
+  Chinese (Taiwan), Croatian, Czech, Danish, Dutch (Flemish), English
+  (Australia), English (Great Britain), Finnish, French, German,
+  Hebrew, Hungarian, Icelandic, Italian, Japanese, Kazakh, Korean,
+  Malay, Norwegian Bokmål, Occitan, Polish, Portuguese, Portuguese
+  (Brazilian), Russian, Serbian, Slovak, Spanish, Swedish, Thai,
+  Ukrainian, Vietnamese
+
+xfce4-dict-0.7.0
+================
+- Fix package name (Enrico Tröger)
+- Fix make distcheck (Enrico Tröger)
+- Version bump (Enrico Tröger)
+- Generate ChangeLog from GIT (Enrico Tröger)
+- Replace AM_CONFIG_HEADER macro by AC_CONFIG_HEADERS (Enrico Tröger)
+- After clearing the query_buffer, set it to NULL (bug #10101) (Enrico
+  Tröger)
+- Initialise variable (Enrico Tröger)
+- Fix wrong header name (Enrico Tröger)
+- Fix panel plugin build (Enrico Tröger)
+- Drop SexyIconEntry and use the icon features of GtkEntry directly 
+  (Enrico Tröger)
+- Depend on Xfce 4.10 and its GTK/GLib requirements (Enrico Tröger)
+- Update copyright years (Enrico Tröger)
+- Replace libxfcegui4 by libxfce4ui (Enrico Tröger)
+- Renew build system and build panel plugin as library (Enrico Tröger)
+- Adjust code style (Enrico Tröger)
+- Adapting the plugin to panel version 4.9+ (Andrzej)
+- Explicitly link against libm. (Guido Berhoerster)
+- Render the Find menu item in the textview popup menu insensitive 
+  when there is no text to search (Enrico Tröger)
+- Add a 'Copy Link' menu item to the text view popup menu (Enrico 
+  Tröger)
+- Refactor get_answer a bit to make it more flexible and ensure to 
+  read the server's answer after quitting the session. (Enrico Tröger)
+- Make the code more readable (Enrico Tröger)
+- Send the QUIT command always, also in case of errors (Enrico Tröger)
+- Fix some function signatures and prototypes (Enrico Tröger)
+- Update copyright (Enrico Tröger)
+- fix wrong callback argument (Enrico Tröger)
+- Fix Categories keyword to be more compatible, bug 6692 (Christoph 
+  Wickert)
+- Use the correct XfcePanelPlugin instance when opening the 
+  preferences dialog to prevent crashes (Enrico Tröger)
+- When pasting text in the speed reader, query only the main clipboard
+  (Enrico Tröger)
+- Minor cleanup (Enrico Tröger)
+- When pasting text, always first query the PRIMARY clipboard and in 
+  case we didn't find anything, query the main clipboard. (Enrico 
+  Tröger)
+- Quit/Close main window if Escape is pressed (do it properly) (Enrico
+  Tröger)
+- Explicitly handle GTK_RESPONSE_DELETE_EVENT as well (Enrico Tröger)
+- Add a paste button to the Speed Reader. (Enrico Tröger)
+- Quit/Close main window if Escape is pressed. (Enrico Tröger)
+- Update copyright information (Enrico Tröger)
+- Require xfce4-dev-tools 4.7.1 or newer for autogen.sh (Enrico 
+  Tröger)
+- Require the same autoconf version as the xfce4-dev-tools do (Enrico 
+  Tröger)
+- Rename configure.in.in to configure.ac.in (Enrico Tröger)
+- Turn on automake silent rules if supported (Enrico Tröger)
+- Translation updates: Arabic, Basque, Belarusian, Bulgarian, Catalan,
+  Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish, Dutch
+  (Flemish), English (Great Britain), Finnish, French, Galician,
+  German, Greek, Hungarian, Icelandic, Indonesian, Italian, Japanese,
+  Kazakh, Korean, Latvian, Lithuanian, Polish, Portuguese, Portuguese
+  (Brazilian), Russian, Serbian, Slovak, Spanish, Turkish, Ukrainian,
+  Uyghur
+
+xfce4-dict-0.6.0
+================
+- Fix possibly uninitialised variable (Enrico Tröger)
+- Always display spell check results on failed dictionary searches. 
+  (Enrico Tröger)
+- Implement a Pause/Resume button for the Speed Reader. (Enrico 
+  Tröger)
+- Delete auto-generated INSTALL file (Enrico Tröger)
+- After the Speed Reading has finished, make the Stop button a Back 
+  button (Enrico Tröger)
+- Explicitly check for and link against libX11 (Enrico Tröger)
+- Improve wording (Enrico Tröger)
+- Another attempt to fix it (Enrico Tröger)
+- Do it properly Thanks David. (Enrico Tröger)
+- Require and make use of latest xfce4-dev-tools to improve handling 
+  of the LINGUAS stuff (Enrico Tröger)
+- Rename module.xml (oops). (Enrico Tröger)
+- Add module description file. (Enrico Tröger)
+- Display paragraph signs at the end of the current word group. 
+  (Enrico Tröger)
+- Cleanup (Enrico Tröger)
+- Don't print the spell check header if in quiet mode and the word is 
+  spelled correctly. (Enrico Tröger)
+- Implement word grouping option for Speed Reading. (Enrico Tröger)
+- Rework the results display for failed dictionary searches. Show 
+  headings for the various search methods. (Enrico Tröger)
+- Allow setting an empty web search URL to disable the feature. 
+  (Enrico Tröger)
+- Display the speed reading status in the window title to make it more
+  clear when the speed reading has finished. (Enrico Tröger)
+- Fix input focus in the Speed Reader dialog and enable word wrap. 
+  (Enrico Tröger)
+- Don't treat quotes as word separators. Add an option to mark 
+  paragraphs when Speed Reading. (Enrico Tröger)
+- Implement own error dialog. (Enrico Tröger)
+- Allow clearing tags for a specific word (unused so far). If the 
+  search term contains more than word and the dictionary search fails,
+  show the spell check results of all parts of the search term. 
+  (Enrico Tröger)
+- When offering a Web search link for a failed search, display the 
+  full target URI as tooltip. Minor other improvements. (Enrico 
+  Tröger)
+- Rename some variables. Rename the colour button labels in the 
+  preferences dialog. (Enrico Tröger)
+- Mark some strings as translatable (closes #5360). (Enrico Tröger)
+- Fix mnemonic of Speed Reader button. Fix one more cursor issue when 
+  clicking links. Improve splitting of the input text for speed 
+  reading. (Enrico Tröger)
+- Make error and success colours configurable. (Enrico Tröger)
+- Add 'success' colour to mark found search terms. Colourise search 
+  terms according to the search result for better visual feedback. 
+  (Enrico Tröger)
+- Remove debug code. (Enrico Tröger)
+- Add simple speed reader dialog to train fast reading. (Enrico 
+  Tröger)
+- Translation updates: Asturian, Chinese (China), Danish, Dutch
+  (Flemish), English (Great Britain), Galician, Italian, Japanese,
+  Latvian, Portuguese
+
+xfce4-dict-0.5.3
+================
+- Rephrase the Local dictionary server section a bit. (Enrico Tröger)
+- Reset the cursor after right-clicking on links in the textview. 
+  (Enrico Tröger)
+- Partly revert last change and use the proper cursor for the textview
+  window again. (Enrico Tröger)
+- Don't allocate the default cursor unnecessarily and reuse the 
+  GdkWindow we already got in the event handlers. (Enrico Tröger)
+- Add some notes about using a local dictd server. (Enrico Tröger)
+- Print the used dictionary in the spell checker results. (Enrico 
+  Tröger)
+- Use the G_DEFINE_TYPE() macro to generate the *_get_type() code. 
+  (Enrico Tröger)
+- When using the web service fallback after a failed dictionary 
+  search, hide the main window if ran as panel plugin. (Enrico 
+  Tröger)
+- Fix untranslated search engine description (#4835). (Enrico Tröger)
+- Improve some more strings. Issued make update-po. Update of German 
+  translation. (Enrico Tröger)
+- Properly escape URIs when using Web based search (works only with 
+  GLib >= 2.16). Add '--verbose' command line option for the 
+  stand-alone application. (Enrico Tröger)
+- Improve some strings, thanks to Jérôme Guelfucci for the 
+  suggestions. Use less spacing for spell checker results and don't 
+  display any failed searches if used as fallback for a dictionary 
+  search. (Enrico Tröger)
+- Update copyright years. Fix a few typos. (Enrico Tröger)
+
+xfce4-dict-0.5.2
+================
+- Follow the 'Desktop Menu Specification' and change the category for 
+  the .desktop to 'Office'. (Enrico Tröger)
+- When highlighting cross-references, ignore also {vr}. (Enrico 
+  Tröger)
+- Update 'help' arguments. (Enrico Tröger)
+
+xfce4-dict-0.5.1
+================
+- Sort the spell check dictionary list in the prefs dialog. (Enrico 
+  Tröger)
+- Fix crashes when using the dictionary refresh button in the prefs 
+  dialog and while using enchant as spell checker. (Enrico Tröger)
+- Avoid leaving zombie processes when using spell checking (bug 4615).
+  (Enrico Tröger)
+- Change bugreport address and rewrite the output of '--version'. 
+  (Enrico Tröger)
+- Fix typos, update ChangeLog. (Enrico Tröger)
+- Add a 'Search' menu item to the textview popup menu for quick search
+  of any text in search results. (Enrico Tröger)
+- Improve parsing of phonetic information, also allowing the /.../ 
+  format, used in the Jargon dictionary. (Enrico Tröger)
+- Parse also phonetic information endorsed by slashes. Refactor some 
+  code. (Enrico Tröger)
+- Fix cut server responses when there is a leading number in the word 
+  definition (e.g. in 'moby-thes'). (Enrico Tröger)
+
+xfce4-dict-0.5.0
+================
+- Ditch "Xfce4" in dialog titles. Change '-v' to '-V' to match common 
+  standards. Fix typo in prefs dialog 'phonectic'  (thanks Nobuhiro 
+  Iwamatsu for reporting). Issued make update-po because of a typo in 
+  an English string (manually removed the new fuzzy flags from 
+  affected translations). Dutch translation update (Vincent Tunru) 
+  (Enrico Tröger)
+- Ditch "Xfce4" in dialog titles. (Enrico Tröger)
+- Change '-v' to '-V' to match common standards. Remove the '-h' hack.
+  (Enrico Tröger)
+- Version bump since we had more changes than expected :). (Enrico 
+  Tröger)
+- Use a stock GTK about dialog. (Enrico Tröger)
+- When highlighting cross-references, ignore also {vt} and {pl}. 
+  (Enrico Tröger)
+- Add searchentry.[c|h], a subclass of GtkComboBox to embed a 
+  SexyIconEntry. Add a combo box around the search field in the main 
+  window to provide a history of previously searched words. (Enrico 
+  Tröger)
+- Merge changes from libsexy SVN into sexy-icon-entry.[c|h]. Add fix 
+  from Midori's GtkIconEntry to vertically center the text and icons. 
+  (Enrico Tröger)
+- Prefix the WrapLabel class with Xfd. (Enrico Tröger)
+- Always clear the spell check dictionary list in the prefs dialog, 
+  even if an empty or invalid spell check command was given. (Enrico 
+  Tröger)
+- Guess the default spell check dictionary based on the user's locale 
+  setting. (Enrico Tröger)
+- Add a status icon to the prefs dialog indicating whether the entered
+  spell check command is valid. Add a refresh button next to the spell
+  check dictionary list for easy updating. (Enrico Tröger)
+- Rename aspell.[c|h] to spell.[c|h]. Add support for 'enchant' as 
+  spell check program. (Enrico Tröger)
+- Make colours used for links and phonetics configurable. (Enrico 
+  Tröger)
+- Change the title of the prefs dialog to 'Preferences'. (Enrico 
+  Tröger)
+- Add mnemonics to the search method radio labels in the main window. 
+  Add a link to easily start a Web search if there are no Dict 
+  results. (Enrico Tröger)
+- Fix wrong status bar text when querying a server for the first time 
+  in the stand-alone app. Update Readme and manpage. (Enrico Tröger)
+- When highlighting cross-references, ignore short ones like {n}, {f} 
+  and {m} as often found in translation dictionaries. Highlight 
+  phonetic information provided by some dictionaries. (Enrico Tröger)
+- Fix auto clearing issues introduced in last commit. (Enrico Tröger)
+- Bring the 'Search Term' string back, this time in the search entry 
+  to get auto cleared on click. Use for the panel text entry also a 
+  SexyIconEntry. (Enrico Tröger)
+- Fix a segfault in link parsing caused by malformed dictionary texts.
+  (Enrico Tröger)
+- Fix a few strings. (Enrico Tröger)
+- Use a SexyIconEntry for the search field, it's just sexy :). Remove 
+  the Clear button from the GUI (provided in the search field). Change
+  the icon of the search button when switching search method. (Enrico 
+  Tröger)
+- Add 'Information' button in the preferences dialog to query general 
+  server information for DICT servers. (Enrico Tröger)
+- Properly send DICT commands terminated with CRLF. Close DICT 
+  connections properly with the QUIT command and read initial server 
+  status code. (Enrico Tröger)
+- Add support for links (cross-references) in dictd responses. (Enrico
+  Tröger)
+- Do not store tag pointers, instead reference them by name. (Enrico 
+  Tröger)
+- Do not skip the first line of a dictd server text response as it 
+  might contain useful information. (Enrico Tröger)
+- Handle trailing period in text responses accordingly to RFC 2229. 
+  (Enrico Tröger)
+- Be safe and check array size before using it. (Enrico Tröger)
+- Beautify the texview output a little bit. (Enrico Tröger)
+- Improve clearing of panel text entry: clear it always. (Enrico 
+  Tröger)
+- Clear the panel text entry field also for web and spell check search
+  methods (also reported by Liviu Andronic, thanks). (Enrico Tröger)
+- Remove leading and trailing spaces from the search term before 
+  performing the search (reported by Liviu Andronic). (Enrico Tröger)
+- Fix typo. (Enrico Tröger)
+- Fix spell checking with multiple words/sentences. (Enrico Tröger)
+- Post-release version bump. (Enrico Tröger)
+- Add new command line option: '--clipboard' (-c) to take the search 
+  text from the PRIMARY clipboard and performs a search. Update manual
+  page. (Enrico Tröger)
+- Add "en.wikipedia.org" and "www.merriam-webster.com" to the list of 
+  web dictionaries (thanks to Liviu Andronic for the hint). (Enrico 
+  Tröger)
+
+xfce4-dict-0.4.1
+================
+- Add .gitignore (Enrico Tröger)
+- Add Wiktionary.org to the list of web dictionaries (thanks to Liviu 
+  Andronic for the hint). (Enrico Tröger)
+- * Fix broken DICTD search due to wrongly initialised status code 
+  (introduced in last commit). (Enrico Tröger)
+- Set svn:keywords and svn:eol-style flags for most source files. 
+  (Enrico Tröger)
+-  * Don't let the notebook tab labels grab the focus in the prefs 
+  dialog.  * Save some string comparisons when parsing the response 
+  from a DICTD server.  * Handle DICTD response 550 - 'invalid 
+  database' correctly. (Enrico Tröger)
+- When searching for available dictionaries of a DICTD server, use the
+  entered values in the dialog not the old saved ones. (Enrico 
+  Tröger)
+- Make prefs dialog modal. (Enrico Tröger)
+-  * Don't allow setting an empty search URL in the preferences 
+  dialog. (Enrico Tröger)
+-  * Add 'xdg-open' as possible browser command to open URLs. (Enrico 
+  Tröger)
+-  * Improve the code to find a usable browser to open URLs.  * 
+  Prevent opening a file manager when there is set an empty search 
+  URL.  * Make dict_open_browser() static for common.c as it is not 
+  used anywhere else. (Enrico Tröger)
+- Add WrapLabel class (subclass of GtkLabel) to proper wrap a help 
+  text in the preferences dialog. (Enrico Tröger)
+- Add some border spaces in the preferences dialog for better 
+  look&feel. (Enrico Tröger)
+- Build the static library part with libtool to get correctly linked 
+  (fixes #4235). (Enrico Tröger)
+- Add sign targets to the Makefile. (Enrico Tröger)
+- Fix crash due to accessing invalid memory when reading the config 
+  file (patch by Federico G. Schwindt, thanks). (Enrico Tröger)
+
+xfce4-dict-0.4.0
+================
+- Update ChangeLog (Enrico Tröger)
+- Implement saving and restoring window geometry. (Enrico Tröger)
+- Use newer autogen.sh (from mailwatch plugin). (Enrico Tröger)
+- Fix two other tranlation related string problems. (Enrico Tröger)
+- Use correct plural forms in strings to improve translations. (Enrico
+  Tröger)
+- Fix some more strings. Add missing include directive for config.h in
+  some files. (Enrico Tröger)
+- Fix some strings. (Enrico Tröger)
+- If searching with the Dict method and nothing was found, 
+  automatically search with aspell (if available) as fallback in case 
+  of a typo. (Enrico Tröger)
+- Add dist.cc dictionary service. (Enrico Tröger)
+- Rewrite of the web search code to be more flexible to use and to 
+  simplify the code. Add two other dictionary services: Dictionary.com
+  and TheFreeDictionary.com. (Enrico Tröger)
+- Add --ignore-plugin and --version options to the manpage. (Enrico 
+  Tröger)
+- Add new languages Chinese and Italian which are newly supported by 
+  dict.leo.org. (Enrico Tröger)
+- Show no results message for Dictd searches in the text view to be 
+  consistent with aspell search. (Enrico Tröger)
+- Add command line option "--ignore-plugin" to start the stand-alone 
+  application even if the panel plugin is loaded. (Enrico Tröger)
+- Remove the previously added space between panel button and text 
+  field because of unwanted side effects with vertical panel. (Enrico 
+  Tröger)
+- Add some space between panel button and text field. (Enrico Tröger)
+- Only handle SIGALRM signal if it is available. (Enrico Tröger)
+- Disable conversion into ISO-8859-15 of search text when using 
+  dict.leo.org, seems not necessary anymore. (Enrico Tröger)
+- Fix problems with preferences dialog callback if panel plugin is 
+  loaded. (Enrico Tröger)
+- Fix minor panel button sizing issues (make it a little wider on 
+  horizontal panel, a little flatter on vertical panels). (Enrico 
+  Tröger)
+- Remove Help button from preferences dialog as there is no help 
+  available at all. (Enrico Tröger)
+- Unify application name to "Xfce4 Dictionary". (Enrico Tröger)
+- Add search text from command line to main text entry. (Enrico 
+  Tröger)
+- Remove obsolete comments. (Enrico Tröger)
+- Add manpage for xfce4-dict. (Enrico Tröger)
+- Add long option name for custom help to fix segfaults on startup. 
+  (Enrico Tröger)
+- Concatenate text command line arguments as one string as search 
+  text. (Enrico Tröger)
+- Add "-h" command line option if GLib supports printing the help 
+  text. (Enrico Tröger)
+- Reformat ChangeLog. (Enrico Tröger)
+- Update Readme. (Enrico Tröger)
+- Add not yet working DnD callback to receive dragged text in the main
+  textview. (Enrico Tröger)
+- Set entry text in the main window if text was dragged onto the panel
+  button or into the panel entry. (Enrico Tröger)
+- Move signal handling code for networkign code completely into 
+  lib/dictd.c. (Enrico Tröger)
+- Always start searching when text is dragged into the text entry in 
+  the main window. Connect to "drag-data-received" signal in library 
+  as it is equal for panel plugin and standalone code. (Enrico 
+  Tröger)
+- Fix make distcheck. Avoid creation of inline-icon.h during a normal 
+  build. (Enrico Tröger)
+- Fix broken panel plugin desktop file. (Enrico Tröger)
+- Show panel-only options in preferences dialog only if panel plugin 
+  is actually loaded. After clicking on the Clear button, bring the 
+  input focus back to the main entry. Add keyboard shortcuts for file 
+  menu items. Cleanup DictData struct, reorder elements and remove 
+  elements which are only used in the preferences dialog. Add search 
+  method selection to the preferences dialog, including new mode to 
+  use the search method from the last time. Add support for command 
+  line options for xfce4-dict command. (Enrico Tröger)
+- Fix broken aspell search. (Enrico Tröger)
+- Update package name for autotools. (Enrico Tröger)
+- Bring main window up when received data in panel plugin via DnD. 
+  (Enrico Tröger)
+- Prefix some more functions. (Enrico Tröger)
+- Add file menu to make preferences dialog accessable when run as 
+  stand-alone application. (Enrico Tröger)
+- Update INSTALL file. Fix make distcheck. (Enrico Tröger)
+- Redesign preferences dialog: use a GtkNotebook and use a XfceDialog.
+  Update POTFILES.in. Remove debug messages. (Enrico Tröger)
+- More code reorganisation and cleanup. (Enrico Tröger)
+- Reorganise most of the code base to separat commonly used code from 
+  the panel plugin into a static library. Move dictd server query code
+  into an own file for better readibility. Bump version requirement of
+  libxfce*-libs to 4.4.0. Add stand-alone application xfce4-dict. (not
+  yet finished, to be continued) (Enrico Tröger)
+- Fix indentation. (Enrico Tröger)
+- Use GTK's predefined text targets for Drag'n'Drop. This fixes a 
+  strange bug when dragging non-Ascii text from Poedit. Also allow 
+  move as DnD action. (Enrico Tröger)
+- New release: 0.3.0 (Enrico Tröger)
+- When dragging text into the main entry text field, delete the 
+  previous text before to not append the dragged text. (Enrico 
+  Tröger)
+- Don't use C++-style comments and fix some compiler warnings. (Enrico
+  Tröger)
+- When changing the search method in the main window, put the input 
+  focus back to the text entry. (Enrico Tröger)
+- * Add xfce4-popup-dict command to show the main window and/or grad 
+  the input focus to the text field in the panel. * Change year in 
+  copyright notes to 2008. (Enrico Tröger)
+- * Remove wrong additional space before colons. * de.po: Update of 
+  German translation. * xfce4-dict-plugin.pot, *.po: Issued make 
+  update-po. (Enrico Tröger)
+- Fix small memory leak. Always store all settings from the properties
+  dialog. Remove search mode selection from properties dialog. Add 
+  aspell support (should also work with ispell). (Enrico Tröger)
+- Added search method radio buttons. (Enrico Tröger)
+- Fixed missing application icon in taskbar and window frame. Added 
+  missing include of stdlib to avoid compiler warnings. (Enrico 
+  Tröger)
+- Fixed possible crashes when showing the main window after it was 
+  closed. (Enrico Tröger)
+- Update copyright years. New Release 0.2.1. (Enrico Tröger)
+- Fixed possible segfault after retrieving the dictionary list from a 
+  server. (Enrico Tröger)
+- Removed dependency on libexo, use exo-open(and some other fallbacks)
+  instead. (Enrico Tröger)
+- Panel text entry grows and shrinks now according to the given size. 
+  (Enrico Tröger)
+- Fixed wrong display of panel text entry when panel orientation 
+  changed. (Enrico Tröger)
+- * Enabled website link to goodies.xfce.org in the about dialog. * 
+  Added missing includes to fix compilation on FreeBSD. * Improved 
+  calculation of panel icon size (thanks to Rupert Horstkötter for 
+  reporting). (Enrico Tröger)
+- * Added dependency of libexo. * Added alternative search mode via a 
+  web site dictionary and provide three   dictionary entries of 
+  dict.leo.org for convenience.   The web site will be opened with the
+  help of libexo. * Added UTF8_STRING as drop targt. Might be it 
+  helps. (Enrico Tröger)
+- Prefixed all functions with dict. (Enrico Tröger)
+- Improved the threading code to do GTK-related stuff in the main 
+  thread. Some other changes and fixes. (Enrico Tröger)
+- Implemented threading to not freeze the GUI while searching on a 
+  slow server. (Enrico Tröger)
+- Again fixed display of panel text field when panel has no horizontal
+  orientation. (Enrico Tröger)
+- Fixed display of panel text field when panel has no horizontal 
+  orientation. (Enrico Tröger)
+- * Fixed some minor GUI issues to improve usability   (thanks to 
+  Fabian Nowak for his suggestions). * Use a dynamic buffer when 
+  retrieving the response from a server to avoid   truncated answers 
+  and crashes (thanks to Fabian Nowak for reporting). * Clear the text
+  view alays prior to a new search. (Enrico Tröger)
+- * Added "Clear" button to the main window. * New release: 0.2.0 
+  (Enrico Tröger)
+- Fixed typo. (Enrico Tröger)
+
