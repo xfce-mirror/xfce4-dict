@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2015-03-14 18:31+0000\n"
+"PO-Revision-Date: 2015-03-15 08:30+0000\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Проверить данный текст с помощью прогр�
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
-msgstr "Установить курсор в поле на панели"
+msgstr "Установить курсор в текстовом поле на панели"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -159,7 +159,7 @@ msgstr "Быстрое чтение"
 
 #: ../lib/speedreader.c:367
 msgid "You must enter a text."
-msgstr "Вы должны ввести текст"
+msgstr "Вы должны ввести текст."
 
 #: ../lib/speedreader.c:504
 msgid "Choose a file to load"
@@ -405,7 +405,7 @@ msgstr "Вы указали неправильный словарь."
 
 #: ../lib/prefs.c:301
 msgid "General"
-msgstr "Основное"
+msgstr "Основные"
 
 #: ../lib/prefs.c:303
 msgid "<b>Default search method:</b>"
