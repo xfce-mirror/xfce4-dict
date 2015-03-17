@@ -1,349 +1,335 @@
-# Korean translaton for the xfce4-dict package.
-# Copyright (C) 2006-2012 Enrico Tröger et al.
-# This file is distributed under the same license as the xfce4-dict package.
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012, 2013.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
-# Please write your name and e-mail into "translator-credits" if you update this translation script.
-# 
-# ex ) msgstr ""
-#      "Gil-dong Hong <gdhong0101@gmail.com>\n"
-#      "YourName Kim <ynkim@gmail.com>"
-# 
+# Translators:
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2013,2015
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-dict.master\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-14 21:30+0000\n"
-"PO-Revision-Date: 2012-05-08 12:20+0900\n"
+"POT-Creation-Date: 2015-03-12 00:31+0100\n"
+"PO-Revision-Date: 2015-03-17 04:41+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"Language-Team: xfce-i18n <xfce-i18n@xfce.org>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/xfce-apps/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Language: Korean\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Country: KOREA, REPUBLIC OF\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-msgid "A plugin to query different dictionaries."
-msgstr "제각기 다른 사전에 요청하는 플러그인입니다."
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
-#: ../src/xfce4-dict.desktop.in.h:2 ../lib/gui.c:736 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:734 ../lib/prefs.c:268
 msgid "Dictionary"
 msgstr "사전"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:366
-#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:516
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+msgid "A plugin to query different dictionaries."
+msgstr "제각기 다른 사전에 요청하는 플러그인입니다."
+
+#: ../panel-plugin/xfce4-dict-plugin.c:364
+#: ../panel-plugin/xfce4-dict-plugin.c:490 ../src/xfce4-dict.c:198
+#: ../lib/spell.c:241 ../lib/gui.c:514
 msgid "Ready"
 msgstr "준비"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:431
+#: ../panel-plugin/xfce4-dict-plugin.c:429
 msgid "Look up a word"
 msgstr "단어 찾기"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
+#: ../panel-plugin/xfce4-dict-plugin.c:465 ../lib/gui.c:764
 msgid "Search term"
 msgstr "용어 검색"
 
-#: ../src/xfce4-dict.c:51
+#: ../src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "사전 서버(RFC 2229)를 사용하여 주어진 본문을 검색"
 
-#: ../src/xfce4-dict.c:52
+#: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
 msgstr "웹기반 검색 엔진을 사용하여 주어진 본문을 검색"
 
-#: ../src/xfce4-dict.c:53
+#: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
 msgstr "철자 검사기로 주어진 본문 검사"
 
-#: ../src/xfce4-dict.c:54
+#: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
 msgstr "패널의 본문 필드에 포커스 맞춤"
 
-#: ../src/xfce4-dict.c:55
+#: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "패널 플러그인을 불러냈는지 여부와 관계 없이 독립 프로그램으로 시작"
 
-#: ../src/xfce4-dict.c:56
+#: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "초기 선택 내용을 잡고 검색 본문으로 사용"
 
-#: ../src/xfce4-dict.c:57
+#: ../src/xfce4-dict.c:55
 msgid "Be verbose"
 msgstr "자세히 출력"
 
-#: ../src/xfce4-dict.c:58
+#: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "버전 정보 보기"
 
-#: ../src/xfce4-dict.c:131
+#: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[TEXT]"
 
-#: ../src/xfce4-dict.c:147
+#: ../src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "<%s>로 버그를 알려주십시오."
 
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:962
-msgid "A client program to query different dictionaries."
-msgstr "제각기 다른 사전에 요청하기 위한 클라이언트 프로그램입니다."
-
-#: ../src/xfce4-dict.desktop.in.h:3
+#: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
 msgstr "사전 클라이언트"
 
-#: ../lib/spell.c:75
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+msgid "A client program to query different dictionaries."
+msgstr "제각기 다른 사전에 요청하기 위한 클라이언트 프로그램입니다."
+
+#: ../lib/spell.c:73
 msgid "Spell Checker Results:"
 msgstr "철자 검사기 결과:"
 
-#: ../lib/spell.c:101
+#: ../lib/spell.c:99
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
 msgstr[0] "제안 %d개를 찾았습니다."
 
-#: ../lib/spell.c:105
+#: ../lib/spell.c:103
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
 msgstr "\"%s\"에 대한 제안(%s):"
 
-#: ../lib/spell.c:122
+#: ../lib/spell.c:120
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
 msgstr "\"%s\"은(는) 올바른 철자입니다(%s)."
 
-#: ../lib/spell.c:134
+#: ../lib/spell.c:132
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
 msgstr "\"%s\"에 대한 제안을 찾을 수 없습니다(%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:164
+#: ../lib/spell.c:162
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "\"%s\"을(를) 실행하는 동안 오류가 발생했습니다(%s)."
 
-#: ../lib/spell.c:202
+#: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "기본 설정 대화상자에서 철자 검사 명령을 설정하여주십시오."
 
-#: ../lib/spell.c:208 ../lib/common.c:223
+#: ../lib/spell.c:206 ../lib/common.c:221
 msgid "Invalid input"
 msgstr "질못된 입력"
 
-#: ../lib/spell.c:247
+#: ../lib/spell.c:245
 #, c-format
 msgid "Process failed (%s)"
 msgstr "처리 실패(%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
+#: ../lib/speedreader.c:78 ../lib/speedreader.c:681
 msgid "P_ause"
 msgstr "멈춤(_A)"
 
-#: ../lib/speedreader.c:81
+#: ../lib/speedreader.c:79
 msgid "_Resume"
 msgstr "계속(_R)"
 
-#: ../lib/speedreader.c:263
+#: ../lib/speedreader.c:261
 msgid "Running"
 msgstr "실행중"
 
-#: ../lib/speedreader.c:266
+#: ../lib/speedreader.c:264
 msgid "Finished"
 msgstr "완료"
 
-#: ../lib/speedreader.c:274
+#: ../lib/speedreader.c:272
 msgid "Speed Reader"
 msgstr "속독기"
 
-#: ../lib/speedreader.c:369
+#: ../lib/speedreader.c:367
 msgid "You must enter a text."
 msgstr "본문을 입력해야 합니다."
 
-#: ../lib/speedreader.c:506
+#: ../lib/speedreader.c:504
 msgid "Choose a file to load"
 msgstr "불러올 파일을 선택"
 
-#: ../lib/speedreader.c:535
+#: ../lib/speedreader.c:533
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "'%s' 파일을 불러올 수 없습니다."
 
-#: ../lib/speedreader.c:561
+#: ../lib/speedreader.c:559
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(한 화면에 %d개 단어 표시)"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:584
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
-"여러분의 속독 훈련을 도와줄 간편한 속독 유틸리티입니다. 화면에 빠른 속도로 단"
-"어를 넘겨보입니다."
+msgstr "여러분의 속독 훈련을 도와줄 간편한 속독 유틸리티입니다. 화면에 빠른 속도로 단어를 넘겨보입니다."
 
-#: ../lib/speedreader.c:589
+#: ../lib/speedreader.c:587
 msgid "_Words per Minute:"
 msgstr "분당 단어 수(_W):"
 
-#: ../lib/speedreader.c:595
+#: ../lib/speedreader.c:593
 msgid "_Mark Paragraphs"
 msgstr "문단 표시(_M)"
 
-#: ../lib/speedreader.c:602
+#: ../lib/speedreader.c:600
 msgid "Word _Grouping:"
 msgstr "단어 분류(_G):"
 
-#: ../lib/speedreader.c:618
+#: ../lib/speedreader.c:616
 msgid "_Font Size:"
 msgstr "글꼴 크기(_F):"
 
-#: ../lib/speedreader.c:638
+#: ../lib/speedreader.c:636
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
-"Be relaxed and make yourself comfortable, then press Start to begin speed "
-"reading."
-msgstr ""
-"읽고 싶은 본문을 이곳에 입력합니다.\n"
-"\n"
-"진정하고 마음을 가다듬은 다음, 시작을 눌러서 속독을 시작합니다."
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "읽고 싶은 본문을 이곳에 입력합니다.\n\n진정하고 마음을 가다듬은 다음, 시작을 눌러서 속독을 시작합니다."
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:652
 msgid "Load the contents of a file"
 msgstr "파일의 내용 불러오기"
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:661
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "본문 필드의 내용을 지우고 클립보드의 내용을 붙입니다"
 
-#: ../lib/speedreader.c:671
+#: ../lib/speedreader.c:669
 msgid "Clear the contents of the text field"
 msgstr "본문 필드 내용 지우기"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:682
 msgid "_Start"
 msgstr "시작(_S)"
 
-#: ../lib/common.c:188
+#: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
 msgstr "검색 URL이 비어 있습니다. 기본 설정을 확인하십시오."
 
-#: ../lib/common.c:194
+#: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "브라우저를 열 수 없습니다. 기본 설정을 확인하십시오."
 
-#: ../lib/common.c:233
+#: ../lib/common.c:231
 msgid "Invalid non-UTF8 input"
 msgstr "잘못된 비 UTF8 입력입니다"
 
-#: ../lib/common.c:607
+#: ../lib/common.c:605
 msgid "Error"
 msgstr "오류"
 
-#: ../lib/common.c:610
+#: ../lib/common.c:608
 msgid "warning"
 msgstr "경고"
 
-#: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
-#: ../lib/dictd.c:811
+#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:803
+#: ../lib/dictd.c:812
 msgid "Could not connect to server."
 msgstr "서버에 연결할 수 없습니다."
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:393
 msgid "The server is not ready."
 msgstr "서버가 대기중이 아닙니다."
 
-#: ../lib/dictd.c:399
+#: ../lib/dictd.c:400
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "잘못된 사전을 지정했습니다. 기본 설정을 확인하십시오."
 
-#: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
+#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:837
 msgid "Unknown error while querying the server."
 msgstr "서버에 요청하는 동안 알 수 없는 오류가 발생했습니다."
 
-#: ../lib/dictd.c:422
+#: ../lib/dictd.c:423
 msgid "Dictionary Results:"
 msgstr "사전 결과:"
 
-#: ../lib/dictd.c:425
+#: ../lib/dictd.c:426
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "\"%s\"에 대해 일치하는 결과를 찾을 수 없습니다."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:441
+#: ../lib/dictd.c:442
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "\"%s\"을(를) 검색 (\"%s\" 사용)"
 
-#: ../lib/dictd.c:446
+#: ../lib/dictd.c:447
 msgid "Web Search:"
 msgstr "웹 검색:"
 
-#: ../lib/dictd.c:468
+#: ../lib/dictd.c:469
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "정의 %d개를 찾았습니다."
 
-#: ../lib/dictd.c:676
+#: ../lib/dictd.c:677
 #, c-format
 msgid "Querying %s..."
 msgstr "%s 요청중..."
 
-#: ../lib/dictd.c:735
+#: ../lib/dictd.c:736
 msgid "An error occured while querying server information."
 msgstr "서버 정보를 요청하는 동안 오류가 발생했습니다."
 
-#: ../lib/dictd.c:748
+#: ../lib/dictd.c:749
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "\"%s\"의 서버 정보"
 
-#: ../lib/dictd.c:831
+#: ../lib/dictd.c:832
 msgid "The server doesn't offer any databases."
 msgstr "서버가 어떤 데이터베이스도 제공하지 않습니다."
 
-#: ../lib/gui.c:342
+#: ../lib/gui.c:340
 msgid "Copy Link"
 msgstr "연결 복사"
 
-#: ../lib/gui.c:674
+#: ../lib/gui.c:672
 msgid "_File"
 msgstr "파일(_F)"
 
-#: ../lib/gui.c:679 ../lib/gui.c:787
+#: ../lib/gui.c:677 ../lib/gui.c:785
 msgid "Speed _Reader"
 msgstr "속독기(_R)"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:698
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: ../lib/gui.c:808
+#: ../lib/gui.c:806
 msgid "Search with:"
 msgstr "검색어:"
 
-#: ../lib/gui.c:812
+#: ../lib/gui.c:810
 msgid "_Dictionary Server"
 msgstr "사전 서버(_D)"
 
-#: ../lib/gui.c:818
+#: ../lib/gui.c:816
 msgid "_Web Service"
 msgstr "웹 서비스(_W)"
 
-#: ../lib/gui.c:826
+#: ../lib/gui.c:824
 msgid "_Spell Checker"
 msgstr "철자 검사기(_S)"
 
@@ -352,171 +338,165 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 사전"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2013 Enrico Tröger"
-msgstr "Copyright © 2006-2013 Enrico Tröger"
+msgid "Copyright © 2006-2015 Xfce Development Team"
+msgstr "Copyright © 2006-2015 Xfce Development Team"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr "Seong-ho Cho <darkcircle.0426@gmail.com>"
 
-#: ../lib/prefs.c:55
+#: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - 독일어 <-> 영어"
 
-#: ../lib/prefs.c:56
+#: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - 독일어 <-> 프랑스어"
 
-#: ../lib/prefs.c:57
+#: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - 독일어 <-> 스페인어"
 
-#: ../lib/prefs.c:58
+#: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - 독일어 <-> 이탈리아어"
 
-#: ../lib/prefs.c:59
+#: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - 독일어 <-> 중국어"
 
-#: ../lib/prefs.c:60
+#: ../lib/prefs.c:58
 msgid "dist.cc - Dictionary"
 msgstr "dist.cc - 사전"
 
-#: ../lib/prefs.c:61
+#: ../lib/prefs.c:59
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:62
+#: ../lib/prefs.c:60
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:63
+#: ../lib/prefs.c:61
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "위키피디아, 자유 백과사전(EN)"
 
-#: ../lib/prefs.c:64
+#: ../lib/prefs.c:62
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "윅셔너리, 자유 사전(EN)"
 
-#: ../lib/prefs.c:65
+#: ../lib/prefs.c:63
 msgid "Merriam-Webster Online Dictionary"
 msgstr "밀리엄-웹스터 온라인 사전"
 
-#: ../lib/prefs.c:66
+#: ../lib/prefs.c:64
 msgid "Clear"
 msgstr "지우기"
 
-#: ../lib/prefs.c:101
+#: ../lib/prefs.c:99
 msgid "You have chosen an invalid dictionary."
 msgstr "잘못된 사전을 선택했습니다."
 
-#: ../lib/prefs.c:303
+#: ../lib/prefs.c:301
 msgid "General"
 msgstr "일반"
 
-#: ../lib/prefs.c:305
+#: ../lib/prefs.c:303
 msgid "<b>Default search method:</b>"
 msgstr "<b>기본 검색 방식:</b>"
 
-#: ../lib/prefs.c:311 ../lib/prefs.c:472
+#: ../lib/prefs.c:309 ../lib/prefs.c:470
 msgid "Dictionary Server"
 msgstr "사전 서버"
 
-#: ../lib/prefs.c:320 ../lib/prefs.c:593
+#: ../lib/prefs.c:318 ../lib/prefs.c:591
 msgid "Web Service"
 msgstr "웹 서비스"
 
-#: ../lib/prefs.c:329 ../lib/prefs.c:643
+#: ../lib/prefs.c:327 ../lib/prefs.c:641
 msgid "Spell Checker"
 msgstr "철자 검사기"
 
-#: ../lib/prefs.c:338
+#: ../lib/prefs.c:336
 msgid "Last used method"
 msgstr "최근 사용한 방식"
 
-#: ../lib/prefs.c:347
+#: ../lib/prefs.c:345
 msgid "<b>Colors:</b>"
 msgstr "<b>색상:</b>"
 
-#: ../lib/prefs.c:353
+#: ../lib/prefs.c:351
 msgid "Links:"
 msgstr "연결:"
 
-#: ../lib/prefs.c:354
+#: ../lib/prefs.c:352
 msgid "Phonetics:"
 msgstr "발음:"
 
-#: ../lib/prefs.c:355
+#: ../lib/prefs.c:353
 msgid "Spelled correctly:"
 msgstr "올바른 철자:"
 
-#: ../lib/prefs.c:356
+#: ../lib/prefs.c:354
 msgid "Spelled incorrectly:"
 msgstr "올바르지 않은 철자:"
 
-#: ../lib/prefs.c:416
+#: ../lib/prefs.c:414
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>패널 본문 필드:</b>"
 
-#: ../lib/prefs.c:422
+#: ../lib/prefs.c:420
 msgid "Show text field in the panel"
 msgstr "본문 필드를 패널에 보이기"
 
 #. panel entry size
-#: ../lib/prefs.c:429
+#: ../lib/prefs.c:427
 msgid "Text field size:"
 msgstr "본문 필드 길이:"
 
 #. server address
-#: ../lib/prefs.c:475
+#: ../lib/prefs.c:473
 msgid "Server:"
 msgstr "서버:"
 
 #. server port
-#: ../lib/prefs.c:487
+#: ../lib/prefs.c:485
 msgid "Server Port:"
 msgstr "서버 포트:"
 
 #. dictionary
-#: ../lib/prefs.c:495 ../lib/prefs.c:668
+#: ../lib/prefs.c:493 ../lib/prefs.c:666
 msgid "Dictionary:"
 msgstr "사전:"
 
-#: ../lib/prefs.c:499
+#: ../lib/prefs.c:497
 msgid "* (use all)"
 msgstr "* (모두 사용)"
 
-#: ../lib/prefs.c:501
+#: ../lib/prefs.c:499
 msgid "! (use all, stop after first match)"
 msgstr "! (모두 사용하지만, 처음 부분이 일치하면 중지)"
 
-#: ../lib/prefs.c:595
+#: ../lib/prefs.c:593
 msgid "<b>Web search URL:</b>"
 msgstr "<b>웹 검색 URL:</b>"
 
-#: ../lib/prefs.c:601
+#: ../lib/prefs.c:599
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:621
+#: ../lib/prefs.c:619
 msgid ""
-"Enter the URL of a web site which offers translation or dictionary services. "
-"Use {word} as placeholder for the searched word."
-msgstr ""
-"번역 또는 사전 서비스를 제공하는 웹 사이트의 URL을 입력합니다. 검색 단어를 위"
-"해 {word}를 자리 표시로 사용합니다."
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "번역 또는 사전 서비스를 제공하는 웹 사이트의 URL을 입력합니다. 검색 단어를 위해 {word}를 자리 표시로 사용합니다."
 
-#: ../lib/prefs.c:645
+#: ../lib/prefs.c:643
 msgid "Spell Check Program:"
 msgstr "철자 검사 프로그램:"
 
-#: ../lib/prefs.c:662
+#: ../lib/prefs.c:660
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other "
-"spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
-"<i>철자 검사 프로그램에는 'enchant', 'aspell', 'ispell' 또는 ispell과 호환되"
-"는 다른 철자 검사 프로그램이 있습니다.\n"
-"아이콘은 입력한 프로그램이 있는지에 따라 나타납니다.</i>"
+msgstr "<i>철자 검사 프로그램에는 'enchant', 'aspell', 'ispell' 또는 ispell과 호환되는 다른 철자 검사 프로그램이 있습니다.\n아이콘은 입력한 프로그램이 있는지에 따라 나타납니다.</i>"
