@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2015-03-12 08:13+0000\n"
+"PO-Revision-Date: 2015-07-21 14:47+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -280,7 +280,7 @@ msgstr "Ieškoti „%s“ naudojant „%s“"
 
 #: ../lib/dictd.c:447
 msgid "Web Search:"
-msgstr "Ieškoti žiniatinklyje:"
+msgstr "Ieškoti saityne:"
 
 #: ../lib/dictd.c:469
 #, c-format
@@ -496,7 +496,7 @@ msgstr "URL:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr "Įveskite interneto tarnybos kuri siūlo vertimo ar žodyno paslaugas URL. Naudokite {žodis} kaip vietos laikiklį ieškomam žodžiui."
+msgstr "Įveskite interneto tarnybos, kuri siūlo vertimo ar žodyno paslaugas URL. Naudokite {žodis} kaip vietos laikiklį ieškomam žodžiui."
 
 #: ../lib/prefs.c:643
 msgid "Spell Check Program:"
