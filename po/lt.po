@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2015-07-21 14:47+0000\n"
+"PO-Revision-Date: 2015-09-20 19:54+0000\n"
 "Last-Translator: Moo\n"
-"Language-Team: Lithuanian (http://www.transifex.com/projects/p/xfce-apps/language/lt/)\n"
+"Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -127,7 +127,7 @@ msgstr "Klaida vykdant „%s“ (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Prašom nustatymuose nustatyti rašybos tikrinimo programos komandą."
+msgstr "Prašome nuostatose nustatyti rašybos tikrinimo programos komandą."
 
 #: ../lib/spell.c:206 ../lib/common.c:221
 msgid "Invalid input"
@@ -227,11 +227,11 @@ msgstr "_Paleisti"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Paieškos URL yra tuščias. Patikrinkite nustatymus."
+msgstr "Paieškos URL yra tuščias. Patikrinkite nuostatas."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Naršyklės atverti nepavyko. Patikrinkite nustatymus."
+msgstr "Naršyklės atverti nepavyko. Patikrinkite nuostatas."
 
 #: ../lib/common.c:231
 msgid "Invalid non-UTF8 input"
@@ -256,7 +256,7 @@ msgstr "Serveris nepasirengęs."
 
 #: ../lib/dictd.c:400
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Nurodytas netinkamas žodynas. Patikrinkite nustatymus."
+msgstr "Nurodytas netinkamas žodynas. Patikrinkite nuostatas."
 
 #: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:837
 msgid "Unknown error while querying the server."
