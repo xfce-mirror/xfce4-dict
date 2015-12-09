@@ -3,24 +3,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013-2014
+# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013-2015
 # Sveinn í Felli <sv1@fellsnet.is>, 2011,2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 20:36+0200\n"
-"PO-Revision-Date: 2014-05-23 09:36+0000\n"
+"POT-Creation-Date: 2015-03-12 00:31+0100\n"
+"PO-Revision-Date: 2015-12-09 13:37+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic (http://www.transifex.com/projects/p/xfce-apps/language/is/)\n"
+"Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-apps/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: is\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:736 ../lib/prefs.c:270
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:734 ../lib/prefs.c:268
 msgid "Dictionary"
 msgstr "Orðasafn"
 
@@ -28,57 +28,57 @@ msgstr "Orðasafn"
 msgid "A plugin to query different dictionaries."
 msgstr "Hjálparforrit (viðbót) til að leita í mismunandi orðasöfnum."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:366
-#: ../panel-plugin/xfce4-dict-plugin.c:492 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:243 ../lib/gui.c:516
+#: ../panel-plugin/xfce4-dict-plugin.c:364
+#: ../panel-plugin/xfce4-dict-plugin.c:490 ../src/xfce4-dict.c:198
+#: ../lib/spell.c:241 ../lib/gui.c:514
 msgid "Ready"
 msgstr "Tilbúið"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:431
+#: ../panel-plugin/xfce4-dict-plugin.c:429
 msgid "Look up a word"
 msgstr "Fletta upp orði"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:467 ../lib/gui.c:766
+#: ../panel-plugin/xfce4-dict-plugin.c:465 ../lib/gui.c:764
 msgid "Search term"
 msgstr "Leitarorð"
 
-#: ../src/xfce4-dict.c:51
+#: ../src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Leita að tilteknum texta með Dict-miðlara (RFC 2229)"
 
-#: ../src/xfce4-dict.c:52
+#: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
 msgstr "Leita að tilteknum texta með vefleitarvél"
 
-#: ../src/xfce4-dict.c:53
+#: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
 msgstr "Yfirfara tiltekinn texta með stafsetningarleiðréttingarforriti"
 
-#: ../src/xfce4-dict.c:54
+#: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
 msgstr "Virkja textareit á skjástiku"
 
-#: ../src/xfce4-dict.c:55
+#: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Ræsa sjálfstætt forrit jafnvel þótt stikuviðbótin sé virk"
 
-#: ../src/xfce4-dict.c:56
+#: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Tekur innihald AÐALVALS og notar það sem leitarstreng"
 
-#: ../src/xfce4-dict.c:57
+#: ../src/xfce4-dict.c:55
 msgid "Be verbose"
 msgstr "Vera ítarlegri"
 
-#: ../src/xfce4-dict.c:58
+#: ../src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "Sýna upplýsingar um útgáfu"
 
-#: ../src/xfce4-dict.c:131
+#: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[TEXTI]"
 
-#: ../src/xfce4-dict.c:147
+#: ../src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Tilkynntu villur til <%s>."
@@ -91,249 +91,249 @@ msgstr "Orðabókarbiðlari"
 msgid "A client program to query different dictionaries."
 msgstr "Biðlaraforrit til að leita í mismunandi orðasöfnum."
 
-#: ../lib/spell.c:75
+#: ../lib/spell.c:73
 msgid "Spell Checker Results:"
 msgstr "Niðurstöður stafsetningarleiðréttingar:"
 
-#: ../lib/spell.c:101
+#: ../lib/spell.c:99
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
 msgstr[0] "%d uppástunga fannst."
 msgstr[1] "%d uppástungur fundust."
 
-#: ../lib/spell.c:105
+#: ../lib/spell.c:103
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
 msgstr "Tillögur fyrir \"%s\" (%s):"
 
-#: ../lib/spell.c:122
+#: ../lib/spell.c:120
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
 msgstr "\"%s\" er rétt stafsett (%s)."
 
-#: ../lib/spell.c:134
+#: ../lib/spell.c:132
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
 msgstr "Engar uppástungur fundust fyrir \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:164
+#: ../lib/spell.c:162
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "Villa við að keyra \"%s\" (%s)."
 
-#: ../lib/spell.c:202
+#: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Stilltu skipun fyrir stafsetningaryfirferð í stillingavalmyndinni."
 
-#: ../lib/spell.c:208 ../lib/common.c:223
+#: ../lib/spell.c:206 ../lib/common.c:221
 msgid "Invalid input"
 msgstr "Ógilt inntak"
 
-#: ../lib/spell.c:247
+#: ../lib/spell.c:245
 #, c-format
 msgid "Process failed (%s)"
 msgstr "Ferli mistókst (%s)"
 
-#: ../lib/speedreader.c:80 ../lib/speedreader.c:683
+#: ../lib/speedreader.c:78 ../lib/speedreader.c:681
 msgid "P_ause"
 msgstr "_Bíða"
 
-#: ../lib/speedreader.c:81
+#: ../lib/speedreader.c:79
 msgid "_Resume"
 msgstr "Halda áf_ram"
 
-#: ../lib/speedreader.c:263
+#: ../lib/speedreader.c:261
 msgid "Running"
 msgstr "Keyrandi"
 
-#: ../lib/speedreader.c:266
+#: ../lib/speedreader.c:264
 msgid "Finished"
 msgstr "Lokið"
 
-#: ../lib/speedreader.c:274
+#: ../lib/speedreader.c:272
 msgid "Speed Reader"
 msgstr "Hraðlesari"
 
-#: ../lib/speedreader.c:369
+#: ../lib/speedreader.c:367
 msgid "You must enter a text."
 msgstr "Þú verður að setja inn texta."
 
-#: ../lib/speedreader.c:506
+#: ../lib/speedreader.c:504
 msgid "Choose a file to load"
 msgstr "Veldu skrá til hleðslu"
 
-#: ../lib/speedreader.c:535
+#: ../lib/speedreader.c:533
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Ekki var hægt að hlaða inn skránni '%s'."
 
-#: ../lib/speedreader.c:561
+#: ../lib/speedreader.c:559
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(birta %d orð í einu)"
 msgstr[1] "(birta %d orð í einu)"
 
-#: ../lib/speedreader.c:586
+#: ../lib/speedreader.c:584
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Þetta er einfalt hraðlestrartól til að æfa þig í að lesa hraðar. Það er gert með því að blikka á miklum hraða orðum á skjánum"
 
-#: ../lib/speedreader.c:589
+#: ../lib/speedreader.c:587
 msgid "_Words per Minute:"
 msgstr "_Orð á mínútu:"
 
-#: ../lib/speedreader.c:595
+#: ../lib/speedreader.c:593
 msgid "_Mark Paragraphs"
 msgstr "_Merkja málsgreinar"
 
-#: ../lib/speedreader.c:602
+#: ../lib/speedreader.c:600
 msgid "Word _Grouping:"
 msgstr "_Hópun orða:"
 
-#: ../lib/speedreader.c:618
+#: ../lib/speedreader.c:616
 msgid "_Font Size:"
 msgstr "_Leturstærð:"
 
-#: ../lib/speedreader.c:638
+#: ../lib/speedreader.c:636
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Settu hér inn einhvern texta sem þig langar að lesa.\n\nKomdu þér vel fyrir og slakaðu á, ýttu síðan á \"Byrja\" til að hefja hraðlestur."
 
-#: ../lib/speedreader.c:654
+#: ../lib/speedreader.c:652
 msgid "Load the contents of a file"
 msgstr "Hlaða inn innihaldi skráar"
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:661
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Hreinsa textareitinn og líma inn innihald klippispjaldsins"
 
-#: ../lib/speedreader.c:671
+#: ../lib/speedreader.c:669
 msgid "Clear the contents of the text field"
 msgstr "Hreinsa textareitinn"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:682
 msgid "_Start"
 msgstr "_Byrja"
 
-#: ../lib/common.c:188
+#: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Leitarslóðin er auð. Athugaðu stillingarnar þínar"
 
-#: ../lib/common.c:194
+#: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Ekki hægt að opna vafra. Athugaðu stillingarnar þínar"
 
-#: ../lib/common.c:233
+#: ../lib/common.c:231
 msgid "Invalid non-UTF8 input"
 msgstr "Ógilt ekki-UTF8 inntak"
 
-#: ../lib/common.c:607
+#: ../lib/common.c:605
 msgid "Error"
 msgstr "Villa"
 
-#: ../lib/common.c:610
+#: ../lib/common.c:608
 msgid "warning"
 msgstr "aðvörun"
 
-#: ../lib/dictd.c:386 ../lib/dictd.c:705 ../lib/dictd.c:714 ../lib/dictd.c:802
-#: ../lib/dictd.c:811
+#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:803
+#: ../lib/dictd.c:812
 msgid "Could not connect to server."
 msgstr "Gat ekki tengst við þjón."
 
-#: ../lib/dictd.c:392
+#: ../lib/dictd.c:393
 msgid "The server is not ready."
 msgstr "Þjónninn er ekki tilbúinn."
 
-#: ../lib/dictd.c:399
+#: ../lib/dictd.c:400
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Ógilt orðasafn tiltekið. Athugaðu stillingarnar þínar"
 
-#: ../lib/dictd.c:407 ../lib/dictd.c:463 ../lib/dictd.c:836
+#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:837
 msgid "Unknown error while querying the server."
 msgstr "Villa kom upp þegar reynt var að fá upplýsingar frá miðlara."
 
-#: ../lib/dictd.c:422
+#: ../lib/dictd.c:423
 msgid "Dictionary Results:"
 msgstr "Niðurstaða orðasafns:"
 
-#: ../lib/dictd.c:425
+#: ../lib/dictd.c:426
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Engar samsvaranir fundust fyrir \"%s\"."
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:441
+#: ../lib/dictd.c:442
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Leita að \"%s\" með \"%s\""
 
-#: ../lib/dictd.c:446
+#: ../lib/dictd.c:447
 msgid "Web Search:"
 msgstr "Vefleit:"
 
-#: ../lib/dictd.c:468
+#: ../lib/dictd.c:469
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d skilgreining fannst."
 msgstr[1] "%d skilgreiningar fundust."
 
-#: ../lib/dictd.c:676
+#: ../lib/dictd.c:677
 #, c-format
 msgid "Querying %s..."
 msgstr "Spyr %s..."
 
-#: ../lib/dictd.c:735
+#: ../lib/dictd.c:736
 msgid "An error occured while querying server information."
 msgstr "Villa kom upp þegar reynt var að fá upplýsingar frá þjóni."
 
-#: ../lib/dictd.c:748
+#: ../lib/dictd.c:749
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Miðlaraupplýsingar um \"%s\""
 
-#: ../lib/dictd.c:831
+#: ../lib/dictd.c:832
 msgid "The server doesn't offer any databases."
 msgstr "Þjónninn býður ekki upp á neina gagnagrunna."
 
-#: ../lib/gui.c:342
+#: ../lib/gui.c:340
 msgid "Copy Link"
 msgstr "Afrita tengil"
 
-#: ../lib/gui.c:674
+#: ../lib/gui.c:672
 msgid "_File"
 msgstr "_Skrá"
 
-#: ../lib/gui.c:679 ../lib/gui.c:787
+#: ../lib/gui.c:677 ../lib/gui.c:785
 msgid "Speed _Reader"
 msgstr "H_raðlesari"
 
-#: ../lib/gui.c:700
+#: ../lib/gui.c:698
 msgid "_Help"
 msgstr "_Hjálp"
 
-#: ../lib/gui.c:808
+#: ../lib/gui.c:806
 msgid "Search with:"
 msgstr "Leita með:"
 
-#: ../lib/gui.c:812
+#: ../lib/gui.c:810
 msgid "_Dictionary Server"
 msgstr "_Orðasafnsmiðlari"
 
-#: ../lib/gui.c:818
+#: ../lib/gui.c:816
 msgid "_Web Service"
 msgstr "_Vefþjónusta"
 
-#: ../lib/gui.c:826
+#: ../lib/gui.c:824
 msgid "_Spell Checker"
 msgstr "_Stafsetningarleiðrétting"
 
@@ -342,164 +342,164 @@ msgid "Xfce4 Dictionary"
 msgstr "Xfce4 orðasafn"
 
 #: ../lib/gui.c:963
-msgid "Copyright © 2006-2013 Enrico Tröger"
-msgstr "Höfundarréttur © 2006-2013 Enrico Tröger"
+msgid "Copyright © 2006-2015 Xfce Development Team"
+msgstr "Höfundarréttur © 2006-2015 Xfce þróunarteymið"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
 msgstr "Sveinn í Felli <sveinki@nett.is>"
 
-#: ../lib/prefs.c:55
+#: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Þýska <-> Enska"
 
-#: ../lib/prefs.c:56
+#: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Þýska <-> Franska"
 
-#: ../lib/prefs.c:57
+#: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Þýska <-> Spænska"
 
-#: ../lib/prefs.c:58
+#: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Þýska <-> Ítalska"
 
-#: ../lib/prefs.c:59
+#: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Þýska <-> Kínverska"
 
-#: ../lib/prefs.c:60
+#: ../lib/prefs.c:58
 msgid "dist.cc - Dictionary"
 msgstr "dist.cc - Orðasafn"
 
-#: ../lib/prefs.c:61
+#: ../lib/prefs.c:59
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:62
+#: ../lib/prefs.c:60
 msgid "TheFreeDictionary.com"
 msgstr " TheFreeDictionary.com"
 
-#: ../lib/prefs.c:63
+#: ../lib/prefs.c:61
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "Wikipedia - Frjálsa alfræðisafnið (EN)"
 
-#: ../lib/prefs.c:64
+#: ../lib/prefs.c:62
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "Wiktionary - Frjálsa orðasafnið (EN)"
 
-#: ../lib/prefs.c:65
+#: ../lib/prefs.c:63
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Merriam-Webster Online Dictionary"
 
-#: ../lib/prefs.c:66
+#: ../lib/prefs.c:64
 msgid "Clear"
 msgstr "Hreinsa"
 
-#: ../lib/prefs.c:101
+#: ../lib/prefs.c:99
 msgid "You have chosen an invalid dictionary."
 msgstr "Þú hefur valið ógilt orðasafn."
 
-#: ../lib/prefs.c:303
+#: ../lib/prefs.c:301
 msgid "General"
 msgstr "Almennt"
 
-#: ../lib/prefs.c:305
+#: ../lib/prefs.c:303
 msgid "<b>Default search method:</b>"
 msgstr "<b>Sjálfgefin leitaraðferð:</b>"
 
-#: ../lib/prefs.c:311 ../lib/prefs.c:472
+#: ../lib/prefs.c:309 ../lib/prefs.c:470
 msgid "Dictionary Server"
 msgstr "Orðasafnsmiðlari"
 
-#: ../lib/prefs.c:320 ../lib/prefs.c:593
+#: ../lib/prefs.c:318 ../lib/prefs.c:591
 msgid "Web Service"
 msgstr "Vefþjónusta"
 
-#: ../lib/prefs.c:329 ../lib/prefs.c:643
+#: ../lib/prefs.c:327 ../lib/prefs.c:641
 msgid "Spell Checker"
 msgstr "Stafsetningarleiðrétting"
 
-#: ../lib/prefs.c:338
+#: ../lib/prefs.c:336
 msgid "Last used method"
 msgstr "Síðast notaða aðferð"
 
-#: ../lib/prefs.c:347
+#: ../lib/prefs.c:345
 msgid "<b>Colors:</b>"
 msgstr "<b>Litir:</b>"
 
-#: ../lib/prefs.c:353
+#: ../lib/prefs.c:351
 msgid "Links:"
 msgstr "Tenglar:"
 
-#: ../lib/prefs.c:354
+#: ../lib/prefs.c:352
 msgid "Phonetics:"
 msgstr "Hljóðstafir:"
 
-#: ../lib/prefs.c:355
+#: ../lib/prefs.c:353
 msgid "Spelled correctly:"
 msgstr "Rétt stafsett:"
 
-#: ../lib/prefs.c:356
+#: ../lib/prefs.c:354
 msgid "Spelled incorrectly:"
 msgstr "Rangt stafsett:"
 
-#: ../lib/prefs.c:416
+#: ../lib/prefs.c:414
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Textareitur skjástiku:</b>"
 
-#: ../lib/prefs.c:422
+#: ../lib/prefs.c:420
 msgid "Show text field in the panel"
 msgstr "Birta textareit á skjástiku"
 
 #. panel entry size
-#: ../lib/prefs.c:429
+#: ../lib/prefs.c:427
 msgid "Text field size:"
 msgstr "Stærð textareits:"
 
 #. server address
-#: ../lib/prefs.c:475
+#: ../lib/prefs.c:473
 msgid "Server:"
 msgstr "Miðlari:"
 
 #. server port
-#: ../lib/prefs.c:487
+#: ../lib/prefs.c:485
 msgid "Server Port:"
 msgstr "Gátt miðlara:"
 
 #. dictionary
-#: ../lib/prefs.c:495 ../lib/prefs.c:668
+#: ../lib/prefs.c:493 ../lib/prefs.c:666
 msgid "Dictionary:"
 msgstr "Orðasafn:"
 
-#: ../lib/prefs.c:499
+#: ../lib/prefs.c:497
 msgid "* (use all)"
 msgstr "* (nota allt)"
 
-#: ../lib/prefs.c:501
+#: ../lib/prefs.c:499
 msgid "! (use all, stop after first match)"
 msgstr "! (nota allt, stöðva eftir fyrstu samsvörun)"
 
-#: ../lib/prefs.c:595
+#: ../lib/prefs.c:593
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Slóð fyrir vefleit:</b>"
 
-#: ../lib/prefs.c:601
+#: ../lib/prefs.c:599
 msgid "URL:"
 msgstr "Slóð:"
 
-#: ../lib/prefs.c:621
+#: ../lib/prefs.c:619
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "Settu inn URL-slóð vefsvæðis sem býður upp á þýðingar eða orðasöfn. Notaðu {word} í stað orðsins sem leitað er að."
 
-#: ../lib/prefs.c:645
+#: ../lib/prefs.c:643
 msgid "Spell Check Program:"
 msgstr "Forrit fyrir stafsetningarleiðréttingu:"
 
-#: ../lib/prefs.c:662
+#: ../lib/prefs.c:660
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
