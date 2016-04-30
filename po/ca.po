@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2016-04-30 10:24+0000\n"
+"PO-Revision-Date: 2016-04-30 22:09+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -221,7 +221,7 @@ msgstr "Buida els continguts del camp de text"
 
 #: ../lib/speedreader.c:682
 msgid "_Start"
-msgstr "_Començar"
+msgstr "_Comença"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
@@ -347,7 +347,7 @@ msgstr "Copyright © 2006-2015 Equip de desenvolupament d'Xfce"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
-msgstr "Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008\nHarald Servat <redcrash@gmail.com>, 2009-2010."
+msgstr "Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008\nHarald Servat <redcrash@gmail.com>, 2009-2010.\nRobert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016."
 
 #: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
