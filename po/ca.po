@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Davidmp <medipas@gmail.com>, 2016
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2016-01-13 00:29+0000\n"
-"Last-Translator: Davidmp <medipas@gmail.com>\n"
+"PO-Revision-Date: 2016-04-30 10:24+0000\n"
+"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,11 +44,11 @@ msgstr "Cerca un terme"
 
 #: ../src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr "Cerca el text emprant un servidor Dict (RFC 2229)"
+msgstr "Cerca el text proporcionat mitjançant un servidor Dict (RFC 2229)"
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
-msgstr "Cerca el text emprant un enginy de cerca basat en la web"
+msgstr "Cerca el text proporcionat mitjançant un enginy de cerca basat amb el web"
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
@@ -63,7 +64,7 @@ msgstr "Inicia com aplicació autònoma fins i tot si el connector del quadre es
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Agafa el contingut de la selecció primària i empra-la com a text per la cerca"
+msgstr "Agafa el contingut de la selecció primària i utilitza-ho com a text per la cerca"
 
 #: ../src/xfce4-dict.c:55
 msgid "Be verbose"
@@ -121,7 +122,7 @@ msgstr "No s'ha trobat cap suggeriment per «%s» (%s)."
 #: ../lib/spell.c:162
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Error al executar «%s»: (%s)."
+msgstr "Error en executar «%s»: (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
@@ -273,7 +274,7 @@ msgstr "No hi ha cap coincidència per «%s»."
 #: ../lib/dictd.c:442
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr "Cerca «%s» emprant «%s»"
+msgstr "Cerca «%s» mitjançant «%s»"
 
 #: ../lib/dictd.c:447
 msgid "Web Search:"
@@ -422,7 +423,7 @@ msgstr "Comprovador d'ortografia"
 
 #: ../lib/prefs.c:336
 msgid "Last used method"
-msgstr "Darrer mètode emprat"
+msgstr "Últim mètode utilitzat"
 
 #: ../lib/prefs.c:345
 msgid "<b>Colors:</b>"
@@ -474,11 +475,11 @@ msgstr "Diccionari:"
 
 #: ../lib/prefs.c:497
 msgid "* (use all)"
-msgstr "* (empra'ls tots)"
+msgstr "* (utilitza-ho tot)"
 
 #: ../lib/prefs.c:499
 msgid "! (use all, stop after first match)"
-msgstr "! (empra'ls tots, atura després de la primera coincidència)"
+msgstr "! (utilitza-ho tot, atura't després de la primera coincidència)"
 
 #: ../lib/prefs.c:593
 msgid "<b>Web search URL:</b>"
