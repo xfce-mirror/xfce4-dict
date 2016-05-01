@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2016-05-01 08:14+0000\n"
+"PO-Revision-Date: 2016-05-01 15:16+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -126,7 +126,7 @@ msgstr "Error en executar «%s»: (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Introduïu l'ordre per la verificació ortogràfica el el diàleg de preferències."
+msgstr "Establiu l'ordre per a la verificació ortogràfica al diàleg de preferències."
 
 #: ../lib/spell.c:206 ../lib/common.c:221
 msgid "Invalid input"
@@ -197,14 +197,14 @@ msgstr "A_grupament de paraules:"
 
 #: ../lib/speedreader.c:616
 msgid "_Font Size:"
-msgstr "Mida de la _font:"
+msgstr "Mida del _tipus de lletra:"
 
 #: ../lib/speedreader.c:636
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr "Introduïu un text que volgueu llegir.\n\nRelaxeu-vos i poseu-vos còmode, aleshores premeu Començar per a començar a llegir ràpid."
+msgstr "Introduïu un text que vulgueu llegir.\n\nRelaxeu-vos i poseu-vos còmode, després premeu Comença per a començar la lectura ràpida."
 
 #: ../lib/speedreader.c:652
 msgid "Load the contents of a file"
@@ -225,7 +225,7 @@ msgstr "_Comença"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
-msgstr "La URL de cerca està buida. Comproveu les vostres preferències."
+msgstr "L'URL de cerca està buida. Comproveu les vostres preferències."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
@@ -343,7 +343,7 @@ msgstr "Diccionari Xfce4"
 
 #: ../lib/gui.c:963
 msgid "Copyright © 2006-2015 Xfce Development Team"
-msgstr "Copyright © 2006-2015 Equip de desenvolupament d'Xfce"
+msgstr "Copyright © 2006-2015 L'equip de desenvolupament de Xfce"
 
 #: ../lib/gui.c:966
 msgid "translator-credits"
@@ -383,7 +383,7 @@ msgstr "TheFreeDictionary.com"
 
 #: ../lib/prefs.c:61
 msgid "Wikipedia, the free encyclopedia (EN)"
-msgstr "Wikipedia, la enciclopèdia lliure (EN)"
+msgstr "Wikipedia, l'enciclopèdia lliure (EN)"
 
 #: ../lib/prefs.c:62
 msgid "Wiktionary, the free dictionary (EN)"
@@ -431,7 +431,7 @@ msgstr "<b>Colors:</b>"
 
 #: ../lib/prefs.c:351
 msgid "Links:"
-msgstr "Enllaços"
+msgstr "Enllaços:"
 
 #: ../lib/prefs.c:352
 msgid "Phonetics:"
