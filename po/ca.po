@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2016-05-01 15:16+0000\n"
+"PO-Revision-Date: 2016-05-01 19:26+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -56,11 +56,11 @@ msgstr "Comprova el text amb un verificador ortogràfic"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
-msgstr "Enfoca el camp de text del plafó"
+msgstr "Agafa l'enfocament al camp de text del plafó"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Inicia com aplicació autònoma fins i tot si el connector del quadre està carregat"
+msgstr "Inicia com aplicació autònoma fins i tot si el connector del plafó està carregat"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -451,7 +451,7 @@ msgstr "<b>Camp de text del plafó:</b>"
 
 #: ../lib/prefs.c:420
 msgid "Show text field in the panel"
-msgstr "Mostra el text al quadre"
+msgstr "Mostra el camp de text al plafó"
 
 #. panel entry size
 #: ../lib/prefs.c:427
