@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2016-04-30 22:09+0000\n"
+"PO-Revision-Date: 2016-05-01 08:14+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -290,7 +290,7 @@ msgstr[1] "%d definicions trobades."
 #: ../lib/dictd.c:677
 #, c-format
 msgid "Querying %s..."
-msgstr "Consultant %s…"
+msgstr "S'està consultant %s..."
 
 #: ../lib/dictd.c:736
 msgid "An error occured while querying server information."
