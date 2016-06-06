@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2016-05-04 13:08+0000\n"
+"PO-Revision-Date: 2016-06-06 00:54+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -93,7 +93,7 @@ msgstr "Un programa client per fer consultes a diversos diccionaris."
 
 #: ../lib/spell.c:73
 msgid "Spell Checker Results:"
-msgstr "Resultats del corrector ortogràfic"
+msgstr "Resultats del corrector ortogràfic:"
 
 #: ../lib/spell.c:99
 #, c-format
@@ -294,7 +294,7 @@ msgstr "S'està consultant %s..."
 
 #: ../lib/dictd.c:736
 msgid "An error occured while querying server information."
-msgstr "S'ha produït un error al consultar la informació del servidor."
+msgstr "S'ha produït un error en consultar la informació del servidor."
 
 #: ../lib/dictd.c:749
 #, c-format
@@ -407,7 +407,7 @@ msgstr "General"
 
 #: ../lib/prefs.c:303
 msgid "<b>Default search method:</b>"
-msgstr "<b>Mètode de cerca per defecte:</b>"
+msgstr "<b>Mètode de cerca predeterminat:</b>"
 
 #: ../lib/prefs.c:309 ../lib/prefs.c:470
 msgid "Dictionary Server"
