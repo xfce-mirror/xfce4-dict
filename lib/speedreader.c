@@ -592,7 +592,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 
 	priv->check_mark_paragraphs = gtk_check_button_new_with_mnemonic(_("_Mark Paragraphs"));
 
-	hbox_words = gtk_hbox_new(FALSE, 0);
+	hbox_words = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_words), label_words, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_words), priv->spin_wpm, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_words), priv->check_mark_paragraphs, FALSE, FALSE, 12);
@@ -608,7 +608,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 		G_CALLBACK(sr_spin_grouping_changed_cb), label_grouping_desc);
 	sr_spin_grouping_changed_cb(GTK_SPIN_BUTTON(priv->spin_grouping), GTK_LABEL(label_grouping_desc));
 
-	hbox_grouping = gtk_hbox_new(FALSE, 0);
+	hbox_grouping = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_grouping), label_grouping, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_grouping), priv->spin_grouping, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_grouping), label_grouping_desc, FALSE, FALSE, 6);
@@ -619,7 +619,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	priv->button_font = gtk_font_button_new();
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label_font), priv->button_font);
 
-	hbox_font = gtk_hbox_new(FALSE, 0);
+	hbox_font = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_font), label_font, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_font), priv->button_font, FALSE, FALSE, 6);
 
@@ -669,12 +669,12 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_widget_set_tooltip_text(button_clear, _("Clear the contents of the text field"));
 #endif
 
-	vbox_text_buttons = gtk_vbox_new(FALSE, 6);
+	vbox_text_buttons = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_open, FALSE, FALSE, 0);
 	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_paste, FALSE, FALSE, 0);
 	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_clear, FALSE, FALSE, 0);
 
-	hbox_text = gtk_hbox_new(FALSE, 0);
+	hbox_text = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_text), swin, TRUE, TRUE, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_text), vbox_text_buttons, FALSE, FALSE, 3);
 
@@ -694,7 +694,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 
 	g_signal_connect(dialog, "response", G_CALLBACK(xfd_speed_reader_response_cb), NULL);
 
-	vbox = gtk_vbox_new(FALSE, 6);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start(GTK_BOX(vbox), label_intro, FALSE, FALSE, 5);
 	gtk_box_pack_start(GTK_BOX(vbox), hbox_words, FALSE, FALSE, 3);
 	gtk_box_pack_start(GTK_BOX(vbox), hbox_grouping, FALSE, FALSE, 3);
@@ -707,7 +707,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	priv->display_label = gtk_label_new(NULL);
 	gtk_widget_show(priv->display_label);
 
-	vbox = gtk_vbox_new(FALSE, 6);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start(GTK_BOX(vbox), priv->display_label, TRUE, TRUE, 6);
 
 	priv->second_page = vbox;

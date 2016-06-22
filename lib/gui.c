@@ -739,19 +739,19 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_window_set_icon(GTK_WINDOW(dd->window), icon);
 	g_object_unref(icon);
 
-	main_box = gtk_vbox_new(FALSE, 0);
+	main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	gtk_widget_show(main_box);
 	gtk_container_add(GTK_CONTAINER(dd->window), main_box);
 
 	gtk_box_pack_start(GTK_BOX(main_box), create_file_menu(dd), FALSE, TRUE, 0);
 
 	/* entry box (label, entry, buttons) */
-	entry_box = gtk_hbox_new(FALSE, 5);
+	entry_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 	gtk_widget_show(entry_box);
 	gtk_container_set_border_width(GTK_CONTAINER(entry_box), 2);
 	gtk_box_pack_start(GTK_BOX(main_box), entry_box, FALSE, TRUE, 5);
 
-	label_box = gtk_hbox_new(FALSE, 5);
+	label_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 	gtk_widget_show(label_box);
 	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 5);
 
@@ -799,7 +799,7 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_box_pack_end(GTK_BOX(entry_box), dd->close_button, FALSE, FALSE, 0);
 
 	/* search method chooser */
-	method_chooser = gtk_hbox_new(FALSE, 0);
+	method_chooser = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_widget_show(method_chooser);
 	gtk_box_pack_start(GTK_BOX(main_box), method_chooser, FALSE, FALSE, 0);
 

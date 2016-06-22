@@ -468,7 +468,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->panel_entry, "button-press-event", G_CALLBACK(entry_buttonpress_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "changed", G_CALLBACK(entry_changed_cb), dpd);
 
-	dpd->box = gtk_hbox_new(FALSE, 3);
+	dpd->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 3);
 	gtk_widget_show(dpd->box);
 
 	gtk_box_pack_start(GTK_BOX(dpd->box), dpd->panel_button, FALSE, FALSE, 0);

@@ -292,9 +292,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		GtkWidget *color_link, *color_phon, *color_success, *color_error;
 		GSList *search_method;
 
-		notebook_vbox = gtk_vbox_new(FALSE, 2);
+		notebook_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 2);
 		gtk_widget_show(notebook_vbox);
-		inner_vbox = gtk_vbox_new(FALSE, 5);
+		inner_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
@@ -437,7 +437,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 			gtk_widget_show(panel_entry_size_spinner);
 
-			pe_hbox = gtk_hbox_new(FALSE, 0);
+			pe_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 			gtk_widget_show(pe_hbox);
 
 			gtk_box_pack_start(GTK_BOX(pe_hbox), panel_entry_size_label, FALSE, FALSE, 10);
@@ -461,9 +461,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		GtkWidget *table, *button_get_list, *button_get_info;
 		GtkWidget *server_entry, *port_spinner, *dict_combo;
 
-		notebook_vbox = gtk_vbox_new(FALSE, 2);
+		notebook_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
 		gtk_widget_show(notebook_vbox);
-		inner_vbox = gtk_vbox_new(FALSE, 5);
+		inner_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
@@ -582,9 +582,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	{
 		GtkWidget *label, *web_entry_label, *web_entry, *web_entry_box, *web_dicts_table;
 
-		notebook_vbox = gtk_vbox_new(FALSE, 5);
+		notebook_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_widget_show(notebook_vbox);
-		inner_vbox = gtk_vbox_new(FALSE, 5);
+		inner_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
@@ -603,7 +603,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 			gtk_entry_set_text(GTK_ENTRY(web_entry), dd->web_url);
 		gtk_widget_show(web_entry);
 
-		web_entry_box = gtk_hbox_new(FALSE, 0);
+		web_entry_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 		gtk_widget_show(web_entry_box);
 
 		web_dicts_table = create_web_dicts_table(web_entry);
@@ -632,9 +632,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		GtkListStore *store;
 		GtkCellRenderer *renderer;
 
-		notebook_vbox = gtk_vbox_new(FALSE, 5);
+		notebook_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_widget_show(notebook_vbox);
-		inner_vbox = gtk_vbox_new(FALSE, 5);
+		inner_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
