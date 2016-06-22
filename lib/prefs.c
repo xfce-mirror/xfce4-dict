@@ -203,9 +203,9 @@ const gchar *dict_prefs_get_web_url_label(DictData *dd)
 }
 
 
-static void color_set_cb(GtkColorButton *widget, GdkColor *color)
+static void color_set_cb(GtkColorChooser *widget, GdkRGBA *color)
 {
-	gtk_color_button_get_color(widget, color);
+	gtk_color_chooser_get_rgba(widget, color);
 }
 
 
