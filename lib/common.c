@@ -314,21 +314,6 @@ static gdouble scale_round(gdouble val, gdouble factor)
 }
 
 
-static gchar *get_hex_from_color(GdkColor *color)
-{
-	gchar *buffer = g_malloc0(9);
-
-	g_return_val_if_fail(color != NULL, NULL);
-
-	g_snprintf(buffer, 8, "#%02X%02X%02X",
-	      (guint) (scale_round(color->red / 256, 255)),
-	      (guint) (scale_round(color->green / 256, 255)),
-	      (guint) (scale_round(color->blue / 256, 255)));
-
-	return buffer;
-}
-
-
 static gchar *get_spell_program(void)
 {
 	gchar *path;
@@ -450,14 +435,14 @@ void dict_read_rc_file(DictData *dd)
 	else
 		dd->spell_dictionary = spell_dictionary_default;
 
-	dd->color_link = g_new0(GdkColor, 1);
-	gdk_color_parse(link_color_str, dd->color_link);
-	dd->color_phonetic = g_new0(GdkColor, 1);
-	gdk_color_parse(phon_color_str, dd->color_phonetic);
-	dd->color_incorrect = g_new0(GdkColor, 1);
-	gdk_color_parse(error_color_str, dd->color_incorrect);
-	dd->color_correct = g_new0(GdkColor, 1);
-	gdk_color_parse(success_color_str, dd->color_correct);
+	dd->color_link = g_new0(GdkRGBA, 1);
+	gdk_rgba_parse(dd->color_link, link_color_str);
+	dd->color_phonetic = g_new0(GdkRGBA, 1);
+	gdk_rgba_parse(dd->color_phonetic, phon_color_str);
+	dd->color_incorrect = g_new0(GdkRGBA, 1);
+	gdk_rgba_parse(dd->color_incorrect, error_color_str);
+	dd->color_correct = g_new0(GdkRGBA, 1);
+	gdk_rgba_parse(dd->color_correct, success_color_str);
 
 	dd->speedreader_mark_paragraphs = mark_paragraphs;
 	dd->speedreader_wpm = wpm;
@@ -489,10 +474,10 @@ void dict_write_rc_file(DictData *dd)
 		xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);
 		xfce_rc_write_entry(rc, "spell_dictionary", dd->spell_dictionary);
 
-		link_color_str = get_hex_from_color(dd->color_link);
-		phon_color_str = get_hex_from_color(dd->color_phonetic);
-		error_color_str = get_hex_from_color(dd->color_incorrect);
-		success_color_str = get_hex_from_color(dd->color_correct);
+		link_color_str = gdk_rgba_to_string(dd->color_link);
+		phon_color_str = gdk_rgba_to_string(dd->color_phonetic);
+		error_color_str = gdk_rgba_to_string(dd->color_incorrect);
+		success_color_str = gdk_rgba_to_string(dd->color_correct);
 		xfce_rc_write_entry(rc, "link_color", link_color_str);
 		xfce_rc_write_entry(rc, "phonetic_color", phon_color_str);
 		xfce_rc_write_entry(rc, "error_color", error_color_str);

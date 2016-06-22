@@ -110,10 +110,10 @@ typedef struct
 	GtkTextMark *mark_click;
 	GdkPixbuf *icon;
 
-	GdkColor *color_link;
-	GdkColor *color_phonetic;
-	GdkColor *color_correct;
-	GdkColor *color_incorrect;
+	GdkRGBA *color_link;
+	GdkRGBA *color_phonetic;
+	GdkRGBA *color_correct;
+	GdkRGBA *color_incorrect;
 
 	/* speed reader */
 	gint speedreader_wpm;

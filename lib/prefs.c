@@ -352,10 +352,10 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		label2 = gtk_label_new(_("Phonetics:"));
 		label3 = gtk_label_new(_("Spelled correctly:"));
 		label4 = gtk_label_new(_("Spelled incorrectly:"));
-		color_link = gtk_color_button_new_with_color(dd->color_link);
-		color_phon = gtk_color_button_new_with_color(dd->color_phonetic);
-		color_error = gtk_color_button_new_with_color(dd->color_incorrect);
-		color_success = gtk_color_button_new_with_color(dd->color_correct);
+		color_link = gtk_color_button_new_with_rgba(dd->color_link);
+		color_phon = gtk_color_button_new_with_rgba(dd->color_phonetic);
+		color_error = gtk_color_button_new_with_rgba(dd->color_incorrect);
+		color_success = gtk_color_button_new_with_rgba(dd->color_correct);
 		g_signal_connect(color_link, "color-set", G_CALLBACK(color_set_cb), dd->color_link);
 		g_signal_connect(color_phon, "color-set", G_CALLBACK(color_set_cb), dd->color_phonetic);
 		g_signal_connect(color_error, "color-set", G_CALLBACK(color_set_cb), dd->color_incorrect);
