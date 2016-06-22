@@ -300,7 +300,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		label = gtk_label_new(_("<b>Default search method:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
-		gtk_misc_set_alignment(GTK_MISC(label), 0, 0);
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 0);
 
@@ -342,7 +341,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		label = gtk_label_new(_("<b>Colors:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
-		gtk_misc_set_alignment(GTK_MISC(label), 0, 1);
+		gtk_widget_set_valign(label, GTK_ALIGN_END);
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 5);
 
@@ -402,7 +401,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 			label = gtk_label_new(_("<b>Panel Text Field:</b>"));
 			gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
-			gtk_misc_set_alignment(GTK_MISC(label), 0, 1);
+			gtk_widget_set_valign(label, GTK_ALIGN_END);
 			gtk_widget_show(label);
 			gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 5);
 
@@ -566,7 +565,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		label = gtk_label_new(_("<b>Web search URL:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
-		gtk_misc_set_alignment(GTK_MISC(label), 0, 0);
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 0);
 
@@ -591,7 +589,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(dialog), "web_entry", web_entry);
 
 		label1 = xfd_wrap_label_new(_("Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."));
-		gtk_misc_set_alignment(GTK_MISC(label1), 0, 0);
 		gtk_widget_show(label1);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label1, FALSE, FALSE, 0);
 		gtk_box_pack_start(GTK_BOX(notebook_vbox), inner_vbox, TRUE, TRUE, 5);

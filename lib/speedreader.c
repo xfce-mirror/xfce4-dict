@@ -585,7 +585,8 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 		  "It does this by flashing words at a rapid rate on the screen."));
 
 	label_words = gtk_label_new_with_mnemonic(_("_Words per Minute:"));
-	gtk_misc_set_alignment(GTK_MISC(label_words), 1, 0.5);
+	gtk_widget_set_halign(label_words, GTK_ALIGN_END);
+	gtk_widget_set_valign(label_words, GTK_ALIGN_CENTER);
 
 	priv->spin_wpm = gtk_spin_button_new_with_range(5.0, 10000.0, 5);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label_words), priv->spin_wpm);
@@ -598,7 +599,8 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_box_pack_start(GTK_BOX(hbox_words), priv->check_mark_paragraphs, FALSE, FALSE, 12);
 
 	label_grouping = gtk_label_new_with_mnemonic(_("Word _Grouping:"));
-	gtk_misc_set_alignment(GTK_MISC(label_grouping), 1, 0.5);
+	gtk_widget_set_halign(label_grouping, GTK_ALIGN_END);
+	gtk_widget_set_valign(label_grouping, GTK_ALIGN_CENTER);
 
 	label_grouping_desc = gtk_label_new(NULL);
 
@@ -614,7 +616,8 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_box_pack_start(GTK_BOX(hbox_grouping), label_grouping_desc, FALSE, FALSE, 6);
 
 	label_font = gtk_label_new_with_mnemonic(_("_Font Size:"));
-	gtk_misc_set_alignment(GTK_MISC(label_font), 1, 0.5);
+	gtk_widget_set_halign(label_font, GTK_ALIGN_END);
+	gtk_widget_set_valign(label_font, GTK_ALIGN_CENTER);
 
 	priv->button_font = gtk_font_button_new();
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label_font), priv->button_font);

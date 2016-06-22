@@ -138,7 +138,6 @@ GtkWidget *xfd_wrap_label_new(const gchar *text)
 		gtk_label_set_text(GTK_LABEL(l), text);
 
 	pango_layout_set_wrap(gtk_label_get_layout(GTK_LABEL(l)), PANGO_WRAP_WORD_CHAR);
-	gtk_misc_set_alignment(GTK_MISC(l), 0.0, 0.0);
 
 	return l;
 }
