@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Igor <f2404@yandex.ru>, 2016
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2015-03-15 08:30+0000\n"
-"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/xfce-apps/language/ru/)\n"
+"PO-Revision-Date: 2016-07-08 15:23+0000\n"
+"Last-Translator: Igor <f2404@yandex.ru>\n"
+"Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:734 ../lib/prefs.c:268
@@ -47,7 +48,7 @@ msgstr "Искать данный текст используя сервер с�
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
-msgstr "Искать данный текст используя поисковый интернет-движок"
+msgstr "Искать данный текст, используя поисковый интернет-движок"
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
@@ -101,6 +102,7 @@ msgid_plural "%d suggestions found."
 msgstr[0] "Найдено %d предложение."
 msgstr[1] "Найдено %d предложения."
 msgstr[2] "Найдено %d предложений."
+msgstr[3] "Найдено %d предложений."
 
 #: ../lib/spell.c:103
 #, c-format
@@ -177,12 +179,13 @@ msgid_plural "(display %d words at a time)"
 msgstr[0] "(показывать %d слово за раз)"
 msgstr[1] "(показывать %d слова за раз)"
 msgstr[2] "(показывать %d слов за раз)"
+msgstr[3] "(показывать %d слов за раз)"
 
 #: ../lib/speedreader.c:584
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Это утилита, повышающая скорость вашего чтения. Она делает это, изменяя слова с большой скоростью на экране."
+msgstr "Это простая утилита для тренировки повышения скорости вашего чтения. Она делает это, изменяя слова с большой скоростью на экране."
 
 #: ../lib/speedreader.c:587
 msgid "_Words per Minute:"
@@ -288,6 +291,7 @@ msgid_plural "%d definitions found."
 msgstr[0] "Найдено %d определение."
 msgstr[1] "Найдено %d определения."
 msgstr[2] "Найдено %d определений."
+msgstr[3] "Найдено %d определений."
 
 #: ../lib/dictd.c:677
 #, c-format
