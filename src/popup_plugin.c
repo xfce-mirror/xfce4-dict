@@ -35,9 +35,9 @@ static gboolean check_is_running(GtkWidget *widget, Window *xid)
 	gscreen = gtk_widget_get_screen(widget);
 	g_snprintf(selection_name, sizeof(selection_name), XFCE_DICT_SELECTION"%d",
 		gdk_screen_get_number(gscreen));
-	selection_atom = XInternAtom(GDK_DISPLAY(), selection_name, False);
+	selection_atom = XInternAtom(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_name, False);
 
-	if ((*xid = XGetSelectionOwner(GDK_DISPLAY(), selection_atom)))
+	if ((*xid = XGetSelectionOwner(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_atom)))
 		return TRUE;
 
 	return FALSE;

@@ -114,13 +114,13 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 
 static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *dpd)
 {
-	if (GTK_WIDGET_VISIBLE(dpd->dd->window))
+	if (gtk_widget_get_visible(GTK_WIDGET(dpd->dd->window)))
 	{
 		/* we must query geometry settings here because position and maximized state
 		 * doesn't work when the window is hidden */
 		dict_gui_query_geometry(dpd->dd);
 
-		gtk_widget_hide(dpd->dd->window);
+		gtk_widget_hide(GTK_WIDGET(dpd->dd->window));
 	}
 	else
 	{
@@ -189,16 +189,16 @@ static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 	gscreen = gtk_widget_get_screen(win);
 	g_snprintf(selection_name, sizeof (selection_name),
 		XFCE_DICT_SELECTION"%d", gdk_screen_get_number(gscreen));
-	selection_atom = XInternAtom(GDK_DISPLAY(), selection_name, False);
+	selection_atom = XInternAtom(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_name, False);
 
-	if (XGetSelectionOwner(GDK_DISPLAY(), selection_atom))
+	if (XGetSelectionOwner(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_atom))
 	{
 		gtk_widget_destroy(win);
 		return FALSE;
 	}
 
-	XSelectInput(GDK_DISPLAY(), xwin, PropertyChangeMask);
-	XSetSelectionOwner(GDK_DISPLAY(), selection_atom, xwin, GDK_CURRENT_TIME);
+	XSelectInput(gdk_x11_display_get_xdisplay(gdk_display_get_default()), xwin, PropertyChangeMask);
+	XSetSelectionOwner(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_atom, xwin, GDK_CURRENT_TIME);
 
 	g_signal_connect(win, "client-event", G_CALLBACK(dict_plugin_message_received), dpd);
 
@@ -219,7 +219,7 @@ static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictPanelData *dpd)
 
 	/* if the main window is visible, query geometry as usual, if it is hidden the geometry
 	 * was queried when it was hidden */
-	if (GTK_WIDGET_VISIBLE(dpd->dd->window))
+	if (gtk_widget_get_visible(GTK_WIDGET(dpd->dd->window)))
 	{
 		dict_gui_query_geometry(dpd->dd);
 	}
