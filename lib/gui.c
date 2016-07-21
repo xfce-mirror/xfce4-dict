@@ -597,7 +597,9 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 
 	if (button == NULL)
 	{
-		button = gtk_button_new_from_stock(GTK_STOCK_FIND);
+		button = gtk_button_new_with_mnemonic (_("F_ind"));
+		gtk_button_set_image(GTK_BUTTON(button),
+			gtk_image_new_from_icon_name("gtk-find", GTK_ICON_SIZE_BUTTON));
 		gtk_widget_show(button);
 		gtk_box_pack_start(GTK_BOX(box), button, FALSE, FALSE, 0);
 		g_signal_connect(button, "clicked", G_CALLBACK(entry_button_clicked_cb), dd);
@@ -781,9 +783,9 @@ void dict_gui_create_main_window(DictData *dd)
 	g_signal_connect(dd->main_combo, "changed", G_CALLBACK(combo_changed_cb), dd);
 
 	dd->main_entry = gtk_bin_get_child(GTK_BIN(dd->main_combo));
-	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), _("Search term"));
-	gtk_entry_set_icon_from_stock(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_PRIMARY, GTK_STOCK_FIND);
-	gtk_entry_set_icon_from_stock(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_SECONDARY, GTK_STOCK_CLEAR);
+	gtk_entry_set_placeholder_text(GTK_ENTRY(dd->main_entry), _("Search term"));
+	gtk_entry_set_icon_from_icon_name(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_PRIMARY, "gtk-find");
+	gtk_entry_set_icon_from_icon_name(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_SECONDARY, "gtk-clear");
 	g_signal_connect(dd->main_entry, "changed", G_CALLBACK(entry_changed_cb), dd);
 	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
 	g_signal_connect(dd->main_entry, "icon-release", G_CALLBACK(entry_icon_release_cb), dd);
@@ -813,8 +815,11 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(sep);
 	gtk_box_pack_start(GTK_BOX(entry_box), sep, FALSE, FALSE, 2);
 
-	dd->close_button = gtk_button_new_from_stock(
-		(dd->is_plugin) ? GTK_STOCK_CLOSE : GTK_STOCK_QUIT);
+	dd->close_button = gtk_button_new_with_mnemonic ((dd->is_plugin) ?
+		_("_Close") : _("_Quit"));
+	gtk_button_set_image(GTK_BUTTON(dd->close_button),
+		gtk_image_new_from_icon_name((dd->is_plugin) ?
+			"gtk-close" : "gtk-quit", GTK_ICON_SIZE_BUTTON));
 	gtk_widget_show(dd->close_button);
 	gtk_box_pack_end(GTK_BOX(entry_box), dd->close_button, FALSE, FALSE, 0);
 

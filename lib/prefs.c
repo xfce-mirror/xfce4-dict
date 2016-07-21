@@ -265,7 +265,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	dialog = xfce_titled_dialog_new_with_buttons(
 		_("Dictionary"), GTK_WINDOW(parent),
 		GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_NO_SEPARATOR,
-		GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
+		"gtk-close", GTK_RESPONSE_OK,
 		NULL);
 
 	gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
