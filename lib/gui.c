@@ -226,8 +226,18 @@ static gboolean textview_motion_notify_event(GtkWidget *text_view, GdkEventMotio
 static gboolean textview_visibility_notify_event(GtkWidget *text_view, GdkEventVisibility *event)
 {
 	gint wx, wy, bx, by;
+	GdkDevice *pointer;
 
-	gdk_window_get_pointer(text_view->window, &wx, &wy, NULL);
+#if GTK_CHECK_VERSION (3,2,0)
+    GdkSeat *seat = gdk_display_get_default_seat (gdk_display_get_default ());
+    pointer = gdk_seat_get_pointer (seat);
+#else
+    GdkDeviceManager *devman = gdk_display_get_device_manager (gdk_display_get_default ());
+    pointer = gdk_device_manager_get_client_pointer (devman);
+#endif
+
+	gdk_window_get_device_position(gtk_widget_get_window (text_view),
+								   pointer, &wx, &wy, NULL);
 
 	gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(text_view),
 		GTK_TEXT_WINDOW_WIDGET, wx, wy, &bx, &by);
@@ -246,8 +256,18 @@ static gchar *textview_get_text_at_cursor(DictData *dd)
 	if (! gtk_text_buffer_get_selection_bounds(dd->main_textbuffer, &start, &end))
 	{
 		gint wx, wy, bx, by;
+		GdkDevice *pointer;
 
-		gdk_window_get_pointer(dd->main_textview->window, &wx, &wy, NULL);
+#if GTK_CHECK_VERSION (3,2,0)
+		GdkSeat *seat = gdk_display_get_default_seat (gdk_display_get_default ());
+		pointer = gdk_seat_get_pointer (seat);
+#else
+		GdkDeviceManager *devman = gdk_display_get_device_manager (gdk_display_get_default ());
+		pointer = gdk_device_manager_get_client_pointer (devman);
+#endif
+
+		gdk_window_get_device_position(gtk_widget_get_window (dd->main_textview),
+									   pointer, &wx, &wy, NULL);
 
 		gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(dd->main_textview),
 			GTK_TEXT_WINDOW_WIDGET, wx, wy, &bx, &by);
