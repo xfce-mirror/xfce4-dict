@@ -793,14 +793,7 @@ void dict_gui_create_main_window(DictData *dd)
 
 	update_search_button(dd, entry_box);
 
-	/* just make some space */
-	align = gtk_alignment_new(1, 0.5, 0, 0);
-	gtk_alignment_set_padding(GTK_ALIGNMENT(align), 0, 0, 10, 0);
-	gtk_widget_show(align);
-	gtk_container_add(GTK_CONTAINER(align), gtk_label_new(""));
-	gtk_box_pack_start(GTK_BOX(entry_box), align, FALSE, FALSE, 5);
-
-	sep = gtk_vseparator_new();
+	sep = gtk_separator_new(GTK_ORIENTATION_VERTICAL);
 	gtk_widget_show(sep);
 	gtk_box_pack_start(GTK_BOX(entry_box), sep, FALSE, FALSE, 2);
 
@@ -811,7 +804,7 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(button);
 	gtk_box_pack_start(GTK_BOX(entry_box), button, FALSE, FALSE, 2);
 
-	sep = gtk_vseparator_new();
+	sep = gtk_separator_new(GTK_ORIENTATION_VERTICAL);
 	gtk_widget_show(sep);
 	gtk_box_pack_start(GTK_BOX(entry_box), sep, FALSE, FALSE, 2);
 
