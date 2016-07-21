@@ -750,7 +750,7 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	dialog = gtk_dialog_new_with_buttons(text,
 				GTK_WINDOW(dd->window),
 				GTK_DIALOG_DESTROY_WITH_PARENT,
-				GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
+				"gtk-close", GTK_RESPONSE_CLOSE, NULL);
 	vbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
 	gtk_container_set_border_width(GTK_CONTAINER(vbox), 5);
 	gtk_container_add(GTK_CONTAINER(GTK_DIALOG(dialog)->vbox), vbox);

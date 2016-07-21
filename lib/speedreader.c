@@ -251,7 +251,8 @@ static gchar *sr_replace_unicode_characters(const gchar *text, gboolean mark_par
 static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state)
 {
 	gchar *title, *state_str, *name;
-	const gchar *button_label = GTK_STOCK_MEDIA_STOP;
+	const gchar *button_label = _("S_top");
+	const gchar *button_image = "gtk-media-stop";
 	gboolean pausable = TRUE;
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 
@@ -262,7 +263,8 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 			break;
 		case XSR_STATE_FINISHED:
 			state_str = _("Finished");
-			button_label = GTK_STOCK_GO_BACK;
+			button_label = _("_Back");
+			button_image = "gtk-go-back";
 			pausable = FALSE;
 			break;
 		default:
@@ -274,6 +276,8 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 
 	gtk_window_set_title(GTK_WINDOW(dialog), title);
 	gtk_button_set_label(GTK_BUTTON(priv->button_stop), button_label);
+	gtk_button_set_image(GTK_BUTTON(priv->button_stop),
+		gtk_image_new_from_icon_name(button_image, GTK_ICON_SIZE_MENU));
 	gtk_widget_set_sensitive(priv->button_pause, pausable);
 
 	g_free(title);
@@ -445,13 +449,13 @@ static void sr_pause(XfdSpeedReader *dialog, gboolean paused)
 	if (paused)
 	{
 		gtk_button_set_image(GTK_BUTTON(priv->button_pause),
-			gtk_image_new_from_stock(GTK_STOCK_MEDIA_PLAY, GTK_ICON_SIZE_MENU));
+			gtk_image_new_from_icon_name("gtk-media-play", GTK_ICON_SIZE_MENU));
 		gtk_button_set_label(GTK_BUTTON(priv->button_pause), XFD_TITLE_RESUME);
 	}
 	else
 	{
 		gtk_button_set_image(GTK_BUTTON(priv->button_pause),
-			gtk_image_new_from_stock(GTK_STOCK_MEDIA_PAUSE, GTK_ICON_SIZE_MENU));
+			gtk_image_new_from_icon_name("gtk-media-pause", GTK_ICON_SIZE_MENU));
 		gtk_button_set_label(GTK_BUTTON(priv->button_pause), XFD_TITLE_PAUSE);
 	}
 	/* set the new value */
@@ -504,8 +508,8 @@ static void sr_open_clicked_cb(GtkButton *button, XfdSpeedReader *window)
 	dialog = gtk_file_chooser_dialog_new(_("Choose a file to load"),
 		GTK_WINDOW(window),
 		GTK_FILE_CHOOSER_ACTION_OPEN,
-		GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-		GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+		"gtk-cancel", GTK_RESPONSE_CANCEL,
+		"gtk-open", GTK_RESPONSE_ACCEPT,
 		NULL);
 
 	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_ACCEPT);
@@ -647,30 +651,18 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 					GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 	gtk_container_add(GTK_CONTAINER(swin), textview);
 
-	button_open = gtk_button_new();
-	gtk_button_set_image(GTK_BUTTON(button_open),
-		gtk_image_new_from_stock(GTK_STOCK_OPEN, GTK_ICON_SIZE_MENU));
+	button_open = gtk_button_new_from_icon_name("gtk-open", GTK_ICON_SIZE_MENU);
 	g_signal_connect(button_open, "clicked", G_CALLBACK(sr_open_clicked_cb), dialog);
-#if GTK_CHECK_VERSION(2, 12, 0)
 	gtk_widget_set_tooltip_text(button_open, _("Load the contents of a file"));
-#endif
 
-	button_paste = gtk_button_new();
-	gtk_button_set_image(GTK_BUTTON(button_paste),
-		gtk_image_new_from_stock(GTK_STOCK_PASTE, GTK_ICON_SIZE_MENU));
+	button_paste = gtk_button_new_from_icon_name("gtk-paste", GTK_ICON_SIZE_MENU);
 	g_signal_connect(button_paste, "clicked", G_CALLBACK(sr_paste_clicked_cb), priv->buffer);
-#if GTK_CHECK_VERSION(2, 12, 0)
 	gtk_widget_set_tooltip_text(button_paste,
 		_("Clear the contents of the text field and paste the contents of the clipboard"));
-#endif
 
-	button_clear = gtk_button_new();
-	gtk_button_set_image(GTK_BUTTON(button_clear),
-		gtk_image_new_from_stock(GTK_STOCK_CLEAR, GTK_ICON_SIZE_MENU));
+	button_clear = gtk_button_new_from_icon_name("gtk-clear", GTK_ICON_SIZE_MENU);
 	g_signal_connect(button_clear, "clicked", G_CALLBACK(sr_clear_clicked_cb), priv->buffer);
-#if GTK_CHECK_VERSION(2, 12, 0)
 	gtk_widget_set_tooltip_text(button_clear, _("Clear the contents of the text field"));
-#endif
 
 	vbox_text_buttons = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_open, FALSE, FALSE, 0);
@@ -681,19 +673,16 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_box_pack_start(GTK_BOX(hbox_text), swin, TRUE, TRUE, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_text), vbox_text_buttons, FALSE, FALSE, 3);
 
-	priv->button_pause = gtk_dialog_add_button(GTK_DIALOG(dialog), _("P_ause"), RESPONSE_PAUSE);
+	priv->button_pause = gtk_dialog_add_button(GTK_DIALOG(dialog), "gtk-media-pause", RESPONSE_PAUSE);
 	priv->button_start = gtk_dialog_add_button(GTK_DIALOG(dialog), _("_Start"), RESPONSE_START);
-	priv->button_stop = gtk_dialog_add_button(GTK_DIALOG(dialog), GTK_STOCK_MEDIA_STOP, RESPONSE_STOP);
-	gtk_dialog_add_button(GTK_DIALOG(dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
+	priv->button_stop = gtk_dialog_add_button(GTK_DIALOG(dialog), "gtk-media-stop", RESPONSE_STOP);
+	gtk_dialog_add_button(GTK_DIALOG(dialog), "gtk-close", GTK_RESPONSE_CLOSE);
 
 	gtk_widget_hide(priv->button_pause);
 	gtk_widget_hide(priv->button_stop);
 
 	gtk_button_set_image(GTK_BUTTON(priv->button_start),
-		gtk_image_new_from_stock(GTK_STOCK_MEDIA_PLAY, GTK_ICON_SIZE_MENU));
-	gtk_button_set_image(GTK_BUTTON(priv->button_pause),
-		gtk_image_new_from_stock(GTK_STOCK_MEDIA_PAUSE, GTK_ICON_SIZE_MENU));
-	gtk_button_set_use_stock(GTK_BUTTON(priv->button_pause), TRUE);
+		gtk_image_new_from_icon_name("gtk-media-play", GTK_ICON_SIZE_MENU));
 
 	g_signal_connect(dialog, "response", G_CALLBACK(xfd_speed_reader_response_cb), NULL);
 

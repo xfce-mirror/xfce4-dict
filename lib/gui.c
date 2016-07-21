@@ -590,7 +590,7 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 	{
 		case DICTMODE_DICT:
 		{
-			image = gtk_image_new_from_stock(GTK_STOCK_FIND, GTK_ICON_SIZE_BUTTON);
+			image = gtk_image_new_from_icon_name("gtk-find", GTK_ICON_SIZE_BUTTON);
 			break;
 		}
 		case DICTMODE_WEB:
@@ -600,7 +600,7 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 		}
 		case DICTMODE_SPELL:
 		{
-			image = gtk_image_new_from_stock(GTK_STOCK_SPELL_CHECK, GTK_ICON_SIZE_BUTTON);
+			image = gtk_image_new_from_icon_name("gtk-spell-check", GTK_ICON_SIZE_BUTTON);
 			break;
 		}
 		default:
@@ -784,7 +784,7 @@ void dict_gui_create_main_window(DictData *dd)
 
 	button = gtk_button_new_with_mnemonic(_("Speed _Reader"));
 	gtk_button_set_image(GTK_BUTTON(button),
-		gtk_image_new_from_stock(GTK_STOCK_JUSTIFY_CENTER, GTK_ICON_SIZE_MENU));
+		gtk_image_new_from_icon_name("gtk-justify-center", GTK_ICON_SIZE_MENU));
 	g_signal_connect(button, "clicked", G_CALLBACK(speedreader_clicked_cb), dd);
 	gtk_widget_show(button);
 	gtk_box_pack_start(GTK_BOX(entry_box), button, FALSE, FALSE, 2);
