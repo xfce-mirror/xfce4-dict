@@ -80,10 +80,7 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 {
 	gint size;
 	gint bsize = wsize;
-
-#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 	bsize /= xfce_panel_plugin_get_nrows(plugin);
-#endif
 
 	size = bsize - 2 - (2 * MAX(dpd->panel_button->style->xthickness,
 									 dpd->panel_button->style->ythickness));
@@ -92,7 +89,6 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(dpd->panel_button_image), dpd->dd->icon);
 
-#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 	if (dpd->dd->show_panel_entry &&
 		xfce_panel_plugin_get_mode(dpd->plugin) != XFCE_PANEL_PLUGIN_MODE_VERTICAL)
 	{
@@ -109,45 +105,11 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 		gtk_widget_hide(dpd->dd->panel_entry);
 		xfce_panel_plugin_set_small(plugin, TRUE);
 	}
-#else
-	if (dpd->dd->show_panel_entry &&
-		xfce_panel_plugin_get_orientation(plugin) == GTK_ORIENTATION_HORIZONTAL)
-	{
-		gtk_widget_show(dpd->dd->panel_entry);
-		gtk_widget_set_size_request(dpd->dd->panel_entry, dpd->dd->panel_entry_size, -1);
-	}
-	else
-		gtk_widget_hide(dpd->dd->panel_entry);
-#endif
 
 	gtk_widget_set_size_request(dpd->panel_button, bsize, bsize);
 
 	return TRUE;
 }
-
-
-/* TODO remove me, unused
-static void dict_toggle_main_window(GtkWidget *button, DictData *dd)
-{
-	if (GTK_WIDGET_VISIBLE(dd->window))
-		gtk_widget_hide(dd->window);
-	else
-	{
-		const gchar *panel_text = "";
-
-		if (dd->panel_entry != NULL)
-			panel_text = gtk_entry_get_text(GTK_ENTRY(dd->panel_entry));
-
-		dict_show_main_window(dd);
-		if (NZV(panel_text))
-		{
-			dict_search_word(dd, panel_text);
-			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), panel_text);
-		}
-		gtk_widget_grab_focus(dd->main_entry);
-	}
-}
-*/
 
 
 static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *dpd)
@@ -272,20 +234,11 @@ static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictPanelData *dpd)
 }
 
 
-#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 static void dict_plugin_panel_change_mode(XfcePanelPlugin *plugin,
 												 XfcePanelPluginMode mode, DictPanelData *dpd)
 {
 	dict_plugin_panel_set_size(plugin, xfce_panel_plugin_get_size(plugin), dpd);
 }
-
-#else
-static void dict_plugin_panel_change_orientation(XfcePanelPlugin *plugin,
-												 GtkOrientation orientation, DictPanelData *dpd)
-{
-	dict_plugin_panel_set_size(plugin, xfce_panel_plugin_get_size(plugin), dpd);
-}
-#endif
 
 
 static void dict_plugin_style_set(XfcePanelPlugin *plugin, gpointer unused, DictPanelData *dpd)
@@ -441,11 +394,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->close_button, "clicked", G_CALLBACK(dict_plugin_close_button_clicked), dpd);
 	g_signal_connect(plugin, "free-data", G_CALLBACK(dict_plugin_free_data), dpd);
 	g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_plugin_panel_set_size), dpd);
-#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 	g_signal_connect(plugin, "mode-changed", G_CALLBACK(dict_plugin_panel_change_mode), dpd);
-#else
-	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_plugin_panel_change_orientation), dpd);
-#endif
 	g_signal_connect(plugin, "style-set", G_CALLBACK(dict_plugin_style_set), dpd);
 	g_signal_connect(plugin, "save", G_CALLBACK(dict_plugin_write_rc_file), dpd);
 	g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_plugin_properties_dialog), dpd);

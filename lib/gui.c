@@ -897,10 +897,8 @@ void dict_gui_create_main_window(DictData *dd)
 			G_CALLBACK(textview_populate_popup_cb), dd);
 	}
 	/* tooltips */
-#if GTK_CHECK_VERSION(2, 12, 0)
 	gtk_widget_set_has_tooltip(dd->main_textview, TRUE);
 	g_signal_connect(dd->main_textview, "query-tooltip", G_CALLBACK(textview_query_tooltip_cb), dd);
-#endif
 
 	gtk_widget_show(dd->main_textview);
 	gtk_container_add(GTK_CONTAINER(scrolledwindow_results), dd->main_textview);
@@ -966,11 +964,7 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 		"translator-credits", _("translator-credits"),
 		"license", XFCE_LICENSE_GPL,
 		"version", PACKAGE_VERSION,
-#if GTK_CHECK_VERSION(2,11,0)
-		"program-name", title,
-#else
-		"name", title,
-#endif
+		"program-name", _("Xfce4 Dictionary"),
 		  NULL);
 
 	if (logo != NULL)
