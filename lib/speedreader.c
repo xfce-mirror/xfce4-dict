@@ -708,8 +708,8 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 
 	gtk_widget_grab_focus(textview);
 
-	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), priv->first_page, TRUE, TRUE, 6);
-	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), priv->second_page, TRUE, TRUE, 6);
+	gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))), priv->first_page, TRUE, TRUE, 6);
+	gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))), priv->second_page, TRUE, TRUE, 6);
 
 	xfd_speed_reader_set_window_title(dialog, XSR_STATE_INITIAL);
 }

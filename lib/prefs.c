@@ -278,7 +278,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	GTK_WIDGET_UNSET_FLAGS(notebook, GTK_CAN_FOCUS);
 	gtk_widget_show(notebook);
 	g_object_set_data(G_OBJECT(dialog), "notebook", notebook);
-	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), notebook, FALSE, TRUE, 0);
+	gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))), notebook, FALSE, TRUE, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(notebook), 5);
 
 	/*

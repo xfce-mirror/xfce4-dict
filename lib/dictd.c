@@ -650,7 +650,7 @@ static void signal_cb(gint sig)
 }
 
 
-static void dictd_init()
+static void dictd_init(void)
 {
 #ifdef SIGALRM
 	static gboolean initialized = FALSE;
@@ -753,7 +753,7 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 				"gtk-close", GTK_RESPONSE_CLOSE, NULL);
 	vbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
 	gtk_container_set_border_width(GTK_CONTAINER(vbox), 5);
-	gtk_container_add(GTK_CONTAINER(GTK_DIALOG(dialog)->vbox), vbox);
+	gtk_container_add(GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), vbox);
 	gtk_box_set_spacing(GTK_BOX(vbox), 6);
 	g_free(text);
 

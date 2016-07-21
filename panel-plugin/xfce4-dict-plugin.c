@@ -184,7 +184,7 @@ static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 
 	win = gtk_invisible_new();
 	gtk_widget_realize(win);
-	xwin = GDK_WINDOW_XID(GTK_WIDGET(win)->window);
+	xwin = GDK_WINDOW_XID(gtk_widget_get_window (GTK_WIDGET(win)));
 
 	gscreen = gtk_widget_get_screen(win);
 	g_snprintf(selection_name, sizeof (selection_name),
@@ -334,7 +334,7 @@ static gboolean entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, Di
 	toplevel = gtk_widget_get_toplevel(entry);
 
 	/* Grab entry focus if possible */
-	if (event->button != 3 && toplevel && toplevel->window)
+	if (event->button != 3 && toplevel && gtk_widget_get_window (toplevel))
 		xfce_panel_plugin_focus_widget(dpd->plugin, entry);
 
 	return FALSE;
@@ -350,11 +350,11 @@ static void entry_changed_cb(GtkEditable *editable, DictPanelData *dpd)
 static void dict_plugin_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context,
 		gint x, gint y, GtkSelectionData *data, guint info, guint ltime, DictPanelData *dpd)
 {
-	if ((data != NULL) && (data->length >= 0) && (data->format == 8))
+	if ((data != NULL) && (gtk_selection_data_get_length(data) >= 0) && (gtk_selection_data_get_format(data) == 8))
 	{
 		if (widget == dpd->panel_button || widget == dpd->dd->panel_entry)
 		{
-			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), (const gchar*) data->data);
+			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), (const gchar*) gtk_selection_data_get_data(data));
 		}
 
 		dict_drag_data_received(widget, drag_context, x, y, data, info, ltime, dpd->dd);

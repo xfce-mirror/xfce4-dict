@@ -977,7 +977,7 @@ void dict_gui_query_geometry(DictData *dd)
 	gtk_window_get_position(GTK_WINDOW(dd->window),	&dd->geometry[0], &dd->geometry[1]);
 	gtk_window_get_size(GTK_WINDOW(dd->window),	&dd->geometry[2], &dd->geometry[3]);
 
-	if (gdk_window_get_state(dd->window->window) & GDK_WINDOW_STATE_MAXIMIZED)
+	if (gdk_window_get_state(gtk_widget_get_window(dd->window)) & GDK_WINDOW_STATE_MAXIMIZED)
 		dd->geometry[4] = 1;
 	else
 		dd->geometry[4] = 0;
