@@ -120,8 +120,8 @@ static gboolean textview_key_press_event(GtkWidget *text_view, GdkEventKey *even
 
 	switch (event->keyval)
 	{
-		case GDK_Return:
-		case GDK_KP_Enter:
+		case GDK_KEY_Return:
+		case GDK_KEY_KP_Enter:
 		{
 			gtk_text_buffer_get_iter_at_mark(dd->main_textbuffer, &iter,
 				gtk_text_buffer_get_insert(dd->main_textbuffer));
@@ -923,7 +923,7 @@ void dict_gui_create_main_window(DictData *dd)
 			gtk_window_maximize(GTK_WINDOW(dd->window));
 	}
 	/* quit on Escape */
-	gtk_widget_add_accelerator(dd->close_button, "clicked", accel_group, GDK_Escape, 0, 0);
+	gtk_widget_add_accelerator(dd->close_button, "clicked", accel_group, GDK_KEY_Escape, 0, 0);
 	gtk_window_add_accel_group(GTK_WINDOW(dd->window), accel_group);
 }
 
