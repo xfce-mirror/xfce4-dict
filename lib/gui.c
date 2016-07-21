@@ -803,9 +803,9 @@ static GtkWidget *create_file_menu(DictData *dd)
 void dict_gui_finalize(DictData *dd)
 {
 	if (hand_cursor)
-		gdk_cursor_unref(hand_cursor);
+		g_object_unref (hand_cursor);
 	if (regular_cursor)
-		gdk_cursor_unref(regular_cursor);
+		g_object_unref (regular_cursor);
 }
 
 
