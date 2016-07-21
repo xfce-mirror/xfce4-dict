@@ -898,8 +898,8 @@ void dict_gui_create_main_window(DictData *dd)
 
 	/* support for links (cross-references) for dictd responses */
 	{
-		hand_cursor = gdk_cursor_new(GDK_HAND2);
-		regular_cursor = gdk_cursor_new(GDK_XTERM);
+		hand_cursor = gdk_cursor_new_from_name(gdk_display_get_default(), "pointer");
+		regular_cursor = gdk_cursor_new_from_name(gdk_display_get_default(), "default");
 
 		g_signal_connect(dd->main_textview, "key-press-event",
 			G_CALLBACK(textview_key_press_event), dd);
