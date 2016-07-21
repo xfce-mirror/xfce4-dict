@@ -144,8 +144,7 @@ static gboolean open_browser(DictData *dd, const gchar *uri)
 	argv[1] = (gchar*) uri;
 	argv[2] = NULL;
 
-	result = gdk_spawn_on_screen(gtk_widget_get_screen(dd->window), NULL, argv, NULL,
-				G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL);
+	result = g_spawn_async(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL);
 
 	g_free(browser_path);
 
