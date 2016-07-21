@@ -580,7 +580,6 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_window_set_destroy_with_parent(GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_default_size(GTK_WINDOW(dialog), 400, 330);
 	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_CLOSE);
-	gtk_dialog_set_has_separator(GTK_DIALOG(dialog), FALSE);
 	gtk_widget_set_name(GTK_WIDGET(dialog), "Xfce4Dict");
 
 	/* First page */
