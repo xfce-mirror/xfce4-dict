@@ -368,8 +368,6 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 
 	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
-	g_thread_init(NULL);
-
 	dpd->dd = dict_create_dictdata();
 	dpd->dd->is_plugin = TRUE;
 	dpd->plugin = plugin;

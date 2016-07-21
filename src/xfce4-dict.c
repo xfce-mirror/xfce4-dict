@@ -83,7 +83,7 @@ static void pref_dialog_activated(GtkMenuItem *menuitem, DictData *dd)
 }
 
 
-static gchar get_flags()
+static gchar get_flags(void)
 {
 	gchar flags = 0;
 
@@ -172,8 +172,6 @@ gint main(gint argc, gchar *argv[])
 	dd = dict_create_dictdata();
 	dd->is_plugin = FALSE;
 	dd->verbose_mode = verbose_mode;
-
-	g_thread_init(NULL);
 
 	dict_read_rc_file(dd);
 
