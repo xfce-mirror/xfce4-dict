@@ -43,8 +43,6 @@ typedef struct
 	DictData *dd;
 	XfcePanelPlugin *plugin;
 
-	GtkTooltips *tooltips;
-
 	GtkWidget *panel_button;
 	GtkWidget *panel_button_image;
 	GtkWidget *box;
@@ -227,8 +225,6 @@ static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictPanelData *dpd)
 	if (dialog != NULL)
 		gtk_widget_destroy(dialog);
 
-	gtk_object_sink(GTK_OBJECT(dpd->tooltips));
-
 	dict_free_data(dpd->dd);
 	g_free(dpd);
 }
@@ -375,9 +371,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	dict_read_rc_file(dpd->dd);
 
 	dpd->panel_button = xfce_create_panel_button();
-
-	dpd->tooltips = gtk_tooltips_new();
-	gtk_tooltips_set_tip(dpd->tooltips, dpd->panel_button, _("Look up a word"), NULL);
+	gtk_widget_set_tooltip_text (dpd->panel_button, _("Look up a word"));
 
 	dpd->panel_button_image = gtk_image_new();
 	gtk_container_add(GTK_CONTAINER(dpd->panel_button), GTK_WIDGET(dpd->panel_button_image));
