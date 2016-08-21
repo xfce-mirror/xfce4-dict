@@ -55,13 +55,16 @@ G_DEFINE_TYPE(XfdWrapLabel, xfd_wrap_label, GTK_TYPE_LABEL);
 static void xfd_wrap_label_size_request		(GtkWidget *widget, GtkRequisition *req);
 static void xfd_wrap_label_size_allocate	(GtkWidget *widget, GtkAllocation *alloc);
 static void xfd_wrap_label_set_wrap_width	(GtkWidget *widget, gsize width);
+static void xfd_wrap_label_get_preferred_width	(GtkWidget *widget, gint *minimal_width, gint *natural_width);
+static void xfd_wrap_label_get_preferred_height	(GtkWidget *widget, gint *minimal_height, gint *natural_height);
 
 
 static void xfd_wrap_label_class_init(XfdWrapLabelClass *klass)
 {
 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS(klass);
 
-	widget_class->size_request = xfd_wrap_label_size_request;
+	widget_class->get_preferred_width = xfd_wrap_label_get_preferred_width;
+	widget_class->get_preferred_height = xfd_wrap_label_get_preferred_height;
 	widget_class->size_allocate = xfd_wrap_label_size_allocate;
 
 	g_type_class_add_private(klass, sizeof (XfdWrapLabelPrivate));
@@ -118,6 +121,25 @@ static void xfd_wrap_label_size_allocate(GtkWidget *widget, GtkAllocation *alloc
 	(* GTK_WIDGET_CLASS(xfd_wrap_label_parent_class)->size_allocate)(widget, alloc);
 
 	xfd_wrap_label_set_wrap_width(widget, alloc->width);
+}
+
+
+static void
+xfd_wrap_label_get_preferred_width (GtkWidget *widget, gint *minimal_width, gint *natural_width)
+{
+  GtkRequisition requisition;
+
+  xfd_wrap_label_size_request (widget, &requisition);
+  *minimal_width = *natural_width = requisition.width;
+}
+
+static void
+xfd_wrap_label_get_preferred_height (GtkWidget *widget, gint *minimal_height, gint *natural_height)
+{
+  GtkRequisition requisition;
+
+  xfd_wrap_label_size_request (widget, &requisition);
+  *minimal_height = *natural_height = requisition.height;
 }
 
 
