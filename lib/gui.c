@@ -558,7 +558,7 @@ static void combo_changed_cb(GtkComboBox *combo, DictData *dd)
 
 	if (gtk_combo_box_get_active_iter(combo, &iter))
 	{
-		gchar *text = gtk_combo_box_get_active_text(combo);
+		gchar *text = gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(combo));
 		dict_search_word(dd, text);
 		g_free(text);
 	}
@@ -842,7 +842,7 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(label_box);
 	gtk_box_pack_start(GTK_BOX(entry_box), label_box, TRUE, TRUE, 5);
 
-	dd->main_combo = gtk_combo_box_entry_new_text();
+	dd->main_combo = gtk_combo_box_text_new_with_entry();
 	gtk_widget_show(dd->main_combo);
 	gtk_box_pack_start(GTK_BOX(label_box), dd->main_combo, TRUE, TRUE, 0);
 	g_signal_connect(dd->main_combo, "changed", G_CALLBACK(combo_changed_cb), dd);

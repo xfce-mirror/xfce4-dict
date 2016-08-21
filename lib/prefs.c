@@ -92,8 +92,8 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 
 	/* check some values before actually saving the settings in case we need to return to
 	 * the dialog */
-	dictionary = gtk_combo_box_get_active_text(
-		GTK_COMBO_BOX(g_object_get_data(G_OBJECT(dlg), "dict_combo")));
+	dictionary = gtk_combo_box_text_get_active_text(
+		GTK_COMBO_BOX_TEXT(g_object_get_data(G_OBJECT(dlg), "dict_combo")));
 	if (! NZV(dictionary) || dictionary[0] == '-')
 	{
 		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("You have chosen an invalid dictionary."));
@@ -122,8 +122,8 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 	gtk_widget_set_sensitive(dd->radio_button_web, NZV(dd->web_url));
 
 	/* MODE SPELL */
-	dictionary = gtk_combo_box_get_active_text(
-			GTK_COMBO_BOX(g_object_get_data(G_OBJECT(dlg), "spell_combo")));
+	dictionary = gtk_combo_box_text_get_active_text(
+			GTK_COMBO_BOX_TEXT(g_object_get_data(G_OBJECT(dlg), "spell_combo")));
 	if (NZV(dictionary))
 	{
 		g_free(dd->spell_dictionary);
@@ -476,11 +476,11 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		/* dictionary */
 		label3 = gtk_label_new_with_mnemonic(_("Dictionary:"));
 
-		dict_combo = gtk_combo_box_new_text();
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo), _("* (use all)"));
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo),
+		dict_combo = gtk_combo_box_text_new();
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo), _("* (use all)"));
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo),
 											_("! (use all, stop after first match)"));
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo), "----------------");
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo), "----------------");
 		if (dd->dictionary != NULL)
 		{
 			if (dd->dictionary[0] == '*')
@@ -489,7 +489,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 				gtk_combo_box_set_active(GTK_COMBO_BOX(dict_combo), 1);
 			else
 			{
-				gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo), dd->dictionary);
+				gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo), dd->dictionary);
 				gtk_combo_box_set_active(GTK_COMBO_BOX(dict_combo), 3);
 			}
 		}
@@ -599,9 +599,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	 */
 #define PAGE_SPELL /* only for navigation in Geany's symbol list ;-) */
 	{
-		GtkWidget *grid, *label_help, *spell_entry, *spell_combo, *button_refresh, *image, *icon;
-		GtkListStore *store;
-		GtkCellRenderer *renderer;
+		GtkWidget *grid, *label_help, *spell_entry, *spell_combo, *button_refresh, *icon;
 
 		notebook_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_widget_show(notebook_vbox);
@@ -637,13 +635,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		label2 = gtk_label_new_with_mnemonic(_("Dictionary:"));
 		gtk_widget_show(label2);
 
-		store = gtk_list_store_new(1, G_TYPE_STRING);
-		spell_combo = gtk_combo_box_new_with_model(GTK_TREE_MODEL(store));
+		spell_combo = gtk_combo_box_text_new ();
 		g_object_set_data(G_OBJECT(spell_combo), "spell_entry", spell_entry);
-
-		renderer = gtk_cell_renderer_text_new();
-		gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(spell_combo), renderer, TRUE);
-		gtk_cell_layout_add_attribute(GTK_CELL_LAYOUT(spell_combo), renderer, "text", 0);
 
 		dict_spell_get_dictionaries(dd, spell_combo);
 		g_signal_connect(spell_combo, "changed", G_CALLBACK(spell_combo_changed_cb), dd);
@@ -658,7 +651,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(spell_entry), "spell_combo", spell_combo);
 		g_object_set_data(G_OBJECT(dialog), "spell_combo", spell_combo);
 		g_object_set_data(G_OBJECT(dialog), "spell_entry", spell_entry);
-		g_object_unref(store);
 
 		spell_entry_focus_cb(GTK_ENTRY(spell_entry), NULL, icon); /* initially set the icon */
 

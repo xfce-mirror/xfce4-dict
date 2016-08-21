@@ -241,7 +241,7 @@ void dict_search_word(DictData *dd, const gchar *word)
 	}
 	/* remove leading and trailing spaces */
 	g_strstrip(dd->searched_word);
-	gtk_combo_box_prepend_text(GTK_COMBO_BOX(dd->main_combo), dd->searched_word);
+	gtk_combo_box_text_prepend_text(GTK_COMBO_BOX_TEXT(dd->main_combo), dd->searched_word);
 
 	dict_gui_clear_text_buffer(dd);
 

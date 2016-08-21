@@ -847,7 +847,7 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	i = gtk_tree_model_iter_n_children(gtk_combo_box_get_model(GTK_COMBO_BOX(dict_combo)), NULL);
 	for (i -= 1; i > 2; i--)  /* first three entries (*, ! and ----) should always exist */
 	{
-		gtk_combo_box_remove_text(GTK_COMBO_BOX(dict_combo), i);
+		gtk_combo_box_text_remove(GTK_COMBO_BOX_TEXT(dict_combo), i);
 	}
 
 	/* parse output */
@@ -859,7 +859,7 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	i = 0;
 	while (i < max_lines && lines[i][0] != '.')
 	{
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo), lines[i]);
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo), lines[i]);
 		i++;
 	}
 
