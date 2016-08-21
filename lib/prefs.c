@@ -525,7 +525,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_set_hexpand(server_entry, TRUE);
 
 		gtk_grid_attach(GTK_GRID(grid), button_get_info, 2, 0, 1, 1);
-		gtk_widget_set_hexpand(button_get_info, TRUE);
 
 		gtk_grid_attach(GTK_GRID(grid), label2, 0, 1, 1, 1);
 		gtk_widget_set_valign (label2, GTK_ALIGN_CENTER);
@@ -642,7 +641,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_signal_connect(spell_combo, "changed", G_CALLBACK(spell_combo_changed_cb), dd);
 		gtk_widget_show(spell_combo);
 
-		button_refresh = gtk_button_new_from_icon_name("gtk-info", GTK_ICON_SIZE_BUTTON);
+		button_refresh = gtk_button_new_from_icon_name("gtk-refresh", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_refresh);
 		g_object_set_data(G_OBJECT(button_refresh), "spell_combo", spell_combo);
 		g_signal_connect(button_refresh, "clicked", G_CALLBACK(button_dict_refresh_cb), dd);
