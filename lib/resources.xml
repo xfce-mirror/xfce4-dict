@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/org/xfce/dict">
+        <file alias="icon">xfce4-dict.svg</file>
+    </gresource>
+</gresources>

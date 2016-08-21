@@ -11,6 +11,8 @@ libdict_la_SOURCES =							\
 	libdict.h									\
 	prefs.c										\
 	prefs.h										\
+	resources.c								\
+	resources.h								\
 	speedreader.c								\
 	speedreader.h								\
 	spell.c										\
@@ -30,19 +32,12 @@ libdict_la_LIBADD =								\
 	$(LIBXFCE4UI_LIBS)							\
 	@GTHREAD_LIBS@
 
+DISTCLEANFILES =		\
+	resources.c				\
+	resources.h
 
-noinst_DATA = 									\
-	inline-icon.h
+resources.c:
+	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-source --c-name dict
 
-EXTRA_DIST = 									\
-	inline-icon.h
-
-if MAINTAINER_MODE
-# the target isn't named as the header file on
-# purpose to avoid automatic creation of the file
-# while building
-inline-icon: $(top_srcdir)/xfce4-dict.svg
-	gdk-pixbuf-csource --raw					\
-	--name=dict_icon_data						\
-	$(top_srcdir)/xfce4-dict.svg > $(srcdir)/inline-icon.h
-endif
+resources.h:
+	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-header --c-name dict

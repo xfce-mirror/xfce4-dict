@@ -32,7 +32,7 @@
 
 #include "common.h"
 #include "gui.h"
-#include "inline-icon.h"
+#include "resources.h"
 #include "speedreader.h"
 
 
@@ -384,7 +384,7 @@ static void textview_populate_popup_cb(GtkTextView *textview, GtkMenu *menu, Dic
 	gtk_container_add (GTK_CONTAINER (box), icon);
 	gtk_container_add (GTK_CONTAINER (box), label);
 	gtk_container_add (GTK_CONTAINER (search), box);
-	
+
 	gtk_widget_show_all(search);
 	gtk_widget_set_sensitive(GTK_WIDGET(search), textview_is_text_at_cursor(dd));
 	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), search);
@@ -684,12 +684,6 @@ static void search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *d
 }
 
 
-const guint8 *dict_gui_get_icon_data(void)
-{
-	return dict_icon_data;
-}
-
-
 static void speedreader_clicked_cb(GtkButton *button, DictData *dd)
 {
 	GtkWidget *dialog = xfd_speed_reader_new(GTK_WINDOW(dd->window), dd);
@@ -812,7 +806,7 @@ void dict_gui_finalize(DictData *dd)
 void dict_gui_create_main_window(DictData *dd)
 {
 	GtkWidget *main_box, *entry_box, *label_box;
-	GtkWidget *sep, *align, *scrolledwindow_results;
+	GtkWidget *sep, *scrolledwindow_results;
 	GdkPixbuf *icon;
 	GtkWidget *method_chooser, *radio, *label, *button;
 	GtkAccelGroup *accel_group = gtk_accel_group_new();
@@ -822,7 +816,8 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_window_set_default_size(GTK_WINDOW(dd->window), 580, 360);
 	gtk_widget_set_name(dd->window, "Xfce4Dict");
 
-	icon = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
+	dict_get_resource();
+	icon = gdk_pixbuf_new_from_resource("/org/xfce/dict/icon", NULL);
 	gtk_window_set_icon(GTK_WINDOW(dd->window), icon);
 	g_object_unref(icon);
 
@@ -1033,7 +1028,7 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
                               "Harald Judt <hjudt@xfce.org>",
                               NULL };
 	const gchar *title = _("Xfce4 Dictionary");
-	GdkPixbuf *logo = gdk_pixbuf_new_from_inline(-1, dict_icon_data, FALSE, NULL);
+	GdkPixbuf *logo = gdk_pixbuf_new_from_resource("/org/xfce/dict/icon", NULL);
 
 	gtk_about_dialog_set_email_hook(about_activate_link, NULL, NULL);
 	gtk_about_dialog_set_url_hook(about_activate_link, NULL, NULL);

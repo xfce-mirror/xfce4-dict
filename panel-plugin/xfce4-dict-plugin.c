@@ -36,6 +36,7 @@
 #include <string.h>
 
 #include "libdict.h"
+#include "resources.h"
 
 
 typedef struct
@@ -51,39 +52,21 @@ typedef struct
 
 static gboolean entry_is_dirty = FALSE;
 
-static GdkPixbuf *dict_plugin_load_and_scale(const guint8 *data, gint dstw, gint dsth)
-{
-	GdkPixbuf *pb, *pb_scaled;
-	gint pb_w, pb_h;
-
-	pb = gdk_pixbuf_new_from_inline(-1, data, FALSE, NULL);
-	pb_w = gdk_pixbuf_get_width(pb);
-	pb_h = gdk_pixbuf_get_height(pb);
-
-	if (dstw == pb_w && dsth == pb_h)
-		return(pb);
-	else if (dstw < 0)
-		dstw = (dsth * pb_w) / pb_h;
-	else if (dsth < 0)
-		dsth = (dstw * pb_h) / pb_w;
-
-	pb_scaled = gdk_pixbuf_scale_simple(pb, dstw, dsth, GDK_INTERP_HYPER);
-	g_object_unref(G_OBJECT(pb));
-
-	return pb_scaled;
-}
-
 
 static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, DictPanelData *dpd)
 {
+  GtkBorder border;
+	GtkStyleContext *context;
 	gint size;
 	gint bsize = wsize;
-	bsize /= xfce_panel_plugin_get_nrows(plugin);
+	bsize /= xfce_panel_plugin_get_nrows (plugin);
 
-	size = bsize - 2 - (2 * MAX(dpd->panel_button->style->xthickness,
-									 dpd->panel_button->style->ythickness));
+	context = gtk_widget_get_style_context (GTK_WIDGET (dpd->panel_button));
+	gtk_style_context_get_border (context, gtk_widget_get_state_flags (GTK_WIDGET (dpd->panel_button)), &border);
+	size = bsize - 2 * MAX (border.left + border.right, border.top + border.bottom);
 
-	dpd->dd->icon = dict_plugin_load_and_scale(dict_gui_get_icon_data(), size, -1);
+	dpd->dd->icon = gdk_pixbuf_new_from_resource_at_scale("/org/xfce/dict/icon",
+										size, -1, TRUE, NULL);
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(dpd->panel_button_image), dpd->dd->icon);
 
@@ -360,6 +343,7 @@ static void dict_plugin_drag_data_received(GtkWidget *widget, GdkDragContext *dr
 
 static void dict_plugin_construct(XfcePanelPlugin *plugin)
 {
+	GtkCssProvider *css_provider;
 	DictPanelData *dpd = g_new0(DictPanelData, 1);
 
 	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
@@ -375,6 +359,13 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 
 	dpd->panel_button_image = gtk_image_new();
 	gtk_container_add(GTK_CONTAINER(dpd->panel_button), GTK_WIDGET(dpd->panel_button_image));
+
+	/* Setup Gtk style */
+	css_provider = gtk_css_provider_new ();
+	gtk_css_provider_load_from_data (css_provider, "button { padding: 1px; border-width: 1px;}", -1, NULL);
+	gtk_style_context_add_provider (GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (dpd->panel_button))),
+																	GTK_STYLE_PROVIDER (css_provider),
+																	GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
 	gtk_widget_show_all(dpd->panel_button);
 
