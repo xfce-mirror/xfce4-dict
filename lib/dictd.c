@@ -751,24 +751,25 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 				GTK_WINDOW(dd->window),
 				GTK_DIALOG_DESTROY_WITH_PARENT,
 				"gtk-close", GTK_RESPONSE_CLOSE, NULL);
-	vbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
 	gtk_container_set_border_width(GTK_CONTAINER(vbox), 5);
 	gtk_container_add(GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), vbox);
 	gtk_box_set_spacing(GTK_BOX(vbox), 6);
 	g_free(text);
 
-	gtk_window_set_default_size(GTK_WINDOW(dialog), 500, 400);
+	gtk_window_set_default_size(GTK_WINDOW(dialog), 550, 400);
 	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_CLOSE);
 
 	text = g_strconcat("<tt>", buffer, "</tt>", NULL);
 	label = gtk_label_new(text);
 	gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
+	gtk_widget_set_vexpand(label, TRUE);
 	g_free(text);
 
 	swin = gtk_scrolled_window_new(NULL, NULL);
 	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(swin),
 		GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-	gtk_scrolled_window_add_with_viewport(GTK_SCROLLED_WINDOW(swin), label);
+	gtk_container_add(GTK_CONTAINER(swin), label);
 
 	gtk_box_pack_start(GTK_BOX(vbox), swin, TRUE, TRUE, 0);
 
@@ -870,4 +871,3 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	 * the list and we also don't know whether it exists at all, and I don't walk through the list */
 	gtk_combo_box_set_active(GTK_COMBO_BOX(dict_combo), 0);
 }
-
