@@ -11,8 +11,8 @@ libdict_la_SOURCES =							\
 	libdict.h									\
 	prefs.c										\
 	prefs.h										\
-	resources.c								\
-	resources.h								\
+	resources.c									\
+	resources.h									\
 	speedreader.c								\
 	speedreader.h								\
 	spell.c										\
@@ -32,12 +32,15 @@ libdict_la_LIBADD =								\
 	$(LIBXFCE4UI_LIBS)							\
 	@GTHREAD_LIBS@
 
-DISTCLEANFILES =		\
-	resources.c				\
+DISTCLEANFILES =								\
+	resources.c									\
 	resources.h
+
+gui.c: resources.c resources.h
 
 resources.c:
 	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-source --c-name dict
 
 resources.h:
 	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-header --c-name dict
+
