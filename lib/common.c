@@ -518,27 +518,13 @@ void dict_free_data(DictData *dd)
 }
 
 
-void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gint x, gint y,
+void dict_drag_data_received(GtkWidget *widget, GdkDragContext *context, gint x, gint y,
 							 GtkSelectionData *data, guint info, guint ltime, DictData *dd)
 {
-	if ((data != NULL) && (data->length >= 0) && (data->format == 8))
+	if ((data != NULL) && (gtk_selection_data_get_length(data) >= 0) && (gtk_selection_data_get_format(data) == 8))
 	{
-/*
-		GtkWidget *source = gtk_drag_get_source_widget(drag_context);
-
-		if (widget == dd->main_entry &&
-			source != NULL &&
-			gtk_widget_get_toplevel(source) == dd->window)
-		{
-			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
-		}
-		else
-*/		{
-			dict_search_word(dd, (const gchar*) data->data);
-		}
-
-		drag_context->action = GDK_ACTION_COPY;
-		gtk_drag_finish(drag_context, TRUE, FALSE, ltime);
+		dict_search_word(dd, (const gchar*) gtk_selection_data_get_data (data));
+		gtk_drag_finish(context, TRUE, FALSE, ltime);
 	}
 }
 
