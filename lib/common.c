@@ -302,17 +302,6 @@ static void parse_geometry(DictData *dd, const gchar *str)
 }
 
 
-static gdouble scale_round(gdouble val, gdouble factor)
-{
-	/*val = floor(val * factor + 0.5);*/
-	val = floor(val);
-	val = MAX(val, 0);
-	val = MIN(val, factor);
-
-	return val;
-}
-
-
 static gchar *get_spell_program(void)
 {
 	gchar *path;
