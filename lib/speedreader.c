@@ -601,6 +601,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	label_intro = xfd_wrap_label_new(
 		_("This is an easy speed reading utility to help train you to read faster. "
 		  "It does this by flashing words at a rapid rate on the screen."));
+	gtk_label_set_line_wrap ( GTK_LABEL (label_intro), TRUE);
 
 	label_words = gtk_label_new_with_mnemonic(_("_Words per Minute:"));
 	gtk_widget_set_halign(label_words, GTK_ALIGN_END);
@@ -744,4 +745,3 @@ GtkWidget *xfd_speed_reader_new(GtkWindow *parent, DictData *dd)
 
 	return dialog;
 }
-
