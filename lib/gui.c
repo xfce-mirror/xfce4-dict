@@ -1014,24 +1014,15 @@ void dict_gui_show_main_window(DictData *dd)
 }
 
 
-static void about_activate_link(GtkAboutDialog *about, const gchar *ref, gpointer data)
-{
-	gchar *cmd = g_strconcat("xdg-open ", ref, NULL);
-	g_spawn_command_line_async(cmd, NULL);
-	g_free(cmd);
-}
-
-
 void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 {
 	const gchar *authors[]= { "Enrico Tröger <enrico@xfce.org>",
-                              "Harald Judt <hjudt@xfce.org>",
-                              NULL };
-	const gchar *title = _("Xfce4 Dictionary");
+                            "Harald Judt <hjudt@xfce.org>",
+                            "André Miranda <andre42m@gmail.com>",
+                            NULL };
+
 	GdkPixbuf *logo = gdk_pixbuf_new_from_resource("/org/xfce/dict/icon", NULL);
 
-	gtk_about_dialog_set_email_hook(about_activate_link, NULL, NULL);
-	gtk_about_dialog_set_url_hook(about_activate_link, NULL, NULL);
 	gtk_show_about_dialog(GTK_WINDOW(dd->window),
 		"destroy-with-parent", TRUE,
 		"authors", authors,
