@@ -227,14 +227,10 @@ static gboolean textview_visibility_notify_event(GtkWidget *text_view, GdkEventV
 {
 	gint wx, wy, bx, by;
 	GdkDevice *pointer;
+	GdkSeat *seat;
 
-#if GTK_CHECK_VERSION (3,2,0)
-    GdkSeat *seat = gdk_display_get_default_seat (gdk_display_get_default ());
-    pointer = gdk_seat_get_pointer (seat);
-#else
-    GdkDeviceManager *devman = gdk_display_get_device_manager (gdk_display_get_default ());
-    pointer = gdk_device_manager_get_client_pointer (devman);
-#endif
+	seat = gdk_display_get_default_seat (gdk_display_get_default ());
+	pointer = gdk_seat_get_pointer (seat);
 
 	gdk_window_get_device_position(gtk_widget_get_window (text_view),
 								   pointer, &wx, &wy, NULL);
@@ -257,14 +253,10 @@ static gchar *textview_get_text_at_cursor(DictData *dd)
 	{
 		gint wx, wy, bx, by;
 		GdkDevice *pointer;
+		GdkSeat *seat;
 
-#if GTK_CHECK_VERSION (3,2,0)
-		GdkSeat *seat = gdk_display_get_default_seat (gdk_display_get_default ());
+		seat = gdk_display_get_default_seat (gdk_display_get_default ());
 		pointer = gdk_seat_get_pointer (seat);
-#else
-		GdkDeviceManager *devman = gdk_display_get_device_manager (gdk_display_get_default ());
-		pointer = gdk_device_manager_get_client_pointer (devman);
-#endif
 
 		gdk_window_get_device_position(gtk_widget_get_window (dd->main_textview),
 									   pointer, &wx, &wy, NULL);
@@ -412,7 +404,6 @@ static gboolean textview_button_press_cb(GtkTextView *view, GdkEventButton *even
 }
 
 
-#if GTK_CHECK_VERSION(2, 12, 0)
 static gboolean textview_query_tooltip_cb(GtkWidget *widget, gint x, gint y, gboolean keyboard_mode,
 										  GtkTooltip *tooltip, DictData *dd)
 {
@@ -444,7 +435,6 @@ static gboolean textview_query_tooltip_cb(GtkWidget *widget, gint x, gint y, gbo
 	}
 	return FALSE;
 }
-#endif
 
 
 static void textview_apply_or_remove_tags(GtkTextBuffer *buffer, const gchar *tag,

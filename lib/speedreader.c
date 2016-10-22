@@ -356,6 +356,8 @@ static void sr_start(XfdSpeedReader *dialog)
 	const gchar *fontname;
 	gchar *text, *cleaned_text;
 	GtkTextIter start, end;
+	gchar *css;
+	GtkCssProvider *provider;
 
 	/* clear the label text */
 	gtk_label_set_text(GTK_LABEL(priv->display_label), NULL);
@@ -380,10 +382,6 @@ static void sr_start(XfdSpeedReader *dialog)
 	/* set the font */
 	fontname = gtk_font_button_get_font_name(GTK_FONT_BUTTON(priv->button_font));
 
-#if GTK_CHECK_VERSION (3, 16, 0)
-	gchar *css;
-	GtkCssProvider *provider;
-
 	css = g_strdup_printf("* { font: %s; }", fontname);
 	provider = gtk_css_provider_new ();
 	gtk_css_provider_load_from_data (provider, css, -1, NULL);
@@ -392,12 +390,6 @@ static void sr_start(XfdSpeedReader *dialog)
 			GTK_STYLE_PROVIDER(provider),
 			GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_free(css);
-#else
-	PangoFontDescription *pfd;
-	pfd = pango_font_description_from_string(fontname);
-	gtk_widget_override_font(datetime->time_label, pfd);
-	pango_font_description_free(pfd);
-#endif
 
 	/* word grouping */
 	grouping = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(priv->spin_grouping));
