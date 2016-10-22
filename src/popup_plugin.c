@@ -26,6 +26,9 @@
 #include "libdict.h"
 
 
+gboolean dict_find_panel_plugin(gchar flags, const gchar *text);
+
+
 gboolean dict_find_panel_plugin(gchar flags, const gchar *text)
 {
 	gboolean  ret = FALSE;

@@ -351,7 +351,6 @@ void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo)
 		gchar *tmp = NULL;
 		gchar *cmd, *locale_cmd;
 		gboolean use_enchant = FALSE;
-		GtkTreeIter iter;
 
 		if (strstr(entry_cmd, "enchant") != NULL)
 		{
