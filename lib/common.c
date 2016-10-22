@@ -38,6 +38,7 @@
 #include "spell.h"
 #include "dictd.h"
 #include "gui.h"
+#include "dbus.h"
 
 
 
@@ -217,7 +218,8 @@ void dict_search_word(DictData *dd, const gchar *word)
 	/* sanity checks */
 	if (! NZV(word))
 	{
-		dict_gui_status_add(dd, _("Invalid input"));
+		/* Just show the main window */
+		dict_gui_show_main_window(dd);
 		return;
 	}
 
@@ -590,4 +592,36 @@ gchar *dict_get_clipboard_contents(void)
 		text = gtk_clipboard_wait_for_text(gtk_clipboard_get(GDK_SELECTION_PRIMARY));
 
 	return text;
+}
+
+
+static gboolean on_handle_search(Dict *skeleton, GDBusMethodInvocation *invocation,
+	const gchar *arg_phrase, gpointer user_data)
+{
+	dict_search_word((DictData *) user_data, arg_phrase);
+	dict_complete_search(skeleton, invocation);
+	return TRUE;
+}
+
+
+static void on_name_acquired(GDBusConnection *connection, const gchar *name,
+	gpointer user_data)
+{
+	Dict *skeleton = dict_skeleton_new();
+	g_signal_connect (skeleton, "handle-search", G_CALLBACK(on_handle_search), user_data);
+	g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+		connection, "/org/xfce/Dict", NULL);
+}
+
+
+void dict_acquire_dbus_name(DictData *dd)
+{
+	g_bus_own_name(G_BUS_TYPE_SESSION,
+      "org.xfce.Dict",
+      G_BUS_NAME_OWNER_FLAGS_NONE,
+      NULL,
+      on_name_acquired,
+      NULL,
+      dd,
+      NULL);
 }

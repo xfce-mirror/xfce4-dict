@@ -197,6 +197,8 @@ gint main(gint argc, gchar *argv[])
 
 	g_free(search_text);
 
+	dict_acquire_dbus_name(dd);
+
 	gtk_widget_show_all(dd->window);
 
 	gtk_main();

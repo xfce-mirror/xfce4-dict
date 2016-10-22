@@ -4,6 +4,8 @@ noinst_LTLIBRARIES = 							\
 libdict_la_SOURCES =							\
 	common.c									\
 	common.h									\
+	dbus.c										\
+	dbus.h										\
 	dictd.c										\
 	dictd.h										\
 	gui.c										\
@@ -33,14 +35,18 @@ libdict_la_LIBADD =								\
 	@GTHREAD_LIBS@
 
 DISTCLEANFILES =								\
-	resources.c									\
-	resources.h
+	resources.c										\
+	resources.h										\
+	dbus.c												\
+	dbus.h
 
-gui.c: resources.c resources.h
+gui.c: resources.c dbus.c
 
-resources.c:
+resources.c: resources.h
 	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-source --c-name dict
 
 resources.h:
 	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-header --c-name dict
 
+dbus.c:
+	gdbus-codegen --interface-prefix org.xfce --generate-c-code dbus dbus.xml

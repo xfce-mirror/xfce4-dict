@@ -124,37 +124,6 @@ static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *d
 }
 
 
-/* Handle user messages (xfce4-dict) */
-static gboolean dict_plugin_message_received(GtkWidget *w, GdkEventClient *ev, DictPanelData *dpd)
-{
-	if (ev->data_format == 8 && strncmp(ev->data.b, "xfdict", 6) == 0)
-	{
-		gchar flags = ev->data.b[6];
-		gchar *tts = ev->data.b + 7;
-
-		dpd->dd->mode_in_use = dict_set_search_mode_from_flags(dpd->dd->mode_in_use, flags);
-
-		if (NZV(tts))
-		{
-			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), tts);
-			dict_search_word(dpd->dd, tts);
-		}
-		else if (flags & DICT_FLAGS_FOCUS_PANEL_ENTRY && dpd->dd->show_panel_entry)
-		{
-			xfce_panel_plugin_focus_widget(dpd->plugin, dpd->dd->panel_entry);
-		}
-		else
-		{
-			dict_plugin_panel_button_clicked(NULL, dpd);
-		}
-
-		return TRUE;
-	}
-
-	return FALSE;
-}
-
-
 static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 {
 	GdkScreen *gscreen;
@@ -180,8 +149,6 @@ static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 
 	XSelectInput(gdk_x11_display_get_xdisplay(gdk_display_get_default()), xwin, PropertyChangeMask);
 	XSetSelectionOwner(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_atom, xwin, GDK_CURRENT_TIME);
-
-	g_signal_connect(win, "client-event", G_CALLBACK(dict_plugin_message_received), dpd);
 
 	return TRUE;
 }
@@ -418,6 +385,8 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	gtk_drag_dest_add_text_targets(GTK_WIDGET(dpd->panel_button));
 	g_signal_connect(dpd->panel_button, "drag-data-received", G_CALLBACK(dict_plugin_drag_data_received), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_plugin_drag_data_received), dpd);
+
+	dict_acquire_dbus_name(dpd->dd);
 
 	dict_gui_status_add(dpd->dd, _("Ready"));
 }
