@@ -140,7 +140,7 @@ gint main(gint argc, gchar *argv[])
 	if (show_version)
 	{
 		g_print("%s %s (Xfce %s)\n\n", PACKAGE, PACKAGE_VERSION, xfce_version_string());
-		g_print("%s\n", "Copyright (c) 2006-2015");
+		g_print("%s\n", "Copyright (c) 2006-2016");
 		g_print("\tEnrico Tröger <enrico@xfce.org>\n\n");
 		g_print(_("Please report bugs to <%s>."), PACKAGE_BUGREPORT);
 		g_print("\n");

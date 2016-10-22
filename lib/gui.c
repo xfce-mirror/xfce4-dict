@@ -1027,7 +1027,7 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 		"destroy-with-parent", TRUE,
 		"authors", authors,
 		"comments", _("A client program to query different dictionaries."),
-		"copyright", _("Copyright \302\251 2006-2015 Xfce Development Team"),
+		"copyright", _("Copyright \302\251 2006-2016 Xfce Development Team"),
 		"website", "http://goodies.xfce.org/projects/applications/xfce4-dict",
 		"logo", logo,
 		"translator-credits", _("translator-credits"),
