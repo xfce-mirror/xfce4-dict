@@ -391,10 +391,10 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->pref_menu_item, "activate", G_CALLBACK(dict_plugin_properties_dialog), dpd);
 
 	/* panel entry */
-	dpd->dd->panel_entry = gtk_entry_new();
+	dpd->dd->panel_entry = gtk_search_entry_new();
 	gtk_entry_set_icon_from_icon_name(GTK_ENTRY(dpd->dd->panel_entry), GTK_ENTRY_ICON_SECONDARY, "gtk-clear");
 	gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), 25);
-	gtk_entry_set_text(GTK_ENTRY(dpd->dd->panel_entry), _("Search term"));
+	gtk_entry_set_placeholder_text(GTK_ENTRY(dpd->dd->panel_entry), _("Search term"));
 	g_signal_connect(dpd->dd->panel_entry, "icon-release", G_CALLBACK(entry_icon_release_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "activate", G_CALLBACK(entry_activate_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "button-press-event", G_CALLBACK(entry_buttonpress_cb), dpd);
