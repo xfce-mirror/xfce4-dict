@@ -2,10 +2,10 @@ noinst_LTLIBRARIES = 							\
 	libdict.la
 
 libdict_la_SOURCES =							\
-	common.c									\
-	common.h									\
 	dbus.c										\
 	dbus.h										\
+	common.c									\
+	common.h									\
 	dictd.c										\
 	dictd.h										\
 	gui.c										\
