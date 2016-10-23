@@ -218,7 +218,7 @@ void dict_search_word(DictData *dd, const gchar *word)
 	/* sanity checks */
 	if (! NZV(word))
 	{
-		/* Just show the main window */
+		/* just show the main window */
 		dict_gui_show_main_window(dd);
 		return;
 	}
@@ -234,13 +234,15 @@ void dict_search_word(DictData *dd, const gchar *word)
 			dict_gui_set_panel_entry_text(dd, "");
 			return;
 		}
-		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), dd->searched_word);
-		dict_gui_set_panel_entry_text(dd, dd->searched_word);
 	}
 	else
 	{
 		dd->searched_word = g_strdup(word);
 	}
+
+	/* Set the main entry text */
+	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), dd->searched_word);
+
 	/* remove leading and trailing spaces */
 	g_strstrip(dd->searched_word);
 	gtk_combo_box_text_prepend_text(GTK_COMBO_BOX_TEXT(dd->main_combo), dd->searched_word);
