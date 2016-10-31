@@ -24,6 +24,7 @@
 #include "dictd.h"
 #include "prefs.h"
 #include "gui.h"
+#include "dbus.h"
 
 
 #endif

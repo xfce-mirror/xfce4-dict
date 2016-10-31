@@ -38,6 +38,7 @@
 #include "spell.h"
 #include "dictd.h"
 #include "gui.h"
+#include "dbus.h"
 
 
 
@@ -144,8 +145,7 @@ static gboolean open_browser(DictData *dd, const gchar *uri)
 	argv[1] = (gchar*) uri;
 	argv[2] = NULL;
 
-	result = gdk_spawn_on_screen(gtk_widget_get_screen(dd->window), NULL, argv, NULL,
-				G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL);
+	result = g_spawn_async(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL);
 
 	g_free(browser_path);
 
@@ -218,7 +218,8 @@ void dict_search_word(DictData *dd, const gchar *word)
 	/* sanity checks */
 	if (! NZV(word))
 	{
-		dict_gui_status_add(dd, _("Invalid input"));
+		/* just show the main window */
+		dict_gui_show_main_window(dd);
 		return;
 	}
 
@@ -233,16 +234,18 @@ void dict_search_word(DictData *dd, const gchar *word)
 			dict_gui_set_panel_entry_text(dd, "");
 			return;
 		}
-		gtk_entry_set_text(GTK_ENTRY(dd->main_entry), dd->searched_word);
-		dict_gui_set_panel_entry_text(dd, dd->searched_word);
 	}
 	else
 	{
 		dd->searched_word = g_strdup(word);
 	}
+
+	/* Set the main entry text */
+	gtk_entry_set_text(GTK_ENTRY(dd->main_entry), dd->searched_word);
+
 	/* remove leading and trailing spaces */
 	g_strstrip(dd->searched_word);
-	gtk_combo_box_prepend_text(GTK_COMBO_BOX(dd->main_combo), dd->searched_word);
+	gtk_combo_box_text_prepend_text(GTK_COMBO_BOX_TEXT(dd->main_combo), dd->searched_word);
 
 	dict_gui_clear_text_buffer(dd);
 
@@ -300,32 +303,6 @@ static void parse_geometry(DictData *dd, const gchar *str)
 				dd->geometry[i] = -1;
 		}
 	}
-}
-
-
-static gdouble scale_round(gdouble val, gdouble factor)
-{
-	/*val = floor(val * factor + 0.5);*/
-	val = floor(val);
-	val = MAX(val, 0);
-	val = MIN(val, factor);
-
-	return val;
-}
-
-
-static gchar *get_hex_from_color(GdkColor *color)
-{
-	gchar *buffer = g_malloc0(9);
-
-	g_return_val_if_fail(color != NULL, NULL);
-
-	g_snprintf(buffer, 8, "#%02X%02X%02X",
-	      (guint) (scale_round(color->red / 256, 255)),
-	      (guint) (scale_round(color->green / 256, 255)),
-	      (guint) (scale_round(color->blue / 256, 255)));
-
-	return buffer;
 }
 
 
@@ -450,14 +427,14 @@ void dict_read_rc_file(DictData *dd)
 	else
 		dd->spell_dictionary = spell_dictionary_default;
 
-	dd->color_link = g_new0(GdkColor, 1);
-	gdk_color_parse(link_color_str, dd->color_link);
-	dd->color_phonetic = g_new0(GdkColor, 1);
-	gdk_color_parse(phon_color_str, dd->color_phonetic);
-	dd->color_incorrect = g_new0(GdkColor, 1);
-	gdk_color_parse(error_color_str, dd->color_incorrect);
-	dd->color_correct = g_new0(GdkColor, 1);
-	gdk_color_parse(success_color_str, dd->color_correct);
+	dd->color_link = g_new0(GdkRGBA, 1);
+	gdk_rgba_parse(dd->color_link, link_color_str);
+	dd->color_phonetic = g_new0(GdkRGBA, 1);
+	gdk_rgba_parse(dd->color_phonetic, phon_color_str);
+	dd->color_incorrect = g_new0(GdkRGBA, 1);
+	gdk_rgba_parse(dd->color_incorrect, error_color_str);
+	dd->color_correct = g_new0(GdkRGBA, 1);
+	gdk_rgba_parse(dd->color_correct, success_color_str);
 
 	dd->speedreader_mark_paragraphs = mark_paragraphs;
 	dd->speedreader_wpm = wpm;
@@ -489,10 +466,10 @@ void dict_write_rc_file(DictData *dd)
 		xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);
 		xfce_rc_write_entry(rc, "spell_dictionary", dd->spell_dictionary);
 
-		link_color_str = get_hex_from_color(dd->color_link);
-		phon_color_str = get_hex_from_color(dd->color_phonetic);
-		error_color_str = get_hex_from_color(dd->color_incorrect);
-		success_color_str = get_hex_from_color(dd->color_correct);
+		link_color_str = gdk_rgba_to_string(dd->color_link);
+		phon_color_str = gdk_rgba_to_string(dd->color_phonetic);
+		error_color_str = gdk_rgba_to_string(dd->color_incorrect);
+		success_color_str = gdk_rgba_to_string(dd->color_correct);
 		xfce_rc_write_entry(rc, "link_color", link_color_str);
 		xfce_rc_write_entry(rc, "phonetic_color", phon_color_str);
 		xfce_rc_write_entry(rc, "error_color", error_color_str);
@@ -545,27 +522,13 @@ void dict_free_data(DictData *dd)
 }
 
 
-void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gint x, gint y,
+void dict_drag_data_received(GtkWidget *widget, GdkDragContext *context, gint x, gint y,
 							 GtkSelectionData *data, guint info, guint ltime, DictData *dd)
 {
-	if ((data != NULL) && (data->length >= 0) && (data->format == 8))
+	if ((data != NULL) && (gtk_selection_data_get_length(data) >= 0) && (gtk_selection_data_get_format(data) == 8))
 	{
-/*
-		GtkWidget *source = gtk_drag_get_source_widget(drag_context);
-
-		if (widget == dd->main_entry &&
-			source != NULL &&
-			gtk_widget_get_toplevel(source) == dd->window)
-		{
-			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), "");
-		}
-		else
-*/		{
-			dict_search_word(dd, (const gchar*) data->data);
-		}
-
-		drag_context->action = GDK_ACTION_COPY;
-		gtk_drag_finish(drag_context, TRUE, FALSE, ltime);
+		dict_search_word(dd, (const gchar*) gtk_selection_data_get_data (data));
+		gtk_drag_finish(context, TRUE, FALSE, ltime);
 	}
 }
 
@@ -631,4 +594,36 @@ gchar *dict_get_clipboard_contents(void)
 		text = gtk_clipboard_wait_for_text(gtk_clipboard_get(GDK_SELECTION_PRIMARY));
 
 	return text;
+}
+
+
+static gboolean on_handle_search(Dict *skeleton, GDBusMethodInvocation *invocation,
+	const gchar *arg_phrase, gpointer user_data)
+{
+	dict_search_word((DictData *) user_data, arg_phrase);
+	dict_complete_search(skeleton, invocation);
+	return TRUE;
+}
+
+
+static void on_name_acquired(GDBusConnection *connection, const gchar *name,
+	gpointer user_data)
+{
+	Dict *skeleton = dict_skeleton_new();
+	g_signal_connect (skeleton, "handle-search", G_CALLBACK(on_handle_search), user_data);
+	g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+		connection, "/org/xfce/Dict", NULL);
+}
+
+
+void dict_acquire_dbus_name(DictData *dd)
+{
+	g_bus_own_name(G_BUS_TYPE_SESSION,
+      "org.xfce.Dict",
+      G_BUS_NAME_OWNER_FLAGS_NONE,
+      NULL,
+      on_name_acquired,
+      NULL,
+      dd,
+      NULL);
 }

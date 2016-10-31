@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<node name="/" xmlns:doc="http://www.freedesktop.org/dbus/1.0/doc.dtd">
+  <interface name="org.xfce.Dict">
+    <method name="Search">
+      <arg name="phrase" type="s" direction="in"/>
+    </method>
+  </interface>
+</node>

@@ -26,62 +26,37 @@
 #include "libdict.h"
 
 
-static gboolean check_is_running(GtkWidget *widget, Window *xid)
-{
-	GdkScreen *gscreen;
-	gchar selection_name[32];
-	Atom selection_atom;
-
-	gscreen = gtk_widget_get_screen(widget);
-	g_snprintf(selection_name, sizeof(selection_name), XFCE_DICT_SELECTION"%d",
-		gdk_screen_get_number(gscreen));
-	selection_atom = XInternAtom(GDK_DISPLAY(), selection_name, False);
-
-	if ((*xid = XGetSelectionOwner(GDK_DISPLAY(), selection_atom)))
-		return TRUE;
-
-	return FALSE;
-}
+gboolean dict_find_panel_plugin(gchar flags, const gchar *text);
 
 
 gboolean dict_find_panel_plugin(gchar flags, const gchar *text)
 {
-	gboolean ret = FALSE;
-	GdkEventClient gev;
-	GtkWidget *win;
-	Window id;
+	gboolean  ret = FALSE;
+	GError   *error = NULL;
+	Dict     *proxy;
 
-	win = gtk_invisible_new();
-	gtk_widget_realize(win);
+	proxy = dict_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+																			G_DBUS_PROXY_FLAGS_NONE,
+																			"org.xfce.Dict",
+																			"/org/xfce/Dict",
+																			NULL,
+																			&error);
 
-	gev.type = GDK_CLIENT_EVENT;
-	gev.window = win->window;
-	gev.send_event = TRUE;
-	gev.message_type = gdk_atom_intern("STRING", FALSE);
-	gev.data_format = 8;
-
-	if (text == NULL)
-		text = "";
-	else if (strlen(text) > 12)
-		g_warning("The passed search text is longer than 12 characters and was truncated. Currently you can pass only a maximum of 12 characters to the panel plugin (or even less when using non-ASCII characters).");
-
-	/* format of the send string: "xfdict?text":
-	 * "xfdict" is for identification of ourselves
-	 * ? is a bitmask to control the behaviour, it can contain one or more of DICT_FLAGS_*,
-	 * we send it as %c to ensure it takes only one char in the string,
-	 * everything after this is the text to search, given on command line */
-	/** FIXME: remove the limit of 12 characters, maybe by sending more than message or by
-	  *        using another IPC mechanism, maybe DBus? */
-	g_snprintf(gev.data.b, sizeof gev.data.b, "xfdict%c%s", flags, text);
-
-	if (check_is_running(win, &id))
+	if (!proxy)
 	{
-		gdk_event_send_client_message((GdkEvent*) &gev, (GdkNativeWindow) id);
-		ret = TRUE;
+		g_warning ("error connecting to org.xfce.Dict, reason was: %s", error->message);
+		g_clear_error(&error);
+		return FALSE;
 	}
 
-	gdk_flush();
-	gtk_widget_destroy(win);
+	ret = dict_call_search_sync (proxy, text, NULL, &error);
+
+	if (error)
+	{
+		g_warning ("failed to connecting to org.xfce.Dict, reason was: %s", error->message);
+		g_clear_error(&error);
+		return FALSE;
+	}
 
 	return ret;
 }

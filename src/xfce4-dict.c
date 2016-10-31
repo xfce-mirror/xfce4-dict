@@ -83,7 +83,7 @@ static void pref_dialog_activated(GtkMenuItem *menuitem, DictData *dd)
 }
 
 
-static gchar get_flags()
+static gchar get_flags(void)
 {
 	gchar flags = 0;
 
@@ -140,7 +140,7 @@ gint main(gint argc, gchar *argv[])
 	if (show_version)
 	{
 		g_print("%s %s (Xfce %s)\n\n", PACKAGE, PACKAGE_VERSION, xfce_version_string());
-		g_print("%s\n", "Copyright (c) 2006-2015");
+		g_print("%s\n", "Copyright (c) 2006-2016");
 		g_print("\tEnrico Tröger <enrico@xfce.org>\n\n");
 		g_print(_("Please report bugs to <%s>."), PACKAGE_BUGREPORT);
 		g_print("\n");
@@ -173,8 +173,6 @@ gint main(gint argc, gchar *argv[])
 	dd->is_plugin = FALSE;
 	dd->verbose_mode = verbose_mode;
 
-	g_thread_init(NULL);
-
 	dict_read_rc_file(dd);
 
 	/* set search mode from command line flags, if any */
@@ -198,6 +196,8 @@ gint main(gint argc, gchar *argv[])
 		dict_gui_status_add(dd, _("Ready"));
 
 	g_free(search_text);
+
+	dict_acquire_dbus_name(dd);
 
 	gtk_widget_show_all(dd->window);
 

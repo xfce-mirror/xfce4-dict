@@ -339,19 +339,18 @@ static gchar **get_aspell_dicts(const gchar *str)
 
 void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo)
 {
-	GtkTreeModel *model;
+	GtkComboBoxText *combo;
 	const gchar *entry_cmd = gtk_entry_get_text(
 		GTK_ENTRY(g_object_get_data(G_OBJECT(spell_combo), "spell_entry")));
 
-	model = gtk_combo_box_get_model(GTK_COMBO_BOX(spell_combo));
-	gtk_list_store_clear(GTK_LIST_STORE(model));
+	combo = GTK_COMBO_BOX_TEXT (spell_combo);
+	gtk_combo_box_text_remove_all (combo);
 
 	if (*entry_cmd != '\0')
 	{
 		gchar *tmp = NULL;
 		gchar *cmd, *locale_cmd;
 		gboolean use_enchant = FALSE;
-		GtkTreeIter iter;
 
 		if (strstr(entry_cmd, "enchant") != NULL)
 		{
@@ -371,6 +370,7 @@ void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo)
 		{
 			gchar **list;
 			guint i, len;
+			guint item_count = 0;
 
 			list = (use_enchant) ? get_enchant_dicts(tmp) : get_aspell_dicts(tmp);
 			len = g_strv_length(list);
@@ -378,10 +378,10 @@ void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo)
 			{
 				if (NZV(list[i]))
 				{
-					gtk_list_store_append(GTK_LIST_STORE(model), &iter);
-					gtk_list_store_set(GTK_LIST_STORE(model), &iter, 0, list[i], -1);
+					gtk_combo_box_text_append_text (combo, list[i]);
 					if (strcmp(dd->spell_dictionary, list[i]) == 0)
-						gtk_combo_box_set_active_iter(GTK_COMBO_BOX(spell_combo), &iter);
+						gtk_combo_box_set_active(GTK_COMBO_BOX(combo), item_count);
+					item_count++;
 				}
 			}
 			g_strfreev(list);

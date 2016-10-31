@@ -110,10 +110,10 @@ typedef struct
 	GtkTextMark *mark_click;
 	GdkPixbuf *icon;
 
-	GdkColor *color_link;
-	GdkColor *color_phonetic;
-	GdkColor *color_correct;
-	GdkColor *color_incorrect;
+	GdkRGBA *color_link;
+	GdkRGBA *color_phonetic;
+	GdkRGBA *color_correct;
+	GdkRGBA *color_incorrect;
 
 	/* speed reader */
 	gint speedreader_wpm;
@@ -132,9 +132,10 @@ void dict_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context, gi
 							 GtkSelectionData *data, guint info, guint ltime, DictData *dd);
 
 DictData *dict_create_dictdata(void);
-gboolean dict_start_web_query(DictData *dd, const gchar *word);
-gchar *dict_get_web_query_uri(DictData *dd, const gchar *word);
-gchar *dict_get_clipboard_contents(void);
+gboolean  dict_start_web_query(DictData *dd, const gchar *word);
+gchar    *dict_get_web_query_uri(DictData *dd, const gchar *word);
+gchar    *dict_get_clipboard_contents(void);
+void      dict_acquire_dbus_name(DictData *dd);
 
 void dict_show_msgbox(DictData *dd, gint type, const gchar *text, ...) G_GNUC_PRINTF (3, 4);
 

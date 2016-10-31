@@ -31,3 +31,7 @@ compile
 autom4te*
 INSTALL
 xfce4-dict-*.tar.bz2
+lib/resources.c
+lib/resources.h
+lib/dbus.c
+lib/dbus.h

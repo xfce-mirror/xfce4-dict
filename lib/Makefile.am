@@ -2,6 +2,8 @@ noinst_LTLIBRARIES = 							\
 	libdict.la
 
 libdict_la_SOURCES =							\
+	dbus.c										\
+	dbus.h										\
 	common.c									\
 	common.h									\
 	dictd.c										\
@@ -11,6 +13,8 @@ libdict_la_SOURCES =							\
 	libdict.h									\
 	prefs.c										\
 	prefs.h										\
+	resources.c									\
+	resources.h									\
 	speedreader.c								\
 	speedreader.h								\
 	spell.c										\
@@ -30,19 +34,19 @@ libdict_la_LIBADD =								\
 	$(LIBXFCE4UI_LIBS)							\
 	@GTHREAD_LIBS@
 
+DISTCLEANFILES =								\
+	resources.c										\
+	resources.h										\
+	dbus.c												\
+	dbus.h
 
-noinst_DATA = 									\
-	inline-icon.h
+gui.c: resources.c dbus.c
 
-EXTRA_DIST = 									\
-	inline-icon.h
+resources.c: resources.h
+	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-source --c-name dict
 
-if MAINTAINER_MODE
-# the target isn't named as the header file on
-# purpose to avoid automatic creation of the file
-# while building
-inline-icon: $(top_srcdir)/xfce4-dict.svg
-	gdk-pixbuf-csource --raw					\
-	--name=dict_icon_data						\
-	$(top_srcdir)/xfce4-dict.svg > $(srcdir)/inline-icon.h
-endif
+resources.h:
+	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-header --c-name dict
+
+dbus.c:
+	gdbus-codegen --interface-prefix org.xfce --generate-c-code dbus dbus.xml

@@ -6,4 +6,4 @@ _Comment=A plugin to query different dictionaries.
 Icon=xfce4-dict
 X-XFCE-Module=xfce4dict
 X-XFCE-Internal=false
-
+X-XFCE-API=2.0

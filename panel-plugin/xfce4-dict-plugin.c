@@ -36,14 +36,13 @@
 #include <string.h>
 
 #include "libdict.h"
+#include "resources.h"
 
 
 typedef struct
 {
 	DictData *dd;
 	XfcePanelPlugin *plugin;
-
-	GtkTooltips *tooltips;
 
 	GtkWidget *panel_button;
 	GtkWidget *panel_button_image;
@@ -53,46 +52,24 @@ typedef struct
 
 static gboolean entry_is_dirty = FALSE;
 
-static GdkPixbuf *dict_plugin_load_and_scale(const guint8 *data, gint dstw, gint dsth)
-{
-	GdkPixbuf *pb, *pb_scaled;
-	gint pb_w, pb_h;
-
-	pb = gdk_pixbuf_new_from_inline(-1, data, FALSE, NULL);
-	pb_w = gdk_pixbuf_get_width(pb);
-	pb_h = gdk_pixbuf_get_height(pb);
-
-	if (dstw == pb_w && dsth == pb_h)
-		return(pb);
-	else if (dstw < 0)
-		dstw = (dsth * pb_w) / pb_h;
-	else if (dsth < 0)
-		dsth = (dstw * pb_h) / pb_w;
-
-	pb_scaled = gdk_pixbuf_scale_simple(pb, dstw, dsth, GDK_INTERP_HYPER);
-	g_object_unref(G_OBJECT(pb));
-
-	return pb_scaled;
-}
-
 
 static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, DictPanelData *dpd)
 {
+  GtkBorder border;
+	GtkStyleContext *context;
 	gint size;
 	gint bsize = wsize;
+	bsize /= xfce_panel_plugin_get_nrows (plugin);
 
-#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
-	bsize /= xfce_panel_plugin_get_nrows(plugin);
-#endif
+	context = gtk_widget_get_style_context (GTK_WIDGET (dpd->panel_button));
+	gtk_style_context_get_border (context, gtk_widget_get_state_flags (GTK_WIDGET (dpd->panel_button)), &border);
+	size = bsize - 2 * MAX (border.left + border.right, border.top + border.bottom);
 
-	size = bsize - 2 - (2 * MAX(dpd->panel_button->style->xthickness,
-									 dpd->panel_button->style->ythickness));
-
-	dpd->dd->icon = dict_plugin_load_and_scale(dict_gui_get_icon_data(), size, -1);
+	dpd->dd->icon = gdk_pixbuf_new_from_resource_at_scale("/org/xfce/dict/icon",
+										size, -1, TRUE, NULL);
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(dpd->panel_button_image), dpd->dd->icon);
 
-#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 	if (dpd->dd->show_panel_entry &&
 		xfce_panel_plugin_get_mode(dpd->plugin) != XFCE_PANEL_PLUGIN_MODE_VERTICAL)
 	{
@@ -109,16 +86,6 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 		gtk_widget_hide(dpd->dd->panel_entry);
 		xfce_panel_plugin_set_small(plugin, TRUE);
 	}
-#else
-	if (dpd->dd->show_panel_entry &&
-		xfce_panel_plugin_get_orientation(plugin) == GTK_ORIENTATION_HORIZONTAL)
-	{
-		gtk_widget_show(dpd->dd->panel_entry);
-		gtk_widget_set_size_request(dpd->dd->panel_entry, dpd->dd->panel_entry_size, -1);
-	}
-	else
-		gtk_widget_hide(dpd->dd->panel_entry);
-#endif
 
 	gtk_widget_set_size_request(dpd->panel_button, bsize, bsize);
 
@@ -126,39 +93,15 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 }
 
 
-/* TODO remove me, unused
-static void dict_toggle_main_window(GtkWidget *button, DictData *dd)
-{
-	if (GTK_WIDGET_VISIBLE(dd->window))
-		gtk_widget_hide(dd->window);
-	else
-	{
-		const gchar *panel_text = "";
-
-		if (dd->panel_entry != NULL)
-			panel_text = gtk_entry_get_text(GTK_ENTRY(dd->panel_entry));
-
-		dict_show_main_window(dd);
-		if (NZV(panel_text))
-		{
-			dict_search_word(dd, panel_text);
-			gtk_entry_set_text(GTK_ENTRY(dd->main_entry), panel_text);
-		}
-		gtk_widget_grab_focus(dd->main_entry);
-	}
-}
-*/
-
-
 static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *dpd)
 {
-	if (GTK_WIDGET_VISIBLE(dpd->dd->window))
+	if (gtk_widget_get_visible(GTK_WIDGET(dpd->dd->window)))
 	{
 		/* we must query geometry settings here because position and maximized state
 		 * doesn't work when the window is hidden */
 		dict_gui_query_geometry(dpd->dd);
 
-		gtk_widget_hide(dpd->dd->window);
+		gtk_widget_hide(GTK_WIDGET(dpd->dd->window));
 	}
 	else
 	{
@@ -181,37 +124,6 @@ static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *d
 }
 
 
-/* Handle user messages (xfce4-dict) */
-static gboolean dict_plugin_message_received(GtkWidget *w, GdkEventClient *ev, DictPanelData *dpd)
-{
-	if (ev->data_format == 8 && strncmp(ev->data.b, "xfdict", 6) == 0)
-	{
-		gchar flags = ev->data.b[6];
-		gchar *tts = ev->data.b + 7;
-
-		dpd->dd->mode_in_use = dict_set_search_mode_from_flags(dpd->dd->mode_in_use, flags);
-
-		if (NZV(tts))
-		{
-			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), tts);
-			dict_search_word(dpd->dd, tts);
-		}
-		else if (flags & DICT_FLAGS_FOCUS_PANEL_ENTRY && dpd->dd->show_panel_entry)
-		{
-			xfce_panel_plugin_focus_widget(dpd->plugin, dpd->dd->panel_entry);
-		}
-		else
-		{
-			dict_plugin_panel_button_clicked(NULL, dpd);
-		}
-
-		return TRUE;
-	}
-
-	return FALSE;
-}
-
-
 static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 {
 	GdkScreen *gscreen;
@@ -222,23 +134,21 @@ static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 
 	win = gtk_invisible_new();
 	gtk_widget_realize(win);
-	xwin = GDK_WINDOW_XID(GTK_WIDGET(win)->window);
+	xwin = GDK_WINDOW_XID(gtk_widget_get_window (GTK_WIDGET(win)));
 
 	gscreen = gtk_widget_get_screen(win);
 	g_snprintf(selection_name, sizeof (selection_name),
 		XFCE_DICT_SELECTION"%d", gdk_screen_get_number(gscreen));
-	selection_atom = XInternAtom(GDK_DISPLAY(), selection_name, False);
+	selection_atom = XInternAtom(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_name, False);
 
-	if (XGetSelectionOwner(GDK_DISPLAY(), selection_atom))
+	if (XGetSelectionOwner(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_atom))
 	{
 		gtk_widget_destroy(win);
 		return FALSE;
 	}
 
-	XSelectInput(GDK_DISPLAY(), xwin, PropertyChangeMask);
-	XSetSelectionOwner(GDK_DISPLAY(), selection_atom, xwin, GDK_CURRENT_TIME);
-
-	g_signal_connect(win, "client-event", G_CALLBACK(dict_plugin_message_received), dpd);
+	XSelectInput(gdk_x11_display_get_xdisplay(gdk_display_get_default()), xwin, PropertyChangeMask);
+	XSetSelectionOwner(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_atom, xwin, GDK_CURRENT_TIME);
 
 	return TRUE;
 }
@@ -257,7 +167,7 @@ static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictPanelData *dpd)
 
 	/* if the main window is visible, query geometry as usual, if it is hidden the geometry
 	 * was queried when it was hidden */
-	if (GTK_WIDGET_VISIBLE(dpd->dd->window))
+	if (gtk_widget_get_visible(GTK_WIDGET(dpd->dd->window)))
 	{
 		dict_gui_query_geometry(dpd->dd);
 	}
@@ -265,27 +175,16 @@ static void dict_plugin_free_data(XfcePanelPlugin *plugin, DictPanelData *dpd)
 	if (dialog != NULL)
 		gtk_widget_destroy(dialog);
 
-	gtk_object_sink(GTK_OBJECT(dpd->tooltips));
-
 	dict_free_data(dpd->dd);
 	g_free(dpd);
 }
 
 
-#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 static void dict_plugin_panel_change_mode(XfcePanelPlugin *plugin,
 												 XfcePanelPluginMode mode, DictPanelData *dpd)
 {
 	dict_plugin_panel_set_size(plugin, xfce_panel_plugin_get_size(plugin), dpd);
 }
-
-#else
-static void dict_plugin_panel_change_orientation(XfcePanelPlugin *plugin,
-												 GtkOrientation orientation, DictPanelData *dpd)
-{
-	dict_plugin_panel_set_size(plugin, xfce_panel_plugin_get_size(plugin), dpd);
-}
-#endif
 
 
 static void dict_plugin_style_set(XfcePanelPlugin *plugin, gpointer unused, DictPanelData *dpd)
@@ -381,7 +280,7 @@ static gboolean entry_buttonpress_cb(GtkWidget *entry, GdkEventButton *event, Di
 	toplevel = gtk_widget_get_toplevel(entry);
 
 	/* Grab entry focus if possible */
-	if (event->button != 3 && toplevel && toplevel->window)
+	if (event->button != 3 && toplevel && gtk_widget_get_window (toplevel))
 		xfce_panel_plugin_focus_widget(dpd->plugin, entry);
 
 	return FALSE;
@@ -397,11 +296,11 @@ static void entry_changed_cb(GtkEditable *editable, DictPanelData *dpd)
 static void dict_plugin_drag_data_received(GtkWidget *widget, GdkDragContext *drag_context,
 		gint x, gint y, GtkSelectionData *data, guint info, guint ltime, DictPanelData *dpd)
 {
-	if ((data != NULL) && (data->length >= 0) && (data->format == 8))
+	if ((data != NULL) && (gtk_selection_data_get_length(data) >= 0) && (gtk_selection_data_get_format(data) == 8))
 	{
 		if (widget == dpd->panel_button || widget == dpd->dd->panel_entry)
 		{
-			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), (const gchar*) data->data);
+			gtk_entry_set_text(GTK_ENTRY(dpd->dd->main_entry), (const gchar*) gtk_selection_data_get_data(data));
 		}
 
 		dict_drag_data_received(widget, drag_context, x, y, data, info, ltime, dpd->dd);
@@ -411,11 +310,10 @@ static void dict_plugin_drag_data_received(GtkWidget *widget, GdkDragContext *dr
 
 static void dict_plugin_construct(XfcePanelPlugin *plugin)
 {
+	GtkCssProvider *css_provider;
 	DictPanelData *dpd = g_new0(DictPanelData, 1);
 
 	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-
-	g_thread_init(NULL);
 
 	dpd->dd = dict_create_dictdata();
 	dpd->dd->is_plugin = TRUE;
@@ -424,12 +322,17 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	dict_read_rc_file(dpd->dd);
 
 	dpd->panel_button = xfce_create_panel_button();
-
-	dpd->tooltips = gtk_tooltips_new();
-	gtk_tooltips_set_tip(dpd->tooltips, dpd->panel_button, _("Look up a word"), NULL);
+	gtk_widget_set_tooltip_text (dpd->panel_button, _("Look up a word"));
 
 	dpd->panel_button_image = gtk_image_new();
 	gtk_container_add(GTK_CONTAINER(dpd->panel_button), GTK_WIDGET(dpd->panel_button_image));
+
+	/* Setup Gtk style */
+	css_provider = gtk_css_provider_new ();
+	gtk_css_provider_load_from_data (css_provider, "button { padding: 1px; border-width: 1px;}", -1, NULL);
+	gtk_style_context_add_provider (GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (dpd->panel_button))),
+																	GTK_STYLE_PROVIDER (css_provider),
+																	GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
 	gtk_widget_show_all(dpd->panel_button);
 
@@ -441,11 +344,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->close_button, "clicked", G_CALLBACK(dict_plugin_close_button_clicked), dpd);
 	g_signal_connect(plugin, "free-data", G_CALLBACK(dict_plugin_free_data), dpd);
 	g_signal_connect(plugin, "size-changed", G_CALLBACK(dict_plugin_panel_set_size), dpd);
-#if defined(LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION(4,9,0)
 	g_signal_connect(plugin, "mode-changed", G_CALLBACK(dict_plugin_panel_change_mode), dpd);
-#else
-	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(dict_plugin_panel_change_orientation), dpd);
-#endif
 	g_signal_connect(plugin, "style-set", G_CALLBACK(dict_plugin_style_set), dpd);
 	g_signal_connect(plugin, "save", G_CALLBACK(dict_plugin_write_rc_file), dpd);
 	g_signal_connect(plugin, "configure-plugin", G_CALLBACK(dict_plugin_properties_dialog), dpd);
@@ -459,16 +358,16 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->pref_menu_item, "activate", G_CALLBACK(dict_plugin_properties_dialog), dpd);
 
 	/* panel entry */
-	dpd->dd->panel_entry = gtk_entry_new();
-	gtk_entry_set_icon_from_stock(GTK_ENTRY(dpd->dd->panel_entry), GTK_ENTRY_ICON_SECONDARY, GTK_STOCK_CLEAR);
+	dpd->dd->panel_entry = gtk_search_entry_new();
+	gtk_entry_set_icon_from_icon_name(GTK_ENTRY(dpd->dd->panel_entry), GTK_ENTRY_ICON_SECONDARY, "gtk-clear");
 	gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), 25);
-	gtk_entry_set_text(GTK_ENTRY(dpd->dd->panel_entry), _("Search term"));
+	gtk_entry_set_placeholder_text(GTK_ENTRY(dpd->dd->panel_entry), _("Search term"));
 	g_signal_connect(dpd->dd->panel_entry, "icon-release", G_CALLBACK(entry_icon_release_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "activate", G_CALLBACK(entry_activate_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "button-press-event", G_CALLBACK(entry_buttonpress_cb), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "changed", G_CALLBACK(entry_changed_cb), dpd);
 
-	dpd->box = gtk_hbox_new(FALSE, 3);
+	dpd->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 3);
 	gtk_widget_show(dpd->box);
 
 	gtk_box_pack_start(GTK_BOX(dpd->box), dpd->panel_button, FALSE, FALSE, 0);
@@ -486,6 +385,8 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	gtk_drag_dest_add_text_targets(GTK_WIDGET(dpd->panel_button));
 	g_signal_connect(dpd->panel_button, "drag-data-received", G_CALLBACK(dict_plugin_drag_data_received), dpd);
 	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_plugin_drag_data_received), dpd);
+
+	dict_acquire_dbus_name(dpd->dd);
 
 	dict_gui_status_add(dpd->dd, _("Ready"));
 }

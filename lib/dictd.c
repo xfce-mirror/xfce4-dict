@@ -650,7 +650,7 @@ static void signal_cb(gint sig)
 }
 
 
-static void dictd_init()
+static void dictd_init(void)
 {
 #ifdef SIGALRM
 	static gboolean initialized = FALSE;
@@ -679,7 +679,7 @@ void dict_dictd_start_query(DictData *dd, const gchar *word)
 		dictd_init();
 
 		/* start the thread to query the server */
-		g_thread_create((GThreadFunc) ask_server, dd, FALSE, NULL);
+		g_thread_new(NULL, (GThreadFunc) ask_server, dd);
 	}
 }
 
@@ -750,25 +750,26 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	dialog = gtk_dialog_new_with_buttons(text,
 				GTK_WINDOW(dd->window),
 				GTK_DIALOG_DESTROY_WITH_PARENT,
-				GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
-	vbox = gtk_vbox_new(FALSE, 12);
+				"gtk-close", GTK_RESPONSE_CLOSE, NULL);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
 	gtk_container_set_border_width(GTK_CONTAINER(vbox), 5);
-	gtk_container_add(GTK_CONTAINER(GTK_DIALOG(dialog)->vbox), vbox);
+	gtk_container_add(GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), vbox);
 	gtk_box_set_spacing(GTK_BOX(vbox), 6);
 	g_free(text);
 
-	gtk_window_set_default_size(GTK_WINDOW(dialog), 500, 400);
+	gtk_window_set_default_size(GTK_WINDOW(dialog), 550, 400);
 	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_CLOSE);
 
 	text = g_strconcat("<tt>", buffer, "</tt>", NULL);
 	label = gtk_label_new(text);
 	gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
+	gtk_widget_set_vexpand(label, TRUE);
 	g_free(text);
 
 	swin = gtk_scrolled_window_new(NULL, NULL);
 	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(swin),
 		GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-	gtk_scrolled_window_add_with_viewport(GTK_SCROLLED_WINDOW(swin), label);
+	gtk_container_add(GTK_CONTAINER(swin), label);
 
 	gtk_box_pack_start(GTK_BOX(vbox), swin, TRUE, TRUE, 0);
 
@@ -847,7 +848,7 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	i = gtk_tree_model_iter_n_children(gtk_combo_box_get_model(GTK_COMBO_BOX(dict_combo)), NULL);
 	for (i -= 1; i > 2; i--)  /* first three entries (*, ! and ----) should always exist */
 	{
-		gtk_combo_box_remove_text(GTK_COMBO_BOX(dict_combo), i);
+		gtk_combo_box_text_remove(GTK_COMBO_BOX_TEXT(dict_combo), i);
 	}
 
 	/* parse output */
@@ -859,7 +860,7 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	i = 0;
 	while (i < max_lines && lines[i][0] != '.')
 	{
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo), lines[i]);
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo), lines[i]);
 		i++;
 	}
 
@@ -870,4 +871,3 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	 * the list and we also don't know whether it exists at all, and I don't walk through the list */
 	gtk_combo_box_set_active(GTK_COMBO_BOX(dict_combo), 0);
 }
-

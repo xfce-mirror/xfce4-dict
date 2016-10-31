@@ -251,7 +251,8 @@ static gchar *sr_replace_unicode_characters(const gchar *text, gboolean mark_par
 static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state)
 {
 	gchar *title, *state_str, *name;
-	const gchar *button_label = GTK_STOCK_MEDIA_STOP;
+	const gchar *button_label = _("S_top");
+	const gchar *button_image = "gtk-media-stop";
 	gboolean pausable = TRUE;
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 
@@ -262,7 +263,8 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 			break;
 		case XSR_STATE_FINISHED:
 			state_str = _("Finished");
-			button_label = GTK_STOCK_GO_BACK;
+			button_label = _("_Back");
+			button_image = "gtk-go-back";
 			pausable = FALSE;
 			break;
 		default:
@@ -274,6 +276,8 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 
 	gtk_window_set_title(GTK_WINDOW(dialog), title);
 	gtk_button_set_label(GTK_BUTTON(priv->button_stop), button_label);
+	gtk_button_set_image(GTK_BUTTON(priv->button_stop),
+		gtk_image_new_from_icon_name(button_image, GTK_ICON_SIZE_MENU));
 	gtk_widget_set_sensitive(priv->button_pause, pausable);
 
 	g_free(title);
@@ -350,9 +354,10 @@ static void sr_start(XfdSpeedReader *dialog)
 	gint wpm, grouping;
 	gint interval;
 	const gchar *fontname;
-	PangoFontDescription *pfd;
 	gchar *text, *cleaned_text;
 	GtkTextIter start, end;
+	gchar *css;
+	GtkCssProvider *provider;
 
 	/* clear the label text */
 	gtk_label_set_text(GTK_LABEL(priv->display_label), NULL);
@@ -376,9 +381,15 @@ static void sr_start(XfdSpeedReader *dialog)
 
 	/* set the font */
 	fontname = gtk_font_button_get_font_name(GTK_FONT_BUTTON(priv->button_font));
-	pfd = pango_font_description_from_string(fontname);
-	gtk_widget_modify_font(priv->display_label, pfd);
-	pango_font_description_free(pfd);
+
+	css = g_strdup_printf("* { font: %s; }", fontname);
+	provider = gtk_css_provider_new ();
+	gtk_css_provider_load_from_data (provider, css, -1, NULL);
+	gtk_style_context_add_provider (
+			GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (priv->display_label))),
+			GTK_STYLE_PROVIDER(provider),
+			GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	g_free(css);
 
 	/* word grouping */
 	grouping = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(priv->spin_grouping));
@@ -445,13 +456,13 @@ static void sr_pause(XfdSpeedReader *dialog, gboolean paused)
 	if (paused)
 	{
 		gtk_button_set_image(GTK_BUTTON(priv->button_pause),
-			gtk_image_new_from_stock(GTK_STOCK_MEDIA_PLAY, GTK_ICON_SIZE_MENU));
+			gtk_image_new_from_icon_name("gtk-media-play", GTK_ICON_SIZE_MENU));
 		gtk_button_set_label(GTK_BUTTON(priv->button_pause), XFD_TITLE_RESUME);
 	}
 	else
 	{
 		gtk_button_set_image(GTK_BUTTON(priv->button_pause),
-			gtk_image_new_from_stock(GTK_STOCK_MEDIA_PAUSE, GTK_ICON_SIZE_MENU));
+			gtk_image_new_from_icon_name("gtk-media-pause", GTK_ICON_SIZE_MENU));
 		gtk_button_set_label(GTK_BUTTON(priv->button_pause), XFD_TITLE_PAUSE);
 	}
 	/* set the new value */
@@ -504,8 +515,8 @@ static void sr_open_clicked_cb(GtkButton *button, XfdSpeedReader *window)
 	dialog = gtk_file_chooser_dialog_new(_("Choose a file to load"),
 		GTK_WINDOW(window),
 		GTK_FILE_CHOOSER_ACTION_OPEN,
-		GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-		GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+		"gtk-cancel", GTK_RESPONSE_CANCEL,
+		"gtk-open", GTK_RESPONSE_ACCEPT,
 		NULL);
 
 	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_ACCEPT);
@@ -576,29 +587,31 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_window_set_destroy_with_parent(GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_default_size(GTK_WINDOW(dialog), 400, 330);
 	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_CLOSE);
-	gtk_dialog_set_has_separator(GTK_DIALOG(dialog), FALSE);
 	gtk_widget_set_name(GTK_WIDGET(dialog), "Xfce4Dict");
 
 	/* First page */
 	label_intro = xfd_wrap_label_new(
 		_("This is an easy speed reading utility to help train you to read faster. "
 		  "It does this by flashing words at a rapid rate on the screen."));
+	gtk_label_set_line_wrap ( GTK_LABEL (label_intro), TRUE);
 
 	label_words = gtk_label_new_with_mnemonic(_("_Words per Minute:"));
-	gtk_misc_set_alignment(GTK_MISC(label_words), 1, 0.5);
+	gtk_widget_set_halign(label_words, GTK_ALIGN_END);
+	gtk_widget_set_valign(label_words, GTK_ALIGN_CENTER);
 
 	priv->spin_wpm = gtk_spin_button_new_with_range(5.0, 10000.0, 5);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label_words), priv->spin_wpm);
 
 	priv->check_mark_paragraphs = gtk_check_button_new_with_mnemonic(_("_Mark Paragraphs"));
 
-	hbox_words = gtk_hbox_new(FALSE, 0);
+	hbox_words = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_words), label_words, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_words), priv->spin_wpm, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_words), priv->check_mark_paragraphs, FALSE, FALSE, 12);
 
 	label_grouping = gtk_label_new_with_mnemonic(_("Word _Grouping:"));
-	gtk_misc_set_alignment(GTK_MISC(label_grouping), 1, 0.5);
+	gtk_widget_set_halign(label_grouping, GTK_ALIGN_END);
+	gtk_widget_set_valign(label_grouping, GTK_ALIGN_CENTER);
 
 	label_grouping_desc = gtk_label_new(NULL);
 
@@ -608,18 +621,19 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 		G_CALLBACK(sr_spin_grouping_changed_cb), label_grouping_desc);
 	sr_spin_grouping_changed_cb(GTK_SPIN_BUTTON(priv->spin_grouping), GTK_LABEL(label_grouping_desc));
 
-	hbox_grouping = gtk_hbox_new(FALSE, 0);
+	hbox_grouping = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_grouping), label_grouping, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_grouping), priv->spin_grouping, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_grouping), label_grouping_desc, FALSE, FALSE, 6);
 
 	label_font = gtk_label_new_with_mnemonic(_("_Font Size:"));
-	gtk_misc_set_alignment(GTK_MISC(label_font), 1, 0.5);
+	gtk_widget_set_halign(label_font, GTK_ALIGN_END);
+	gtk_widget_set_valign(label_font, GTK_ALIGN_CENTER);
 
 	priv->button_font = gtk_font_button_new();
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label_font), priv->button_font);
 
-	hbox_font = gtk_hbox_new(FALSE, 0);
+	hbox_font = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_font), label_font, FALSE, FALSE, 6);
 	gtk_box_pack_start(GTK_BOX(hbox_font), priv->button_font, FALSE, FALSE, 6);
 
@@ -644,57 +658,42 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 					GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 	gtk_container_add(GTK_CONTAINER(swin), textview);
 
-	button_open = gtk_button_new();
-	gtk_button_set_image(GTK_BUTTON(button_open),
-		gtk_image_new_from_stock(GTK_STOCK_OPEN, GTK_ICON_SIZE_MENU));
+	button_open = gtk_button_new_from_icon_name("gtk-open", GTK_ICON_SIZE_MENU);
 	g_signal_connect(button_open, "clicked", G_CALLBACK(sr_open_clicked_cb), dialog);
-#if GTK_CHECK_VERSION(2, 12, 0)
 	gtk_widget_set_tooltip_text(button_open, _("Load the contents of a file"));
-#endif
 
-	button_paste = gtk_button_new();
-	gtk_button_set_image(GTK_BUTTON(button_paste),
-		gtk_image_new_from_stock(GTK_STOCK_PASTE, GTK_ICON_SIZE_MENU));
+	button_paste = gtk_button_new_from_icon_name("gtk-paste", GTK_ICON_SIZE_MENU);
 	g_signal_connect(button_paste, "clicked", G_CALLBACK(sr_paste_clicked_cb), priv->buffer);
-#if GTK_CHECK_VERSION(2, 12, 0)
 	gtk_widget_set_tooltip_text(button_paste,
 		_("Clear the contents of the text field and paste the contents of the clipboard"));
-#endif
 
-	button_clear = gtk_button_new();
-	gtk_button_set_image(GTK_BUTTON(button_clear),
-		gtk_image_new_from_stock(GTK_STOCK_CLEAR, GTK_ICON_SIZE_MENU));
+	button_clear = gtk_button_new_from_icon_name("gtk-clear", GTK_ICON_SIZE_MENU);
 	g_signal_connect(button_clear, "clicked", G_CALLBACK(sr_clear_clicked_cb), priv->buffer);
-#if GTK_CHECK_VERSION(2, 12, 0)
 	gtk_widget_set_tooltip_text(button_clear, _("Clear the contents of the text field"));
-#endif
 
-	vbox_text_buttons = gtk_vbox_new(FALSE, 6);
+	vbox_text_buttons = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_open, FALSE, FALSE, 0);
 	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_paste, FALSE, FALSE, 0);
 	gtk_box_pack_start(GTK_BOX(vbox_text_buttons), button_clear, FALSE, FALSE, 0);
 
-	hbox_text = gtk_hbox_new(FALSE, 0);
+	hbox_text = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_text), swin, TRUE, TRUE, 0);
 	gtk_box_pack_start(GTK_BOX(hbox_text), vbox_text_buttons, FALSE, FALSE, 3);
 
-	priv->button_pause = gtk_dialog_add_button(GTK_DIALOG(dialog), _("P_ause"), RESPONSE_PAUSE);
+	priv->button_pause = gtk_dialog_add_button(GTK_DIALOG(dialog), "gtk-media-pause", RESPONSE_PAUSE);
 	priv->button_start = gtk_dialog_add_button(GTK_DIALOG(dialog), _("_Start"), RESPONSE_START);
-	priv->button_stop = gtk_dialog_add_button(GTK_DIALOG(dialog), GTK_STOCK_MEDIA_STOP, RESPONSE_STOP);
-	gtk_dialog_add_button(GTK_DIALOG(dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
+	priv->button_stop = gtk_dialog_add_button(GTK_DIALOG(dialog), "gtk-media-stop", RESPONSE_STOP);
+	gtk_dialog_add_button(GTK_DIALOG(dialog), "gtk-close", GTK_RESPONSE_CLOSE);
 
 	gtk_widget_hide(priv->button_pause);
 	gtk_widget_hide(priv->button_stop);
 
 	gtk_button_set_image(GTK_BUTTON(priv->button_start),
-		gtk_image_new_from_stock(GTK_STOCK_MEDIA_PLAY, GTK_ICON_SIZE_MENU));
-	gtk_button_set_image(GTK_BUTTON(priv->button_pause),
-		gtk_image_new_from_stock(GTK_STOCK_MEDIA_PAUSE, GTK_ICON_SIZE_MENU));
-	gtk_button_set_use_stock(GTK_BUTTON(priv->button_pause), TRUE);
+		gtk_image_new_from_icon_name("gtk-media-play", GTK_ICON_SIZE_MENU));
 
 	g_signal_connect(dialog, "response", G_CALLBACK(xfd_speed_reader_response_cb), NULL);
 
-	vbox = gtk_vbox_new(FALSE, 6);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start(GTK_BOX(vbox), label_intro, FALSE, FALSE, 5);
 	gtk_box_pack_start(GTK_BOX(vbox), hbox_words, FALSE, FALSE, 3);
 	gtk_box_pack_start(GTK_BOX(vbox), hbox_grouping, FALSE, FALSE, 3);
@@ -707,7 +706,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	priv->display_label = gtk_label_new(NULL);
 	gtk_widget_show(priv->display_label);
 
-	vbox = gtk_vbox_new(FALSE, 6);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start(GTK_BOX(vbox), priv->display_label, TRUE, TRUE, 6);
 
 	priv->second_page = vbox;
@@ -716,8 +715,8 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 
 	gtk_widget_grab_focus(textview);
 
-	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), priv->first_page, TRUE, TRUE, 6);
-	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), priv->second_page, TRUE, TRUE, 6);
+	gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))), priv->first_page, TRUE, TRUE, 6);
+	gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))), priv->second_page, TRUE, TRUE, 6);
 
 	xfd_speed_reader_set_window_title(dialog, XSR_STATE_INITIAL);
 }
@@ -738,4 +737,3 @@ GtkWidget *xfd_speed_reader_new(GtkWindow *parent, DictData *dd)
 
 	return dialog;
 }
-

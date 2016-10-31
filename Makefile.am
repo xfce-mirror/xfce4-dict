@@ -19,7 +19,7 @@ EXTRA_DIST =													\
 	intltool-extract.in											\
 	intltool-merge.in											\
 	intltool-update.in											\
-	xfce4-dict.svg
+	pixmaps/xfce4-dict.svg
 
 DISTCLEANFILES =												\
 	intltool-extract											\
@@ -27,7 +27,7 @@ DISTCLEANFILES =												\
 	intltool-update
 
 hicolor48dir = $(datadir)/icons/hicolor/scalable/apps
-hicolor48_DATA = xfce4-dict.svg
+hicolor48_DATA = pixmaps/xfce4-dict.svg
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 

@@ -92,8 +92,8 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 
 	/* check some values before actually saving the settings in case we need to return to
 	 * the dialog */
-	dictionary = gtk_combo_box_get_active_text(
-		GTK_COMBO_BOX(g_object_get_data(G_OBJECT(dlg), "dict_combo")));
+	dictionary = gtk_combo_box_text_get_active_text(
+		GTK_COMBO_BOX_TEXT(g_object_get_data(G_OBJECT(dlg), "dict_combo")));
 	if (! NZV(dictionary) || dictionary[0] == '-')
 	{
 		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("You have chosen an invalid dictionary."));
@@ -122,8 +122,8 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 	gtk_widget_set_sensitive(dd->radio_button_web, NZV(dd->web_url));
 
 	/* MODE SPELL */
-	dictionary = gtk_combo_box_get_active_text(
-			GTK_COMBO_BOX(g_object_get_data(G_OBJECT(dlg), "spell_combo")));
+	dictionary = gtk_combo_box_text_get_active_text(
+			GTK_COMBO_BOX_TEXT(g_object_get_data(G_OBJECT(dlg), "spell_combo")));
 	if (NZV(dictionary))
 	{
 		g_free(dd->spell_dictionary);
@@ -168,11 +168,11 @@ static GtkWidget *create_web_dicts_table(GtkWidget *entry)
 {
 	gint i;
 	gint offset;
-	GtkWidget *table, *button;
+	GtkWidget *grid, *button;
 
-	table = gtk_table_new(4, 2, FALSE);
-	gtk_table_set_row_spacings(GTK_TABLE(table), 2);
-	gtk_table_set_col_spacings(GTK_TABLE(table), 2);
+	grid = gtk_grid_new();
+	gtk_grid_set_row_spacing(GTK_GRID(grid), 4);
+	gtk_grid_set_column_spacing(GTK_GRID(grid), 4);
 
 	for (i = 0; web_dicts[i].label != NULL; i++)
 	{
@@ -182,13 +182,11 @@ static GtkWidget *create_web_dicts_table(GtkWidget *entry)
 		g_object_set_data(G_OBJECT(button), "web_entry", entry);
 		gtk_widget_show(button);
 
-		gtk_table_attach(GTK_TABLE(table),
-				button, offset, 1 + offset, i - offset, i + 1 - offset,
-				(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-				(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), button, offset, i - offset, 1, 1);
+		gtk_widget_set_hexpand(button, TRUE);
 	}
 
-	return table;
+	return grid;
 }
 
 
@@ -205,9 +203,9 @@ const gchar *dict_prefs_get_web_url_label(DictData *dd)
 }
 
 
-static void color_set_cb(GtkColorButton *widget, GdkColor *color)
+static void color_set_cb(GtkColorChooser *widget, GdkRGBA *color)
 {
-	gtk_color_button_get_color(widget, color);
+	gtk_color_chooser_get_rgba(widget, color);
 }
 
 
@@ -225,11 +223,11 @@ static gboolean spell_entry_focus_cb(GtkEntry *entry, GdkEventFocus *ev, GtkWidg
 
 	if (path != NULL)
 	{
-		gtk_image_set_from_stock(GTK_IMAGE(icon), GTK_STOCK_YES, GTK_ICON_SIZE_BUTTON);
+		gtk_image_set_from_icon_name(GTK_IMAGE(icon), "gtk-yes", GTK_ICON_SIZE_BUTTON);
 		g_free(path);
 	}
 	else
-		gtk_image_set_from_stock(GTK_IMAGE(icon), GTK_STOCK_STOP, GTK_ICON_SIZE_BUTTON);
+		gtk_image_set_from_icon_name(GTK_IMAGE(icon), "gtk-stop", GTK_ICON_SIZE_BUTTON);
 
 	return FALSE;
 }
@@ -266,8 +264,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 	dialog = xfce_titled_dialog_new_with_buttons(
 		_("Dictionary"), GTK_WINDOW(parent),
-		GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_NO_SEPARATOR,
-		GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
+		GTK_DIALOG_DESTROY_WITH_PARENT,
+		"gtk-close", GTK_RESPONSE_OK,
 		NULL);
 
 	gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
@@ -277,10 +275,10 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_signal_connect(dialog, "response", G_CALLBACK(dict_prefs_dialog_response), dd);
 
 	notebook = gtk_notebook_new();
-	GTK_WIDGET_UNSET_FLAGS(notebook, GTK_CAN_FOCUS);
+	gtk_widget_set_can_focus (notebook, FALSE);
 	gtk_widget_show(notebook);
 	g_object_set_data(G_OBJECT(dialog), "notebook", notebook);
-	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), notebook, FALSE, TRUE, 0);
+	gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))), notebook, FALSE, TRUE, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(notebook), 5);
 
 	/*
@@ -288,13 +286,13 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	 */
 #define PAGE_GENERAL /* only for navigation in Geany's symbol list ;-) */
 	{
-		GtkWidget *radio_button, *label, *table, *label4;
+		GtkWidget *radio_button, *label, *grid, *label4;
 		GtkWidget *color_link, *color_phon, *color_success, *color_error;
 		GSList *search_method;
 
-		notebook_vbox = gtk_vbox_new(FALSE, 2);
+		notebook_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 2);
 		gtk_widget_show(notebook_vbox);
-		inner_vbox = gtk_vbox_new(FALSE, 5);
+		inner_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
@@ -302,7 +300,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		label = gtk_label_new(_("<b>Default search method:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
-		gtk_misc_set_alignment(GTK_MISC(label), 0, 0);
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 0);
 
@@ -344,7 +341,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		label = gtk_label_new(_("<b>Colors:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
-		gtk_misc_set_alignment(GTK_MISC(label), 0, 1);
+		gtk_widget_set_valign(label, GTK_ALIGN_END);
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 5);
 
@@ -352,58 +349,49 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		label2 = gtk_label_new(_("Phonetics:"));
 		label3 = gtk_label_new(_("Spelled correctly:"));
 		label4 = gtk_label_new(_("Spelled incorrectly:"));
-		color_link = gtk_color_button_new_with_color(dd->color_link);
-		color_phon = gtk_color_button_new_with_color(dd->color_phonetic);
-		color_error = gtk_color_button_new_with_color(dd->color_incorrect);
-		color_success = gtk_color_button_new_with_color(dd->color_correct);
+		color_link = gtk_color_button_new_with_rgba(dd->color_link);
+		color_phon = gtk_color_button_new_with_rgba(dd->color_phonetic);
+		color_error = gtk_color_button_new_with_rgba(dd->color_incorrect);
+		color_success = gtk_color_button_new_with_rgba(dd->color_correct);
 		g_signal_connect(color_link, "color-set", G_CALLBACK(color_set_cb), dd->color_link);
 		g_signal_connect(color_phon, "color-set", G_CALLBACK(color_set_cb), dd->color_phonetic);
 		g_signal_connect(color_error, "color-set", G_CALLBACK(color_set_cb), dd->color_incorrect);
 		g_signal_connect(color_success, "color-set", G_CALLBACK(color_set_cb), dd->color_correct);
 
-		table = gtk_table_new(2, 4, FALSE);
-		gtk_widget_show(table);
-		gtk_table_set_row_spacings(GTK_TABLE(table), 5);
-		gtk_table_set_col_spacings(GTK_TABLE(table), 5);
+		grid = gtk_grid_new();
+		gtk_grid_set_row_spacing(GTK_GRID(grid), 8);
+		gtk_grid_set_column_spacing(GTK_GRID(grid), 8);
 
-		gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 0, 1,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 5);
-		gtk_misc_set_alignment(GTK_MISC(label1), 1, 0);
+		gtk_grid_attach(GTK_GRID(grid), label1, 0, 0, 1, 1);
+		gtk_widget_set_valign (label1, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label1, GTK_ALIGN_END);
 
-		gtk_table_attach(GTK_TABLE(table), color_link, 1, 2, 0, 1,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), color_link, 1, 0, 1, 1);
+		gtk_widget_set_hexpand(color_link, TRUE);
 
-		gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 1, 2,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 0);
-		gtk_misc_set_alignment(GTK_MISC(label2), 1, 0);
+		gtk_grid_attach(GTK_GRID(grid), label2, 0, 1, 1, 1);
+		gtk_widget_set_valign (label2, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label2, GTK_ALIGN_END);
 
-		gtk_table_attach(GTK_TABLE(table), color_phon, 1, 2, 1, 2,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), color_phon, 1, 1, 1, 1);
+		gtk_widget_set_hexpand(color_phon, TRUE);
 
-		gtk_table_attach(GTK_TABLE(table), label3, 2, 3, 0, 1,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 5);
-		gtk_misc_set_alignment(GTK_MISC(label3), 1, 0);
+		gtk_grid_attach(GTK_GRID(grid), label3, 2, 0, 1, 1);
+		gtk_widget_set_valign (label3, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label3, GTK_ALIGN_END);
 
-		gtk_table_attach(GTK_TABLE(table), color_success, 3, 4, 0, 1,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), color_success, 3, 0, 1, 1);
+		gtk_widget_set_hexpand(color_success, TRUE);
 
-		gtk_table_attach(GTK_TABLE(table), label4, 2, 3, 1, 2,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 0);
-		gtk_misc_set_alignment(GTK_MISC(label4), 1, 0);
+		gtk_grid_attach(GTK_GRID(grid), label4, 2, 1, 1, 1);
+		gtk_widget_set_valign (label4, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label4, GTK_ALIGN_END);
 
-		gtk_table_attach(GTK_TABLE(table), color_error, 3, 4, 1, 2,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), color_error, 3, 1, 1, 1);
+		gtk_widget_set_hexpand(color_error, TRUE);
 
-		gtk_widget_show_all(table);
-		gtk_box_pack_start(GTK_BOX(inner_vbox), table, FALSE, FALSE, 0);
+		gtk_widget_show_all(grid);
+		gtk_box_pack_start(GTK_BOX(inner_vbox), grid, FALSE, FALSE, 0);
 
 
 		/* show panel entry check box */
@@ -413,7 +401,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 			label = gtk_label_new(_("<b>Panel Text Field:</b>"));
 			gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
-			gtk_misc_set_alignment(GTK_MISC(label), 0, 1);
+			gtk_widget_set_valign(label, GTK_ALIGN_END);
 			gtk_widget_show(label);
 			gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 5);
 
@@ -437,7 +425,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 			gtk_widget_show(panel_entry_size_spinner);
 
-			pe_hbox = gtk_hbox_new(FALSE, 0);
+			pe_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 			gtk_widget_show(pe_hbox);
 
 			gtk_box_pack_start(GTK_BOX(pe_hbox), panel_entry_size_label, FALSE, FALSE, 10);
@@ -458,12 +446,12 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	 */
 #define PAGE_DICTD /* only for navigation in Geany's symbol list ;-) */
 	 {
-		GtkWidget *table, *button_get_list, *button_get_info;
+		GtkWidget *grid, *button_get_list, *button_get_info;
 		GtkWidget *server_entry, *port_spinner, *dict_combo;
 
-		notebook_vbox = gtk_vbox_new(FALSE, 2);
+		notebook_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
 		gtk_widget_show(notebook_vbox);
-		inner_vbox = gtk_vbox_new(FALSE, 5);
+		inner_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
@@ -471,7 +459,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		/* server address */
 		label1 = gtk_label_new_with_mnemonic(_("Server:"));
-		gtk_widget_show(label1);
 
 		server_entry = gtk_entry_new();
 		gtk_entry_set_max_length(GTK_ENTRY(server_entry), 256);
@@ -479,25 +466,21 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		{
 			gtk_entry_set_text(GTK_ENTRY(server_entry), dd->server);
 		}
-		gtk_widget_show(server_entry);
 
 		/* server port */
 		label2 = gtk_label_new_with_mnemonic(_("Server Port:"));
-		gtk_widget_show(label2);
 
 		port_spinner = gtk_spin_button_new_with_range(0.0, 65536.0, 1.0);
 		gtk_spin_button_set_value(GTK_SPIN_BUTTON(port_spinner), dd->port);
-		gtk_widget_show(port_spinner);
 
 		/* dictionary */
 		label3 = gtk_label_new_with_mnemonic(_("Dictionary:"));
-		gtk_widget_show(label3);
 
-		dict_combo = gtk_combo_box_new_text();
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo), _("* (use all)"));
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo),
+		dict_combo = gtk_combo_box_text_new();
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo), _("* (use all)"));
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo),
 											_("! (use all, stop after first match)"));
-		gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo), "----------------");
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo), "----------------");
 		if (dd->dictionary != NULL)
 		{
 			if (dd->dictionary[0] == '*')
@@ -506,72 +489,61 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 				gtk_combo_box_set_active(GTK_COMBO_BOX(dict_combo), 1);
 			else
 			{
-				gtk_combo_box_append_text(GTK_COMBO_BOX(dict_combo), dd->dictionary);
+				gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(dict_combo), dd->dictionary);
 				gtk_combo_box_set_active(GTK_COMBO_BOX(dict_combo), 3);
 			}
 		}
 
-		gtk_widget_show(dict_combo);
 
 		g_object_set_data(G_OBJECT(dialog), "server_entry", server_entry);
 		g_object_set_data(G_OBJECT(dialog), "port_spinner", port_spinner);
 		g_object_set_data(G_OBJECT(dialog), "dict_combo", dict_combo);
 
-		button_get_list = gtk_button_new_from_stock("gtk-refresh");
+		button_get_list = gtk_button_new_from_icon_name("gtk-refresh", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_get_list);
 		g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_dictd_get_list), dd);
 		g_object_set_data(G_OBJECT(button_get_list), "dict_combo", dict_combo);
 		g_object_set_data(G_OBJECT(button_get_list), "port_spinner", port_spinner);
 		g_object_set_data(G_OBJECT(button_get_list), "server_entry", server_entry);
 
-		button_get_info = gtk_button_new_from_stock("gtk-info");
+		button_get_info = gtk_button_new_from_icon_name("gtk-info", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_get_info);
 		g_signal_connect(button_get_info, "clicked", G_CALLBACK(dict_dictd_get_information), dd);
 		g_object_set_data(G_OBJECT(button_get_info), "port_spinner", port_spinner);
 		g_object_set_data(G_OBJECT(button_get_info), "server_entry", server_entry);
 
 		/* put it all together */
-		table = gtk_table_new(3, 3, FALSE);
-		gtk_widget_show(table);
-		gtk_table_set_row_spacings(GTK_TABLE(table), 5);
-		gtk_table_set_col_spacings(GTK_TABLE(table), 5);
+		grid = gtk_grid_new();
+		gtk_grid_set_row_spacing (GTK_GRID(grid), 8);
+		gtk_grid_set_column_spacing (GTK_GRID(grid), 8);
 
-		gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 0, 1,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 5);
-		gtk_misc_set_alignment(GTK_MISC(label1), 1, 0);
+		gtk_grid_attach(GTK_GRID(grid), label1, 0, 0, 1, 1);
+		gtk_widget_set_valign (label1, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label1, GTK_ALIGN_END);
 
-		gtk_table_attach(GTK_TABLE(table), server_entry, 1, 2, 0, 1,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), server_entry, 1, 0, 1, 1);
+		gtk_widget_set_hexpand(server_entry, TRUE);
 
-		gtk_table_attach(GTK_TABLE(table), button_get_info, 2, 3, 0, 1,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), button_get_info, 2, 0, 1, 1);
 
-		gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 1, 2,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 0);
-		gtk_misc_set_alignment(GTK_MISC(label2), 1, 0);
+		gtk_grid_attach(GTK_GRID(grid), label2, 0, 1, 1, 1);
+		gtk_widget_set_valign (label2, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label2, GTK_ALIGN_END);
 
-		gtk_table_attach(GTK_TABLE(table), port_spinner, 1, 2, 1, 2,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), port_spinner, 1, 1, 1, 1);
+		gtk_widget_set_hexpand(port_spinner, TRUE);
 
-		gtk_table_attach(GTK_TABLE(table), label3, 0, 1, 2, 3,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 0);
-		gtk_misc_set_alignment(GTK_MISC(label3), 1, 0);
+		gtk_grid_attach(GTK_GRID(grid), label3, 0, 2, 1, 1);
+		gtk_widget_set_valign (label3, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label3, GTK_ALIGN_END);
 
-		gtk_table_attach(GTK_TABLE(table), dict_combo, 1, 2, 2, 3,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 0, 0);
+		gtk_grid_attach(GTK_GRID(grid), dict_combo, 1, 2, 1, 1);
+		gtk_widget_set_hexpand(dict_combo, TRUE);
 
-		gtk_table_attach(GTK_TABLE(table), button_get_list, 2, 3, 2, 3,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), button_get_list, 2, 2, 1, 1);
 
-		gtk_box_pack_start(GTK_BOX(inner_vbox), table, FALSE, FALSE, 0);
+		gtk_widget_show_all(grid);
+		gtk_box_pack_start(GTK_BOX(inner_vbox), grid, FALSE, FALSE, 0);
 		gtk_box_pack_start(GTK_BOX(notebook_vbox), inner_vbox, TRUE, TRUE, 5);
 	}
 
@@ -582,9 +554,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	{
 		GtkWidget *label, *web_entry_label, *web_entry, *web_entry_box, *web_dicts_table;
 
-		notebook_vbox = gtk_vbox_new(FALSE, 5);
+		notebook_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_widget_show(notebook_vbox);
-		inner_vbox = gtk_vbox_new(FALSE, 5);
+		inner_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
@@ -592,7 +564,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		label = gtk_label_new(_("<b>Web search URL:</b>"));
 		gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
-		gtk_misc_set_alignment(GTK_MISC(label), 0, 0);
 		gtk_widget_show(label);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 0);
 
@@ -603,7 +574,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 			gtk_entry_set_text(GTK_ENTRY(web_entry), dd->web_url);
 		gtk_widget_show(web_entry);
 
-		web_entry_box = gtk_hbox_new(FALSE, 0);
+		web_entry_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 		gtk_widget_show(web_entry_box);
 
 		web_dicts_table = create_web_dicts_table(web_entry);
@@ -617,7 +588,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(dialog), "web_entry", web_entry);
 
 		label1 = xfd_wrap_label_new(_("Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."));
-		gtk_misc_set_alignment(GTK_MISC(label1), 0, 0);
 		gtk_widget_show(label1);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label1, FALSE, FALSE, 0);
 		gtk_box_pack_start(GTK_BOX(notebook_vbox), inner_vbox, TRUE, TRUE, 5);
@@ -628,13 +598,11 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	 */
 #define PAGE_SPELL /* only for navigation in Geany's symbol list ;-) */
 	{
-		GtkWidget *table, *label_help, *spell_entry, *spell_combo, *button_refresh, *image, *icon;
-		GtkListStore *store;
-		GtkCellRenderer *renderer;
+		GtkWidget *grid, *label_help, *spell_entry, *spell_combo, *button_refresh, *icon;
 
-		notebook_vbox = gtk_vbox_new(FALSE, 5);
+		notebook_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_widget_show(notebook_vbox);
-		inner_vbox = gtk_vbox_new(FALSE, 5);
+		inner_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 		gtk_container_set_border_width(GTK_CONTAINER(inner_vbox), 5);
 		gtk_widget_show(inner_vbox);
 		gtk_notebook_insert_page(GTK_NOTEBOOK(notebook),
@@ -666,21 +634,14 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		label2 = gtk_label_new_with_mnemonic(_("Dictionary:"));
 		gtk_widget_show(label2);
 
-		store = gtk_list_store_new(1, G_TYPE_STRING);
-		spell_combo = gtk_combo_box_new_with_model(GTK_TREE_MODEL(store));
+		spell_combo = gtk_combo_box_text_new ();
 		g_object_set_data(G_OBJECT(spell_combo), "spell_entry", spell_entry);
-
-		renderer = gtk_cell_renderer_text_new();
-		gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(spell_combo), renderer, TRUE);
-		gtk_cell_layout_add_attribute(GTK_CELL_LAYOUT(spell_combo), renderer, "text", 0);
 
 		dict_spell_get_dictionaries(dd, spell_combo);
 		g_signal_connect(spell_combo, "changed", G_CALLBACK(spell_combo_changed_cb), dd);
 		gtk_widget_show(spell_combo);
 
-		button_refresh = gtk_button_new();
-		image = gtk_image_new_from_stock("gtk-refresh", GTK_ICON_SIZE_BUTTON);
-		gtk_button_set_image(GTK_BUTTON(button_refresh), image);
+		button_refresh = gtk_button_new_from_icon_name("gtk-refresh", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_refresh);
 		g_object_set_data(G_OBJECT(button_refresh), "spell_combo", spell_combo);
 		g_signal_connect(button_refresh, "clicked", G_CALLBACK(button_dict_refresh_cb), dd);
@@ -689,46 +650,36 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(spell_entry), "spell_combo", spell_combo);
 		g_object_set_data(G_OBJECT(dialog), "spell_combo", spell_combo);
 		g_object_set_data(G_OBJECT(dialog), "spell_entry", spell_entry);
-		g_object_unref(store);
 
 		spell_entry_focus_cb(GTK_ENTRY(spell_entry), NULL, icon); /* initially set the icon */
 
-		table = gtk_table_new(3, 3, FALSE);
-		gtk_widget_show(table);
-		gtk_table_set_row_spacings(GTK_TABLE(table), 5);
-		gtk_table_set_col_spacings(GTK_TABLE(table), 5);
+		grid = gtk_grid_new();
+		gtk_widget_show(grid);
+		gtk_grid_set_row_spacing(GTK_GRID(grid), 8);
+		gtk_grid_set_column_spacing(GTK_GRID(grid), 8);
 
-		gtk_table_attach(GTK_TABLE(table), label_help, 0, 3, 0, 1,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), label_help, 0, 0, 3, 1);
+		gtk_widget_set_hexpand(label_help, TRUE);
 
-		gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 1, 2,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 5);
-		gtk_misc_set_alignment(GTK_MISC(label1), 1, 0);
+		gtk_grid_attach(GTK_GRID(grid), label1, 0, 1, 1, 1);
+		gtk_widget_set_valign (label1, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label1, GTK_ALIGN_END);
 
-		gtk_table_attach(GTK_TABLE(table), spell_entry, 1, 2, 1, 2,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), spell_entry, 1, 1, 1, 1);
+		gtk_widget_set_hexpand(spell_entry, TRUE);
 
-		gtk_table_attach(GTK_TABLE(table), icon, 2, 3, 1, 2,
-						(GtkAttachOptions) (0),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), icon, 2, 1, 1, 1);
 
-		gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 2, 3,
-						(GtkAttachOptions) (GTK_FILL),
-						(GtkAttachOptions) (0), 5, 0);
-		gtk_misc_set_alignment(GTK_MISC(label2), 1, 0);
+		gtk_grid_attach(GTK_GRID(grid), label2, 0, 2, 1, 1);
+		gtk_widget_set_valign (label2, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label2, GTK_ALIGN_END);
 
-		gtk_table_attach(GTK_TABLE(table), spell_combo, 1, 2, 2, 3,
-						(GtkAttachOptions) (GTK_FILL | GTK_EXPAND),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), spell_combo, 1, 2, 1, 1);
+		gtk_widget_set_hexpand(spell_combo, TRUE);
 
-		gtk_table_attach(GTK_TABLE(table), button_refresh, 2, 3, 2, 3,
-						(GtkAttachOptions) (0),
-						(GtkAttachOptions) (0), 5, 5);
+		gtk_grid_attach(GTK_GRID(grid), button_refresh, 2, 2, 1, 1);
 
-		gtk_box_pack_start(GTK_BOX(inner_vbox), table, FALSE, FALSE, 0);
+		gtk_box_pack_start(GTK_BOX(inner_vbox), grid, FALSE, FALSE, 0);
 		gtk_box_pack_start(GTK_BOX(notebook_vbox), inner_vbox, TRUE, TRUE, 5);
 	}
 
