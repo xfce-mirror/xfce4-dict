@@ -138,7 +138,7 @@ static gboolean dict_plugin_set_selection(DictPanelData *dpd)
 
 	gscreen = gtk_widget_get_screen(win);
 	g_snprintf(selection_name, sizeof (selection_name),
-		XFCE_DICT_SELECTION"%d", gdk_screen_get_number(gscreen));
+		XFCE_DICT_SELECTION"%d", gdk_x11_screen_get_screen_number(gscreen));
 	selection_atom = XInternAtom(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_name, False);
 
 	if (XGetSelectionOwner(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_atom))
