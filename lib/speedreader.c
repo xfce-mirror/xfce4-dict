@@ -358,6 +358,7 @@ static void sr_start(XfdSpeedReader *dialog)
 	GtkTextIter start, end;
 	gchar *css;
 	GtkCssProvider *provider;
+	PangoFontDescription *font;
 
 	/* clear the label text */
 	gtk_label_set_text(GTK_LABEL(priv->display_label), NULL);
@@ -381,8 +382,21 @@ static void sr_start(XfdSpeedReader *dialog)
 
 	/* set the font */
 	fontname = gtk_font_button_get_font_name(GTK_FONT_BUTTON(priv->button_font));
+	font = pango_font_description_from_string(fontname);
 
-	css = g_strdup_printf("* { font: %s; }", fontname);
+	if (G_LIKELY (font))
+	{
+		css = g_strdup_printf("label { font-family: %s; font-size: %dpx; font-style: %s; font-weight: %s }",
+													pango_font_description_get_family (font),
+													pango_font_description_get_size (font) / PANGO_SCALE,
+													(pango_font_description_get_style(font) == PANGO_STYLE_ITALIC ||
+													pango_font_description_get_style(font) == PANGO_STYLE_OBLIQUE) ? "italic" : "normal",
+													(pango_font_description_get_weight(font) >= PANGO_WEIGHT_BOLD) ? "bold" : "normal");
+		pango_font_description_free (font);
+	}
+	else
+		css = g_strdup_printf("* { font: %s; }", fontname);
+
 	provider = gtk_css_provider_new ();
 	gtk_css_provider_load_from_data (provider, css, -1, NULL);
 	gtk_style_context_add_provider (
