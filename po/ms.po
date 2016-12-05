@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# abuyop <abuyop@gmail.com>, 2014-2015
+# abuyop <abuyop@gmail.com>, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-12 00:31+0100\n"
-"PO-Revision-Date: 2015-04-19 14:54+0000\n"
+"POT-Creation-Date: 2016-11-01 06:30+0100\n"
+"PO-Revision-Date: 2016-12-05 02:07+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
-"Language-Team: Malay (http://www.transifex.com/projects/p/xfce-apps/language/ms/)\n"
+"Language-Team: Malay (http://www.transifex.com/xfce/xfce-apps/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:734 ../lib/prefs.c:268
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
 msgid "Dictionary"
 msgstr "Kamus"
 
@@ -27,17 +27,17 @@ msgstr "Kamus"
 msgid "A plugin to query different dictionaries."
 msgstr "Sebuah pemalam yang menanya pelbagai kamus."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:364
-#: ../panel-plugin/xfce4-dict-plugin.c:490 ../src/xfce4-dict.c:198
-#: ../lib/spell.c:241 ../lib/gui.c:514
+#: ../panel-plugin/xfce4-dict-plugin.c:263
+#: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:540
 msgid "Ready"
 msgstr "Sedia"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:429
+#: ../panel-plugin/xfce4-dict-plugin.c:325
 msgid "Look up a word"
 msgstr "Cari perkataan"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:465 ../lib/gui.c:764
+#: ../panel-plugin/xfce4-dict-plugin.c:364 ../lib/gui.c:836
 msgid "Search term"
 msgstr "Gelintar istilah"
 
@@ -86,7 +86,7 @@ msgstr "Sila laporkan pepijat ke <%s>."
 msgid "Dictionary Client"
 msgstr "Klien Kamus"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:962
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
 msgid "A client program to query different dictionaries."
 msgstr "Merupakan program klien untuk menanya pelbagai jenis kamus."
 
@@ -126,7 +126,7 @@ msgstr "Ralat ketika melakukan \"%s\" (%s)."
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Sila tetapkan perintah semak ejaan di dalam dialog keutamaan."
 
-#: ../lib/spell.c:206 ../lib/common.c:221
+#: ../lib/spell.c:206
 msgid "Invalid input"
 msgstr "Input tidak sah"
 
@@ -135,7 +135,7 @@ msgstr "Input tidak sah"
 msgid "Process failed (%s)"
 msgstr "Proses mengalami kegagalan (%s)"
 
-#: ../lib/speedreader.c:78 ../lib/speedreader.c:681
+#: ../lib/speedreader.c:78
 msgid "P_ause"
 msgstr "_Jeda"
 
@@ -143,80 +143,88 @@ msgstr "_Jeda"
 msgid "_Resume"
 msgstr "_Sambung Semula"
 
-#: ../lib/speedreader.c:261
+#: ../lib/speedreader.c:254
+msgid "S_top"
+msgstr "_Henti"
+
+#: ../lib/speedreader.c:262
 msgid "Running"
 msgstr "Berjalan"
 
-#: ../lib/speedreader.c:264
+#: ../lib/speedreader.c:265
 msgid "Finished"
 msgstr "Selesai"
 
-#: ../lib/speedreader.c:272
+#: ../lib/speedreader.c:266
+msgid "_Back"
+msgstr "_Undur"
+
+#: ../lib/speedreader.c:274
 msgid "Speed Reader"
 msgstr "Pembaca Kelajuan"
 
-#: ../lib/speedreader.c:367
+#: ../lib/speedreader.c:372
 msgid "You must enter a text."
 msgstr "Anda mesti masukkan satu teks."
 
-#: ../lib/speedreader.c:504
+#: ../lib/speedreader.c:515
 msgid "Choose a file to load"
 msgstr "Pilih satu fail untuk dimuatkan"
 
-#: ../lib/speedreader.c:533
+#: ../lib/speedreader.c:544
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Fail '%s' tidak dapat dimuatkan."
 
-#: ../lib/speedreader.c:559
+#: ../lib/speedreader.c:570
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(papar %d perkataan pada satu masa)"
 
-#: ../lib/speedreader.c:584
+#: ../lib/speedreader.c:594
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Merupakan utilit membaca laju yang mudah untuk melatih anda baca dengan lebih pantas. Ia memaparkan perkatan pada kelajuan pantas di atas skrin."
 
-#: ../lib/speedreader.c:587
+#: ../lib/speedreader.c:598
 msgid "_Words per Minute:"
 msgstr "Pe_rkataan per Minit:"
 
-#: ../lib/speedreader.c:593
+#: ../lib/speedreader.c:605
 msgid "_Mark Paragraphs"
 msgstr "Perenggan _Tanda"
 
-#: ../lib/speedreader.c:600
+#: ../lib/speedreader.c:612
 msgid "Word _Grouping:"
 msgstr "K_umpulan Perkataan:"
 
-#: ../lib/speedreader.c:616
+#: ../lib/speedreader.c:629
 msgid "_Font Size:"
 msgstr "Saiz _Fon:"
 
-#: ../lib/speedreader.c:636
+#: ../lib/speedreader.c:650
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Masukkan beberapa teks di sini yang anda mahu baca.\n\nBertenang dan rehatkan diri anda, kemudian tekan Mula untuk mula pembacaan pantas."
 
-#: ../lib/speedreader.c:652
+#: ../lib/speedreader.c:663
 msgid "Load the contents of a file"
 msgstr "Muat kandungan sebuah fail"
 
-#: ../lib/speedreader.c:661
+#: ../lib/speedreader.c:668
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Kosongkan kandungan medan teks dan tampal kandungan dari papan keratan"
 
-#: ../lib/speedreader.c:669
+#: ../lib/speedreader.c:672
 msgid "Clear the contents of the text field"
 msgstr "Kosongkan kandungan medan teks"
 
-#: ../lib/speedreader.c:682
+#: ../lib/speedreader.c:684
 msgid "_Start"
 msgstr "_Mula"
 
@@ -228,20 +236,20 @@ msgstr "URL gelintar adalah kosong. Sila semak keutamaan anda."
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Pelayar tidak dapat dibuka. Sila semak keutamaan anda."
 
-#: ../lib/common.c:231
+#: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
 msgstr "Input bukan-UTF8 tidak sah"
 
-#: ../lib/common.c:605
+#: ../lib/common.c:568
 msgid "Error"
 msgstr "Ralat"
 
-#: ../lib/common.c:608
+#: ../lib/common.c:571
 msgid "warning"
 msgstr "amaran"
 
-#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:803
-#: ../lib/dictd.c:812
+#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:804
+#: ../lib/dictd.c:813
 msgid "Could not connect to server."
 msgstr "Tidak dapat sambung ke pelayan."
 
@@ -253,7 +261,7 @@ msgstr "Pelayan belum sedia."
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Kamus tidak sah dinyatakan. Sila semak keutamaan anda."
 
-#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:837
+#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
 msgid "Unknown error while querying the server."
 msgstr "Ralat tidak diketahui ketika menanya pelayan."
 
@@ -297,53 +305,79 @@ msgstr "Satu ralat berlaku ketika menanya maklumat pelayan."
 msgid "Server Information for \"%s\""
 msgstr "Maklumat pelayan untuk \"%s\""
 
-#: ../lib/dictd.c:832
+#: ../lib/dictd.c:833
 msgid "The server doesn't offer any databases."
 msgstr "Pelayan tidak menawarkan apa-apa pangkalan data."
 
-#: ../lib/gui.c:340
+#: ../lib/gui.c:362
 msgid "Copy Link"
 msgstr "Salin Pautan"
 
-#: ../lib/gui.c:672
+#: ../lib/gui.c:374
+msgid "Search"
+msgstr "Gelintar"
+
+#: ../lib/gui.c:606
+msgid "F_ind"
+msgstr "_Cari"
+
+#. File Menu
+#: ../lib/gui.c:695
 msgid "_File"
 msgstr "_Fail"
 
-#: ../lib/gui.c:677 ../lib/gui.c:785
+#: ../lib/gui.c:704 ../lib/gui.c:850
 msgid "Speed _Reader"
 msgstr "Pem_baca Pantas"
 
-#: ../lib/gui.c:698
+#: ../lib/gui.c:726
+msgid "_Preferences"
+msgstr "_Keutamaan"
+
+#: ../lib/gui.c:746 ../lib/gui.c:862
+msgid "_Quit"
+msgstr "K_eluar"
+
+#. Help Menu
+#: ../lib/gui.c:760
 msgid "_Help"
 msgstr "_Bantuan"
 
-#: ../lib/gui.c:806
+#: ../lib/gui.c:769
+msgid "About"
+msgstr "Perihal"
+
+#: ../lib/gui.c:862
+msgid "_Close"
+msgstr "_Tutup"
+
+#: ../lib/gui.c:874
 msgid "Search with:"
 msgstr "Gelintar dengan:"
 
-#: ../lib/gui.c:810
+#: ../lib/gui.c:878
 msgid "_Dictionary Server"
 msgstr "Pelayan Ka_mus"
 
-#: ../lib/gui.c:816
+#: ../lib/gui.c:884
 msgid "_Web Service"
 msgstr "Perkhidmatan Sesa_wang"
 
-#: ../lib/gui.c:824
+#: ../lib/gui.c:892
 msgid "_Spell Checker"
 msgstr "Penyemak _Ejaan"
 
-#: ../lib/gui.c:954
-msgid "Xfce4 Dictionary"
-msgstr "Kamus Xfce4"
+#: ../lib/gui.c:1020
+msgid "Copyright © 2006-2016 Xfce Development Team"
+msgstr "Hakcipta © 2006-2016 Pasukan Pembangunan Xfce"
 
-#: ../lib/gui.c:963
-msgid "Copyright © 2006-2015 Xfce Development Team"
-msgstr "Hakcipta © 2006-2015 Pasukan Pembangunan Xfce"
-
-#: ../lib/gui.c:966
+#: ../lib/gui.c:1023
 msgid "translator-credits"
 msgstr "Abuyop <abuyop@gmail.com>"
+
+#: ../lib/gui.c:1026
+msgid "Xfce4 Dictionary"
+msgstr "Kamus Xfce4"
 
 #: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
@@ -397,105 +431,105 @@ msgstr "Kosongkan"
 msgid "You have chosen an invalid dictionary."
 msgstr "Anda telah pilih satu kamus yang tidak sah."
 
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:299
 msgid "General"
 msgstr "Am"
 
-#: ../lib/prefs.c:303
+#: ../lib/prefs.c:301
 msgid "<b>Default search method:</b>"
 msgstr "<b>Kaedah gelintar lalai:</b>"
 
-#: ../lib/prefs.c:309 ../lib/prefs.c:470
+#: ../lib/prefs.c:306 ../lib/prefs.c:458
 msgid "Dictionary Server"
 msgstr "Pelayan Kamus"
 
-#: ../lib/prefs.c:318 ../lib/prefs.c:591
+#: ../lib/prefs.c:315 ../lib/prefs.c:563
 msgid "Web Service"
 msgstr "Perkhidmatan Sesawang"
 
-#: ../lib/prefs.c:327 ../lib/prefs.c:641
+#: ../lib/prefs.c:324 ../lib/prefs.c:609
 msgid "Spell Checker"
 msgstr "Penyemak Ejaan"
 
-#: ../lib/prefs.c:336
+#: ../lib/prefs.c:333
 msgid "Last used method"
 msgstr "Kaedah terakhir diguna"
 
-#: ../lib/prefs.c:345
+#: ../lib/prefs.c:342
 msgid "<b>Colors:</b>"
 msgstr "<b>Warna:</b>"
 
-#: ../lib/prefs.c:351
+#: ../lib/prefs.c:348
 msgid "Links:"
 msgstr "Pautan:"
 
-#: ../lib/prefs.c:352
+#: ../lib/prefs.c:349
 msgid "Phonetics:"
 msgstr "Fonetik:"
 
-#: ../lib/prefs.c:353
+#: ../lib/prefs.c:350
 msgid "Spelled correctly:"
 msgstr "Dieja dengan betul:"
 
-#: ../lib/prefs.c:354
+#: ../lib/prefs.c:351
 msgid "Spelled incorrectly:"
 msgstr "Tersalah eja:"
 
-#: ../lib/prefs.c:414
+#: ../lib/prefs.c:402
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Medan Teks Panel:</b>"
 
-#: ../lib/prefs.c:420
+#: ../lib/prefs.c:408
 msgid "Show text field in the panel"
 msgstr "Tunjuk medan teks dalam panel"
 
 #. panel entry size
-#: ../lib/prefs.c:427
+#: ../lib/prefs.c:415
 msgid "Text field size:"
 msgstr "Saiz medan teks:"
 
 #. server address
-#: ../lib/prefs.c:473
+#: ../lib/prefs.c:461
 msgid "Server:"
 msgstr "Pelayan:"
 
 #. server port
-#: ../lib/prefs.c:485
+#: ../lib/prefs.c:471
 msgid "Server Port:"
 msgstr "Port Pelayan:"
 
 #. dictionary
-#: ../lib/prefs.c:493 ../lib/prefs.c:666
+#: ../lib/prefs.c:477 ../lib/prefs.c:634
 msgid "Dictionary:"
 msgstr "Kamus:"
 
-#: ../lib/prefs.c:497
+#: ../lib/prefs.c:480
 msgid "* (use all)"
 msgstr "* (guna semua)"
 
-#: ../lib/prefs.c:499
+#: ../lib/prefs.c:482
 msgid "! (use all, stop after first match)"
 msgstr "! (guna semua, henti selepas padanan pertama)"
 
-#: ../lib/prefs.c:593
+#: ../lib/prefs.c:565
 msgid "<b>Web search URL:</b>"
 msgstr "<b>URL gelintar Sesawang:</b>"
 
-#: ../lib/prefs.c:599
+#: ../lib/prefs.c:570
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:619
+#: ../lib/prefs.c:590
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "Masukkan URL laman sesawang yang menawarkan perkhidmatan terjemahan atau kamus. Guna {word} sebagai placeholder untuk perkataan digelintar."
 
-#: ../lib/prefs.c:643
+#: ../lib/prefs.c:611
 msgid "Spell Check Program:"
 msgstr "Program Semak Ejaan:"
 
-#: ../lib/prefs.c:660
+#: ../lib/prefs.c:628
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
