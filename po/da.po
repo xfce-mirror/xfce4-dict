@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2016-12-08 05:27+0000\n"
+"PO-Revision-Date: 2016-12-08 07:29+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -338,11 +338,11 @@ msgstr "Læse_hastighedsmåler"
 
 #: ../lib/gui.c:726
 msgid "_Preferences"
-msgstr ""
+msgstr "_Indstillinger"
 
 #: ../lib/gui.c:746 ../lib/gui.c:862
 msgid "_Quit"
-msgstr ""
+msgstr "_Afslut"
 
 #. Help Menu
 #: ../lib/gui.c:760
@@ -529,7 +529,7 @@ msgstr "URL:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr "Indtast URL'en til et netsted, der tilbyder ordbogstjenester. Brug {word} som pladsholder for det søgte ord."
+msgstr "Indtast URL'en til et websted, der tilbyder ordbogstjenester. Brug {word} som pladsholder for det søgte ord."
 
 #: ../lib/prefs.c:611
 msgid "Spell Check Program:"
