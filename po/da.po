@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2017-01-14 11:21+0000\n"
+"PO-Revision-Date: 2017-01-16 13:04+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -173,7 +173,7 @@ msgstr "Du er nødt til at indtaste en tekst."
 
 #: ../lib/speedreader.c:515
 msgid "Choose a file to load"
-msgstr "Vælg en fil til indlæstning"
+msgstr "Vælg en fil til indlæsning"
 
 #: ../lib/speedreader.c:544
 #, c-format
