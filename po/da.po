@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2017-01-16 13:04+0000\n"
+"PO-Revision-Date: 2017-01-20 13:14+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr[1] "%d forslag fundet."
 #: ../lib/spell.c:103
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Forslag for  \"%s\" (%s):"
+msgstr "Forslag for \"%s\" (%s):"
 
 #: ../lib/spell.c:120
 #, c-format
