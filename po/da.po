@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2017-01-20 13:14+0000\n"
+"PO-Revision-Date: 2017-01-22 22:01+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -195,7 +195,7 @@ msgstr "Dette er et nemt værktøj til læsehastighedsmåling for at hjælpe dig
 
 #: ../lib/speedreader.c:598
 msgid "_Words per Minute:"
-msgstr "_Ord per minut:"
+msgstr "_Ord pr. minut:"
 
 #: ../lib/speedreader.c:605
 msgid "_Mark Paragraphs"
