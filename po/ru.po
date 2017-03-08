@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Igor <f2404@yandex.ru>, 2016
-# Sergey Alyoshin <alyoshin.s@gmail.com>, 2015
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2016-11-02 10:33+0000\n"
-"Last-Translator: Igor <f2404@yandex.ru>\n"
+"PO-Revision-Date: 2017-03-08 17:10+0000\n"
+"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,7 +52,7 @@ msgstr "Искать данный текст, используя поисков�
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
-msgstr "Проверить данный текст с помощью программы проверки орфографии"
+msgstr "Проверить данный текст, используя программу проверки орфографии"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
@@ -193,7 +193,7 @@ msgstr[3] "(показывать %d слов за раз)"
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Это простая утилита для тренировки повышения скорости вашего чтения. Она делает это, изменяя слова с большой скоростью на экране."
+msgstr "Это простая утилита для тренировки скорости вашего чтения посредством изменения с большой скоростью слов на экране."
 
 #: ../lib/speedreader.c:598
 msgid "_Words per Minute:"
@@ -220,7 +220,7 @@ msgstr "Введите здесь небольшой текст, который 
 
 #: ../lib/speedreader.c:663
 msgid "Load the contents of a file"
-msgstr "Загружает содержимое файла"
+msgstr "Загрузить содержимое файла"
 
 #: ../lib/speedreader.c:668
 msgid ""
@@ -245,7 +245,7 @@ msgstr "Браузер не может быть открыт. Пожалуйст
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
-msgstr "Неправильный не-UTF-8 ввод"
+msgstr "Неправильный не UTF-8 ввод"
 
 #: ../lib/common.c:568
 msgid "Error"
@@ -379,11 +379,11 @@ msgstr "_Программа для проверки орфографии"
 
 #: ../lib/gui.c:1020
 msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Copyright © 2006-2016 команда разработчиков Xfce"
+msgstr "Copyright © 2006—2016 команда разработчиков Xfce"
 
 #: ../lib/gui.c:1023
 msgid "translator-credits"
-msgstr "Urmas <davian818@gmail.com>, 2013\nSergey Alyoshin <alyoshin.s@gmail.com>, 2015"
+msgstr "Igor <f2404@yandex.ru>, 2016\nSergey Alyoshin <alyoshin.s@gmail.com>, 2015\nUrmas <davian818@gmail.com>, 2013"
 
 #: ../lib/gui.c:1026
 msgid "Xfce4 Dictionary"
