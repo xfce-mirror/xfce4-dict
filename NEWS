@@ -1,3 +1,11 @@
+xfce4-dict-0.8.0
+================
+- Translation updates: Catalan, Chinese (China), Chinese (Taiwan), 
+  Croatian, Danish, Dutch, Finnish, French, German, Greek, Hebrew, 
+  Italian, Japanese, Kazakh, Korean, Malay, Norwegian Bokmål, Polish, 
+  Portuguese, Russian, Serbian, Slovak, Slovenian, Spanish, Swedish, 
+  Ukrainian
+
 xfce4-dict-0.7.99
 ================
 - Port to gtk+3/libxfce4ui-2/libxfce4panel-2.0
