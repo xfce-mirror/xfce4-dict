@@ -733,7 +733,7 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	if (strncmp("114", buffer, 3) != 0)
 	{
 		dict_show_msgbox(dd, GTK_MESSAGE_ERROR,
-			_("An error occured while querying server information."));
+			_("An error occurred while querying server information."));
 		return;
 	}
 
