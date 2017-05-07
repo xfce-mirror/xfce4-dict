@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Allan Nordhøy <epost@anotheragency.no>, 2014
-# Allan Nordhøy <epost@anotheragency.no>, 2016
+# Allan Nordhøy <epost@anotheragency.no>, 2016-2017
 # Harald H. <haarektrans@gmail.com>, 2014-2015
 # Terje Uriansrud <ter@operamail.com>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2016-12-12 15:04+0000\n"
+"POT-Creation-Date: 2017-05-07 00:31+0200\n"
+"PO-Revision-Date: 2017-05-07 09:52+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "Søkestreng:"
 
 #: ../src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr "Søk etter tekst med Dict tjener(RFC 2229)"
+msgstr "Søk etter tekst med Dict-tjener(RFC 2229)"
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
@@ -58,11 +58,11 @@ msgstr "Kontroller denne teksten med ordliste"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
-msgstr "Ta fokus på tekstfeilt i panelet"
+msgstr "Rett fokus mot tekstfeltet i panelet"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Start frittstående program selv om panelprogram er startet"
+msgstr "Start frittstående program selv om panelprogram har startet"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -83,7 +83,7 @@ msgstr "[TEKST]"
 #: ../src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Vennligst meld feil til <%s>."
+msgstr "Meld inn feil til <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
@@ -128,7 +128,7 @@ msgstr "Feil under kjøring \"%s\" (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Vennlist angi stavekontroll kommando i vinduet for brukervalg."
+msgstr "Angi stavekontroll-kommando i vinduet for brukervalg."
 
 #: ../lib/spell.c:206
 msgid "Invalid input"
@@ -167,79 +167,79 @@ msgstr "_Tilbake"
 msgid "Speed Reader"
 msgstr "Hastighetsleser"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:373
 msgid "You must enter a text."
 msgstr "Du må skrive inn tekst"
 
-#: ../lib/speedreader.c:515
+#: ../lib/speedreader.c:529
 msgid "Choose a file to load"
 msgstr "Velg en fil å lese inn"
 
-#: ../lib/speedreader.c:544
+#: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Filen '%s' kan ikke lastes inn."
 
-#: ../lib/speedreader.c:570
+#: ../lib/speedreader.c:584
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(vis %d ord om gangen)"
 msgstr[1] "(vis %d ord om gangen)"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:608
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Dette er et lettfattelig hastighetslesningsverktøy for å hjelpe deg med å lese raskere. Dette gjøres ved å blinke ord i hurtig frekvens over skjermen."
 
-#: ../lib/speedreader.c:598
+#: ../lib/speedreader.c:612
 msgid "_Words per Minute:"
 msgstr "_Ord per minutt:"
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
 msgstr "_Merk avsnitt"
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
 msgstr "_Gruppering av ord:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:643
 msgid "_Font Size:"
 msgstr "_Fontstørrelse:"
 
-#: ../lib/speedreader.c:650
+#: ../lib/speedreader.c:664
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Skriv noe tekst her som du vil lese.\n\nVær avslappet og komfortabel, trykk så Start for å begynne hastighetslesning."
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
 msgstr "Last inn innholdet i en fil"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Fjern innholdet i tekstfeltet og kopier innholdet til utklippstavlen"
 
-#: ../lib/speedreader.c:672
+#: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
 msgstr "Fjern innholdet i tekstfeltet"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:698
 msgid "_Start"
 msgstr "_Start"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Søkelink er tom. Vennligst kontroller innstillingene."
+msgstr "Søkenettadressen er tom. Kontroller innstillingene."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Nettleseren kunne ikke startes. Vennlist kontroller innstillingene."
+msgstr "Nettleseren kunne ikke startes. Kontroller innstillingene."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
@@ -264,7 +264,7 @@ msgstr "Tjeneren er ikke klar."
 
 #: ../lib/dictd.c:400
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Ugyldig ordliste angitt. Vennliste kontroller innstillingene."
+msgstr "Ugyldig ordliste angitt. Kontroller innstillingene."
 
 #: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
 msgid "Unknown error while querying the server."
@@ -303,7 +303,7 @@ msgid "Querying %s..."
 msgstr "Søker %s .."
 
 #: ../lib/dictd.c:736
-msgid "An error occured while querying server information."
+msgid "An error occurred while querying server information."
 msgstr "En feil oppsto ved spørring etter tjenerinformasjon."
 
 #: ../lib/dictd.c:749
@@ -383,7 +383,7 @@ msgstr "haarek - Harald <https://www.transifex.com/accounts/profile/haarek/>\nki
 
 #: ../lib/gui.c:1026
 msgid "Xfce4 Dictionary"
-msgstr "Xfce4 Ordliste"
+msgstr "Xfce4-ordliste"
 
 #: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
@@ -427,7 +427,7 @@ msgstr "Wiktionary, gratis ordliste (EN)"
 
 #: ../lib/prefs.c:63
 msgid "Merriam-Webster Online Dictionary"
-msgstr "Merriam-Webster Online ordliste"
+msgstr "Merriam-Webster nettbasert ordliste"
 
 #: ../lib/prefs.c:64
 msgid "Clear"
@@ -483,7 +483,7 @@ msgstr "Feilstavet:"
 
 #: ../lib/prefs.c:402
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>Panel tekstfelt:</b>"
+msgstr "<b>Panel-tekstfelt:</b>"
 
 #: ../lib/prefs.c:408
 msgid "Show text field in the panel"
@@ -492,7 +492,7 @@ msgstr "Vis tekstfelt i panelet"
 #. panel entry size
 #: ../lib/prefs.c:415
 msgid "Text field size:"
-msgstr "Tekstfeilt størrelse:"
+msgstr "Tekstfeltstørrelse:"
 
 #. server address
 #: ../lib/prefs.c:461
@@ -523,7 +523,7 @@ msgstr "<b>Nettsøk URL:</b>"
 
 #: ../lib/prefs.c:570
 msgid "URL:"
-msgstr "Url:"
+msgstr "Nettadresse:"
 
 #: ../lib/prefs.c:590
 msgid ""
