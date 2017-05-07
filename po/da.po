@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Aputsiak Niels Janussen <aj@isit.gl>, 2013
+# Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013
 # Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007
 # scootergrisen, 2016-2017
 # Søren Waaben Hansen <soren@minorflaw.dk>, 2008
@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2017-01-22 22:01+0000\n"
+"POT-Creation-Date: 2017-05-07 00:31+0200\n"
+"PO-Revision-Date: 2017-05-07 21:15+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -167,69 +167,69 @@ msgstr "_Tilbage"
 msgid "Speed Reader"
 msgstr "Læsehastighedsmåler"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:373
 msgid "You must enter a text."
 msgstr "Du er nødt til at indtaste en tekst."
 
-#: ../lib/speedreader.c:515
+#: ../lib/speedreader.c:529
 msgid "Choose a file to load"
 msgstr "Vælg en fil til indlæsning"
 
-#: ../lib/speedreader.c:544
+#: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Filen '%s' kunne ikke indlæses."
 
-#: ../lib/speedreader.c:570
+#: ../lib/speedreader.c:584
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(vis %d ord ad gangen)"
 msgstr[1] "(vis %d ord ad gangen)"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:608
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Dette er et nemt værktøj til læsehastighedsmåling for at hjælpe dig med at læse hurtigere. Det sker ved at vise ord med hurtig frekvens på skærmen."
 
-#: ../lib/speedreader.c:598
+#: ../lib/speedreader.c:612
 msgid "_Words per Minute:"
 msgstr "_Ord pr. minut:"
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
 msgstr "_Markér afsnit"
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
 msgstr "_Gruppering af ord:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:643
 msgid "_Font Size:"
 msgstr "_Størrelse af skrifttype:"
 
-#: ../lib/speedreader.c:650
+#: ../lib/speedreader.c:664
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Indtast en tekst som du ønsker at læse.\n\nVær afslappet og have det komfortabelt, før du trykker Begynd for at starte læsehastighedsmåling."
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
 msgstr "Indlæs indholdet af en fil"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Ryd indholdet af tekstfeltet og indsæt indholdet af udklipsholderen"
 
-#: ../lib/speedreader.c:672
+#: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
 msgstr "Ryd indholdet af tekstfeltet"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:698
 msgid "_Start"
 msgstr "_Begynd"
 
@@ -268,7 +268,7 @@ msgstr "Ugyldig ordbog valgt. Kontrollér venligst dine indstillinger."
 
 #: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
 msgid "Unknown error while querying the server."
-msgstr "Ukendt fejl ved forespørgsel til serveren."
+msgstr "Ukendt fejl ved forespørgsel af serveren."
 
 #: ../lib/dictd.c:423
 msgid "Dictionary Results:"
@@ -303,8 +303,8 @@ msgid "Querying %s..."
 msgstr "Forespørger %s..."
 
 #: ../lib/dictd.c:736
-msgid "An error occured while querying server information."
-msgstr "En fejl opstod ved forespørgsel om servereninformation."
+msgid "An error occurred while querying server information."
+msgstr "Der opstod en fejl ved forespørgsel af serverinformation."
 
 #: ../lib/dictd.c:749
 #, c-format
