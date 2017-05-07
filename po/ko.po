@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016-2017
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2013,2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2016-11-11 20:35+0000\n"
+"POT-Creation-Date: 2017-05-07 00:31+0200\n"
+"PO-Revision-Date: 2017-05-07 07:59+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/xfce/xfce-apps/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -164,68 +164,68 @@ msgstr "뒤로(_B)"
 msgid "Speed Reader"
 msgstr "속독기"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:373
 msgid "You must enter a text."
 msgstr "본문을 입력해야 합니다."
 
-#: ../lib/speedreader.c:515
+#: ../lib/speedreader.c:529
 msgid "Choose a file to load"
 msgstr "불러올 파일을 선택"
 
-#: ../lib/speedreader.c:544
+#: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "'%s' 파일을 불러올 수 없습니다."
 
-#: ../lib/speedreader.c:570
+#: ../lib/speedreader.c:584
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(한 화면에 %d개 단어 표시)"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:608
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "여러분의 속독 훈련을 도와줄 간편한 속독 유틸리티입니다. 화면에 빠른 속도로 단어를 넘겨보입니다."
 
-#: ../lib/speedreader.c:598
+#: ../lib/speedreader.c:612
 msgid "_Words per Minute:"
 msgstr "분당 단어 수(_W):"
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
 msgstr "문단 표시(_M)"
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
 msgstr "단어 분류(_G):"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:643
 msgid "_Font Size:"
 msgstr "글꼴 크기(_F):"
 
-#: ../lib/speedreader.c:650
+#: ../lib/speedreader.c:664
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "읽고 싶은 본문을 이곳에 입력합니다.\n\n진정하고 마음을 가다듬은 다음, 시작을 눌러서 속독을 시작합니다."
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
 msgstr "파일의 내용 불러오기"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "본문 필드의 내용을 지우고 클립보드의 내용을 붙입니다"
 
-#: ../lib/speedreader.c:672
+#: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
 msgstr "본문 필드 내용 지우기"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:698
 msgid "_Start"
 msgstr "시작(_S)"
 
@@ -298,8 +298,8 @@ msgid "Querying %s..."
 msgstr "%s 요청중..."
 
 #: ../lib/dictd.c:736
-msgid "An error occured while querying server information."
-msgstr "서버 정보를 요청하는 동안 오류가 발생했습니다."
+msgid "An error occurred while querying server information."
+msgstr "서버 정보를 조회하는 동안 오류가 발생했습니다."
 
 #: ../lib/dictd.c:749
 #, c-format
