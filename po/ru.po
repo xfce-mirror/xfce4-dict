@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Igor <f2404@yandex.ru>, 2016
+# Igor <f2404@yandex.ru>, 2016-2017
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2017-03-08 17:10+0000\n"
-"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
+"POT-Creation-Date: 2017-05-07 00:31+0200\n"
+"PO-Revision-Date: 2017-05-07 23:39+0000\n"
+"Last-Translator: Igor <f2404@yandex.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -167,20 +167,20 @@ msgstr "_Назад"
 msgid "Speed Reader"
 msgstr "Быстрое чтение"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:373
 msgid "You must enter a text."
 msgstr "Вы должны ввести текст."
 
-#: ../lib/speedreader.c:515
+#: ../lib/speedreader.c:529
 msgid "Choose a file to load"
 msgstr "Укажите файл для загрузки"
 
-#: ../lib/speedreader.c:544
+#: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Файл «%s» не может быть загружен."
 
-#: ../lib/speedreader.c:570
+#: ../lib/speedreader.c:584
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -189,49 +189,49 @@ msgstr[1] "(показывать %d слова за раз)"
 msgstr[2] "(показывать %d слов за раз)"
 msgstr[3] "(показывать %d слов за раз)"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:608
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Это простая утилита для тренировки скорости вашего чтения посредством изменения с большой скоростью слов на экране."
 
-#: ../lib/speedreader.c:598
+#: ../lib/speedreader.c:612
 msgid "_Words per Minute:"
 msgstr "_Слов в минуту:"
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
 msgstr "_Отмечать абзацы"
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
 msgstr "_Группировка слов:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:643
 msgid "_Font Size:"
 msgstr "Размер _шрифта:"
 
-#: ../lib/speedreader.c:650
+#: ../lib/speedreader.c:664
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Введите здесь небольшой текст, который хотите прочитать.\n\nРасслабьтесь и сядьте поудобнее, затем нажмите «Старт» для начала чтения на скорость."
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
 msgstr "Загрузить содержимое файла"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Очистить содержимое текстового поля и вставить текст из буфера обмена"
 
-#: ../lib/speedreader.c:672
+#: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
 msgstr "Очистить содержимое текстового поля"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:698
 msgid "_Start"
 msgstr "_Старт"
 
@@ -286,7 +286,7 @@ msgstr "Не найдено совпадений для «%s»."
 #: ../lib/dictd.c:442
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr "Поиск «%s» используя «%s»"
+msgstr "Поиск «%s» с использованием «%s»"
 
 #: ../lib/dictd.c:447
 msgid "Web Search:"
@@ -307,7 +307,7 @@ msgid "Querying %s..."
 msgstr "Запрашиваю %s..."
 
 #: ../lib/dictd.c:736
-msgid "An error occured while querying server information."
+msgid "An error occurred while querying server information."
 msgstr "Во время запроса информации о сервере произошла ошибка."
 
 #: ../lib/dictd.c:749
@@ -379,7 +379,7 @@ msgstr "_Программа для проверки орфографии"
 
 #: ../lib/gui.c:1020
 msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Copyright © 2006—2016 команда разработчиков Xfce"
+msgstr "Copyright © 2006-2016 команда разработчиков Xfce"
 
 #: ../lib/gui.c:1023
 msgid "translator-credits"
@@ -443,7 +443,7 @@ msgstr "Вы указали неправильный словарь."
 
 #: ../lib/prefs.c:299
 msgid "General"
-msgstr "Основные"
+msgstr "Общие"
 
 #: ../lib/prefs.c:301
 msgid "<b>Default search method:</b>"
