@@ -4,23 +4,24 @@
 # 
 # Translators:
 # G G <grzegorz.gebczynski@gmail.com>, 2016
-# Marcin <m4sk1n@o2.pl>, 2016
+# m4sk1n <m4sk1n@vivaldi.net>, 2016
 # Piotr Maliński <riklaunim@gmail.com>, 2007
 # Piotr Sokół <psokol.l10n@gmail.com>, 2009,2013
-# Piotr Strębski <strebski@o2.pl>, 2015
+# Piotr Strębski <strebski@gmail.com>, 2017
+# Piotr Strębski <strebski@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2016-11-23 15:46+0000\n"
-"Last-Translator: Marcin <m4sk1n@o2.pl>\n"
+"POT-Creation-Date: 2017-05-07 00:31+0200\n"
+"PO-Revision-Date: 2017-05-09 11:03+0000\n"
+"Last-Translator: Piotr Strębski <strebski@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/xfce/xfce-apps/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
@@ -105,6 +106,7 @@ msgid_plural "%d suggestions found."
 msgstr[0] "Odnaleziono %d sugestię pisowni"
 msgstr[1] "Odnaleziono %d sugestie pisowni"
 msgstr[2] "Odnaleziono %d sugestii pisowni"
+msgstr[3] "Odnaleziono %d sugestii pisowni"
 
 #: ../lib/spell.c:103
 #, c-format
@@ -169,70 +171,71 @@ msgstr "Wstecz"
 msgid "Speed Reader"
 msgstr "Szybkie czytanie"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:373
 msgid "You must enter a text."
 msgstr "Proszę wprowadzić tekst."
 
-#: ../lib/speedreader.c:515
+#: ../lib/speedreader.c:529
 msgid "Choose a file to load"
 msgstr "Wybór pliku"
 
-#: ../lib/speedreader.c:544
+#: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Nie udało się wczytać pliku „%s”."
 
-#: ../lib/speedreader.c:570
+#: ../lib/speedreader.c:584
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(wyświetla %d słowo jednocześnie)"
 msgstr[1] "(wyświetla %d słowa jednocześnie)"
 msgstr[2] "(wyświetla %d słów jednocześnie)"
+msgstr[3] "(wyświetla %d słów jednocześnie)"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:608
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Oto proste narzędzie do pomocy w nauce szybszego czytania, wyświetlające na ekranie tekst z dużą prędkością."
 
-#: ../lib/speedreader.c:598
+#: ../lib/speedreader.c:612
 msgid "_Words per Minute:"
 msgstr "_Tempo wyświetlania (słowa/min):"
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
 msgstr "_Oznaczanie akapitów"
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
 msgstr "Ilość g_rupowanych słów:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:643
 msgid "_Font Size:"
 msgstr "_Rozmiar czcionki:"
 
-#: ../lib/speedreader.c:650
+#: ../lib/speedreader.c:664
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "W tym miejscu należy wprowadzić wprowadzić tekst do przeczytania.\n\nProszę się odprężyć i przygotować. Tekst zostanie wyświetlony po wciśnięciu przycisku „Rozpocznij”."
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
 msgstr "Wczytuje zawartość pliku"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Czyści zawartość pola tekstowego i wkleja zawartość schowka"
 
-#: ../lib/speedreader.c:672
+#: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
 msgstr "Czyści zawartość pola tekstowego"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:698
 msgid "_Start"
 msgstr "_Rozpocznij"
 
@@ -300,6 +303,7 @@ msgid_plural "%d definitions found."
 msgstr[0] "Odnaleziono %d definicję"
 msgstr[1] "Odnaleziono %d definicje"
 msgstr[2] "Odnaleziono %d definicji"
+msgstr[3] "Odnaleziono %d definicji"
 
 #: ../lib/dictd.c:677
 #, c-format
@@ -307,7 +311,7 @@ msgid "Querying %s..."
 msgstr "Odpytywanie serwera %s..."
 
 #: ../lib/dictd.c:736
-msgid "An error occured while querying server information."
+msgid "An error occurred while querying server information."
 msgstr "Wystąpił błąd podczas odpytywania serwera."
 
 #: ../lib/dictd.c:749
