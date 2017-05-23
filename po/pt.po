@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# José Vieira <jvieira33@sapo.pt>, 2017
 # Nuno Miguel <nunomgue@gmail.com>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2017-02-02 19:20+0000\n"
-"Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
+"POT-Creation-Date: 2017-05-07 00:31+0200\n"
+"PO-Revision-Date: 2017-05-23 13:58+0000\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
 "Language-Team: Portuguese (http://www.transifex.com/xfce/xfce-apps/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -164,69 +165,69 @@ msgstr "_Recuar"
 msgid "Speed Reader"
 msgstr "Leitura rápida"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:373
 msgid "You must enter a text."
 msgstr "Tem que introduzir um texto."
 
-#: ../lib/speedreader.c:515
+#: ../lib/speedreader.c:529
 msgid "Choose a file to load"
 msgstr "Escolha o ficheiro a carregar."
 
-#: ../lib/speedreader.c:544
+#: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "O ficheiro \"%s\" não pôde ser carregado."
 
-#: ../lib/speedreader.c:570
+#: ../lib/speedreader.c:584
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(exibir %d palavra de cada vez)"
 msgstr[1] "(exibir %d palavras de cada vez)"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:608
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Um utilitário para o treinar a ler rapidamente. Funciona através de palavras intermitentes no ecrã durante um curto intervalo."
 
-#: ../lib/speedreader.c:598
+#: ../lib/speedreader.c:612
 msgid "_Words per Minute:"
 msgstr "_Palavras por minuto:"
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
 msgstr "_Marcar parágrafos"
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
 msgstr "A_grupamento de palavras:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:643
 msgid "_Font Size:"
 msgstr "_Tamanho da letra:"
 
-#: ../lib/speedreader.c:650
+#: ../lib/speedreader.c:664
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Indique aqui o texto que pretende ler.\n\nRelaxe e ponha-se confortável, prima Iniciar para começar a leitura rápida."
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
 msgstr "Carregar conteúdo de um ficheiro"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Limpar conteúdo do campo de texto e colar o conteúdo da área de transferência"
 
-#: ../lib/speedreader.c:672
+#: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
 msgstr "Limpar conteúdo do campo de texto"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:698
 msgid "_Start"
 msgstr "_Iniciar"
 
@@ -300,8 +301,8 @@ msgid "Querying %s..."
 msgstr "A consultar %s..."
 
 #: ../lib/dictd.c:736
-msgid "An error occured while querying server information."
-msgstr "Ocorreu um erro ao consultar a informação do servidor."
+msgid "An error occurred while querying server information."
+msgstr "Ocorreu um erro ao procurar a informação sobre o servidor."
 
 #: ../lib/dictd.c:749
 #, c-format
