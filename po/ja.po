@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008,2016
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008,2016-2017
 # Yuko Iwamatsu <nigauri@gmail>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2016-11-17 03:58+0000\n"
+"POT-Creation-Date: 2017-05-07 00:31+0200\n"
+"PO-Revision-Date: 2017-06-01 00:27+0000\n"
 "Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/xfce/xfce-apps/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -164,68 +164,68 @@ msgstr "戻る(_B)"
 msgid "Speed Reader"
 msgstr "スピードリーダー"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:373
 msgid "You must enter a text."
 msgstr "文字列を入力してください。"
 
-#: ../lib/speedreader.c:515
+#: ../lib/speedreader.c:529
 msgid "Choose a file to load"
 msgstr "ロードするファイルの選択"
 
-#: ../lib/speedreader.c:544
+#: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "ファイル '%s' を読み込めませんでした。"
 
-#: ../lib/speedreader.c:570
+#: ../lib/speedreader.c:584
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(同時に %d 個の単語を表示)"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:608
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "これは速読練習用の簡単なユーティリティです。画面に文字列を一つずつ、高速に表示します。"
 
-#: ../lib/speedreader.c:598
+#: ../lib/speedreader.c:612
 msgid "_Words per Minute:"
 msgstr "1分あたりの単語数(_W):"
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
 msgstr "段落に印をつける(_M)"
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
 msgstr "単語のグルーピング(_G):"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:643
 msgid "_Font Size:"
 msgstr "フォントサイズ(_F):"
 
-#: ../lib/speedreader.c:650
+#: ../lib/speedreader.c:664
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "ここに 読みたい 文字列を スペースで 区切って 入力して ください。\n\n体を楽に、 リラックスして ください。 「スタート」ボタンを 押すと 開始します。"
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
 msgstr "文字列をファイルから読み込みます"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "テキストフィールドの内容をクリアしクリップボードの内容を貼り付けます"
 
-#: ../lib/speedreader.c:672
+#: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
 msgstr "テキストフィールドの内容をクリアします"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:698
 msgid "_Start"
 msgstr "スタート(_S)"
 
@@ -298,7 +298,7 @@ msgid "Querying %s..."
 msgstr "%s に問い合わせています..."
 
 #: ../lib/dictd.c:736
-msgid "An error occured while querying server information."
+msgid "An error occurred while querying server information."
 msgstr "サーバーへの問い合わせ中にエラーが発生しました。"
 
 #: ../lib/dictd.c:749
