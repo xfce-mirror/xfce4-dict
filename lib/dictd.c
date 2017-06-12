@@ -371,6 +371,28 @@ static void clear_query_buffer(DictData *dd)
 }
 
 
+static void append_web_search_link(DictData *dd, gboolean prepend_whitespace)
+{
+	gchar *label = _(dict_prefs_get_web_url_label(dd));
+	gchar *text = g_strdup_printf(
+		/* for translators: the first wildcard is the search term, the second wildcard
+			* is the name of the preferred web search engine */
+		_("Search \"%s\" using \"%s\""),
+		dd->searched_word, label);
+
+	if (prepend_whitespace)
+		gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
+
+	gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+		_("Web Search:"), -1, TAG_HEADING, NULL);
+
+	gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
+	gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
+		text, -1, TAG_LINK, NULL);
+	g_free(text);
+}
+
+
 static gboolean process_server_response(DictData *dd)
 {
 	gint max_lines, i;
@@ -434,23 +456,8 @@ static gboolean process_server_response(DictData *dd)
 		/* if we had no luck searching a word, maybe we have a typo so try searching with
 		 * spell check and offer a Web search*/
 		if (NZV(dd->web_url))
-		{
-			gchar *label = _(dict_prefs_get_web_url_label(dd));
-			gchar *text = g_strdup_printf(
-				/* for translators: the first wildcard is the search term, the second wildcard
-				 * is the name of the preferred web search engine */
-				_("Search \"%s\" using \"%s\""),
-				dd->searched_word, label);
+			append_web_search_link (dd, TRUE);
 
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n\n", 2);
-			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
-				_("Web Search:"), -1, TAG_HEADING, NULL);
-
-			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
-			gtk_text_buffer_insert_with_tags_by_name(dd->main_textbuffer, &dd->textiter,
-				text, -1, TAG_LINK, NULL);
-			g_free(text);
-		}
 		if (NZV(dd->spell_bin))
 		{
 			gtk_text_buffer_insert(dd->main_textbuffer, &dd->textiter, "\n", 1);
@@ -492,6 +499,9 @@ static gboolean process_server_response(DictData *dd)
 	{
 		i = process_response_content(dd, lines, i, max_lines, header, body);
 	}
+
+	append_web_search_link (dd, FALSE);
+
 	g_strfreev(lines);
 	clear_query_buffer(dd);
 
