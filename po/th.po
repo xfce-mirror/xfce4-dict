@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-05-25 16:01+0000\n"
+"PO-Revision-Date: 2017-06-18 10:12+0000\n"
 "Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/xfce/xfce-apps/language/th/)\n"
 "MIME-Version: 1.0\n"
@@ -236,7 +236,7 @@ msgstr "ไม่มี URL สำหรับค้นหา กรุณาต
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "ไม่สามารถเปิดเบราว์เซอร์ได้ กรุณาตรวจสอบค่าปรับแต่งของคุณ"
+msgstr "ไม่สามารถเปิดโปรแกรมท่องเว็บได้ กรุณาตรวจสอบค่าปรับแต่งของคุณ"
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
