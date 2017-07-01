@@ -5,14 +5,14 @@
 # Translators:
 # Automatically generated, 2011
 # Dušan Kazik <prescott66@gmail.com>, 2015-2016
-# Slavko <linux@slavino.sk>, 2011,2015
+# Slavko <linux@slavino.sk>, 2011,2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 06:30+0100\n"
-"PO-Revision-Date: 2016-11-04 18:10+0000\n"
-"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
+"POT-Creation-Date: 2017-05-07 00:31+0200\n"
+"PO-Revision-Date: 2017-07-01 07:21+0000\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/xfce/xfce-apps/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -167,20 +167,20 @@ msgstr "_Späť"
 msgid "Speed Reader"
 msgstr "Rýchločítanie"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:373
 msgid "You must enter a text."
 msgstr "Musíte zadať text"
 
-#: ../lib/speedreader.c:515
+#: ../lib/speedreader.c:529
 msgid "Choose a file to load"
 msgstr "Vyberte súbor na načítanie"
 
-#: ../lib/speedreader.c:544
+#: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Súbor '%s' nemožno načítať."
 
-#: ../lib/speedreader.c:570
+#: ../lib/speedreader.c:584
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -188,49 +188,49 @@ msgstr[0] "(zobraziť naraz %d slovo)"
 msgstr[1] "(zobraziť naraz %d slová)"
 msgstr[2] "(zobraziť naraz %d slov)"
 
-#: ../lib/speedreader.c:594
+#: ../lib/speedreader.c:608
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Toto je jednoduchý nástroj na rýchlo-čítanie, ktorý vám pomôže s nácvikom rýchlejšieho čítania. Pracuje na základe rýchlo zvýrazňovaných slov na obrazovke."
 
-#: ../lib/speedreader.c:598
+#: ../lib/speedreader.c:612
 msgid "_Words per Minute:"
 msgstr "_Slov za minútu:"
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
 msgstr "_Označiť odseky"
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
 msgstr "Zoskupovanie slov:"
 
-#: ../lib/speedreader.c:629
+#: ../lib/speedreader.c:643
 msgid "_Font Size:"
 msgstr "Veľkosť _písma:"
 
-#: ../lib/speedreader.c:650
+#: ../lib/speedreader.c:664
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Tu zadajte nejaký text, ktorý by ste chceli čítať.\n\nUvoľnite sa a urobte si pohodlie, potom stlačte Štart a začne rýchle čítanie."
 
-#: ../lib/speedreader.c:663
+#: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
 msgstr "Načítať obsah súboru"
 
-#: ../lib/speedreader.c:668
+#: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Vymaže obsah textového poľa a vloží obsah schránky"
 
-#: ../lib/speedreader.c:672
+#: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
 msgstr "Vymaže obsah textového poľa"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:698
 msgid "_Start"
 msgstr "_Spustiť"
 
@@ -305,8 +305,8 @@ msgid "Querying %s..."
 msgstr "Hľadanie %s..."
 
 #: ../lib/dictd.c:736
-msgid "An error occured while querying server information."
-msgstr "Nastala chyba pri zisťovaní informácií servera."
+msgid "An error occurred while querying server information."
+msgstr "Nastala chyba pri získavaní informácií zo servera."
 
 #: ../lib/dictd.c:749
 #, c-format
