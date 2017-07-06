@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-05-07 09:52+0000\n"
+"PO-Revision-Date: 2017-07-06 07:51+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -519,7 +519,7 @@ msgstr "! (bruk alle, stopp etter første treff)"
 
 #: ../lib/prefs.c:565
 msgid "<b>Web search URL:</b>"
-msgstr "<b>Nettsøk URL:</b>"
+msgstr "<b>Nettsøk-URL:</b>"
 
 #: ../lib/prefs.c:570
 msgid "URL:"
