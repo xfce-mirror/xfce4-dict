@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-05-07 21:15+0000\n"
+"PO-Revision-Date: 2017-09-13 16:33+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -128,7 +128,7 @@ msgstr "Fejl ved kørsel af \"%s\" (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Vælg venligst stavekontrolkommandoen i indstillingsvinduet."
+msgstr "Vælg venligst stavekontrolkommandoen i præferencer-dialogen."
 
 #: ../lib/spell.c:206
 msgid "Invalid input"
@@ -235,11 +235,11 @@ msgstr "_Begynd"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Søge-URL'en er tom. Kontrollér venligst dine indstillinger."
+msgstr "Søge-URL'en er tom. Kontrollér venligst dine præferencer."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Browseren kunne ikke åbnes. Kontrollér venligst dine indstillinger."
+msgstr "Browseren kunne ikke åbnes. Kontrollér venligst dine præferencer."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
@@ -264,7 +264,7 @@ msgstr "Serveren er ikke klar."
 
 #: ../lib/dictd.c:400
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Ugyldig ordbog valgt. Kontrollér venligst dine indstillinger."
+msgstr "Ugyldig ordbog valgt. Kontrollér venligst dine præferencer."
 
 #: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
 msgid "Unknown error while querying the server."
@@ -338,7 +338,7 @@ msgstr "Læse_hastighedsmåler"
 
 #: ../lib/gui.c:726
 msgid "_Preferences"
-msgstr "_Indstillinger"
+msgstr "_Præferencer"
 
 #: ../lib/gui.c:746 ../lib/gui.c:862
 msgid "_Quit"
