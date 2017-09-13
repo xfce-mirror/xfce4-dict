@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-09-13 16:33+0000\n"
+"PO-Revision-Date: 2017-09-13 21:19+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -132,7 +132,7 @@ msgstr "Vælg venligst stavekontrolkommandoen i præferencer-dialogen."
 
 #: ../lib/spell.c:206
 msgid "Invalid input"
-msgstr "Ugyldig inddata"
+msgstr "Ugyldig input"
 
 #: ../lib/spell.c:245
 #, c-format
@@ -243,7 +243,7 @@ msgstr "Browseren kunne ikke åbnes. Kontrollér venligst dine præferencer."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
-msgstr "Ugyldig ikke-UTF8-inddata"
+msgstr "Ugyldig ikke-UTF8-input"
 
 #: ../lib/common.c:568
 msgid "Error"
