@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-09-19 18:05+0000\n"
+"PO-Revision-Date: 2017-09-30 14:15+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Ordbog"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 msgid "A plugin to query different dictionaries."
-msgstr "Et udvidelsesmodul, der slår op i forskellige ordbøger."
+msgstr "Et plugin, der slår op i forskellige ordbøger."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:263
 #: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
@@ -62,7 +62,7 @@ msgstr "Hent fokus på tekstfeltet i panelet"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Start eksternt program også selvom paneludvidelsesmodulet er indlæst"
+msgstr "Start eksternt program også selvom panelpluginet er indlæst"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
