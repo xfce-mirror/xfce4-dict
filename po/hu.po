@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009
+# Gábor P., 2017
 # Attila SZERVÁC <sas@321.hu>, 2006
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-09-19 18:05+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2017-11-01 19:38+0000\n"
+"Last-Translator: Gábor P.\n"
 "Language-Team: Hungarian (http://www.transifex.com/xfce/xfce-apps/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,7 +148,7 @@ msgstr "_Folytatás"
 
 #: ../lib/speedreader.c:254
 msgid "S_top"
-msgstr ""
+msgstr "_Leállítás"
 
 #: ../lib/speedreader.c:262
 msgid "Running"
@@ -159,7 +160,7 @@ msgstr "Befejeződött"
 
 #: ../lib/speedreader.c:266
 msgid "_Back"
-msgstr ""
+msgstr "_Vissza"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
@@ -302,7 +303,7 @@ msgstr "%s lekérdezése…"
 
 #: ../lib/dictd.c:736
 msgid "An error occurred while querying server information."
-msgstr ""
+msgstr "Hiba történt a kiszolgálóinformációk lekérdezésekor."
 
 #: ../lib/dictd.c:749
 #, c-format
@@ -319,11 +320,11 @@ msgstr "Hivatkozás másolása"
 
 #: ../lib/gui.c:374
 msgid "Search"
-msgstr ""
+msgstr "Keresés"
 
 #: ../lib/gui.c:606
 msgid "F_ind"
-msgstr ""
+msgstr "_Keresés"
 
 #. File Menu
 #: ../lib/gui.c:695
@@ -336,11 +337,11 @@ msgstr "_Gyorsolvasó"
 
 #: ../lib/gui.c:726
 msgid "_Preferences"
-msgstr ""
+msgstr "_Beállítások"
 
 #: ../lib/gui.c:746 ../lib/gui.c:862
 msgid "_Quit"
-msgstr ""
+msgstr "_Kilépés"
 
 #. Help Menu
 #: ../lib/gui.c:760
@@ -349,11 +350,11 @@ msgstr "_Súgó"
 
 #: ../lib/gui.c:769
 msgid "About"
-msgstr ""
+msgstr "Névjegy"
 
 #: ../lib/gui.c:862
 msgid "_Close"
-msgstr ""
+msgstr "_Bezárás"
 
 #: ../lib/gui.c:874
 msgid "Search with:"
