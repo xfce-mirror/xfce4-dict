@@ -7,10 +7,11 @@
 # Adolfo Jayme-Barrientos, 2014
 # Adolfo Jayme Barrientos, 2014
 # Adolfo Jayme Barrientos, 2014
-# Francisco Serrador <serrador@tecknolabs.com>, 2017
+# Francisco F. Serrador <serrador@tecknolabs.com>, 2017
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
 # Manolo Díaz <diaz.manolo@gmail.com>, 2016
+# Pablo Lezaeta Reyes [pˈaβ̞lo lˌe̞θaˈeta rˈejɛ] <prflr88@gmail.com>, 2017
 # Pablo Lezaeta Reyes [pˈaβ̞lo lˌe̞θaˈeta rˈejɛ] <prflr88@gmail.com>, 2013-2014
 # Pablo Lezaeta Reyes [pˈaβ̞lo lˌe̞θaˈeta rˈejɛ] <prflr88@gmail.com>, 2017
 msgid ""
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-09-19 18:05+0000\n"
+"PO-Revision-Date: 2017-11-20 02:12+0000\n"
 "Last-Translator: Pablo Lezaeta Reyes [pˈaβ̞lo lˌe̞θaˈeta rˈejɛ] <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-apps/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -377,7 +378,7 @@ msgstr "Servicio _web"
 
 #: ../lib/gui.c:892
 msgid "_Spell Checker"
-msgstr "_Comprobación ortográfica"
+msgstr "Comprobación ort_ográfica"
 
 #: ../lib/gui.c:1020
 msgid "Copyright © 2006-2016 Xfce Development Team"
