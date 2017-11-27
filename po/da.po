@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013
+# Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013
 # Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007
 # scootergrisen, 2016-2017
 # Søren Waaben Hansen <soren@minorflaw.dk>, 2008
@@ -12,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-09-30 14:15+0000\n"
+"PO-Revision-Date: 2017-11-27 21:33+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -46,11 +47,11 @@ msgstr "Søgetekst"
 
 #: ../src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr "Søg efter den valgte tekst vha. en Dict-server (RFC 2229)"
+msgstr "Søg efter den givne tekst med en Dict-server (RFC 2229)"
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
-msgstr "Søg efter den angivne tekst med en søgemaskine på internettet"
+msgstr "Søg efter den givne tekst med en webbaseret søgemaskine"
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
@@ -288,7 +289,7 @@ msgstr "Søg \"%s\" ved brug af \"%s\""
 
 #: ../lib/dictd.c:447
 msgid "Web Search:"
-msgstr "Internetsøgning:"
+msgstr "Websøgning:"
 
 #: ../lib/dictd.c:469
 #, c-format
@@ -367,7 +368,7 @@ msgstr "_Ordbogsserver"
 
 #: ../lib/gui.c:884
 msgid "_Web Service"
-msgstr "_Internetservice"
+msgstr "_Webservice"
 
 #: ../lib/gui.c:892
 msgid "_Spell Checker"
@@ -423,11 +424,11 @@ msgstr "Wikipedia, det frie leksikon (EN)"
 
 #: ../lib/prefs.c:62
 msgid "Wiktionary, the free dictionary (EN)"
-msgstr "Wiktionary, the free dictionary (EN)"
+msgstr "Wiktionary, den frie ordbog (EN)"
 
 #: ../lib/prefs.c:63
 msgid "Merriam-Webster Online Dictionary"
-msgstr "Merriam-Webster ordbog på internettet"
+msgstr "Merriam-Webster onlineordbog"
 
 #: ../lib/prefs.c:64
 msgid "Clear"
@@ -451,7 +452,7 @@ msgstr "Ordbogsserver"
 
 #: ../lib/prefs.c:315 ../lib/prefs.c:563
 msgid "Web Service"
-msgstr "Internetservice"
+msgstr "Webservice"
 
 #: ../lib/prefs.c:324 ../lib/prefs.c:609
 msgid "Spell Checker"
@@ -519,7 +520,7 @@ msgstr "! (brug alle, stop ved første træf)"
 
 #: ../lib/prefs.c:565
 msgid "<b>Web search URL:</b>"
-msgstr "<b>Internetsøge-URL:</b>"
+msgstr "<b>Websøge-URL:</b>"
 
 #: ../lib/prefs.c:570
 msgid "URL:"
