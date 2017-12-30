@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-12-15 07:07+0000\n"
+"PO-Revision-Date: 2017-12-30 13:19+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -73,7 +73,7 @@ msgstr "Mostra més informació"
 
 #: ../src/xfce4-dict.c:56
 msgid "Show version information"
-msgstr "Mostra informació de la versió"
+msgstr "Mostra la informació de la versió"
 
 #: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
@@ -100,8 +100,8 @@ msgstr "Resultats del corrector ortogràfic:"
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "%d suggeriment trobat."
-msgstr[1] "%d suggeriments trobats."
+msgstr[0] "S'ha trobat %d suggeriment."
+msgstr[1] "S'ha trobat %d suggeriments."
 
 #: ../lib/spell.c:103
 #, c-format
@@ -172,12 +172,12 @@ msgstr "Heu d'introduir un text."
 
 #: ../lib/speedreader.c:529
 msgid "Choose a file to load"
-msgstr "Seleccioneu un fitxer per a carregar"
+msgstr "Seleccioneu un fitxer a carregar"
 
 #: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "El fitxer «%s» no s'ha pogut carregar."
+msgstr "No s'ha pogut carregar el fitxer «%s»."
 
 #: ../lib/speedreader.c:584
 #, c-format
@@ -198,7 +198,7 @@ msgstr "_Paraules per minut:"
 
 #: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
-msgstr "_Marca paràgrafs"
+msgstr "_Marca els paràgrafs"
 
 #: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
@@ -217,16 +217,16 @@ msgstr "Introduïu un text que vulgueu llegir.\n\nRelaxeu-vos i poseu-vos còmod
 
 #: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
-msgstr "Carregar els continguts d'un fitxer"
+msgstr "Carrega el contingut d'un fitxer"
 
 #: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Buida els continguts del camp de text i enganxa el contingut del porta-retalls"
+msgstr "Neteja el contingut del camp de text i enganxa el contingut del porta-retalls"
 
 #: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
-msgstr "Buida els continguts del camp de text"
+msgstr "Neteja el contingut del camp de text"
 
 #: ../lib/speedreader.c:698
 msgid "_Start"
@@ -259,7 +259,7 @@ msgstr "No s'ha pogut connectar al servidor."
 
 #: ../lib/dictd.c:393
 msgid "The server is not ready."
-msgstr "El servidor està preparat."
+msgstr "El servidor no està preparat."
 
 #: ../lib/dictd.c:400
 msgid "Invalid dictionary specified. Please check your preferences."
@@ -293,8 +293,8 @@ msgstr "Cerca Web:"
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d definició trobada."
-msgstr[1] "%d definicions trobades."
+msgstr[0] "S'ha trobat %d definició."
+msgstr[1] "S'han trobat %d definicions."
 
 #: ../lib/dictd.c:677
 #, c-format
@@ -374,7 +374,7 @@ msgstr "_Corrector ortogràfic"
 
 #: ../lib/gui.c:1020
 msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Copyright © 2006-2016 L'equip de desenvolupament de Xfce"
+msgstr "Drets d'autor © 2006-2016 L'equip de desenvolupament de Xfce"
 
 #: ../lib/gui.c:1023
 msgid "translator-credits"
@@ -382,31 +382,31 @@ msgstr "Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008\nHarald Serva
 
 #: ../lib/gui.c:1026
 msgid "Xfce4 Dictionary"
-msgstr "Diccionari Xfce4"
+msgstr "Diccionari de Xfce4"
 
 #: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
-msgstr "dict.leo.org - Alemany <-> Anglès"
+msgstr "dict.leo.org: alemany <-> anglès"
 
 #: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org - Alemany <-> Francès"
+msgstr "dict.leo.org: alemany <-> francès"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org - Alemany <-> Espanyol"
+msgstr "dict.leo.org: alemany <-> espanyol"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Italian"
-msgstr "dict.leo.org - Alemany <-> Italià"
+msgstr "dict.leo.org: alemany <-> italià"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Chinese"
-msgstr "dict.leo.org - Alemany <-> Xinès"
+msgstr "dict.leo.org: alemany <-> xinès"
 
 #: ../lib/prefs.c:58
 msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Diccionari"
+msgstr "dist.cc: diccionari"
 
 #: ../lib/prefs.c:59
 msgid "Dictionary.com"
