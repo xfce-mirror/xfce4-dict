@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-12-30 17:40+0000\n"
+"PO-Revision-Date: 2017-12-31 05:40+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -238,7 +238,7 @@ msgstr "L'URL de cerca està buida. Comproveu les vostres preferències."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "No es pot obrir el navegador. Comproveu les vostres preferències."
+msgstr "No s'ha pogut obrir el navegador. Comproveu les vostres preferències."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
