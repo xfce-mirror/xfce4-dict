@@ -6,14 +6,14 @@
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013
 # Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007
-# scootergrisen, 2016-2017
+# scootergrisen, 2016-2018
 # Søren Waaben Hansen <soren@minorflaw.dk>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-11-27 21:33+0000\n"
+"PO-Revision-Date: 2018-03-04 19:55+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgstr "Hent fokus på tekstfeltet i panelet"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Start eksternt program også selvom panelpluginet er indlæst"
+msgstr "Start eksternt program også selvom panel-pluginet er indlæst"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
