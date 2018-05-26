@@ -18,9 +18,7 @@ libdict_la_SOURCES =							\
 	speedreader.c								\
 	speedreader.h								\
 	spell.c										\
-	spell.h										\
-	wraplabel.c									\
-	wraplabel.h
+	spell.h
 
 libdict_la_CFLAGS =								\
 	-I$(top_srcdir)								\
@@ -35,9 +33,9 @@ libdict_la_LIBADD =								\
 	@GTHREAD_LIBS@
 
 DISTCLEANFILES =								\
-	resources.c										\
-	resources.h										\
-	dbus.c												\
+	resources.c									\
+	resources.h									\
+	dbus.c										\
 	dbus.h
 
 gui.c: resources.c dbus.c

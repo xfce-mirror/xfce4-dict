@@ -23,7 +23,6 @@
 #include <glib/gi18n.h>
 
 #include "common.h"
-#include "wraplabel.h"
 #include "speedreader.h"
 
 
@@ -605,9 +604,10 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_widget_set_name(GTK_WIDGET(dialog), "Xfce4Dict");
 
 	/* First page */
-	label_intro = xfd_wrap_label_new(
+	label_intro = gtk_label_new(
 		_("This is an easy speed reading utility to help train you to read faster. "
 		  "It does this by flashing words at a rapid rate on the screen."));
+	gtk_label_set_line_wrap (GTK_LABEL (label_intro), TRUE);
 	gtk_label_set_line_wrap ( GTK_LABEL (label_intro), TRUE);
 
 	label_words = gtk_label_new_with_mnemonic(_("_Words per Minute:"));

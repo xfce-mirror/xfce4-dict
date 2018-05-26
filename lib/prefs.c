@@ -31,7 +31,6 @@
 #include "prefs.h"
 #include "dictd.h"
 #include "spell.h"
-#include "wraplabel.h"
 
 
 typedef struct
@@ -271,6 +270,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
 	gtk_window_set_icon_name(GTK_WINDOW(dialog), "xfce4-dict");
+	gtk_window_set_default_size (GTK_WINDOW(dialog), 500, 450);
 	if (! dd->is_plugin) /* the response callback is run by the plugin's callback */
 		g_signal_connect(dialog, "response", G_CALLBACK(dict_prefs_dialog_response), dd);
 
@@ -284,7 +284,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	/*
 	 * Page: general
 	 */
-#define PAGE_GENERAL /* only for navigation in Geany's symbol list ;-) */
+#define PAGE_GENERAL
 	{
 		GtkWidget *radio_button, *label, *grid, *label4;
 		GtkWidget *color_link, *color_phon, *color_success, *color_error;
@@ -444,7 +444,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	/*
 	 * Page: DICTD
 	 */
-#define PAGE_DICTD /* only for navigation in Geany's symbol list ;-) */
+#define PAGE_DICTD
 	 {
 		GtkWidget *grid, *button_get_list, *button_get_info;
 		GtkWidget *server_entry, *port_spinner, *dict_combo;
@@ -493,7 +493,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 				gtk_combo_box_set_active(GTK_COMBO_BOX(dict_combo), 3);
 			}
 		}
-
 
 		g_object_set_data(G_OBJECT(dialog), "server_entry", server_entry);
 		g_object_set_data(G_OBJECT(dialog), "port_spinner", port_spinner);
@@ -550,7 +549,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	/*
 	 * Page: WEB
 	 */
-#define PAGE_WEB /* only for navigation in Geany's symbol list ;-) */
+#define PAGE_WEB
 	{
 		GtkWidget *label, *web_entry_label, *web_entry, *web_entry_box, *web_dicts_table;
 
@@ -587,7 +586,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 
 		g_object_set_data(G_OBJECT(dialog), "web_entry", web_entry);
 
-		label1 = xfd_wrap_label_new(_("Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."));
+		label1 = gtk_label_new(_("Enter the URL of a web site which offers translation or dictionary services. Use {word} as placeholder for the searched word."));
+		gtk_label_set_line_wrap(GTK_LABEL(label1), TRUE);
 		gtk_widget_show(label1);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label1, FALSE, FALSE, 0);
 		gtk_box_pack_start(GTK_BOX(notebook_vbox), inner_vbox, TRUE, TRUE, 5);
@@ -596,7 +596,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	/*
 	 * Page: SPELL
 	 */
-#define PAGE_SPELL /* only for navigation in Geany's symbol list ;-) */
+#define PAGE_SPELL
 	{
 		GtkWidget *grid, *label_help, *spell_entry, *spell_combo, *button_refresh, *icon;
 
@@ -624,10 +624,11 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_signal_connect(spell_entry, "activate", G_CALLBACK(spell_entry_activate_cb), dd);
 		gtk_widget_show(spell_entry);
 
-		label_help = xfd_wrap_label_new(_(
+		label_help = gtk_label_new(_(
 	"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check "
 	"program which is compatible to the ispell command.\nThe icon shows whether the entered "
 	"command exists.</i>"));
+		gtk_label_set_line_wrap(GTK_LABEL(label_help), TRUE);
 		gtk_label_set_use_markup(GTK_LABEL(label_help), TRUE);
 		gtk_widget_show(label_help);
 
