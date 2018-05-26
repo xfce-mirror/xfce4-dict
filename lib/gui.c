@@ -346,36 +346,60 @@ static gboolean textview_is_hyperlink_at_cursor(DictData *dd)
 }
 
 
+
+static GtkWidget*
+create_menu_item(GtkWidget* label, GtkWidget* image)
+{
+    GtkWidget *mi;
+    GtkWidget *box;
+
+    /* create item */
+    mi = gtk_menu_item_new ();
+
+    gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_LEFT);
+    gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+
+    box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_widget_set_halign (label, GTK_ALIGN_START);
+
+    /* Add the image and label to the box, add the box to the menu item */
+    if (image && GTK_IS_WIDGET(image)) {
+        /* only add the widget if it exists */
+        gtk_widget_show (image);
+        gtk_box_pack_start (GTK_BOX (box), image, FALSE, FALSE, 0);
+    }
+
+    gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 6);
+    gtk_widget_show_all (box);
+    gtk_container_add (GTK_CONTAINER (mi), box);
+
+    return mi;
+}
+
+
+
 static void textview_populate_popup_cb(GtkTextView *textview, GtkMenu *menu, DictData *dd)
 {
 	GtkWidget *box, *icon, *label;
 
 	GtkWidget *search = gtk_menu_item_new ();
-	GtkWidget *copy_link = gtk_menu_item_new ();
+	GtkWidget *copy_link;
 	GtkWidget *sep = gtk_separator_menu_item_new();
 
 	gtk_widget_show(sep);
 	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), sep);
 
-	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	icon = gtk_image_new_from_icon_name ("gtk-copy", GTK_ICON_SIZE_MENU);
 	label = gtk_label_new (_("Copy Link"));
-
-	gtk_container_add (GTK_CONTAINER (box), icon);
-	gtk_container_add (GTK_CONTAINER (box), label);
-	gtk_container_add (GTK_CONTAINER (copy_link), box);
+	icon = gtk_image_new_from_icon_name ("gtk-copy", GTK_ICON_SIZE_MENU);
+	copy_link = create_menu_item(label, icon);
 
 	gtk_widget_show_all(copy_link);
 	gtk_widget_set_sensitive(GTK_WIDGET(copy_link), textview_is_hyperlink_at_cursor(dd));
 	gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), copy_link);
 
-	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	icon = gtk_image_new_from_icon_name ("gtk-find", GTK_ICON_SIZE_MENU);
 	label = gtk_label_new (_("Search"));
-
-	gtk_container_add (GTK_CONTAINER (box), icon);
-	gtk_container_add (GTK_CONTAINER (box), label);
-	gtk_container_add (GTK_CONTAINER (search), box);
+	icon = gtk_image_new_from_icon_name ("gtk-find", GTK_ICON_SIZE_MENU);
+	search = create_menu_item(label, icon);
 
 	gtk_widget_show_all(search);
 	gtk_widget_set_sensitive(GTK_WIDGET(search), textview_is_text_at_cursor(dd));
@@ -683,7 +707,7 @@ static void speedreader_clicked_cb(GtkButton *button, DictData *dd)
 
 static GtkWidget *create_file_menu(DictData *dd)
 {
-	GtkWidget *box, *icon, *label;
+	GtkWidget *icon, *label;
 	GtkWidget *menubar, *file, *file_menu, *help, *help_menu, *menu_item;
 
 	GtkAccelGroup *accel_group = gtk_accel_group_new();
@@ -698,20 +722,15 @@ static GtkWidget *create_file_menu(DictData *dd)
 	gtk_menu_item_set_submenu(GTK_MENU_ITEM(file), file_menu);
 
 	/* Speed Reader */
-	menu_item = gtk_menu_item_new();
-	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	icon = gtk_image_new_from_icon_name ("gtk-justify-center", GTK_ICON_SIZE_MENU);
 	label = gtk_accel_label_new (_("Speed _Reader"));
+	icon = gtk_image_new_from_icon_name ("gtk-justify-center", GTK_ICON_SIZE_MENU);
+	menu_item = create_menu_item (label, icon);
 
 	gtk_label_set_use_underline (GTK_LABEL (label), TRUE);
 	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
 	gtk_widget_add_accelerator (menu_item, "activate", accel_group,
                                 GDK_KEY_r, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
 	gtk_accel_label_set_accel_widget (GTK_ACCEL_LABEL (label), menu_item);
-
-	gtk_box_pack_start (GTK_BOX (box), icon, FALSE, FALSE , 0);
-	gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
-	gtk_container_add (GTK_CONTAINER (menu_item), box);
 
 	g_signal_connect(menu_item, "activate", G_CALLBACK(speedreader_clicked_cb), dd);
 	gtk_container_add(GTK_CONTAINER(file_menu), menu_item);
@@ -720,40 +739,30 @@ static GtkWidget *create_file_menu(DictData *dd)
 	gtk_container_add(GTK_CONTAINER(file_menu), gtk_separator_menu_item_new());
 
 	/* Preferences */
-	dd->pref_menu_item = gtk_menu_item_new();
-	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	icon = gtk_image_new_from_icon_name ("gtk-preferences", GTK_ICON_SIZE_MENU);
 	label = gtk_accel_label_new (_("_Preferences"));
+	icon = gtk_image_new_from_icon_name ("gtk-preferences", GTK_ICON_SIZE_MENU);
+	dd->pref_menu_item = create_menu_item (label, icon);
 
 	gtk_label_set_use_underline (GTK_LABEL (label), TRUE);
 	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
 	gtk_widget_add_accelerator (dd->pref_menu_item, "activate", accel_group,
                                 GDK_KEY_p, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
 	gtk_accel_label_set_accel_widget (GTK_ACCEL_LABEL (label), dd->pref_menu_item);
-
-	gtk_box_pack_start (GTK_BOX (box), icon, FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
-	gtk_container_add (GTK_CONTAINER (dd->pref_menu_item), box);
 	gtk_container_add(GTK_CONTAINER(file_menu), dd->pref_menu_item);
 
 	/* Separator */
 	gtk_container_add(GTK_CONTAINER(file_menu), gtk_separator_menu_item_new());
 
 	/* Close */
-	dd->close_menu_item = gtk_menu_item_new();
-	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	icon = gtk_image_new_from_icon_name ((dd->is_plugin) ? "gtk-close" : "gtk-quit", GTK_ICON_SIZE_MENU);
 	label = gtk_accel_label_new (_("_Quit"));
+	icon = gtk_image_new_from_icon_name ((dd->is_plugin) ? "gtk-close" : "gtk-quit", GTK_ICON_SIZE_MENU);
+	dd->close_menu_item = create_menu_item (label, icon);
 
 	gtk_label_set_use_underline (GTK_LABEL (label), TRUE);
 	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
 	gtk_widget_add_accelerator (dd->close_menu_item, "activate", accel_group,
                                 GDK_KEY_q, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
 	gtk_accel_label_set_accel_widget (GTK_ACCEL_LABEL (label), dd->close_menu_item);
-
-	gtk_box_pack_start (GTK_BOX (box), icon, FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
-	gtk_container_add (GTK_CONTAINER (dd->close_menu_item), box);
 	gtk_container_add(GTK_CONTAINER(file_menu), dd->close_menu_item);
 
 	/* Help Menu*/
@@ -763,14 +772,9 @@ static GtkWidget *create_file_menu(DictData *dd)
 	gtk_menu_item_set_submenu(GTK_MENU_ITEM(help), help_menu);
 
 	/* About */
-	menu_item = gtk_menu_item_new();
-	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	icon = gtk_image_new_from_icon_name ("gtk-about", GTK_ICON_SIZE_MENU);
 	label = gtk_label_new (_("About"));
-
-	gtk_box_pack_start (GTK_BOX (box), icon, FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
-	gtk_container_add (GTK_CONTAINER (menu_item), box);
+	icon = gtk_image_new_from_icon_name ("gtk-about", GTK_ICON_SIZE_MENU);
+	menu_item = create_menu_item (label, icon);
 
 	gtk_container_add(GTK_CONTAINER(help_menu), menu_item);
 	g_signal_connect(menu_item, "activate", G_CALLBACK(dict_gui_about_dialog), dd);
