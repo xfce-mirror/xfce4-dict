@@ -680,7 +680,7 @@ void dict_dictd_start_query(DictData *dd, const gchar *word)
 {
 	if (dd->query_is_running)
 	{
-		gdk_beep();
+		gdk_display_beep (gdk_display_get_default ());
 	}
 	else
 	{

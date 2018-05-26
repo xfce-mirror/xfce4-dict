@@ -353,7 +353,7 @@ static void sr_start(XfdSpeedReader *dialog)
 	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 	gint wpm, grouping;
 	gint interval;
-	const gchar *fontname;
+	gchar *fontname;
 	gchar *text, *cleaned_text;
 	GtkTextIter start, end;
 	gchar *css;
@@ -381,7 +381,7 @@ static void sr_start(XfdSpeedReader *dialog)
 		GTK_TOGGLE_BUTTON(priv->check_mark_paragraphs));
 
 	/* set the font */
-	fontname = gtk_font_button_get_font_name(GTK_FONT_BUTTON(priv->button_font));
+	fontname = gtk_font_chooser_get_font(GTK_FONT_CHOOSER(priv->button_font));
 	font = pango_font_description_from_string(fontname);
 
 	if (G_LIKELY (font))
@@ -435,6 +435,7 @@ static void sr_start(XfdSpeedReader *dialog)
 
 	g_free(text);
 	g_free(cleaned_text);
+	g_free(fontname);
 }
 
 
@@ -743,7 +744,7 @@ GtkWidget *xfd_speed_reader_new(GtkWindow *parent, DictData *dd)
 
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(priv->spin_wpm), dd->speedreader_wpm);
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(priv->spin_grouping), dd->speedreader_grouping);
-	gtk_font_button_set_font_name(GTK_FONT_BUTTON(priv->button_font), dd->speedreader_font);
+	gtk_font_chooser_set_font(GTK_FONT_CHOOSER(priv->button_font), dd->speedreader_font);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(priv->check_mark_paragraphs),
 		dd->speedreader_mark_paragraphs);
 
