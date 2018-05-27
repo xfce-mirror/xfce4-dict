@@ -9,4 +9,3 @@ lib/common.c
 lib/dictd.c
 lib/gui.c
 lib/prefs.c
-lib/wraplabel.c
