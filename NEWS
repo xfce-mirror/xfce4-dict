@@ -1,3 +1,16 @@
+xfce4-dict-0.8.1
+================
+- Bump gtk3 minimum version to 3.22
+- Improve appearance of menu items with icons
+- Append web search link to successful queries (Bug #12154)
+- Translation updates: Albanian, Arabic, Asturian, Basque, Bulgarian, Catalan,
+  Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish, Dutch,
+  English (Australia), English (United Kingdom), Finnish, French, Galician,
+  German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Italian, Japanese,
+  Kazakh, Korean, Latvian, Lithuanian, Malay, Norwegian Bokmål, Occitan, Polish,
+  Portuguese, Portuguese (Brazil), Russian, Serbian, Slovak, Slovenian, Spanish,
+  Swedish, Thai, Turkish, Ukrainian, Urdu, Urdu (Pakistan), Uyghur, Vietnamese
+
 xfce4-dict-0.8.0
 ================
 - Translation updates: Catalan, Chinese (China), Chinese (Taiwan), 
