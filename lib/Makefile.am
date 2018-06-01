@@ -46,5 +46,5 @@ resources.c: resources.h
 resources.h:
 	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-header --c-name dict
 
-dbus.c:
+dbus.h dbus.c:
 	gdbus-codegen --interface-prefix org.xfce --generate-c-code dbus dbus.xml
