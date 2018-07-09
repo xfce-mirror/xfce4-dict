@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Cristian Marchi <cri.penta@gmail.com>, 2010,2014-2016
+# Emanuele Petriglia <inbox@emanuelepetriglia.me>, 2018
 # Fabio Riga <usul@aruba.it>, 2007
 # Gianluca Foddis <gianluca.foddis@gmail.com>, 2009
 # idetao <marcxosm@gmail.com>, 2017
@@ -12,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-06-16 16:27+0000\n"
+"PO-Revision-Date: 2018-07-09 09:53+0000\n"
 "Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.me>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-apps/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +29,7 @@ msgstr "Dizionario"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 msgid "A plugin to query different dictionaries."
-msgstr "Un'estensione per interrogare diversi dizionari"
+msgstr "Un componente aggiuntivo per interrogare diversi dizionari."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:263
 #: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
@@ -62,7 +63,7 @@ msgstr "Cattura il fuoco sul campo di testo nel pannello"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Avvia l'applicazione in modo indipendente anche se è già caricato il plugin del pannello"
+msgstr "Avvia l'applicazione in modo indipendente anche se è già caricato il componente aggiuntivo del pannello"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -70,7 +71,7 @@ msgstr "Utilizza la selezione PRIMARIA come testo da ricercare"
 
 #: ../src/xfce4-dict.c:55
 msgid "Be verbose"
-msgstr "Output prolisso"
+msgstr "Modalità dettagliata"
 
 #: ../src/xfce4-dict.c:56
 msgid "Show version information"
@@ -83,7 +84,7 @@ msgstr "[TESTO]"
 #: ../src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Segnalare i problemi a <%s>"
+msgstr "Segnalare i problemi a <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
@@ -91,7 +92,7 @@ msgstr "Client dizionario"
 
 #: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
 msgid "A client program to query different dictionaries."
-msgstr "Un programma che permette di consultare diversi dizionari"
+msgstr "Un programma che permette di consultare diversi dizionari."
 
 #: ../lib/spell.c:73
 msgid "Spell Checker Results:"
@@ -178,14 +179,14 @@ msgstr "Selezione del file da caricare"
 #: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "Il file «%s» non può essere caricato"
+msgstr "Impossibile caricare il file '%s'."
 
 #: ../lib/speedreader.c:584
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] "Visualizza %d parola alla volta"
-msgstr[1] "Visualizza %d parole alla volta"
+msgstr[0] "(visualizza %d parola alla volta)"
+msgstr[1] "(visualizza %d parole alla volta)"
 
 #: ../lib/speedreader.c:608
 msgid ""
@@ -207,7 +208,7 @@ msgstr "Ra_ggruppamento parole:"
 
 #: ../lib/speedreader.c:643
 msgid "_Font Size:"
-msgstr "Dimensione cara_ttere:"
+msgstr "Dimensione del cara_ttere:"
 
 #: ../lib/speedreader.c:664
 msgid ""
@@ -239,11 +240,11 @@ msgstr "L'URL di ricerca è vuota. Controllare le preferenze."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Impossibile aprire il browser; controllare le preferenze."
+msgstr "Impossibile aprire il browser. Controllare le preferenze."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
-msgstr "Input non UTF8 non valido."
+msgstr "Input non UTF-8 non valido"
 
 #: ../lib/common.c:568
 msgid "Error"
@@ -264,7 +265,7 @@ msgstr "Il server non è pronto."
 
 #: ../lib/dictd.c:400
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Il dizionario specificato non è valido; controllare le preferenze."
+msgstr "Il dizionario specificato non è valido. Controllare le preferenze."
 
 #: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
 msgid "Unknown error while querying the server."
@@ -300,7 +301,7 @@ msgstr[1] "%d definizioni trovate."
 #: ../lib/dictd.c:677
 #, c-format
 msgid "Querying %s..."
-msgstr "Interrogazione di %s in corso..."
+msgstr "Interrogazione di %s in corso…"
 
 #: ../lib/dictd.c:736
 msgid "An error occurred while querying server information."
@@ -379,7 +380,7 @@ msgstr "Copyright © 2006-2016 gruppo di sviluppo di Xfce"
 
 #: ../lib/gui.c:1023
 msgid "translator-credits"
-msgstr "Cristian Marchi, 2009, 2014\nGianluca Foddis, 2009"
+msgstr "Emanuele Petriglia, 2018\nCristian Marchi, 2009, 2014\nGianluca Foddis, 2009"
 
 #: ../lib/gui.c:1026
 msgid "Xfce4 Dictionary"
@@ -387,23 +388,23 @@ msgstr "Dizionario di Xfce4"
 
 #: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
-msgstr "dict.leo.org - Tedesco <-> Inglese"
+msgstr "dict.leo.org - Tedesco ↔ Inglese"
 
 #: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org - Tedesco <-> Francese"
+msgstr "dict.leo.org - Tedesco ↔ Francese"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org - Tedesco <-> Spagnolo"
+msgstr "dict.leo.org - Tedesco ↔ Spagnolo"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Italian"
-msgstr "dict.leo.org - Tedesco <-> Italiano"
+msgstr "dict.leo.org - Tedesco ↔ Italiano"
 
 #: ../lib/prefs.c:57
 msgid "dict.leo.org - German <-> Chinese"
-msgstr "dict.leo.org - Tedesco <-> Cinese"
+msgstr "dict.leo.org - Tedesco ↔ Cinese"
 
 #: ../lib/prefs.c:58
 msgid "dist.cc - Dictionary"
@@ -539,4 +540,4 @@ msgstr "Programma di controllo ortografico:"
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>Il programma di controllo ortografico può essere \"enchant\", \"aspell\", \"ispell\" o qualsiasi altro programma di spelling compatibile con il comando \"ispell\".\nL'icona mostra se il comando inserito esiste.</i>"
+msgstr "<i>Il programma di controllo ortografico può essere 'enchant', 'aspell', 'ispell' o qualsiasi altro programma di spelling compatibile con il comando 'ispell'.\nL'icona mostra se il comando inserito esiste.</i>"
