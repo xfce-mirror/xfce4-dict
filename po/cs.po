@@ -5,19 +5,20 @@
 # Translators:
 # Alois Nešpor <info@aloisnespor.info>, 2013
 # Michal Várady <miko.vaji@gmail.com>, 2015-2017
+# Pavel Borecki <pavel.borecki@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2017-09-19 18:05+0000\n"
-"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
+"PO-Revision-Date: 2018-08-02 05:41+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/xfce/xfce-apps/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
@@ -26,7 +27,7 @@ msgstr "Slovník"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 msgid "A plugin to query different dictionaries."
-msgstr "Zásuvný modul pro získávání dat za slovníků."
+msgstr "Zásuvný modul pro dotazování různých slovníků."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:263
 #: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
@@ -102,6 +103,7 @@ msgid_plural "%d suggestions found."
 msgstr[0] "Nalezena %d definice."
 msgstr[1] "Nalezeny %d definice."
 msgstr[2] "Nalezeno %d definicí."
+msgstr[3] "Nalezeno %d definicí."
 
 #: ../lib/spell.c:103
 #, c-format
@@ -186,6 +188,7 @@ msgid_plural "(display %d words at a time)"
 msgstr[0] "(zobrazit %d slovo najednou)"
 msgstr[1] "(zobrazit %d slova najednou)"
 msgstr[2] "(zobrazit %d slov najednou)"
+msgstr[3] "(zobrazit %d slov najednou)"
 
 #: ../lib/speedreader.c:608
 msgid ""
@@ -297,6 +300,7 @@ msgid_plural "%d definitions found."
 msgstr[0] "Nalezena %d definice."
 msgstr[1] "Nalezeny %d definice."
 msgstr[2] "Nalezeno %d definicí."
+msgstr[3] "Nalezeno %d definicí."
 
 #: ../lib/dictd.c:677
 #, c-format
