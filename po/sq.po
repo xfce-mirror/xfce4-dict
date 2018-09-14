@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-02-28 16:38+0000\n"
+"PO-Revision-Date: 2018-09-14 00:15+0000\n"
 "Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/xfce-apps/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -377,7 +377,7 @@ msgstr "Të drejta Kopjimi © 2006-2016 Ekip i i Zhvillimit të Xfce-së"
 
 #: ../lib/gui.c:1023
 msgid "translator-credits"
-msgstr ""
+msgstr "translator-credits"
 
 #: ../lib/gui.c:1026
 msgid "Xfce4 Dictionary"
