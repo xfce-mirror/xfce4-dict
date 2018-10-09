@@ -40,6 +40,8 @@ DISTCLEANFILES =								\
 
 gui.c: resources.c dbus.c
 
+common.c: dbus.c
+
 resources.c: resources.h
 	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-source --c-name dict
 
