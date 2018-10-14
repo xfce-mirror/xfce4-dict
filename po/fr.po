@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Charles Monzat <c.monzat@laposte.net>, 2018
+# Charles Monzat <c.monzat@laposte.net>, 2018
 # Gérald Barré <g.barre@free.fr>, 2006
 # jc1 <jc1.quebecos@gmail.com>, 2013,2016
 # jc1 <jc1.quebecos@gmail.com>, 2013,2016
@@ -15,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-10-11 20:15+0000\n"
+"PO-Revision-Date: 2018-10-14 20:26+0000\n"
 "Last-Translator: Charles Monzat <c.monzat@laposte.net>\n"
 "Language-Team: French (http://www.transifex.com/xfce/xfce-apps/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +58,7 @@ msgstr "Rechercher le texte saisi en utilisant un moteur de recherche basé sur 
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
-msgstr "Vérifier le texte donné avec un correcteur orthographique"
+msgstr "Vérifier le texte saisi avec un vérificateur orthographique"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
@@ -77,7 +78,7 @@ msgstr "Mode bavard"
 
 #: ../src/xfce4-dict.c:56
 msgid "Show version information"
-msgstr "Afficher les informations sur la version"
+msgstr "Afficher les informations de version"
 
 #: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
@@ -98,7 +99,7 @@ msgstr "Une application pour consulter différents dictionnaires."
 
 #: ../lib/spell.c:73
 msgid "Spell Checker Results:"
-msgstr "Résultats du correcteur orthographique :"
+msgstr "Résultats du vérificateur orthographique :"
 
 #: ../lib/spell.c:99
 #, c-format
@@ -115,12 +116,12 @@ msgstr "Suggestions pour « %s » (%s) :"
 #: ../lib/spell.c:120
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "« %s » est écrit correctement (%s)."
+msgstr "« %s » est orthographié correctement (%s)."
 
 #: ../lib/spell.c:132
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Aucune suggestion n’a pu être trouvée pour « %s » (%s)."
+msgstr "Aucune suggestion trouvée pour « %s » (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
@@ -144,7 +145,7 @@ msgstr "Échec du processus (%s)"
 
 #: ../lib/speedreader.c:78
 msgid "P_ause"
-msgstr "P_ause"
+msgstr "_Pause"
 
 #: ../lib/speedreader.c:79
 msgid "_Resume"
@@ -164,7 +165,7 @@ msgstr "Terminé"
 
 #: ../lib/speedreader.c:266
 msgid "_Back"
-msgstr "_En arrière"
+msgstr "_Retour"
 
 #: ../lib/speedreader.c:274
 msgid "Speed Reader"
@@ -172,11 +173,11 @@ msgstr "Lecteur rapide"
 
 #: ../lib/speedreader.c:373
 msgid "You must enter a text."
-msgstr "Vous devez écrire un texte."
+msgstr "Vous devez saisir un texte."
 
 #: ../lib/speedreader.c:529
 msgid "Choose a file to load"
-msgstr "Choisir un fichier à charger"
+msgstr "Sélectionner un fichier à charger"
 
 #: ../lib/speedreader.c:558
 #, c-format
@@ -198,11 +199,11 @@ msgstr "Il s’agit d’un logiciel pour vous aider à lire plus vite. Il vous a
 
 #: ../lib/speedreader.c:612
 msgid "_Words per Minute:"
-msgstr "Mo_ts par minute :"
+msgstr "_Mots par minute :"
 
 #: ../lib/speedreader.c:619
 msgid "_Mark Paragraphs"
-msgstr "_Marque de paragraphes"
+msgstr "Mar_que de paragraphes"
 
 #: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
@@ -217,7 +218,7 @@ msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr "Tapez un texte que vous aimeriez lire.\n\nMettez-vous à l’aise, puis cliquez sur Démarrer pour commencer la lecture rapide."
+msgstr "Saisissez un texte que vous aimeriez lire.\n\nMettez-vous à l’aise, puis cliquez sur Démarrer pour commencer la lecture rapide."
 
 #: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
@@ -226,11 +227,11 @@ msgstr "Charger le contenu d’un fichier"
 #: ../lib/speedreader.c:682
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Effacer le contenu du champ texte et copier le contenu du presse-papiers"
+msgstr "Effacer le contenu du champ de texte et coller le contenu du presse-papiers"
 
 #: ../lib/speedreader.c:686
 msgid "Clear the contents of the text field"
-msgstr "Effacer le contenu du champ texte"
+msgstr "Effacer le contenu du champ de texte"
 
 #: ../lib/speedreader.c:698
 msgid "_Start"
@@ -350,7 +351,7 @@ msgstr "_Quitter"
 #. Help Menu
 #: ../lib/gui.c:760
 msgid "_Help"
-msgstr "_Aide"
+msgstr "Aid_e"
 
 #: ../lib/gui.c:769
 msgid "About"
