@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-10-14 20:26+0000\n"
+"PO-Revision-Date: 2018-10-15 14:05+0000\n"
 "Last-Translator: Charles Monzat <c.monzat@laposte.net>\n"
 "Language-Team: French (http://www.transifex.com/xfce/xfce-apps/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgstr "Lancer l’application autonome même si le greffon du tableau de bord e
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Extraire la sélection PRIMAIRE et l’utiliser comme texte à rechercher"
+msgstr "Récupérer le contenu de la sélection PRINCIPALE et l’utiliser comme texte de recherche"
 
 #: ../src/xfce4-dict.c:55
 msgid "Be verbose"
@@ -247,7 +247,7 @@ msgstr "Le navigateur n’a pas pu être ouvert. Veuillez vérifier les préfér
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
-msgstr "Entrée non-UTF8 non valide"
+msgstr "Entrée non-UTF8 incorrecte"
 
 #: ../lib/common.c:568
 msgid "Error"
@@ -338,7 +338,7 @@ msgstr "_Fichier"
 
 #: ../lib/gui.c:704 ../lib/gui.c:850
 msgid "Speed _Reader"
-msgstr "Lecteur _Rapide"
+msgstr "_Lecteur rapide"
 
 #: ../lib/gui.c:726
 msgid "_Preferences"
