@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-10-01 12:15+0000\n"
+"PO-Revision-Date: 2018-10-21 08:23+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -57,11 +57,11 @@ msgstr "Comprova el text amb un corrector ortogràfic"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
-msgstr "Agafa l'enfocament al camp de text del plafó"
+msgstr "Agafa l'enfocament al camp de text del tauler"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Inicia com aplicació autònoma fins i tot si el connector del plafó està carregat"
+msgstr "Inicia com aplicació autònoma fins i tot si el connector del tauler està carregat"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -482,11 +482,11 @@ msgstr "Escrit incorrectament:"
 
 #: ../lib/prefs.c:402
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>Camp de text del plafó:</b>"
+msgstr "<b>Camp de text del tauler:</b>"
 
 #: ../lib/prefs.c:408
 msgid "Show text field in the panel"
-msgstr "Mostra el camp de text al plafó"
+msgstr "Mostra el camp de text al tauler"
 
 #. panel entry size
 #: ../lib/prefs.c:415
