@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013-2015
+# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013-2015,2018
 # Sveinn í Felli <sv1@fellsnet.is>, 2011,2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
-"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"PO-Revision-Date: 2018-11-05 18:23+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-apps/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,7 +147,7 @@ msgstr "Halda áf_ram"
 
 #: ../lib/speedreader.c:254
 msgid "S_top"
-msgstr ""
+msgstr "S_töðva"
 
 #: ../lib/speedreader.c:262
 msgid "Running"
@@ -302,7 +302,7 @@ msgstr "Spyr %s..."
 
 #: ../lib/dictd.c:736
 msgid "An error occurred while querying server information."
-msgstr ""
+msgstr "Villa kom upp þegar reynt var að fá upplýsingar frá þjóni."
 
 #: ../lib/dictd.c:749
 #, c-format
@@ -323,7 +323,7 @@ msgstr "Leita"
 
 #: ../lib/gui.c:606
 msgid "F_ind"
-msgstr ""
+msgstr "F_inna"
 
 #. File Menu
 #: ../lib/gui.c:695
@@ -349,7 +349,7 @@ msgstr "_Hjálp"
 
 #: ../lib/gui.c:769
 msgid "About"
-msgstr ""
+msgstr "Um hugbúnaðinn"
 
 #: ../lib/gui.c:862
 msgid "_Close"
@@ -373,7 +373,7 @@ msgstr "_Stafsetningarleiðrétting"
 
 #: ../lib/gui.c:1020
 msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr ""
+msgstr "Höfundarréttur © 2006-2016 Xfce þróunarteymið"
 
 #: ../lib/gui.c:1023
 msgid "translator-credits"
