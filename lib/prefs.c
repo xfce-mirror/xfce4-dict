@@ -505,7 +505,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(button_get_list), "port_spinner", port_spinner);
 		g_object_set_data(G_OBJECT(button_get_list), "server_entry", server_entry);
 
-		button_get_info = gtk_button_new_from_icon_name("gtk-info", GTK_ICON_SIZE_BUTTON);
+		button_get_info = gtk_button_new_from_icon_name("dialog-information", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_get_info);
 		g_signal_connect(button_get_info, "clicked", G_CALLBACK(dict_dictd_get_information), dd);
 		g_object_set_data(G_OBJECT(button_get_info), "port_spinner", port_spinner);
