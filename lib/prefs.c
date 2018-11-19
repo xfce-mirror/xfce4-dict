@@ -195,7 +195,7 @@ const gchar *dict_prefs_get_web_url_label(DictData *dd)
 
 	for (i = 0; web_dicts[i].label != NULL; i++)
 	{
-		if (strcmp(web_dicts[i].url, dd->web_url) == 0)
+		if (g_strcmp0(web_dicts[i].url, dd->web_url) == 0)
 			return web_dicts[i].label;
 	}
 	return dd->web_url;
