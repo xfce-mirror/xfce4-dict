@@ -423,9 +423,11 @@ static gboolean textview_query_tooltip_cb(GtkWidget *widget, gint x, gint y, gbo
 		if (name != NULL && strcmp("link", name) == 0)
 		{
 			gchar *target_uri = dict_get_web_query_uri(dd, dd->searched_word);
-			gtk_tooltip_set_markup(tooltip, target_uri);
+			gchar *target_uri_escaped = g_markup_escape_text (target_uri, -1);
+			gtk_tooltip_set_markup(tooltip, target_uri_escaped);
 			g_free(name);
 			g_free(target_uri);
+			g_free(target_uri_escaped);
 			return TRUE;
 		}
 		g_free(name);
