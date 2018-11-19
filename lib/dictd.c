@@ -373,6 +373,9 @@ static void clear_query_buffer(DictData *dd)
 
 static void append_web_search_link(DictData *dd, gboolean prepend_whitespace)
 {
+	if (dd->web_url == NULL || dd->mode_in_use != DICTMODE_DICT)
+		return;
+
 	gchar *label = _(dict_prefs_get_web_url_label(dd));
 	gchar *text = g_strdup_printf(
 		/* for translators: the first wildcard is the search term, the second wildcard
@@ -455,8 +458,7 @@ static gboolean process_server_response(DictData *dd)
 
 		/* if we had no luck searching a word, maybe we have a typo so try searching with
 		 * spell check and offer a Web search*/
-		if (NZV(dd->web_url))
-			append_web_search_link (dd, TRUE);
+		append_web_search_link (dd, TRUE);
 
 		if (NZV(dd->spell_bin))
 		{
