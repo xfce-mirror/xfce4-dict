@@ -55,18 +55,24 @@ static gboolean entry_is_dirty = FALSE;
 
 static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, DictPanelData *dpd)
 {
-  GtkBorder border;
+	GtkBorder border;
 	GtkStyleContext *context;
 	gint size;
 	gint bsize = wsize;
 	bsize /= xfce_panel_plugin_get_nrows (plugin);
 
+#if LIBXFCE4PANEL_CHECK_VERSION (4,13,0)
+	size = xfce_panel_plugin_get_icon_size(plugin);
+#else
+	size = bsize;
+#endif
+
+	/* Take the border width into account */
 	context = gtk_widget_get_style_context (GTK_WIDGET (dpd->panel_button));
 	gtk_style_context_get_border (context, gtk_widget_get_state_flags (GTK_WIDGET (dpd->panel_button)), &border);
-	size = bsize - 2 * MAX (border.left + border.right, border.top + border.bottom);
+	size -= 2 * MAX (border.left + border.right, border.top + border.bottom);
 
-	dpd->dd->icon = gdk_pixbuf_new_from_resource_at_scale("/org/xfce/dict/icon",
-										size, -1, TRUE, NULL);
+	dpd->dd->icon = gdk_pixbuf_new_from_resource_at_scale("/org/xfce/dict/icon", size, -1, TRUE, NULL);
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(dpd->panel_button_image), dpd->dd->icon);
 
