@@ -1,3 +1,17 @@
+xfce4-dict-0.8.2
+================
+- Avoid segfaults (Bug #14786)
+- Only show web search link if we have a valid URL and in dict mode
+- Escape link tooltip
+- Minor visual improvements
+- Translation updates: Albanian, Arabic, Asturian, Basque, Belarusian,
+  Bulgarian, Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech,
+  Danish, Dutch, English (United Kingdom), Finnish, French, Galician, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Italian, Japanese, Korean,
+  Latvian, Lithuanian, Norwegian Bokmål, Occitan, Polish, Portuguese,
+  Portuguese (Brazil), Russian, Slovak, Slovenian, Spanish, Swedish, Turkish,
+  Ukrainian, Urdu, Urdu (Pakistan), Uyghur, Vietnamese
+
 xfce4-dict-0.8.1
 ================
 - Bump gtk3 minimum version to 3.22
