@@ -365,7 +365,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 
 	/* panel entry */
 	dpd->dd->panel_entry = gtk_search_entry_new();
-	gtk_entry_set_icon_from_icon_name(GTK_ENTRY(dpd->dd->panel_entry), GTK_ENTRY_ICON_SECONDARY, "gtk-clear");
+	gtk_widget_set_valign(dpd->dd->panel_entry, GTK_ALIGN_CENTER);
 	gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), 25);
 	gtk_entry_set_placeholder_text(GTK_ENTRY(dpd->dd->panel_entry), _("Search term"));
 	g_signal_connect(dpd->dd->panel_entry, "icon-release", G_CALLBACK(entry_icon_release_cb), dpd);
