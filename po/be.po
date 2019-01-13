@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2015,2017
-# Zmicer Turok <zmicerturok@gmail.com>, 2018
+# Zmicer Turok <zmicerturok@gmail.com>, 2018-2019
 # Zmicer Turok <zmicerturok@gmail.com >, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
+"PO-Revision-Date: 2019-01-13 17:45+0000\n"
 "Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-apps/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -322,7 +322,7 @@ msgstr "У сервера няма сваёй базы даных."
 
 #: ../lib/gui.c:362
 msgid "Copy Link"
-msgstr "Скапіраваць спасылку"
+msgstr "Скапіяваць спасылку"
 
 #: ../lib/gui.c:374
 msgid "Search"
