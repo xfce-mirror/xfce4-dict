@@ -6,14 +6,14 @@
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013
 # Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007
-# scootergrisen, 2016-2018
+# scootergrisen, 2016-2019
 # Søren Waaben Hansen <soren@minorflaw.dk>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
+"PO-Revision-Date: 2019-03-07 13:36+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -215,7 +215,7 @@ msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr "Indtast en tekst som du ønsker at læse.\n\nVær afslappet og have det komfortabelt, før du trykker Begynd for at starte læsehastighedsmåling."
+msgstr "Indtast en tekst som du ønsker at læse.\n\nVær afslappet og have det komfortabelt, før du trykker Start for at starte læsehastighedsmåling."
 
 #: ../lib/speedreader.c:677
 msgid "Load the contents of a file"
@@ -232,7 +232,7 @@ msgstr "Ryd indholdet af tekstfeltet"
 
 #: ../lib/speedreader.c:698
 msgid "_Start"
-msgstr "_Begynd"
+msgstr "_Start"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
