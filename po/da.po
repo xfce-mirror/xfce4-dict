@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2019-04-30 14:32+0000\n"
+"PO-Revision-Date: 2019-05-04 17:03+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "Slå et ord op"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:364 ../lib/gui.c:836
 msgid "Search term"
-msgstr "Søgetekst"
+msgstr "Søg efter tekst"
 
 #: ../src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -208,7 +208,7 @@ msgstr "_Gruppering af ord:"
 
 #: ../lib/speedreader.c:643
 msgid "_Font Size:"
-msgstr "_Størrelse af skrifttype:"
+msgstr "_Størrelse på skrifttype:"
 
 #: ../lib/speedreader.c:664
 msgid ""
@@ -368,7 +368,7 @@ msgstr "_Ordbogsserver"
 
 #: ../lib/gui.c:884
 msgid "_Web Service"
-msgstr "_Webservice"
+msgstr "_Webtjeneste"
 
 #: ../lib/gui.c:892
 msgid "_Spell Checker"
@@ -452,7 +452,7 @@ msgstr "Ordbogsserver"
 
 #: ../lib/prefs.c:315 ../lib/prefs.c:563
 msgid "Web Service"
-msgstr "Webservice"
+msgstr "Webtjeneste"
 
 #: ../lib/prefs.c:324 ../lib/prefs.c:609
 msgid "Spell Checker"
@@ -484,7 +484,7 @@ msgstr "Forkert stavet:"
 
 #: ../lib/prefs.c:402
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>Paneltekstfelt:</b>"
+msgstr "<b>Tekstfelt for panel:</b>"
 
 #: ../lib/prefs.c:408
 msgid "Show text field in the panel"
@@ -493,7 +493,7 @@ msgstr "Vis tekstfelt i panelet"
 #. panel entry size
 #: ../lib/prefs.c:415
 msgid "Text field size:"
-msgstr "Tekstfeltstørrelse:"
+msgstr "Størrelse på tekstfelt:"
 
 #. server address
 #: ../lib/prefs.c:461
@@ -520,7 +520,7 @@ msgstr "! (brug alle, stop ved første træf)"
 
 #: ../lib/prefs.c:565
 msgid "<b>Web search URL:</b>"
-msgstr "<b>Websøge-URL:</b>"
+msgstr "<b>URL for websøgning:</b>"
 
 #: ../lib/prefs.c:570
 msgid "URL:"
@@ -530,7 +530,7 @@ msgstr "URL:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr "Indtast URL'en til et websted, der tilbyder ordbogstjenester. Brug {word} som pladsholder for det søgte ord."
+msgstr "Indtast URL'en til et websted, der tilbyder ordbogstjenester. Brug {word} som pladsholder til det søgte ord."
 
 #: ../lib/prefs.c:611
 msgid "Spell Check Program:"
