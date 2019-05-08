@@ -6,7 +6,7 @@
 # Chipong Luo <chipong.luo@yahoo.com>, 2011-2013
 # Hunt Xu <huntxu@live.cn>, 2008-2010
 # Mingcong Bai <jeffbai@aosc.xyz>, 2016
-# Xiaobo Zhou <zhouxiaobo.500@gmail.com>, 2016
+# Cally Mal <zhouxiaobo.500@gmail.com>, 2016
 # 玉堂白鹤 <yjwork@qq.com>, 2015,2017
 msgid ""
 msgstr ""
