@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Cristian Marchi <cri.penta@gmail.com>, 2010,2014-2016
-# Emanuele Petriglia <inbox@emanuelepetriglia.me>, 2018
+# Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2018
 # Fabio Riga <usul@aruba.it>, 2007
 # Gianluca Foddis <gianluca.foddis@gmail.com>, 2009
-# idetao <marcxosm@gmail.com>, 2017
+# Marco <marcxosm@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
 "PO-Revision-Date: 2018-09-14 00:15+0000\n"
-"Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.me>\n"
+"Last-Translator: Emanuele Petriglia <transifex@emanuelepetriglia.com>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-apps/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
