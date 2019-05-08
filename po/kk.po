@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: kk\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
 #: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
@@ -99,6 +99,7 @@ msgstr "Емле тексеру нәтижелері:"
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
 msgstr[0] "%d ұсыныс табылды."
+msgstr[1] "%d ұсыныс табылды."
 
 #: ../lib/spell.c:103
 #, c-format
@@ -181,6 +182,7 @@ msgstr "'%s' файлын жүктеу мүмкін емес."
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(бір уақытта %d сөз көрсету)"
+msgstr[1] "(бір уақытта %d сөз көрсету)"
 
 #: ../lib/speedreader.c:608
 msgid ""
@@ -290,6 +292,7 @@ msgstr "Интернеттен іздеу:"
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d анықтама табылды."
+msgstr[1] "%d анықтама табылды."
 
 #: ../lib/dictd.c:677
 #, c-format
