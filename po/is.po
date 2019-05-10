@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-11-05 18:23+0000\n"
+"PO-Revision-Date: 2019-05-10 10:22+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-apps/language/is/)\n"
 "MIME-Version: 1.0\n"
@@ -377,7 +377,7 @@ msgstr "Höfundarréttur © 2006-2016 Xfce þróunarteymið"
 
 #: ../lib/gui.c:1023
 msgid "translator-credits"
-msgstr "Sveinn í Felli <sveinki@nett.is>"
+msgstr "Sveinn í Felli <sv1@fellsnet.is>"
 
 #: ../lib/gui.c:1026
 msgid "Xfce4 Dictionary"
