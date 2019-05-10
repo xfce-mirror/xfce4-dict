@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013-2015,2018
+# Sveinn í Felli <sv1@fellsnet.is>, 2011,2013-2015,2018-2019
 # Sveinn í Felli <sv1@fellsnet.is>, 2011,2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2019-05-10 10:22+0000\n"
+"PO-Revision-Date: 2019-05-10 11:26+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-apps/language/is/)\n"
 "MIME-Version: 1.0\n"
@@ -99,8 +99,8 @@ msgstr "Niðurstöður stafsetningarleiðréttingar:"
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "%d uppástunga fannst."
-msgstr[1] "%d uppástungur fundust."
+msgstr[0] "%d tillaga fannst."
+msgstr[1] "%d tillögur fundust."
 
 #: ../lib/spell.c:103
 #, c-format
