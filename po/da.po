@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2019-05-15 22:27+0000\n"
+"PO-Revision-Date: 2019-05-16 19:09+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -138,7 +138,7 @@ msgstr "Ugyldig input"
 #: ../lib/spell.c:245
 #, c-format
 msgid "Process failed (%s)"
-msgstr "Procesfejl (%s)"
+msgstr "Proces mislykkedes (%s)"
 
 #: ../lib/speedreader.c:78
 msgid "P_ause"
