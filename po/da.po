@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2019-05-16 19:09+0000\n"
+"PO-Revision-Date: 2019-05-17 15:12+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -301,7 +301,7 @@ msgstr[1] "%d definitioner fundet."
 #: ../lib/dictd.c:677
 #, c-format
 msgid "Querying %s..."
-msgstr "Forespørger %s..."
+msgstr "Forespørger %s ..."
 
 #: ../lib/dictd.c:736
 msgid "An error occurred while querying server information."
@@ -376,7 +376,7 @@ msgstr "_Stavekontrol"
 
 #: ../lib/gui.c:1020
 msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Ophavsret © 2006-2016 Xfce udviklingshold"
+msgstr "Ophavsret © 2006-2016 Xfce's udviklingshold"
 
 #: ../lib/gui.c:1023
 msgid "translator-credits"
