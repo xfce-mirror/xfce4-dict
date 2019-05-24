@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2019-05-17 16:53+0000\n"
+"PO-Revision-Date: 2019-05-24 18:39+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,7 @@ msgstr "Ordbogsklient"
 
 #: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
 msgid "A client program to query different dictionaries."
-msgstr "Et klientprogram til at lave opslag i forskellige ordbøger."
+msgstr "Et klientprogram til at slå op i forskellige ordbøger."
 
 #: ../lib/spell.c:73
 msgid "Spell Checker Results:"
