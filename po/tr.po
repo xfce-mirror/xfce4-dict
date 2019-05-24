@@ -5,13 +5,14 @@
 # Translators:
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010
 # Necdet Yücel <necdetyucel@gmail.com>, 2015,2017
+# Serdar Sağlam <teknomobil@msn.com>, 2019
 # Volkan Gezer <volkangezer@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2019-05-23 15:41+0000\n"
+"PO-Revision-Date: 2019-05-24 01:08+0000\n"
 "Last-Translator: Serdar Sağlam <teknomobil@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +70,7 @@ msgstr "İLK seçim içeriğini yakalar ve aranacak ifade olarak kullanır "
 
 #: ../src/xfce4-dict.c:55
 msgid "Be verbose"
-msgstr "Detaylı çıktı göster"
+msgstr "Ayrıntılı çıktı göster"
 
 #: ../src/xfce4-dict.c:56
 msgid "Show version information"
@@ -127,7 +128,7 @@ msgstr "\"%s\" çalıştırılırken hata oluştu (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Lütfen imla denetleyici uygulamasının komutunu ayarlar penceresinde belirtin."
+msgstr "Lütfen tercihler iletişim kutusunda yazım denetimi komutunu ayarlayın."
 
 #: ../lib/spell.c:206
 msgid "Invalid input"
@@ -140,7 +141,7 @@ msgstr "Süreç başarısız (%s)"
 
 #: ../lib/speedreader.c:78
 msgid "P_ause"
-msgstr "Dur_akla"
+msgstr "Dur_aklat"
 
 #: ../lib/speedreader.c:79
 msgid "_Resume"
@@ -202,11 +203,11 @@ msgstr "Paragrafları _işaretle"
 
 #: ../lib/speedreader.c:626
 msgid "Word _Grouping:"
-msgstr "Kelime_Toplama:"
+msgstr "Kelime _Toplama:"
 
 #: ../lib/speedreader.c:643
 msgid "_Font Size:"
-msgstr "_Yazıtipi boyutu:"
+msgstr "_Yazıtipi Boyutu:"
 
 #: ../lib/speedreader.c:664
 msgid ""
@@ -287,7 +288,7 @@ msgstr "\"%s\" ifadesini \"%s\" kullanarak ara"
 
 #: ../lib/dictd.c:447
 msgid "Web Search:"
-msgstr "Web Ara:"
+msgstr "Web'de Ara:"
 
 #: ../lib/dictd.c:469
 #, c-format
@@ -358,7 +359,7 @@ msgstr "_Kapat"
 
 #: ../lib/gui.c:874
 msgid "Search with:"
-msgstr "Kullanarak ara:"
+msgstr "Bununla ara:"
 
 #: ../lib/gui.c:878
 msgid "_Dictionary Server"
@@ -378,7 +379,7 @@ msgstr "Telif Hakkı © 2006-2016 Xfce Geliştirme Takımı"
 
 #: ../lib/gui.c:1023
 msgid "translator-credits"
-msgstr "Samed Beyribey <ras0ir@eventualis.org> Ayhan YALÇINSOY<ayhanyalcinsoy@gmail.com>"
+msgstr "Samed Beyribey <ras0ir@eventualis.org>\nAyhan YALÇINSOY<ayhanyalcinsoy@gmail.com>\nSerdar Sağlam <teknomobil@yandex.com>"
 
 #: ../lib/gui.c:1026
 msgid "Xfce4 Dictionary"
@@ -510,11 +511,11 @@ msgstr "Sözlük:"
 
 #: ../lib/prefs.c:480
 msgid "* (use all)"
-msgstr "* (hepsini kullan)"
+msgstr "* (tümünü kullan)"
 
 #: ../lib/prefs.c:482
 msgid "! (use all, stop after first match)"
-msgstr "! (hepsini kullan, ilk eşleşmeden sonra dur)"
+msgstr "! (tümünü kullan, ilk eşleşmeden sonra dur)"
 
 #: ../lib/prefs.c:565
 msgid "<b>Web search URL:</b>"
