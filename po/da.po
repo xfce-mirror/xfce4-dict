@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-09 18:31+0200\n"
-"PO-Revision-Date: 2019-06-10 10:44+0000\n"
+"PO-Revision-Date: 2019-06-10 19:03+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -384,7 +384,7 @@ msgstr "Søren Waaben Hansen <soren@minorflaw.dk>\nPer Kongstad <p_kongstad@op.p
 
 #: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
-msgstr "Xfce4 ordbog"
+msgstr "Xfce4 Ordbog"
 
 #: ../lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
