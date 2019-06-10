@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2019-01-18 16:00+0000\n"
+"POT-Creation-Date: 2019-06-09 18:31+0200\n"
+"PO-Revision-Date: 2019-06-10 07:33+0000\n"
 "Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/xfce-apps/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
 msgid "Dictionary"
 msgstr "Fjalor"
 
@@ -29,17 +29,17 @@ msgstr "Fjalor"
 msgid "A plugin to query different dictionaries."
 msgstr "Një shtojcë për të kërkuar në fjalorë të ndryshëm."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:263
-#: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:540
+#: ../panel-plugin/xfce4-dict-plugin.c:269
+#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Gati"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:325
+#: ../panel-plugin/xfce4-dict-plugin.c:331
 msgid "Look up a word"
 msgstr "Kërkoni për një fjalë"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:364 ../lib/gui.c:836
+#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Term kërkimi"
 
@@ -88,7 +88,7 @@ msgstr "Ju lutemi, njoftoni të meta te <%s>."
 msgid "Dictionary Client"
 msgstr "Klient Fjalori"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
 msgstr "Një program klient për të bërë kërkime në fjalorë të ndryshëm."
 
@@ -138,35 +138,35 @@ msgstr "Dhënie e pavlefshme"
 msgid "Process failed (%s)"
 msgstr "Procesi dështoi (%s)"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:77
 msgid "P_ause"
 msgstr "_Pushim"
 
-#: ../lib/speedreader.c:79
+#: ../lib/speedreader.c:78
 msgid "_Resume"
 msgstr "_Rimerre"
 
-#: ../lib/speedreader.c:254
+#: ../lib/speedreader.c:253
 msgid "S_top"
 msgstr "_Ndale"
 
-#: ../lib/speedreader.c:262
+#: ../lib/speedreader.c:261
 msgid "Running"
 msgstr "Po xhirohet"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:264
 msgid "Finished"
 msgstr "E përfunduar"
 
-#: ../lib/speedreader.c:266
+#: ../lib/speedreader.c:265
 msgid "_Back"
 msgstr "_Mbrapsht"
 
-#: ../lib/speedreader.c:274
+#: ../lib/speedreader.c:273
 msgid "Speed Reader"
 msgstr "Lexues i Shpejtë"
 
-#: ../lib/speedreader.c:373
+#: ../lib/speedreader.c:372
 msgid "You must enter a text."
 msgstr "Duhet të jepni një tekst."
 
@@ -192,43 +192,43 @@ msgid ""
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Ky është një mjet i lehtë leximi të shpejtë, për t’ju ndihmuar të stërviteni për lexim më të shpejtë. Këtë e kryen duke xixëlluar fjalë me shpejtësi të madhe në ekrani."
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:613
 msgid "_Words per Minute:"
 msgstr "_Fjalë për Minutë:"
 
-#: ../lib/speedreader.c:619
+#: ../lib/speedreader.c:620
 msgid "_Mark Paragraphs"
 msgstr "_Vëru shenjë Paragrafëve"
 
-#: ../lib/speedreader.c:626
+#: ../lib/speedreader.c:627
 msgid "Word _Grouping:"
 msgstr "_Grupim Fjalësh:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:644
 msgid "_Font Size:"
 msgstr "Madhësi Shkr_onjash:"
 
-#: ../lib/speedreader.c:664
+#: ../lib/speedreader.c:665
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Jepni ndoca tekst që do të donit të lexonit.\n\nRehatohuni dhe zini vend, mandej shtypni Fillo, që të fillohet leximi i shpejtë."
 
-#: ../lib/speedreader.c:677
+#: ../lib/speedreader.c:678
 msgid "Load the contents of a file"
 msgstr "Ngarkoni lëndën e një kartele"
 
-#: ../lib/speedreader.c:682
+#: ../lib/speedreader.c:683
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Pastro lëndën te fusha e teksteve dhe hidhe lëndën në të papastër clipboard"
 
-#: ../lib/speedreader.c:686
+#: ../lib/speedreader.c:687
 msgid "Clear the contents of the text field"
 msgstr "Pastro lëndën e fushës së teksteve"
 
-#: ../lib/speedreader.c:698
+#: ../lib/speedreader.c:699
 msgid "_Start"
 msgstr "_Fillo"
 
@@ -252,65 +252,65 @@ msgstr "Gabim"
 msgid "warning"
 msgstr "kujdes"
 
-#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:804
-#: ../lib/dictd.c:813
-msgid "Could not connect to server."
-msgstr "S’u lidh dot te shërbyesi."
-
-#: ../lib/dictd.c:393
-msgid "The server is not ready."
-msgstr "Shërbyesi s’është gati."
-
-#: ../lib/dictd.c:400
-msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Është dhënë fjalor i pavlefshëm. Ju lutemi, kontrolloni parapëlqimet tuaja."
-
-#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
-msgid "Unknown error while querying the server."
-msgstr "Gabim i panjohur teksa pyetej shërbyesi."
-
-#: ../lib/dictd.c:423
-msgid "Dictionary Results:"
-msgstr "Përfundime Fjalori:"
-
-#: ../lib/dictd.c:426
-#, c-format
-msgid "No matches could be found for \"%s\"."
-msgstr "S’u gjetën dot përputhje për \"%s\"."
-
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:442
+#: ../lib/dictd.c:383
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Kërko për \"%s\" duke përdorur \"%s\""
 
-#: ../lib/dictd.c:447
+#: ../lib/dictd.c:390
 msgid "Web Search:"
 msgstr "Kërkim në Web:"
 
-#: ../lib/dictd.c:469
+#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
+#: ../lib/dictd.c:825
+msgid "Could not connect to server."
+msgstr "S’u lidh dot te shërbyesi."
+
+#: ../lib/dictd.c:418
+msgid "The server is not ready."
+msgstr "Shërbyesi s’është gati."
+
+#: ../lib/dictd.c:425
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Është dhënë fjalor i pavlefshëm. Ju lutemi, kontrolloni parapëlqimet tuaja."
+
+#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+msgid "Unknown error while querying the server."
+msgstr "Gabim i panjohur teksa pyetej shërbyesi."
+
+#: ../lib/dictd.c:448
+msgid "Dictionary Results:"
+msgstr "Përfundime Fjalori:"
+
+#: ../lib/dictd.c:451
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "S’u gjetën dot përputhje për \"%s\"."
+
+#: ../lib/dictd.c:478
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "U gjet %d përkufizim."
 msgstr[1] "U gjetën %d përkufizime."
 
-#: ../lib/dictd.c:677
+#: ../lib/dictd.c:689
 #, c-format
 msgid "Querying %s..."
 msgstr "Po kërkohet te %s…"
 
-#: ../lib/dictd.c:736
+#: ../lib/dictd.c:748
 msgid "An error occurred while querying server information."
 msgstr "Ndodhi një gabim teksa kërkoheshin të dhëna shërbyesi."
 
-#: ../lib/dictd.c:749
+#: ../lib/dictd.c:761
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Të dhëna shërbyesi për \"%s\""
 
-#: ../lib/dictd.c:833
+#: ../lib/dictd.c:845
 msgid "The server doesn't offer any databases."
 msgstr "Shërbyesi s’ofron ndonjë bazë të dhënash."
 
@@ -318,121 +318,121 @@ msgstr "Shërbyesi s’ofron ndonjë bazë të dhënash."
 msgid "Copy Link"
 msgstr "Kopjoji Lidhjen"
 
-#: ../lib/gui.c:374
+#: ../lib/gui.c:372
 msgid "Search"
 msgstr "Kërko"
 
-#: ../lib/gui.c:606
+#: ../lib/gui.c:605
 msgid "F_ind"
 msgstr "_Gjej"
 
 #. File Menu
-#: ../lib/gui.c:695
+#: ../lib/gui.c:694
 msgid "_File"
 msgstr "_Kartelë"
 
-#: ../lib/gui.c:704 ../lib/gui.c:850
+#: ../lib/gui.c:701 ../lib/gui.c:828
 msgid "Speed _Reader"
 msgstr "_Lexues Shpejtësie"
 
-#: ../lib/gui.c:726
+#: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_Parapëlqime"
 
-#: ../lib/gui.c:746 ../lib/gui.c:862
+#: ../lib/gui.c:730 ../lib/gui.c:840
+msgid "_Close"
+msgstr "_Mbylle"
+
+#: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
 msgstr "_Dil"
 
 #. Help Menu
-#: ../lib/gui.c:760
+#: ../lib/gui.c:741
 msgid "_Help"
 msgstr "_Ndihmë"
 
-#: ../lib/gui.c:769
+#: ../lib/gui.c:748
 msgid "About"
 msgstr "Mbi"
 
-#: ../lib/gui.c:862
-msgid "_Close"
-msgstr "_Mbylle"
-
-#: ../lib/gui.c:874
+#: ../lib/gui.c:852
 msgid "Search with:"
 msgstr "Kërko me:"
 
-#: ../lib/gui.c:878
+#: ../lib/gui.c:856
 msgid "_Dictionary Server"
 msgstr "_Shërbyes Fjalorësh"
 
-#: ../lib/gui.c:884
+#: ../lib/gui.c:862
 msgid "_Web Service"
 msgstr "Shërbim _Web"
 
-#: ../lib/gui.c:892
+#: ../lib/gui.c:870
 msgid "_Spell Checker"
 msgstr "Kontroll _Drejtshkrimi"
 
-#: ../lib/gui.c:1020
+#: ../lib/gui.c:998
 msgid "Copyright © 2006-2016 Xfce Development Team"
 msgstr "Të drejta Kopjimi © 2006-2016 Ekip i i Zhvillimit të Xfce-së"
 
-#: ../lib/gui.c:1023
+#: ../lib/gui.c:1001
 msgid "translator-credits"
 msgstr "translator-credits"
 
-#: ../lib/gui.c:1026
+#: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
 msgstr "Fjalor Xfce4"
 
-#: ../lib/prefs.c:53
+#: ../lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Gjermanisht <-> Anglisht"
 
-#: ../lib/prefs.c:54
+#: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Gjermanisht <-> Frëngjisht"
 
-#: ../lib/prefs.c:55
+#: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Gjermanisht <-> Spanjisht"
 
-#: ../lib/prefs.c:56
+#: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Gjermanisht <-> Italisht"
 
-#: ../lib/prefs.c:57
+#: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Gjermanisht <-> Kinezçe"
 
-#: ../lib/prefs.c:58
-msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Fjalor"
+#: ../lib/prefs.c:57
+msgid "dict.cc - Dictionary"
+msgstr "dict.cc - Fjalor"
 
-#: ../lib/prefs.c:59
+#: ../lib/prefs.c:58
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:60
+#: ../lib/prefs.c:59
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:61
+#: ../lib/prefs.c:60
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "Wikipedia, enciklopedia e lirë (SQ)"
 
-#: ../lib/prefs.c:62
+#: ../lib/prefs.c:61
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "Wiktionary, fjalori i lirë (SQ)"
 
-#: ../lib/prefs.c:63
+#: ../lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Merriam-Webster Online Dictionary"
 
-#: ../lib/prefs.c:64
+#: ../lib/prefs.c:63
 msgid "Clear"
 msgstr "Pastroje"
 
-#: ../lib/prefs.c:99
+#: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
 msgstr "Keni zgjedhur një fjalor të pavlefshëm."
 
@@ -448,7 +448,7 @@ msgstr "<b>Metodë parazgjedhje kërkimesh:</b>"
 msgid "Dictionary Server"
 msgstr "Shërbyes Fjalori"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:563
+#: ../lib/prefs.c:315 ../lib/prefs.c:562
 msgid "Web Service"
 msgstr "Shërbim Web"
 
@@ -504,7 +504,7 @@ msgid "Server Port:"
 msgstr "Portë Shërbyesi:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:634
+#: ../lib/prefs.c:477 ../lib/prefs.c:635
 msgid "Dictionary:"
 msgstr "Fjalor:"
 
@@ -516,15 +516,15 @@ msgstr "* (përdori krejt)"
 msgid "! (use all, stop after first match)"
 msgstr "! (përdori krejt, ndalu pas përputhjes së parë)"
 
-#: ../lib/prefs.c:565
+#: ../lib/prefs.c:564
 msgid "<b>Web search URL:</b>"
 msgstr "<b>URL kërkimi në Web:</b>"
 
-#: ../lib/prefs.c:570
+#: ../lib/prefs.c:569
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:590
+#: ../lib/prefs.c:589
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
