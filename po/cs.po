@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Alois Nešpor <info@aloisnespor.info>, 2013
-# Michal Várady <miko.vaji@gmail.com>, 2015-2017
+# Michal Várady <miko.vaji@gmail.com>, 2015-2017,2019
 # Pavel Borecki <pavel.borecki@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
+"POT-Creation-Date: 2019-06-09 18:31+0200\n"
+"PO-Revision-Date: 2019-06-10 07:23+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/xfce/xfce-apps/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
 msgid "Dictionary"
 msgstr "Slovník"
 
@@ -29,17 +29,17 @@ msgstr "Slovník"
 msgid "A plugin to query different dictionaries."
 msgstr "Zásuvný modul pro dotazování různých slovníků."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:263
-#: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:540
+#: ../panel-plugin/xfce4-dict-plugin.c:269
+#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Připraven"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:325
+#: ../panel-plugin/xfce4-dict-plugin.c:331
 msgid "Look up a word"
 msgstr "Vyhledat slovo"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:364 ../lib/gui.c:836
+#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Hledat pojem"
 
@@ -88,7 +88,7 @@ msgstr "Prosíme, abyste chyby hlásili na adresu <%s>."
 msgid "Dictionary Client"
 msgstr "Klient slovníku"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
 msgstr "Klientský program pro získávání dat z různých slovníků."
 
@@ -140,35 +140,35 @@ msgstr "Neplatný vstup"
 msgid "Process failed (%s)"
 msgstr "Proces skončil chybou (%s)"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:77
 msgid "P_ause"
 msgstr "Po_zastavit"
 
-#: ../lib/speedreader.c:79
+#: ../lib/speedreader.c:78
 msgid "_Resume"
 msgstr "_Pokračovat"
 
-#: ../lib/speedreader.c:254
+#: ../lib/speedreader.c:253
 msgid "S_top"
 msgstr "Zas_tavit"
 
-#: ../lib/speedreader.c:262
+#: ../lib/speedreader.c:261
 msgid "Running"
 msgstr "Spuštěno"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:264
 msgid "Finished"
 msgstr "Dokončeno"
 
-#: ../lib/speedreader.c:266
+#: ../lib/speedreader.c:265
 msgid "_Back"
 msgstr "_Zpět"
 
-#: ../lib/speedreader.c:274
+#: ../lib/speedreader.c:273
 msgid "Speed Reader"
 msgstr "Rychločtení"
 
-#: ../lib/speedreader.c:373
+#: ../lib/speedreader.c:372
 msgid "You must enter a text."
 msgstr "Zadejte text."
 
@@ -196,43 +196,43 @@ msgid ""
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Toto je jednoduchý nástroj pro rychločtení, který vám pomůže se cvičením rychlého čtení. Pracuje na principu rychle se zobrazujících slov na obrazovce."
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:613
 msgid "_Words per Minute:"
 msgstr "_Slov za minutu:"
 
-#: ../lib/speedreader.c:619
+#: ../lib/speedreader.c:620
 msgid "_Mark Paragraphs"
 msgstr "_Označovat odstavce"
 
-#: ../lib/speedreader.c:626
+#: ../lib/speedreader.c:627
 msgid "Word _Grouping:"
 msgstr "Ses_kupování slov:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:644
 msgid "_Font Size:"
 msgstr "_Velikost písma:"
 
-#: ../lib/speedreader.c:664
+#: ../lib/speedreader.c:665
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Zadejte text, který chcete číst.\n\nUvolněte se, pohodlně se usaďte a poté stiksněte tlačítko Start pro spuštění rychločtení."
 
-#: ../lib/speedreader.c:677
+#: ../lib/speedreader.c:678
 msgid "Load the contents of a file"
 msgstr "Načíst obsah ze souboru"
 
-#: ../lib/speedreader.c:682
+#: ../lib/speedreader.c:683
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Vymazat obsah textového pole a vložit obsah schránky"
 
-#: ../lib/speedreader.c:686
+#: ../lib/speedreader.c:687
 msgid "Clear the contents of the text field"
 msgstr "Vymazat obsah textového pole"
 
-#: ../lib/speedreader.c:698
+#: ../lib/speedreader.c:699
 msgid "_Start"
 msgstr "_Spustit"
 
@@ -256,44 +256,44 @@ msgstr "Chyba"
 msgid "warning"
 msgstr "varování"
 
-#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:804
-#: ../lib/dictd.c:813
-msgid "Could not connect to server."
-msgstr "Nelze se připojit k serveru"
-
-#: ../lib/dictd.c:393
-msgid "The server is not ready."
-msgstr "Server není připraven."
-
-#: ../lib/dictd.c:400
-msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Zvolili jste naplatný slovník. Ověřte nastavení."
-
-#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
-msgid "Unknown error while querying the server."
-msgstr "Při dotazu na server nastala neznámá chyba."
-
-#: ../lib/dictd.c:423
-msgid "Dictionary Results:"
-msgstr "Výsledky slovníku:"
-
-#: ../lib/dictd.c:426
-#, c-format
-msgid "No matches could be found for \"%s\"."
-msgstr "Pro „%s“ nebyly nalezeny žádné shody."
-
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:442
+#: ../lib/dictd.c:383
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Hledat „%s“ pomocí „%s“"
 
-#: ../lib/dictd.c:447
+#: ../lib/dictd.c:390
 msgid "Web Search:"
 msgstr "Hledání na webu:"
 
-#: ../lib/dictd.c:469
+#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
+#: ../lib/dictd.c:825
+msgid "Could not connect to server."
+msgstr "Nelze se připojit k serveru"
+
+#: ../lib/dictd.c:418
+msgid "The server is not ready."
+msgstr "Server není připraven."
+
+#: ../lib/dictd.c:425
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Zvolili jste naplatný slovník. Ověřte nastavení."
+
+#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+msgid "Unknown error while querying the server."
+msgstr "Při dotazu na server nastala neznámá chyba."
+
+#: ../lib/dictd.c:448
+msgid "Dictionary Results:"
+msgstr "Výsledky slovníku:"
+
+#: ../lib/dictd.c:451
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Pro „%s“ nebyly nalezeny žádné shody."
+
+#: ../lib/dictd.c:478
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -302,21 +302,21 @@ msgstr[1] "Nalezeny %d definice."
 msgstr[2] "Nalezeno %d definicí."
 msgstr[3] "Nalezeno %d definicí."
 
-#: ../lib/dictd.c:677
+#: ../lib/dictd.c:689
 #, c-format
 msgid "Querying %s..."
 msgstr "Posílám dotaz na server %s..."
 
-#: ../lib/dictd.c:736
+#: ../lib/dictd.c:748
 msgid "An error occurred while querying server information."
 msgstr "Při dotazu na informaci serveru nastala neznámá chyba."
 
-#: ../lib/dictd.c:749
+#: ../lib/dictd.c:761
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informace serveru pro „%s“"
 
-#: ../lib/dictd.c:833
+#: ../lib/dictd.c:845
 msgid "The server doesn't offer any databases."
 msgstr "Server nenabízí žádné databáze."
 
@@ -324,121 +324,121 @@ msgstr "Server nenabízí žádné databáze."
 msgid "Copy Link"
 msgstr "Kopírovat odkaz"
 
-#: ../lib/gui.c:374
+#: ../lib/gui.c:372
 msgid "Search"
 msgstr "Hledat"
 
-#: ../lib/gui.c:606
+#: ../lib/gui.c:605
 msgid "F_ind"
 msgstr "N_ajít"
 
 #. File Menu
-#: ../lib/gui.c:695
+#: ../lib/gui.c:694
 msgid "_File"
 msgstr "_Soubor"
 
-#: ../lib/gui.c:704 ../lib/gui.c:850
+#: ../lib/gui.c:701 ../lib/gui.c:828
 msgid "Speed _Reader"
 msgstr "_Rychločtení"
 
-#: ../lib/gui.c:726
+#: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_Předvolby"
 
-#: ../lib/gui.c:746 ../lib/gui.c:862
+#: ../lib/gui.c:730 ../lib/gui.c:840
+msgid "_Close"
+msgstr "_Zavřít"
+
+#: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
 msgstr "_Ukončit"
 
 #. Help Menu
-#: ../lib/gui.c:760
+#: ../lib/gui.c:741
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: ../lib/gui.c:769
+#: ../lib/gui.c:748
 msgid "About"
 msgstr "O aplikaci"
 
-#: ../lib/gui.c:862
-msgid "_Close"
-msgstr "_Zavřít"
-
-#: ../lib/gui.c:874
+#: ../lib/gui.c:852
 msgid "Search with:"
 msgstr "Hledat pomocí:"
 
-#: ../lib/gui.c:878
+#: ../lib/gui.c:856
 msgid "_Dictionary Server"
 msgstr "_Server slovníku"
 
-#: ../lib/gui.c:884
+#: ../lib/gui.c:862
 msgid "_Web Service"
 msgstr "_Webová služba"
 
-#: ../lib/gui.c:892
+#: ../lib/gui.c:870
 msgid "_Spell Checker"
 msgstr "_Kontrola pravopisu"
 
-#: ../lib/gui.c:1020
+#: ../lib/gui.c:998
 msgid "Copyright © 2006-2016 Xfce Development Team"
 msgstr "Copyright © 2006-2016 Tým vývojářů Xfce"
 
-#: ../lib/gui.c:1023
+#: ../lib/gui.c:1001
 msgid "translator-credits"
 msgstr "Michal Várady <miko.vaji@gmail.com>"
 
-#: ../lib/gui.c:1026
+#: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
 msgstr "Slovník Xfce4"
 
-#: ../lib/prefs.c:53
+#: ../lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Němčina <-> Angličtina"
 
-#: ../lib/prefs.c:54
+#: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Němčina <-> Francouzština"
 
-#: ../lib/prefs.c:55
+#: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Němčina <-> Španělstina"
 
-#: ../lib/prefs.c:56
+#: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Němčina <-> Italština"
 
-#: ../lib/prefs.c:57
+#: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Němčina <-> Čínština"
 
-#: ../lib/prefs.c:58
-msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Slovník"
+#: ../lib/prefs.c:57
+msgid "dict.cc - Dictionary"
+msgstr "dict.cc - Slovník"
 
-#: ../lib/prefs.c:59
+#: ../lib/prefs.c:58
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:60
+#: ../lib/prefs.c:59
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:61
+#: ../lib/prefs.c:60
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "Wikipedie, otevřená encyklopedie (EN)"
 
-#: ../lib/prefs.c:62
+#: ../lib/prefs.c:61
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "Wikislovník, slovník s otevřeným obsahem (EN)"
 
-#: ../lib/prefs.c:63
+#: ../lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Online slovník Merriam-Webster"
 
-#: ../lib/prefs.c:64
+#: ../lib/prefs.c:63
 msgid "Clear"
 msgstr "Čistý"
 
-#: ../lib/prefs.c:99
+#: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
 msgstr "Zvolili jste neplatný slovník."
 
@@ -454,7 +454,7 @@ msgstr "<b>Výchozí metoda pro hledání:</b>"
 msgid "Dictionary Server"
 msgstr "Server slovníku"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:563
+#: ../lib/prefs.c:315 ../lib/prefs.c:562
 msgid "Web Service"
 msgstr "Webová služba"
 
@@ -510,7 +510,7 @@ msgid "Server Port:"
 msgstr "Port serveru:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:634
+#: ../lib/prefs.c:477 ../lib/prefs.c:635
 msgid "Dictionary:"
 msgstr "Slovník:"
 
@@ -522,15 +522,15 @@ msgstr "* (použít vše)"
 msgid "! (use all, stop after first match)"
 msgstr "! (použít vše, zastavit při první shodě)"
 
-#: ../lib/prefs.c:565
+#: ../lib/prefs.c:564
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Hledání na webové stránce URL:</b>"
 
-#: ../lib/prefs.c:570
+#: ../lib/prefs.c:569
 msgid "URL:"
 msgstr "Adresa URL:"
 
-#: ../lib/prefs.c:590
+#: ../lib/prefs.c:589
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
