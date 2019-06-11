@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2019-01-27 21:28+0000\n"
+"POT-Creation-Date: 2019-06-09 18:31+0200\n"
+"PO-Revision-Date: 2019-06-11 10:38+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
 msgid "Dictionary"
 msgstr "Diccionari"
 
@@ -29,17 +29,17 @@ msgstr "Diccionari"
 msgid "A plugin to query different dictionaries."
 msgstr "Un connector per fer consultes a diversos diccionaris."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:263
-#: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:540
+#: ../panel-plugin/xfce4-dict-plugin.c:269
+#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Preparat"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:325
+#: ../panel-plugin/xfce4-dict-plugin.c:331
 msgid "Look up a word"
 msgstr "Cerca una paraula"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:364 ../lib/gui.c:836
+#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Cerca un terme"
 
@@ -88,7 +88,7 @@ msgstr "Envieu els errors a <%s>."
 msgid "Dictionary Client"
 msgstr "Client de diccionari"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
 msgstr "Un programa client per fer consultes a diversos diccionaris."
 
@@ -138,35 +138,35 @@ msgstr "L'entrada no és vàlida"
 msgid "Process failed (%s)"
 msgstr "Ha fallat el procés (%s)"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:77
 msgid "P_ause"
 msgstr "P_ausa"
 
-#: ../lib/speedreader.c:79
+#: ../lib/speedreader.c:78
 msgid "_Resume"
 msgstr "_Reprèn"
 
-#: ../lib/speedreader.c:254
+#: ../lib/speedreader.c:253
 msgid "S_top"
 msgstr "A_tura"
 
-#: ../lib/speedreader.c:262
+#: ../lib/speedreader.c:261
 msgid "Running"
 msgstr "Executant"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:264
 msgid "Finished"
 msgstr "Finalitzat"
 
-#: ../lib/speedreader.c:266
+#: ../lib/speedreader.c:265
 msgid "_Back"
 msgstr "_Enrere"
 
-#: ../lib/speedreader.c:274
+#: ../lib/speedreader.c:273
 msgid "Speed Reader"
 msgstr "Lector ràpid"
 
-#: ../lib/speedreader.c:373
+#: ../lib/speedreader.c:372
 msgid "You must enter a text."
 msgstr "Heu d'introduir un text."
 
@@ -192,43 +192,43 @@ msgid ""
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Aquesta és una utilitat de lectura ràpida per a entrenar-vos a llegir de pressa. Funciona il·luminant paraules ràpidament a la pantalla."
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:613
 msgid "_Words per Minute:"
 msgstr "_Paraules per minut:"
 
-#: ../lib/speedreader.c:619
+#: ../lib/speedreader.c:620
 msgid "_Mark Paragraphs"
 msgstr "_Marca els paràgrafs"
 
-#: ../lib/speedreader.c:626
+#: ../lib/speedreader.c:627
 msgid "Word _Grouping:"
 msgstr "A_grupament de paraules:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:644
 msgid "_Font Size:"
 msgstr "_Mida de la lletra:"
 
-#: ../lib/speedreader.c:664
+#: ../lib/speedreader.c:665
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Introduïu un text que vulgueu llegir.\n\nRelaxeu-vos i poseu-vos còmode, després premeu Comença per a començar la lectura ràpida."
 
-#: ../lib/speedreader.c:677
+#: ../lib/speedreader.c:678
 msgid "Load the contents of a file"
 msgstr "Carrega el contingut d'un fitxer"
 
-#: ../lib/speedreader.c:682
+#: ../lib/speedreader.c:683
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Neteja el contingut del camp de text i enganxa el contingut del porta-retalls"
 
-#: ../lib/speedreader.c:686
+#: ../lib/speedreader.c:687
 msgid "Clear the contents of the text field"
 msgstr "Neteja el contingut del camp de text"
 
-#: ../lib/speedreader.c:698
+#: ../lib/speedreader.c:699
 msgid "_Start"
 msgstr "_Comença"
 
@@ -252,65 +252,65 @@ msgstr "Error"
 msgid "warning"
 msgstr "advertència"
 
-#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:804
-#: ../lib/dictd.c:813
-msgid "Could not connect to server."
-msgstr "No s'ha pogut connectar al servidor."
-
-#: ../lib/dictd.c:393
-msgid "The server is not ready."
-msgstr "El servidor no està preparat."
-
-#: ../lib/dictd.c:400
-msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "El diccionari indicat no és vàlid. Comproveu les vostres preferències."
-
-#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
-msgid "Unknown error while querying the server."
-msgstr "Error desconegut mentre es feia la consulta al servidor."
-
-#: ../lib/dictd.c:423
-msgid "Dictionary Results:"
-msgstr "Resultats del diccionari:"
-
-#: ../lib/dictd.c:426
-#, c-format
-msgid "No matches could be found for \"%s\"."
-msgstr "No hi ha cap coincidència per «%s»."
-
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:442
+#: ../lib/dictd.c:383
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Cerca «%s» mitjançant «%s»"
 
-#: ../lib/dictd.c:447
+#: ../lib/dictd.c:390
 msgid "Web Search:"
 msgstr "Cerca Web:"
 
-#: ../lib/dictd.c:469
+#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
+#: ../lib/dictd.c:825
+msgid "Could not connect to server."
+msgstr "No s'ha pogut connectar al servidor."
+
+#: ../lib/dictd.c:418
+msgid "The server is not ready."
+msgstr "El servidor no està preparat."
+
+#: ../lib/dictd.c:425
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "El diccionari indicat no és vàlid. Comproveu les vostres preferències."
+
+#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+msgid "Unknown error while querying the server."
+msgstr "Error desconegut mentre es feia la consulta al servidor."
+
+#: ../lib/dictd.c:448
+msgid "Dictionary Results:"
+msgstr "Resultats del diccionari:"
+
+#: ../lib/dictd.c:451
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "No hi ha cap coincidència per «%s»."
+
+#: ../lib/dictd.c:478
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "S'ha trobat %d definició."
 msgstr[1] "S'han trobat %d definicions."
 
-#: ../lib/dictd.c:677
+#: ../lib/dictd.c:689
 #, c-format
 msgid "Querying %s..."
 msgstr "S'està consultant %s..."
 
-#: ../lib/dictd.c:736
+#: ../lib/dictd.c:748
 msgid "An error occurred while querying server information."
 msgstr "S'ha produït un error mentre es consultava la informació del servidor."
 
-#: ../lib/dictd.c:749
+#: ../lib/dictd.c:761
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informació del servidor per «%s»"
 
-#: ../lib/dictd.c:833
+#: ../lib/dictd.c:845
 msgid "The server doesn't offer any databases."
 msgstr "El servidor no ha ofert cap base de dades."
 
@@ -318,121 +318,121 @@ msgstr "El servidor no ha ofert cap base de dades."
 msgid "Copy Link"
 msgstr "Copia l'enllaç"
 
-#: ../lib/gui.c:374
+#: ../lib/gui.c:372
 msgid "Search"
 msgstr "Cerca"
 
-#: ../lib/gui.c:606
+#: ../lib/gui.c:605
 msgid "F_ind"
 msgstr "_Troba"
 
 #. File Menu
-#: ../lib/gui.c:695
+#: ../lib/gui.c:694
 msgid "_File"
 msgstr "_Fitxer"
 
-#: ../lib/gui.c:704 ../lib/gui.c:850
+#: ../lib/gui.c:701 ../lib/gui.c:828
 msgid "Speed _Reader"
 msgstr "_Lector ràpid"
 
-#: ../lib/gui.c:726
+#: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_Preferències"
 
-#: ../lib/gui.c:746 ../lib/gui.c:862
+#: ../lib/gui.c:730 ../lib/gui.c:840
+msgid "_Close"
+msgstr "Tan_ca"
+
+#: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
 msgstr "S_urt"
 
 #. Help Menu
-#: ../lib/gui.c:760
+#: ../lib/gui.c:741
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../lib/gui.c:769
+#: ../lib/gui.c:748
 msgid "About"
 msgstr "Quant a"
 
-#: ../lib/gui.c:862
-msgid "_Close"
-msgstr "Tan_ca"
-
-#: ../lib/gui.c:874
+#: ../lib/gui.c:852
 msgid "Search with:"
 msgstr "Cerca amb:"
 
-#: ../lib/gui.c:878
+#: ../lib/gui.c:856
 msgid "_Dictionary Server"
 msgstr "Servidor de _diccionari"
 
-#: ../lib/gui.c:884
+#: ../lib/gui.c:862
 msgid "_Web Service"
 msgstr "Servei _web"
 
-#: ../lib/gui.c:892
+#: ../lib/gui.c:870
 msgid "_Spell Checker"
 msgstr "_Corrector ortogràfic"
 
-#: ../lib/gui.c:1020
+#: ../lib/gui.c:998
 msgid "Copyright © 2006-2016 Xfce Development Team"
 msgstr "Drets d'autor © 2006-2016 L'equip de desenvolupament de Xfce"
 
-#: ../lib/gui.c:1023
+#: ../lib/gui.c:1001
 msgid "translator-credits"
 msgstr "Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008\nHarald Servat <redcrash@gmail.com>, 2009-2010.\nRobert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2019."
 
-#: ../lib/gui.c:1026
+#: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
 msgstr "Diccionari de Xfce4"
 
-#: ../lib/prefs.c:53
+#: ../lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org: alemany <-> anglès"
 
-#: ../lib/prefs.c:54
+#: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org: alemany <-> francès"
 
-#: ../lib/prefs.c:55
+#: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org: alemany <-> espanyol"
 
-#: ../lib/prefs.c:56
+#: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org: alemany <-> italià"
 
-#: ../lib/prefs.c:57
+#: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org: alemany <-> xinès"
 
-#: ../lib/prefs.c:58
-msgid "dist.cc - Dictionary"
-msgstr "dist.cc: diccionari"
+#: ../lib/prefs.c:57
+msgid "dict.cc - Dictionary"
+msgstr "dict.cc: diccionari"
 
-#: ../lib/prefs.c:59
+#: ../lib/prefs.c:58
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:60
+#: ../lib/prefs.c:59
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:61
+#: ../lib/prefs.c:60
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "Wikipedia, l'enciclopèdia lliure (EN)"
 
-#: ../lib/prefs.c:62
+#: ../lib/prefs.c:61
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "Wiktionary, el diccionari lliure (EN)"
 
-#: ../lib/prefs.c:63
+#: ../lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Diccionari en línia Merriam-Webster"
 
-#: ../lib/prefs.c:64
+#: ../lib/prefs.c:63
 msgid "Clear"
 msgstr "Neteja"
 
-#: ../lib/prefs.c:99
+#: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
 msgstr "Heu triat un diccionari no vàlid."
 
@@ -448,7 +448,7 @@ msgstr "<b>Mètode de cerca predeterminat:</b>"
 msgid "Dictionary Server"
 msgstr "Servidor de diccionari"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:563
+#: ../lib/prefs.c:315 ../lib/prefs.c:562
 msgid "Web Service"
 msgstr "Servei web"
 
@@ -504,7 +504,7 @@ msgid "Server Port:"
 msgstr "Port del servidor:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:634
+#: ../lib/prefs.c:477 ../lib/prefs.c:635
 msgid "Dictionary:"
 msgstr "Diccionari:"
 
@@ -516,15 +516,15 @@ msgstr "* (utilitza'ls tots)"
 msgid "! (use all, stop after first match)"
 msgstr "! (utilitza'ls tots, atura't després de la primera coincidència)"
 
-#: ../lib/prefs.c:565
+#: ../lib/prefs.c:564
 msgid "<b>Web search URL:</b>"
 msgstr "<b>URL de cerca web:</b>"
 
-#: ../lib/prefs.c:570
+#: ../lib/prefs.c:569
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:590
+#: ../lib/prefs.c:589
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
