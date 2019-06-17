@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-09 18:31+0200\n"
-"PO-Revision-Date: 2019-06-10 19:03+0000\n"
+"PO-Revision-Date: 2019-06-17 21:54+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Søg efter den givne tekst med en webbaseret søgemaskine"
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
-msgstr "Løb den valgte tekst igennem med stavekontrollen"
+msgstr "Tjek den givne tekst med en stavekontrol"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
@@ -125,7 +125,7 @@ msgstr "Kunne ikke finde nogen forslag til \"%s\" (%s)."
 #: ../lib/spell.c:162
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Fejl ved eksekvering af \"%s\" (%s)."
+msgstr "Fejl ved kørsel af \"%s\" (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
@@ -236,11 +236,11 @@ msgstr "_Start"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Søge-URL'en er tom. Kontrollér venligst dine præferencer."
+msgstr "Søge-URL'en er tom. Tjek venligst dine præferencer."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Browseren kunne ikke åbnes. Kontrollér venligst dine præferencer."
+msgstr "Browseren kunne ikke åbnes. Tjek venligst dine præferencer."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
@@ -276,7 +276,7 @@ msgstr "Serveren er ikke klar."
 
 #: ../lib/dictd.c:425
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Ugyldig ordbog valgt. Kontrollér venligst dine præferencer."
+msgstr "Ugyldig ordbog valgt. Tjek venligst dine præferencer."
 
 #: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
 msgid "Unknown error while querying the server."
