@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-09 18:31+0200\n"
-"PO-Revision-Date: 2019-07-16 20:44+0000\n"
+"PO-Revision-Date: 2019-07-17 07:27+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish (http://www.transifex.com/xfce/xfce-apps/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -207,7 +207,7 @@ msgstr "Sanojen _ryhmitys:"
 
 #: ../lib/speedreader.c:644
 msgid "_Font Size:"
-msgstr "Kirjasimen k_oko:"
+msgstr "Fontin k_oko:"
 
 #: ../lib/speedreader.c:665
 msgid ""
@@ -346,7 +346,7 @@ msgstr "_Sulje"
 
 #: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
-msgstr "_Poistu"
+msgstr "_Lopeta"
 
 #. Help Menu
 #: ../lib/gui.c:741
@@ -427,7 +427,7 @@ msgstr "Wiktionary, vapaa sanakirja (EN)"
 
 #: ../lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
-msgstr "Merriam-Webster verkkosanakirja"
+msgstr "Merriam-Webster-verkkosanakirja"
 
 #: ../lib/prefs.c:63
 msgid "Clear"
