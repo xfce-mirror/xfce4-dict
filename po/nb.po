@@ -6,14 +6,15 @@
 # Allan Nordhøy <epost@anotheragency.no>, 2014
 # Allan Nordhøy <epost@anotheragency.no>, 2016-2017
 # Harald H. <haarektrans@gmail.com>, 2014-2015
+# Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2019
 # Terje Uriansrud <ter@operamail.com>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
-"Last-Translator: Harald H. <haarektrans@gmail.com>\n"
+"POT-Creation-Date: 2019-06-09 18:31+0200\n"
+"PO-Revision-Date: 2019-07-24 08:39+0000\n"
+"Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
 msgid "Dictionary"
 msgstr "Ordliste"
 
@@ -30,23 +31,23 @@ msgstr "Ordliste"
 msgid "A plugin to query different dictionaries."
 msgstr "Ordliste for hurtig tilgang til forskjellige ordlister."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:263
-#: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:540
+#: ../panel-plugin/xfce4-dict-plugin.c:269
+#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Klar"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:325
+#: ../panel-plugin/xfce4-dict-plugin.c:331
 msgid "Look up a word"
 msgstr "Søk opp et ord"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:364 ../lib/gui.c:836
+#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Søkestreng:"
 
 #: ../src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr "Søk etter tekst med Dict-tjener(RFC 2229)"
+msgstr "Søk etter tekst med Dict-tjener (RFC 2229)"
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
@@ -70,7 +71,7 @@ msgstr "Bruker primærvalgt tekst og bruker denne som søketekst."
 
 #: ../src/xfce4-dict.c:55
 msgid "Be verbose"
-msgstr "Ikke fatt deg i korthet"
+msgstr "Vis utdypende utdata"
 
 #: ../src/xfce4-dict.c:56
 msgid "Show version information"
@@ -89,7 +90,7 @@ msgstr "Meld inn feil til <%s>."
 msgid "Dictionary Client"
 msgstr "Ordlisteklient"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
 msgstr "Et klientprogram for å søke i forskjellige ordlister."
 
@@ -107,24 +108,24 @@ msgstr[1] "%d forslag funnet"
 #: ../lib/spell.c:103
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "Forslag for \"%s\" (%s):"
+msgstr "Forslag for «%s» (%s):"
 
 #: ../lib/spell.c:120
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" er stavet rett (%s)."
+msgstr "«%s» er stavet rett (%s)."
 
 #: ../lib/spell.c:132
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Ingen forslag funnet for \"%s\" (%s)."
+msgstr "Fant ingen forslag for «%s» (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:162
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Feil under kjøring \"%s\" (%s)."
+msgstr "Feil under kjøring av «%s» (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
@@ -139,35 +140,35 @@ msgstr "Ugyldig inndata"
 msgid "Process failed (%s)"
 msgstr "Prosess feilet (%s)"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:77
 msgid "P_ause"
 msgstr "P_ause"
 
-#: ../lib/speedreader.c:79
+#: ../lib/speedreader.c:78
 msgid "_Resume"
 msgstr "_Fortsett"
 
-#: ../lib/speedreader.c:254
+#: ../lib/speedreader.c:253
 msgid "S_top"
 msgstr "S_topp"
 
-#: ../lib/speedreader.c:262
+#: ../lib/speedreader.c:261
 msgid "Running"
 msgstr "Kjører"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:264
 msgid "Finished"
 msgstr "Ferdig"
 
-#: ../lib/speedreader.c:266
+#: ../lib/speedreader.c:265
 msgid "_Back"
 msgstr "_Tilbake"
 
-#: ../lib/speedreader.c:274
+#: ../lib/speedreader.c:273
 msgid "Speed Reader"
 msgstr "Hastighetsleser"
 
-#: ../lib/speedreader.c:373
+#: ../lib/speedreader.c:372
 msgid "You must enter a text."
 msgstr "Du må skrive inn tekst"
 
@@ -178,7 +179,7 @@ msgstr "Velg en fil å lese inn"
 #: ../lib/speedreader.c:558
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "Filen '%s' kan ikke lastes inn."
+msgstr "Filen «%s» kan ikke lastes inn."
 
 #: ../lib/speedreader.c:584
 #, c-format
@@ -193,43 +194,43 @@ msgid ""
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Dette er et lettfattelig hastighetslesningsverktøy for å hjelpe deg med å lese raskere. Dette gjøres ved å blinke ord i hurtig frekvens over skjermen."
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:613
 msgid "_Words per Minute:"
 msgstr "_Ord per minutt:"
 
-#: ../lib/speedreader.c:619
+#: ../lib/speedreader.c:620
 msgid "_Mark Paragraphs"
 msgstr "_Merk avsnitt"
 
-#: ../lib/speedreader.c:626
+#: ../lib/speedreader.c:627
 msgid "Word _Grouping:"
 msgstr "_Gruppering av ord:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:644
 msgid "_Font Size:"
 msgstr "_Fontstørrelse:"
 
-#: ../lib/speedreader.c:664
+#: ../lib/speedreader.c:665
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Skriv noe tekst her som du vil lese.\n\nVær avslappet og komfortabel, trykk så Start for å begynne hastighetslesning."
 
-#: ../lib/speedreader.c:677
+#: ../lib/speedreader.c:678
 msgid "Load the contents of a file"
 msgstr "Last inn innholdet i en fil"
 
-#: ../lib/speedreader.c:682
+#: ../lib/speedreader.c:683
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Fjern innholdet i tekstfeltet og kopier innholdet til utklippstavlen"
 
-#: ../lib/speedreader.c:686
+#: ../lib/speedreader.c:687
 msgid "Clear the contents of the text field"
 msgstr "Fjern innholdet i tekstfeltet"
 
-#: ../lib/speedreader.c:698
+#: ../lib/speedreader.c:699
 msgid "_Start"
 msgstr "_Start"
 
@@ -243,7 +244,7 @@ msgstr "Nettleseren kunne ikke startes. Kontroller innstillingene."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
-msgstr "Ugyldig ikke-UTF-8 inndata"
+msgstr "Ugyldig inndata, er ikke UTF-8"
 
 #: ../lib/common.c:568
 msgid "Error"
@@ -253,65 +254,65 @@ msgstr "Feil"
 msgid "warning"
 msgstr "advarsel"
 
-#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:804
-#: ../lib/dictd.c:813
-msgid "Could not connect to server."
-msgstr "Klarte ikke kontakte tjener."
-
-#: ../lib/dictd.c:393
-msgid "The server is not ready."
-msgstr "Tjeneren er ikke klar."
-
-#: ../lib/dictd.c:400
-msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Ugyldig ordliste angitt. Kontroller innstillingene."
-
-#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
-msgid "Unknown error while querying the server."
-msgstr "Ukjent feil ved spørring mot tjeneren."
-
-#: ../lib/dictd.c:423
-msgid "Dictionary Results:"
-msgstr "Resultat fra ordbok:"
-
-#: ../lib/dictd.c:426
-#, c-format
-msgid "No matches could be found for \"%s\"."
-msgstr "Ingen treff ble funnet for \"%s\"."
-
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:442
+#: ../lib/dictd.c:383
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr "Søk etter \"%s\" ved bruk av \"%s\""
+msgstr "Søk etter «%s» ved bruk av «%s»"
 
-#: ../lib/dictd.c:447
+#: ../lib/dictd.c:390
 msgid "Web Search:"
 msgstr "Nettsøk:"
 
-#: ../lib/dictd.c:469
+#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
+#: ../lib/dictd.c:825
+msgid "Could not connect to server."
+msgstr "Klarte ikke kontakte tjener."
+
+#: ../lib/dictd.c:418
+msgid "The server is not ready."
+msgstr "Tjeneren er ikke klar."
+
+#: ../lib/dictd.c:425
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Ugyldig ordliste angitt. Kontroller innstillingene."
+
+#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+msgid "Unknown error while querying the server."
+msgstr "Ukjent feil ved spørring mot tjeneren."
+
+#: ../lib/dictd.c:448
+msgid "Dictionary Results:"
+msgstr "Resultat fra ordbok:"
+
+#: ../lib/dictd.c:451
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Ingen treff ble funnet for «%s»."
+
+#: ../lib/dictd.c:478
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d definisjon funnet."
 msgstr[1] "%d definisjoner funnet."
 
-#: ../lib/dictd.c:677
+#: ../lib/dictd.c:689
 #, c-format
 msgid "Querying %s..."
-msgstr "Søker %s .."
+msgstr "Søker %s …"
 
-#: ../lib/dictd.c:736
+#: ../lib/dictd.c:748
 msgid "An error occurred while querying server information."
 msgstr "En feil oppsto ved spørring etter tjenerinformasjon."
 
-#: ../lib/dictd.c:749
+#: ../lib/dictd.c:761
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Tjenerinformasjon for «%s»"
 
-#: ../lib/dictd.c:833
+#: ../lib/dictd.c:845
 msgid "The server doesn't offer any databases."
 msgstr "Tjeneren tilbyr ingen databaser."
 
@@ -319,121 +320,121 @@ msgstr "Tjeneren tilbyr ingen databaser."
 msgid "Copy Link"
 msgstr "Kopier lenke"
 
-#: ../lib/gui.c:374
+#: ../lib/gui.c:372
 msgid "Search"
 msgstr "Søk"
 
-#: ../lib/gui.c:606
+#: ../lib/gui.c:605
 msgid "F_ind"
 msgstr "F_inn"
 
 #. File Menu
-#: ../lib/gui.c:695
+#: ../lib/gui.c:694
 msgid "_File"
 msgstr "_Fil"
 
-#: ../lib/gui.c:704 ../lib/gui.c:850
+#: ../lib/gui.c:701 ../lib/gui.c:828
 msgid "Speed _Reader"
 msgstr "Hastighets_leser"
 
-#: ../lib/gui.c:726
+#: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_Innstillinger"
 
-#: ../lib/gui.c:746 ../lib/gui.c:862
+#: ../lib/gui.c:730 ../lib/gui.c:840
+msgid "_Close"
+msgstr "_Lukk"
+
+#: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
 msgstr "_Avslutt"
 
 #. Help Menu
-#: ../lib/gui.c:760
+#: ../lib/gui.c:741
 msgid "_Help"
 msgstr "_Hjelp"
 
-#: ../lib/gui.c:769
+#: ../lib/gui.c:748
 msgid "About"
 msgstr "Om"
 
-#: ../lib/gui.c:862
-msgid "_Close"
-msgstr "_Lukk"
-
-#: ../lib/gui.c:874
+#: ../lib/gui.c:852
 msgid "Search with:"
 msgstr "Søk med:"
 
-#: ../lib/gui.c:878
+#: ../lib/gui.c:856
 msgid "_Dictionary Server"
 msgstr "_Ordlistetjener"
 
-#: ../lib/gui.c:884
+#: ../lib/gui.c:862
 msgid "_Web Service"
 msgstr "_Nettjeneste"
 
-#: ../lib/gui.c:892
+#: ../lib/gui.c:870
 msgid "_Spell Checker"
 msgstr "_Stavekontroll"
 
-#: ../lib/gui.c:1020
+#: ../lib/gui.c:998
 msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Kopirett © 2006-2016 Xfce utviklingsgemenskap"
+msgstr "Kopirett © 2006-2016 Xfce Utviklingsteam"
 
-#: ../lib/gui.c:1023
+#: ../lib/gui.c:1001
 msgid "translator-credits"
 msgstr "haarek - Harald <https://www.transifex.com/accounts/profile/haarek/>\nkingu - Allan Nordhøy <https://www.transifex.com/accounts/profile/kingu/>\npapparonny - Ronny K. M. Olufsen <https://www.transifex.com/accounts/profile/papparonny/>\nTerje Uriansrud <ter@operamail.com>"
 
-#: ../lib/gui.c:1026
+#: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4-ordliste"
 
-#: ../lib/prefs.c:53
+#: ../lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Tysk <-> Engelsk"
 
-#: ../lib/prefs.c:54
+#: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Tysk <-> Fransk"
 
-#: ../lib/prefs.c:55
+#: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Tysk <-> Spansk"
 
-#: ../lib/prefs.c:56
+#: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Tysk <-> Italiensk"
 
-#: ../lib/prefs.c:57
+#: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Tysk <-> Kinesisk"
 
-#: ../lib/prefs.c:58
-msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Ordliste"
+#: ../lib/prefs.c:57
+msgid "dict.cc - Dictionary"
+msgstr "dict.cc - Ordbok"
 
-#: ../lib/prefs.c:59
+#: ../lib/prefs.c:58
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:60
+#: ../lib/prefs.c:59
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:61
+#: ../lib/prefs.c:60
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "Wikipedia, gratis leksikon (EN)"
 
-#: ../lib/prefs.c:62
+#: ../lib/prefs.c:61
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "Wiktionary, gratis ordliste (EN)"
 
-#: ../lib/prefs.c:63
+#: ../lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Merriam-Webster nettbasert ordliste"
 
-#: ../lib/prefs.c:64
+#: ../lib/prefs.c:63
 msgid "Clear"
 msgstr "Tøm"
 
-#: ../lib/prefs.c:99
+#: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
 msgstr "Du har valgt ugyldig ordliste."
 
@@ -449,7 +450,7 @@ msgstr "<b>Forvalgt søkemetode:</b>"
 msgid "Dictionary Server"
 msgstr "Ordlistetjener"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:563
+#: ../lib/prefs.c:315 ../lib/prefs.c:562
 msgid "Web Service"
 msgstr "Nettjeneste"
 
@@ -505,7 +506,7 @@ msgid "Server Port:"
 msgstr "Tjenerport:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:634
+#: ../lib/prefs.c:477 ../lib/prefs.c:635
 msgid "Dictionary:"
 msgstr "Ordliste:"
 
@@ -517,15 +518,15 @@ msgstr "* (bruk alle)"
 msgid "! (use all, stop after first match)"
 msgstr "! (bruk alle, stopp etter første treff)"
 
-#: ../lib/prefs.c:565
+#: ../lib/prefs.c:564
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Nettsøk-URL:</b>"
 
-#: ../lib/prefs.c:570
+#: ../lib/prefs.c:569
 msgid "URL:"
 msgstr "Nettadresse:"
 
-#: ../lib/prefs.c:590
+#: ../lib/prefs.c:589
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
@@ -539,4 +540,4 @@ msgstr "Stavekontrollprogram:"
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>Stavekontrollprogram kan være 'enchant', 'aspell', 'ispell' eller andre stavekontrollprogrammer som er kompatible med ispell kommandosyntaks.\nIkonet viser om angitt kommando eksisterer.</i>"
+msgstr "<i>Stavekontrollprogram kan være «enchant», «aspell», «ispell» eller andre stavekontrollprogrammer som er kompatible med ispells kommandosyntaks.\nIkonet viser om angitt kommando eksisterer.</i>"
