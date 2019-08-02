@@ -4,7 +4,8 @@
 # 
 # Translators:
 # Grzegorz Gębczyński <grzegorz.gebczynski@gmail.com>, 2016
-# Marcin Mikołajczak <me@m4sk.in>, 2016
+# Marcin Mikołajczak <me@mkljczk.pl>, 2016
+# No Ne, 2019
 # Piotr Maliński <riklaunim@gmail.com>, 2007
 # Piotr Sokół <psokol.l10n@gmail.com>, 2009,2013
 # Piotr Strębski <strebski@gmail.com>, 2017
@@ -13,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
-"Last-Translator: Piotr Sokół <psokol.l10n@gmail.com>\n"
+"POT-Creation-Date: 2019-08-02 06:31+0200\n"
+"PO-Revision-Date: 2019-08-02 11:14+0000\n"
+"Last-Translator: No Ne\n"
 "Language-Team: Polish (http://www.transifex.com/xfce/xfce-apps/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
 msgid "Dictionary"
 msgstr "Słownik"
 
@@ -32,17 +33,17 @@ msgstr "Słownik"
 msgid "A plugin to query different dictionaries."
 msgstr "Umożliwia wyszukiwanie wyrażeń w różnych słownikach"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:263
-#: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:540
+#: ../panel-plugin/xfce4-dict-plugin.c:269
+#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Gotowy"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:325
+#: ../panel-plugin/xfce4-dict-plugin.c:331
 msgid "Look up a word"
 msgstr "Wyszukuje wyrażenie"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:364 ../lib/gui.c:836
+#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Wyszukiwanie..."
 
@@ -91,7 +92,7 @@ msgstr "Proszę zgłaszać błędy na adres <%s>."
 msgid "Dictionary Client"
 msgstr "Klient słownika"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
 msgstr "Umożliwia wyszukiwanie wyrażeń w różnych słownikach"
 
@@ -143,48 +144,56 @@ msgstr "Nieprawidłowe dane wejściowe"
 msgid "Process failed (%s)"
 msgstr "Nieudane działanie (%s)"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
 msgstr "W_strzymaj"
 
-#: ../lib/speedreader.c:79
+#: ../lib/speedreader.c:75
 msgid "_Resume"
 msgstr "_Wznów"
 
-#: ../lib/speedreader.c:254
+#: ../lib/speedreader.c:248
 msgid "S_top"
 msgstr "Za_trzymaj"
 
-#: ../lib/speedreader.c:262
+#: ../lib/speedreader.c:256
 msgid "Running"
 msgstr "Działanie"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:259
 msgid "Finished"
 msgstr "Zakończono"
 
-#: ../lib/speedreader.c:266
+#: ../lib/speedreader.c:260
 msgid "_Back"
 msgstr "Wstecz"
 
-#: ../lib/speedreader.c:274
+#: ../lib/speedreader.c:268
 msgid "Speed Reader"
 msgstr "Szybkie czytanie"
 
-#: ../lib/speedreader.c:373
+#: ../lib/speedreader.c:369
 msgid "You must enter a text."
 msgstr "Proszę wprowadzić tekst."
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:526
 msgid "Choose a file to load"
 msgstr "Wybór pliku"
 
-#: ../lib/speedreader.c:558
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr "Anu_luj"
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "_Otwórz"
+
+#: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Nie udało się wczytać pliku „%s”."
 
-#: ../lib/speedreader.c:584
+#: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -193,51 +202,60 @@ msgstr[1] "(wyświetla %d słowa jednocześnie)"
 msgstr[2] "(wyświetla %d słów jednocześnie)"
 msgstr[3] "(wyświetla %d słów jednocześnie)"
 
-#: ../lib/speedreader.c:608
+#: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Oto proste narzędzie do pomocy w nauce szybszego czytania, wyświetlające na ekranie tekst z dużą prędkością."
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
 msgstr "_Tempo wyświetlania (słowa/min):"
 
-#: ../lib/speedreader.c:619
+#: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
 msgstr "_Oznaczanie akapitów"
 
-#: ../lib/speedreader.c:626
+#: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
 msgstr "Ilość g_rupowanych słów:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:641
 msgid "_Font Size:"
 msgstr "_Rozmiar czcionki:"
 
-#: ../lib/speedreader.c:664
+#: ../lib/speedreader.c:662
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "W tym miejscu należy wprowadzić wprowadzić tekst do przeczytania.\n\nProszę się odprężyć i przygotować. Tekst zostanie wyświetlony po wciśnięciu przycisku „Rozpocznij”."
 
-#: ../lib/speedreader.c:677
+#: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
 msgstr "Wczytuje zawartość pliku"
 
-#: ../lib/speedreader.c:682
+#: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Czyści zawartość pola tekstowego i wkleja zawartość schowka"
 
-#: ../lib/speedreader.c:686
+#: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
 msgstr "Czyści zawartość pola tekstowego"
 
-#: ../lib/speedreader.c:698
+#: ../lib/speedreader.c:696
 msgid "_Start"
 msgstr "_Rozpocznij"
+
+#: ../lib/speedreader.c:697
+msgid "_Stop"
+msgstr "Za_trzymaj"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "_Zamknij"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
@@ -259,44 +277,44 @@ msgstr "Błąd"
 msgid "warning"
 msgstr "ostrzeżenie"
 
-#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:804
-#: ../lib/dictd.c:813
-msgid "Could not connect to server."
-msgstr "Nie można połączyć z serwerem."
-
-#: ../lib/dictd.c:393
-msgid "The server is not ready."
-msgstr "Serwer nie jest gotowy."
-
-#: ../lib/dictd.c:400
-msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Nieprawidłowo skonfigurowany słownik. Proszę sprawdzić preferencje programu."
-
-#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
-msgid "Unknown error while querying the server."
-msgstr "Wystąpił nieznany błąd podczas odpytywania serwera."
-
-#: ../lib/dictd.c:423
-msgid "Dictionary Results:"
-msgstr "Wyniki ze słownika:"
-
-#: ../lib/dictd.c:426
-#, c-format
-msgid "No matches could be found for \"%s\"."
-msgstr "Nie odnaleziono definicji wyrażenia „%s”."
-
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:442
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Wyszukaj wyrażenie „%s” przy użyciu usługi „%s”"
 
-#: ../lib/dictd.c:447
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "Wyszukiwanie w Internecie:"
 
-#: ../lib/dictd.c:469
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
+msgid "Could not connect to server."
+msgstr "Nie można połączyć z serwerem."
+
+#: ../lib/dictd.c:416
+msgid "The server is not ready."
+msgstr "Serwer nie jest gotowy."
+
+#: ../lib/dictd.c:423
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Nieprawidłowo skonfigurowany słownik. Proszę sprawdzić preferencje programu."
+
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
+msgid "Unknown error while querying the server."
+msgstr "Wystąpił nieznany błąd podczas odpytywania serwera."
+
+#: ../lib/dictd.c:446
+msgid "Dictionary Results:"
+msgstr "Wyniki ze słownika:"
+
+#: ../lib/dictd.c:449
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "Nie odnaleziono definicji wyrażenia „%s”."
+
+#: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -305,21 +323,21 @@ msgstr[1] "Odnaleziono %d definicje"
 msgstr[2] "Odnaleziono %d definicji"
 msgstr[3] "Odnaleziono %d definicji"
 
-#: ../lib/dictd.c:677
+#: ../lib/dictd.c:687
 #, c-format
 msgid "Querying %s..."
 msgstr "Odpytywanie serwera %s..."
 
-#: ../lib/dictd.c:736
+#: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
 msgstr "Wystąpił błąd podczas odpytywania serwera."
 
-#: ../lib/dictd.c:749
+#: ../lib/dictd.c:759
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informacje serwera dla wyrażenia „%s”"
 
-#: ../lib/dictd.c:833
+#: ../lib/dictd.c:843
 msgid "The server doesn't offer any databases."
 msgstr "Serwer nie oferuje żadnych baz danych."
 
@@ -327,121 +345,117 @@ msgstr "Serwer nie oferuje żadnych baz danych."
 msgid "Copy Link"
 msgstr "Kopiuj odnośnik"
 
-#: ../lib/gui.c:374
+#: ../lib/gui.c:372
 msgid "Search"
 msgstr "Wyszukiwanie"
 
-#: ../lib/gui.c:606
+#: ../lib/gui.c:605
 msgid "F_ind"
 msgstr "_Znajdź"
 
 #. File Menu
-#: ../lib/gui.c:695
+#: ../lib/gui.c:694
 msgid "_File"
 msgstr "_Plik"
 
-#: ../lib/gui.c:704 ../lib/gui.c:850
+#: ../lib/gui.c:701 ../lib/gui.c:828
 msgid "Speed _Reader"
 msgstr "Szybkie _czytanie"
 
-#: ../lib/gui.c:726
+#: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "P_referencje"
 
-#: ../lib/gui.c:746 ../lib/gui.c:862
+#: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
 msgstr "Za_kończ"
 
 #. Help Menu
-#: ../lib/gui.c:760
+#: ../lib/gui.c:741
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: ../lib/gui.c:769
+#: ../lib/gui.c:748
 msgid "About"
 msgstr "_O programie"
 
-#: ../lib/gui.c:862
-msgid "_Close"
-msgstr "_Zamknij"
-
-#: ../lib/gui.c:874
+#: ../lib/gui.c:852
 msgid "Search with:"
 msgstr "Metoda wyszukiwania:"
 
-#: ../lib/gui.c:878
+#: ../lib/gui.c:856
 msgid "_Dictionary Server"
 msgstr "Serwer _słownika"
 
-#: ../lib/gui.c:884
+#: ../lib/gui.c:862
 msgid "_Web Service"
 msgstr "Usługa _internetowa"
 
-#: ../lib/gui.c:892
+#: ../lib/gui.c:870
 msgid "_Spell Checker"
 msgstr "_Sprawdzanie pisowni"
 
-#: ../lib/gui.c:1020
+#: ../lib/gui.c:998
 msgid "Copyright © 2006-2016 Xfce Development Team"
 msgstr "Prawa autorskie © 2006-2016 Zespół twórców Xfce"
 
-#: ../lib/gui.c:1023
+#: ../lib/gui.c:1001
 msgid "translator-credits"
 msgstr "Piotr Maliński <riklaunim@gmail.com>, 2007.\nPiotr Sokół <psokol@jabster.pl>, 2009, 2013."
 
-#: ../lib/gui.c:1026
+#: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Dictionary"
 
-#: ../lib/prefs.c:53
+#: ../lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org ‒ niemiecki <-> angielski"
 
-#: ../lib/prefs.c:54
+#: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org ‒ niemiecki <-> francuski"
 
-#: ../lib/prefs.c:55
+#: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org ‒ niemiecki <-> hiszpański"
 
-#: ../lib/prefs.c:56
+#: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org ‒ niemiecki <-> włoski"
 
-#: ../lib/prefs.c:57
+#: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org ‒ niemiecki <-> chiński"
 
-#: ../lib/prefs.c:58
-msgid "dist.cc - Dictionary"
-msgstr "Słownik dist.cc"
+#: ../lib/prefs.c:57
+msgid "dict.cc - Dictionary"
+msgstr "Słownik dict.cc"
 
-#: ../lib/prefs.c:59
+#: ../lib/prefs.c:58
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:60
+#: ../lib/prefs.c:59
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:61
+#: ../lib/prefs.c:60
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "Wikipedia, wolna encyklopedia (EN)"
 
-#: ../lib/prefs.c:62
+#: ../lib/prefs.c:61
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "Wikisłownik, wolny słownik (EN)"
 
-#: ../lib/prefs.c:63
+#: ../lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Słownik Merriam-Webster"
 
-#: ../lib/prefs.c:64
+#: ../lib/prefs.c:63
 msgid "Clear"
 msgstr "Wyczyść"
 
-#: ../lib/prefs.c:99
+#: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
 msgstr "Wybrano nieprawidłowy słownik."
 
@@ -457,7 +471,7 @@ msgstr "<b>Domyślna metoda wyszukiwania</b>"
 msgid "Dictionary Server"
 msgstr "Serwer słownika"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:563
+#: ../lib/prefs.c:315 ../lib/prefs.c:562
 msgid "Web Service"
 msgstr "Usługa internetowa"
 
@@ -513,7 +527,7 @@ msgid "Server Port:"
 msgstr "Port serwera:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:634
+#: ../lib/prefs.c:477 ../lib/prefs.c:635
 msgid "Dictionary:"
 msgstr "Słownik:"
 
@@ -525,15 +539,15 @@ msgstr "* (wszystkie)"
 msgid "! (use all, stop after first match)"
 msgstr "! (wszystkie, przerwanie po pierwszym dopasowaniu)"
 
-#: ../lib/prefs.c:565
+#: ../lib/prefs.c:564
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Adres URL</b>"
 
-#: ../lib/prefs.c:570
+#: ../lib/prefs.c:569
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:590
+#: ../lib/prefs.c:589
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
