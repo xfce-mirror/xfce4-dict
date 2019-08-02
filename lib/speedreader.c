@@ -694,7 +694,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 
 	priv->button_pause = gtk_dialog_add_button(GTK_DIALOG(dialog), _("P_ause"), RESPONSE_PAUSE);
 	priv->button_start = gtk_dialog_add_button(GTK_DIALOG(dialog), _("_Start"), RESPONSE_START);
-	priv->button_stop = gtk_dialog_add_button(GTK_DIALOG(dialog), _("_Stop"), RESPONSE_STOP);
+	priv->button_stop = gtk_dialog_add_button(GTK_DIALOG(dialog), _("S_top"), RESPONSE_STOP);
 	button_close = gtk_dialog_add_button(GTK_DIALOG(dialog), _("_Close"), GTK_RESPONSE_CLOSE);
 
 	gtk_widget_hide(priv->button_pause);
