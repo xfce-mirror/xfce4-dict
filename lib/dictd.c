@@ -25,10 +25,8 @@
 #include <config.h>
 #endif
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <gtk/gtk.h>
-#include <glib/gi18n.h>
+#include <libxfce4ui/libxfce4ui.h>
 
 #include <signal.h>
 #include <sys/types.h>
@@ -759,10 +757,10 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	*end = '\0';
 
 	text = g_strdup_printf(_("Server Information for \"%s\""), server);
-	dialog = gtk_dialog_new_with_buttons(text,
+	dialog = xfce_titled_dialog_new_with_mixed_buttons(text,
 				GTK_WINDOW(dd->window),
 				GTK_DIALOG_DESTROY_WITH_PARENT,
-				"gtk-close", GTK_RESPONSE_CLOSE, NULL);
+				"window-close", _("_Close"), GTK_RESPONSE_CLOSE, NULL);
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
 	gtk_container_set_border_width(GTK_CONTAINER(vbox), 5);
 	gtk_container_add(GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), vbox);

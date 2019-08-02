@@ -360,7 +360,7 @@ static void textview_populate_popup_cb(GtkTextView *textview, GtkMenu *menu, Dic
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	copy_link = gtk_image_menu_item_new_with_mnemonic (_("Copy Link"));
-	icon = gtk_image_new_from_icon_name ("gtk-copy", GTK_ICON_SIZE_MENU);
+	icon = gtk_image_new_from_icon_name ("edit-copy", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (copy_link), icon);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
@@ -370,7 +370,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	search = gtk_image_menu_item_new_with_mnemonic (_("Search"));
-	icon = gtk_image_new_from_icon_name ("gtk-find", GTK_ICON_SIZE_MENU);
+	icon = gtk_image_new_from_icon_name ("edit-find", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (search), icon);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
@@ -604,20 +604,20 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 	{
 		button = gtk_button_new_with_mnemonic (_("F_ind"));
 		gtk_button_set_image(GTK_BUTTON(button),
-			gtk_image_new_from_icon_name("gtk-find", GTK_ICON_SIZE_BUTTON));
+			gtk_image_new_from_icon_name("edit-find", GTK_ICON_SIZE_BUTTON));
 		gtk_widget_show(button);
 		gtk_box_pack_start(GTK_BOX(box), button, FALSE, FALSE, 0);
 		g_signal_connect(button, "clicked", G_CALLBACK(entry_button_clicked_cb), dd);
 
-		/* "internet-web-browser" is Tango, "web-browser" is Rodent, "gtk-find" is GTK */
-		web_image_name = get_icon_name("internet-web-browser", "web-browser", "gtk-find");
+		/* "internet-web-browser" is Tango, "web-browser" is Rodent, "edit-find" is GTK */
+		web_image_name = get_icon_name("internet-web-browser", "web-browser", "edit-find");
 	}
 
 	switch (dd->mode_in_use)
 	{
 		case DICTMODE_DICT:
 		{
-			image = gtk_image_new_from_icon_name("gtk-find", GTK_ICON_SIZE_BUTTON);
+			image = gtk_image_new_from_icon_name("edit-find", GTK_ICON_SIZE_BUTTON);
 			break;
 		}
 		case DICTMODE_WEB:
@@ -627,7 +627,7 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 		}
 		case DICTMODE_SPELL:
 		{
-			image = gtk_image_new_from_icon_name("gtk-spell-check", GTK_ICON_SIZE_BUTTON);
+			image = gtk_image_new_from_icon_name("tools-check-spelling", GTK_ICON_SIZE_BUTTON);
 			break;
 		}
 		default:
@@ -699,7 +699,7 @@ static GtkWidget *create_file_menu(DictData *dd)
 	/* Speed Reader */
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	menu_item = gtk_image_menu_item_new_with_mnemonic (_("Speed _Reader"));
-	icon = gtk_image_new_from_icon_name ("gtk-justify-center", GTK_ICON_SIZE_MENU);
+	icon = gtk_image_new_from_icon_name ("format-justify-center", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), icon);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
@@ -714,7 +714,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	/* Preferences */
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	dd->pref_menu_item = gtk_image_menu_item_new_with_mnemonic (_("_Preferences"));
-	icon = gtk_image_new_from_icon_name ("gtk-preferences", GTK_ICON_SIZE_MENU);
+	icon = gtk_image_new_from_icon_name ("preferences-system", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (dd->pref_menu_item), icon);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
@@ -728,7 +728,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	/* Close */
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	dd->close_menu_item = gtk_image_menu_item_new_with_mnemonic (dd->is_plugin ? _("_Close") : _("_Quit"));
-	icon = gtk_image_new_from_icon_name (dd->is_plugin ? "gtk-close" : "gtk-quit", GTK_ICON_SIZE_MENU);
+	icon = gtk_image_new_from_icon_name (dd->is_plugin ? "window-close" : "application-exit", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (dd->close_menu_item), icon);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
@@ -746,7 +746,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	/* About */
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	menu_item = gtk_image_menu_item_new_with_mnemonic (_("About"));
-	icon = gtk_image_new_from_icon_name ("gtk-about", GTK_ICON_SIZE_MENU);
+	icon = gtk_image_new_from_icon_name ("help-about", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), icon);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
@@ -812,8 +812,8 @@ void dict_gui_create_main_window(DictData *dd)
 
 	dd->main_entry = gtk_bin_get_child(GTK_BIN(dd->main_combo));
 	gtk_entry_set_placeholder_text(GTK_ENTRY(dd->main_entry), _("Search term"));
-	gtk_entry_set_icon_from_icon_name(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_PRIMARY, "gtk-find");
-	gtk_entry_set_icon_from_icon_name(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_SECONDARY, "gtk-clear");
+	gtk_entry_set_icon_from_icon_name(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_PRIMARY, "edit-find");
+	gtk_entry_set_icon_from_icon_name(GTK_ENTRY(dd->main_entry), GTK_ENTRY_ICON_SECONDARY, "edit-clear");
 	g_signal_connect(dd->main_entry, "changed", G_CALLBACK(entry_changed_cb), dd);
 	g_signal_connect(dd->main_entry, "activate", G_CALLBACK(entry_activate_cb), dd);
 	g_signal_connect(dd->main_entry, "icon-release", G_CALLBACK(entry_icon_release_cb), dd);
@@ -827,7 +827,7 @@ void dict_gui_create_main_window(DictData *dd)
 
 	button = gtk_button_new_with_mnemonic(_("Speed _Reader"));
 	gtk_button_set_image(GTK_BUTTON(button),
-		gtk_image_new_from_icon_name("gtk-justify-center", GTK_ICON_SIZE_MENU));
+		gtk_image_new_from_icon_name("format-justify-center", GTK_ICON_SIZE_MENU));
 	g_signal_connect(button, "clicked", G_CALLBACK(speedreader_clicked_cb), dd);
 	gtk_widget_show(button);
 	gtk_box_pack_start(GTK_BOX(entry_box), button, FALSE, FALSE, 2);
@@ -840,7 +840,7 @@ void dict_gui_create_main_window(DictData *dd)
 		_("_Close") : _("_Quit"));
 	gtk_button_set_image(GTK_BUTTON(dd->close_button),
 		gtk_image_new_from_icon_name((dd->is_plugin) ?
-			"gtk-close" : "gtk-quit", GTK_ICON_SIZE_BUTTON));
+			"window-close" : "application-exit", GTK_ICON_SIZE_BUTTON));
 	gtk_widget_show(dd->close_button);
 	gtk_box_pack_end(GTK_BOX(entry_box), dd->close_button, FALSE, FALSE, 0);
 

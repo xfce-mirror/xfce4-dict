@@ -226,7 +226,7 @@ static gboolean spell_entry_focus_cb(GtkEntry *entry, GdkEventFocus *ev, GtkWidg
 		g_free(path);
 	}
 	else
-		gtk_image_set_from_icon_name(GTK_IMAGE(icon), "gtk-stop", GTK_ICON_SIZE_BUTTON);
+		gtk_image_set_from_icon_name(GTK_IMAGE(icon), "process-stop", GTK_ICON_SIZE_BUTTON);
 
 	return FALSE;
 }
@@ -261,10 +261,10 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	GtkWidget *dialog, *inner_vbox, *notebook, *notebook_vbox;
 	GtkWidget *label1, *label2, *label3;
 
-	dialog = xfce_titled_dialog_new_with_buttons(
+	dialog = xfce_titled_dialog_new_with_mixed_buttons(
 		_("Dictionary"), GTK_WINDOW(parent),
 		GTK_DIALOG_DESTROY_WITH_PARENT,
-		"gtk-close", GTK_RESPONSE_OK,
+		"window-close", _("_Close"), GTK_RESPONSE_OK,
 		NULL);
 
 	gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
@@ -498,7 +498,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(dialog), "port_spinner", port_spinner);
 		g_object_set_data(G_OBJECT(dialog), "dict_combo", dict_combo);
 
-		button_get_list = gtk_button_new_from_icon_name("gtk-refresh", GTK_ICON_SIZE_BUTTON);
+		button_get_list = gtk_button_new_from_icon_name("view-refresh", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_get_list);
 		g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_dictd_get_list), dd);
 		g_object_set_data(G_OBJECT(button_get_list), "dict_combo", dict_combo);
@@ -642,7 +642,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_signal_connect(spell_combo, "changed", G_CALLBACK(spell_combo_changed_cb), dd);
 		gtk_widget_show(spell_combo);
 
-		button_refresh = gtk_button_new_from_icon_name("gtk-refresh", GTK_ICON_SIZE_BUTTON);
+		button_refresh = gtk_button_new_from_icon_name("view-refresh", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_refresh);
 		g_object_set_data(G_OBJECT(button_refresh), "spell_combo", spell_combo);
 		g_signal_connect(button_refresh, "clicked", G_CALLBACK(button_dict_refresh_cb), dd);
