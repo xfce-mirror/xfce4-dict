@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-09 18:31+0200\n"
-"PO-Revision-Date: 2019-07-13 11:48+0000\n"
+"POT-Creation-Date: 2019-08-02 06:31+0200\n"
+"PO-Revision-Date: 2019-08-02 13:04+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -139,48 +139,56 @@ msgstr "Įvesta neteisingai"
 msgid "Process failed (%s)"
 msgstr "Procesas nepavyko (%s)"
 
-#: ../lib/speedreader.c:77
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
 msgstr "P_ristabdyti"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:75
 msgid "_Resume"
 msgstr "P_ratęsti"
 
-#: ../lib/speedreader.c:253
+#: ../lib/speedreader.c:248
 msgid "S_top"
 msgstr "S_tabdyti"
 
-#: ../lib/speedreader.c:261
+#: ../lib/speedreader.c:256
 msgid "Running"
 msgstr "Vykdoma"
 
-#: ../lib/speedreader.c:264
+#: ../lib/speedreader.c:259
 msgid "Finished"
 msgstr "Baigta"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:260
 msgid "_Back"
 msgstr "At_gal"
 
-#: ../lib/speedreader.c:273
+#: ../lib/speedreader.c:268
 msgid "Speed Reader"
 msgstr "Greitasis skaitymas"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:369
 msgid "You must enter a text."
 msgstr "Turite įvesti tekstą."
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:526
 msgid "Choose a file to load"
 msgstr "Parinkite failą įkėlimui"
 
-#: ../lib/speedreader.c:558
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr "_Atsisakyti"
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "_Atverti"
+
+#: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Failo „%s“ įkelti nepavyko."
 
-#: ../lib/speedreader.c:584
+#: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -189,51 +197,60 @@ msgstr[1] "(vienu metu rodyti %d žodžius)"
 msgstr[2] "(vienu metu rodyti %d žodžių)"
 msgstr[3] "(vienu metu rodyti %d žodžių)"
 
-#: ../lib/speedreader.c:608
+#: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Tai yra paprasta greitojo skaitymo programa, kuri padės jums išmokti skaityti greičiau. Ji ekrane greitai rodys žodžius."
 
-#: ../lib/speedreader.c:613
+#: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
 msgstr "_Žodžiai per minutę:"
 
-#: ../lib/speedreader.c:620
+#: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
 msgstr "_Pažymėti paragrafus"
 
-#: ../lib/speedreader.c:627
+#: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
 msgstr "Ž_odžių grupavimas:"
 
-#: ../lib/speedreader.c:644
+#: ../lib/speedreader.c:641
 msgid "_Font Size:"
 msgstr "_Šrifto dydis:"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:662
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Įveskite tekstą kurį norėtumėte skaityti.\n\nAtsipalaiduokite ir įsitaisykite, norėdami pradėti greitąjį skaitymą spauskite „Paleisti“."
 
-#: ../lib/speedreader.c:678
+#: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
 msgstr "Įkelti failo turinį"
 
-#: ../lib/speedreader.c:683
+#: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Išvalyti teksto laukelio turinį ir įkelti iškarpinės turinį"
 
-#: ../lib/speedreader.c:687
+#: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
 msgstr "Išvalyti teksto laukelio turinį"
 
-#: ../lib/speedreader.c:699
+#: ../lib/speedreader.c:696
 msgid "_Start"
 msgstr "_Paleisti"
+
+#: ../lib/speedreader.c:697
+msgid "_Stop"
+msgstr "_Stabdyti"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "_Užverti"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
@@ -257,42 +274,42 @@ msgstr "įspėjimas"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:383
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Ieškoti „%s“ naudojant „%s“"
 
-#: ../lib/dictd.c:390
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "Ieškoti saityne:"
 
-#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
-#: ../lib/dictd.c:825
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
 msgid "Could not connect to server."
 msgstr "Nepavyko prisijungti prie serverio."
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:416
 msgid "The server is not ready."
 msgstr "Serveris nepasirengęs."
 
-#: ../lib/dictd.c:425
+#: ../lib/dictd.c:423
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Nurodytas netinkamas žodynas. Patikrinkite nuostatas."
 
-#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
 msgid "Unknown error while querying the server."
 msgstr "Užklausiant žodyną įvyko nežinoma klaida."
 
-#: ../lib/dictd.c:448
+#: ../lib/dictd.c:446
 msgid "Dictionary Results:"
 msgstr "Žodyno rezultatai:"
 
-#: ../lib/dictd.c:451
+#: ../lib/dictd.c:449
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Atitikmenų skirtų „%s“ nerasta."
 
-#: ../lib/dictd.c:478
+#: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -301,21 +318,21 @@ msgstr[1] "Rasti %d aprašymai."
 msgstr[2] "Rasta %d aprašymų."
 msgstr[3] "Rasta %d aprašymų."
 
-#: ../lib/dictd.c:689
+#: ../lib/dictd.c:687
 #, c-format
 msgid "Querying %s..."
 msgstr "Užklausiama %s..."
 
-#: ../lib/dictd.c:748
+#: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
 msgstr "Užklausiant serverį įvyko klaida."
 
-#: ../lib/dictd.c:761
+#: ../lib/dictd.c:759
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Serverio informacija skirta „%s“"
 
-#: ../lib/dictd.c:845
+#: ../lib/dictd.c:843
 msgid "The server doesn't offer any databases."
 msgstr "Serveris nesiūlo jokių duomenų bazių."
 
@@ -343,10 +360,6 @@ msgstr "Greitasis _skaitymas"
 #: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_Nuostatos"
-
-#: ../lib/gui.c:730 ../lib/gui.c:840
-msgid "_Close"
-msgstr "_Užverti"
 
 #: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
