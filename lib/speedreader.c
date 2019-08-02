@@ -28,9 +28,6 @@
 
 typedef struct _XfdSpeedReaderPrivate			XfdSpeedReaderPrivate;
 
-#define XFD_SPEED_READER_GET_PRIVATE(obj)		(G_TYPE_INSTANCE_GET_PRIVATE((obj),\
-			XFD_SPEED_READER_TYPE, XfdSpeedReaderPrivate))
-
 struct _XfdSpeedReaderPrivate
 {
 	GtkWidget *first_page;
@@ -78,7 +75,7 @@ enum
 #define XFD_TITLE_RESUME _("_Resume")
 
 
-G_DEFINE_TYPE(XfdSpeedReader, xfd_speed_reader, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE_WITH_PRIVATE(XfdSpeedReader, xfd_speed_reader, GTK_TYPE_DIALOG);
 
 static void sr_stop(XfdSpeedReader *dialog);
 static void sr_stop_timer(XfdSpeedReader *dialog);
@@ -102,8 +99,6 @@ static void xfd_speed_reader_class_init(XfdSpeedReaderClass *klass)
 
 	g_object_class = G_OBJECT_CLASS(klass);
 	g_object_class->finalize = xfd_speed_reader_finalize;
-
-	g_type_class_add_private((gpointer)klass, sizeof(XfdSpeedReaderPrivate));
 }
 
 
@@ -253,7 +248,7 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 	const gchar *button_label = _("S_top");
 	const gchar *button_image = "media-playback-stop";
 	gboolean pausable = TRUE;
-	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
+	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(dialog);
 
 	switch (state)
 	{
@@ -285,7 +280,7 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 
 static void sr_set_label_text(XfdSpeedReader *dialog)
 {
-	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
+	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(dialog);
 
 	if (NZV(priv->group->str))
 		gtk_label_set_text(GTK_LABEL(priv->display_label), priv->group->str);
@@ -295,16 +290,17 @@ static void sr_set_label_text(XfdSpeedReader *dialog)
 
 static gboolean sr_timer(gpointer data)
 {
-	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(data);
 	gsize i;
+	XfdSpeedReader *dialog = XFD_SPEED_READER(data);
+	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(dialog);
 
 	if (priv->paused)
 		return TRUE;
 
 	if (priv->word_idx >= priv->words_len)
 	{
-		sr_stop(XFD_SPEED_READER(data));
-		xfd_speed_reader_set_window_title(XFD_SPEED_READER(data), XSR_STATE_FINISHED);
+		sr_stop(dialog);
+		xfd_speed_reader_set_window_title(dialog, XSR_STATE_FINISHED);
 		return FALSE;
 	}
 
@@ -349,7 +345,6 @@ static gboolean sr_timer(gpointer data)
 
 static void sr_start(XfdSpeedReader *dialog)
 {
-	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
 	gint wpm, grouping;
 	gint interval;
 	gchar *fontname;
@@ -358,6 +353,8 @@ static void sr_start(XfdSpeedReader *dialog)
 	gchar *css;
 	GtkCssProvider *provider;
 	PangoFontDescription *font;
+
+	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(dialog);
 
 	/* clear the label text */
 	gtk_label_set_text(GTK_LABEL(priv->display_label), NULL);
@@ -440,7 +437,7 @@ static void sr_start(XfdSpeedReader *dialog)
 
 static void sr_stop_timer(XfdSpeedReader *dialog)
 {
-	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
+	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(dialog);
 
 	if (priv->timer_id > 0)
 	{
@@ -465,7 +462,7 @@ static void sr_stop(XfdSpeedReader *dialog)
 
 static void sr_pause(XfdSpeedReader *dialog, gboolean paused)
 {
-	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
+	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(dialog);
 
 	if (paused)
 	{
@@ -486,7 +483,7 @@ static void sr_pause(XfdSpeedReader *dialog, gboolean paused)
 
 static void xfd_speed_reader_response_cb(XfdSpeedReader *dialog, gint response, gpointer data)
 {
-	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
+	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(dialog);
 
 	if (response == GTK_RESPONSE_CLOSE || response == GTK_RESPONSE_DELETE_EVENT)
 	{
@@ -545,7 +542,7 @@ static void sr_open_clicked_cb(GtkButton *button, XfdSpeedReader *window)
 		gchar *filename;
 		gchar *text;
 		gsize len;
-		XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(window);
+		XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(window);
 
 		filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog));
 		if (g_file_get_contents(filename, &text, &len, NULL))
@@ -596,7 +593,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	GtkWidget *vbox, *hbox_words, *hbox_font, *hbox_grouping, *swin, *textview;
 	GtkWidget *vbox_text_buttons, *hbox_text, *button_clear, *button_paste, *button_open, *button_close;
 	GtkSizeGroup *sizegroup;
-	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
+	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(dialog);
 
 	gtk_window_set_destroy_with_parent(GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_default_size(GTK_WINDOW(dialog), 400, 330);
@@ -746,7 +743,7 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 GtkWidget *xfd_speed_reader_new(GtkWindow *parent, DictData *dd)
 {
 	GtkWidget *dialog = g_object_new(XFD_SPEED_READER_TYPE, "transient-for", parent, NULL);
-	XfdSpeedReaderPrivate *priv = XFD_SPEED_READER_GET_PRIVATE(dialog);
+	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(XFD_SPEED_READER (dialog));
 
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(priv->spin_wpm), dd->speedreader_wpm);
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(priv->spin_grouping), dd->speedreader_grouping);
