@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-09 18:31+0200\n"
-"PO-Revision-Date: 2019-07-23 22:13+0000\n"
+"POT-Creation-Date: 2019-08-03 00:31+0200\n"
+"PO-Revision-Date: 2019-08-13 21:58+0000\n"
 "Last-Translator: Michael Martins <michaelfm21@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/xfce-apps/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -143,99 +143,112 @@ msgstr "Entrada inválida"
 msgid "Process failed (%s)"
 msgstr "O processo falhou (%s)"
 
-#: ../lib/speedreader.c:77
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
 msgstr "P_ausar"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:75
 msgid "_Resume"
 msgstr "_Retomar"
 
-#: ../lib/speedreader.c:253
+#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
 msgid "S_top"
 msgstr "_Parar"
 
-#: ../lib/speedreader.c:261
+#: ../lib/speedreader.c:256
 msgid "Running"
 msgstr "Rodando"
 
-#: ../lib/speedreader.c:264
+#: ../lib/speedreader.c:259
 msgid "Finished"
 msgstr "Terminado"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:260
 msgid "_Back"
 msgstr "_Voltar"
 
-#: ../lib/speedreader.c:273
+#: ../lib/speedreader.c:268
 msgid "Speed Reader"
 msgstr "Leitor rápido"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:369
 msgid "You must enter a text."
 msgstr "Você precisa digitar um texto."
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:526
 msgid "Choose a file to load"
 msgstr "Escolha um arquivo para carregar."
 
-#: ../lib/speedreader.c:558
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "_Abrir"
+
+#: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "O arquivo \"%s\" não pôde ser carregado"
 
-#: ../lib/speedreader.c:584
+#: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(mostrar %d palavra por vez)"
 msgstr[1] "(mostrar %d palavras por vez)"
 
-#: ../lib/speedreader.c:608
+#: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Este é um utilitário fácil para leitura rápida que o ajuda a treinar a ler mais rápido. Ele faz isso mostrando palavras na tela usando uma taxa de atualização veloz."
 
-#: ../lib/speedreader.c:613
+#: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
 msgstr "_Palavras por minuto:"
 
-#: ../lib/speedreader.c:620
+#: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
 msgstr "_Marcar parágrafos"
 
-#: ../lib/speedreader.c:627
+#: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
 msgstr "A_grupamento de palavras:"
 
-#: ../lib/speedreader.c:644
+#: ../lib/speedreader.c:641
 msgid "_Font Size:"
 msgstr "Tamanho da _fonte:"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:662
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Entre com algum texto que você gostaria de ler aqui.\n\nRelaxe e fique confortável, só então pressione Iniciar para começar a leitura rápida."
 
-#: ../lib/speedreader.c:678
+#: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
 msgstr "Carrega o conteudo de um arquivo"
 
-#: ../lib/speedreader.c:683
+#: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Limpa o conteudo do campo de texto e cola o conteudo da área de transferência"
 
-#: ../lib/speedreader.c:687
+#: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
 msgstr "Limpar o conteudo do campo de texto"
 
-#: ../lib/speedreader.c:699
+#: ../lib/speedreader.c:696
 msgid "_Start"
 msgstr "I_niciar"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "F_echar"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
@@ -259,63 +272,63 @@ msgstr "aviso"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:383
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Pesquisar por \"%s\" usando \"%s\""
 
-#: ../lib/dictd.c:390
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "Pesquisa na web:"
 
-#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
-#: ../lib/dictd.c:825
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
 msgid "Could not connect to server."
 msgstr "Não foi possível conectar ao servidor."
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:416
 msgid "The server is not ready."
 msgstr "O servidor não está pronto."
 
-#: ../lib/dictd.c:425
+#: ../lib/dictd.c:423
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Dicionário especificado inválido. Por favor, verifique suas preferências."
 
-#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
 msgid "Unknown error while querying the server."
 msgstr "Erro desconhecido ao consultar o servidor."
 
-#: ../lib/dictd.c:448
+#: ../lib/dictd.c:446
 msgid "Dictionary Results:"
 msgstr "Resultados do dicionário:"
 
-#: ../lib/dictd.c:451
+#: ../lib/dictd.c:449
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Nenhum resultado encontrado para \"%s\"."
 
-#: ../lib/dictd.c:478
+#: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d definição encontrada."
 msgstr[1] "%d definições encontradas."
 
-#: ../lib/dictd.c:689
+#: ../lib/dictd.c:687
 #, c-format
 msgid "Querying %s..."
 msgstr "Consultando %s..."
 
-#: ../lib/dictd.c:748
+#: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
 msgstr "Um erro ocorreu ao consultar informações do servidor."
 
-#: ../lib/dictd.c:761
+#: ../lib/dictd.c:759
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informações do servidor para  \"%s\""
 
-#: ../lib/dictd.c:845
+#: ../lib/dictd.c:843
 msgid "The server doesn't offer any databases."
 msgstr "O servidor não oferece nenhum banco de dados."
 
@@ -343,10 +356,6 @@ msgstr "Leitor _Rápido"
 #: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_Preferências"
-
-#: ../lib/gui.c:730 ../lib/gui.c:840
-msgid "_Close"
-msgstr "F_echar"
 
 #: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
