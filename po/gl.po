@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2019-08-10 09:53+0000\n"
+"PO-Revision-Date: 2019-08-20 20:11+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-apps/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr "Pon o foco no campo de texto do panel"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Iniciar o aplicativo de xeito independente incluso se se cargou o engadido do panel"
+msgstr "Iniciar a aplicación de xeito independente incluso se se cargou o engadido do panel"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -73,7 +73,7 @@ msgstr "Ser detallado"
 
 #: ../src/xfce4-dict.c:56
 msgid "Show version information"
-msgstr "Mostrar información da versión"
+msgstr "Amosar información da versión"
 
 #: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
@@ -123,7 +123,7 @@ msgstr "Non se atoparon suxestións para\"%s\" (%s)."
 #: ../lib/spell.c:162
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Produciuse un erro ao executar \"%s\" (%s)."
+msgstr "Produciuse un fallo ao executar \"%s\" (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
@@ -192,13 +192,13 @@ msgstr "Non se puido cargar o ficheiro '%s'."
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(mostrar %d palabra cada vez)"
-msgstr[1] "(mostrar %d palabras cada vez)"
+msgstr[1] "(amosar %d palabras cada vez)"
 
 #: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Esta é unha sinxela utilidade de velocidade de lectura para axudarlle a adestrarse para ler máis rápido. Isto faise mostrando palabras rapidamente na pantalla."
+msgstr "Esta é unha sinxela utilidade de velocidade de lectura para axudarlle a adestrarse para ler máis rápido. Isto faise amosando palabras rapidamente na pantalla."
 
 #: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
@@ -259,11 +259,11 @@ msgstr "Entrada non UTF8 incorrecta"
 
 #: ../lib/common.c:568
 msgid "Error"
-msgstr "Erro"
+msgstr "Fallo"
 
 #: ../lib/common.c:571
 msgid "warning"
-msgstr "Advertencia"
+msgstr "Aviso"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
@@ -291,7 +291,7 @@ msgstr "Especificouse un dicionario incorrecto. Comprobe as súas preferencias."
 
 #: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
 msgid "Unknown error while querying the server."
-msgstr "Produciuse un erro descoñecido mentres se consultaba ao servidor."
+msgstr "Produciuse un fallo descoñecido mentres se consultaba ao servidor."
 
 #: ../lib/dictd.c:446
 msgid "Dictionary Results:"
@@ -316,7 +316,7 @@ msgstr "Consultando %s..."
 
 #: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
-msgstr "Ocorreu un erro ao procurar información sobre o servidor."
+msgstr "Ocorreu un fallo ao procurar información sobre o servidor."
 
 #: ../lib/dictd.c:759
 #, c-format
@@ -495,7 +495,7 @@ msgstr "<b>Campo de texto do panel:</b>"
 
 #: ../lib/prefs.c:408
 msgid "Show text field in the panel"
-msgstr "Mostrar campo de texto no panel"
+msgstr "Amosar campo de texto no panel"
 
 #. panel entry size
 #: ../lib/prefs.c:415
