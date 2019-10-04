@@ -141,10 +141,10 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 		dd->panel_entry_size = gtk_spin_button_get_value_as_int(
 					GTK_SPIN_BUTTON(g_object_get_data(G_OBJECT(dlg), "panel_entry_size_spinner")));
 	}
-	g_object_set(G_OBJECT(dd->link_tag), "foreground-gdk", dd->color_link, NULL);
-	g_object_set(G_OBJECT(dd->phon_tag), "foreground-gdk", dd->color_phonetic, NULL);
-	g_object_set(G_OBJECT(dd->error_tag), "foreground-gdk", dd->color_incorrect, NULL);
-	g_object_set(G_OBJECT(dd->success_tag), "foreground-gdk", dd->color_correct, NULL);
+	g_object_set(G_OBJECT(dd->link_tag), "foreground-rgba", dd->color_link, NULL);
+	g_object_set(G_OBJECT(dd->phon_tag), "foreground-rgba", dd->color_phonetic, NULL);
+	g_object_set(G_OBJECT(dd->error_tag), "foreground-rgba", dd->color_incorrect, NULL);
+	g_object_set(G_OBJECT(dd->success_tag), "foreground-rgba", dd->color_correct, NULL);
 
 	/* save settings */
 	dict_write_rc_file(dd);
