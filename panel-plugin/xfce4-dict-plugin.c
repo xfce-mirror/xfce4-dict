@@ -23,7 +23,11 @@
 #include <gtk/gtk.h>
 
 #include <libxfce4ui/libxfce4ui.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
+#include <libxfce4panel/libxfce4panel.h>
+
+#ifdef GDK_WINDOWING_X11
+#include <gdk/gdkx.h>
+#endif
 
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -327,7 +331,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 
 	dict_read_rc_file(dpd->dd);
 
-	dpd->panel_button = xfce_create_panel_button();
+	dpd->panel_button = xfce_panel_create_button();
 	gtk_widget_set_tooltip_text (dpd->panel_button, _("Look up a word"));
 
 	dpd->panel_button_image = gtk_image_new();
