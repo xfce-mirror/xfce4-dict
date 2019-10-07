@@ -1,3 +1,18 @@
+xfce4-dict-0.8.3
+================
+- Allow compilation with panel 4.15
+- Show correct colors (Bug #15946)
+- Avoid mnemonic conflict
+- Fix g_type_class_add_private deprecation in recent GLib
+- Replace GtkStock buttons
+- Fix typo of dict.cc (Bug #15571)
+- Fix parallel build (Bug #14963)
+- Translation Updates: Albanian, Belarusian, Catalan, Chinese (China),
+  Chinese (Taiwan), Croatian, Czech, Danish, Dutch, English (Australia),
+  Finnish, French, Galician, German, Hebrew, Hungarian, Icelandic, Italian,
+  Japanese, Kazakh, Korean, Lithuanian, Malay, Norwegian Bokmål, Polish,
+  Portuguese, Portuguese (Brazil), Russian, Spanish, Thai, Turkish
+
 xfce4-dict-0.8.2
 ================
 - Avoid segfaults (Bug #14786)
