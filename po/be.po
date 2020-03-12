@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-09 18:31+0200\n"
-"PO-Revision-Date: 2019-06-27 16:19+0000\n"
+"POT-Creation-Date: 2019-08-03 00:31+0200\n"
+"PO-Revision-Date: 2020-03-12 04:28+0000\n"
 "Last-Translator: Zmicer Turok <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-apps/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgstr "Шукаць дадзены тэкст пры дапамозе вэб-р
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
-msgstr "Праверыць дадзены тэкст з дапамогай праграмы праверкі арфаграфіі"
+msgstr "Праверыць дадзены тэкст пры дапамозе праграмы праверкі арфаграфіі"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
@@ -66,7 +66,7 @@ msgstr "Запускаць аўтаномную праграму нават пр
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Шукаць першаснае змесціва буферу абмену (PRIMARY)"
+msgstr "Шукаць першаснае змесціва буфера абмену (PRIMARY)"
 
 #: ../src/xfce4-dict.c:55
 msgid "Be verbose"
@@ -104,7 +104,7 @@ msgid_plural "%d suggestions found."
 msgstr[0] "Знойдзена %d прапанова."
 msgstr[1] "Знойдзена %d прапановы."
 msgstr[2] "Знойдзена %d прапаноў."
-msgstr[3] "Знойдзена %dпрапаноў."
+msgstr[3] "Знойдзена %d прапаноў."
 
 #: ../lib/spell.c:103
 #, c-format
@@ -141,48 +141,56 @@ msgstr "Хібны ўвод"
 msgid "Process failed (%s)"
 msgstr "Працэс схібіў (%s)"
 
-#: ../lib/speedreader.c:77
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
 msgstr "_Прыпыніць"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:75
 msgid "_Resume"
 msgstr "П_рацягнуць"
 
-#: ../lib/speedreader.c:253
+#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
 msgid "S_top"
 msgstr "_Спыніць"
 
-#: ../lib/speedreader.c:261
+#: ../lib/speedreader.c:256
 msgid "Running"
 msgstr "Запушчаны"
 
-#: ../lib/speedreader.c:264
+#: ../lib/speedreader.c:259
 msgid "Finished"
 msgstr "Завершаны"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:260
 msgid "_Back"
 msgstr "_Назад"
 
-#: ../lib/speedreader.c:273
+#: ../lib/speedreader.c:268
 msgid "Speed Reader"
 msgstr "Чытанне на хуткасць"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:369
 msgid "You must enter a text."
 msgstr "Вы мусіце ўвесці тэкст."
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:526
 msgid "Choose a file to load"
 msgstr "Абярыце файл для загрузкі"
 
-#: ../lib/speedreader.c:558
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr "_Скасаваць"
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "_Адкрыць"
+
+#: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "Файл «%s» немагчыма загрузіць."
+msgstr "Файл \"%s\" немагчыма загрузіць."
 
-#: ../lib/speedreader.c:584
+#: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -191,51 +199,56 @@ msgstr[1] "(паказваць %d словы запар)"
 msgstr[2] "(паказваць %d слоў запар)"
 msgstr[3] "(паказваць %d слоў запар)"
 
-#: ../lib/speedreader.c:608
+#: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Гэта простая праграма для трэніроўкі хуткасці чытання метадам змены на экране слоў з вялікай хуткасцю."
 
-#: ../lib/speedreader.c:613
+#: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
 msgstr "_Слоў за хвіліну:"
 
-#: ../lib/speedreader.c:620
+#: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
 msgstr "_Пазначаць абзацы"
 
-#: ../lib/speedreader.c:627
+#: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
 msgstr "_Групаванне слоў:"
 
-#: ../lib/speedreader.c:644
+#: ../lib/speedreader.c:641
 msgid "_Font Size:"
 msgstr "Памер _шрыфту:"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:662
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Увядзіце сюды невялічкі тэкст, які хочаце прачытаць.\n\nУладкуйцеся і націсніце \"Запуск\",  каб пачаць чытаць на хуткасць."
 
-#: ../lib/speedreader.c:678
+#: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
 msgstr "Загрузіць змесціва файла"
 
-#: ../lib/speedreader.c:683
+#: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Ачысціць змесціва тэкставага поля і ўставіць тэкст з буферу абмену"
+msgstr "Ачысціць змесціва тэкставага поля і ўставіць тэкст з буфера абмену"
 
-#: ../lib/speedreader.c:687
+#: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
 msgstr "Ачысціць змесціва тэкставага поля"
 
-#: ../lib/speedreader.c:699
+#: ../lib/speedreader.c:696
 msgid "_Start"
 msgstr "_Запуск"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "_Закрыць"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
@@ -259,65 +272,65 @@ msgstr "папярэджанне"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:383
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr "Пошук «%s» пры дапамозе «%s»"
+msgstr "Пошук \"%s\" пры дапамозе \"%s\""
 
-#: ../lib/dictd.c:390
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "Пошук у сеціве:"
 
-#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
-#: ../lib/dictd.c:825
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
 msgid "Could not connect to server."
 msgstr "Немагчыма злучыцца з серверам."
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:416
 msgid "The server is not ready."
 msgstr "Сервер не гатовы."
 
-#: ../lib/dictd.c:425
+#: ../lib/dictd.c:423
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Вызначаны хібны слоўнік. Калі ласка, праверце налады."
 
-#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
 msgid "Unknown error while querying the server."
 msgstr "Падчас адпраўлення запыту на сервер адбылася невядомая памылка."
 
-#: ../lib/dictd.c:448
+#: ../lib/dictd.c:446
 msgid "Dictionary Results:"
 msgstr "Вынікі слоўніка:"
 
-#: ../lib/dictd.c:451
+#: ../lib/dictd.c:449
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Супадзенняў для \"%s\" не знойдзена."
 
-#: ../lib/dictd.c:478
+#: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "Знойдзена %d вызначэнне."
 msgstr[1] "Знойдзена %d вызначэнні."
 msgstr[2] "Знойдзена %d вызначэнняў."
-msgstr[3] "Знойдзена %dвызначэнняў."
+msgstr[3] "Знойдзена %d вызначэнняў."
 
-#: ../lib/dictd.c:689
+#: ../lib/dictd.c:687
 #, c-format
 msgid "Querying %s..."
 msgstr "Запыт %s..."
 
-#: ../lib/dictd.c:748
+#: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
-msgstr "Падчас запытвання інфармацыі аб серверы адбылася памылка."
+msgstr "Падчас запытвання інфармацыі пра сервер адбылася памылка."
 
-#: ../lib/dictd.c:761
+#: ../lib/dictd.c:759
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "Інфармацыя аб серверы для «%s»"
+msgstr "Інфармацыя пра сервер для \"%s\""
 
-#: ../lib/dictd.c:845
+#: ../lib/dictd.c:843
 msgid "The server doesn't offer any databases."
 msgstr "У сервера няма сваёй базы даных."
 
@@ -345,10 +358,6 @@ msgstr "Хуткае _чытанне"
 #: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_Параметры"
-
-#: ../lib/gui.c:730 ../lib/gui.c:840
-msgid "_Close"
-msgstr "_Закрыць"
 
 #: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
@@ -485,7 +494,7 @@ msgstr "Арфаграфічна правільна:"
 
 #: ../lib/prefs.c:351
 msgid "Spelled incorrectly:"
-msgstr "Арфаграфічная няправільна:"
+msgstr "Арфаграфічна няправільна:"
 
 #: ../lib/prefs.c:402
 msgid "<b>Panel Text Field:</b>"
