@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
-"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"POT-Creation-Date: 2019-08-03 00:31+0200\n"
+"PO-Revision-Date: 2019-08-02 22:31+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Uighur (http://www.transifex.com/xfce/xfce-apps/language/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
 msgid "Dictionary"
 msgstr "لۇغەت"
 
@@ -27,17 +27,17 @@ msgstr "لۇغەت"
 msgid "A plugin to query different dictionaries."
 msgstr "ھەر خىل لۇغەتلەردىن ئىزدەيدىغان قىستۇرما."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:263
-#: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:540
+#: ../panel-plugin/xfce4-dict-plugin.c:269
+#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "تەييار بولدۇم"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:325
+#: ../panel-plugin/xfce4-dict-plugin.c:331
 msgid "Look up a word"
 msgstr "سوز ئىزدەش"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:364 ../lib/gui.c:836
+#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
 msgid "Search term"
 msgstr "ئىزدەش تۈرى"
 
@@ -86,7 +86,7 @@ msgstr "كەمتۈكنى <%s> غا دوكلات قىلىڭ."
 msgid "Dictionary Client"
 msgstr "لۇغەت خېرىدارى"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
 msgstr "ھەر خىل لۇغەتلەرنى سۈرۈشتۈرىدىغان خېرىدار پروگراممىسى"
 
@@ -135,98 +135,111 @@ msgstr "خاتا"
 msgid "Process failed (%s)"
 msgstr "بىر تەرەپ قىلىش مەغلۇپ بولدى(%s)"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
 msgstr "ۋاقىتلىق توختا(_A)"
 
-#: ../lib/speedreader.c:79
+#: ../lib/speedreader.c:75
 msgid "_Resume"
 msgstr "داۋاملاشتۇر(_R)"
 
-#: ../lib/speedreader.c:254
+#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
 msgid "S_top"
 msgstr ""
 
-#: ../lib/speedreader.c:262
+#: ../lib/speedreader.c:256
 msgid "Running"
 msgstr "ئىجرا قىلىۋاتىدۇ"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:259
 msgid "Finished"
 msgstr "تاماملاندى"
 
-#: ../lib/speedreader.c:266
+#: ../lib/speedreader.c:260
 msgid "_Back"
 msgstr "كەينىگە(_B)"
 
-#: ../lib/speedreader.c:274
+#: ../lib/speedreader.c:268
 msgid "Speed Reader"
 msgstr "تېز ئوقۇغۇ"
 
-#: ../lib/speedreader.c:373
+#: ../lib/speedreader.c:369
 msgid "You must enter a text."
 msgstr "تېكىست كىرگۈزۈشىڭىز كېرەك."
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:526
 msgid "Choose a file to load"
 msgstr "ئوقۇيدىغان ھۆججەتنى تاللايدۇ"
 
-#: ../lib/speedreader.c:558
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr ""
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "ئاچ(_O)"
+
+#: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "ھۆججەت ‹%s› نى ئوقۇغىلى بولمىدى."
 
-#: ../lib/speedreader.c:584
+#: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(بىر قېتىمدا %d دانە سوز كۆرسىتىدۇ)"
 
-#: ../lib/speedreader.c:608
+#: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "تېز ئوقۇشنى مەشىق قىلىش قورالى. ئۇ ئېكراندا سۆزلەرنى تېز سۈرەتتە يېڭىلاش ئارقىلىق تېز ئوقۇشنى مەشىق قىلىشقا ياردەم بېرىدۇ."
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
 msgstr "ھەر مىنۇتتىكى سوز سانى(_W):"
 
-#: ../lib/speedreader.c:619
+#: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
 msgstr "ئابزاسلارغا بەلگە سال(_M)"
 
-#: ../lib/speedreader.c:626
+#: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
 msgstr "سوز گۇرۇپپىلىرى(_G):"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:641
 msgid "_Font Size:"
 msgstr "فونت چوڭلۇقى(_F):"
 
-#: ../lib/speedreader.c:664
+#: ../lib/speedreader.c:662
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "ئوقۇماقچى بولغان تېكىستنى بۇ يەرگە كىرگۈزۈڭ.\n\nجىددىيلەشمەڭ، ئۆزىڭىزنى ئازادە تۇتۇڭ، ئاندىن باشلا نى بېسىپ تېز ئوقۇشنى باشلاڭ."
 
-#: ../lib/speedreader.c:677
+#: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
 msgstr "ھۆججەتنىڭ مەزمۇنىنى ئوقۇيدۇ"
 
-#: ../lib/speedreader.c:682
+#: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "تېكىست رايونى تازىلاپ چاپلاش تاختىسىنىڭ مەزمۇنى چاپلايدۇ"
 
-#: ../lib/speedreader.c:686
+#: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
 msgstr "تېكىست كۆزنەكچىسىنىڭ مەزمۇنىنى تازىلايدۇ"
 
-#: ../lib/speedreader.c:698
+#: ../lib/speedreader.c:696
 msgid "_Start"
 msgstr "باشلا(_S)"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "تاقا(_C)"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
@@ -248,64 +261,64 @@ msgstr "خاتالىق"
 msgid "warning"
 msgstr "ئاگاھلاندۇرۇش"
 
-#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:804
-#: ../lib/dictd.c:813
-msgid "Could not connect to server."
-msgstr "مۇلازىمېتىرغا باغلىنالمىدى."
-
-#: ../lib/dictd.c:393
-msgid "The server is not ready."
-msgstr "مۇلازىمېتىر تەييار ئەمەس."
-
-#: ../lib/dictd.c:400
-msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "كۆرسىتىلگەن لۇغەت ئىناۋەتسىز. تەڭشىكىڭىزنى تەكشۈرۈپ كۆرۈڭ."
-
-#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
-msgid "Unknown error while querying the server."
-msgstr "لۇغەتتىن سۈرۈشتۈرۈۋاتقاندا نامەلۇم خاتالىق كۆرۈلدى."
-
-#: ../lib/dictd.c:423
-msgid "Dictionary Results:"
-msgstr "لۇغەت نەتىجىسى:"
-
-#: ../lib/dictd.c:426
-#, c-format
-msgid "No matches could be found for \"%s\"."
-msgstr "«%s» نىڭغا ماس كېلىدىغان نەرسە تېپىلمىدى."
-
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:442
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "«%s» نى ئىزدەش ئۈچۈن «%s» نى ئىشلەت."
 
-#: ../lib/dictd.c:447
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "توردىن ئىزدەش:"
 
-#: ../lib/dictd.c:469
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
+msgid "Could not connect to server."
+msgstr "مۇلازىمېتىرغا باغلىنالمىدى."
+
+#: ../lib/dictd.c:416
+msgid "The server is not ready."
+msgstr "مۇلازىمېتىر تەييار ئەمەس."
+
+#: ../lib/dictd.c:423
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "كۆرسىتىلگەن لۇغەت ئىناۋەتسىز. تەڭشىكىڭىزنى تەكشۈرۈپ كۆرۈڭ."
+
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
+msgid "Unknown error while querying the server."
+msgstr "لۇغەتتىن سۈرۈشتۈرۈۋاتقاندا نامەلۇم خاتالىق كۆرۈلدى."
+
+#: ../lib/dictd.c:446
+msgid "Dictionary Results:"
+msgstr "لۇغەت نەتىجىسى:"
+
+#: ../lib/dictd.c:449
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "«%s» نىڭغا ماس كېلىدىغان نەرسە تېپىلمىدى."
+
+#: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d مەزمۇن تېپىلدى."
 
-#: ../lib/dictd.c:677
+#: ../lib/dictd.c:687
 #, c-format
 msgid "Querying %s..."
 msgstr "%s نى سۈرۈشتۈرۈۋاتىدۇ..."
 
-#: ../lib/dictd.c:736
+#: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
 msgstr ""
 
-#: ../lib/dictd.c:749
+#: ../lib/dictd.c:759
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "«%s» نىڭ مۇلازىمېتىر ئۇچۇرلىرى"
 
-#: ../lib/dictd.c:833
+#: ../lib/dictd.c:843
 msgid "The server doesn't offer any databases."
 msgstr "مۇلازىمېتىردا ھېچقانداق ساندان يوق."
 
@@ -313,121 +326,117 @@ msgstr "مۇلازىمېتىردا ھېچقانداق ساندان يوق."
 msgid "Copy Link"
 msgstr "ئۇلانما كۆچۈر"
 
-#: ../lib/gui.c:374
+#: ../lib/gui.c:372
 msgid "Search"
 msgstr "ئىزدە"
 
-#: ../lib/gui.c:606
+#: ../lib/gui.c:605
 msgid "F_ind"
 msgstr ""
 
 #. File Menu
-#: ../lib/gui.c:695
+#: ../lib/gui.c:694
 msgid "_File"
 msgstr "ھۆججەت(_F)"
 
-#: ../lib/gui.c:704 ../lib/gui.c:850
+#: ../lib/gui.c:701 ../lib/gui.c:828
 msgid "Speed _Reader"
 msgstr "تېز ئوقۇغۇ(_R)"
 
-#: ../lib/gui.c:726
+#: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr ""
 
-#: ../lib/gui.c:746 ../lib/gui.c:862
+#: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
 msgstr "ئاخىرلاشتۇر(_Q)"
 
 #. Help Menu
-#: ../lib/gui.c:760
+#: ../lib/gui.c:741
 msgid "_Help"
 msgstr "ياردەم(_H)"
 
-#: ../lib/gui.c:769
+#: ../lib/gui.c:748
 msgid "About"
 msgstr ""
 
-#: ../lib/gui.c:862
-msgid "_Close"
-msgstr "تاقا(_C)"
-
-#: ../lib/gui.c:874
+#: ../lib/gui.c:852
 msgid "Search with:"
 msgstr "تۆۋەندىكى بىلەن ئىزدە:"
 
-#: ../lib/gui.c:878
+#: ../lib/gui.c:856
 msgid "_Dictionary Server"
 msgstr "لۇغەت مۇلازىمېتىرى(_D)"
 
-#: ../lib/gui.c:884
+#: ../lib/gui.c:862
 msgid "_Web Service"
 msgstr "تور مۇلازىمىتى(_W)"
 
-#: ../lib/gui.c:892
+#: ../lib/gui.c:870
 msgid "_Spell Checker"
 msgstr "كوررېكتور"
 
-#: ../lib/gui.c:1020
+#: ../lib/gui.c:998
 msgid "Copyright © 2006-2016 Xfce Development Team"
 msgstr ""
 
-#: ../lib/gui.c:1023
+#: ../lib/gui.c:1001
 msgid "translator-credits"
 msgstr "غەيرەت ت.كەنجى <gheyret@gmail.com>"
 
-#: ../lib/gui.c:1026
+#: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 لۇغىتى"
 
-#: ../lib/prefs.c:53
+#: ../lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - گەرمانچە <-> ئىنگلىزچە"
 
-#: ../lib/prefs.c:54
+#: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - گەرمانچە <-> فىرانسۇزچە"
 
-#: ../lib/prefs.c:55
+#: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - گەرمانچە <-> ئىسپانچە"
 
-#: ../lib/prefs.c:56
+#: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - گەرمانچە <-> ئىتاليانچە"
 
-#: ../lib/prefs.c:57
+#: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - گەرمانچە <-> خىتايچە"
 
-#: ../lib/prefs.c:58
-msgid "dist.cc - Dictionary"
-msgstr "dist.cc - لۇغىتى"
+#: ../lib/prefs.c:57
+msgid "dict.cc - Dictionary"
+msgstr ""
 
-#: ../lib/prefs.c:59
+#: ../lib/prefs.c:58
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:60
+#: ../lib/prefs.c:59
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:61
+#: ../lib/prefs.c:60
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "ۋىكىپېدىيە، ھەقسىز قامۇس (EN)"
 
-#: ../lib/prefs.c:62
+#: ../lib/prefs.c:61
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "ۋىكىپېدىيە، ھەقسىز لۇغەت (EN)"
 
-#: ../lib/prefs.c:63
+#: ../lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Merriam-Webster تور لۇغىتى"
 
-#: ../lib/prefs.c:64
+#: ../lib/prefs.c:63
 msgid "Clear"
 msgstr "تازىلا"
 
-#: ../lib/prefs.c:99
+#: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
 msgstr "تاللىغان لۇغەت ئىناۋەتسىز."
 
@@ -443,7 +452,7 @@ msgstr "<b>كۆڭۈلدىكى ئىزدەش ئۇسۇلى:</b>"
 msgid "Dictionary Server"
 msgstr "لۇغەت مۇلازىمېتىرى"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:563
+#: ../lib/prefs.c:315 ../lib/prefs.c:562
 msgid "Web Service"
 msgstr "تور مۇلازىمىتى"
 
@@ -499,7 +508,7 @@ msgid "Server Port:"
 msgstr "مۇلازىمېتىر ئېغىزى:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:634
+#: ../lib/prefs.c:477 ../lib/prefs.c:635
 msgid "Dictionary:"
 msgstr "لۇغەت:"
 
@@ -511,15 +520,15 @@ msgstr "* (ھەممىسىدىن)"
 msgid "! (use all, stop after first match)"
 msgstr "! (ھەممىسىدىن، بىراق تاپقان ھامان توختىسۇن)"
 
-#: ../lib/prefs.c:565
+#: ../lib/prefs.c:564
 msgid "<b>Web search URL:</b>"
 msgstr "<b>توردىن ئىزدەش URL ئادرېسى:</b>"
 
-#: ../lib/prefs.c:570
+#: ../lib/prefs.c:569
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:590
+#: ../lib/prefs.c:589
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
