@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-09 18:31+0200\n"
-"PO-Revision-Date: 2019-07-17 07:27+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"POT-Creation-Date: 2019-08-03 00:31+0200\n"
+"PO-Revision-Date: 2019-08-02 22:31+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/xfce/xfce-apps/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -139,99 +139,112 @@ msgstr "Syöte ei kelpaa"
 msgid "Process failed (%s)"
 msgstr "Prosessi kaatui (%s)"
 
-#: ../lib/speedreader.c:77
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
 msgstr "_Tauko"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:75
 msgid "_Resume"
 msgstr "_Jatka"
 
-#: ../lib/speedreader.c:253
+#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
 msgid "S_top"
 msgstr "_Lopeta"
 
-#: ../lib/speedreader.c:261
+#: ../lib/speedreader.c:256
 msgid "Running"
 msgstr "Käynnissä"
 
-#: ../lib/speedreader.c:264
+#: ../lib/speedreader.c:259
 msgid "Finished"
 msgstr "Valmis"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:260
 msgid "_Back"
 msgstr "_Edellinen"
 
-#: ../lib/speedreader.c:273
+#: ../lib/speedreader.c:268
 msgid "Speed Reader"
 msgstr "Pikalukija"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:369
 msgid "You must enter a text."
 msgstr "Syötä ensin tekstiä."
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:526
 msgid "Choose a file to load"
 msgstr "Valitse ladattava tiedosto"
 
-#: ../lib/speedreader.c:558
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr "_Peru"
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "_Avaa"
+
+#: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Tiedostoa \"%s\" ei voi ladata."
 
-#: ../lib/speedreader.c:584
+#: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(näytä %d sana kerrallaan)"
 msgstr[1] "(näytä %d sanaa kerrallaan)"
 
-#: ../lib/speedreader.c:608
+#: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Tämä yksinkertainen pikalukutyökalu opettaa sinut nopeammaksi lukijaksi. Se vaihtaa sanoja ruudulla nopeaan tahtiin."
 
-#: ../lib/speedreader.c:613
+#: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
 msgstr "Sanoja _minuutissa:"
 
-#: ../lib/speedreader.c:620
+#: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
 msgstr "M_erkitse kappaleet"
 
-#: ../lib/speedreader.c:627
+#: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
 msgstr "Sanojen _ryhmitys:"
 
-#: ../lib/speedreader.c:644
+#: ../lib/speedreader.c:641
 msgid "_Font Size:"
 msgstr "Fontin k_oko:"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:662
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Syötä tähän teksti, jonka haluat lukea.\n\nRentoudu ja ota miellyttävä asento, ja aloita sitten pikalukeminen napsauttamalla Käynnistä."
 
-#: ../lib/speedreader.c:678
+#: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
 msgstr "Lataa tiedoston sisältö"
 
-#: ../lib/speedreader.c:683
+#: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Korvaa tekstikentän sisältö leikepöydän sisällöllä"
 
-#: ../lib/speedreader.c:687
+#: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
 msgstr "Tyhjennä tekstikentän sisältö"
 
-#: ../lib/speedreader.c:699
+#: ../lib/speedreader.c:696
 msgid "_Start"
 msgstr "_Käynnistä"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "_Sulje"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
@@ -255,63 +268,63 @@ msgstr "varoitus"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:383
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Hae \"%s\" hakukoneella \"%s\""
 
-#: ../lib/dictd.c:390
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "Verkkohaku:"
 
-#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
-#: ../lib/dictd.c:825
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
 msgid "Could not connect to server."
 msgstr "Palvelimeen ei saa yhteyttä."
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:416
 msgid "The server is not ready."
 msgstr "Palvelin ei ole valmis."
 
-#: ../lib/dictd.c:425
+#: ../lib/dictd.c:423
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Sanakirja ei kelpaa. Tarkista asetukset."
 
-#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
 msgid "Unknown error while querying the server."
 msgstr "Tuntematon virhe palvelinkyselyn aikana."
 
-#: ../lib/dictd.c:448
+#: ../lib/dictd.c:446
 msgid "Dictionary Results:"
 msgstr "Sanahaun tulokset:"
 
-#: ../lib/dictd.c:451
+#: ../lib/dictd.c:449
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Haku \"%s\" ei tuottanut tuloksia."
 
-#: ../lib/dictd.c:478
+#: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "Löytyi %d määritys."
 msgstr[1] "Löytyi %d määritystä."
 
-#: ../lib/dictd.c:689
+#: ../lib/dictd.c:687
 #, c-format
 msgid "Querying %s..."
 msgstr "Haetaan kohteesta %s..."
 
-#: ../lib/dictd.c:748
+#: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
 msgstr "Palvelimen tietojen kyselyssä tapahtui virhe."
 
-#: ../lib/dictd.c:761
+#: ../lib/dictd.c:759
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Palvelimen tiedot kohteelle \"%s\""
 
-#: ../lib/dictd.c:845
+#: ../lib/dictd.c:843
 msgid "The server doesn't offer any databases."
 msgstr "Palvelin ei tarjoa tietokantoja."
 
@@ -339,10 +352,6 @@ msgstr "_Pikalukija"
 #: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_Asetukset"
-
-#: ../lib/gui.c:730 ../lib/gui.c:840
-msgid "_Close"
-msgstr "_Sulje"
 
 #: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
