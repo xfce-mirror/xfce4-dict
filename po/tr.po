@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 00:31+0200\n"
-"PO-Revision-Date: 2019-05-24 01:08+0000\n"
-"Last-Translator: Serdar Sağlam <teknomobil@msn.com>\n"
+"POT-Creation-Date: 2019-08-03 00:31+0200\n"
+"PO-Revision-Date: 2019-08-02 22:31+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:805 ../lib/prefs.c:266
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
 msgid "Dictionary"
 msgstr "Sözlük"
 
@@ -30,17 +30,17 @@ msgstr "Sözlük"
 msgid "A plugin to query different dictionaries."
 msgstr "Çeşitli sözlükleri sorgulamak için eklenti."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:263
-#: ../panel-plugin/xfce4-dict-plugin.c:391 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:540
+#: ../panel-plugin/xfce4-dict-plugin.c:269
+#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Hazır"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:325
+#: ../panel-plugin/xfce4-dict-plugin.c:331
 msgid "Look up a word"
 msgstr "Kelime ara"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:364 ../lib/gui.c:836
+#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Aranacak ifade"
 
@@ -89,7 +89,7 @@ msgstr "Lütfen hatalı <%s> adresine bildirin."
 msgid "Dictionary Client"
 msgstr "Sözlük İstemcisi"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:1019
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
 msgstr "Çeşitli sözlükleri sorgulamak için istemci uygulama."
 
@@ -139,99 +139,112 @@ msgstr "Geçersiz girdi"
 msgid "Process failed (%s)"
 msgstr "Süreç başarısız (%s)"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
 msgstr "Dur_aklat"
 
-#: ../lib/speedreader.c:79
+#: ../lib/speedreader.c:75
 msgid "_Resume"
 msgstr "_Yeniden Başla"
 
-#: ../lib/speedreader.c:254
+#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
 msgid "S_top"
 msgstr "D_ur"
 
-#: ../lib/speedreader.c:262
+#: ../lib/speedreader.c:256
 msgid "Running"
 msgstr "Çalışıyor"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:259
 msgid "Finished"
 msgstr "Bitti"
 
-#: ../lib/speedreader.c:266
+#: ../lib/speedreader.c:260
 msgid "_Back"
 msgstr "_Geri"
 
-#: ../lib/speedreader.c:274
+#: ../lib/speedreader.c:268
 msgid "Speed Reader"
 msgstr "Okuma Hızı"
 
-#: ../lib/speedreader.c:373
+#: ../lib/speedreader.c:369
 msgid "You must enter a text."
 msgstr "Bir metin girmelisiniz."
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:526
 msgid "Choose a file to load"
 msgstr "Yüklenecek bir dosya seç"
 
-#: ../lib/speedreader.c:558
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr "_İptal"
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "_Aç"
+
+#: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "'%s' dosyası yüklenemedi."
 
-#: ../lib/speedreader.c:584
+#: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(bir seferde %d kelime göster)"
 msgstr[1] "(bir seferde %d kelime göster)"
 
-#: ../lib/speedreader.c:608
+#: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Bu, daha hızlı okumanız için size yardım edecek bir kolay hızlı okuma uygulamasıdır. Ekranda bir hız oranında kelimeler yanıp yanar."
 
-#: ../lib/speedreader.c:612
+#: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
 msgstr "Dakikadaki _Kelime:"
 
-#: ../lib/speedreader.c:619
+#: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
 msgstr "Paragrafları _işaretle"
 
-#: ../lib/speedreader.c:626
+#: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
 msgstr "Kelime _Toplama:"
 
-#: ../lib/speedreader.c:643
+#: ../lib/speedreader.c:641
 msgid "_Font Size:"
 msgstr "_Yazıtipi Boyutu:"
 
-#: ../lib/speedreader.c:664
+#: ../lib/speedreader.c:662
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Okutmak istediğiniz metni buraya girin. \n\n Rahat ve sakin olun, sonra hızlı okumaya başlamak için Başlat'a basın."
 
-#: ../lib/speedreader.c:677
+#: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
 msgstr "Bir dosyanın içeriğini yükle"
 
-#: ../lib/speedreader.c:682
+#: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Metin alanının içeriğini temizle ve pano içeriğini yapıştır"
 
-#: ../lib/speedreader.c:686
+#: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
 msgstr "Metin alanının içeriğini temizle"
 
-#: ../lib/speedreader.c:698
+#: ../lib/speedreader.c:696
 msgid "_Start"
 msgstr "_Başlat"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "_Kapat"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
@@ -253,65 +266,65 @@ msgstr "Hata"
 msgid "warning"
 msgstr "uyarı"
 
-#: ../lib/dictd.c:387 ../lib/dictd.c:706 ../lib/dictd.c:715 ../lib/dictd.c:804
-#: ../lib/dictd.c:813
-msgid "Could not connect to server."
-msgstr "Sunucuya bağlanılamadı."
-
-#: ../lib/dictd.c:393
-msgid "The server is not ready."
-msgstr "Sunucu hazır değil."
-
-#: ../lib/dictd.c:400
-msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Geçersiz sözlük belirtildi. Lütfen ayarlarınızı kontrol edin."
-
-#: ../lib/dictd.c:408 ../lib/dictd.c:464 ../lib/dictd.c:838
-msgid "Unknown error while querying the server."
-msgstr "Sorgu uygulanırken bilinmeyen bir hata meydana geldi."
-
-#: ../lib/dictd.c:423
-msgid "Dictionary Results:"
-msgstr "Sözlük Sonuçları:"
-
-#: ../lib/dictd.c:426
-#, c-format
-msgid "No matches could be found for \"%s\"."
-msgstr "\"%s\" için bir eşleşme bulunamadı."
-
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:442
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "\"%s\" ifadesini \"%s\" kullanarak ara"
 
-#: ../lib/dictd.c:447
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "Web'de Ara:"
 
-#: ../lib/dictd.c:469
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
+msgid "Could not connect to server."
+msgstr "Sunucuya bağlanılamadı."
+
+#: ../lib/dictd.c:416
+msgid "The server is not ready."
+msgstr "Sunucu hazır değil."
+
+#: ../lib/dictd.c:423
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Geçersiz sözlük belirtildi. Lütfen ayarlarınızı kontrol edin."
+
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
+msgid "Unknown error while querying the server."
+msgstr "Sorgu uygulanırken bilinmeyen bir hata meydana geldi."
+
+#: ../lib/dictd.c:446
+msgid "Dictionary Results:"
+msgstr "Sözlük Sonuçları:"
+
+#: ../lib/dictd.c:449
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "\"%s\" için bir eşleşme bulunamadı."
+
+#: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d tanım bulundu."
 msgstr[1] "%d tanım bulundu."
 
-#: ../lib/dictd.c:677
+#: ../lib/dictd.c:687
 #, c-format
 msgid "Querying %s..."
 msgstr "%s sorgulanıyor..."
 
-#: ../lib/dictd.c:736
+#: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
 msgstr "Sunucu bilgisi sorgulanırken hata oluştu."
 
-#: ../lib/dictd.c:749
+#: ../lib/dictd.c:759
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "\"%s\" için sunucu bilgisi"
 
-#: ../lib/dictd.c:833
+#: ../lib/dictd.c:843
 msgid "The server doesn't offer any databases."
 msgstr "Sunucu herhangi bir veritabanı sunmuyor."
 
@@ -319,121 +332,117 @@ msgstr "Sunucu herhangi bir veritabanı sunmuyor."
 msgid "Copy Link"
 msgstr "Bağlantıyı Kopyala"
 
-#: ../lib/gui.c:374
+#: ../lib/gui.c:372
 msgid "Search"
 msgstr "Ara"
 
-#: ../lib/gui.c:606
+#: ../lib/gui.c:605
 msgid "F_ind"
 msgstr "Bu_l"
 
 #. File Menu
-#: ../lib/gui.c:695
+#: ../lib/gui.c:694
 msgid "_File"
 msgstr "_Dosya"
 
-#: ../lib/gui.c:704 ../lib/gui.c:850
+#: ../lib/gui.c:701 ../lib/gui.c:828
 msgid "Speed _Reader"
 msgstr "_Okuma Hızı"
 
-#: ../lib/gui.c:726
+#: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_Tercihler"
 
-#: ../lib/gui.c:746 ../lib/gui.c:862
+#: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
 msgstr "_Çık"
 
 #. Help Menu
-#: ../lib/gui.c:760
+#: ../lib/gui.c:741
 msgid "_Help"
 msgstr "_Yardım"
 
-#: ../lib/gui.c:769
+#: ../lib/gui.c:748
 msgid "About"
 msgstr "Hakkında"
 
-#: ../lib/gui.c:862
-msgid "_Close"
-msgstr "_Kapat"
-
-#: ../lib/gui.c:874
+#: ../lib/gui.c:852
 msgid "Search with:"
 msgstr "Bununla ara:"
 
-#: ../lib/gui.c:878
+#: ../lib/gui.c:856
 msgid "_Dictionary Server"
 msgstr "_Sözlük Sunucusu"
 
-#: ../lib/gui.c:884
+#: ../lib/gui.c:862
 msgid "_Web Service"
 msgstr "_Web Servisi"
 
-#: ../lib/gui.c:892
+#: ../lib/gui.c:870
 msgid "_Spell Checker"
 msgstr "_Yazım Denetçisi"
 
-#: ../lib/gui.c:1020
+#: ../lib/gui.c:998
 msgid "Copyright © 2006-2016 Xfce Development Team"
 msgstr "Telif Hakkı © 2006-2016 Xfce Geliştirme Takımı"
 
-#: ../lib/gui.c:1023
+#: ../lib/gui.c:1001
 msgid "translator-credits"
 msgstr "Samed Beyribey <ras0ir@eventualis.org>\nAyhan YALÇINSOY<ayhanyalcinsoy@gmail.com>\nSerdar Sağlam <teknomobil@yandex.com>"
 
-#: ../lib/gui.c:1026
+#: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Sözlük"
 
-#: ../lib/prefs.c:53
+#: ../lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - Almanca <-> İngilizce"
 
-#: ../lib/prefs.c:54
+#: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - Almanca <-> Fransızca"
 
-#: ../lib/prefs.c:55
+#: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - Almanca <-> İspanyolca"
 
-#: ../lib/prefs.c:56
+#: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - Almanca <-> İtalyanca"
 
-#: ../lib/prefs.c:57
+#: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - Almanca <-> Çince"
 
-#: ../lib/prefs.c:58
-msgid "dist.cc - Dictionary"
-msgstr "dist.cc - Sözlük"
+#: ../lib/prefs.c:57
+msgid "dict.cc - Dictionary"
+msgstr "dict.cc - Sözlük"
 
-#: ../lib/prefs.c:59
+#: ../lib/prefs.c:58
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:60
+#: ../lib/prefs.c:59
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:61
+#: ../lib/prefs.c:60
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "Wikipedia, özgür ansiklopedi (İNG)"
 
-#: ../lib/prefs.c:62
+#: ../lib/prefs.c:61
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "Wiktionary, özgür sözlük (İNG)"
 
-#: ../lib/prefs.c:63
+#: ../lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Merriam-Webster Çevrimiçi Sözlük"
 
-#: ../lib/prefs.c:64
+#: ../lib/prefs.c:63
 msgid "Clear"
 msgstr "Temizle"
 
-#: ../lib/prefs.c:99
+#: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
 msgstr "Geçersiz bir sözlük seçtiniz."
 
@@ -449,7 +458,7 @@ msgstr "<b>Öntanımlı arama yöntemi:</b>"
 msgid "Dictionary Server"
 msgstr "Sözlük Sunucusu"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:563
+#: ../lib/prefs.c:315 ../lib/prefs.c:562
 msgid "Web Service"
 msgstr "Web Servisi"
 
@@ -505,7 +514,7 @@ msgid "Server Port:"
 msgstr "Sunucu Portu:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:634
+#: ../lib/prefs.c:477 ../lib/prefs.c:635
 msgid "Dictionary:"
 msgstr "Sözlük:"
 
@@ -517,15 +526,15 @@ msgstr "* (tümünü kullan)"
 msgid "! (use all, stop after first match)"
 msgstr "! (tümünü kullan, ilk eşleşmeden sonra dur)"
 
-#: ../lib/prefs.c:565
+#: ../lib/prefs.c:564
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Web Arama Adresi:</b>"
 
-#: ../lib/prefs.c:570
+#: ../lib/prefs.c:569
 msgid "URL:"
 msgstr "Adres:"
 
-#: ../lib/prefs.c:590
+#: ../lib/prefs.c:589
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
