@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 06:31+0200\n"
-"PO-Revision-Date: 2019-08-02 16:49+0000\n"
-"Last-Translator: Igor <f2404@yandex.ru>\n"
+"POT-Creation-Date: 2019-08-03 00:31+0200\n"
+"PO-Revision-Date: 2019-08-02 22:31+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,7 +147,7 @@ msgstr "_Пауза"
 msgid "_Resume"
 msgstr "П_родолжить"
 
-#: ../lib/speedreader.c:248
+#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
 msgid "S_top"
 msgstr "_Стоп"
 
@@ -242,10 +242,6 @@ msgstr "Очистить содержимое текстового поля"
 #: ../lib/speedreader.c:696
 msgid "_Start"
 msgstr "_Старт"
-
-#: ../lib/speedreader.c:697
-msgid "_Stop"
-msgstr "_Стоп"
 
 #: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
 #: ../lib/gui.c:840 ../lib/prefs.c:267
