@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-09 18:31+0200\n"
-"PO-Revision-Date: 2019-06-18 13:37+0000\n"
-"Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
+"POT-Creation-Date: 2019-08-03 00:31+0200\n"
+"PO-Revision-Date: 2019-08-02 22:31+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-apps/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -138,48 +138,56 @@ msgstr "קלט שגוי"
 msgid "Process failed (%s)"
 msgstr "תהליך נכשל (%s)"
 
-#: ../lib/speedreader.c:77
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
 msgstr "ה_שהה"
 
-#: ../lib/speedreader.c:78
+#: ../lib/speedreader.c:75
 msgid "_Resume"
 msgstr "_חזור"
 
-#: ../lib/speedreader.c:253
+#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
 msgid "S_top"
 msgstr "ע_צור"
 
-#: ../lib/speedreader.c:261
+#: ../lib/speedreader.c:256
 msgid "Running"
 msgstr "כעת מורץ"
 
-#: ../lib/speedreader.c:264
+#: ../lib/speedreader.c:259
 msgid "Finished"
 msgstr "הוגמר"
 
-#: ../lib/speedreader.c:265
+#: ../lib/speedreader.c:260
 msgid "_Back"
 msgstr "_חזרה"
 
-#: ../lib/speedreader.c:273
+#: ../lib/speedreader.c:268
 msgid "Speed Reader"
 msgstr "קורא מהירות"
 
-#: ../lib/speedreader.c:372
+#: ../lib/speedreader.c:369
 msgid "You must enter a text."
 msgstr "עליך להזין טקסט."
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:526
 msgid "Choose a file to load"
 msgstr "בחירת קובץ להטענה"
 
-#: ../lib/speedreader.c:558
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr "_בטל"
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "_פתח"
+
+#: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "לא היתה אפשרות להטעין את הקובץ '%s'."
 
-#: ../lib/speedreader.c:584
+#: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -188,51 +196,56 @@ msgstr[1] "(הצג %d מילים במכה)"
 msgstr[2] "(הצג %d מילים במכה)"
 msgstr[3] "(הצג %d מילים במכה)"
 
-#: ../lib/speedreader.c:608
+#: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "זהו כלי עזר קל לקריאה מהירה כדי לעזור לך לקרוא מהר יותר. זה עוזה זאת על ידי הבזקת מילים בקצב מהיר על המרקע."
 
-#: ../lib/speedreader.c:613
+#: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
 msgstr "_מילים לדקה:"
 
-#: ../lib/speedreader.c:620
+#: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
 msgstr "ס_מן מקטעים"
 
-#: ../lib/speedreader.c:627
+#: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
 msgstr "_קיבוץ מילים:"
 
-#: ../lib/speedreader.c:644
+#: ../lib/speedreader.c:641
 msgid "_Font Size:"
 msgstr "מידת _גופן:"
 
-#: ../lib/speedreader.c:665
+#: ../lib/speedreader.c:662
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "הזן כאן טקסט אשר ברצונך לקרוא.\n\nהיה רגוע ונינוח, אחר כך לחץ התחל כדי להתחיל קריאה מהירה."
 
-#: ../lib/speedreader.c:678
+#: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
 msgstr "טען את התכנים של קובץ"
 
-#: ../lib/speedreader.c:683
+#: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "טהר את התכולות של שדה טקסט והדבק תכנים מתוך לוח גזירה"
 
-#: ../lib/speedreader.c:687
+#: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
 msgstr "טהר את התכולות של שדה טקסט"
 
-#: ../lib/speedreader.c:699
+#: ../lib/speedreader.c:696
 msgid "_Start"
 msgstr "_התחל"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "_סגור"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
@@ -256,42 +269,42 @@ msgstr "אזהרה"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:383
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "חפש \"%s\" באמצעות \"%s\""
 
-#: ../lib/dictd.c:390
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "חיפוש רשת:"
 
-#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
-#: ../lib/dictd.c:825
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
 msgid "Could not connect to server."
 msgstr "לא היתה אפשרות להתחבר לשרת."
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:416
 msgid "The server is not ready."
 msgstr "השרת אינו מוכן."
 
-#: ../lib/dictd.c:425
+#: ../lib/dictd.c:423
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "צוין מילון לא תקין. אנא בדוק את העדפותיך."
 
-#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
 msgid "Unknown error while querying the server."
 msgstr "שגיאה לא מוכרת במהלך תשאול השרת."
 
-#: ../lib/dictd.c:448
+#: ../lib/dictd.c:446
 msgid "Dictionary Results:"
 msgstr "תוצאות מילון:"
 
-#: ../lib/dictd.c:451
+#: ../lib/dictd.c:449
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "לא נמצאו התאמות עבור \"%s\"."
 
-#: ../lib/dictd.c:478
+#: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -300,21 +313,21 @@ msgstr[1] "%d הגדרות נמצאו."
 msgstr[2] "%d הגדרות נמצאו."
 msgstr[3] "%d הגדרות נמצאו."
 
-#: ../lib/dictd.c:689
+#: ../lib/dictd.c:687
 #, c-format
 msgid "Querying %s..."
 msgstr "כעת מתשאל %s..."
 
-#: ../lib/dictd.c:748
+#: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
 msgstr "אירעה שגיאה בעת שאילתת מידע שרת."
 
-#: ../lib/dictd.c:761
+#: ../lib/dictd.c:759
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "מידע שרת עבור \"%s\""
 
-#: ../lib/dictd.c:845
+#: ../lib/dictd.c:843
 msgid "The server doesn't offer any databases."
 msgstr "השרת לא מציע שום מסד נתונים."
 
@@ -342,10 +355,6 @@ msgstr "_קורא מהירות"
 #: ../lib/gui.c:716
 msgid "_Preferences"
 msgstr "_העדפות"
-
-#: ../lib/gui.c:730 ../lib/gui.c:840
-msgid "_Close"
-msgstr "_סגור"
 
 #: ../lib/gui.c:730 ../lib/gui.c:840
 msgid "_Quit"
