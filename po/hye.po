@@ -1,0 +1,549 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Hayk Andreasyan <hayk.andreasyan@realschool.am>, 2019
+# Real School <localization@ehayq.am>, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Apps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-03 00:31+0200\n"
+"PO-Revision-Date: 2020-05-25 06:58+0000\n"
+"Last-Translator: Real School <localization@ehayq.am>\n"
+"Language-Team: Eastern Armenian (http://www.transifex.com/xfce/xfce-apps/language/hye/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hye\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
+msgid "Dictionary"
+msgstr "Բառարան"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+msgid "A plugin to query different dictionaries."
+msgstr "Տարբեր բառարաններ հայցելու ներդրաւն"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:269
+#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:539
+msgid "Ready"
+msgstr "Պատրաստ է"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:331
+msgid "Look up a word"
+msgstr "Որոնել բառ"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+msgid "Search term"
+msgstr "Որոնել եզրոյթ"
+
+#: ../src/xfce4-dict.c:49
+msgid "Search the given text using a Dict server(RFC 2229)"
+msgstr "Որոնել տրուած եզրոյթը Dict սպասարկչով (RFC 2229)"
+
+#: ../src/xfce4-dict.c:50
+msgid "Search the given text using a web-based search engine"
+msgstr "Որոնել տրուած եզրոյթը ցանցի աւգնութեամբ"
+
+#: ../src/xfce4-dict.c:51
+msgid "Check the given text with a spell checker"
+msgstr "Ստուգել բառի ուղղագրութիւնը ստուգիչով"
+
+#: ../src/xfce4-dict.c:52
+msgid "Grab the focus on the text field in the panel"
+msgstr "Կենտրոնացնել գրոյթի դաշտը, ընտրացանկում"
+
+#: ../src/xfce4-dict.c:53
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr "Միացնել յաւելուածն առանձին, եթե նոյնիսկ ընտրացանկի ներդրաւնը բեռնուած է"
+
+#: ../src/xfce4-dict.c:54
+msgid "Grabs the PRIMARY selection content and uses it as search text"
+msgstr "Գրաւում է ԱՌԱՋՆԱՅԻՆ ընտրութեան պարունակութիւնը եւ աւգտագործում է որպէս որոնուող գրոյթ "
+
+#: ../src/xfce4-dict.c:55
+msgid "Be verbose"
+msgstr "Մանրամասն"
+
+#: ../src/xfce4-dict.c:56
+msgid "Show version information"
+msgstr "Ցուցադրել տարբերակի մասին տեղեկութիւն"
+
+#: ../src/xfce4-dict.c:129
+msgid "[TEXT]"
+msgstr "[Գրոյթ]"
+
+#: ../src/xfce4-dict.c:145
+#, c-format
+msgid "Please report bugs to <%s>."
+msgstr "Սխալի դէպքում կարող էք դիմել՝ <%s> հասցէով։"
+
+#: ../src/xfce4-dict.desktop.in.h:2
+msgid "Dictionary Client"
+msgstr "Բառարանի հաճախորդ"
+
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
+msgid "A client program to query different dictionaries."
+msgstr "Հաճախորդի ծրագիր  տարբեր բառարաններ հարցելու համար։"
+
+#: ../lib/spell.c:73
+msgid "Spell Checker Results:"
+msgstr "Ուղղարութեան ստուգիչի արդիւնքները․"
+
+#: ../lib/spell.c:99
+#, c-format
+msgid "%d suggestion found."
+msgid_plural "%d suggestions found."
+msgstr[0] "%d առաջարկութիւն է գտնուել։"
+msgstr[1] "%d առաջարկութիւններ են գտնուել։"
+
+#: ../lib/spell.c:103
+#, c-format
+msgid "Suggestions for \"%s\" (%s):"
+msgstr "Առաջարկութիւններ \"%s\" (%s)․ "
+
+#: ../lib/spell.c:120
+#, c-format
+msgid "\"%s\" is spelled correctly (%s)."
+msgstr "\"%s\" ֊ը գրուած է ճիշտ (%s)։"
+
+#: ../lib/spell.c:132
+#, c-format
+msgid "No suggestions could be found for \"%s\" (%s)."
+msgstr " \"%s\" (%s) ֊ի համար առաջարկութիւններ չեն գտնուել։"
+
+#. translation hint:
+#. * Error while executing <spell command, e.g. "aspell"> (<error message>)
+#: ../lib/spell.c:162
+#, c-format
+msgid "Error while executing \"%s\" (%s)."
+msgstr "Հարցման ընթացքում առաջացած սխալ \"%s\" (%s)։"
+
+#: ../lib/spell.c:200
+msgid "Please set the spell check command in the preferences dialog."
+msgstr "Սահմանեք ուղղագրութեան ստուգիչի հրամանը երկխոսութեան նախընտրութիւններում։"
+
+#: ../lib/spell.c:206
+msgid "Invalid input"
+msgstr "Անվաւեր ներածում"
+
+#: ../lib/spell.c:245
+#, c-format
+msgid "Process failed (%s)"
+msgstr "(%s) գործընթացը ձախողուեց"
+
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
+msgid "P_ause"
+msgstr "Դ_ադար"
+
+#: ../lib/speedreader.c:75
+msgid "_Resume"
+msgstr "_Վերականգնել"
+
+#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
+msgid "S_top"
+msgstr "_Կանգ"
+
+#: ../lib/speedreader.c:256
+msgid "Running"
+msgstr "Աշխատեցում"
+
+#: ../lib/speedreader.c:259
+msgid "Finished"
+msgstr "Աւարտուած"
+
+#: ../lib/speedreader.c:260
+msgid "_Back"
+msgstr "_Հետ"
+
+#: ../lib/speedreader.c:268
+msgid "Speed Reader"
+msgstr "Արագ ընթերցիչ"
+
+#: ../lib/speedreader.c:369
+msgid "You must enter a text."
+msgstr "Ներմուծեք գրոյթ։"
+
+#: ../lib/speedreader.c:526
+msgid "Choose a file to load"
+msgstr "Ընտրեք բեռնման նիշը"
+
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr "_Չեղարկել"
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "_Բացել"
+
+#: ../lib/speedreader.c:555
+#, c-format
+msgid "The file '%s' could not be loaded."
+msgstr "Նիշ \"%s\" ֊ը չի կարող բեռնուել։"
+
+#: ../lib/speedreader.c:581
+#, c-format
+msgid "(display %d word at a time)"
+msgid_plural "(display %d words at a time)"
+msgstr[0] "(ցուցադրում է %d բառ ժամանակահատուածում)"
+msgstr[1] "(ցուցադրում է %d բառ ժամանակահատուածում)"
+
+#: ../lib/speedreader.c:605
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr "Սա հեշտ արագ ընթերցման աւգտարար է, որը կաւգնի Ձեզ սովորել ընթերցել աւելի արագ։ Այդ իրագործուում է ցուցադրիչում բառերի արագ թարտմամբ։"
+
+#: ../lib/speedreader.c:610
+msgid "_Words per Minute:"
+msgstr "_Բառ րոպեի ընթացքում․"
+
+#: ../lib/speedreader.c:617
+msgid "_Mark Paragraphs"
+msgstr "_Նշել  պարբերութիւններ"
+
+#: ../lib/speedreader.c:624
+msgid "Word _Grouping:"
+msgstr "Բառերի _խմբաւորում․"
+
+#: ../lib/speedreader.c:641
+msgid "_Font Size:"
+msgstr "_Տարատեսակի չափս․"
+
+#: ../lib/speedreader.c:662
+msgid ""
+"Enter some text here you would like to read.\n"
+"\n"
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr "Ներմուծեք այստեղ  գրոյթ, որը կցանկանաք կարդալ։\n\nՀարմարուեք, եւ սեղմեք Սկսել, ընթերցը սկսելու համար։"
+
+#: ../lib/speedreader.c:675
+msgid "Load the contents of a file"
+msgstr "Բեռնել նիշի պարունակութիւնը"
+
+#: ../lib/speedreader.c:680
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
+msgstr "Մաքրել գրոյթային դաշտի պարունակութիւնը եւ ներմուծել այն սեղմատախտակում"
+
+#: ../lib/speedreader.c:684
+msgid "Clear the contents of the text field"
+msgstr "Մաքրել գրոյթային դաշտի պարունակութիւնը"
+
+#: ../lib/speedreader.c:696
+msgid "_Start"
+msgstr "_Սկսել"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "_Փակել"
+
+#: ../lib/common.c:186
+msgid "The search URL is empty. Please check your preferences."
+msgstr "Որոնուած URL֊ն դատարկ է։ Ստուգեք Ձեր  նախընտրութիւնները։"
+
+#: ../lib/common.c:192
+msgid "Browser could not be opened. Please check your preferences."
+msgstr "Չյաջողուեց բացել զննիչը։ Ստուգեք Ձեր նախընտրութիւնները։"
+
+#: ../lib/common.c:232
+msgid "Invalid non-UTF8 input"
+msgstr "Անվաւեր non-UTF8 ներածում"
+
+#: ../lib/common.c:568
+msgid "Error"
+msgstr "Սխալ"
+
+#: ../lib/common.c:571
+msgid "warning"
+msgstr "Զգուշացում"
+
+#. for translators: the first wildcard is the search term, the second wildcard
+#. * is the name of the preferred web search engine
+#: ../lib/dictd.c:381
+#, c-format
+msgid "Search \"%s\" using \"%s\""
+msgstr "Որոնել \"%s\" աւգտուելով \"%s\"֊ից"
+
+#: ../lib/dictd.c:388
+msgid "Web Search:"
+msgstr "Ցանցային որոնում․"
+
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
+msgid "Could not connect to server."
+msgstr "Չյաջողուեց միանալ սպասարկչին։"
+
+#: ../lib/dictd.c:416
+msgid "The server is not ready."
+msgstr "Սպասարկիչը պատրաստ չէ։"
+
+#: ../lib/dictd.c:423
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Հատկորոշուած է անվաւեր բառարան։ Ստուգեք Ձեր նախընտրութիւնները։ "
+
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
+msgid "Unknown error while querying the server."
+msgstr "Անյայտ սխալ սպասարկչի հարցման ժամանակ"
+
+#: ../lib/dictd.c:446
+msgid "Dictionary Results:"
+msgstr "Բառարանի արդիւնքներ․"
+
+#: ../lib/dictd.c:449
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr "\"%s\" ֊ի համար համընկնումներ չեն գտնուել։"
+
+#: ../lib/dictd.c:476
+#, c-format
+msgid "%d definition found."
+msgid_plural "%d definitions found."
+msgstr[0] "%d հստակութիւն է գտնուել։"
+msgstr[1] "%d հստակութիւններ են գտնուել։"
+
+#: ../lib/dictd.c:687
+#, c-format
+msgid "Querying %s..."
+msgstr "Հարցում ենք %s..."
+
+#: ../lib/dictd.c:746
+msgid "An error occurred while querying server information."
+msgstr "Սպասարկչից տեղեկութեան հարցման ժամանակ հայտնուեց սխալ։"
+
+#: ../lib/dictd.c:759
+#, c-format
+msgid "Server Information for \"%s\""
+msgstr "Սպասարկչի տեղեկութիւն \"%s\"֊ի համար"
+
+#: ../lib/dictd.c:843
+msgid "The server doesn't offer any databases."
+msgstr "Սպասարկիչը չի առաջարկում տուեալների շտեմարան։"
+
+#: ../lib/gui.c:362
+msgid "Copy Link"
+msgstr "Պատճէնել յղումը"
+
+#: ../lib/gui.c:372
+msgid "Search"
+msgstr "Որոնում"
+
+#: ../lib/gui.c:605
+msgid "F_ind"
+msgstr "Գ_տնել"
+
+#. File Menu
+#: ../lib/gui.c:694
+msgid "_File"
+msgstr "_Նիշ"
+
+#: ../lib/gui.c:701 ../lib/gui.c:828
+msgid "Speed _Reader"
+msgstr "Արագ _ընթերցիչ"
+
+#: ../lib/gui.c:716
+msgid "_Preferences"
+msgstr "_Նախընտրութիւններ"
+
+#: ../lib/gui.c:730 ../lib/gui.c:840
+msgid "_Quit"
+msgstr "_Դուրս գալ"
+
+#. Help Menu
+#: ../lib/gui.c:741
+msgid "_Help"
+msgstr "_Աջակցութիւն"
+
+#: ../lib/gui.c:748
+msgid "About"
+msgstr "Մասին"
+
+#: ../lib/gui.c:852
+msgid "Search with:"
+msgstr "Որոնել աւգտագործելով․"
+
+#: ../lib/gui.c:856
+msgid "_Dictionary Server"
+msgstr "_Բառարանի սպասարկիչ"
+
+#: ../lib/gui.c:862
+msgid "_Web Service"
+msgstr "_Ցանցի սպասարկիչ"
+
+#: ../lib/gui.c:870
+msgid "_Spell Checker"
+msgstr "_Ուղղագրութեան ստուգիչ"
+
+#: ../lib/gui.c:998
+msgid "Copyright © 2006-2016 Xfce Development Team"
+msgstr "Հեղինակային իրաւունք  © 2006-2016 Xfce Development Team"
+
+#: ../lib/gui.c:1001
+msgid "translator-credits"
+msgstr "E-Hayq LLC, 2018"
+
+#: ../lib/gui.c:1004
+msgid "Xfce4 Dictionary"
+msgstr "Xfce4 բառարան"
+
+#: ../lib/prefs.c:52
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Գերմաներեն <-> Անգլերեն"
+
+#: ../lib/prefs.c:53
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Գերմաներեն <-> Ֆրանսերեն"
+
+#: ../lib/prefs.c:54
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Գերմաներեն <-> Իսպաներեն"
+
+#: ../lib/prefs.c:55
+msgid "dict.leo.org - German <-> Italian"
+msgstr "dict.leo.org - Գերմաներեն <-> Իտալերեն"
+
+#: ../lib/prefs.c:56
+msgid "dict.leo.org - German <-> Chinese"
+msgstr "dict.leo.org - Գերմաներեն <-> Չինարեն"
+
+#: ../lib/prefs.c:57
+msgid "dict.cc - Dictionary"
+msgstr "dict.cc - Բառարան"
+
+#: ../lib/prefs.c:58
+msgid "Dictionary.com"
+msgstr "Dictionary.com"
+
+#: ../lib/prefs.c:59
+msgid "TheFreeDictionary.com"
+msgstr "TheFreeDictionary.com"
+
+#: ../lib/prefs.c:60
+msgid "Wikipedia, the free encyclopedia (EN)"
+msgstr "Wikipedia, անվճար հանրագիտարան (EN)"
+
+#: ../lib/prefs.c:61
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr "Wiktionary, անվճար բառարան (EN)"
+
+#: ../lib/prefs.c:62
+msgid "Merriam-Webster Online Dictionary"
+msgstr "Merriam-Webster Ցանցային Բառարան"
+
+#: ../lib/prefs.c:63
+msgid "Clear"
+msgstr "Մաքրել"
+
+#: ../lib/prefs.c:98
+msgid "You have chosen an invalid dictionary."
+msgstr "Ընտրուած բառարանը անվաւեր է։"
+
+#: ../lib/prefs.c:299
+msgid "General"
+msgstr "Ընդհանուր"
+
+#: ../lib/prefs.c:301
+msgid "<b>Default search method:</b>"
+msgstr "<b>Որոնման լռելեայն եղանակ․</b>"
+
+#: ../lib/prefs.c:306 ../lib/prefs.c:458
+msgid "Dictionary Server"
+msgstr "Բառարանի սպասարկիչ"
+
+#: ../lib/prefs.c:315 ../lib/prefs.c:562
+msgid "Web Service"
+msgstr "Ցանցային սպասարկիչ"
+
+#: ../lib/prefs.c:324 ../lib/prefs.c:609
+msgid "Spell Checker"
+msgstr "Ուղղագրութեան ստուգիչ"
+
+#: ../lib/prefs.c:333
+msgid "Last used method"
+msgstr "Վերջին կիրառուած եղանակ"
+
+#: ../lib/prefs.c:342
+msgid "<b>Colors:</b>"
+msgstr "<b>Գոյներ․</b>"
+
+#: ../lib/prefs.c:348
+msgid "Links:"
+msgstr "Յղումներ․"
+
+#: ../lib/prefs.c:349
+msgid "Phonetics:"
+msgstr "Հնչիւնաբանութիւն․"
+
+#: ../lib/prefs.c:350
+msgid "Spelled correctly:"
+msgstr "Գրուած են ճիշտ․"
+
+#: ../lib/prefs.c:351
+msgid "Spelled incorrectly:"
+msgstr "Գրուած են սխալ․"
+
+#: ../lib/prefs.c:402
+msgid "<b>Panel Text Field:</b>"
+msgstr "<b>Վահանակի գրոյթադաշտ․</b>"
+
+#: ../lib/prefs.c:408
+msgid "Show text field in the panel"
+msgstr "Ցուցադրել գրոյթի դաշտը վահանակում"
+
+#. panel entry size
+#: ../lib/prefs.c:415
+msgid "Text field size:"
+msgstr "Գրոյթի դաշտի չափսը․"
+
+#. server address
+#: ../lib/prefs.c:461
+msgid "Server:"
+msgstr "Սպասարկիչ․"
+
+#. server port
+#: ../lib/prefs.c:471
+msgid "Server Port:"
+msgstr "Սպասարկչի մուտք․"
+
+#. dictionary
+#: ../lib/prefs.c:477 ../lib/prefs.c:635
+msgid "Dictionary:"
+msgstr "Բառարան․"
+
+#: ../lib/prefs.c:480
+msgid "* (use all)"
+msgstr "* (աւգտագործել բոլորը)"
+
+#: ../lib/prefs.c:482
+msgid "! (use all, stop after first match)"
+msgstr "! (աւգտագործել բոլորը, կանգնել առաջին համընկնելուց յետոյ)"
+
+#: ../lib/prefs.c:564
+msgid "<b>Web search URL:</b>"
+msgstr "<b> URL֊ի ցանցային որոնում․</b>"
+
+#: ../lib/prefs.c:569
+msgid "URL:"
+msgstr "URL․"
+
+#: ../lib/prefs.c:589
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Մուտքագրեք URL կայք, որը առաջարկում է թարգմանութիւն կամ բառարանի ծառայութիւններ։ Աւգտագործեք  {word} որպէս որոնուած բառի լրադաշտ։"
+
+#: ../lib/prefs.c:611
+msgid "Spell Check Program:"
+msgstr "Ուղղագրութեան ստուգման ծրագիր․"
+
+#: ../lib/prefs.c:628
+msgid ""
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"The icon shows whether the entered command exists.</i>"
+msgstr "<i>Ուղղագրութեան ստուգման ծրագիրը կարող է լինել 'enchant', 'aspell', 'ispell' կամ այլ ուղղ․ ստուգման ծրագիր որը համատեղելի է ispell հրամանի հետ։\nՊատկերակը ցոյց է տալիս, թե արդյոք մուտքագրուած հրամանը գոյութիւն ունի։</i>"
