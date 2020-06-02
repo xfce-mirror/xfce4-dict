@@ -1,0 +1,548 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Priit Jõerüüt <transifex@joeruut.com>, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Apps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-03 00:31+0200\n"
+"PO-Revision-Date: 2020-06-02 09:59+0000\n"
+"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
+"Language-Team: Estonian (http://www.transifex.com/xfce/xfce-apps/language/et/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: et\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
+msgid "Dictionary"
+msgstr "Sõnastik"
+
+#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
+msgid "A plugin to query different dictionaries."
+msgstr "Pisirakendus päringuteks erinevatest sõnastikest"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:269
+#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../lib/spell.c:241 ../lib/gui.c:539
+msgid "Ready"
+msgstr "Valmis"
+
+#: ../panel-plugin/xfce4-dict-plugin.c:331
+msgid "Look up a word"
+msgstr ""
+
+#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+msgid "Search term"
+msgstr ""
+
+#: ../src/xfce4-dict.c:49
+msgid "Search the given text using a Dict server(RFC 2229)"
+msgstr ""
+
+#: ../src/xfce4-dict.c:50
+msgid "Search the given text using a web-based search engine"
+msgstr ""
+
+#: ../src/xfce4-dict.c:51
+msgid "Check the given text with a spell checker"
+msgstr ""
+
+#: ../src/xfce4-dict.c:52
+msgid "Grab the focus on the text field in the panel"
+msgstr ""
+
+#: ../src/xfce4-dict.c:53
+msgid "Start stand-alone application even if the panel plugin is loaded"
+msgstr ""
+
+#: ../src/xfce4-dict.c:54
+msgid "Grabs the PRIMARY selection content and uses it as search text"
+msgstr ""
+
+#: ../src/xfce4-dict.c:55
+msgid "Be verbose"
+msgstr "Ole jutukas"
+
+#: ../src/xfce4-dict.c:56
+msgid "Show version information"
+msgstr "Näita versiooniteavet"
+
+#: ../src/xfce4-dict.c:129
+msgid "[TEXT]"
+msgstr "[TEKST]"
+
+#: ../src/xfce4-dict.c:145
+#, c-format
+msgid "Please report bugs to <%s>."
+msgstr "Palun teata vigadest <%s>."
+
+#: ../src/xfce4-dict.desktop.in.h:2
+msgid "Dictionary Client"
+msgstr ""
+
+#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
+msgid "A client program to query different dictionaries."
+msgstr ""
+
+#: ../lib/spell.c:73
+msgid "Spell Checker Results:"
+msgstr "Õigekirjakontrolli tulemused:"
+
+#: ../lib/spell.c:99
+#, c-format
+msgid "%d suggestion found."
+msgid_plural "%d suggestions found."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/spell.c:103
+#, c-format
+msgid "Suggestions for \"%s\" (%s):"
+msgstr ""
+
+#: ../lib/spell.c:120
+#, c-format
+msgid "\"%s\" is spelled correctly (%s)."
+msgstr ""
+
+#: ../lib/spell.c:132
+#, c-format
+msgid "No suggestions could be found for \"%s\" (%s)."
+msgstr ""
+
+#. translation hint:
+#. * Error while executing <spell command, e.g. "aspell"> (<error message>)
+#: ../lib/spell.c:162
+#, c-format
+msgid "Error while executing \"%s\" (%s)."
+msgstr ""
+
+#: ../lib/spell.c:200
+msgid "Please set the spell check command in the preferences dialog."
+msgstr ""
+
+#: ../lib/spell.c:206
+msgid "Invalid input"
+msgstr ""
+
+#: ../lib/spell.c:245
+#, c-format
+msgid "Process failed (%s)"
+msgstr ""
+
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
+msgid "P_ause"
+msgstr ""
+
+#: ../lib/speedreader.c:75
+msgid "_Resume"
+msgstr ""
+
+#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
+msgid "S_top"
+msgstr ""
+
+#: ../lib/speedreader.c:256
+msgid "Running"
+msgstr ""
+
+#: ../lib/speedreader.c:259
+msgid "Finished"
+msgstr ""
+
+#: ../lib/speedreader.c:260
+msgid "_Back"
+msgstr "_Tagasi"
+
+#: ../lib/speedreader.c:268
+msgid "Speed Reader"
+msgstr ""
+
+#: ../lib/speedreader.c:369
+msgid "You must enter a text."
+msgstr ""
+
+#: ../lib/speedreader.c:526
+msgid "Choose a file to load"
+msgstr ""
+
+#: ../lib/speedreader.c:529
+msgid "_Cancel"
+msgstr "_Tühista"
+
+#: ../lib/speedreader.c:530
+msgid "_Open"
+msgstr "_Ava"
+
+#: ../lib/speedreader.c:555
+#, c-format
+msgid "The file '%s' could not be loaded."
+msgstr ""
+
+#: ../lib/speedreader.c:581
+#, c-format
+msgid "(display %d word at a time)"
+msgid_plural "(display %d words at a time)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/speedreader.c:605
+msgid ""
+"This is an easy speed reading utility to help train you to read faster. It "
+"does this by flashing words at a rapid rate on the screen."
+msgstr ""
+
+#: ../lib/speedreader.c:610
+msgid "_Words per Minute:"
+msgstr ""
+
+#: ../lib/speedreader.c:617
+msgid "_Mark Paragraphs"
+msgstr ""
+
+#: ../lib/speedreader.c:624
+msgid "Word _Grouping:"
+msgstr ""
+
+#: ../lib/speedreader.c:641
+msgid "_Font Size:"
+msgstr ""
+
+#: ../lib/speedreader.c:662
+msgid ""
+"Enter some text here you would like to read.\n"
+"\n"
+"Be relaxed and make yourself comfortable, then press Start to begin speed reading."
+msgstr ""
+
+#: ../lib/speedreader.c:675
+msgid "Load the contents of a file"
+msgstr ""
+
+#: ../lib/speedreader.c:680
+msgid ""
+"Clear the contents of the text field and paste the contents of the clipboard"
+msgstr ""
+
+#: ../lib/speedreader.c:684
+msgid "Clear the contents of the text field"
+msgstr ""
+
+#: ../lib/speedreader.c:696
+msgid "_Start"
+msgstr "Alu_sta"
+
+#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/gui.c:840 ../lib/prefs.c:267
+msgid "_Close"
+msgstr "_Sulge"
+
+#: ../lib/common.c:186
+msgid "The search URL is empty. Please check your preferences."
+msgstr "Otsingu aadress on määramata. Palun kontrollige oma seadistusi."
+
+#: ../lib/common.c:192
+msgid "Browser could not be opened. Please check your preferences."
+msgstr ""
+
+#: ../lib/common.c:232
+msgid "Invalid non-UTF8 input"
+msgstr ""
+
+#: ../lib/common.c:568
+msgid "Error"
+msgstr "Viga"
+
+#: ../lib/common.c:571
+msgid "warning"
+msgstr ""
+
+#. for translators: the first wildcard is the search term, the second wildcard
+#. * is the name of the preferred web search engine
+#: ../lib/dictd.c:381
+#, c-format
+msgid "Search \"%s\" using \"%s\""
+msgstr ""
+
+#: ../lib/dictd.c:388
+msgid "Web Search:"
+msgstr ""
+
+#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
+#: ../lib/dictd.c:823
+msgid "Could not connect to server."
+msgstr ""
+
+#: ../lib/dictd.c:416
+msgid "The server is not ready."
+msgstr "See server ei ole valmis."
+
+#: ../lib/dictd.c:423
+msgid "Invalid dictionary specified. Please check your preferences."
+msgstr "Määratud on sobimatu sõnastik. Palun kontrollige oma eelistusi."
+
+#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
+msgid "Unknown error while querying the server."
+msgstr "Serveri päringu ajal ilmnes tundmatu tõrge."
+
+#: ../lib/dictd.c:446
+msgid "Dictionary Results:"
+msgstr ""
+
+#: ../lib/dictd.c:449
+#, c-format
+msgid "No matches could be found for \"%s\"."
+msgstr ""
+
+#: ../lib/dictd.c:476
+#, c-format
+msgid "%d definition found."
+msgid_plural "%d definitions found."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/dictd.c:687
+#, c-format
+msgid "Querying %s..."
+msgstr ""
+
+#: ../lib/dictd.c:746
+msgid "An error occurred while querying server information."
+msgstr "Serveri teabe tuvastamisel tekkis viga."
+
+#: ../lib/dictd.c:759
+#, c-format
+msgid "Server Information for \"%s\""
+msgstr "Serveri \"%s\" teave"
+
+#: ../lib/dictd.c:843
+msgid "The server doesn't offer any databases."
+msgstr "See server ei paku ühtegi tõlgete andmebaasi."
+
+#: ../lib/gui.c:362
+msgid "Copy Link"
+msgstr "Kopeeri link"
+
+#: ../lib/gui.c:372
+msgid "Search"
+msgstr "Otsi"
+
+#: ../lib/gui.c:605
+msgid "F_ind"
+msgstr "Ots_i"
+
+#. File Menu
+#: ../lib/gui.c:694
+msgid "_File"
+msgstr "_Fail"
+
+#: ../lib/gui.c:701 ../lib/gui.c:828
+msgid "Speed _Reader"
+msgstr "Kii_rlugemise harjutaja"
+
+#: ../lib/gui.c:716
+msgid "_Preferences"
+msgstr "_Eelistused"
+
+#: ../lib/gui.c:730 ../lib/gui.c:840
+msgid "_Quit"
+msgstr "_Sulge"
+
+#. Help Menu
+#: ../lib/gui.c:741
+msgid "_Help"
+msgstr "_Abi"
+
+#: ../lib/gui.c:748
+msgid "About"
+msgstr "Te_ave"
+
+#: ../lib/gui.c:852
+msgid "Search with:"
+msgstr "Kasuta otsimiseks:"
+
+#: ../lib/gui.c:856
+msgid "_Dictionary Server"
+msgstr "_Sõnastikuserverit"
+
+#: ../lib/gui.c:862
+msgid "_Web Service"
+msgstr "_Veebiteenust"
+
+#: ../lib/gui.c:870
+msgid "_Spell Checker"
+msgstr "_Õigekirjakontroll"
+
+#: ../lib/gui.c:998
+msgid "Copyright © 2006-2016 Xfce Development Team"
+msgstr "Autoriõigused © 2006-2016 Xfce Development Team"
+
+#: ../lib/gui.c:1001
+msgid "translator-credits"
+msgstr "Kristjan Siimson <epost@ksiimson.se> & tolge.pingviin.org\nPriit Jõerüüt 2020"
+
+#: ../lib/gui.c:1004
+msgid "Xfce4 Dictionary"
+msgstr "Xfce4 sõnastik"
+
+#: ../lib/prefs.c:52
+msgid "dict.leo.org - German <-> English"
+msgstr "dict.leo.org - Saksa <-> Inglise"
+
+#: ../lib/prefs.c:53
+msgid "dict.leo.org - German <-> French"
+msgstr "dict.leo.org - Saksa <-> Prantsuse"
+
+#: ../lib/prefs.c:54
+msgid "dict.leo.org - German <-> Spanish"
+msgstr "dict.leo.org - Saksa <-> Hispaania"
+
+#: ../lib/prefs.c:55
+msgid "dict.leo.org - German <-> Italian"
+msgstr "dict.leo.org - Saksa <-> Itaalia"
+
+#: ../lib/prefs.c:56
+msgid "dict.leo.org - German <-> Chinese"
+msgstr "dict.leo.org - Saksa <-> Mandariini"
+
+#: ../lib/prefs.c:57
+msgid "dict.cc - Dictionary"
+msgstr "dict.cc - sõnastik"
+
+#: ../lib/prefs.c:58
+msgid "Dictionary.com"
+msgstr "Dictionary.com"
+
+#: ../lib/prefs.c:59
+msgid "TheFreeDictionary.com"
+msgstr "TheFreeDictionary.com"
+
+#: ../lib/prefs.c:60
+msgid "Wikipedia, the free encyclopedia (EN)"
+msgstr "Wikipedia, vaba entsüklopeedia (inglise keeles)"
+
+#: ../lib/prefs.c:61
+msgid "Wiktionary, the free dictionary (EN)"
+msgstr "Wiktionary, vaba sõnastik (inglise keeles)"
+
+#: ../lib/prefs.c:62
+msgid "Merriam-Webster Online Dictionary"
+msgstr "Merriam-Webster'i veebisõnastik"
+
+#: ../lib/prefs.c:63
+msgid "Clear"
+msgstr "Puhasta"
+
+#: ../lib/prefs.c:98
+msgid "You have chosen an invalid dictionary."
+msgstr "Sa oled valinud vigase sõnastiku."
+
+#: ../lib/prefs.c:299
+msgid "General"
+msgstr "Üldine"
+
+#: ../lib/prefs.c:301
+msgid "<b>Default search method:</b>"
+msgstr "<b>Vaikimisi otsingumeetod:</b>"
+
+#: ../lib/prefs.c:306 ../lib/prefs.c:458
+msgid "Dictionary Server"
+msgstr "Sõnastikuserver"
+
+#: ../lib/prefs.c:315 ../lib/prefs.c:562
+msgid "Web Service"
+msgstr "Veebiteenus"
+
+#: ../lib/prefs.c:324 ../lib/prefs.c:609
+msgid "Spell Checker"
+msgstr "Õigekirjakontroll"
+
+#: ../lib/prefs.c:333
+msgid "Last used method"
+msgstr "Viimati kasutatud meetod"
+
+#: ../lib/prefs.c:342
+msgid "<b>Colors:</b>"
+msgstr "<b>Värvid:</b>"
+
+#: ../lib/prefs.c:348
+msgid "Links:"
+msgstr "Lingid:"
+
+#: ../lib/prefs.c:349
+msgid "Phonetics:"
+msgstr "Häälikuõpetus:"
+
+#: ../lib/prefs.c:350
+msgid "Spelled correctly:"
+msgstr "Õigesti kirjutatud:"
+
+#: ../lib/prefs.c:351
+msgid "Spelled incorrectly:"
+msgstr "Valesti kirjutatud:"
+
+#: ../lib/prefs.c:402
+msgid "<b>Panel Text Field:</b>"
+msgstr "<b>Otsinguväli ribal:</b>"
+
+#: ../lib/prefs.c:408
+msgid "Show text field in the panel"
+msgstr "Näita ribal otsinguvälja"
+
+#. panel entry size
+#: ../lib/prefs.c:415
+msgid "Text field size:"
+msgstr "Otsinguvälja suurus:"
+
+#. server address
+#: ../lib/prefs.c:461
+msgid "Server:"
+msgstr "Server:"
+
+#. server port
+#: ../lib/prefs.c:471
+msgid "Server Port:"
+msgstr "Serveri port:"
+
+#. dictionary
+#: ../lib/prefs.c:477 ../lib/prefs.c:635
+msgid "Dictionary:"
+msgstr "Sõnastik:"
+
+#: ../lib/prefs.c:480
+msgid "* (use all)"
+msgstr "* (kasuta kõiki)"
+
+#: ../lib/prefs.c:482
+msgid "! (use all, stop after first match)"
+msgstr "! (kasuta kõiki, kuid lõpeta otsing peale esimest tulemust)"
+
+#: ../lib/prefs.c:564
+msgid "<b>Web search URL:</b>"
+msgstr "<b>Veebiotsingu URL:</b>"
+
+#: ../lib/prefs.c:569
+msgid "URL:"
+msgstr "URL:"
+
+#: ../lib/prefs.c:589
+msgid ""
+"Enter the URL of a web site which offers translation or dictionary services."
+" Use {word} as placeholder for the searched word."
+msgstr "Sisesta tõlke- ja õigekirjateenuseid pakkuva veebiteenuse URL. Kasuta {word} otsingusõna kohatäitena."
+
+#: ../lib/prefs.c:611
+msgid "Spell Check Program:"
+msgstr "Õigekirjakontrolli rakendus:"
+
+#: ../lib/prefs.c:628
+msgid ""
+"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"The icon shows whether the entered command exists.</i>"
+msgstr "<i>Õigekirjakontrolli rakendus võib olla 'enchant', 'aspell', 'ispell' või mis iganes muu tarkvara, mis ühildub ispell'i käsustruktuuriga.\nIkoon märgib seda, kas antud rakendus on ka tegelikult olemas.</i>"
