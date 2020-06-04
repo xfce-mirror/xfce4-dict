@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Arman Harutyunyan <arman.harut468@gmail.com>, 2020
 # Hayk Andreasyan <hayk.andreasyan@realschool.am>, 2019
 # Real School <localization@ehayq.am>, 2019
 msgid ""
@@ -10,8 +11,8 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2020-05-25 06:58+0000\n"
-"Last-Translator: Real School <localization@ehayq.am>\n"
+"PO-Revision-Date: 2020-06-04 11:35+0000\n"
+"Last-Translator: Arman Harutyunyan <arman.harut468@gmail.com>\n"
 "Language-Team: Eastern Armenian (http://www.transifex.com/xfce/xfce-apps/language/hye/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -197,11 +198,11 @@ msgstr[1] "(ցուցադրում է %d բառ ժամանակահատուածու
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Սա հեշտ արագ ընթերցման աւգտարար է, որը կաւգնի Ձեզ սովորել ընթերցել աւելի արագ։ Այդ իրագործուում է ցուցադրիչում բառերի արագ թարտմամբ։"
+msgstr "Սա հեշտ եւ արագ ընթերցման աւգտարար է, որը կաւգնի Ձեզ սովորել ընթերցել աւելի արագ։ Այդ իրագործուում է ցուցադրիչում բառերի արագ թարթմամբ։"
 
 #: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
-msgstr "_Բառ րոպեի ընթացքում․"
+msgstr "_Բառ րոպէի ընթացքում․"
 
 #: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
@@ -213,14 +214,14 @@ msgstr "Բառերի _խմբաւորում․"
 
 #: ../lib/speedreader.c:641
 msgid "_Font Size:"
-msgstr "_Տարատեսակի չափս․"
+msgstr "_Տառատեսակի չափս․"
 
 #: ../lib/speedreader.c:662
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr "Ներմուծեք այստեղ  գրոյթ, որը կցանկանաք կարդալ։\n\nՀարմարուեք, եւ սեղմեք Սկսել, ընթերցը սկսելու համար։"
+msgstr "Ներմուծէք այստեղ  գրոյթ, որը կցանկանաք կարդալ։\n\nՀարմարուէք, եւ սեղմէք Սկսել, ընթերցը սկսելու համար։"
 
 #: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
@@ -246,11 +247,11 @@ msgstr "_Փակել"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Որոնուած URL֊ն դատարկ է։ Ստուգեք Ձեր  նախընտրութիւնները։"
+msgstr "Որոնուած URL֊ն դատարկ է։ Ստուգէք Ձեր  նախընտրութիւնները։"
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Չյաջողուեց բացել զննիչը։ Ստուգեք Ձեր նախընտրութիւնները։"
+msgstr "Չյաջողուեց բացել զննիչը։ Ստուգէք Ձեր նախընտրութիւնները։"
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
@@ -286,7 +287,7 @@ msgstr "Սպասարկիչը պատրաստ չէ։"
 
 #: ../lib/dictd.c:423
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Հատկորոշուած է անվաւեր բառարան։ Ստուգեք Ձեր նախընտրութիւնները։ "
+msgstr "Հատկորոշուած է անվաւեր բառարան։ Ստուգէք Ձեր նախընտրութիւնները։ "
 
 #: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
 msgid "Unknown error while querying the server."
@@ -306,7 +307,7 @@ msgstr "\"%s\" ֊ի համար համընկնումներ չեն գտնուել�
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d հստակութիւն է գտնուել։"
-msgstr[1] "%d հստակութիւններ են գտնուել։"
+msgstr[1] "%d յստակութիւններ են գտնուել։"
 
 #: ../lib/dictd.c:687
 #, c-format
@@ -394,23 +395,23 @@ msgstr "Xfce4 բառարան"
 
 #: ../lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
-msgstr "dict.leo.org - Գերմաներեն <-> Անգլերեն"
+msgstr "dict.leo.org - Գերմաներէն <-> Անգլերէն"
 
 #: ../lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
-msgstr "dict.leo.org - Գերմաներեն <-> Ֆրանսերեն"
+msgstr "dict.leo.org - Գերմաներէն <-> Ֆրանսերէն"
 
 #: ../lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org - Գերմաներեն <-> Իսպաներեն"
+msgstr "dict.leo.org - Գերմաներէն <-> Իսպաներէն"
 
 #: ../lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
-msgstr "dict.leo.org - Գերմաներեն <-> Իտալերեն"
+msgstr "dict.leo.org - Գերմաներէն <-> Իտալերէն"
 
 #: ../lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
-msgstr "dict.leo.org - Գերմաներեն <-> Չինարեն"
+msgstr "dict.leo.org - Գերմաներէն <-> Չինարէն"
 
 #: ../lib/prefs.c:57
 msgid "dict.cc - Dictionary"
@@ -536,7 +537,7 @@ msgstr "URL․"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr "Մուտքագրեք URL կայք, որը առաջարկում է թարգմանութիւն կամ բառարանի ծառայութիւններ։ Աւգտագործեք  {word} որպէս որոնուած բառի լրադաշտ։"
+msgstr "Մուտքագրէք URL կայք, որը առաջարկում է թարգմանութիւն կամ բառարանի ծառայութիւններ։ Աւգտագործէք {word} որպէս որոնուած բառի լրադաշտ։"
 
 #: ../lib/prefs.c:611
 msgid "Spell Check Program:"
@@ -546,4 +547,4 @@ msgstr "Ուղղագրութեան ստուգման ծրագիր․"
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>Ուղղագրութեան ստուգման ծրագիրը կարող է լինել 'enchant', 'aspell', 'ispell' կամ այլ ուղղ․ ստուգման ծրագիր որը համատեղելի է ispell հրամանի հետ։\nՊատկերակը ցոյց է տալիս, թե արդյոք մուտքագրուած հրամանը գոյութիւն ունի։</i>"
+msgstr "<i>Ուղղագրութեան ստուգման ծրագիրը կարող է լինել 'enchant', 'aspell', 'ispell' կամ այլ ուղղ․ ստուգման ծրագիր որը համատեղելի է ispell հրամանի հետ։\nՊատկերակը ցոյց է տալիս, թէ արդեաւք մուտքագրուած հրամանը գոյութիւն ունի։</i>"
