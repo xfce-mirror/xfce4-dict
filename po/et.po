@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2020-06-02 09:59+0000\n"
+"PO-Revision-Date: 2020-06-04 14:21+0000\n"
 "Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/xfce/xfce-apps/language/et/)\n"
 "MIME-Version: 1.0\n"
@@ -385,7 +385,7 @@ msgstr "Autoriõigused © 2006-2016 Xfce Development Team"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
-msgstr "Kristjan Siimson <epost@ksiimson.se> & tolge.pingviin.org\nPriit Jõerüüt 2020"
+msgstr "Kristjan Siimson <epost@ksiimson.se> &amp; tolge.pingviin.org\nPriit Jõerüüt 2020"
 
 #: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
