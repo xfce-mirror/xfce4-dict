@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2020-06-04 14:21+0000\n"
+"PO-Revision-Date: 2020-06-06 10:40+0000\n"
 "Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/xfce/xfce-apps/language/et/)\n"
 "MIME-Version: 1.0\n"
@@ -39,19 +39,19 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
 msgid "Search term"
-msgstr ""
+msgstr "Otsingusõna"
 
 #: ../src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr ""
+msgstr "Otsi antud teksti sõnastikuserverist (RFC 2229 spetsifikatsiooni alusel)"
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
-msgstr ""
+msgstr "Otsi antud teksti veebi-põhisest otsingumootorist"
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
-msgstr ""
+msgstr "Otsi antud teksti õigekirjakontrolliprogrammiga"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
@@ -98,13 +98,13 @@ msgstr "Õigekirjakontrolli tulemused:"
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Leidsin %d soovituse"
+msgstr[1] "Leidsin %d soovitust"
 
 #: ../lib/spell.c:103
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr ""
+msgstr "Soovitused otsingusõnale \"%s\" (%s):"
 
 #: ../lib/spell.c:120
 #, c-format
@@ -114,14 +114,14 @@ msgstr ""
 #: ../lib/spell.c:132
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr ""
+msgstr "Ei leidnud soovitusi otsingusõnale \"%s\" (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:162
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr ""
+msgstr "Viga \"%s\" käivitamisel (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
@@ -129,12 +129,12 @@ msgstr ""
 
 #: ../lib/spell.c:206
 msgid "Invalid input"
-msgstr ""
+msgstr "Vigane sisend"
 
 #: ../lib/spell.c:245
 #, c-format
 msgid "Process failed (%s)"
-msgstr ""
+msgstr "Protsessi töö lõppes veaga (%s)"
 
 #: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
@@ -162,15 +162,15 @@ msgstr "_Tagasi"
 
 #: ../lib/speedreader.c:268
 msgid "Speed Reader"
-msgstr ""
+msgstr "Kiirlugeja"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr ""
+msgstr "Sa pead sisestama teksti, mida me kiirlugemiseks kasutame"
 
 #: ../lib/speedreader.c:526
 msgid "Choose a file to load"
-msgstr ""
+msgstr "Vali fail, mida kiirlugemisel kasutada"
 
 #: ../lib/speedreader.c:529
 msgid "_Cancel"
@@ -183,36 +183,36 @@ msgstr "_Ava"
 #: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr ""
+msgstr "Faili '%s' ei õnnestunud laadida."
 
 #: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(kuva korraga %d sõna)"
+msgstr[1] "(kuva korraga %d sõna)"
 
 #: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr ""
+msgstr "See on lihtne rakendus, millega saad end õpetada kiiremini lugema. Õppemeetodiks on üksikute sõnade kiire kuvamine lugemsijärjekorras ekraanil."
 
 #: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
-msgstr ""
+msgstr "_Sõnu minutis:"
 
 #: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
-msgstr ""
+msgstr "_Märgista laused ja lõigud"
 
 #: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
-msgstr ""
+msgstr "Sõnade _rühmitamine:"
 
 #: ../lib/speedreader.c:641
 msgid "_Font Size:"
-msgstr ""
+msgstr "_Fondi suurus:"
 
 #: ../lib/speedreader.c:662
 msgid ""
@@ -223,16 +223,16 @@ msgstr ""
 
 #: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
-msgstr ""
+msgstr "Lae faili sisu"
 
 #: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr ""
+msgstr "Tühjenda tekstiväli ja aseta tekst lõikepuhvrist"
 
 #: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
-msgstr ""
+msgstr "Tühjenda tekstivälja sisu"
 
 #: ../lib/speedreader.c:696
 msgid "_Start"
@@ -249,11 +249,11 @@ msgstr "Otsingu aadress on määramata. Palun kontrollige oma seadistusi."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr ""
+msgstr "Brauseri avamine ei õnnestunud. Palun kontrolli oma eelistusi."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
-msgstr ""
+msgstr "Vigane sisend, mis ei ole UTF-8 kodeeringus"
 
 #: ../lib/common.c:568
 msgid "Error"
@@ -261,7 +261,7 @@ msgstr "Viga"
 
 #: ../lib/common.c:571
 msgid "warning"
-msgstr ""
+msgstr "hoiatus"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
