@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2020-06-06 10:40+0000\n"
+"PO-Revision-Date: 2020-06-06 14:01+0000\n"
 "Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/xfce/xfce-apps/language/et/)\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Valmis"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:331
 msgid "Look up a word"
-msgstr ""
+msgstr "Otsi sõna tähendust"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
 msgid "Search term"
@@ -55,15 +55,15 @@ msgstr "Otsi antud teksti õigekirjakontrolliprogrammiga"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
-msgstr ""
+msgstr "Aseta fookus ribal asuvale tekstiväljale"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr ""
+msgstr "Käivita eraldi rakendus ka siis kui ta on ribale asetatud"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr ""
+msgstr "Võta lõikelaual ESMANE valik ning kasuta seda otsingusõnana"
 
 #: ../src/xfce4-dict.c:55
 msgid "Be verbose"
@@ -84,11 +84,11 @@ msgstr "Palun teata vigadest <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
-msgstr ""
+msgstr "Sõnastikeklient"
 
 #: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
-msgstr ""
+msgstr "Klientrakendus erinevatest sõnastikest päringute tegemiseks"
 
 #: ../lib/spell.c:73
 msgid "Spell Checker Results:"
@@ -109,7 +109,7 @@ msgstr "Soovitused otsingusõnale \"%s\" (%s):"
 #: ../lib/spell.c:120
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr ""
+msgstr "\"%s\" õigekirjas ei ole vigu (%s)."
 
 #: ../lib/spell.c:132
 #, c-format
@@ -125,7 +125,7 @@ msgstr "Viga \"%s\" käivitamisel (%s)."
 
 #: ../lib/spell.c:200
 msgid "Please set the spell check command in the preferences dialog."
-msgstr ""
+msgstr "Palun seadista kasutatav õigekirjakontrollirakendus."
 
 #: ../lib/spell.c:206
 msgid "Invalid input"
@@ -138,23 +138,23 @@ msgstr "Protsessi töö lõppes veaga (%s)"
 
 #: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
-msgstr ""
+msgstr "Pe_ata korraks"
 
 #: ../lib/speedreader.c:75
 msgid "_Resume"
-msgstr ""
+msgstr "_Jätka"
 
 #: ../lib/speedreader.c:248 ../lib/speedreader.c:697
 msgid "S_top"
-msgstr ""
+msgstr "Lõpe_ta"
 
 #: ../lib/speedreader.c:256
 msgid "Running"
-msgstr ""
+msgstr "Otsin"
 
 #: ../lib/speedreader.c:259
 msgid "Finished"
-msgstr ""
+msgstr "Valmis"
 
 #: ../lib/speedreader.c:260
 msgid "_Back"
@@ -219,7 +219,7 @@ msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr ""
+msgstr "Sisesta siia tekst mida tahaksid lugeda.\n\nVõta rahulikult, säti ennast mugavalt ning kiirlugemise harjutamiseks vajuta nuppu Alusta."
 
 #: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
@@ -268,16 +268,16 @@ msgstr "hoiatus"
 #: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr ""
+msgstr "Otsi \"%s\" kasutades \"%s\" veebiteenust"
 
 #: ../lib/dictd.c:388
 msgid "Web Search:"
-msgstr ""
+msgstr "Veebiotsing:"
 
 #: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
 #: ../lib/dictd.c:823
 msgid "Could not connect to server."
-msgstr ""
+msgstr "Ühendus serveriga ei õnnestunud."
 
 #: ../lib/dictd.c:416
 msgid "The server is not ready."
@@ -293,24 +293,24 @@ msgstr "Serveri päringu ajal ilmnes tundmatu tõrge."
 
 #: ../lib/dictd.c:446
 msgid "Dictionary Results:"
-msgstr ""
+msgstr "Sõnastikust leitud tulemused:"
 
 #: ../lib/dictd.c:449
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr ""
+msgstr "Ei leidnud vasteid otsingusõnale \"%s\"."
 
 #: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Leidsin %d vastuse."
+msgstr[1] "Leidsin %d vastust."
 
 #: ../lib/dictd.c:687
 #, c-format
 msgid "Querying %s..."
-msgstr ""
+msgstr "Teen päringut otsingusõnale %s..."
 
 #: ../lib/dictd.c:746
 msgid "An error occurred while querying server information."
@@ -377,7 +377,7 @@ msgstr "_Veebiteenust"
 
 #: ../lib/gui.c:870
 msgid "_Spell Checker"
-msgstr "_Õigekirjakontroll"
+msgstr "_Õigekirjakontrolli"
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2016 Xfce Development Team"
@@ -437,7 +437,7 @@ msgstr "Merriam-Webster'i veebisõnastik"
 
 #: ../lib/prefs.c:63
 msgid "Clear"
-msgstr "Puhasta"
+msgstr "Eemalda valik"
 
 #: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
