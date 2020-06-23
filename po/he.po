@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Elishai Eliyahu <e1907@mm.st>, 2016-2017,2019
+# Omer, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2019-08-02 22:31+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2020-06-23 21:33+0000\n"
+"Last-Translator: Omer\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-apps/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,15 +48,15 @@ msgstr "Search the given text using a Dict server(RFC 2229)"
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
-msgstr "Search the given text using a web-based search engine"
+msgstr "חפש את הטקסט שהובא בעזרת מנוע חיפוש מבוסס־רשת"
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
-msgstr "Check the given text with a spell checker"
+msgstr "בדוק את הטקסט שהובא עם בודק איות"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
-msgstr "Grab the focus on the text field in the panel"
+msgstr "אסוף את ההתמקדות על שדה הטקסט בלוח"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -67,20 +68,20 @@ msgstr "Grabs the PRIMARY selection content and uses it as search text"
 
 #: ../src/xfce4-dict.c:55
 msgid "Be verbose"
-msgstr "Be verbose"
+msgstr "הרבה מלל"
 
 #: ../src/xfce4-dict.c:56
 msgid "Show version information"
-msgstr "Show version information"
+msgstr "הצג מידע גרסה"
 
 #: ../src/xfce4-dict.c:129
 msgid "[TEXT]"
-msgstr "[TEXT]"
+msgstr "[טקסט]"
 
 #: ../src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Please report bugs to <%s>."
+msgstr "אנא דווח על באגים ל־ <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
@@ -185,22 +186,22 @@ msgstr "_פתח"
 #: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "לא היתה אפשרות להטעין את הקובץ '%s'."
+msgstr "לא היתה אפשרות לטעון את הקובץ \"%s\"."
 
 #: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] "(הצג מילה %d במכה)"
-msgstr[1] "(הצג %d מילים במכה)"
-msgstr[2] "(הצג %d מילים במכה)"
-msgstr[3] "(הצג %d מילים במכה)"
+msgstr[0] "(הצג מילה %d בפעם אחת)"
+msgstr[1] "(הצג %d מילים בפעם אחת)"
+msgstr[2] "(הצג %d מילים בפעם אחת)"
+msgstr[3] "(הצג %d מילים בפעם אחת)"
 
 #: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "זהו כלי עזר קל לקריאה מהירה כדי לעזור לך לקרוא מהר יותר. זה עוזה זאת על ידי הבזקת מילים בקצב מהיר על המרקע."
+msgstr "זהו כלי עזר קל לקריאה מהירה כדי לעזור לך לקרוא מהר יותר. הוא עושה זאת על ידי הבזקת מילים בקצב מהיר על המסך."
 
 #: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
