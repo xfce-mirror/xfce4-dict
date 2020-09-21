@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
     <gresource prefix="/org/xfce/dict">
-        <file alias="icon">xfce4-dict.svg</file>
+        <file alias="icon">org.xfce.Dictionary.svg</file>
     </gresource>
 </gresources>

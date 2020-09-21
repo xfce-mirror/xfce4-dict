@@ -43,10 +43,10 @@ gui.c: resources.c dbus.c
 common.c: dbus.c
 
 resources.c: resources.h
-	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-source --c-name dict
+	glib-compile-resources resources.xml --sourcedir=../icons/scalable --generate-source --c-name dict
 
 resources.h:
-	glib-compile-resources resources.xml --sourcedir=../pixmaps --generate-header --c-name dict
+	glib-compile-resources resources.xml --sourcedir=../icons/scalable --generate-header --c-name dict
 
 dbus.h dbus.c:
 	gdbus-codegen --interface-prefix org.xfce --generate-c-code dbus dbus.xml
