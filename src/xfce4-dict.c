@@ -133,7 +133,7 @@ gint main(gint argc, gchar *argv[])
 	g_option_context_parse(context, &argc, &argv, NULL);
 
 	gtk_init(&argc, &argv);
-    gtk_window_set_default_icon_name("xfce4-dict");
+    gtk_window_set_default_icon_name("org.xfce.Dictionary");
 
 	g_option_context_free(context);
 
