@@ -1,3 +1,18 @@
+0.8.4
+======
+- Update URLs and use https where possible
+- Fix font size in speedreader (#3)
+- Added new icons and use reverse DNS file names
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United Kingdom),
+  Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic,
+  Indonesian, Italian, Japanese, Kazakh, Korean, Latvian, Lithuanian,
+  Malay, Norwegian Bokmål, Occitan (post 1500), Polish, Portuguese,
+  Russian, Serbian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish,
+  Uighur, Ukrainian, Urdu, Urdu (Pakistan), Vietnamese
+
 xfce4-dict-0.8.3
 ================
 - Allow compilation with panel 4.15
@@ -533,4 +548,3 @@ xfce4-dict-0.4.0
 - * Added "Clear" button to the main window. * New release: 0.2.0 
   (Enrico Tröger)
 - Fixed typo. (Enrico Tröger)
-
