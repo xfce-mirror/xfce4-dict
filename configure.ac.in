@@ -11,7 +11,7 @@ m4_define([xfce4_dict_version], [xfce4_dict_version_major().xfce4_dict_version_m
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_COPYRIGHT([Copyright (c) 2006-2016 Xfce Development Team. All rights reserved.])
+AC_COPYRIGHT([Copyright (c) 2006-2020 Xfce Development Team. All rights reserved.])
 AC_INIT([xfce4-dict], [xfce4_dict_version], [https://gitlab.xfce.org/apps/xfce4-dict], [xfce4-dict])
 AC_PREREQ([2.60])
 AC_CONFIG_MACRO_DIR([m4])
