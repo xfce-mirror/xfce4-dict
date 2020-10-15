@@ -49,17 +49,17 @@ enum
 
 static const web_dict_t web_dicts[] =
 {
-	{ N_("dict.leo.org - German <-> English"), "http://dict.leo.org/ende?search={word}" },
-	{ N_("dict.leo.org - German <-> French"), "http://dict.leo.org/frde?search={word}" },
-	{ N_("dict.leo.org - German <-> Spanish"), "http://dict.leo.org/esde?search={word}" },
-	{ N_("dict.leo.org - German <-> Italian"), "http://dict.leo.org/itde?search={word}" },
-	{ N_("dict.leo.org - German <-> Chinese"), "http://dict.leo.org/chde?search={word}" },
-	{ N_("dict.cc - Dictionary"), "http://www.dict.cc/?s={word}" },
-	{ N_("Dictionary.com"), "http://dictionary.reference.com/search?db=dictionary&q={word}" },
-	{ N_("TheFreeDictionary.com"), "http://www.thefreedictionary.com/_/partner.aspx?Word={word}&Set=www&mode=w" },
-	{ N_("Wikipedia, the free encyclopedia (EN)"), "http://en.wikipedia.org/wiki/{word}" },
-	{ N_("Wiktionary, the free dictionary (EN)"), "http://en.wiktionary.org/wiki/{word}" },
-	{ N_("Merriam-Webster Online Dictionary"), "http://www.merriam-webster.com/dictionary/{word}" },
+	{ N_("dict.leo.org - German <-> English"), "https://dict.leo.org/ende?search={word}" },
+	{ N_("dict.leo.org - German <-> French"), "https://dict.leo.org/frde?search={word}" },
+	{ N_("dict.leo.org - German <-> Spanish"), "https://dict.leo.org/esde?search={word}" },
+	{ N_("dict.leo.org - German <-> Italian"), "https://dict.leo.org/itde?search={word}" },
+	{ N_("dict.leo.org - German <-> Chinese"), "https://dict.leo.org/chde?search={word}" },
+	{ N_("dict.cc - Dictionary"), "https://www.dict.cc/?s={word}" },
+	{ N_("Dictionary.com"), "https://dictionary.reference.com/search?db=dictionary&q={word}" },
+	{ N_("TheFreeDictionary.com"), "https://www.thefreedictionary.com/_/partner.aspx?Word={word}&Set=www&mode=w" },
+	{ N_("Wikipedia, the free encyclopedia (EN)"), "https://en.wikipedia.org/wiki/{word}" },
+	{ N_("Wiktionary, the free dictionary (EN)"), "https://en.wiktionary.org/wiki/{word}" },
+	{ N_("Merriam-Webster Online Dictionary"), "https://www.merriam-webster.com/dictionary/{word}" },
 	{ N_("Clear"), "" },
 	{ NULL, NULL }
 };
