@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Daniel Muñiz Fontoira <dani@damufo.com>, 2018-2019
+# Daniel Muñiz Fontoira <dani@damufo.com>, 2018-2020
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2008-2009
 # Miguel Anxo Bouzada <mbouzada@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2019-08-20 20:11+0000\n"
+"POT-Creation-Date: 2020-10-15 12:47+0200\n"
+"PO-Revision-Date: 2020-10-16 10:44+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-apps/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -29,17 +29,17 @@ msgstr "Dicionario"
 msgid "A plugin to query different dictionaries."
 msgstr "Un engadido para consultar diferentes dicionarios."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:269
-#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:273
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
 #: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Preparado"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "Buscar unha palabra"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Buscar termo"
 
@@ -382,8 +382,8 @@ msgid "_Spell Checker"
 msgstr "_Corrector ortográfico"
 
 #: ../lib/gui.c:998
-msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Dereitos de autoría © 2006-2016 Equipo de desenvolvemento de Xfce"
+msgid "Copyright © 2006-2020 Xfce Development Team"
+msgstr "Copyright © 2006-2020 Xfce Development Team"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
