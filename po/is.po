@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2019-08-02 22:31+0000\n"
+"POT-Creation-Date: 2020-10-15 12:47+0200\n"
+"PO-Revision-Date: 2020-10-15 10:47+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-apps/language/is/)\n"
 "MIME-Version: 1.0\n"
@@ -28,17 +28,17 @@ msgstr "Orðasafn"
 msgid "A plugin to query different dictionaries."
 msgstr "Hjálparforrit (viðbót) til að leita í mismunandi orðasöfnum."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:269
-#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:273
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
 #: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Tilbúið"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "Fletta upp orði"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Leitarorð"
 
@@ -381,8 +381,8 @@ msgid "_Spell Checker"
 msgstr "_Stafsetningarleiðrétting"
 
 #: ../lib/gui.c:998
-msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Höfundarréttur © 2006-2016 Xfce þróunarteymið"
+msgid "Copyright © 2006-2020 Xfce Development Team"
+msgstr ""
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
