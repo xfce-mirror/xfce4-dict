@@ -6,14 +6,14 @@
 # Aputsiak Niels Janussen <aj@isit.gl>, 2013
 # Aputsiak Niels Janussen <aj@isit.gl>, 2013
 # Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007
-# scootergrisen, 2016-2019
+# scootergrisen, 2016-2020
 # Søren Waaben Hansen <soren@minorflaw.dk>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2020-10-13 16:17+0000\n"
+"POT-Creation-Date: 2020-10-15 12:47+0200\n"
+"PO-Revision-Date: 2020-10-15 15:29+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -31,17 +31,17 @@ msgstr "Ordbog"
 msgid "A plugin to query different dictionaries."
 msgstr "Et plugin, til at slå op i forskellige ordbøger."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:269
-#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:273
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
 #: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Klar"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "Slå et ord op"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Søg efter tekst"
 
@@ -384,8 +384,8 @@ msgid "_Spell Checker"
 msgstr "_Stavekontrol"
 
 #: ../lib/gui.c:998
-msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Ophavsret © 2006-2016 Xfce's udviklingshold"
+msgid "Copyright © 2006-2020 Xfce Development Team"
+msgstr "Ophavsret © 2006-2020 Xfce's udviklingshold"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
