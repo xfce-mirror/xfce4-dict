@@ -6,15 +6,15 @@
 # Allan Nordhøy <epost@anotheragency.no>, 2014
 # Allan Nordhøy <epost@anotheragency.no>, 2016-2017
 # Harald H. <haarektrans@gmail.com>, 2014-2015
-# Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2019
+# Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2019-2020
 # Terje Uriansrud <ter@operamail.com>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2019-08-02 22:31+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2020-10-15 12:47+0200\n"
+"PO-Revision-Date: 2020-10-16 03:41+0000\n"
+"Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,17 +31,17 @@ msgstr "Ordliste"
 msgid "A plugin to query different dictionaries."
 msgstr "Ordliste for hurtig tilgang til forskjellige ordlister."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:269
-#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:273
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
 #: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Klar"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "Søk opp et ord"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Søkestreng:"
 
@@ -384,8 +384,8 @@ msgid "_Spell Checker"
 msgstr "_Stavekontroll"
 
 #: ../lib/gui.c:998
-msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Kopirett © 2006-2016 Xfce Utviklingsteam"
+msgid "Copyright © 2006-2020 Xfce Development Team"
+msgstr "Opphavsrett © 2006-2020 Xfce Utviklingsteam"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
