@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Balázs Meskó <mesko.balazs@fsf.hu>, 2018
+# Balázs Meskó <meskobalazs@mailbox.org>, 2018
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009
 # Gábor P., 2017,2019
 # Attila SZERVÁC <sas@321.hu>, 2006
@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2019-08-02 22:31+0000\n"
+"POT-Creation-Date: 2020-10-15 12:47+0200\n"
+"PO-Revision-Date: 2020-10-15 10:47+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Hungarian (http://www.transifex.com/xfce/xfce-apps/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -30,17 +30,17 @@ msgstr "Szótár"
 msgid "A plugin to query different dictionaries."
 msgstr "Különböző szótárak lekérdezése"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:269
-#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:273
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
 #: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Kész"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "Szó keresése"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Keresőkifejezés"
 
@@ -383,8 +383,8 @@ msgid "_Spell Checker"
 msgstr "_Helyesírás-ellenőrző"
 
 #: ../lib/gui.c:998
-msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Copyright © 2006-2016 Xfce fejlesztőcsapat"
+msgid "Copyright © 2006-2020 Xfce Development Team"
+msgstr ""
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
