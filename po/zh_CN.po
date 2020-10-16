@@ -6,15 +6,15 @@
 # Chipong Luo <chipong.luo@yahoo.com>, 2011-2013
 # Hunt Xu <huntxu@live.cn>, 2008-2010
 # Mingcong Bai <jeffbai@aosc.xyz>, 2016
-# Cally Mal <zhouxiaobo.500@gmail.com>, 2016
-# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019
+# Xiaobo Zhou <zhouxiaobo.500@gmail.com>, 2016
+# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2019-08-02 22:31+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2020-10-15 12:47+0200\n"
+"PO-Revision-Date: 2020-10-16 00:34+0000\n"
+"Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/xfce/xfce-apps/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,17 +31,17 @@ msgstr "词典"
 msgid "A plugin to query different dictionaries."
 msgstr "查询不同词典的插件。"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:269
-#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:273
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
 #: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "就绪"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "查找单词"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
 msgstr "搜索短语"
 
@@ -381,8 +381,8 @@ msgid "_Spell Checker"
 msgstr "拼写检查器(_S)"
 
 #: ../lib/gui.c:998
-msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Copyright © 2006-2016 Xfce 开发团队"
+msgid "Copyright © 2006-2020 Xfce Development Team"
+msgstr "版权所有 © 2006-2020 Xfce 开发团队"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
