@@ -5,7 +5,7 @@
 # Translators:
 # Grzegorz Gębczyński <grzegorz.gebczynski@gmail.com>, 2016
 # Marcin Mikołajczak <me@mkljczk.pl>, 2016
-# No Ne, 2019
+# No Ne, 2019-2020
 # Piotr Maliński <riklaunim@gmail.com>, 2007
 # Piotr Sokół <psokol.l10n@gmail.com>, 2009,2013
 # Piotr Strębski <strebski@gmail.com>, 2017
@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2019-08-02 22:31+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2020-10-15 12:47+0200\n"
+"PO-Revision-Date: 2020-10-15 14:48+0000\n"
+"Last-Translator: No Ne\n"
 "Language-Team: Polish (http://www.transifex.com/xfce/xfce-apps/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,17 +33,17 @@ msgstr "Słownik"
 msgid "A plugin to query different dictionaries."
 msgstr "Umożliwia wyszukiwanie wyrażeń w różnych słownikach"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:269
-#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:273
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
 #: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Gotowy"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "Wyszukuje wyrażenie"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Wyszukiwanie..."
 
@@ -392,8 +392,8 @@ msgid "_Spell Checker"
 msgstr "_Sprawdzanie pisowni"
 
 #: ../lib/gui.c:998
-msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Prawa autorskie © 2006-2016 Zespół twórców Xfce"
+msgid "Copyright © 2006-2020 Xfce Development Team"
+msgstr "Prawa autorskie © 2006-2020 Zespół twórców Xfce"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
