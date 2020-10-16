@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Ammuu5, 2017
-# Jari Rahkonen <inactive+jari@transifex.com>, 2012
+# 9e06e299e74d2541309887ba0f7d6eee_126c110 <673225c2b34f8d31a8e0b8e4dc2dd62e_1152>, 2012
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2013,2019
 # Pasi Lallinaho <pasi@shimmerproject.org>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 00:31+0200\n"
-"PO-Revision-Date: 2019-08-02 22:31+0000\n"
+"POT-Creation-Date: 2020-10-15 12:47+0200\n"
+"PO-Revision-Date: 2020-10-15 10:47+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/xfce/xfce-apps/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -30,17 +30,17 @@ msgstr "Sanakirja"
 msgid "A plugin to query different dictionaries."
 msgstr "Käytä verkkosanakirjoja."
 
-#: ../panel-plugin/xfce4-dict-plugin.c:269
-#: ../panel-plugin/xfce4-dict-plugin.c:397 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:273
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
 #: ../lib/spell.c:241 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Valmis"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:331
+#: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "Tarkista sana"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:370 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
 msgstr "Hakusana"
 
@@ -383,8 +383,8 @@ msgid "_Spell Checker"
 msgstr "Oi_koluku"
 
 #: ../lib/gui.c:998
-msgid "Copyright © 2006-2016 Xfce Development Team"
-msgstr "Tekijänoikeudet © 2006-2016 Xfce:n kehitystiimi"
+msgid "Copyright © 2006-2020 Xfce Development Team"
+msgstr ""
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
