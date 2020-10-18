@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010
+# Emin Tufan <etcetin@gmail.com>, 2020
 # Necdet Yücel <necdetyucel@gmail.com>, 2015,2017
 # Serdar Sağlam <teknomobil@msn.com>, 2019
 # Volkan Gezer <volkangezer@gmail.com>, 2013
@@ -12,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-10-15 10:47+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2020-10-18 12:53+0000\n"
+"Last-Translator: Emin Tufan <etcetin@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +39,7 @@ msgstr "Hazır"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
-msgstr "Kelime ara"
+msgstr "Sözcük ara"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
@@ -193,17 +194,17 @@ msgstr "'%s' dosyası yüklenemedi."
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(bir seferde %d kelime göster)"
-msgstr[1] "(bir seferde %d kelime göster)"
+msgstr[1] "(bir kezde%d sözcük göster)"
 
 #: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Bu, daha hızlı okumanız için size yardım edecek bir kolay hızlı okuma uygulamasıdır. Ekranda bir hız oranında kelimeler yanıp yanar."
+msgstr "Bu, daha hızlı okumanız için size yardım edecek bir kolay hızlı okuma uygulamasıdır. Ekranda bir hız oranında sözcükler yanıp yanar."
 
 #: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
-msgstr "Dakikadaki _Kelime:"
+msgstr "Dakikadaki _Sözcük:"
 
 #: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
@@ -211,7 +212,7 @@ msgstr "Paragrafları _işaretle"
 
 #: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
-msgstr "Kelime _Toplama:"
+msgstr "Sözcük _Toplama:"
 
 #: ../lib/speedreader.c:641
 msgid "_Font Size:"
@@ -248,11 +249,11 @@ msgstr "_Kapat"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Arama adresi boş. Lütfen ayarlarınızı kontrol edin."
+msgstr "Arama adresi boş. Lütfen ayarlarınızı denetleyin."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Tarayıcı açılamadı. Lütfen ayarlarınızı kontrol edin."
+msgstr "Tarayıcı açılamadı. Lütfen ayarlarınızı denetleyin."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
@@ -288,7 +289,7 @@ msgstr "Sunucu hazır değil."
 
 #: ../lib/dictd.c:423
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Geçersiz sözlük belirtildi. Lütfen ayarlarınızı kontrol edin."
+msgstr "Geçersiz sözlük belirtildi. Lütfen ayarlarınızı denetleyin."
 
 #: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
 msgid "Unknown error while querying the server."
@@ -384,7 +385,7 @@ msgstr "_Yazım Denetçisi"
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
-msgstr ""
+msgstr "Telif Hakkı © 2006-2020 Xfce Geliştirme Takımı"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
