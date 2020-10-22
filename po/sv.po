@@ -5,14 +5,15 @@
 # Translators:
 # Arve Eriksson <031299870@telia.com>, 2020
 # Daniel Nylander <po@danielnylander.se>, 2008-2009
+# Luna Jernberg <bittin@cafe8bitar.se>, 2020
 # Påvel Nicklasson<pavel@frimix.se>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-10-15 10:47+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2020-10-22 20:48+0000\n"
+"Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>\n"
 "Language-Team: Swedish (http://www.transifex.com/xfce/xfce-apps/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -383,7 +384,7 @@ msgstr "_Stavningskontroll"
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
-msgstr ""
+msgstr "Copyright © 2006-2020 Xfce-utvecklarteam"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
