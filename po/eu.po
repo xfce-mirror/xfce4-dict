@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# beriain, 2020
 # Piarres Beobide <pi@beobide.net>, 2007-2009,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-10-15 10:47+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2020-11-09 13:00+0000\n"
+"Last-Translator: beriain\n"
 "Language-Team: Basque (http://www.transifex.com/xfce/xfce-apps/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -381,7 +382,7 @@ msgstr "_Ortografia-egiaztatzea"
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
-msgstr ""
+msgstr "Copyright © 2006-2020 Xfce Garapen Taldea"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
@@ -413,7 +414,7 @@ msgstr "dict.leo.org - Alemaniera <-> Txinera"
 
 #: ../lib/prefs.c:57
 msgid "dict.cc - Dictionary"
-msgstr ""
+msgstr "dict.cc - Hiztegia"
 
 #: ../lib/prefs.c:58
 msgid "Dictionary.com"
