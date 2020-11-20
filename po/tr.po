@@ -4,7 +4,8 @@
 # 
 # Translators:
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010
-# Emin Tufan <etcetin@gmail.com>, 2020
+# Emin Tufan Çetin <etcetin@gmail.com>, 2020
+# Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Necdet Yücel <necdetyucel@gmail.com>, 2015,2017
 # Serdar Sağlam <teknomobil@msn.com>, 2019
 # Volkan Gezer <volkangezer@gmail.com>, 2013
@@ -13,8 +14,8 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-10-18 12:53+0000\n"
-"Last-Translator: Emin Tufan <etcetin@gmail.com>\n"
+"PO-Revision-Date: 2020-11-20 09:38+0000\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +30,7 @@ msgstr "Sözlük"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 msgid "A plugin to query different dictionaries."
-msgstr "Çeşitli sözlükleri sorgulamak için eklenti."
+msgstr "Türlü sözlükleri sorgulamak için eklenti."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:273
 #: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
@@ -51,7 +52,7 @@ msgstr "Girilen ifadeyi Dict sunucu (RFC 2229) kullanarak ara"
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
-msgstr "Girilen ifadeyi web tabanlı bir arama motorunda ara"
+msgstr "Girilen metni web tabanlı arama motorunda ara"
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
@@ -92,7 +93,7 @@ msgstr "Sözlük İstemcisi"
 
 #: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
-msgstr "Çeşitli sözlükleri sorgulamak için istemci uygulama."
+msgstr "Türlü sözlükleri sorgulamak için istemci uygulama."
 
 #: ../lib/spell.c:73
 msgid "Spell Checker Results:"
@@ -170,11 +171,11 @@ msgstr "Okuma Hızı"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr "Bir metin girmelisiniz."
+msgstr "Metin girmelisiniz."
 
 #: ../lib/speedreader.c:526
 msgid "Choose a file to load"
-msgstr "Yüklenecek bir dosya seç"
+msgstr "Yüklenecek dosya seç"
 
 #: ../lib/speedreader.c:529
 msgid "_Cancel"
@@ -193,14 +194,14 @@ msgstr "'%s' dosyası yüklenemedi."
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] "(bir seferde %d kelime göster)"
+msgstr[0] "(bir kezde %d sözcük göster)"
 msgstr[1] "(bir kezde%d sözcük göster)"
 
 #: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Bu, daha hızlı okumanız için size yardım edecek bir kolay hızlı okuma uygulamasıdır. Ekranda bir hız oranında sözcükler yanıp yanar."
+msgstr "Bu, daha hızlı okumanız için size yardım edecek kolay hızlı okuma uygulamasıdır. Ekranda hız oranında sözcükler yanıp yanar."
 
 #: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
@@ -212,11 +213,11 @@ msgstr "Paragrafları _işaretle"
 
 #: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
-msgstr "Sözcük _Toplama:"
+msgstr "Sözcük _Kümeleme:"
 
 #: ../lib/speedreader.c:641
 msgid "_Font Size:"
-msgstr "_Yazıtipi Boyutu:"
+msgstr "_Yazı Tipi Boyutu:"
 
 #: ../lib/speedreader.c:662
 msgid ""
@@ -227,7 +228,7 @@ msgstr "Okutmak istediğiniz metni buraya girin. \n\n Rahat ve sakin olun, sonra
 
 #: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
-msgstr "Bir dosyanın içeriğini yükle"
+msgstr "Dosya içeriğini yükle"
 
 #: ../lib/speedreader.c:680
 msgid ""
@@ -293,7 +294,7 @@ msgstr "Geçersiz sözlük belirtildi. Lütfen ayarlarınızı denetleyin."
 
 #: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
 msgid "Unknown error while querying the server."
-msgstr "Sorgu uygulanırken bilinmeyen bir hata meydana geldi."
+msgstr "Sunucu sorgulanırken bilinmeyen hata."
 
 #: ../lib/dictd.c:446
 msgid "Dictionary Results:"
@@ -302,7 +303,7 @@ msgstr "Sözlük Sonuçları:"
 #: ../lib/dictd.c:449
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "\"%s\" için bir eşleşme bulunamadı."
+msgstr "\"%s\" için eşleşme bulunamadı."
 
 #: ../lib/dictd.c:476
 #, c-format
@@ -327,7 +328,7 @@ msgstr "\"%s\" için sunucu bilgisi"
 
 #: ../lib/dictd.c:843
 msgid "The server doesn't offer any databases."
-msgstr "Sunucu herhangi bir veritabanı sunmuyor."
+msgstr "Sunucu herhangi bir veri tabanı sunmuyor."
 
 #: ../lib/gui.c:362
 msgid "Copy Link"
@@ -445,7 +446,7 @@ msgstr "Temizle"
 
 #: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
-msgstr "Geçersiz bir sözlük seçtiniz."
+msgstr "Geçersiz sözlük seçtiniz."
 
 #: ../lib/prefs.c:299
 msgid "General"
@@ -512,7 +513,7 @@ msgstr "Sunucu:"
 #. server port
 #: ../lib/prefs.c:471
 msgid "Server Port:"
-msgstr "Sunucu Portu:"
+msgstr "Sunucu Bağlantı Noktası:"
 
 #. dictionary
 #: ../lib/prefs.c:477 ../lib/prefs.c:635
@@ -539,7 +540,7 @@ msgstr "Adres:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr "Çeviri veya sözlük hizmeti veren bir web sitesi adresi girin. Aranacak ifadeyi karşılaması için {word} değerini kullanın."
+msgstr "Çeviri veya sözlük hizmeti veren web sitesi adresi girin. Aranacak sözcüğü karşılaması için {word} değerini kullanın."
 
 #: ../lib/prefs.c:611
 msgid "Spell Check Program:"
@@ -549,4 +550,4 @@ msgstr "Yazım Denetimi Uygulaması:"
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>Yazım denetimi uygulaması 'enchant','aspell','ispell' veya ispell komutu ile uyumlu herhangi bir uygulama olabilir.\nSimge, girilen komutun sistemde olup olmadığını gösterir.</i> "
+msgstr "<i>Yazım denetimi uygulaması 'enchant','aspell','ispell' veya ispell komutuyla uyumlu herhangi bir uygulama olabilir.\nSimge, girilen komutun sistemde olup olmadığını gösterir.</i> "
