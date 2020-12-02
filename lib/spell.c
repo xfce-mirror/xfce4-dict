@@ -28,6 +28,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
