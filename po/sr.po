@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Саша Петровић <salepetronije@gmail.com>, 2012-2013,2015
+# Саша Петровић <salepetronije@gmail.com>, 2012-2013,2015,2017,2019
 # Саша Петровић <salepetronije@gmail.com>, 2017,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-10-15 10:47+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2020-12-09 10:05+0000\n"
+"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/xfce/xfce-apps/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,11 +89,11 @@ msgstr "Речник"
 
 #: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
-msgstr "Кориснички програм за упит различитих речника"
+msgstr "Кориснички програм за упит различитих речника."
 
 #: ../lib/spell.c:73
 msgid "Spell Checker Results:"
-msgstr "Налази правописара"
+msgstr "Налази правописара:"
 
 #: ../lib/spell.c:99
 #, c-format
@@ -191,9 +191,9 @@ msgstr "Није успело учитавање датотеке „%s“."
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] "Прикажи истовремено %d реч"
-msgstr[1] "Прикажи истовремено %d речи"
-msgstr[2] "Прикажи истовремено %d речи"
+msgstr[0] "(приказ %d речи истовремено)"
+msgstr[1] "(приказ %d речи истовремено)"
+msgstr[2] "(приказ %d речи истовремено)"
 
 #: ../lib/speedreader.c:605
 msgid ""
@@ -284,7 +284,7 @@ msgstr "Нисам успео да се повежем са служитељем
 
 #: ../lib/dictd.c:416
 msgid "The server is not ready."
-msgstr "Служитељ није спреман"
+msgstr "Служитељ није спреман."
 
 #: ../lib/dictd.c:423
 msgid "Invalid dictionary specified. Please check your preferences."
@@ -301,15 +301,15 @@ msgstr "Налази речника:"
 #: ../lib/dictd.c:449
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Нема нађених слагања за „%s“"
+msgstr "Нисам пронашао слагања за „%s“."
 
 #: ../lib/dictd.c:476
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "%d опис је пронађен"
-msgstr[1] "%d описа су пронађена"
-msgstr[2] "%d описа је пронађено"
+msgstr[0] "%d опис је пронађен."
+msgstr[1] "%d описа су пронађена."
+msgstr[2] "%d описа је пронађено."
 
 #: ../lib/dictd.c:687
 #, c-format
@@ -385,7 +385,7 @@ msgstr "_Правописар"
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
-msgstr ""
+msgstr "Права умножавања © 2006-2020 Развојна дружина ИксФЦЕ-а"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
