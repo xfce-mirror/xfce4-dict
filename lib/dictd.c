@@ -395,8 +395,9 @@ static void append_web_search_link(DictData *dd, gboolean prepend_whitespace)
 }
 
 
-static gboolean process_server_response(DictData *dd)
+static gboolean process_server_response(gpointer user_data)
 {
+	DictData *dd = user_data;
 	gint max_lines, i;
 	gint defs_found = 0;
 	gchar *answer, *tmp;
@@ -618,7 +619,7 @@ static gpointer ask_server(DictData *dd)
 	if ((fd = open_socket(dd->server, dd->port)) == -1)
 	{
 		dd->query_status = NO_CONNECTION;
-		g_idle_add((GSourceFunc) process_server_response, dd);
+		g_idle_add(process_server_response, dd);
 		g_thread_exit(NULL);
 		return NULL;
 	}
@@ -648,7 +649,7 @@ static gpointer ask_server(DictData *dd)
 
 	dd->query_is_running = FALSE;
 	/* delegate parsing the response and related GUI stuff to GTK's main thread through the main loop */
-	g_idle_add((GSourceFunc) process_server_response, dd);
+	g_idle_add(process_server_response, dd);
 
 	g_thread_exit(NULL);
 	return NULL;
