@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-12-27 09:21+0000\n"
+"PO-Revision-Date: 2020-12-27 17:26+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/xfce/xfce-apps/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -172,7 +172,7 @@ msgstr "Tem que introduzir um texto."
 
 #: ../lib/speedreader.c:526
 msgid "Choose a file to load"
-msgstr "Escolha o ficheiro a carregar."
+msgstr "Escolha o ficheiro a carregar"
 
 #: ../lib/speedreader.c:529
 msgid "_Cancel"
