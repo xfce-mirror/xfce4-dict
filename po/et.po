@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Priit Jõerüüt <transifex@joeruut.com>, 2020
+# Priit Jõerüüt <transifex@joeruut.com>, 2020-2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-10-29 22:42+0000\n"
+"PO-Revision-Date: 2021-01-04 07:42+0000\n"
 "Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/xfce/xfce-apps/language/et/)\n"
 "MIME-Version: 1.0\n"
@@ -223,7 +223,7 @@ msgstr "Sisesta siia tekst mida tahaksid lugeda.\n\nVõta rahulikult, säti enna
 
 #: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
-msgstr "Lae faili sisu"
+msgstr "Laadi faili sisu"
 
 #: ../lib/speedreader.c:680
 msgid ""
