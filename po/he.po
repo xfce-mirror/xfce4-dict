@@ -5,7 +5,7 @@
 # Translators:
 # Elishai Eliyahu <elishai@mailfence.com>, 2016-2017,2019
 # Elishai Eliyahu <elishai@mailfence.com>, 2020
-# Omer I.S., 2020
+# Omer I.S. <omeritzicschwartz@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
