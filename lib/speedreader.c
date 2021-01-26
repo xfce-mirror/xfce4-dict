@@ -194,6 +194,7 @@ static gchar *sr_replace_unicode_characters(const gchar *text, gboolean mark_par
 				if (mark_paragraphs)
 					g_string_append_unichar(str, 182); /* 182 = ¶ */
 				/* intended fall-through */
+				G_GNUC_FALLTHROUGH;
 			case G_UNICODE_LINE_SEPARATOR:
 				g_string_append_c(str, '\n');
 				break;
