@@ -7,13 +7,13 @@
 # Hunt Xu <huntxu@live.cn>, 2008-2010
 # Mingcong Bai <jeffbai@aosc.xyz>, 2016
 # Xiaobo Zhou <zhouxiaobo.500@gmail.com>, 2016
-# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2020
+# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-10-16 00:34+0000\n"
+"POT-Creation-Date: 2021-02-12 00:46+0100\n"
+"PO-Revision-Date: 2021-02-12 15:07+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/xfce/xfce-apps/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr "查询不同词典的插件。"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:273
 #: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:539
+#: ../lib/spell.c:242 ../lib/gui.c:539
 msgid "Ready"
 msgstr "就绪"
 
@@ -90,51 +90,51 @@ msgstr "请向 <%s> 报告缺陷。"
 msgid "Dictionary Client"
 msgstr "词典客户端"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
-msgid "A client program to query different dictionaries."
-msgstr "查询不同词典的客户端程序。"
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "A client program to query different dictionaries"
+msgstr "查询不同词典的客户端程序"
 
-#: ../lib/spell.c:73
+#: ../lib/spell.c:74
 msgid "Spell Checker Results:"
 msgstr "拼写检查结果："
 
-#: ../lib/spell.c:99
+#: ../lib/spell.c:100
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
 msgstr[0] "找到 %d 条建议。"
 
-#: ../lib/spell.c:103
+#: ../lib/spell.c:104
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
 msgstr "对 “%s”(%s) 的建议："
 
-#: ../lib/spell.c:120
+#: ../lib/spell.c:121
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
 msgstr "“%s” 拼写正确(%s)。"
 
-#: ../lib/spell.c:132
+#: ../lib/spell.c:133
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
 msgstr "未能找到对 “%s”(%s) 的建议。"
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:162
+#: ../lib/spell.c:163
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "执行 “%s”(%s)时出错。"
 
-#: ../lib/spell.c:200
+#: ../lib/spell.c:201
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "请在首选项对话框中设置拼写检查命令。"
 
-#: ../lib/spell.c:206
+#: ../lib/spell.c:207
 msgid "Invalid input"
 msgstr "无效输入"
 
-#: ../lib/spell.c:245
+#: ../lib/spell.c:246
 #, c-format
 msgid "Process failed (%s)"
 msgstr "无法执行(%s)"
@@ -240,7 +240,7 @@ msgstr "清空文本框内容"
 msgid "_Start"
 msgstr "开始(_S)"
 
-#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/speedreader.c:698 ../lib/dictd.c:765 ../lib/gui.c:730
 #: ../lib/gui.c:840 ../lib/prefs.c:267
 msgid "_Close"
 msgstr "关闭(_C)"
@@ -267,62 +267,62 @@ msgstr "警告"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:381
+#: ../lib/dictd.c:382
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "使用 “%2$s” 搜索 “%1$s”"
 
-#: ../lib/dictd.c:388
+#: ../lib/dictd.c:389
 msgid "Web Search:"
 msgstr "网络搜索："
 
-#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
-#: ../lib/dictd.c:823
+#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
+#: ../lib/dictd.c:825
 msgid "Could not connect to server."
 msgstr "未能与服务器连接。"
 
-#: ../lib/dictd.c:416
+#: ../lib/dictd.c:418
 msgid "The server is not ready."
 msgstr "服务器未就绪。"
 
-#: ../lib/dictd.c:423
+#: ../lib/dictd.c:425
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "指定的词典无效。请检查您的首选项。"
 
-#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
+#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
 msgid "Unknown error while querying the server."
 msgstr "在服务器中查询时发生未知错误。"
 
-#: ../lib/dictd.c:446
+#: ../lib/dictd.c:448
 msgid "Dictionary Results:"
 msgstr "词典结果："
 
-#: ../lib/dictd.c:449
+#: ../lib/dictd.c:451
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "未能找到与 “%s” 匹配的。"
 
-#: ../lib/dictd.c:476
+#: ../lib/dictd.c:478
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "找到 %d 个定义。"
 
-#: ../lib/dictd.c:687
+#: ../lib/dictd.c:689
 #, c-format
 msgid "Querying %s..."
 msgstr "正在查询 %s..."
 
-#: ../lib/dictd.c:746
+#: ../lib/dictd.c:748
 msgid "An error occurred while querying server information."
 msgstr "在服务器信息中查询时出错。"
 
-#: ../lib/dictd.c:759
+#: ../lib/dictd.c:761
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "“%s” 的服务器信息"
 
-#: ../lib/dictd.c:843
+#: ../lib/dictd.c:845
 msgid "The server doesn't offer any databases."
 msgstr "服务器没有提供任何数据库。"
 
@@ -379,6 +379,10 @@ msgstr "网络服务(_W)"
 #: ../lib/gui.c:870
 msgid "_Spell Checker"
 msgstr "拼写检查器(_S)"
+
+#: ../lib/gui.c:997
+msgid "A client program to query different dictionaries."
+msgstr "查询不同词典的客户端程序。"
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
