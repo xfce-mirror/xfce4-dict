@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-12-09 10:05+0000\n"
+"POT-Creation-Date: 2021-02-12 00:46+0100\n"
+"PO-Revision-Date: 2021-02-16 12:51+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/xfce/xfce-apps/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Прикључак за упит различитим речницима
 
 #: ../panel-plugin/xfce4-dict-plugin.c:273
 #: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:539
+#: ../lib/spell.c:242 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Спреман"
 
@@ -87,15 +87,15 @@ msgstr "Молим пријавите грешке на <%s>."
 msgid "Dictionary Client"
 msgstr "Речник"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
-msgid "A client program to query different dictionaries."
-msgstr "Кориснички програм за упит различитих речника."
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "A client program to query different dictionaries"
+msgstr "Програм за упит различитим речницима"
 
-#: ../lib/spell.c:73
+#: ../lib/spell.c:74
 msgid "Spell Checker Results:"
 msgstr "Налази правописара:"
 
-#: ../lib/spell.c:99
+#: ../lib/spell.c:100
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
@@ -103,37 +103,37 @@ msgstr[0] "%d пронађен предлог."
 msgstr[1] "%d пронађена предлога."
 msgstr[2] "%d пронађених предлога."
 
-#: ../lib/spell.c:103
+#: ../lib/spell.c:104
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
 msgstr "Предлози за „%s“ (%s):"
 
-#: ../lib/spell.c:120
+#: ../lib/spell.c:121
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
 msgstr "„%s“ је написан исправно (%s)."
 
-#: ../lib/spell.c:132
+#: ../lib/spell.c:133
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
 msgstr "Нису могли бити пронађени предлози за „%s“ (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:162
+#: ../lib/spell.c:163
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "Грешка при извршавању „%s“ (%s)."
 
-#: ../lib/spell.c:200
+#: ../lib/spell.c:201
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Молим, подесите наредбу правописара у прозорчету са поставкама."
 
-#: ../lib/spell.c:206
+#: ../lib/spell.c:207
 msgid "Invalid input"
 msgstr "Неисправан унос"
 
-#: ../lib/spell.c:245
+#: ../lib/spell.c:246
 #, c-format
 msgid "Process failed (%s)"
 msgstr "Неуспео процес (%s)"
@@ -241,7 +241,7 @@ msgstr "Брише садржај поља уноса писма"
 msgid "_Start"
 msgstr "_Крени"
 
-#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/speedreader.c:698 ../lib/dictd.c:765 ../lib/gui.c:730
 #: ../lib/gui.c:840 ../lib/prefs.c:267
 msgid "_Close"
 msgstr "_Затвори"
@@ -268,42 +268,42 @@ msgstr "упозорење"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:381
+#: ../lib/dictd.c:382
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Тражи „%s“ користећи „%s“"
 
-#: ../lib/dictd.c:388
+#: ../lib/dictd.c:389
 msgid "Web Search:"
 msgstr "Мрежна претрага:"
 
-#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
-#: ../lib/dictd.c:823
+#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
+#: ../lib/dictd.c:825
 msgid "Could not connect to server."
 msgstr "Нисам успео да се повежем са служитељем."
 
-#: ../lib/dictd.c:416
+#: ../lib/dictd.c:418
 msgid "The server is not ready."
 msgstr "Служитељ није спреман."
 
-#: ../lib/dictd.c:423
+#: ../lib/dictd.c:425
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Одређен је неодговарајући речник. Молим, проверите подешавања."
 
-#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
+#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
 msgid "Unknown error while querying the server."
 msgstr "Непозната грешка приликом упита служитељу."
 
-#: ../lib/dictd.c:446
+#: ../lib/dictd.c:448
 msgid "Dictionary Results:"
 msgstr "Налази речника:"
 
-#: ../lib/dictd.c:449
+#: ../lib/dictd.c:451
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Нисам пронашао слагања за „%s“."
 
-#: ../lib/dictd.c:476
+#: ../lib/dictd.c:478
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -311,21 +311,21 @@ msgstr[0] "%d опис је пронађен."
 msgstr[1] "%d описа су пронађена."
 msgstr[2] "%d описа је пронађено."
 
-#: ../lib/dictd.c:687
+#: ../lib/dictd.c:689
 #, c-format
 msgid "Querying %s..."
 msgstr "Затражујем %s..."
 
-#: ../lib/dictd.c:746
+#: ../lib/dictd.c:748
 msgid "An error occurred while querying server information."
 msgstr "Десила се грешка приликом упита служитељу за подацима."
 
-#: ../lib/dictd.c:759
+#: ../lib/dictd.c:761
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Подаци о служитељу за „%s“"
 
-#: ../lib/dictd.c:843
+#: ../lib/dictd.c:845
 msgid "The server doesn't offer any databases."
 msgstr "Служитељ не нуди ни једно складиште података."
 
@@ -382,6 +382,10 @@ msgstr "_Мрежни служитељ"
 #: ../lib/gui.c:870
 msgid "_Spell Checker"
 msgstr "_Правописар"
+
+#: ../lib/gui.c:997
+msgid "A client program to query different dictionaries."
+msgstr "Кориснички програм за упит различитих речника."
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
