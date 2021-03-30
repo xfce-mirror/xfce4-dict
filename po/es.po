@@ -16,13 +16,14 @@
 # prflr88 <prflr88@gmail.com>, 2017
 # prflr88 <prflr88@gmail.com>, 2013-2014
 # prflr88 <prflr88@gmail.com>, 2017
+# Toni Estévez <toni.estevez@gmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-12 00:46+0100\n"
-"PO-Revision-Date: 2021-02-13 08:28+0000\n"
-"Last-Translator: Casper casper\n"
+"PO-Revision-Date: 2021-03-30 18:53+0000\n"
+"Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-apps/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +48,7 @@ msgstr "Preparado"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
-msgstr "Encontrar una palabra"
+msgstr "Buscar una palabra"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
 msgid "Search term"
@@ -59,15 +60,15 @@ msgstr "Buscar el texto dado usando un servidor DICT (RFC 2229)"
 
 #: ../src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
-msgstr "Buscar el texto dado usando un motor de búsqueda basado en web"
+msgstr "Buscar el texto dado usando un motor de búsqueda basado en la web"
 
 #: ../src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
-msgstr "Comprobar el texto dado con un corrector ortográfico"
+msgstr "Revisar el texto dado con un corrector ortográfico"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
-msgstr "Obtener el foco en el campo de texto en el panel"
+msgstr "Obtener el foco en el campo de texto del panel"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -75,7 +76,7 @@ msgstr "Iniciar como una aplicación independiente incluso si se carga el comple
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Toma el contenido de la selección PRIMARIA y lo usa como texto de búsqueda"
+msgstr "Toma el contenido de la selección primaria y lo usa como texto de búsqueda"
 
 #: ../src/xfce4-dict.c:55
 msgid "Be verbose"
@@ -92,7 +93,7 @@ msgstr "[TEXTO]"
 #: ../src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Informe de cualquier error a <%s>."
+msgstr "Informe de errores a <%s>."
 
 #: ../src/xfce4-dict.desktop.in.h:2
 msgid "Dictionary Client"
@@ -126,18 +127,18 @@ msgstr "«%s» está escrito correctamente (%s)."
 #: ../lib/spell.c:133
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "No se encontró ninguna sugerencia para «%s» (%s)."
+msgstr "No se ha encontrado ninguna sugerencia para «%s» (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: ../lib/spell.c:163
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Error en la ejecución de «%s» (%s)."
+msgstr "Error al ejecutar «%s» (%s)."
 
 #: ../lib/spell.c:201
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Configure la orden del corrector ortográfico en la ventana Preferencias."
+msgstr "Configure la orden del corrector ortográfico en el diálogo de preferencias."
 
 #: ../lib/spell.c:207
 msgid "Invalid input"
@@ -146,7 +147,7 @@ msgstr "Entrada no válida"
 #: ../lib/spell.c:246
 #, c-format
 msgid "Process failed (%s)"
-msgstr "Falló el proceso (%s)"
+msgstr "Ha fallado el proceso (%s)"
 
 #: ../lib/speedreader.c:74 ../lib/speedreader.c:695
 msgid "P_ause"
@@ -178,11 +179,11 @@ msgstr "Lectura rápida"
 
 #: ../lib/speedreader.c:369
 msgid "You must enter a text."
-msgstr "Debe escribir texto."
+msgstr "Debe escribir un texto."
 
 #: ../lib/speedreader.c:526
 msgid "Choose a file to load"
-msgstr "Elija un fichero para cargar"
+msgstr "Elija un archivo para cargar"
 
 #: ../lib/speedreader.c:529
 msgid "_Cancel"
@@ -195,20 +196,20 @@ msgstr "_Abrir"
 #: ../lib/speedreader.c:555
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "No se pudo cargar el archivo «%s»."
+msgstr "No se ha podido cargar el archivo «%s»."
 
 #: ../lib/speedreader.c:581
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(mostrar %d palabra cada vez)"
-msgstr[1] "(ver %d palabras cada vez)"
+msgstr[1] "(mostrar %d palabras a la vez)"
 
 #: ../lib/speedreader.c:605
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Esto es una utilidad sencilla de lectura rápida para ayudarle a entrenar para leer más rápido. Funciona haciendo parpadear palabras a una velocidad rápida en la pantalla."
+msgstr "Esta es una sencilla utilidad de lectura rápida que le ayudará a entrenarse para leer más rápido. Lo hace mediante el parpadeo de palabras a un ritmo rápido en la pantalla."
 
 #: ../lib/speedreader.c:610
 msgid "_Words per Minute:"
@@ -216,7 +217,7 @@ msgstr "_Palabras por minuto:"
 
 #: ../lib/speedreader.c:617
 msgid "_Mark Paragraphs"
-msgstr "_Marcar párrafos"
+msgstr "_Marcar los párrafos"
 
 #: ../lib/speedreader.c:624
 msgid "Word _Grouping:"
@@ -231,7 +232,7 @@ msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr "Introduzca aquí algún texto que quiera leer.\n\nRelájese y póngase cómodo, entonces pulse Comenzar para empezar la lectura rápida."
+msgstr "Escriba aquí un texto que quiera leer.\n\nRelájese y póngase cómodo, luego pulse Comenzar para comenzar la lectura rápida."
 
 #: ../lib/speedreader.c:675
 msgid "Load the contents of a file"
@@ -240,11 +241,11 @@ msgstr "Cargar los contenidos de un archivo"
 #: ../lib/speedreader.c:680
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Cambiar los contenidos del campo de texto por los del portapapeles"
+msgstr "Borrar el contenido del campo de texto y pegar el contenido del portapapeles"
 
 #: ../lib/speedreader.c:684
 msgid "Clear the contents of the text field"
-msgstr "Limpiar los contenidos del campo de texto"
+msgstr "Borrar el contenido del campo de texto"
 
 #: ../lib/speedreader.c:696
 msgid "_Start"
@@ -257,11 +258,11 @@ msgstr "_Cerrar"
 
 #: ../lib/common.c:186
 msgid "The search URL is empty. Please check your preferences."
-msgstr "La dirección URL de búsqueda está vacía. Compruebe sus preferencias."
+msgstr "El URL de búsqueda está vacío. Compruebe sus preferencias."
 
 #: ../lib/common.c:192
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "No se pudo abrir el navegador. Compruebe sus preferencias."
+msgstr "No se ha podido abrir el navegador. Compruebe sus preferencias."
 
 #: ../lib/common.c:232
 msgid "Invalid non-UTF8 input"
@@ -289,11 +290,11 @@ msgstr "Búsqueda en la web:"
 #: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
 #: ../lib/dictd.c:825
 msgid "Could not connect to server."
-msgstr "No se pudo conectar con el servidor."
+msgstr "No se ha podido conectar con el servidor."
 
 #: ../lib/dictd.c:418
 msgid "The server is not ready."
-msgstr "El servidor no está disponible"
+msgstr "El servidor no está disponible."
 
 #: ../lib/dictd.c:425
 msgid "Invalid dictionary specified. Please check your preferences."
@@ -301,7 +302,7 @@ msgstr "El diccionario especificado no es válido. Compruebe sus preferencias."
 
 #: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
 msgid "Unknown error while querying the server."
-msgstr "Error desconocido al consultar el servidor."
+msgstr "Error desconocido al consultar al servidor."
 
 #: ../lib/dictd.c:448
 msgid "Dictionary Results:"
@@ -310,14 +311,14 @@ msgstr "Resultados del diccionario:"
 #: ../lib/dictd.c:451
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "No se encontró ninguna coincidencia para «%s»."
+msgstr "No se ha encontrado ninguna coincidencia para «%s»."
 
 #: ../lib/dictd.c:478
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "Se encontró %d definición."
-msgstr[1] "Se encontraron %d definiciones."
+msgstr[1] "Se han encontrado %d definiciones."
 
 #: ../lib/dictd.c:689
 #, c-format
@@ -352,7 +353,7 @@ msgstr "Bus_car"
 #. File Menu
 #: ../lib/gui.c:694
 msgid "_File"
-msgstr "_Fichero"
+msgstr "_Archivo"
 
 #: ../lib/gui.c:701 ../lib/gui.c:828
 msgid "Speed _Reader"
@@ -389,11 +390,11 @@ msgstr "Servicio _web"
 
 #: ../lib/gui.c:870
 msgid "_Spell Checker"
-msgstr "Comprobación ort_ográfica"
+msgstr "Revisión ort_ográfica"
 
 #: ../lib/gui.c:997
 msgid "A client program to query different dictionaries."
-msgstr "Un programa cliente para consultar distintos diccionarios."
+msgstr "Un programa cliente para consultar diferentes diccionarios."
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
@@ -401,7 +402,7 @@ msgstr "Copyright © 2006-2020 Equipo de desarrollo de Xfce"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
-msgstr "Gabriel Alvarez <gabriel.tandil@gmail.com>, 2015\nAdolfo Jayme Barrientos <fitojb@ubuntu.com>, 2014\nPablo Roberto Francisco Lazaeta Reyes <prflr88@gmail.com>, 2014-2015\nAbel Martín <abel.martin.ruiz@gmail.com>, 2008"
+msgstr "Toni Estevez <toni.estevez@gmail.com>, 2021\nGabriel Alvarez <gabriel.tandil@gmail.com>, 2015\nPablo Roberto Francisco Lazaeta Reyes <prflr88@gmail.com>, 2014-2015\nAdolfo Jayme Barrientos <fitojb@ubuntu.com>, 2014\nAbel Martín <abel.martin.ruiz@gmail.com>, 2008"
 
 #: ../lib/gui.c:1004
 msgid "Xfce4 Dictionary"
@@ -453,7 +454,7 @@ msgstr "Diccionario Merriam-Webster en línea"
 
 #: ../lib/prefs.c:63
 msgid "Clear"
-msgstr "Vaciar"
+msgstr "Borrar"
 
 #: ../lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
@@ -477,7 +478,7 @@ msgstr "Servicio web"
 
 #: ../lib/prefs.c:324 ../lib/prefs.c:609
 msgid "Spell Checker"
-msgstr "Comprobación ortográfica"
+msgstr "Revisión ortográfica"
 
 #: ../lib/prefs.c:333
 msgid "Last used method"
@@ -533,15 +534,15 @@ msgstr "Diccionario:"
 
 #: ../lib/prefs.c:480
 msgid "* (use all)"
-msgstr "* (usar todos)"
+msgstr "* (usarlos todos)"
 
 #: ../lib/prefs.c:482
 msgid "! (use all, stop after first match)"
-msgstr "! (usar todos; parar tras la primera coincidencia)"
+msgstr "! (usarlos todos; parar tras la primera coincidencia)"
 
 #: ../lib/prefs.c:564
 msgid "<b>Web search URL:</b>"
-msgstr "<b>URL de búsqueda web:</b>"
+msgstr "<b>URL de la búsqueda web:</b>"
 
 #: ../lib/prefs.c:569
 msgid "URL:"
@@ -551,7 +552,7 @@ msgstr "URL:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr "Escriba el URL de un sitio web que ofrezca servicios de traducción o de diccionario. Use {word} en el lugar donde iría la palabra buscada."
+msgstr "Escriba el URL de un sitio web que ofrezca servicios de traducción o de diccionario. Use {word} como marcador de posición para la palabra que se busca."
 
 #: ../lib/prefs.c:611
 msgid "Spell Check Program:"
@@ -561,4 +562,4 @@ msgstr "Programa de corrección ortográfica:"
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>El programa de corrección ortográfica puede ser «enchant», «aspell», «ispell» o cualquier otro corrector ortográfico compatible con la orden «ispell».\nEl icono muestra si la orden escrita existe.</i>"
+msgstr "<i>El programa de corrección ortográfica puede ser «enchant», «aspell», «ispell» o cualquier otro corrector ortográfico compatible con la orden «ispell».\nEl icono muestra si existe el programa.</i>"
