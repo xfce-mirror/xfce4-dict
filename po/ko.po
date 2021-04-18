@@ -4,14 +4,14 @@
 # 
 # Translators:
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016-2017
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2013,2015,2019
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2013,2015,2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-15 12:47+0200\n"
-"PO-Revision-Date: 2020-10-15 10:47+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2021-02-12 00:46+0100\n"
+"PO-Revision-Date: 2021-04-18 07:44+0000\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/xfce/xfce-apps/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +30,7 @@ msgstr "제각기 다른 사전에 요청하는 플러그인입니다."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:273
 #: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
-#: ../lib/spell.c:241 ../lib/gui.c:539
+#: ../lib/spell.c:242 ../lib/gui.c:539
 msgid "Ready"
 msgstr "준비"
 
@@ -87,51 +87,51 @@ msgstr "<%s>로 버그를 알려주십시오."
 msgid "Dictionary Client"
 msgstr "사전 클라이언트"
 
-#: ../src/xfce4-dict.desktop.in.h:3 ../lib/gui.c:997
-msgid "A client program to query different dictionaries."
-msgstr "제각기 다른 사전에 요청하기 위한 클라이언트 프로그램입니다."
+#: ../src/xfce4-dict.desktop.in.h:3
+msgid "A client program to query different dictionaries"
+msgstr "제각기 다른 사전에 요청하는 클라이언트 프로그램"
 
-#: ../lib/spell.c:73
+#: ../lib/spell.c:74
 msgid "Spell Checker Results:"
 msgstr "철자 검사기 결과:"
 
-#: ../lib/spell.c:99
+#: ../lib/spell.c:100
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
 msgstr[0] "제안 %d개를 찾았습니다."
 
-#: ../lib/spell.c:103
+#: ../lib/spell.c:104
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
 msgstr "\"%s\"에 대한 제안(%s):"
 
-#: ../lib/spell.c:120
+#: ../lib/spell.c:121
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
 msgstr "\"%s\"은(는) 올바른 철자입니다(%s)."
 
-#: ../lib/spell.c:132
+#: ../lib/spell.c:133
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
 msgstr "\"%s\"에 대한 제안을 찾을 수 없습니다(%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:162
+#: ../lib/spell.c:163
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "\"%s\"을(를) 실행하는 동안 오류가 발생했습니다(%s)."
 
-#: ../lib/spell.c:200
+#: ../lib/spell.c:201
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "기본 설정 대화상자에서 철자 검사 명령을 설정하여주십시오."
 
-#: ../lib/spell.c:206
+#: ../lib/spell.c:207
 msgid "Invalid input"
 msgstr "질못된 입력"
 
-#: ../lib/spell.c:245
+#: ../lib/spell.c:246
 #, c-format
 msgid "Process failed (%s)"
 msgstr "처리 실패(%s)"
@@ -237,7 +237,7 @@ msgstr "본문 필드 내용 지우기"
 msgid "_Start"
 msgstr "시작(_S)"
 
-#: ../lib/speedreader.c:698 ../lib/dictd.c:763 ../lib/gui.c:730
+#: ../lib/speedreader.c:698 ../lib/dictd.c:765 ../lib/gui.c:730
 #: ../lib/gui.c:840 ../lib/prefs.c:267
 msgid "_Close"
 msgstr "닫기(_C)"
@@ -264,62 +264,62 @@ msgstr "경고"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:381
+#: ../lib/dictd.c:382
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "\"%s\"을(를) 검색 (\"%s\" 사용)"
 
-#: ../lib/dictd.c:388
+#: ../lib/dictd.c:389
 msgid "Web Search:"
 msgstr "웹 검색:"
 
-#: ../lib/dictd.c:410 ../lib/dictd.c:716 ../lib/dictd.c:725 ../lib/dictd.c:814
-#: ../lib/dictd.c:823
+#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
+#: ../lib/dictd.c:825
 msgid "Could not connect to server."
 msgstr "서버에 연결할 수 없습니다."
 
-#: ../lib/dictd.c:416
+#: ../lib/dictd.c:418
 msgid "The server is not ready."
 msgstr "서버가 대기중이 아닙니다."
 
-#: ../lib/dictd.c:423
+#: ../lib/dictd.c:425
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "잘못된 사전을 지정했습니다. 기본 설정을 확인하십시오."
 
-#: ../lib/dictd.c:431 ../lib/dictd.c:471 ../lib/dictd.c:848
+#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
 msgid "Unknown error while querying the server."
 msgstr "서버에 요청하는 동안 알 수 없는 오류가 발생했습니다."
 
-#: ../lib/dictd.c:446
+#: ../lib/dictd.c:448
 msgid "Dictionary Results:"
 msgstr "사전 결과:"
 
-#: ../lib/dictd.c:449
+#: ../lib/dictd.c:451
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "\"%s\"에 대해 일치하는 결과를 찾을 수 없습니다."
 
-#: ../lib/dictd.c:476
+#: ../lib/dictd.c:478
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "정의 %d개를 찾았습니다."
 
-#: ../lib/dictd.c:687
+#: ../lib/dictd.c:689
 #, c-format
 msgid "Querying %s..."
 msgstr "%s 요청중..."
 
-#: ../lib/dictd.c:746
+#: ../lib/dictd.c:748
 msgid "An error occurred while querying server information."
 msgstr "서버 정보를 조회하는 동안 오류가 발생했습니다."
 
-#: ../lib/dictd.c:759
+#: ../lib/dictd.c:761
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "\"%s\"의 서버 정보"
 
-#: ../lib/dictd.c:843
+#: ../lib/dictd.c:845
 msgid "The server doesn't offer any databases."
 msgstr "서버가 어떤 데이터베이스도 제공하지 않습니다."
 
@@ -359,7 +359,7 @@ msgstr "도움말(_H)"
 
 #: ../lib/gui.c:748
 msgid "About"
-msgstr "소개"
+msgstr "정보"
 
 #: ../lib/gui.c:852
 msgid "Search with:"
@@ -377,9 +377,13 @@ msgstr "웹 서비스(_W)"
 msgid "_Spell Checker"
 msgstr "철자 검사기(_S)"
 
+#: ../lib/gui.c:997
+msgid "A client program to query different dictionaries."
+msgstr "제각기 다른 사전에 요청하기 위한 클라이언트 프로그램입니다."
+
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
-msgstr ""
+msgstr "Copyright © 2006-2020 Xfce Development Team"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
