@@ -42,7 +42,6 @@ LT_INIT([disable-static])
 dnl **********************************
 dnl *** Check for standard headers ***
 dnl **********************************
-AC_HEADER_STDC()
 AC_SEARCH_LIBS(floor, m)
 
 dnl ******************************
@@ -71,7 +70,7 @@ dnl ***********************************
 XDT_FEATURE_DEBUG()
 
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 	Makefile
 	lib/Makefile
 	panel-plugin/Makefile
@@ -85,3 +84,4 @@ AC_OUTPUT([
 	icons/128x128/Makefile
 	icons/scalable/Makefile
 ])
+AC_OUTPUT
