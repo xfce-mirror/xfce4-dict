@@ -372,11 +372,13 @@ static void clear_query_buffer(DictData *dd)
 
 static void append_web_search_link(DictData *dd, gboolean prepend_whitespace)
 {
+	gchar *label, *text;
+
 	if (dd->web_url == NULL || dd->mode_in_use != DICTMODE_DICT)
 		return;
 
-	gchar *label = _(dict_prefs_get_web_url_label(dd));
-	gchar *text = g_strdup_printf(
+	label = _(dict_prefs_get_web_url_label(dd));
+	text = g_strdup_printf(
 		/* for translators: the first wildcard is the search term, the second wildcard
 			* is the name of the preferred web search engine */
 		_("Search \"%s\" using \"%s\""),
