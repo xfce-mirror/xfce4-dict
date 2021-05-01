@@ -3,11 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Abel Martín <abel.martin.ruiz@gmail.com>, 2008
+# 629cf3e396111bb8c5fb6664e2dbc91d, 2016
+# Abel Martin (amartinr) <abel.martin.ruiz@gmail.com>, 2008
 # Adolfo Jayme-Barrientos, 2014
 # Adolfo Jayme Barrientos, 2014
 # Adolfo Jayme-Barrientos, 2014
 # Casper casper, 2019-2021
+# e49097353bae6e06d169bea93a448e3e, 2017
 # e49097353bae6e06d169bea93a448e3e, 2017
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
@@ -16,13 +18,14 @@
 # prflr88 <prflr88@gmail.com>, 2017
 # prflr88 <prflr88@gmail.com>, 2013-2014
 # prflr88 <prflr88@gmail.com>, 2017
+# prflr88 <prflr88@gmail.com>, 2017
 # Toni Estévez <toni.estevez@gmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-12 00:46+0100\n"
-"PO-Revision-Date: 2021-03-30 18:53+0000\n"
+"PO-Revision-Date: 2021-05-01 06:24+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-apps/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -323,7 +326,7 @@ msgstr[1] "Se han encontrado %d definiciones."
 #: ../lib/dictd.c:689
 #, c-format
 msgid "Querying %s..."
-msgstr "Consultando %s…"
+msgstr "Consultando %s..."
 
 #: ../lib/dictd.c:748
 msgid "An error occurred while querying server information."
