@@ -24,6 +24,16 @@
 #define NZV(ptr) \
 	((ptr) && (ptr)[0])
 
+/* G_GNUC_FALLTHROUGH definition, from GLib 2.68.0 */
+#if ! GLIB_CHECK_VERSION (2, 60, 0)
+#if __GNUC__ > 6
+#define G_GNUC_FALLTHROUGH __attribute__((fallthrough))
+#elif g_macro__has_attribute (fallthrough)
+#define G_GNUC_FALLTHROUGH __attribute__((fallthrough))
+#else
+#define G_GNUC_FALLTHROUGH
+#endif
+#endif
 
 #define DICT_FLAGS_FOCUS_PANEL_ENTRY	1
 #define DICT_FLAGS_MODE_DICT			2
