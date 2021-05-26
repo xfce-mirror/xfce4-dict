@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-12 00:46+0100\n"
-"PO-Revision-Date: 2021-02-22 11:38+0000\n"
+"PO-Revision-Date: 2021-05-26 09:10+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-apps/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Slovar"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
 msgid "A plugin to query different dictionaries."
-msgstr "Vstavek za poizvedbe po različnih slovarjih."
+msgstr "Vtičnik za poizvedbe po različnih slovarjih."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:273
 #: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
@@ -56,11 +56,11 @@ msgstr "Preveri dano besedilo s črkovalnikom"
 
 #: ../src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
-msgstr "Fokusiraj na tekstovno polje v pultu"
+msgstr "Fokusiraj na tekstovno polje v panoju"
 
 #: ../src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Zaženi samostjno aplikacijo, čeprav je vtičnik naložen"
+msgstr "Zaženi samostojno aplikacijo, čeprav je naložen vtičnik panoja"
 
 #: ../src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -500,11 +500,11 @@ msgstr "Nepravilno črkovano:"
 
 #: ../lib/prefs.c:402
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>tekstovno polje pulta</b>"
+msgstr "<b>Tekstovno polje panoja:</b>"
 
 #: ../lib/prefs.c:408
 msgid "Show text field in the panel"
-msgstr "V pultu prikaži polje z besedilom"
+msgstr "Na panoju prikaži polje z besedilom"
 
 #. panel entry size
 #: ../lib/prefs.c:415
