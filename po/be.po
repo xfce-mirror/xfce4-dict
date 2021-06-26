@@ -7,14 +7,14 @@
 # Źmicier Turok <nashtlumach@gmail.com>, 2019
 # Źmicier Turok <nashtlumach@gmail.com>, 2018-2019
 # Zmicer Turok <zmicerturok@gmail.com >, 2018
-# Źmicier Turok <nashtlumach@gmail.com>, 2020
+# Źmicier Turok <nashtlumach@gmail.com>, 2019-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-12 00:46+0100\n"
-"PO-Revision-Date: 2021-02-11 23:46+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2021-06-26 16:41+0000\n"
+"Last-Translator: Źmicier Turok <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-apps/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -92,7 +92,7 @@ msgstr "Кліент слоўнікаў"
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "A client program to query different dictionaries"
-msgstr ""
+msgstr "Кліент доступу да розных слоўнікаў"
 
 #: ../lib/spell.c:74
 msgid "Spell Checker Results:"
