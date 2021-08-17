@@ -27,7 +27,7 @@
 
 #include <libxfce4util/libxfce4util.h>
 
-#if HAVE_LOCALE_H
+#ifdef HAVE_LOCALE_H
 # include <locale.h>
 #endif
 
