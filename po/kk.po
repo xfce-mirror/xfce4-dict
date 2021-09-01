@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010,2013,2015-2017,2019
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010,2013,2015-2017,2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-12 00:46+0100\n"
-"PO-Revision-Date: 2021-02-11 23:46+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2021-09-01 15:42+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh (http://www.transifex.com/xfce/xfce-apps/language/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,7 +88,7 @@ msgstr "Сөздіктер клиенті"
 
 #: ../src/xfce4-dict.desktop.in.h:3
 msgid "A client program to query different dictionaries"
-msgstr ""
+msgstr "Әртүрлі сөздіктерден іздеу үшін клиент бағдарламасы"
 
 #: ../lib/spell.c:74
 msgid "Spell Checker Results:"
@@ -385,7 +385,7 @@ msgstr "Әртүрлі сөздіктерден іздеу үшін клиент
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
-msgstr ""
+msgstr "Copyright © 2006-2020 Xfce Development Team"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
