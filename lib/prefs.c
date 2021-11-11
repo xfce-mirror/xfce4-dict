@@ -414,9 +414,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 			/* panel entry size */
 			panel_entry_size_label = gtk_label_new_with_mnemonic(_("Text field size:"));
 			gtk_widget_show(panel_entry_size_label);
-			panel_entry_size_spinner = gtk_spin_button_new_with_range(0.0, 500.0, 1.0);
-			gtk_spin_button_set_value(GTK_SPIN_BUTTON(panel_entry_size_spinner),
-																			dd->panel_entry_size);
+			panel_entry_size_spinner = gtk_spin_button_new_with_range(10.0, 500.0, 1.0);
+			gtk_spin_button_set_value(GTK_SPIN_BUTTON(panel_entry_size_spinner), dd->panel_entry_size);
 
 			g_object_set_data(G_OBJECT(dialog), "check_panel_entry", check_panel_entry);
 			g_object_set_data(G_OBJECT(dialog), "panel_entry_size_spinner", panel_entry_size_spinner);

@@ -85,7 +85,7 @@ static gboolean dict_plugin_panel_set_size(XfcePanelPlugin *plugin, gint wsize, 
 	{
 		xfce_panel_plugin_set_small(plugin, FALSE);
 		if (xfce_panel_plugin_get_mode(dpd->plugin) == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL)
-			gtk_widget_set_size_request(dpd->dd->panel_entry, dpd->dd->panel_entry_size, -1);
+			gtk_entry_set_width_chars(GTK_ENTRY(dpd->dd->panel_entry), dpd->dd->panel_entry_size);
 		else
 			gtk_widget_set_size_request(dpd->dd->panel_entry, -1, -1);
 		gtk_orientable_set_orientation(GTK_ORIENTABLE(dpd->box), xfce_panel_plugin_get_orientation(dpd->plugin));
