@@ -733,8 +733,7 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 	gtk_widget_add_accelerator (dd->close_menu_item, "activate", accel_group,
-								dd->is_plugin ? GDK_KEY_c : GDK_KEY_q,
-								GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
+								GDK_KEY_q, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
 	gtk_container_add(GTK_CONTAINER(file_menu), dd->close_menu_item);
 
 	/* Help Menu*/
