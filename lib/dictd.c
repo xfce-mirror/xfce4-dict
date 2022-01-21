@@ -776,7 +776,7 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	gtk_window_set_default_size(GTK_WINDOW(dialog), 550, 400);
 	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_CLOSE);
 
-	text = g_strconcat("<tt>", buffer, "</tt>", NULL);
+	text = g_markup_printf_escaped("<tt>%s</tt>", buffer);
 	label = gtk_label_new(text);
 	gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
 	gtk_widget_set_vexpand(label, TRUE);
