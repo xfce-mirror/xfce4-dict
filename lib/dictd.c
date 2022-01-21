@@ -671,8 +671,10 @@ static void dictd_init(void)
 
 	if (G_UNLIKELY(! initialized))
 	{
-		siginterrupt(SIGALRM, 1);
-		signal(SIGALRM, signal_cb);
+		struct sigaction action;
+		action.sa_handler = &signal_cb;
+		action.sa_flags = SA_RESTART;
+		sigaction(SIGALRM, &action, NULL);
 
 		initialized = TRUE;
 	}
