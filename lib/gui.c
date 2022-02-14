@@ -580,24 +580,9 @@ static gboolean entry_button_press_cb(GtkWidget *widget, GdkEventButton *event, 
 }
 
 
-static const gchar *get_icon_name(const gchar *req1, const gchar *req2, const gchar *fallback)
-{
-	GtkIconTheme *theme = gtk_icon_theme_get_default();
-
-	if (gtk_icon_theme_has_icon(theme, req1))
-		return req1;
-	else if (gtk_icon_theme_has_icon(theme, req2))
-		return req2;
-	else
-		return fallback;
-}
-
-
 static void update_search_button(DictData *dd, GtkWidget *box)
 {
 	static GtkWidget *button = NULL;
-	/* cache the image name to not lookup through the theme each time */
-	static const gchar *web_image_name = NULL;
 	GtkWidget *image = NULL;
 
 	if (button == NULL)
@@ -608,21 +593,14 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 		gtk_widget_show(button);
 		gtk_box_pack_start(GTK_BOX(box), button, FALSE, FALSE, 0);
 		g_signal_connect(button, "clicked", G_CALLBACK(entry_button_clicked_cb), dd);
-
-		/* "internet-web-browser" is Tango, "web-browser" is Rodent, "edit-find" is GTK */
-		web_image_name = get_icon_name("internet-web-browser", "web-browser", "edit-find-symbolic");
 	}
 
 	switch (dd->mode_in_use)
 	{
 		case DICTMODE_DICT:
-		{
-			image = gtk_image_new_from_icon_name("edit-find-symbolic", GTK_ICON_SIZE_BUTTON);
-			break;
-		}
 		case DICTMODE_WEB:
 		{
-			image = gtk_image_new_from_icon_name(web_image_name, GTK_ICON_SIZE_BUTTON);
+			image = gtk_image_new_from_icon_name("edit-find-symbolic", GTK_ICON_SIZE_BUTTON);
 			break;
 		}
 		case DICTMODE_SPELL:
