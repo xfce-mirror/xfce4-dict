@@ -247,7 +247,7 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 {
 	gchar *title, *state_str, *name;
 	const gchar *button_label = _("S_top");
-	const gchar *button_image = "media-playback-stop";
+	const gchar *button_image = "media-playback-stop-symbolic";
 	gboolean pausable = TRUE;
 	XfdSpeedReaderPrivate *priv = xfd_speed_reader_get_instance_private(dialog);
 
@@ -259,7 +259,7 @@ static void xfd_speed_reader_set_window_title(XfdSpeedReader *dialog, gint state
 		case XSR_STATE_FINISHED:
 			state_str = _("Finished");
 			button_label = _("_Back");
-			button_image = "go-previous";
+			button_image = "go-previous-symbolic";
 			pausable = FALSE;
 			break;
 		default:
@@ -468,13 +468,13 @@ static void sr_pause(XfdSpeedReader *dialog, gboolean paused)
 	if (paused)
 	{
 		gtk_button_set_image(GTK_BUTTON(priv->button_pause),
-			gtk_image_new_from_icon_name("media-playback-start", GTK_ICON_SIZE_MENU));
+			gtk_image_new_from_icon_name("media-playback-start-symbolic", GTK_ICON_SIZE_MENU));
 		gtk_button_set_label(GTK_BUTTON(priv->button_pause), XFD_TITLE_RESUME);
 	}
 	else
 	{
 		gtk_button_set_image(GTK_BUTTON(priv->button_pause),
-			gtk_image_new_from_icon_name("media-playback-pause", GTK_ICON_SIZE_MENU));
+			gtk_image_new_from_icon_name("media-playback-pause-symbolic", GTK_ICON_SIZE_MENU));
 		gtk_button_set_label(GTK_BUTTON(priv->button_pause), XFD_TITLE_PAUSE);
 	}
 	/* set the new value */
@@ -671,16 +671,16 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 					GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 	gtk_container_add(GTK_CONTAINER(swin), textview);
 
-	button_open = gtk_button_new_from_icon_name("document-open", GTK_ICON_SIZE_MENU);
+	button_open = gtk_button_new_from_icon_name("document-open-symbolic", GTK_ICON_SIZE_MENU);
 	g_signal_connect(button_open, "clicked", G_CALLBACK(sr_open_clicked_cb), dialog);
 	gtk_widget_set_tooltip_text(button_open, _("Load the contents of a file"));
 
-	button_paste = gtk_button_new_from_icon_name("edit-paste", GTK_ICON_SIZE_MENU);
+	button_paste = gtk_button_new_from_icon_name("edit-paste-symbolic", GTK_ICON_SIZE_MENU);
 	g_signal_connect(button_paste, "clicked", G_CALLBACK(sr_paste_clicked_cb), priv->buffer);
 	gtk_widget_set_tooltip_text(button_paste,
 		_("Clear the contents of the text field and paste the contents of the clipboard"));
 
-	button_clear = gtk_button_new_from_icon_name("edit-clear", GTK_ICON_SIZE_MENU);
+	button_clear = gtk_button_new_from_icon_name("edit-clear-symbolic", GTK_ICON_SIZE_MENU);
 	g_signal_connect(button_clear, "clicked", G_CALLBACK(sr_clear_clicked_cb), priv->buffer);
 	gtk_widget_set_tooltip_text(button_clear, _("Clear the contents of the text field"));
 
@@ -702,13 +702,13 @@ static void xfd_speed_reader_init(XfdSpeedReader *dialog)
 	gtk_widget_hide(priv->button_stop);
 
 	gtk_button_set_image(GTK_BUTTON(priv->button_pause),
-		gtk_image_new_from_icon_name("media-playback-pause", GTK_ICON_SIZE_MENU));
+		gtk_image_new_from_icon_name("media-playback-pause-symbolic", GTK_ICON_SIZE_MENU));
 	gtk_button_set_image(GTK_BUTTON(priv->button_start),
-		gtk_image_new_from_icon_name("media-playback-start", GTK_ICON_SIZE_MENU));
+		gtk_image_new_from_icon_name("media-playback-start-symbolic", GTK_ICON_SIZE_MENU));
 	gtk_button_set_image(GTK_BUTTON(priv->button_stop),
-		gtk_image_new_from_icon_name("media-playback-stop", GTK_ICON_SIZE_MENU));
+		gtk_image_new_from_icon_name("media-playback-stop-symbolic", GTK_ICON_SIZE_MENU));
 	gtk_button_set_image(GTK_BUTTON(button_close),
-		gtk_image_new_from_icon_name("window-close", GTK_ICON_SIZE_MENU));
+		gtk_image_new_from_icon_name("window-close-symbolic", GTK_ICON_SIZE_MENU));
 
 	g_signal_connect(dialog, "response", G_CALLBACK(xfd_speed_reader_response_cb), NULL);
 

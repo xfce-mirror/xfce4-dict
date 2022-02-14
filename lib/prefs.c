@@ -222,11 +222,11 @@ static gboolean spell_entry_focus_cb(GtkEntry *entry, GdkEventFocus *ev, GtkWidg
 
 	if (path != NULL)
 	{
-		gtk_image_set_from_icon_name(GTK_IMAGE(icon), "gtk-yes", GTK_ICON_SIZE_BUTTON);
+		gtk_image_set_from_icon_name(GTK_IMAGE(icon), "object-select-symbolic", GTK_ICON_SIZE_BUTTON);
 		g_free(path);
 	}
 	else
-		gtk_image_set_from_icon_name(GTK_IMAGE(icon), "process-stop", GTK_ICON_SIZE_BUTTON);
+		gtk_image_set_from_icon_name(GTK_IMAGE(icon), "process-stop-symbolic", GTK_ICON_SIZE_BUTTON);
 
 	return FALSE;
 }
@@ -497,14 +497,14 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(dialog), "port_spinner", port_spinner);
 		g_object_set_data(G_OBJECT(dialog), "dict_combo", dict_combo);
 
-		button_get_list = gtk_button_new_from_icon_name("view-refresh", GTK_ICON_SIZE_BUTTON);
+		button_get_list = gtk_button_new_from_icon_name("view-refresh-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_get_list);
 		g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_dictd_get_list), dd);
 		g_object_set_data(G_OBJECT(button_get_list), "dict_combo", dict_combo);
 		g_object_set_data(G_OBJECT(button_get_list), "port_spinner", port_spinner);
 		g_object_set_data(G_OBJECT(button_get_list), "server_entry", server_entry);
 
-		button_get_info = gtk_button_new_from_icon_name("dialog-information", GTK_ICON_SIZE_BUTTON);
+		button_get_info = gtk_button_new_from_icon_name("dialog-information-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_get_info);
 		g_signal_connect(button_get_info, "clicked", G_CALLBACK(dict_dictd_get_information), dd);
 		g_object_set_data(G_OBJECT(button_get_info), "port_spinner", port_spinner);
@@ -641,7 +641,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_signal_connect(spell_combo, "changed", G_CALLBACK(spell_combo_changed_cb), dd);
 		gtk_widget_show(spell_combo);
 
-		button_refresh = gtk_button_new_from_icon_name("view-refresh", GTK_ICON_SIZE_BUTTON);
+		button_refresh = gtk_button_new_from_icon_name("view-refresh-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_refresh);
 		g_object_set_data(G_OBJECT(button_refresh), "spell_combo", spell_combo);
 		g_signal_connect(button_refresh, "clicked", G_CALLBACK(button_dict_refresh_cb), dd);
