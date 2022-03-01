@@ -7,13 +7,13 @@
 # Hunt Xu <huntxu@live.cn>, 2008-2010
 # Mingcong Bai <jeffbai@aosc.xyz>, 2016
 # Xiaobo Zhou <zhouxiaobo.500@gmail.com>, 2016
-# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2021
+# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-12 00:46+0100\n"
-"PO-Revision-Date: 2021-02-12 15:07+0000\n"
+"PO-Revision-Date: 2022-03-01 04:51+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/xfce/xfce-apps/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -450,7 +450,7 @@ msgstr "您选择了一个无效的词典。"
 
 #: ../lib/prefs.c:299
 msgid "General"
-msgstr "一般"
+msgstr "通用"
 
 #: ../lib/prefs.c:301
 msgid "<b>Default search method:</b>"
