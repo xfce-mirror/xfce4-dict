@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Ápo. <apostolos.papadimitriu@gmail.com>, 2022
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2016
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2017
 # Efstathios Iosifidis <iosifidis@opensuse.org>, 2012
@@ -13,8 +14,8 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-12 00:46+0100\n"
-"PO-Revision-Date: 2021-02-11 23:46+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2013-07-03 18:37+0000\n"
+"Last-Translator: Ápo. <apostolos.papadimitriu@gmail.com>, 2022\n"
 "Language-Team: Greek (http://www.transifex.com/xfce/xfce-apps/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -389,7 +390,7 @@ msgstr "Ένα πρόγραμμα πελάτης για να εκτελείτε 
 
 #: ../lib/gui.c:998
 msgid "Copyright © 2006-2020 Xfce Development Team"
-msgstr ""
+msgstr "Πνευματικά δικαιώματα @ 2006-2020 Ομάδα Ανάπτυξης Xfce"
 
 #: ../lib/gui.c:1001
 msgid "translator-credits"
@@ -421,7 +422,7 @@ msgstr "dict.leo.org - Γερμανικά <-> Κινέζικα"
 
 #: ../lib/prefs.c:57
 msgid "dict.cc - Dictionary"
-msgstr ""
+msgstr "Λεξικό - dict.cc"
 
 #: ../lib/prefs.c:58
 msgid "Dictionary.com"
