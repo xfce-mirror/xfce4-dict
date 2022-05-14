@@ -1,7 +1,7 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 SUBDIRS =														\
-	icons													\
+	icons														\
 	lib															\
 	panel-plugin												\
 	src															\
@@ -20,13 +20,14 @@ EXTRA_DIST =													\
 distclean-local:
 	rm -rf *.cache *~
 
-distuninstallcheck_listfiles = 						\
+distuninstallcheck_listfiles = 									\
 	find . -type f -print | grep -v ./share/icons/hicolor/icon-theme.cache
 
 DISTCLEANFILES =												\
 	intltool-extract											\
 	intltool-merge												\
-	intltool-update
+	intltool-update												\
+	po/.intltool-merge-cache.lock
 
 man_MANS=xfce4-dict.1
 
