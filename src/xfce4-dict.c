@@ -122,9 +122,7 @@ gint main(gint argc, gchar *argv[])
 	gchar flags;
 	gchar *search_text;
 
-#ifdef ENABLE_NLS
 	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-#endif
 
 	context = g_option_context_new(_("[TEXT]"));
 	g_option_context_add_main_entries(context, cli_options, GETTEXT_PACKAGE);
