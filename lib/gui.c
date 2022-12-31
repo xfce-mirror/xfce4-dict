@@ -966,23 +966,18 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
                             "André Miranda <andre42m@gmail.com>",
                             NULL };
 
-	GdkPixbuf *logo = gdk_pixbuf_new_from_resource("/org/xfce/dict/icon", NULL);
-
 	gtk_show_about_dialog(GTK_WINDOW(dd->window),
 		"destroy-with-parent", TRUE,
 		"authors", authors,
 		"comments", _("A client program to query different dictionaries."),
 		"copyright", _("Copyright \302\251 2006-2020 Xfce Development Team"),
 		"website", "https://docs.xfce.org/apps/xfce4-dict/start",
-		"logo", logo,
+		"logo-icon-name", "org.xfce.Dictionary",
 		"translator-credits", _("translator-credits"),
 		"license", XFCE_LICENSE_GPL,
 		"version", PACKAGE_VERSION,
 		"program-name", _("Xfce4 Dictionary"),
 		  NULL);
-
-	if (logo != NULL)
-		g_object_unref(logo);
 }
 
 
