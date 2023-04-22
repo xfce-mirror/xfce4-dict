@@ -114,9 +114,8 @@ static gchar *str_replace(gchar *haystack, const gchar *needle, const gchar *rep
 	g_string_append(str, replacement);
 	g_string_append(str, haystack + lt_pos + strlen(needle));
 
-	result = str->str;
 	g_free(haystack);
-	g_string_free(str, FALSE);
+	result = g_string_free(str, FALSE);
 	return str_replace(result, needle, replacement);
 }
 
