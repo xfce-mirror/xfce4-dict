@@ -6,7 +6,7 @@ depcomp
 *.gmo
 *.desktop
 Makefile.in.in
-.intltool-merge-cache
+.intltool-merge-cache*
 configure.in
 libtool
 configure
