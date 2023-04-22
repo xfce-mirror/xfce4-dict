@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-12 00:46+0100\n"
+"POT-Creation-Date: 2023-04-22 00:47+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: K2latmanesh <sudo.k2latmanesh@tutamail.com>, 2022\n"
-"Language-Team: Persian (Iran) (http://www.transifex.com/xfce/xfce-apps/language/fa_IR/)\n"
+"Language-Team: Persian (Iran) (http://app.transifex.com/xfce/xfce-apps/language/fa_IR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
+#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:760 ../lib/prefs.c:265
 msgid "Dictionary"
 msgstr "واژه‌نامه"
 
@@ -28,7 +28,7 @@ msgid "A plugin to query different dictionaries."
 msgstr ""
 
 #: ../panel-plugin/xfce4-dict-plugin.c:273
-#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:194
 #: ../lib/spell.c:242 ../lib/gui.c:539
 msgid "Ready"
 msgstr "آماده"
@@ -37,7 +37,7 @@ msgstr "آماده"
 msgid "Look up a word"
 msgstr ""
 
-#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:791
 msgid "Search term"
 msgstr "جستجوی واژه"
 
@@ -73,11 +73,11 @@ msgstr ""
 msgid "Show version information"
 msgstr "نمایش اطلاعات نگارش"
 
-#: ../src/xfce4-dict.c:129
+#: ../src/xfce4-dict.c:127
 msgid "[TEXT]"
 msgstr "[متن]"
 
-#: ../src/xfce4-dict.c:145
+#: ../src/xfce4-dict.c:143
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "لطفاً اشکلات را به <%s> گزارش کنید."
@@ -136,7 +136,7 @@ msgstr "ورودی نامعتبر"
 msgid "Process failed (%s)"
 msgstr "فرایند شکست خورد (%s)"
 
-#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:696
 msgid "P_ause"
 msgstr "_مکث"
 
@@ -144,102 +144,102 @@ msgstr "_مکث"
 msgid "_Resume"
 msgstr "از_سرگیری"
 
-#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
+#: ../lib/speedreader.c:249 ../lib/speedreader.c:698
 msgid "S_top"
 msgstr ""
 
-#: ../lib/speedreader.c:256
+#: ../lib/speedreader.c:257
 msgid "Running"
 msgstr "در حال اجرا"
 
-#: ../lib/speedreader.c:259
+#: ../lib/speedreader.c:260
 msgid "Finished"
 msgstr "پایان یافت"
 
-#: ../lib/speedreader.c:260
+#: ../lib/speedreader.c:261
 msgid "_Back"
 msgstr ""
 
-#: ../lib/speedreader.c:268
+#: ../lib/speedreader.c:269
 msgid "Speed Reader"
 msgstr "خوانش سریع"
 
-#: ../lib/speedreader.c:369
+#: ../lib/speedreader.c:370
 msgid "You must enter a text."
 msgstr "باید متنی وارد کنید."
 
-#: ../lib/speedreader.c:526
+#: ../lib/speedreader.c:527
 msgid "Choose a file to load"
 msgstr "پرونده‌ای را برای بارگیری گزینش کنید"
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:530
 msgid "_Cancel"
 msgstr "_لغو"
 
-#: ../lib/speedreader.c:530
+#: ../lib/speedreader.c:531
 msgid "_Open"
 msgstr ""
 
-#: ../lib/speedreader.c:555
+#: ../lib/speedreader.c:556
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr ""
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:582
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:606
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr ""
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:611
 msgid "_Words per Minute:"
 msgstr "_کلمه بر دقیقه:"
 
-#: ../lib/speedreader.c:617
+#: ../lib/speedreader.c:618
 msgid "_Mark Paragraphs"
 msgstr ""
 
-#: ../lib/speedreader.c:624
+#: ../lib/speedreader.c:625
 msgid "Word _Grouping:"
 msgstr ""
 
-#: ../lib/speedreader.c:641
+#: ../lib/speedreader.c:642
 msgid "_Font Size:"
 msgstr "اندازه _قلم:"
 
-#: ../lib/speedreader.c:662
+#: ../lib/speedreader.c:663
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr ""
 
-#: ../lib/speedreader.c:675
+#: ../lib/speedreader.c:676
 msgid "Load the contents of a file"
 msgstr "بارگیری محتوای یک پرونده"
 
-#: ../lib/speedreader.c:680
+#: ../lib/speedreader.c:681
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr ""
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:685
 msgid "Clear the contents of the text field"
 msgstr ""
 
-#: ../lib/speedreader.c:696
+#: ../lib/speedreader.c:697
 msgid "_Start"
 msgstr ""
 
-#: ../lib/speedreader.c:698 ../lib/dictd.c:765 ../lib/gui.c:730
-#: ../lib/gui.c:840 ../lib/prefs.c:267
+#: ../lib/speedreader.c:699 ../lib/dictd.c:769 ../lib/gui.c:708
+#: ../lib/gui.c:817 ../lib/prefs.c:267
 msgid "_Close"
 msgstr "بستن"
 
@@ -265,63 +265,63 @@ msgstr "هشدار"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:382
+#: ../lib/dictd.c:384
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "جستجوی «%s» با استفاده از «%s»"
 
-#: ../lib/dictd.c:389
+#: ../lib/dictd.c:391
 msgid "Web Search:"
 msgstr "جستجوی وب:"
 
-#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
-#: ../lib/dictd.c:825
+#: ../lib/dictd.c:414 ../lib/dictd.c:722 ../lib/dictd.c:731 ../lib/dictd.c:820
+#: ../lib/dictd.c:829
 msgid "Could not connect to server."
 msgstr "ناتوانی در برقراری ارتباط با کارساز."
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:420
 msgid "The server is not ready."
 msgstr "کارساز آماده نیست."
 
-#: ../lib/dictd.c:425
+#: ../lib/dictd.c:427
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "واژه‌نامه مشخص‌شده نامعتبر است. لطفاً ترجیحات خود را بررسی کنید."
 
-#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+#: ../lib/dictd.c:435 ../lib/dictd.c:475 ../lib/dictd.c:854
 msgid "Unknown error while querying the server."
 msgstr "اِشکال ناشناخته به هنگام پرس‌وجو از کارساز."
 
-#: ../lib/dictd.c:448
+#: ../lib/dictd.c:450
 msgid "Dictionary Results:"
 msgstr "نتایج واژه‌نامه:"
 
-#: ../lib/dictd.c:451
+#: ../lib/dictd.c:453
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "هیچ نتیجه‌ای برای «%s» یافت نشد."
 
-#: ../lib/dictd.c:478
+#: ../lib/dictd.c:480
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "%d مترادف یافت شد."
 msgstr[1] "%d مترادف یافت شد."
 
-#: ../lib/dictd.c:689
+#: ../lib/dictd.c:693
 #, c-format
 msgid "Querying %s..."
 msgstr "در حال پرس‌وجو از %s..."
 
-#: ../lib/dictd.c:748
+#: ../lib/dictd.c:752
 msgid "An error occurred while querying server information."
 msgstr ""
 
-#: ../lib/dictd.c:761
+#: ../lib/dictd.c:765
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "اطلاعات کارساز برای «%s»"
 
-#: ../lib/dictd.c:845
+#: ../lib/dictd.c:849
 msgid "The server doesn't offer any databases."
 msgstr "کارساز هیچ پایگاه داده‌ای ارائه نمی‌کند."
 
@@ -333,65 +333,61 @@ msgstr "رونویسی پیوند"
 msgid "Search"
 msgstr "جستجو"
 
-#: ../lib/gui.c:605
+#: ../lib/gui.c:590
 msgid "F_ind"
 msgstr "_جستجو"
 
 #. File Menu
-#: ../lib/gui.c:694
+#: ../lib/gui.c:672
 msgid "_File"
 msgstr "_پرونده"
 
-#: ../lib/gui.c:701 ../lib/gui.c:828
+#: ../lib/gui.c:679 ../lib/gui.c:805
 msgid "Speed _Reader"
 msgstr ""
 
-#: ../lib/gui.c:716
+#: ../lib/gui.c:694
 msgid "_Preferences"
 msgstr "_ترجیحات"
 
-#: ../lib/gui.c:730 ../lib/gui.c:840
+#: ../lib/gui.c:708 ../lib/gui.c:817
 msgid "_Quit"
 msgstr "_خروج"
 
 #. Help Menu
-#: ../lib/gui.c:741
+#: ../lib/gui.c:718
 msgid "_Help"
 msgstr "_راهنما"
 
-#: ../lib/gui.c:748
+#: ../lib/gui.c:725
 msgid "About"
 msgstr "درباره"
 
-#: ../lib/gui.c:852
+#: ../lib/gui.c:829
 msgid "Search with:"
 msgstr ""
 
-#: ../lib/gui.c:856
+#: ../lib/gui.c:833
 msgid "_Dictionary Server"
 msgstr "کارساز _واژه‌نامه"
 
-#: ../lib/gui.c:862
+#: ../lib/gui.c:839
 msgid "_Web Service"
 msgstr ""
 
-#: ../lib/gui.c:870
+#: ../lib/gui.c:847
 msgid "_Spell Checker"
 msgstr ""
 
-#: ../lib/gui.c:997
+#: ../lib/gui.c:972
 msgid "A client program to query different dictionaries."
 msgstr ""
 
-#: ../lib/gui.c:998
-msgid "Copyright © 2006-2020 Xfce Development Team"
-msgstr "حق رونوشت © ۲۰۲۰-۲۰۰۶ تیم توسعهٔ Xfce"
-
-#: ../lib/gui.c:1001
+#: ../lib/gui.c:976
 msgid "translator-credits"
 msgstr "K2latmanesh <sudo.k2latmanesh@tutamail.com>"
 
-#: ../lib/gui.c:1004
+#: ../lib/gui.c:979
 msgid "Xfce4 Dictionary"
 msgstr "واژه‌نامهٔ Xfce4"
 
@@ -455,15 +451,15 @@ msgstr "عمومی"
 msgid "<b>Default search method:</b>"
 msgstr "<b>شیوهٔ جستجوی پیش‌گزیده:</b>"
 
-#: ../lib/prefs.c:306 ../lib/prefs.c:458
+#: ../lib/prefs.c:306 ../lib/prefs.c:457
 msgid "Dictionary Server"
 msgstr "کارساز واژه‌نامه"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:562
+#: ../lib/prefs.c:315 ../lib/prefs.c:561
 msgid "Web Service"
 msgstr "خدمات وب"
 
-#: ../lib/prefs.c:324 ../lib/prefs.c:609
+#: ../lib/prefs.c:324 ../lib/prefs.c:608
 msgid "Spell Checker"
 msgstr ""
 
@@ -505,47 +501,47 @@ msgid "Text field size:"
 msgstr ""
 
 #. server address
-#: ../lib/prefs.c:461
+#: ../lib/prefs.c:460
 msgid "Server:"
 msgstr "کارساز:"
 
 #. server port
-#: ../lib/prefs.c:471
+#: ../lib/prefs.c:470
 msgid "Server Port:"
 msgstr "درگاه کارساز:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:635
+#: ../lib/prefs.c:476 ../lib/prefs.c:634
 msgid "Dictionary:"
 msgstr "واژه‌نامه:"
 
-#: ../lib/prefs.c:480
+#: ../lib/prefs.c:479
 msgid "* (use all)"
 msgstr "* (استفاده از همه)"
 
-#: ../lib/prefs.c:482
+#: ../lib/prefs.c:481
 msgid "! (use all, stop after first match)"
 msgstr "! (استفاده از همه، توقف پس از نخستین نتیجه)"
 
-#: ../lib/prefs.c:564
+#: ../lib/prefs.c:563
 msgid "<b>Web search URL:</b>"
 msgstr "<b>نشانی جستجو در وب:</b>"
 
-#: ../lib/prefs.c:569
+#: ../lib/prefs.c:568
 msgid "URL:"
 msgstr "نشانی:"
 
-#: ../lib/prefs.c:589
+#: ../lib/prefs.c:588
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr ""
 
-#: ../lib/prefs.c:611
+#: ../lib/prefs.c:610
 msgid "Spell Check Program:"
 msgstr ""
 
-#: ../lib/prefs.c:628
+#: ../lib/prefs.c:627
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
