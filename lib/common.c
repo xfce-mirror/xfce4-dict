@@ -349,7 +349,6 @@ void dict_read_rc_file(DictData *dd)
 	XfceRc *rc;
 	gint mode_in_use = DICTMODE_DICT;
 	gint mode_default = DICTMODE_LAST_USED;
-	gint port = 2628;
 	gint panel_entry_size = 150;
 	gint wpm = 400;
 	gint grouping = 1;
@@ -357,6 +356,7 @@ void dict_read_rc_file(DictData *dd)
 	gboolean show_panel_entry = FALSE;
 	gchar *spell_bin_default = get_spell_program();
 	gchar *spell_dictionary_default = get_default_lang();
+	const gchar *port = "2628";
 	const gchar *server = "dict.org";
 	const gchar *dict = "*";
 	const gchar *weburl = NULL;
@@ -376,7 +376,7 @@ void dict_read_rc_file(DictData *dd)
 		weburl = xfce_rc_read_entry(rc, "web_url", weburl);
 		show_panel_entry = xfce_rc_read_bool_entry(rc, "show_panel_entry", show_panel_entry);
 		panel_entry_size = xfce_rc_read_int_entry(rc, "panel_entry_size", panel_entry_size);
-		port = xfce_rc_read_int_entry(rc, "port", port);
+		port = xfce_rc_read_entry(rc, "port", port);
 		server = xfce_rc_read_entry(rc, "server", server);
 		dict = xfce_rc_read_entry(rc, "dict", dict);
 		spell_bin = xfce_rc_read_entry(rc, "spell_bin", spell_bin_default);
@@ -408,7 +408,7 @@ void dict_read_rc_file(DictData *dd)
 	dd->web_url = g_strdup(weburl);
 	dd->show_panel_entry = show_panel_entry;
 	dd->panel_entry_size = panel_entry_size;
-	dd->port = port;
+	dd->port = g_strdup(port);
 	dd->server = g_strdup(server);
 	dd->dictionary = g_strdup(dict);
 	if (spell_bin != NULL)
@@ -459,7 +459,7 @@ void dict_write_rc_file(DictData *dd)
 			xfce_rc_write_entry(rc, "web_url", dd->web_url);
 		xfce_rc_write_bool_entry(rc, "show_panel_entry", dd->show_panel_entry);
 		xfce_rc_write_int_entry(rc, "panel_entry_size", dd->panel_entry_size);
-		xfce_rc_write_int_entry(rc, "port", dd->port);
+		xfce_rc_write_entry(rc, "port", dd->port);
 		xfce_rc_write_entry(rc, "server", dd->server);
 		xfce_rc_write_entry(rc, "dict", dd->dictionary);
 		xfce_rc_write_entry(rc, "spell_bin", dd->spell_bin);

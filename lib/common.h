@@ -79,7 +79,7 @@ typedef struct
 	gboolean show_panel_entry;
 	gint panel_entry_size;
 
-	gint port;
+	gchar *port;
 	gchar *server;
 	gchar *dictionary;
 
