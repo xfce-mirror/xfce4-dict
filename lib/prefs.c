@@ -104,8 +104,9 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 	}
 
 	/* MODE DICT */
-	dd->port = gtk_spin_button_get_value_as_int(
-		GTK_SPIN_BUTTON(g_object_get_data(G_OBJECT(dlg), "port_spinner")));
+	g_free(dd->port);
+	dd->port = g_strdup(gtk_entry_get_text(
+		GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "port_entry"))));
 
 	g_free(dd->server);
 	dd->server = g_strdup(gtk_entry_get_text(
@@ -446,7 +447,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 #define PAGE_DICTD
 	 {
 		GtkWidget *grid, *button_get_list, *button_get_info;
-		GtkWidget *server_entry, *port_spinner, *dict_combo;
+		GtkWidget *server_entry, *port_entry, *dict_combo;
 
 		notebook_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
 		gtk_widget_show(notebook_vbox);
@@ -469,8 +470,12 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		/* server port */
 		label2 = gtk_label_new_with_mnemonic(_("Server Port:"));
 
-		port_spinner = gtk_spin_button_new_with_range(0.0, 65536.0, 1.0);
-		gtk_spin_button_set_value(GTK_SPIN_BUTTON(port_spinner), dd->port);
+		port_entry = gtk_entry_new();
+		gtk_entry_set_max_length(GTK_ENTRY(port_entry), 16);
+		if (dd->port != NULL)
+		{
+			gtk_entry_set_text(GTK_ENTRY(port_entry), dd->port);
+		}
 
 		/* dictionary */
 		label3 = gtk_label_new_with_mnemonic(_("Dictionary:"));
@@ -494,20 +499,20 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		}
 
 		g_object_set_data(G_OBJECT(dialog), "server_entry", server_entry);
-		g_object_set_data(G_OBJECT(dialog), "port_spinner", port_spinner);
+		g_object_set_data(G_OBJECT(dialog), "port_entry", port_entry);
 		g_object_set_data(G_OBJECT(dialog), "dict_combo", dict_combo);
 
 		button_get_list = gtk_button_new_from_icon_name("view-refresh-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_get_list);
 		g_signal_connect(button_get_list, "clicked", G_CALLBACK(dict_dictd_get_list), dd);
 		g_object_set_data(G_OBJECT(button_get_list), "dict_combo", dict_combo);
-		g_object_set_data(G_OBJECT(button_get_list), "port_spinner", port_spinner);
+		g_object_set_data(G_OBJECT(button_get_list), "port_entry", port_entry);
 		g_object_set_data(G_OBJECT(button_get_list), "server_entry", server_entry);
 
 		button_get_info = gtk_button_new_from_icon_name("dialog-information-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(button_get_info);
 		g_signal_connect(button_get_info, "clicked", G_CALLBACK(dict_dictd_get_information), dd);
-		g_object_set_data(G_OBJECT(button_get_info), "port_spinner", port_spinner);
+		g_object_set_data(G_OBJECT(button_get_info), "port_entry", port_entry);
 		g_object_set_data(G_OBJECT(button_get_info), "server_entry", server_entry);
 
 		/* put it all together */
@@ -528,8 +533,8 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_set_valign (label2, GTK_ALIGN_CENTER);
 		gtk_widget_set_halign (label2, GTK_ALIGN_END);
 
-		gtk_grid_attach(GTK_GRID(grid), port_spinner, 1, 1, 1, 1);
-		gtk_widget_set_hexpand(port_spinner, TRUE);
+		gtk_grid_attach(GTK_GRID(grid), port_entry, 1, 1, 1, 1);
+		gtk_widget_set_hexpand(port_entry, TRUE);
 
 		gtk_grid_attach(GTK_GRID(grid), label3, 0, 2, 1, 1);
 		gtk_widget_set_valign (label3, GTK_ALIGN_CENTER);

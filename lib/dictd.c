@@ -53,9 +53,8 @@
 
 
 
-static gint open_socket(const gchar *host_name, gint portN)
+static gint open_socket(const gchar *host_name, const gchar *port)
 {
-	const gchar *port = "2628";	// XXX
 	struct addrinfo hints, *res, *res0;
 	gint fd;
 	gint opt = 1;
@@ -705,15 +704,15 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	gchar *answer = NULL;
 	gchar *text, *end;
 	GtkEntry *entry_server = g_object_get_data(G_OBJECT(button), "server_entry");
-	GtkSpinButton *entry_port = g_object_get_data(G_OBJECT(button), "port_spinner");
+	GtkEntry *entry_port = g_object_get_data(G_OBJECT(button), "port_entry");
 	const gchar *server;
-	gint port;
+	const gchar *port;
 	GtkWidget *dialog, *label, *swin, *vbox;
 
 	dictd_init();
 
 	server = gtk_entry_get_text(entry_server);
-	port = gtk_spin_button_get_value_as_int(entry_port);
+	port = gtk_entry_get_text(entry_port);
 
 	if ((fd = open_socket(server, port)) == -1)
 	{
@@ -804,14 +803,14 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	gchar **lines;
 	GtkWidget *dict_combo = g_object_get_data(G_OBJECT(button), "dict_combo");
 	GtkEntry *entry_server = g_object_get_data(G_OBJECT(button), "server_entry");
-	GtkSpinButton *entry_port = g_object_get_data(G_OBJECT(button), "port_spinner");
+	GtkEntry  *entry_port = g_object_get_data(G_OBJECT(button), "port_entry");
 	const gchar *server;
-	gint port;
+	const gchar *port;
 
 	dictd_init();
 
 	server = gtk_entry_get_text(entry_server);
-	port = gtk_spin_button_get_value_as_int(entry_port);
+	port = gtk_entry_get_text(entry_port);
 
 	if ((fd = open_socket(server, port)) == -1)
 	{
