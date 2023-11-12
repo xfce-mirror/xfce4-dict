@@ -53,38 +53,36 @@
 
 
 
-static gint open_socket(const gchar *host_name, gint port)
+static gint open_socket(const gchar *host_name, gint portN)
 {
-	struct sockaddr_in addr;
-	struct hostent *host_p;
+	const gchar *port = "2628";	// XXX
+	struct addrinfo hints, *res, *res0;
 	gint fd;
 	gint opt = 1;
 
-	memset((gchar *) &addr, 0, sizeof (addr));
+	memset(&hints, 0, sizeof (hints));
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
 
-	if ((addr.sin_addr.s_addr = inet_addr(host_name)) == INADDR_NONE)
-	{
-		host_p = gethostbyname(host_name);
-		if (host_p == NULL)
-			return (-1);
-		memcpy((gchar *)(&addr.sin_addr), host_p->h_addr, (size_t)host_p->h_length);
-	}
-
-	addr.sin_family  = AF_INET;
-	addr.sin_port    = htons((gushort) port);
-
-	if ((fd = socket (AF_INET, SOCK_STREAM, 0)) < 0)
+	if (getaddrinfo(host_name, port, &hints, &res0))
 		return (-1);
 
-	setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (gchar *) &opt, sizeof (opt));
+	for (res = res0; res; res = res->ai_next) {
+		fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+		if (fd < 0)
+			continue;
 
-	if (connect(fd, (struct sockaddr *) &addr, sizeof (addr)) != 0)
-	{
-		close(fd);
-		return (-1);
+		setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (gchar *) &opt, sizeof (opt));
+		if (connect(fd, res->ai_addr, res->ai_addrlen) != 0) {
+			close(fd);
+			fd = -1;
+			continue;
+		}
+
+		break;
 	}
-	/*fcntl( fd, F_SETFL, O_NONBLOCK );*/
 
+	freeaddrinfo(res0);
 	return (fd);
 }
 
