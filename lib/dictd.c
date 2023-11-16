@@ -53,38 +53,35 @@
 
 
 
-static gint open_socket(const gchar *host_name, gint port)
+static gint open_socket(const gchar *host_name, const gchar *port)
 {
-	struct sockaddr_in addr;
-	struct hostent *host_p;
-	gint fd;
+	struct addrinfo hints, *res, *res0;
+	gint fd = -1;
 	gint opt = 1;
 
-	memset((gchar *) &addr, 0, sizeof (addr));
+	memset(&hints, 0, sizeof (hints));
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
 
-	if ((addr.sin_addr.s_addr = inet_addr(host_name)) == INADDR_NONE)
-	{
-		host_p = gethostbyname(host_name);
-		if (host_p == NULL)
-			return (-1);
-		memcpy((gchar *)(&addr.sin_addr), host_p->h_addr, (size_t)host_p->h_length);
-	}
-
-	addr.sin_family  = AF_INET;
-	addr.sin_port    = htons((gushort) port);
-
-	if ((fd = socket (AF_INET, SOCK_STREAM, 0)) < 0)
+	if (getaddrinfo(host_name, port, &hints, &res0))
 		return (-1);
 
-	setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (gchar *) &opt, sizeof (opt));
+	for (res = res0; res; res = res->ai_next) {
+		fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+		if (fd < 0)
+			continue;
 
-	if (connect(fd, (struct sockaddr *) &addr, sizeof (addr)) != 0)
-	{
-		close(fd);
-		return (-1);
+		setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (gchar *) &opt, sizeof (opt));
+		if (connect(fd, res->ai_addr, res->ai_addrlen) != 0) {
+			close(fd);
+			fd = -1;
+			continue;
+		}
+
+		break;
 	}
-	/*fcntl( fd, F_SETFL, O_NONBLOCK );*/
 
+	freeaddrinfo(res0);
 	return (fd);
 }
 
@@ -707,15 +704,15 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	gchar *answer = NULL;
 	gchar *text, *end;
 	GtkEntry *entry_server = g_object_get_data(G_OBJECT(button), "server_entry");
-	GtkSpinButton *entry_port = g_object_get_data(G_OBJECT(button), "port_spinner");
+	GtkEntry *entry_port = g_object_get_data(G_OBJECT(button), "port_entry");
 	const gchar *server;
-	gint port;
+	const gchar *port;
 	GtkWidget *dialog, *label, *swin, *vbox;
 
 	dictd_init();
 
 	server = gtk_entry_get_text(entry_server);
-	port = gtk_spin_button_get_value_as_int(entry_port);
+	port = gtk_entry_get_text(entry_port);
 
 	if ((fd = open_socket(server, port)) == -1)
 	{
@@ -806,14 +803,14 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	gchar **lines;
 	GtkWidget *dict_combo = g_object_get_data(G_OBJECT(button), "dict_combo");
 	GtkEntry *entry_server = g_object_get_data(G_OBJECT(button), "server_entry");
-	GtkSpinButton *entry_port = g_object_get_data(G_OBJECT(button), "port_spinner");
+	GtkEntry  *entry_port = g_object_get_data(G_OBJECT(button), "port_entry");
 	const gchar *server;
-	gint port;
+	const gchar *port;
 
 	dictd_init();
 
 	server = gtk_entry_get_text(entry_server);
-	port = gtk_spin_button_get_value_as_int(entry_port);
+	port = gtk_entry_get_text(entry_port);
 
 	if ((fd = open_socket(server, port)) == -1)
 	{
