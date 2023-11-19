@@ -1,3 +1,9 @@
+0.8.6 (2023-11-19)
+=====
+- Use getaddrinfo(3) to support IPv6 DICT servers
+- Add icons at missing sizes, clean up SVG metadata
+
+
 0.8.5 (2023-04-22)
 =====
 - build: Fix -Wunused-result warning
