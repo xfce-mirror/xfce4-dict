@@ -7,15 +7,16 @@
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020-2021
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Necdet Yücel <necdetyucel@gmail.com>, 2015,2017
+# Sabri Ünal <libreajans@gmail.com>, 2023
 # Serdar Sağlam <teknomobil@msn.com>, 2019
 # Volkan Gezer <volkangezer@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 00:47+0200\n"
+"POT-Creation-Date: 2023-05-30 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>, 2020-2021\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2023\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -179,7 +180,7 @@ msgstr "Yüklenecek dosya seç"
 
 #: ../lib/speedreader.c:530
 msgid "_Cancel"
-msgstr "_İptal"
+msgstr "İ_ptal"
 
 #: ../lib/speedreader.c:531
 msgid "_Open"
@@ -248,23 +249,23 @@ msgstr "_Başlat"
 msgid "_Close"
 msgstr "_Kapat"
 
-#: ../lib/common.c:186
+#: ../lib/common.c:185
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Arama adresi boş. Lütfen ayarlarınızı denetleyin."
 
-#: ../lib/common.c:192
+#: ../lib/common.c:191
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Tarayıcı açılamadı. Lütfen ayarlarınızı denetleyin."
 
-#: ../lib/common.c:232
+#: ../lib/common.c:231
 msgid "Invalid non-UTF8 input"
 msgstr "Geçersiz UTF8-dışı girdi"
 
-#: ../lib/common.c:568
+#: ../lib/common.c:567
 msgid "Error"
 msgstr "Hata"
 
-#: ../lib/common.c:571
+#: ../lib/common.c:570
 msgid "warning"
 msgstr "uyarı"
 
