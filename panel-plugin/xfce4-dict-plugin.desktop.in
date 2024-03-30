@@ -1,8 +1,8 @@
 [Xfce Panel]
 Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
-_Name=Dictionary
-_Comment=A plugin to query different dictionaries.
+Name=Dictionary
+Comment=A plugin to query different dictionaries.
 Icon=org.xfce.Dictionary
 X-XFCE-Module=xfce4dict
 X-XFCE-Internal=false

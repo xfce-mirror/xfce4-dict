@@ -39,7 +39,8 @@ desktopdir =								\
 desktop_DATA =								\
 	xfce4-dict-plugin.desktop
 
-@INTLTOOL_DESKTOP_RULE@
+xfce4-dict-plugin.desktop: xfce4-dict-plugin.desktop.in
+	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 EXTRA_DIST =								\
 	xfce4-dict-plugin.desktop.in

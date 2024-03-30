@@ -12,22 +12,13 @@ AUTOMAKE_OPTIONS =												\
 	dist-bzip2
 
 EXTRA_DIST =													\
-	xfce4-dict.1												\
-	intltool-extract.in											\
-	intltool-merge.in											\
-	intltool-update.in
+	xfce4-dict.1
 
 distclean-local:
 	rm -rf *.cache *~
 
 distuninstallcheck_listfiles = 									\
 	find . -type f -print | grep -v ./share/icons/hicolor/icon-theme.cache
-
-DISTCLEANFILES =												\
-	intltool-extract											\
-	intltool-merge												\
-	intltool-update												\
-	po/.intltool-merge-cache.lock
 
 man_MANS=xfce4-dict.1
 

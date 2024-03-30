@@ -1,19 +1,15 @@
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-m4_define([xfce4_dict_version_major], [0])
-m4_define([xfce4_dict_version_minor], [8])
-m4_define([xfce4_dict_version_micro], [6])
-m4_define([xfce4_dict_version_build], [@REVISION@])
-m4_define([xfce4_dict_version_tag], [git])
-m4_define([xfce4_dict_version], [xfce4_dict_version_major().xfce4_dict_version_minor().xfce4_dict_version_micro()ifelse(xfce4_dict_version_tag(), [git], [xfce4_dict_version_tag()-xfce4_dict_version_build()], [xfce4_dict_version_tag()])])
+XDT_VERSION_INIT([0.8.6], [git])
 
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2006-2023 Xfce Development Team. All rights reserved.])
-AC_INIT([xfce4-dict], [xfce4_dict_version], [https://gitlab.xfce.org/apps/xfce4-dict], [xfce4-dict])
-AC_PREREQ([2.60])
+AC_INIT([xfce4-dict], [xdt_version], [https://gitlab.xfce.org/apps/xfce4-dict], [xfce4-dict])
+AC_PREREQ([2.69])
+AC_REVISION([xdt_version_build])
 AC_CONFIG_MACRO_DIRS([m4])
 
 dnl ***************************
@@ -31,7 +27,6 @@ AC_PROG_CC()
 AM_PROG_CC_C_O
 LT_PATH_LD()
 AC_PROG_INSTALL()
-IT_PROG_INTLTOOL([0.35.0])
 
 dnl ***************************
 dnl *** Disable static libs ***
@@ -47,7 +42,12 @@ AC_SEARCH_LIBS(floor, m)
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
-XDT_I18N([@LINGUAS@])
+GETTEXT_PACKAGE="$PACKAGE"
+AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [Name of default gettext domain])
+AC_SUBST([GETTEXT_PACKAGE])
+
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 
 dnl ***********************************
 dnl *** Check for required packages ***
@@ -67,7 +67,7 @@ AC_CHECK_PROG([GDBUS_CODEGEN],[gdbus-codegen],[gdbus-codegen])
 dnl ***********************************
 dnl *** Check for debugging support ***
 dnl ***********************************
-XDT_FEATURE_DEBUG()
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 
 AC_CONFIG_FILES([
