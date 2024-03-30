@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 00:47+0200\n"
+"POT-Creation-Date: 2024-03-30 12:51+0100\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: Moo, 2015-2017,2019-2021\n"
 "Language-Team: Lithuanian (http://app.transifex.com/xfce/xfce-apps/language/lt/)\n"
@@ -18,15 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:760 ../lib/prefs.c:265
-msgid "Dictionary"
-msgstr "Žodynas"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
-msgid "A plugin to query different dictionaries."
-msgstr "Įskiepis skirtas užklausti skirtingus žodynus."
 
 #: ../panel-plugin/xfce4-dict-plugin.c:273
 #: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:194
@@ -82,14 +73,6 @@ msgstr "[TEKSTAS]"
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Apie klaidas pranešti <%s>."
-
-#: ../src/xfce4-dict.desktop.in.h:2
-msgid "Dictionary Client"
-msgstr "Žodyno klientas"
-
-#: ../src/xfce4-dict.desktop.in.h:3
-msgid "A client program to query different dictionaries"
-msgstr "Kliento programa įvairių žodynų užklausimui"
 
 #: ../lib/spell.c:74
 msgid "Spell Checker Results:"
@@ -243,69 +226,69 @@ msgstr "Išvalyti teksto laukelio turinį"
 msgid "_Start"
 msgstr "_Paleisti"
 
-#: ../lib/speedreader.c:699 ../lib/dictd.c:769 ../lib/gui.c:708
-#: ../lib/gui.c:817 ../lib/prefs.c:267
+#: ../lib/speedreader.c:699 ../lib/dictd.c:766 ../lib/gui.c:708
+#: ../lib/gui.c:817 ../lib/prefs.c:268
 msgid "_Close"
 msgstr "_Užverti"
 
-#: ../lib/common.c:186
+#: ../lib/common.c:185
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Paieškos URL yra tuščias. Patikrinkite nuostatas."
 
-#: ../lib/common.c:192
+#: ../lib/common.c:191
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Naršyklės atverti nepavyko. Patikrinkite nuostatas."
 
-#: ../lib/common.c:232
+#: ../lib/common.c:231
 msgid "Invalid non-UTF8 input"
 msgstr "Netinkama ne UTF-8 įvestis"
 
-#: ../lib/common.c:568
+#: ../lib/common.c:567
 msgid "Error"
 msgstr "Klaida"
 
-#: ../lib/common.c:571
+#: ../lib/common.c:570
 msgid "warning"
 msgstr "įspėjimas"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:384
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Ieškoti „%s“ naudojant „%s“"
 
-#: ../lib/dictd.c:391
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "Ieškoti saityne:"
 
-#: ../lib/dictd.c:414 ../lib/dictd.c:722 ../lib/dictd.c:731 ../lib/dictd.c:820
-#: ../lib/dictd.c:829
+#: ../lib/dictd.c:411 ../lib/dictd.c:719 ../lib/dictd.c:728 ../lib/dictd.c:817
+#: ../lib/dictd.c:826
 msgid "Could not connect to server."
 msgstr "Nepavyko prisijungti prie serverio."
 
-#: ../lib/dictd.c:420
+#: ../lib/dictd.c:417
 msgid "The server is not ready."
 msgstr "Serveris nepasirengęs."
 
-#: ../lib/dictd.c:427
+#: ../lib/dictd.c:424
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Nurodytas netinkamas žodynas. Patikrinkite nuostatas."
 
-#: ../lib/dictd.c:435 ../lib/dictd.c:475 ../lib/dictd.c:854
+#: ../lib/dictd.c:432 ../lib/dictd.c:472 ../lib/dictd.c:851
 msgid "Unknown error while querying the server."
 msgstr "Užklausiant žodyną įvyko nežinoma klaida."
 
-#: ../lib/dictd.c:450
+#: ../lib/dictd.c:447
 msgid "Dictionary Results:"
 msgstr "Žodyno rezultatai:"
 
-#: ../lib/dictd.c:453
+#: ../lib/dictd.c:450
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Atitikmenų skirtų „%s“ nerasta."
 
-#: ../lib/dictd.c:480
+#: ../lib/dictd.c:477
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -314,21 +297,21 @@ msgstr[1] "Rasti %d aprašymai."
 msgstr[2] "Rasta %d aprašymų."
 msgstr[3] "Rasta %d aprašymų."
 
-#: ../lib/dictd.c:693
+#: ../lib/dictd.c:690
 #, c-format
 msgid "Querying %s..."
 msgstr "Užklausiama %s..."
 
-#: ../lib/dictd.c:752
+#: ../lib/dictd.c:749
 msgid "An error occurred while querying server information."
 msgstr "Užklausiant serverį įvyko klaida."
 
-#: ../lib/dictd.c:765
+#: ../lib/dictd.c:762
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Serverio informacija skirta „%s“"
 
-#: ../lib/dictd.c:849
+#: ../lib/dictd.c:846
 msgid "The server doesn't offer any databases."
 msgstr "Serveris nesiūlo jokių duomenų bazių."
 
@@ -369,6 +352,10 @@ msgstr "_Žinynas"
 #: ../lib/gui.c:725
 msgid "About"
 msgstr "Apie"
+
+#: ../lib/gui.c:760 ../lib/prefs.c:266
+msgid "Dictionary"
+msgstr "Žodynas"
 
 #: ../lib/gui.c:829
 msgid "Search with:"
@@ -450,105 +437,105 @@ msgstr "Išvalyti"
 msgid "You have chosen an invalid dictionary."
 msgstr "Pasirinkote netinkamą žodyną."
 
-#: ../lib/prefs.c:299
+#: ../lib/prefs.c:300
 msgid "General"
 msgstr "Bendra"
 
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:302
 msgid "<b>Default search method:</b>"
 msgstr "<b>Numatytasis paieškos būdas:</b>"
 
-#: ../lib/prefs.c:306 ../lib/prefs.c:457
+#: ../lib/prefs.c:307 ../lib/prefs.c:458
 msgid "Dictionary Server"
 msgstr "Žodyno serveris"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:561
+#: ../lib/prefs.c:316 ../lib/prefs.c:566
 msgid "Web Service"
 msgstr "Interneto tarnyba"
 
-#: ../lib/prefs.c:324 ../lib/prefs.c:608
+#: ../lib/prefs.c:325 ../lib/prefs.c:613
 msgid "Spell Checker"
 msgstr "Rašybos tikrinimas"
 
-#: ../lib/prefs.c:333
+#: ../lib/prefs.c:334
 msgid "Last used method"
 msgstr "Paskutinis naudotas būdas"
 
-#: ../lib/prefs.c:342
+#: ../lib/prefs.c:343
 msgid "<b>Colors:</b>"
 msgstr "<b>Spalvos:</b>"
 
-#: ../lib/prefs.c:348
+#: ../lib/prefs.c:349
 msgid "Links:"
 msgstr "Nuorodos:"
 
-#: ../lib/prefs.c:349
+#: ../lib/prefs.c:350
 msgid "Phonetics:"
 msgstr "Fonetika:"
 
-#: ../lib/prefs.c:350
+#: ../lib/prefs.c:351
 msgid "Spelled correctly:"
 msgstr "Parašyta teisingai:"
 
-#: ../lib/prefs.c:351
+#: ../lib/prefs.c:352
 msgid "Spelled incorrectly:"
 msgstr "Parašyta klaidingai:"
 
-#: ../lib/prefs.c:402
+#: ../lib/prefs.c:403
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Skydelio teksto laukelis:</b>"
 
-#: ../lib/prefs.c:408
+#: ../lib/prefs.c:409
 msgid "Show text field in the panel"
 msgstr "Rodyti tekstą skydelio laukelyje"
 
 #. panel entry size
-#: ../lib/prefs.c:415
+#: ../lib/prefs.c:416
 msgid "Text field size:"
 msgstr "Teksto laukelio dydis:"
 
 #. server address
-#: ../lib/prefs.c:460
+#: ../lib/prefs.c:461
 msgid "Server:"
 msgstr "Serveris:"
 
 #. server port
-#: ../lib/prefs.c:470
+#: ../lib/prefs.c:471
 msgid "Server Port:"
 msgstr "Serverio prievadas:"
 
 #. dictionary
-#: ../lib/prefs.c:476 ../lib/prefs.c:634
+#: ../lib/prefs.c:481 ../lib/prefs.c:639
 msgid "Dictionary:"
 msgstr "Žodynas:"
 
-#: ../lib/prefs.c:479
+#: ../lib/prefs.c:484
 msgid "* (use all)"
 msgstr "* (naudoti visus)"
 
-#: ../lib/prefs.c:481
+#: ../lib/prefs.c:486
 msgid "! (use all, stop after first match)"
 msgstr "! (naudoti visus, sustoti radus pirmą atitikmenį)"
 
-#: ../lib/prefs.c:563
+#: ../lib/prefs.c:568
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Interneto paieškos URL:</b>"
 
-#: ../lib/prefs.c:568
+#: ../lib/prefs.c:573
 msgid "URL:"
 msgstr "URL:"
 
-#: ../lib/prefs.c:588
+#: ../lib/prefs.c:593
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "Įrašykite interneto tarnybos, kuri siūlo vertimo ar žodyno paslaugas URL. Naudokite {žodis} kaip vietos laikiklį ieškomam žodžiui."
 
-#: ../lib/prefs.c:610
+#: ../lib/prefs.c:615
 msgid "Spell Check Program:"
 msgstr "Rašybos tikrinimo programa:"
 
-#: ../lib/prefs.c:627
+#: ../lib/prefs.c:632
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
