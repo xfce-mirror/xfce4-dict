@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 00:47+0200\n"
+"POT-Creation-Date: 2024-03-30 12:51+0100\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021\n"
 "Language-Team: Hebrew (http://app.transifex.com/xfce/xfce-apps/language/he/)\n"
@@ -19,16 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:760 ../lib/prefs.c:265
-msgid "Dictionary"
-msgstr "מילון"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
-msgid "A plugin to query different dictionaries."
-msgstr "תוסף לתשאול מילונים שונים."
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:273
 #: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:194
@@ -85,14 +76,6 @@ msgstr "[טקסט]"
 msgid "Please report bugs to <%s>."
 msgstr "אנא דווח על באגים ל־ <%s>."
 
-#: ../src/xfce4-dict.desktop.in.h:2
-msgid "Dictionary Client"
-msgstr "לקוח מילון"
-
-#: ../src/xfce4-dict.desktop.in.h:3
-msgid "A client program to query different dictionaries"
-msgstr "תוכנת לקוח לביצוע שאילתות של מילונים שונים"
-
 #: ../lib/spell.c:74
 msgid "Spell Checker Results:"
 msgstr "תוצאות בודק איות:"
@@ -104,7 +87,6 @@ msgid_plural "%d suggestions found."
 msgstr[0] "הצעה %d נמצאה."
 msgstr[1] "%d הצעות נמצאו."
 msgstr[2] "%d הצעות נמצאו."
-msgstr[3] "%d הצעות נמצאו."
 
 #: ../lib/spell.c:104
 #, c-format
@@ -197,7 +179,6 @@ msgid_plural "(display %d words at a time)"
 msgstr[0] "(הצג מילה %d בפעם אחת)"
 msgstr[1] "(הצג %d מילים בפעם אחת)"
 msgstr[2] "(הצג %d מילים בפעם אחת)"
-msgstr[3] "(הצג %d מילים בפעם אחת)"
 
 #: ../lib/speedreader.c:606
 msgid ""
@@ -245,92 +226,91 @@ msgstr "טהר את התכולות של שדה טקסט"
 msgid "_Start"
 msgstr "_התחל"
 
-#: ../lib/speedreader.c:699 ../lib/dictd.c:769 ../lib/gui.c:708
-#: ../lib/gui.c:817 ../lib/prefs.c:267
+#: ../lib/speedreader.c:699 ../lib/dictd.c:766 ../lib/gui.c:708
+#: ../lib/gui.c:817 ../lib/prefs.c:268
 msgid "_Close"
 msgstr "_סגור"
 
-#: ../lib/common.c:186
+#: ../lib/common.c:185
 msgid "The search URL is empty. Please check your preferences."
 msgstr "‏URL חיפוש הינו ריק. אנא בדוק את העדפותיך."
 
-#: ../lib/common.c:192
+#: ../lib/common.c:191
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "לא היה ניתן לפתוח דפדפן. אנא בדוק את העדפותיך."
 
-#: ../lib/common.c:232
+#: ../lib/common.c:231
 msgid "Invalid non-UTF8 input"
 msgstr "קלט א-UTF8 לא תקין"
 
-#: ../lib/common.c:568
+#: ../lib/common.c:567
 msgid "Error"
 msgstr "שגיאה"
 
-#: ../lib/common.c:571
+#: ../lib/common.c:570
 msgid "warning"
 msgstr "אזהרה"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:384
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "חפש \"%s\" באמצעות \"%s\""
 
-#: ../lib/dictd.c:391
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "חיפוש רשת:"
 
-#: ../lib/dictd.c:414 ../lib/dictd.c:722 ../lib/dictd.c:731 ../lib/dictd.c:820
-#: ../lib/dictd.c:829
+#: ../lib/dictd.c:411 ../lib/dictd.c:719 ../lib/dictd.c:728 ../lib/dictd.c:817
+#: ../lib/dictd.c:826
 msgid "Could not connect to server."
 msgstr "לא היתה אפשרות להתחבר לשרת."
 
-#: ../lib/dictd.c:420
+#: ../lib/dictd.c:417
 msgid "The server is not ready."
 msgstr "השרת אינו מוכן."
 
-#: ../lib/dictd.c:427
+#: ../lib/dictd.c:424
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "צוין מילון לא תקין. אנא בדוק את העדפותיך."
 
-#: ../lib/dictd.c:435 ../lib/dictd.c:475 ../lib/dictd.c:854
+#: ../lib/dictd.c:432 ../lib/dictd.c:472 ../lib/dictd.c:851
 msgid "Unknown error while querying the server."
 msgstr "שגיאה לא מוכרת במהלך תשאול השרת."
 
-#: ../lib/dictd.c:450
+#: ../lib/dictd.c:447
 msgid "Dictionary Results:"
 msgstr "תוצאות מילון:"
 
-#: ../lib/dictd.c:453
+#: ../lib/dictd.c:450
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "לא נמצאו התאמות עבור \"%s\"."
 
-#: ../lib/dictd.c:480
+#: ../lib/dictd.c:477
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "הגדרה %d נמצאה."
 msgstr[1] "%d הגדרות נמצאו."
 msgstr[2] "%d הגדרות נמצאו."
-msgstr[3] "%d הגדרות נמצאו."
 
-#: ../lib/dictd.c:693
+#: ../lib/dictd.c:690
 #, c-format
 msgid "Querying %s..."
 msgstr "כעת מתשאל %s..."
 
-#: ../lib/dictd.c:752
+#: ../lib/dictd.c:749
 msgid "An error occurred while querying server information."
 msgstr "אירעה שגיאה בעת שאילתת מידע שרת."
 
-#: ../lib/dictd.c:765
+#: ../lib/dictd.c:762
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "מידע שרת עבור \"%s\""
 
-#: ../lib/dictd.c:849
+#: ../lib/dictd.c:846
 msgid "The server doesn't offer any databases."
 msgstr "השרת לא מציע שום מסד נתונים."
 
@@ -371,6 +351,10 @@ msgstr "_עזרה"
 #: ../lib/gui.c:725
 msgid "About"
 msgstr "על אודות"
+
+#: ../lib/gui.c:760 ../lib/prefs.c:266
+msgid "Dictionary"
+msgstr "מילון"
 
 #: ../lib/gui.c:829
 msgid "Search with:"
@@ -452,105 +436,105 @@ msgstr "טהר"
 msgid "You have chosen an invalid dictionary."
 msgstr "בחרת מילון לא תקין."
 
-#: ../lib/prefs.c:299
+#: ../lib/prefs.c:300
 msgid "General"
 msgstr "כללי"
 
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:302
 msgid "<b>Default search method:</b>"
 msgstr "<b>שיטת חיפוש שגרתית:</b>"
 
-#: ../lib/prefs.c:306 ../lib/prefs.c:457
+#: ../lib/prefs.c:307 ../lib/prefs.c:458
 msgid "Dictionary Server"
 msgstr "שרת מילון"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:561
+#: ../lib/prefs.c:316 ../lib/prefs.c:566
 msgid "Web Service"
 msgstr "שירות רשת"
 
-#: ../lib/prefs.c:324 ../lib/prefs.c:608
+#: ../lib/prefs.c:325 ../lib/prefs.c:613
 msgid "Spell Checker"
 msgstr "בודק איות"
 
-#: ../lib/prefs.c:333
+#: ../lib/prefs.c:334
 msgid "Last used method"
 msgstr "שיטה אחרונה בשימוש"
 
-#: ../lib/prefs.c:342
+#: ../lib/prefs.c:343
 msgid "<b>Colors:</b>"
 msgstr "<b>צבעים:</b>"
 
-#: ../lib/prefs.c:348
+#: ../lib/prefs.c:349
 msgid "Links:"
 msgstr "קישורים:"
 
-#: ../lib/prefs.c:349
+#: ../lib/prefs.c:350
 msgid "Phonetics:"
 msgstr "היברון:"
 
-#: ../lib/prefs.c:350
+#: ../lib/prefs.c:351
 msgid "Spelled correctly:"
 msgstr "אויתו כהלכה:"
 
-#: ../lib/prefs.c:351
+#: ../lib/prefs.c:352
 msgid "Spelled incorrectly:"
 msgstr "אויתו שלא כהלכה:"
 
-#: ../lib/prefs.c:402
+#: ../lib/prefs.c:403
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>שדה טקסט לוח:</b>"
 
-#: ../lib/prefs.c:408
+#: ../lib/prefs.c:409
 msgid "Show text field in the panel"
 msgstr "נצג שדה טקסט בתוך הלוח"
 
 #. panel entry size
-#: ../lib/prefs.c:415
+#: ../lib/prefs.c:416
 msgid "Text field size:"
 msgstr "גודל שדה טקסט:"
 
 #. server address
-#: ../lib/prefs.c:460
+#: ../lib/prefs.c:461
 msgid "Server:"
 msgstr "שרת:"
 
 #. server port
-#: ../lib/prefs.c:470
+#: ../lib/prefs.c:471
 msgid "Server Port:"
 msgstr "פורט שרת:"
 
 #. dictionary
-#: ../lib/prefs.c:476 ../lib/prefs.c:634
+#: ../lib/prefs.c:481 ../lib/prefs.c:639
 msgid "Dictionary:"
 msgstr "מילון:"
 
-#: ../lib/prefs.c:479
+#: ../lib/prefs.c:484
 msgid "* (use all)"
 msgstr "* (השתמש בכול)"
 
-#: ../lib/prefs.c:481
+#: ../lib/prefs.c:486
 msgid "! (use all, stop after first match)"
 msgstr "! (השתמש בכול, עצור לאחר התאמה ראשונה)"
 
-#: ../lib/prefs.c:563
+#: ../lib/prefs.c:568
 msgid "<b>Web search URL:</b>"
 msgstr "<b>‏URL חיפוש רשת:</b>"
 
-#: ../lib/prefs.c:568
+#: ../lib/prefs.c:573
 msgid "URL:"
 msgstr "‏URL:"
 
-#: ../lib/prefs.c:588
+#: ../lib/prefs.c:593
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "הזן URL של אתר רשת אשר מציע תרגום או שירותי מילון. השתמש במחרוזת {word} בתור סמל כללי עבור המילה אותה מחפשים."
 
-#: ../lib/prefs.c:610
+#: ../lib/prefs.c:615
 msgid "Spell Check Program:"
 msgstr "תוכנית בדיקת איות:"
 
-#: ../lib/prefs.c:627
+#: ../lib/prefs.c:632
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
