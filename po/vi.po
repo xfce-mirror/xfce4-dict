@@ -8,27 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-12 00:46+0100\n"
-"PO-Revision-Date: 2021-02-11 23:46+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
-"Language-Team: Vietnamese (http://www.transifex.com/xfce/xfce-apps/language/vi/)\n"
+"POT-Creation-Date: 2024-03-30 12:51+0100\n"
+"PO-Revision-Date: 2013-07-03 18:37+0000\n"
+"Last-Translator: Duy Truong Nguyen <truongap.ars@gmail.com>, 2014\n"
+"Language-Team: Vietnamese (http://app.transifex.com/xfce/xfce-apps/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:1
-#: ../src/xfce4-dict.desktop.in.h:1 ../lib/gui.c:783 ../lib/prefs.c:265
-msgid "Dictionary"
-msgstr "Từ điển"
-
-#: ../panel-plugin/xfce4-dict-plugin.desktop.in.h:2
-msgid "A plugin to query different dictionaries."
-msgstr "Phần mở rộng giúp truy vấn các từ điển khác."
-
 #: ../panel-plugin/xfce4-dict-plugin.c:273
-#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:196
+#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:194
 #: ../lib/spell.c:242 ../lib/gui.c:539
 msgid "Ready"
 msgstr "Sẵn sàng"
@@ -37,7 +28,7 @@ msgstr "Sẵn sàng"
 msgid "Look up a word"
 msgstr "Tìm kiếm từ"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:814
+#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:791
 msgid "Search term"
 msgstr "Tìm mục"
 
@@ -73,22 +64,14 @@ msgstr ""
 msgid "Show version information"
 msgstr "Hiện thông tin phiên bản"
 
-#: ../src/xfce4-dict.c:129
+#: ../src/xfce4-dict.c:127
 msgid "[TEXT]"
 msgstr ""
 
-#: ../src/xfce4-dict.c:145
+#: ../src/xfce4-dict.c:143
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Hãy thông báo lỗi đến <%s>."
-
-#: ../src/xfce4-dict.desktop.in.h:2
-msgid "Dictionary Client"
-msgstr "Tử điển tĩnh"
-
-#: ../src/xfce4-dict.desktop.in.h:3
-msgid "A client program to query different dictionaries"
-msgstr ""
 
 #: ../lib/spell.c:74
 msgid "Spell Checker Results:"
@@ -135,7 +118,7 @@ msgstr "Dữ liệu nhập không phù hợp"
 msgid "Process failed (%s)"
 msgstr "Tiến trình thất bại (%s)"
 
-#: ../lib/speedreader.c:74 ../lib/speedreader.c:695
+#: ../lib/speedreader.c:74 ../lib/speedreader.c:696
 msgid "P_ause"
 msgstr "Tạm _dừng"
 
@@ -143,182 +126,182 @@ msgstr "Tạm _dừng"
 msgid "_Resume"
 msgstr "_Tiếp tục"
 
-#: ../lib/speedreader.c:248 ../lib/speedreader.c:697
+#: ../lib/speedreader.c:249 ../lib/speedreader.c:698
 msgid "S_top"
 msgstr ""
 
-#: ../lib/speedreader.c:256
+#: ../lib/speedreader.c:257
 msgid "Running"
 msgstr "Đang chạy"
 
-#: ../lib/speedreader.c:259
+#: ../lib/speedreader.c:260
 msgid "Finished"
 msgstr "Hoàn thành"
 
-#: ../lib/speedreader.c:260
+#: ../lib/speedreader.c:261
 msgid "_Back"
 msgstr "_Trước"
 
-#: ../lib/speedreader.c:268
+#: ../lib/speedreader.c:269
 msgid "Speed Reader"
 msgstr "Trình đọc tốc độ"
 
-#: ../lib/speedreader.c:369
+#: ../lib/speedreader.c:370
 msgid "You must enter a text."
 msgstr "Bạn bải nhập đoạn văn bản."
 
-#: ../lib/speedreader.c:526
+#: ../lib/speedreader.c:527
 msgid "Choose a file to load"
 msgstr "Chọn tệp tin để nạp"
 
-#: ../lib/speedreader.c:529
+#: ../lib/speedreader.c:530
 msgid "_Cancel"
 msgstr ""
 
-#: ../lib/speedreader.c:530
+#: ../lib/speedreader.c:531
 msgid "_Open"
 msgstr ""
 
-#: ../lib/speedreader.c:555
+#: ../lib/speedreader.c:556
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Không thể nạp tệp tin '%s'"
 
-#: ../lib/speedreader.c:581
+#: ../lib/speedreader.c:582
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(hiển thị %d từ một phút)"
 
-#: ../lib/speedreader.c:605
+#: ../lib/speedreader.c:606
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Đây là tiện ích đọc tốc độ giúp bạn luyện khả năng đọc nhanh hơn. Bằng cách thay đổi các cụm từ ở tốc độ cao trên màn hình."
 
-#: ../lib/speedreader.c:610
+#: ../lib/speedreader.c:611
 msgid "_Words per Minute:"
 msgstr "Từ trên _phút:"
 
-#: ../lib/speedreader.c:617
+#: ../lib/speedreader.c:618
 msgid "_Mark Paragraphs"
 msgstr "Đánh _dấu các đoạn"
 
-#: ../lib/speedreader.c:624
+#: ../lib/speedreader.c:625
 msgid "Word _Grouping:"
 msgstr "_Nhóm từ:"
 
-#: ../lib/speedreader.c:641
+#: ../lib/speedreader.c:642
 msgid "_Font Size:"
 msgstr "_Cỡ chữ:"
 
-#: ../lib/speedreader.c:662
+#: ../lib/speedreader.c:663
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Nhập văn bản mà bạn muốn đọc vào đây\n\nThư giãn và thoải mái bản thân, sau đó nhấn Bắt đầu để đọc tốc độ."
 
-#: ../lib/speedreader.c:675
+#: ../lib/speedreader.c:676
 msgid "Load the contents of a file"
 msgstr "Nạp nội dung của tệp tin"
 
-#: ../lib/speedreader.c:680
+#: ../lib/speedreader.c:681
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Xóa nội dung ô nhập liệu và dán nội dung từ clipboard"
 
-#: ../lib/speedreader.c:684
+#: ../lib/speedreader.c:685
 msgid "Clear the contents of the text field"
 msgstr "Xóa nội dung ô nhập liệu"
 
-#: ../lib/speedreader.c:696
+#: ../lib/speedreader.c:697
 msgid "_Start"
 msgstr "_Bắt đầu"
 
-#: ../lib/speedreader.c:698 ../lib/dictd.c:765 ../lib/gui.c:730
-#: ../lib/gui.c:840 ../lib/prefs.c:267
+#: ../lib/speedreader.c:699 ../lib/dictd.c:766 ../lib/gui.c:708
+#: ../lib/gui.c:817 ../lib/prefs.c:268
 msgid "_Close"
 msgstr "Đóng lại"
 
-#: ../lib/common.c:186
+#: ../lib/common.c:185
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Địa chỉ tìm kiếm trống. Hãy kiểm tra lại tùy chỉnh của bạn."
 
-#: ../lib/common.c:192
+#: ../lib/common.c:191
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Không thể mở trình duyệt. Hãy kiểm tra tùy chỉnh của bạn."
 
-#: ../lib/common.c:232
+#: ../lib/common.c:231
 msgid "Invalid non-UTF8 input"
 msgstr ""
 
-#: ../lib/common.c:568
+#: ../lib/common.c:567
 msgid "Error"
 msgstr "Lỗi"
 
-#: ../lib/common.c:571
+#: ../lib/common.c:570
 msgid "warning"
 msgstr "cảnh bóa"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:382
+#: ../lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Tìm kiếm \"%s\" bằng \"%s\""
 
-#: ../lib/dictd.c:389
+#: ../lib/dictd.c:388
 msgid "Web Search:"
 msgstr "Tìm kiếm trang web\""
 
-#: ../lib/dictd.c:412 ../lib/dictd.c:718 ../lib/dictd.c:727 ../lib/dictd.c:816
-#: ../lib/dictd.c:825
+#: ../lib/dictd.c:411 ../lib/dictd.c:719 ../lib/dictd.c:728 ../lib/dictd.c:817
+#: ../lib/dictd.c:826
 msgid "Could not connect to server."
 msgstr "Không thể kế nối đến máy chủ."
 
-#: ../lib/dictd.c:418
+#: ../lib/dictd.c:417
 msgid "The server is not ready."
 msgstr "Máy chủ ko sẵn sàng."
 
-#: ../lib/dictd.c:425
+#: ../lib/dictd.c:424
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr ""
 
-#: ../lib/dictd.c:433 ../lib/dictd.c:473 ../lib/dictd.c:850
+#: ../lib/dictd.c:432 ../lib/dictd.c:472 ../lib/dictd.c:851
 msgid "Unknown error while querying the server."
 msgstr "Không rõ lỗi khi đang truy vấn máy chủ"
 
-#: ../lib/dictd.c:448
+#: ../lib/dictd.c:447
 msgid "Dictionary Results:"
 msgstr "Kết quả từ điển:"
 
-#: ../lib/dictd.c:451
+#: ../lib/dictd.c:450
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Không tìm thấy kết quả phù hợp cho \"%s\""
 
-#: ../lib/dictd.c:478
+#: ../lib/dictd.c:477
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "Tìm thấy %d định nghĩa."
 
-#: ../lib/dictd.c:689
+#: ../lib/dictd.c:690
 #, c-format
 msgid "Querying %s..."
 msgstr "Đang truy vấn %s..."
 
-#: ../lib/dictd.c:748
+#: ../lib/dictd.c:749
 msgid "An error occurred while querying server information."
 msgstr ""
 
-#: ../lib/dictd.c:761
+#: ../lib/dictd.c:762
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Thông tin máy chủ về \"%s\""
 
-#: ../lib/dictd.c:845
+#: ../lib/dictd.c:846
 msgid "The server doesn't offer any databases."
 msgstr "Máy chủ không đưa ra bất cứ cơ sở dữ liệu nào."
 
@@ -330,65 +313,65 @@ msgstr "Sao liên kết"
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: ../lib/gui.c:605
+#: ../lib/gui.c:590
 msgid "F_ind"
 msgstr ""
 
 #. File Menu
-#: ../lib/gui.c:694
+#: ../lib/gui.c:672
 msgid "_File"
 msgstr "Tệp t_in"
 
-#: ../lib/gui.c:701 ../lib/gui.c:828
+#: ../lib/gui.c:679 ../lib/gui.c:805
 msgid "Speed _Reader"
 msgstr "Trìn_h đọc tốc độ"
 
-#: ../lib/gui.c:716
+#: ../lib/gui.c:694
 msgid "_Preferences"
 msgstr ""
 
-#: ../lib/gui.c:730 ../lib/gui.c:840
+#: ../lib/gui.c:708 ../lib/gui.c:817
 msgid "_Quit"
 msgstr "_Thoát"
 
 #. Help Menu
-#: ../lib/gui.c:741
+#: ../lib/gui.c:718
 msgid "_Help"
 msgstr "Trợ _giúp"
 
-#: ../lib/gui.c:748
+#: ../lib/gui.c:725
 msgid "About"
 msgstr ""
 
-#: ../lib/gui.c:852
+#: ../lib/gui.c:760 ../lib/prefs.c:266
+msgid "Dictionary"
+msgstr "Từ điển"
+
+#: ../lib/gui.c:829
 msgid "Search with:"
 msgstr "Tìm kiến với:"
 
-#: ../lib/gui.c:856
+#: ../lib/gui.c:833
 msgid "_Dictionary Server"
 msgstr "Máy ch_ủ từ điển"
 
-#: ../lib/gui.c:862
+#: ../lib/gui.c:839
 msgid "_Web Service"
 msgstr "Dịch vụ _Web"
 
-#: ../lib/gui.c:870
+#: ../lib/gui.c:847
 msgid "_Spell Checker"
 msgstr "Kiểm t_ra chính tả"
 
-#: ../lib/gui.c:997
+#: ../lib/gui.c:972
 msgid "A client program to query different dictionaries."
 msgstr ""
 
-#: ../lib/gui.c:998
-msgid "Copyright © 2006-2020 Xfce Development Team"
-msgstr ""
-
-#: ../lib/gui.c:1001
+#: ../lib/gui.c:976
 msgid "translator-credits"
 msgstr "Người dịch"
 
-#: ../lib/gui.c:1004
+#: ../lib/gui.c:979
 msgid "Xfce4 Dictionary"
 msgstr "Từ điển Xfce4"
 
@@ -444,60 +427,60 @@ msgstr "Xóa"
 msgid "You have chosen an invalid dictionary."
 msgstr "Bạn đã chọn từ điển không thích hợp"
 
-#: ../lib/prefs.c:299
+#: ../lib/prefs.c:300
 msgid "General"
 msgstr "Chung"
 
-#: ../lib/prefs.c:301
+#: ../lib/prefs.c:302
 msgid "<b>Default search method:</b>"
 msgstr "<b>Phương pháp tìm kiếm mặc định:</b>"
 
-#: ../lib/prefs.c:306 ../lib/prefs.c:458
+#: ../lib/prefs.c:307 ../lib/prefs.c:458
 msgid "Dictionary Server"
 msgstr "Máy chủ từ điển"
 
-#: ../lib/prefs.c:315 ../lib/prefs.c:562
+#: ../lib/prefs.c:316 ../lib/prefs.c:566
 msgid "Web Service"
 msgstr "Dịch vụ Web"
 
-#: ../lib/prefs.c:324 ../lib/prefs.c:609
+#: ../lib/prefs.c:325 ../lib/prefs.c:613
 msgid "Spell Checker"
 msgstr "Kiểm tra chính tả"
 
-#: ../lib/prefs.c:333
+#: ../lib/prefs.c:334
 msgid "Last used method"
 msgstr "Phương pháp được sử dụng lần cuối"
 
-#: ../lib/prefs.c:342
+#: ../lib/prefs.c:343
 msgid "<b>Colors:</b>"
 msgstr "<b>Màu sắc:</b>"
 
-#: ../lib/prefs.c:348
+#: ../lib/prefs.c:349
 msgid "Links:"
 msgstr "Đường dẫ:"
 
-#: ../lib/prefs.c:349
+#: ../lib/prefs.c:350
 msgid "Phonetics:"
 msgstr ""
 
-#: ../lib/prefs.c:350
+#: ../lib/prefs.c:351
 msgid "Spelled correctly:"
 msgstr "Chính tả chính xác:"
 
-#: ../lib/prefs.c:351
+#: ../lib/prefs.c:352
 msgid "Spelled incorrectly:"
 msgstr "Chính tả không chính xác:"
 
-#: ../lib/prefs.c:402
+#: ../lib/prefs.c:403
 msgid "<b>Panel Text Field:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:408
+#: ../lib/prefs.c:409
 msgid "Show text field in the panel"
 msgstr ""
 
 #. panel entry size
-#: ../lib/prefs.c:415
+#: ../lib/prefs.c:416
 msgid "Text field size:"
 msgstr "Kích cỡ ô nhập liệu:"
 
@@ -512,37 +495,37 @@ msgid "Server Port:"
 msgstr "Cổng:"
 
 #. dictionary
-#: ../lib/prefs.c:477 ../lib/prefs.c:635
+#: ../lib/prefs.c:481 ../lib/prefs.c:639
 msgid "Dictionary:"
 msgstr "Từ điển:"
 
-#: ../lib/prefs.c:480
+#: ../lib/prefs.c:484
 msgid "* (use all)"
 msgstr "*(dùng tất cả)"
 
-#: ../lib/prefs.c:482
+#: ../lib/prefs.c:486
 msgid "! (use all, stop after first match)"
 msgstr "! (dùng tất cả, dừng sau lần đúng đầu tiên)"
 
-#: ../lib/prefs.c:564
+#: ../lib/prefs.c:568
 msgid "<b>Web search URL:</b>"
 msgstr ""
 
-#: ../lib/prefs.c:569
+#: ../lib/prefs.c:573
 msgid "URL:"
 msgstr ""
 
-#: ../lib/prefs.c:589
+#: ../lib/prefs.c:593
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr ""
 
-#: ../lib/prefs.c:611
+#: ../lib/prefs.c:615
 msgid "Spell Check Program:"
 msgstr "Chương trình kiểm tra chính tả:"
 
-#: ../lib/prefs.c:628
+#: ../lib/prefs.c:632
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
