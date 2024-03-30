@@ -1,19 +1,15 @@
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-m4_define([xfce4_dict_version_major], [0])
-m4_define([xfce4_dict_version_minor], [8])
-m4_define([xfce4_dict_version_micro], [6])
-m4_define([xfce4_dict_version_build], [@REVISION@])
-m4_define([xfce4_dict_version_tag], [git])
-m4_define([xfce4_dict_version], [xfce4_dict_version_major().xfce4_dict_version_minor().xfce4_dict_version_micro()ifelse(xfce4_dict_version_tag(), [git], [xfce4_dict_version_tag()-xfce4_dict_version_build()], [xfce4_dict_version_tag()])])
+XDT_VERSION_INIT([0.8.6], [git])
 
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2006-2023 Xfce Development Team. All rights reserved.])
-AC_INIT([xfce4-dict], [xfce4_dict_version], [https://gitlab.xfce.org/apps/xfce4-dict], [xfce4-dict])
-AC_PREREQ([2.60])
+AC_INIT([xfce4-dict], [xdt_version], [https://gitlab.xfce.org/apps/xfce4-dict], [xfce4-dict])
+AC_PREREQ([2.69])
+AC_REVISION([xdt_version_build])
 AC_CONFIG_MACRO_DIRS([m4])
 
 dnl ***************************
@@ -71,7 +67,7 @@ AC_CHECK_PROG([GDBUS_CODEGEN],[gdbus-codegen],[gdbus-codegen])
 dnl ***********************************
 dnl *** Check for debugging support ***
 dnl ***********************************
-XDT_FEATURE_DEBUG()
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 
 AC_CONFIG_FILES([

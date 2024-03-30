@@ -10,7 +10,6 @@ Makefile.in.in
 configure.in
 libtool
 configure
-configure.ac
 Makefile
 Makefile.in
 intltool-*
