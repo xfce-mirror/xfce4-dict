@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-apps.xfce4-dict package.
 # 
 # Translators:
 # Саша Петровић <salepetronije@gmail.com>, 2012-2013,2015,2017,2019
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-30 12:51+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-03-31 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>, 2012-2013,2015,2017,2019\n"
 "Language-Team: Serbian (http://app.transifex.com/xfce/xfce-apps/language/sr/)\n"
@@ -19,66 +19,82 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:273
-#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:194
-#: ../lib/spell.c:242 ../lib/gui.c:539
+#: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
+#: lib/gui.c:760 lib/prefs.c:266
+msgid "Dictionary"
+msgstr "Речник"
+
+#: panel-plugin/xfce4-dict-plugin.desktop.in:6
+msgid "A plugin to query different dictionaries."
+msgstr "Прикључак за упит различитим речницима."
+
+#: panel-plugin/xfce4-dict-plugin.c:273 panel-plugin/xfce4-dict-plugin.c:401
+#: src/xfce4-dict.c:194 lib/spell.c:242 lib/gui.c:539
 msgid "Ready"
 msgstr "Спреман"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:335
+#: panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "Прегледај реч"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:791
+#: panel-plugin/xfce4-dict-plugin.c:374 lib/gui.c:791
 msgid "Search term"
 msgstr "Тражи израз"
 
-#: ../src/xfce4-dict.c:49
+#: src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Тражи дати напис користећи речник служитеља (RFC 2229)"
 
-#: ../src/xfce4-dict.c:50
+#: src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
 msgstr "Тражи дати напис користећи мрежни погон претраге"
 
-#: ../src/xfce4-dict.c:51
+#: src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
 msgstr "Провери дати напис правописарем"
 
-#: ../src/xfce4-dict.c:52
+#: src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
 msgstr "Пребаци жижу на поље уноса на полици"
 
-#: ../src/xfce4-dict.c:53
+#: src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Покрени посебан програм иако је прикључак полице учитан"
 
-#: ../src/xfce4-dict.c:54
+#: src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Преузима садржај главног избора и користи га за претрагу писма"
 
-#: ../src/xfce4-dict.c:55
+#: src/xfce4-dict.c:55
 msgid "Be verbose"
 msgstr "Опширнији испис"
 
-#: ../src/xfce4-dict.c:56
+#: src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "Прикажи податке о издању"
 
-#: ../src/xfce4-dict.c:127
+#: src/xfce4-dict.c:127
 msgid "[TEXT]"
 msgstr "[ПИСМО]"
 
-#: ../src/xfce4-dict.c:143
+#: src/xfce4-dict.c:143
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Молим пријавите грешке на <%s>."
 
-#: ../lib/spell.c:74
+#: src/xfce4-dict.desktop.in:6
+msgid "Dictionary Client"
+msgstr "Речник"
+
+#: src/xfce4-dict.desktop.in:7
+msgid "A client program to query different dictionaries"
+msgstr "Програм за упит различитим речницима"
+
+#: lib/spell.c:74
 msgid "Spell Checker Results:"
 msgstr "Налази правописара:"
 
-#: ../lib/spell.c:100
+#: lib/spell.c:100
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
@@ -86,91 +102,91 @@ msgstr[0] "%d пронађен предлог."
 msgstr[1] "%d пронађена предлога."
 msgstr[2] "%d пронађених предлога."
 
-#: ../lib/spell.c:104
+#: lib/spell.c:104
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
 msgstr "Предлози за „%s“ (%s):"
 
-#: ../lib/spell.c:121
+#: lib/spell.c:121
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
 msgstr "„%s“ је написан исправно (%s)."
 
-#: ../lib/spell.c:133
+#: lib/spell.c:133
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
 msgstr "Нису могли бити пронађени предлози за „%s“ (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:163
+#: lib/spell.c:163
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "Грешка при извршавању „%s“ (%s)."
 
-#: ../lib/spell.c:201
+#: lib/spell.c:201
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "Молим, подесите наредбу правописара у прозорчету са поставкама."
 
-#: ../lib/spell.c:207
+#: lib/spell.c:207
 msgid "Invalid input"
 msgstr "Неисправан унос"
 
-#: ../lib/spell.c:246
+#: lib/spell.c:246
 #, c-format
 msgid "Process failed (%s)"
 msgstr "Неуспео процес (%s)"
 
-#: ../lib/speedreader.c:74 ../lib/speedreader.c:696
+#: lib/speedreader.c:74 lib/speedreader.c:696
 msgid "P_ause"
 msgstr "За_стани"
 
-#: ../lib/speedreader.c:75
+#: lib/speedreader.c:75
 msgid "_Resume"
 msgstr "_Настави"
 
-#: ../lib/speedreader.c:249 ../lib/speedreader.c:698
+#: lib/speedreader.c:249 lib/speedreader.c:698
 msgid "S_top"
 msgstr "_Заустави"
 
-#: ../lib/speedreader.c:257
+#: lib/speedreader.c:257
 msgid "Running"
 msgstr "Покренут"
 
-#: ../lib/speedreader.c:260
+#: lib/speedreader.c:260
 msgid "Finished"
 msgstr "Завршено"
 
-#: ../lib/speedreader.c:261
+#: lib/speedreader.c:261
 msgid "_Back"
 msgstr "_Назад"
 
-#: ../lib/speedreader.c:269
+#: lib/speedreader.c:269
 msgid "Speed Reader"
 msgstr "Брзиномер"
 
-#: ../lib/speedreader.c:370
+#: lib/speedreader.c:370
 msgid "You must enter a text."
 msgstr "Морате унети писмо."
 
-#: ../lib/speedreader.c:527
+#: lib/speedreader.c:527
 msgid "Choose a file to load"
 msgstr "Изаберите датотеку за учитавање"
 
-#: ../lib/speedreader.c:530
+#: lib/speedreader.c:530
 msgid "_Cancel"
 msgstr "_Откажи"
 
-#: ../lib/speedreader.c:531
+#: lib/speedreader.c:531
 msgid "_Open"
 msgstr "_Отвори"
 
-#: ../lib/speedreader.c:556
+#: lib/speedreader.c:556
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "Није успело учитавање датотеке „%s“."
 
-#: ../lib/speedreader.c:582
+#: lib/speedreader.c:582
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -178,115 +194,115 @@ msgstr[0] "(приказ %d речи истовремено)"
 msgstr[1] "(приказ %d речи истовремено)"
 msgstr[2] "(приказ %d речи истовремено)"
 
-#: ../lib/speedreader.c:606
+#: lib/speedreader.c:606
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "Ово је лагани прибор за брзо читање које вам помаже да научите брзо читање. То чини брзим приказом речи на приказу."
 
-#: ../lib/speedreader.c:611
+#: lib/speedreader.c:611
 msgid "_Words per Minute:"
 msgstr "_Речи у минути:"
 
-#: ../lib/speedreader.c:618
+#: lib/speedreader.c:618
 msgid "_Mark Paragraphs"
 msgstr "Обележи одсечак"
 
-#: ../lib/speedreader.c:625
+#: lib/speedreader.c:625
 msgid "Word _Grouping:"
 msgstr "_Груписање речи:"
 
-#: ../lib/speedreader.c:642
+#: lib/speedreader.c:642
 msgid "_Font Size:"
 msgstr "Величина _словног лика:"
 
-#: ../lib/speedreader.c:663
+#: lib/speedreader.c:663
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "Унесите неки напис овде који би желели читати.\n\nОпустите се и сместите удобно, и онда притисните крени да би започели брзо читање."
 
-#: ../lib/speedreader.c:676
+#: lib/speedreader.c:676
 msgid "Load the contents of a file"
 msgstr "Учитај садржај датотеке"
 
-#: ../lib/speedreader.c:681
+#: lib/speedreader.c:681
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "Чисти садржај поља уноса писма и лепи га у садржај списка исечака"
 
-#: ../lib/speedreader.c:685
+#: lib/speedreader.c:685
 msgid "Clear the contents of the text field"
 msgstr "Брише садржај поља уноса писма"
 
-#: ../lib/speedreader.c:697
+#: lib/speedreader.c:697
 msgid "_Start"
 msgstr "_Крени"
 
-#: ../lib/speedreader.c:699 ../lib/dictd.c:766 ../lib/gui.c:708
-#: ../lib/gui.c:817 ../lib/prefs.c:268
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:708 lib/gui.c:817
+#: lib/prefs.c:268
 msgid "_Close"
 msgstr "_Затвори"
 
-#: ../lib/common.c:185
+#: lib/common.c:185
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Поље адресе претраге је празно. Проверите поставке."
 
-#: ../lib/common.c:191
+#: lib/common.c:191
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Прегледник није могао бити отворен. Молим, проверите поставке."
 
-#: ../lib/common.c:231
+#: lib/common.c:231
 msgid "Invalid non-UTF8 input"
 msgstr "Неисправно кодирање уноса које није УТФ8"
 
-#: ../lib/common.c:567
+#: lib/common.c:567
 msgid "Error"
 msgstr "Грeшкa"
 
-#: ../lib/common.c:570
+#: lib/common.c:570
 msgid "warning"
 msgstr "упозорење"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:381
+#: lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Тражи „%s“ користећи „%s“"
 
-#: ../lib/dictd.c:388
+#: lib/dictd.c:388
 msgid "Web Search:"
 msgstr "Мрежна претрага:"
 
-#: ../lib/dictd.c:411 ../lib/dictd.c:719 ../lib/dictd.c:728 ../lib/dictd.c:817
-#: ../lib/dictd.c:826
+#: lib/dictd.c:411 lib/dictd.c:719 lib/dictd.c:728 lib/dictd.c:817
+#: lib/dictd.c:826
 msgid "Could not connect to server."
 msgstr "Нисам успео да се повежем са служитељем."
 
-#: ../lib/dictd.c:417
+#: lib/dictd.c:417
 msgid "The server is not ready."
 msgstr "Служитељ није спреман."
 
-#: ../lib/dictd.c:424
+#: lib/dictd.c:424
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Одређен је неодговарајући речник. Молим, проверите подешавања."
 
-#: ../lib/dictd.c:432 ../lib/dictd.c:472 ../lib/dictd.c:851
+#: lib/dictd.c:432 lib/dictd.c:472 lib/dictd.c:851
 msgid "Unknown error while querying the server."
 msgstr "Непозната грешка приликом упита служитељу."
 
-#: ../lib/dictd.c:447
+#: lib/dictd.c:447
 msgid "Dictionary Results:"
 msgstr "Налази речника:"
 
-#: ../lib/dictd.c:450
+#: lib/dictd.c:450
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Нисам пронашао слагања за „%s“."
 
-#: ../lib/dictd.c:477
+#: lib/dictd.c:477
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -294,245 +310,241 @@ msgstr[0] "%d опис је пронађен."
 msgstr[1] "%d описа су пронађена."
 msgstr[2] "%d описа је пронађено."
 
-#: ../lib/dictd.c:690
+#: lib/dictd.c:690
 #, c-format
 msgid "Querying %s..."
 msgstr "Затражујем %s..."
 
-#: ../lib/dictd.c:749
+#: lib/dictd.c:749
 msgid "An error occurred while querying server information."
 msgstr "Десила се грешка приликом упита служитељу за подацима."
 
-#: ../lib/dictd.c:762
+#: lib/dictd.c:762
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Подаци о служитељу за „%s“"
 
-#: ../lib/dictd.c:846
+#: lib/dictd.c:846
 msgid "The server doesn't offer any databases."
 msgstr "Служитељ не нуди ни једно складиште података."
 
-#: ../lib/gui.c:362
+#: lib/gui.c:362
 msgid "Copy Link"
 msgstr "Умножи везу"
 
-#: ../lib/gui.c:372
+#: lib/gui.c:372
 msgid "Search"
 msgstr "Тражи"
 
-#: ../lib/gui.c:590
+#: lib/gui.c:590
 msgid "F_ind"
 msgstr "_Нађи"
 
 #. File Menu
-#: ../lib/gui.c:672
+#: lib/gui.c:672
 msgid "_File"
 msgstr "_Датотека"
 
-#: ../lib/gui.c:679 ../lib/gui.c:805
+#: lib/gui.c:679 lib/gui.c:805
 msgid "Speed _Reader"
 msgstr "Брзи _читач"
 
-#: ../lib/gui.c:694
+#: lib/gui.c:694
 msgid "_Preferences"
 msgstr "_Својства"
 
-#: ../lib/gui.c:708 ../lib/gui.c:817
+#: lib/gui.c:708 lib/gui.c:817
 msgid "_Quit"
 msgstr "_Одустани"
 
 #. Help Menu
-#: ../lib/gui.c:718
+#: lib/gui.c:718
 msgid "_Help"
 msgstr "_Помоћ"
 
-#: ../lib/gui.c:725
+#: lib/gui.c:725
 msgid "About"
 msgstr "Опширније"
 
-#: ../lib/gui.c:760 ../lib/prefs.c:266
-msgid "Dictionary"
-msgstr "Речник"
-
-#: ../lib/gui.c:829
+#: lib/gui.c:829
 msgid "Search with:"
 msgstr "Претражи са:"
 
-#: ../lib/gui.c:833
+#: lib/gui.c:833
 msgid "_Dictionary Server"
 msgstr "Служитељ речника"
 
-#: ../lib/gui.c:839
+#: lib/gui.c:839
 msgid "_Web Service"
 msgstr "_Мрежни служитељ"
 
-#: ../lib/gui.c:847
+#: lib/gui.c:847
 msgid "_Spell Checker"
 msgstr "_Правописар"
 
-#: ../lib/gui.c:972
+#: lib/gui.c:972
 msgid "A client program to query different dictionaries."
 msgstr "Кориснички програм за упит различитих речника."
 
-#: ../lib/gui.c:976
+#: lib/gui.c:976
 msgid "translator-credits"
 msgstr "Саша Петровић <salepetronije@gmail.com>"
 
-#: ../lib/gui.c:979
+#: lib/gui.c:979
 msgid "Xfce4 Dictionary"
 msgstr "ИксФЦЕ-ов речник"
 
-#: ../lib/prefs.c:52
+#: lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org — Немачки <—> Енглески"
 
-#: ../lib/prefs.c:53
+#: lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org — Немачки <—> Француски"
 
-#: ../lib/prefs.c:54
+#: lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org — Немачки <—> Шпански"
 
-#: ../lib/prefs.c:55
+#: lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org — Немачки <—> Италијански"
 
-#: ../lib/prefs.c:56
+#: lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org — Немачки <—> Кинески"
 
-#: ../lib/prefs.c:57
+#: lib/prefs.c:57
 msgid "dict.cc - Dictionary"
 msgstr "dict.cc - Речник"
 
-#: ../lib/prefs.c:58
+#: lib/prefs.c:58
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:59
+#: lib/prefs.c:59
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:60
+#: lib/prefs.c:60
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "Викпедија, слободна енциклопедија (EN)"
 
-#: ../lib/prefs.c:61
+#: lib/prefs.c:61
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "Викшонари, слободни речник (EN)"
 
-#: ../lib/prefs.c:62
+#: lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Мрежни речник Меријам-Вебстер"
 
-#: ../lib/prefs.c:63
+#: lib/prefs.c:63
 msgid "Clear"
 msgstr "Очисти"
 
-#: ../lib/prefs.c:98
+#: lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
 msgstr "Одабрали сте неисправан речник."
 
-#: ../lib/prefs.c:300
+#: lib/prefs.c:300
 msgid "General"
 msgstr "Опште"
 
-#: ../lib/prefs.c:302
+#: lib/prefs.c:302
 msgid "<b>Default search method:</b>"
 msgstr "<b>Подразумевани начин претраге:</b>"
 
-#: ../lib/prefs.c:307 ../lib/prefs.c:458
+#: lib/prefs.c:307 lib/prefs.c:458
 msgid "Dictionary Server"
 msgstr "Служитељ речника"
 
-#: ../lib/prefs.c:316 ../lib/prefs.c:566
+#: lib/prefs.c:316 lib/prefs.c:566
 msgid "Web Service"
 msgstr "Мрежна услуга"
 
-#: ../lib/prefs.c:325 ../lib/prefs.c:613
+#: lib/prefs.c:325 lib/prefs.c:613
 msgid "Spell Checker"
 msgstr "Правописар"
 
-#: ../lib/prefs.c:334
+#: lib/prefs.c:334
 msgid "Last used method"
 msgstr "Последњи коришћени начин"
 
-#: ../lib/prefs.c:343
+#: lib/prefs.c:343
 msgid "<b>Colors:</b>"
 msgstr "<b>Боје:</b>"
 
-#: ../lib/prefs.c:349
+#: lib/prefs.c:349
 msgid "Links:"
 msgstr "Везе:"
 
-#: ../lib/prefs.c:350
+#: lib/prefs.c:350
 msgid "Phonetics:"
 msgstr "Гласови:"
 
-#: ../lib/prefs.c:351
+#: lib/prefs.c:351
 msgid "Spelled correctly:"
 msgstr "Написано тачно:"
 
-#: ../lib/prefs.c:352
+#: lib/prefs.c:352
 msgid "Spelled incorrectly:"
 msgstr "Написано нетачно:"
 
-#: ../lib/prefs.c:403
+#: lib/prefs.c:403
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Поље писања полице:</b>"
 
-#: ../lib/prefs.c:409
+#: lib/prefs.c:409
 msgid "Show text field in the panel"
 msgstr "Приказује поље за унос писма на полици"
 
 #. panel entry size
-#: ../lib/prefs.c:416
+#: lib/prefs.c:416
 msgid "Text field size:"
 msgstr "Величина поља за унос писма:"
 
 #. server address
-#: ../lib/prefs.c:461
+#: lib/prefs.c:461
 msgid "Server:"
 msgstr "Служитељ:"
 
 #. server port
-#: ../lib/prefs.c:471
+#: lib/prefs.c:471
 msgid "Server Port:"
 msgstr "Прикључник служитеља:"
 
 #. dictionary
-#: ../lib/prefs.c:481 ../lib/prefs.c:639
+#: lib/prefs.c:481 lib/prefs.c:639
 msgid "Dictionary:"
 msgstr "Речник:"
 
-#: ../lib/prefs.c:484
+#: lib/prefs.c:484
 msgid "* (use all)"
 msgstr "* (користи све)"
 
-#: ../lib/prefs.c:486
+#: lib/prefs.c:486
 msgid "! (use all, stop after first match)"
 msgstr "! (користи све, стани после првог поклапања)"
 
-#: ../lib/prefs.c:568
+#: lib/prefs.c:568
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Адреса мрежне претраге:</b>"
 
-#: ../lib/prefs.c:573
+#: lib/prefs.c:573
 msgid "URL:"
 msgstr "Адреса:"
 
-#: ../lib/prefs.c:593
+#: lib/prefs.c:593
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "Унеси мрежну адресу која нуди превод или услугу речника. Користи {реч} као држач места за тражену реч."
 
-#: ../lib/prefs.c:615
+#: lib/prefs.c:615
 msgid "Spell Check Program:"
 msgstr "Правописарник:"
 
-#: ../lib/prefs.c:632
+#: lib/prefs.c:632
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
