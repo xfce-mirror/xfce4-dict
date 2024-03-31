@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-apps.xfce4-dict package.
 # 
 # Translators:
 # Elishai Eliyahu <elishai@mailfence.com>, 2016-2017,2019
@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-30 12:51+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-03-31 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021\n"
 "Language-Team: Hebrew (http://app.transifex.com/xfce/xfce-apps/language/he/)\n"
@@ -21,66 +21,82 @@ msgstr ""
 "Language: he\n"
 "Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:273
-#: ../panel-plugin/xfce4-dict-plugin.c:401 ../src/xfce4-dict.c:194
-#: ../lib/spell.c:242 ../lib/gui.c:539
+#: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
+#: lib/gui.c:760 lib/prefs.c:266
+msgid "Dictionary"
+msgstr "מילון"
+
+#: panel-plugin/xfce4-dict-plugin.desktop.in:6
+msgid "A plugin to query different dictionaries."
+msgstr "תוסף לתשאול מילונים שונים."
+
+#: panel-plugin/xfce4-dict-plugin.c:273 panel-plugin/xfce4-dict-plugin.c:401
+#: src/xfce4-dict.c:194 lib/spell.c:242 lib/gui.c:539
 msgid "Ready"
 msgstr "מוכן"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:335
+#: panel-plugin/xfce4-dict-plugin.c:335
 msgid "Look up a word"
 msgstr "חפש מילה"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:374 ../lib/gui.c:791
+#: panel-plugin/xfce4-dict-plugin.c:374 lib/gui.c:791
 msgid "Search term"
 msgstr "חפש מונח"
 
-#: ../src/xfce4-dict.c:49
+#: src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Search the given text using a Dict server(RFC 2229)"
 
-#: ../src/xfce4-dict.c:50
+#: src/xfce4-dict.c:50
 msgid "Search the given text using a web-based search engine"
 msgstr "חפש את הטקסט שהובא בעזרת מנוע חיפוש מבוסס־רשת"
 
-#: ../src/xfce4-dict.c:51
+#: src/xfce4-dict.c:51
 msgid "Check the given text with a spell checker"
 msgstr "בדוק את הטקסט שהובא עם בודק איות"
 
-#: ../src/xfce4-dict.c:52
+#: src/xfce4-dict.c:52
 msgid "Grab the focus on the text field in the panel"
 msgstr "אסוף את ההתמקדות על שדה הטקסט בלוח"
 
-#: ../src/xfce4-dict.c:53
+#: src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Start stand-alone application even if the panel plugin is loaded"
 
-#: ../src/xfce4-dict.c:54
+#: src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Grabs the PRIMARY selection content and uses it as search text"
 
-#: ../src/xfce4-dict.c:55
+#: src/xfce4-dict.c:55
 msgid "Be verbose"
 msgstr "הרבה מלל"
 
-#: ../src/xfce4-dict.c:56
+#: src/xfce4-dict.c:56
 msgid "Show version information"
 msgstr "הצג מידע גרסה"
 
-#: ../src/xfce4-dict.c:127
+#: src/xfce4-dict.c:127
 msgid "[TEXT]"
 msgstr "[טקסט]"
 
-#: ../src/xfce4-dict.c:143
+#: src/xfce4-dict.c:143
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "אנא דווח על באגים ל־ <%s>."
 
-#: ../lib/spell.c:74
+#: src/xfce4-dict.desktop.in:6
+msgid "Dictionary Client"
+msgstr "לקוח מילון"
+
+#: src/xfce4-dict.desktop.in:7
+msgid "A client program to query different dictionaries"
+msgstr "תוכנת לקוח לביצוע שאילתות של מילונים שונים"
+
+#: lib/spell.c:74
 msgid "Spell Checker Results:"
 msgstr "תוצאות בודק איות:"
 
-#: ../lib/spell.c:100
+#: lib/spell.c:100
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
@@ -88,91 +104,91 @@ msgstr[0] "הצעה %d נמצאה."
 msgstr[1] "%d הצעות נמצאו."
 msgstr[2] "%d הצעות נמצאו."
 
-#: ../lib/spell.c:104
+#: lib/spell.c:104
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
 msgstr "הצעות עבור \"%s\" (%s):"
 
-#: ../lib/spell.c:121
+#: lib/spell.c:121
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
 msgstr "\"%s\" מאוית כהלכה (%s)."
 
-#: ../lib/spell.c:133
+#: lib/spell.c:133
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
 msgstr "לא נמצאו הצעות עבור \"%s\" ‏(%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:163
+#: lib/spell.c:163
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "שגיאה בעת ביצוע \"%s\" ‏(%s)."
 
-#: ../lib/spell.c:201
+#: lib/spell.c:201
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "אנא קבע פקודת בודק איות בחלון העדפות."
 
-#: ../lib/spell.c:207
+#: lib/spell.c:207
 msgid "Invalid input"
 msgstr "קלט שגוי"
 
-#: ../lib/spell.c:246
+#: lib/spell.c:246
 #, c-format
 msgid "Process failed (%s)"
 msgstr "תהליך נכשל (%s)"
 
-#: ../lib/speedreader.c:74 ../lib/speedreader.c:696
+#: lib/speedreader.c:74 lib/speedreader.c:696
 msgid "P_ause"
 msgstr "ה_שהה"
 
-#: ../lib/speedreader.c:75
+#: lib/speedreader.c:75
 msgid "_Resume"
 msgstr "_חזור"
 
-#: ../lib/speedreader.c:249 ../lib/speedreader.c:698
+#: lib/speedreader.c:249 lib/speedreader.c:698
 msgid "S_top"
 msgstr "ע_צור"
 
-#: ../lib/speedreader.c:257
+#: lib/speedreader.c:257
 msgid "Running"
 msgstr "כעת מורץ"
 
-#: ../lib/speedreader.c:260
+#: lib/speedreader.c:260
 msgid "Finished"
 msgstr "הוגמר"
 
-#: ../lib/speedreader.c:261
+#: lib/speedreader.c:261
 msgid "_Back"
 msgstr "_חזרה"
 
-#: ../lib/speedreader.c:269
+#: lib/speedreader.c:269
 msgid "Speed Reader"
 msgstr "קורא מהירות"
 
-#: ../lib/speedreader.c:370
+#: lib/speedreader.c:370
 msgid "You must enter a text."
 msgstr "עליך להזין טקסט."
 
-#: ../lib/speedreader.c:527
+#: lib/speedreader.c:527
 msgid "Choose a file to load"
 msgstr "בחירת קובץ להטענה"
 
-#: ../lib/speedreader.c:530
+#: lib/speedreader.c:530
 msgid "_Cancel"
 msgstr "_בטל"
 
-#: ../lib/speedreader.c:531
+#: lib/speedreader.c:531
 msgid "_Open"
 msgstr "_פתח"
 
-#: ../lib/speedreader.c:556
+#: lib/speedreader.c:556
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "לא היתה אפשרות לטעון את הקובץ \"%s\"."
 
-#: ../lib/speedreader.c:582
+#: lib/speedreader.c:582
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
@@ -180,115 +196,115 @@ msgstr[0] "(הצג מילה %d בפעם אחת)"
 msgstr[1] "(הצג %d מילים בפעם אחת)"
 msgstr[2] "(הצג %d מילים בפעם אחת)"
 
-#: ../lib/speedreader.c:606
+#: lib/speedreader.c:606
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "זהו כלי עזר קל לקריאה מהירה כדי לעזור לך לקרוא מהר יותר. הוא עושה זאת על ידי הבזקת מילים בקצב מהיר על המסך."
 
-#: ../lib/speedreader.c:611
+#: lib/speedreader.c:611
 msgid "_Words per Minute:"
 msgstr "_מילים לדקה:"
 
-#: ../lib/speedreader.c:618
+#: lib/speedreader.c:618
 msgid "_Mark Paragraphs"
 msgstr "ס_מן מקטעים"
 
-#: ../lib/speedreader.c:625
+#: lib/speedreader.c:625
 msgid "Word _Grouping:"
 msgstr "_קיבוץ מילים:"
 
-#: ../lib/speedreader.c:642
+#: lib/speedreader.c:642
 msgid "_Font Size:"
 msgstr "מידת _גופן:"
 
-#: ../lib/speedreader.c:663
+#: lib/speedreader.c:663
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "הזן כאן טקסט אשר ברצונך לקרוא.\n\nהיה רגוע ונינוח, אחר כך לחץ התחל כדי להתחיל קריאה מהירה."
 
-#: ../lib/speedreader.c:676
+#: lib/speedreader.c:676
 msgid "Load the contents of a file"
 msgstr "טען את התכנים של קובץ"
 
-#: ../lib/speedreader.c:681
+#: lib/speedreader.c:681
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "טהר את התכולות של שדה טקסט והדבק תכנים מתוך לוח גזירה"
 
-#: ../lib/speedreader.c:685
+#: lib/speedreader.c:685
 msgid "Clear the contents of the text field"
 msgstr "טהר את התכולות של שדה טקסט"
 
-#: ../lib/speedreader.c:697
+#: lib/speedreader.c:697
 msgid "_Start"
 msgstr "_התחל"
 
-#: ../lib/speedreader.c:699 ../lib/dictd.c:766 ../lib/gui.c:708
-#: ../lib/gui.c:817 ../lib/prefs.c:268
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:708 lib/gui.c:817
+#: lib/prefs.c:268
 msgid "_Close"
 msgstr "_סגור"
 
-#: ../lib/common.c:185
+#: lib/common.c:185
 msgid "The search URL is empty. Please check your preferences."
 msgstr "‏URL חיפוש הינו ריק. אנא בדוק את העדפותיך."
 
-#: ../lib/common.c:191
+#: lib/common.c:191
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "לא היה ניתן לפתוח דפדפן. אנא בדוק את העדפותיך."
 
-#: ../lib/common.c:231
+#: lib/common.c:231
 msgid "Invalid non-UTF8 input"
 msgstr "קלט א-UTF8 לא תקין"
 
-#: ../lib/common.c:567
+#: lib/common.c:567
 msgid "Error"
 msgstr "שגיאה"
 
-#: ../lib/common.c:570
+#: lib/common.c:570
 msgid "warning"
 msgstr "אזהרה"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:381
+#: lib/dictd.c:381
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "חפש \"%s\" באמצעות \"%s\""
 
-#: ../lib/dictd.c:388
+#: lib/dictd.c:388
 msgid "Web Search:"
 msgstr "חיפוש רשת:"
 
-#: ../lib/dictd.c:411 ../lib/dictd.c:719 ../lib/dictd.c:728 ../lib/dictd.c:817
-#: ../lib/dictd.c:826
+#: lib/dictd.c:411 lib/dictd.c:719 lib/dictd.c:728 lib/dictd.c:817
+#: lib/dictd.c:826
 msgid "Could not connect to server."
 msgstr "לא היתה אפשרות להתחבר לשרת."
 
-#: ../lib/dictd.c:417
+#: lib/dictd.c:417
 msgid "The server is not ready."
 msgstr "השרת אינו מוכן."
 
-#: ../lib/dictd.c:424
+#: lib/dictd.c:424
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "צוין מילון לא תקין. אנא בדוק את העדפותיך."
 
-#: ../lib/dictd.c:432 ../lib/dictd.c:472 ../lib/dictd.c:851
+#: lib/dictd.c:432 lib/dictd.c:472 lib/dictd.c:851
 msgid "Unknown error while querying the server."
 msgstr "שגיאה לא מוכרת במהלך תשאול השרת."
 
-#: ../lib/dictd.c:447
+#: lib/dictd.c:447
 msgid "Dictionary Results:"
 msgstr "תוצאות מילון:"
 
-#: ../lib/dictd.c:450
+#: lib/dictd.c:450
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "לא נמצאו התאמות עבור \"%s\"."
 
-#: ../lib/dictd.c:477
+#: lib/dictd.c:477
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -296,245 +312,241 @@ msgstr[0] "הגדרה %d נמצאה."
 msgstr[1] "%d הגדרות נמצאו."
 msgstr[2] "%d הגדרות נמצאו."
 
-#: ../lib/dictd.c:690
+#: lib/dictd.c:690
 #, c-format
 msgid "Querying %s..."
 msgstr "כעת מתשאל %s..."
 
-#: ../lib/dictd.c:749
+#: lib/dictd.c:749
 msgid "An error occurred while querying server information."
 msgstr "אירעה שגיאה בעת שאילתת מידע שרת."
 
-#: ../lib/dictd.c:762
+#: lib/dictd.c:762
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "מידע שרת עבור \"%s\""
 
-#: ../lib/dictd.c:846
+#: lib/dictd.c:846
 msgid "The server doesn't offer any databases."
 msgstr "השרת לא מציע שום מסד נתונים."
 
-#: ../lib/gui.c:362
+#: lib/gui.c:362
 msgid "Copy Link"
 msgstr "העתק קישור"
 
-#: ../lib/gui.c:372
+#: lib/gui.c:372
 msgid "Search"
 msgstr "חיפוש"
 
-#: ../lib/gui.c:590
+#: lib/gui.c:590
 msgid "F_ind"
 msgstr "מ_צא"
 
 #. File Menu
-#: ../lib/gui.c:672
+#: lib/gui.c:672
 msgid "_File"
 msgstr "_קובץ"
 
-#: ../lib/gui.c:679 ../lib/gui.c:805
+#: lib/gui.c:679 lib/gui.c:805
 msgid "Speed _Reader"
 msgstr "_קורא מהירות"
 
-#: ../lib/gui.c:694
+#: lib/gui.c:694
 msgid "_Preferences"
 msgstr "_העדפות"
 
-#: ../lib/gui.c:708 ../lib/gui.c:817
+#: lib/gui.c:708 lib/gui.c:817
 msgid "_Quit"
 msgstr "_הפסק"
 
 #. Help Menu
-#: ../lib/gui.c:718
+#: lib/gui.c:718
 msgid "_Help"
 msgstr "_עזרה"
 
-#: ../lib/gui.c:725
+#: lib/gui.c:725
 msgid "About"
 msgstr "על אודות"
 
-#: ../lib/gui.c:760 ../lib/prefs.c:266
-msgid "Dictionary"
-msgstr "מילון"
-
-#: ../lib/gui.c:829
+#: lib/gui.c:829
 msgid "Search with:"
 msgstr "חפש בעזרת:"
 
-#: ../lib/gui.c:833
+#: lib/gui.c:833
 msgid "_Dictionary Server"
 msgstr "שרת _מילון"
 
-#: ../lib/gui.c:839
+#: lib/gui.c:839
 msgid "_Web Service"
 msgstr "שירות _רשת"
 
-#: ../lib/gui.c:847
+#: lib/gui.c:847
 msgid "_Spell Checker"
 msgstr "בודק _איות"
 
-#: ../lib/gui.c:972
+#: lib/gui.c:972
 msgid "A client program to query different dictionaries."
 msgstr "תוכנית לקוח לתשאול מילונים שונים."
 
-#: ../lib/gui.c:976
+#: lib/gui.c:976
 msgid "translator-credits"
 msgstr "YOU; Please, join us in our great endeavor of translating The Xfce Desktop Environment into Hebrew"
 
-#: ../lib/gui.c:979
+#: lib/gui.c:979
 msgid "Xfce4 Dictionary"
 msgstr "מילון Xfce4"
 
-#: ../lib/prefs.c:52
+#: lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
 msgstr "‏dict.leo.org - גרמנית <-> אנגלית"
 
-#: ../lib/prefs.c:53
+#: lib/prefs.c:53
 msgid "dict.leo.org - German <-> French"
 msgstr "‏dict.leo.org - גרמנית <-> צרפתית"
 
-#: ../lib/prefs.c:54
+#: lib/prefs.c:54
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "‏dict.leo.org - גרמנית <-> ספרדית"
 
-#: ../lib/prefs.c:55
+#: lib/prefs.c:55
 msgid "dict.leo.org - German <-> Italian"
 msgstr "‏dict.leo.org - גרמנית <-> איטלקית"
 
-#: ../lib/prefs.c:56
+#: lib/prefs.c:56
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "‏dict.leo.org - גרמנית <-> סינית"
 
-#: ../lib/prefs.c:57
+#: lib/prefs.c:57
 msgid "dict.cc - Dictionary"
 msgstr "dict.cc - מילון"
 
-#: ../lib/prefs.c:58
+#: lib/prefs.c:58
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:59
+#: lib/prefs.c:59
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:60
+#: lib/prefs.c:60
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "ויקיפדיה, האינציקלופדיה החופשית (EN)"
 
-#: ../lib/prefs.c:61
+#: lib/prefs.c:61
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "ויקימילון, המילון החופשי (EN)"
 
-#: ../lib/prefs.c:62
+#: lib/prefs.c:62
 msgid "Merriam-Webster Online Dictionary"
 msgstr "מילון מקוון Merriam-Webster"
 
-#: ../lib/prefs.c:63
+#: lib/prefs.c:63
 msgid "Clear"
 msgstr "טהר"
 
-#: ../lib/prefs.c:98
+#: lib/prefs.c:98
 msgid "You have chosen an invalid dictionary."
 msgstr "בחרת מילון לא תקין."
 
-#: ../lib/prefs.c:300
+#: lib/prefs.c:300
 msgid "General"
 msgstr "כללי"
 
-#: ../lib/prefs.c:302
+#: lib/prefs.c:302
 msgid "<b>Default search method:</b>"
 msgstr "<b>שיטת חיפוש שגרתית:</b>"
 
-#: ../lib/prefs.c:307 ../lib/prefs.c:458
+#: lib/prefs.c:307 lib/prefs.c:458
 msgid "Dictionary Server"
 msgstr "שרת מילון"
 
-#: ../lib/prefs.c:316 ../lib/prefs.c:566
+#: lib/prefs.c:316 lib/prefs.c:566
 msgid "Web Service"
 msgstr "שירות רשת"
 
-#: ../lib/prefs.c:325 ../lib/prefs.c:613
+#: lib/prefs.c:325 lib/prefs.c:613
 msgid "Spell Checker"
 msgstr "בודק איות"
 
-#: ../lib/prefs.c:334
+#: lib/prefs.c:334
 msgid "Last used method"
 msgstr "שיטה אחרונה בשימוש"
 
-#: ../lib/prefs.c:343
+#: lib/prefs.c:343
 msgid "<b>Colors:</b>"
 msgstr "<b>צבעים:</b>"
 
-#: ../lib/prefs.c:349
+#: lib/prefs.c:349
 msgid "Links:"
 msgstr "קישורים:"
 
-#: ../lib/prefs.c:350
+#: lib/prefs.c:350
 msgid "Phonetics:"
 msgstr "היברון:"
 
-#: ../lib/prefs.c:351
+#: lib/prefs.c:351
 msgid "Spelled correctly:"
 msgstr "אויתו כהלכה:"
 
-#: ../lib/prefs.c:352
+#: lib/prefs.c:352
 msgid "Spelled incorrectly:"
 msgstr "אויתו שלא כהלכה:"
 
-#: ../lib/prefs.c:403
+#: lib/prefs.c:403
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>שדה טקסט לוח:</b>"
 
-#: ../lib/prefs.c:409
+#: lib/prefs.c:409
 msgid "Show text field in the panel"
 msgstr "נצג שדה טקסט בתוך הלוח"
 
 #. panel entry size
-#: ../lib/prefs.c:416
+#: lib/prefs.c:416
 msgid "Text field size:"
 msgstr "גודל שדה טקסט:"
 
 #. server address
-#: ../lib/prefs.c:461
+#: lib/prefs.c:461
 msgid "Server:"
 msgstr "שרת:"
 
 #. server port
-#: ../lib/prefs.c:471
+#: lib/prefs.c:471
 msgid "Server Port:"
 msgstr "פורט שרת:"
 
 #. dictionary
-#: ../lib/prefs.c:481 ../lib/prefs.c:639
+#: lib/prefs.c:481 lib/prefs.c:639
 msgid "Dictionary:"
 msgstr "מילון:"
 
-#: ../lib/prefs.c:484
+#: lib/prefs.c:484
 msgid "* (use all)"
 msgstr "* (השתמש בכול)"
 
-#: ../lib/prefs.c:486
+#: lib/prefs.c:486
 msgid "! (use all, stop after first match)"
 msgstr "! (השתמש בכול, עצור לאחר התאמה ראשונה)"
 
-#: ../lib/prefs.c:568
+#: lib/prefs.c:568
 msgid "<b>Web search URL:</b>"
 msgstr "<b>‏URL חיפוש רשת:</b>"
 
-#: ../lib/prefs.c:573
+#: lib/prefs.c:573
 msgid "URL:"
 msgstr "‏URL:"
 
-#: ../lib/prefs.c:593
+#: lib/prefs.c:593
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "הזן URL של אתר רשת אשר מציע תרגום או שירותי מילון. השתמש במחרוזת {word} בתור סמל כללי עבור המילה אותה מחפשים."
 
-#: ../lib/prefs.c:615
+#: lib/prefs.c:615
 msgid "Spell Check Program:"
 msgstr "תוכנית בדיקת איות:"
 
-#: ../lib/prefs.c:632
+#: lib/prefs.c:632
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
