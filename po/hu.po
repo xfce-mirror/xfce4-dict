@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Balázs Meskó <meskobalazs@mailbox.org>, 2018
+# Balázs Meskó <meskobalazs@mailbox.org>, 2024
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009
 # Gábor P., 2017,2019
 # Robert Huszar, 2022
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-03-31 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Robert Huszar, 2022\n"
+"Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>, 2024\n"
 "Language-Team: Hungarian (http://app.transifex.com/xfce/xfce-apps/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -186,7 +187,7 @@ msgstr "_Megnyitás"
 #: lib/speedreader.c:556
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "A fájl („%s”) nem tölthető be."
+msgstr "A(z) „%s” fájl nem tölthető be."
 
 #: lib/speedreader.c:582
 #, c-format
@@ -248,7 +249,7 @@ msgstr "_Bezárás"
 
 #: lib/common.c:185
 msgid "The search URL is empty. Please check your preferences."
-msgstr "A keresési URL üres. Ellenőrizze beállításait."
+msgstr "A keresési webcím üres. Ellenőrizze beállításait."
 
 #: lib/common.c:191
 msgid "Browser could not be opened. Please check your preferences."
@@ -538,7 +539,7 @@ msgstr "URL:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr "Adja meg egy fordítási vagy szótárszolgáltatásokat nyújtó weboldal URL-címét. A {word} helykitöltővel jelezze a keresett szó helyét."
+msgstr "Adja meg egy fordítási vagy szótárszolgáltatásokat nyújtó weboldal webcímét. A {word} helykitöltővel jelezze a keresett szó helyét."
 
 #: lib/prefs.c:615
 msgid "Spell Check Program:"
