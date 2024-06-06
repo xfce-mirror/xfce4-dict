@@ -350,8 +350,7 @@ static gboolean textview_is_hyperlink_at_cursor(DictData *dd)
 static void textview_populate_popup_cb(GtkTextView *textview, GtkMenu *menu, DictData *dd)
 {
 	GtkWidget *icon;
-
-	GtkWidget *search = gtk_menu_item_new ();
+	GtkWidget *search;
 	GtkWidget *copy_link;
 	GtkWidget *sep = gtk_separator_menu_item_new();
 

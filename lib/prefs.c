@@ -314,7 +314,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
 		radio_button = gtk_radio_button_new_with_label(search_method, _("Web Service"));
-		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
 		if (dd->mode_default == DICTMODE_WEB)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
 		gtk_widget_show(radio_button);
@@ -323,7 +322,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
 		radio_button = gtk_radio_button_new_with_label(search_method, _("Spell Checker"));
-		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
 		if (dd->mode_default == DICTMODE_SPELL)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
 		gtk_widget_show(radio_button);
@@ -332,7 +330,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
 		radio_button = gtk_radio_button_new_with_label(search_method, _("Last used method"));
-		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
 		if (dd->mode_default == DICTMODE_LAST_USED)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
 		gtk_widget_show(radio_button);
