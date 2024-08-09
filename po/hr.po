@@ -6,7 +6,7 @@
 # Edin Veskovic <edin.lockedin@gmail.com>, 2019
 # Edin Veskovic <edin.lockedin@gmail.com>, 2015-2017
 # Edin Veskovic <edin.lockedin@gmail.com>, 2014
-# Ivica  Kolić <ikoli@yahoo.com>, 2014,2017
+# Ivica  Kolić <ikoli@yahoo.com>, 2014,2017,2024
 # Ivica  Kolić <ikoli@yahoo.com>, 2011
 msgid ""
 msgstr ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-03-31 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Edin Veskovic <edin.lockedin@gmail.com>, 2019\n"
+"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>, 2014,2017,2024\n"
 "Language-Team: Croatian (http://app.transifex.com/xfce/xfce-apps/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -91,7 +91,7 @@ msgstr "Klijent rječnika"
 
 #: src/xfce4-dict.desktop.in:7
 msgid "A client program to query different dictionaries"
-msgstr ""
+msgstr "Klijent za upite raznim rječnicima"
 
 #: lib/spell.c:74
 msgid "Spell Checker Results:"
