@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Cédric Valmary <cvalmary@yahoo.fr>, 2013
+# Quentin PAGÈS, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-03-31 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>, 2013\n"
+"Last-Translator: Quentin PAGÈS, 2024\n"
 "Language-Team: Occitan (post 1500) (http://app.transifex.com/xfce/xfce-apps/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,7 +88,7 @@ msgstr "Client diccionari"
 
 #: src/xfce4-dict.desktop.in:7
 msgid "A client program to query different dictionaries"
-msgstr ""
+msgstr "Un programa client per interrogar diferents diccionaris"
 
 #: lib/spell.c:74
 msgid "Spell Checker Results:"
@@ -145,7 +146,7 @@ msgstr "_Resumit"
 
 #: lib/speedreader.c:249 lib/speedreader.c:698
 msgid "S_top"
-msgstr ""
+msgstr "Arres_tar"
 
 #: lib/speedreader.c:257
 msgid "Running"
@@ -313,7 +314,7 @@ msgstr "Requèsta a %s..."
 
 #: lib/dictd.c:749
 msgid "An error occurred while querying server information."
-msgstr ""
+msgstr "Una error s'es producha al moment de la requèsta de las informacions del servidor."
 
 #: lib/dictd.c:762
 #, c-format
@@ -334,7 +335,7 @@ msgstr "Recercar"
 
 #: lib/gui.c:590
 msgid "F_ind"
-msgstr ""
+msgstr "Cer_car"
 
 #. File Menu
 #: lib/gui.c:672
@@ -412,7 +413,7 @@ msgstr "dict.leo.org - Alemand <-> Chinés"
 
 #: lib/prefs.c:57
 msgid "dict.cc - Dictionary"
-msgstr ""
+msgstr "dict.cc – Diccionari"
 
 #: lib/prefs.c:58
 msgid "Dictionary.com"
