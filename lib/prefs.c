@@ -289,7 +289,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	{
 		GtkWidget *radio_button, *label, *grid, *label4;
 		GtkWidget *color_link, *color_phon, *color_success, *color_error;
-		GSList *search_method;
 
 		notebook_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 2);
 		gtk_widget_show(notebook_vbox);
@@ -305,7 +304,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_box_pack_start(GTK_BOX(inner_vbox), label, FALSE, FALSE, 0);
 
 		radio_button = gtk_radio_button_new_with_label(NULL, _("Dictionary Server"));
-		search_method = gtk_radio_button_get_group(GTK_RADIO_BUTTON(radio_button));
 		if (dd->mode_default == DICTMODE_DICT)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
 		gtk_widget_show(radio_button);
@@ -313,7 +311,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_DICT));
 		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
-		radio_button = gtk_radio_button_new_with_label(search_method, _("Web Service"));
+		radio_button = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio_button), _("Web Service"));
 		if (dd->mode_default == DICTMODE_WEB)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
 		gtk_widget_show(radio_button);
@@ -321,7 +319,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_WEB));
 		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
-		radio_button = gtk_radio_button_new_with_label(search_method, _("Spell Checker"));
+		radio_button = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio_button), _("Spell Checker"));
 		if (dd->mode_default == DICTMODE_SPELL)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
 		gtk_widget_show(radio_button);
@@ -329,7 +327,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		g_object_set_data(G_OBJECT(radio_button), "type", GINT_TO_POINTER(DICTMODE_SPELL));
 		g_signal_connect(radio_button, "toggled", G_CALLBACK(search_method_changed), dd);
 
-		radio_button = gtk_radio_button_new_with_label(search_method, _("Last used method"));
+		radio_button = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(radio_button), _("Last used method"));
 		if (dd->mode_default == DICTMODE_LAST_USED)
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio_button), TRUE);
 		gtk_widget_show(radio_button);
