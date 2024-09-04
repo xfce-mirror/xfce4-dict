@@ -349,7 +349,7 @@ void dict_read_rc_file(DictData *dd)
 	XfceRc *rc;
 	gint mode_in_use = DICTMODE_DICT;
 	gint mode_default = DICTMODE_LAST_USED;
-	gint panel_entry_size = 150;
+	gint panel_entry_size = 20;
 	gint wpm = 400;
 	gint grouping = 1;
 	gboolean mark_paragraphs = FALSE;
