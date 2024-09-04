@@ -44,7 +44,7 @@ gboolean dict_find_panel_plugin(gchar flags, const gchar *text)
 
 	if (!proxy)
 	{
-		g_warning ("error connecting to org.xfce.Dict, reason was: %s", error->message);
+		g_debug("error connecting to org.xfce.Dict, reason was: %s", error->message);
 		g_clear_error(&error);
 		return FALSE;
 	}
@@ -53,7 +53,7 @@ gboolean dict_find_panel_plugin(gchar flags, const gchar *text)
 
 	if (error)
 	{
-		g_warning ("failed to connecting to org.xfce.Dict, reason was: %s", error->message);
+		g_debug("failed to connect to org.xfce.Dict, reason was: %s", error->message);
 		g_clear_error(&error);
 		return FALSE;
 	}
