@@ -108,7 +108,9 @@ typedef struct
 	GtkWidget *pref_menu_item;
 	GtkWidget *main_combo;
 	GtkWidget *main_entry;
+	GtkWidget *radio_button_dict;
 	GtkWidget *radio_button_web;
+	GtkWidget *radio_button_spell;
 	GtkWidget *panel_entry;
 	GtkWidget *main_textview;
 	GtkTextBuffer *main_textbuffer;

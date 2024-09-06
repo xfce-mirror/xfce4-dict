@@ -830,6 +830,7 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_box_pack_start(GTK_BOX(method_chooser), label, FALSE, FALSE, 6);
 
 	radio = gtk_radio_button_new_with_mnemonic(NULL, _("_Dictionary Server"));
+	dd->radio_button_dict = radio;
 	gtk_widget_show(radio);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_DICT));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_dict_toggled), dd);
@@ -844,6 +845,7 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
 	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_Spell Checker"));
+	dd->radio_button_spell = radio;
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_SPELL));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_spell_toggled), dd);
 	gtk_widget_show(radio);
