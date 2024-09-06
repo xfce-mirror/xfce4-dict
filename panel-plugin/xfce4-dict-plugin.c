@@ -326,7 +326,7 @@ static void dict_plugin_drag_data_received(GtkWidget *widget, GdkDragContext *dr
 
 static void dict_plugin_construct(XfcePanelPlugin *plugin)
 {
-	GtkWidget *menu_item, *submenu, *menu_item_dict, *menu_item_web, *menu_item_spell;
+	GtkWidget *menu_item_dict, *menu_item_web, *menu_item_spell;
 	GtkCssProvider *css_provider;
 	DictPanelData *dpd = g_new0(DictPanelData, 1);
 
@@ -406,8 +406,6 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(dpd->dd->panel_entry, "drag-data-received", G_CALLBACK(dict_plugin_drag_data_received), dpd);
 
 	/* sub menus to toggle search mode */
-	menu_item = gtk_menu_item_new_with_label(_("Search with"));
-	submenu = gtk_menu_new();
 	menu_item_dict = gtk_radio_menu_item_new_with_label(NULL, _("Dictionary Server"));
 	menu_item_web = gtk_radio_menu_item_new_with_label(gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(menu_item_dict)), _("Web Service"));
 	menu_item_spell = gtk_radio_menu_item_new_with_label(gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(menu_item_web)), _("Spell Checker"));
@@ -420,12 +418,12 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(menu_item_dict, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_dict);
 	g_signal_connect(menu_item_web, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_web);
 	g_signal_connect(menu_item_spell, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_spell);
-	gtk_menu_shell_append(GTK_MENU_SHELL(submenu), menu_item_dict);
-	gtk_menu_shell_append(GTK_MENU_SHELL(submenu), menu_item_web);
-	gtk_menu_shell_append(GTK_MENU_SHELL(submenu), menu_item_spell);
-	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item));
-	gtk_menu_item_set_submenu(GTK_MENU_ITEM(menu_item), submenu);
-	gtk_widget_show_all(menu_item);
+	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_dict));
+	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_web));
+	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_spell));
+	gtk_widget_show_all(menu_item_dict);
+	gtk_widget_show_all(menu_item_web);
+	gtk_widget_show_all(menu_item_spell);
 
 	dict_acquire_dbus_name(dpd->dd);
 
