@@ -1,3 +1,27 @@
+0.8.7 (2024-09-24)
+=====
+- panel-plugin: Drop submenu (#2)
+- panel-plugin: Add submenus to toggle search mode (#2)
+- panel-plugin: Reduce default text size
+- panel-plugin: Restore function of the button in text entry
+- Change log level (#17)
+- prefs: Add radio buttons to correct group
+- scan-build: Fix deadcode.DeadStores
+- scan-build: Add false positive file
+- I18n: Update po/LINGUAS list
+- build: Use XDT_VERSION_INIT and get rid of configure.ac.in
+- build: Switch from intltool to gettext
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Italian, Japanese, Kazakh, Korean,
+  Latvian, Lithuanian, Malay, Norwegian Bokmål, Occitan (post 1500),
+  Persian (Iran), Polish, Portuguese, Portuguese (Brazil), Russian,
+  Serbian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish,
+  Ukrainian, Urdu, Urdu (Pakistan), Uyghur, Vietnamese
+
 0.8.6 (2023-11-19)
 =====
 - Use getaddrinfo(3) to support IPv6 DICT servers
