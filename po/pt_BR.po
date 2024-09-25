@@ -10,7 +10,7 @@
 # C. E., 2020
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008
 # Lucas Wilm <lucaswilm@gmail.com>, 2021
-# Michael Martins <michaelfm21@gmail.com>, 2020
+# Michael Martins, 2020
 # Og Maciel <ogmaciel@gnome.org>, 2008
 # Pablo Lerina <pabloalr@gmail.com>, 2007
 # Vladimir Melo <vladimirmelo@foresightlinux.org>, 2007
