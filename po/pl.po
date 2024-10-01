@@ -5,7 +5,7 @@
 # Translators:
 # Grzegorz Gębczyński <grzegorz.gebczynski@gmail.com>, 2016
 # marcin mikołajczak <me@mkljczk.pl>, 2016
-# Marek Adamski, 2023
+# Marek Adamski, 2023-2024
 # Marek Adamski, 2019-2021
 # Piotr Maliński <riklaunim@gmail.com>, 2007
 # Piotr Sokół <psokol.l10n@gmail.com>, 2009,2013
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-03-31 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Marek Adamski, 2023\n"
+"Last-Translator: Marek Adamski, 2023-2024\n"
 "Language-Team: Polish (http://app.transifex.com/xfce/xfce-apps/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,7 +65,7 @@ msgstr "Zaznacza pole tekstowe panelu"
 
 #: src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Uruchamia program nawet gdy aplet panelu jest wczytany"
+msgstr "Uruchamia program, nawet jeśli aplet panelu jest wczytany"
 
 #: src/xfce4-dict.c:54
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -218,7 +218,7 @@ msgstr "_Oznaczanie akapitów"
 
 #: lib/speedreader.c:625
 msgid "Word _Grouping:"
-msgstr "Ilość g_rupowanych słów:"
+msgstr "Liczba g_rupowanych słów:"
 
 #: lib/speedreader.c:642
 msgid "_Font Size:"
@@ -557,4 +557,4 @@ msgstr "Polecenie:"
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>Do sprawdzania poprawności pisowni można użyć programu „enchant”, „ispell” lub innego programu, kompatybilnego ze składnią polecenia ispell.\nIkona wskazuje czy wprowadzone polecenie jest prawidłowe.</i>"
+msgstr "<i>Do sprawdzania poprawności pisowni można użyć programu „enchant”, „ispell” lub innego programu kompatybilnego ze składnią polecenia ispell.\nIkona wskazuje, czy wprowadzone polecenie jest prawidłowe.</i>"
