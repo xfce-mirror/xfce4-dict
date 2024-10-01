@@ -49,7 +49,6 @@ static GOptionEntry cli_options[] =
 	{ "dict", 'd', 0, G_OPTION_ARG_NONE, &mode_dict, N_("Search the given text using a Dict server(RFC 2229)"), NULL },
 	{ "web", 'w', 0, G_OPTION_ARG_NONE, &mode_web, N_("Search the given text using a web-based search engine"), NULL },
 	{ "spell", 's', 0, G_OPTION_ARG_NONE, &mode_spell, N_("Check the given text with a spell checker"), NULL },
-	{ "text-field", 't', 0, G_OPTION_ARG_NONE, &focus_panel_entry, N_("Grab the focus on the text field in the panel"), NULL },
 	{ "ignore-plugin", 'i', 0, G_OPTION_ARG_NONE, &ignore_plugin, N_("Start stand-alone application even if the panel plugin is loaded"), NULL },
 	{ "clipboard", 'c', 0, G_OPTION_ARG_NONE, &use_clipboard, N_("Grabs the PRIMARY selection content and uses it as search text"), NULL },
 	{ "verbose", 'v', 0, G_OPTION_ARG_NONE, &verbose_mode, N_("Be verbose"), NULL },
