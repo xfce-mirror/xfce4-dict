@@ -274,8 +274,11 @@ static void entry_changed_cb(GtkEditable *editable, DictPanelData *dpd)
 
 static void menu_item_clicked_cb(GtkCheckMenuItem *menu_item, gpointer user_data)
 {
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(user_data), TRUE);
-	g_signal_emit_by_name(G_OBJECT(user_data), "toggled");
+	if (gtk_check_menu_item_get_active (menu_item))
+	{
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(user_data), TRUE);
+		g_signal_emit_by_name(G_OBJECT(user_data), "clicked");
+	}
 }
 
 
