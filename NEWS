@@ -1,3 +1,10 @@
+0.8.8 (2024-10-01)
+=====
+- Avoid freeze when toggling search modes
+- Drop --text-field (#18)
+- Translation Updates:
+  Portuguese (Brazil)
+
 0.8.7 (2024-09-24)
 =====
 - panel-plugin: Drop submenu (#2)
