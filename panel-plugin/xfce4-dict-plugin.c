@@ -134,36 +134,6 @@ static void dict_plugin_panel_button_clicked(GtkWidget *button, DictPanelData *d
 }
 
 
-static gboolean dict_plugin_set_selection(DictPanelData *dpd)
-{
-	GdkScreen *gscreen;
-	gchar      selection_name[32];
-	Atom       selection_atom;
-	GtkWidget *win;
-	Window     xwin;
-
-	win = gtk_invisible_new();
-	gtk_widget_realize(win);
-	xwin = GDK_WINDOW_XID(gtk_widget_get_window (GTK_WIDGET(win)));
-
-	gscreen = gtk_widget_get_screen(win);
-	g_snprintf(selection_name, sizeof (selection_name),
-		XFCE_DICT_SELECTION"%d", gdk_x11_screen_get_screen_number(gscreen));
-	selection_atom = XInternAtom(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_name, False);
-
-	if (XGetSelectionOwner(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_atom))
-	{
-		gtk_widget_destroy(win);
-		return FALSE;
-	}
-
-	XSelectInput(gdk_x11_display_get_xdisplay(gdk_display_get_default()), xwin, PropertyChangeMask);
-	XSetSelectionOwner(gdk_x11_display_get_xdisplay(gdk_display_get_default()), selection_atom, xwin, GDK_CURRENT_TIME);
-
-	return TRUE;
-}
-
-
 static void dict_plugin_close_button_clicked(GtkWidget *button, DictPanelData *dpd)
 {
 	gtk_widget_hide(dpd->dd->window);
@@ -396,7 +366,6 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	dict_plugin_panel_set_size(dpd->plugin, xfce_panel_plugin_get_size(dpd->plugin), dpd);
 
 	xfce_panel_plugin_add_action_widget(plugin, dpd->panel_button);
-	dict_plugin_set_selection(dpd);
 
 	/* DnD stuff */
 	gtk_drag_dest_set(GTK_WIDGET(dpd->panel_button), GTK_DEST_DEFAULT_ALL,
