@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-03-31 00:50+0100\n"
+"POT-Creation-Date: 2024-10-02 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: b83946de5835331df42b9ffcc43e6a33_05e65cd <73a30e0a984b2291d4915f37112ad292_814039>, 2023\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/xfce-apps/language/tr/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
-#: lib/gui.c:760 lib/prefs.c:266
+#: lib/gui.c:759 lib/prefs.c:266
 msgid "Dictionary"
 msgstr "Sözlük"
 
@@ -33,18 +33,31 @@ msgstr "Sözlük"
 msgid "A plugin to query different dictionaries."
 msgstr "Türlü sözlükleri sorgulamak için eklenti."
 
-#: panel-plugin/xfce4-dict-plugin.c:273 panel-plugin/xfce4-dict-plugin.c:401
-#: src/xfce4-dict.c:194 lib/spell.c:242 lib/gui.c:539
+#: panel-plugin/xfce4-dict-plugin.c:242 panel-plugin/xfce4-dict-plugin.c:402
+#: src/xfce4-dict.c:193 lib/spell.c:242 lib/gui.c:538
 msgid "Ready"
 msgstr "Hazır"
 
-#: panel-plugin/xfce4-dict-plugin.c:335
+#: panel-plugin/xfce4-dict-plugin.c:315
 msgid "Look up a word"
 msgstr "Sözcük ara"
 
-#: panel-plugin/xfce4-dict-plugin.c:374 lib/gui.c:791
+#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:790
 msgid "Search term"
 msgstr "Aranacak ifade"
+
+#. sub menus to toggle search mode
+#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:306 lib/prefs.c:453
+msgid "Dictionary Server"
+msgstr "Sözlük Sunucusu"
+
+#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:314 lib/prefs.c:561
+msgid "Web Service"
+msgstr "Web Servisi"
+
+#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:322 lib/prefs.c:608
+msgid "Spell Checker"
+msgstr "Yazım Denetimi"
 
 #: src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -59,30 +72,26 @@ msgid "Check the given text with a spell checker"
 msgstr "Girilen ifadeyi imla denetleyicisi ile denetle"
 
 #: src/xfce4-dict.c:52
-msgid "Grab the focus on the text field in the panel"
-msgstr "Paneldeki yazı alanındaki odağı yakala"
-
-#: src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Panel eklentisi yüklü olsa bile uygulamayı çalıştır"
 
-#: src/xfce4-dict.c:54
+#: src/xfce4-dict.c:53
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "İLK seçim içeriğini yakalar ve aranacak ifade olarak kullanır "
 
-#: src/xfce4-dict.c:55
+#: src/xfce4-dict.c:54
 msgid "Be verbose"
 msgstr "Ayrıntılı çıktı göster"
 
-#: src/xfce4-dict.c:56
+#: src/xfce4-dict.c:55
 msgid "Show version information"
 msgstr "Sürüm bilgisi göster"
 
-#: src/xfce4-dict.c:127
+#: src/xfce4-dict.c:126
 msgid "[TEXT]"
 msgstr "[YAZI]"
 
-#: src/xfce4-dict.c:143
+#: src/xfce4-dict.c:142
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Lütfen hatalı <%s> adresine bildirin."
@@ -243,7 +252,7 @@ msgstr "Metin alanının içeriğini temizle"
 msgid "_Start"
 msgstr "_Başlat"
 
-#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:708 lib/gui.c:817
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:707 lib/gui.c:816
 #: lib/prefs.c:268
 msgid "_Close"
 msgstr "_Kapat"
@@ -330,49 +339,49 @@ msgstr "\"%s\" için sunucu bilgisi"
 msgid "The server doesn't offer any databases."
 msgstr "Sunucu herhangi bir veri tabanı sunmuyor."
 
-#: lib/gui.c:362
+#: lib/gui.c:361
 msgid "Copy Link"
 msgstr "Bağlantıyı Kopyala"
 
-#: lib/gui.c:372
+#: lib/gui.c:371
 msgid "Search"
 msgstr "Ara"
 
-#: lib/gui.c:590
+#: lib/gui.c:589
 msgid "F_ind"
 msgstr "Bu_l"
 
 #. File Menu
-#: lib/gui.c:672
+#: lib/gui.c:671
 msgid "_File"
 msgstr "_Dosya"
 
-#: lib/gui.c:679 lib/gui.c:805
+#: lib/gui.c:678 lib/gui.c:804
 msgid "Speed _Reader"
 msgstr "_Okuma Hızı"
 
-#: lib/gui.c:694
+#: lib/gui.c:693
 msgid "_Preferences"
 msgstr "_Tercihler"
 
-#: lib/gui.c:708 lib/gui.c:817
+#: lib/gui.c:707 lib/gui.c:816
 msgid "_Quit"
 msgstr "_Çık"
 
 #. Help Menu
-#: lib/gui.c:718
+#: lib/gui.c:717
 msgid "_Help"
 msgstr "_Yardım"
 
-#: lib/gui.c:725
+#: lib/gui.c:724
 msgid "About"
 msgstr "Hakkında"
 
-#: lib/gui.c:829
+#: lib/gui.c:828
 msgid "Search with:"
 msgstr "Bununla ara:"
 
-#: lib/gui.c:833
+#: lib/gui.c:832
 msgid "_Dictionary Server"
 msgstr "_Sözlük Sunucusu"
 
@@ -384,15 +393,15 @@ msgstr "_Web Servisi"
 msgid "_Spell Checker"
 msgstr "_Yazım Denetçisi"
 
-#: lib/gui.c:972
+#: lib/gui.c:973
 msgid "A client program to query different dictionaries."
 msgstr "Türlü sözlükleri sorgulamak için istemci uygulama."
 
-#: lib/gui.c:976
+#: lib/gui.c:977
 msgid "translator-credits"
 msgstr "Samed Beyribey <ras0ir@eventualis.org>\nAyhan YALÇINSOY<ayhanyalcinsoy@gmail.com>\nSerdar Sağlam <teknomobil@yandex.com>"
 
-#: lib/gui.c:979
+#: lib/gui.c:980
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 Sözlük"
 
@@ -448,105 +457,93 @@ msgstr "Temizle"
 msgid "You have chosen an invalid dictionary."
 msgstr "Geçersiz sözlük seçtiniz."
 
-#: lib/prefs.c:300
+#: lib/prefs.c:299
 msgid "General"
 msgstr "Genel"
 
-#: lib/prefs.c:302
+#: lib/prefs.c:301
 msgid "<b>Default search method:</b>"
 msgstr "<b>Öntanımlı arama yöntemi:</b>"
 
-#: lib/prefs.c:307 lib/prefs.c:458
-msgid "Dictionary Server"
-msgstr "Sözlük Sunucusu"
-
-#: lib/prefs.c:316 lib/prefs.c:566
-msgid "Web Service"
-msgstr "Web Servisi"
-
-#: lib/prefs.c:325 lib/prefs.c:613
-msgid "Spell Checker"
-msgstr "Yazım Denetimi"
-
-#: lib/prefs.c:334
+#: lib/prefs.c:330
 msgid "Last used method"
 msgstr "Son kullanılan yöntem"
 
-#: lib/prefs.c:343
+#: lib/prefs.c:338
 msgid "<b>Colors:</b>"
 msgstr "<b>Renkler:</b>"
 
-#: lib/prefs.c:349
+#: lib/prefs.c:344
 msgid "Links:"
 msgstr "Bağlantılar:"
 
-#: lib/prefs.c:350
+#: lib/prefs.c:345
 msgid "Phonetics:"
 msgstr "Fonetik:"
 
-#: lib/prefs.c:351
+#: lib/prefs.c:346
 msgid "Spelled correctly:"
 msgstr "Okuma doğruluğu:"
 
-#: lib/prefs.c:352
+#: lib/prefs.c:347
 msgid "Spelled incorrectly:"
 msgstr "Okuma yanlışı:"
 
-#: lib/prefs.c:403
+#: lib/prefs.c:398
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Panel Yazı Alanı:</b>"
 
-#: lib/prefs.c:409
+#: lib/prefs.c:404
 msgid "Show text field in the panel"
 msgstr "Panelde yazı alanı göster"
 
 #. panel entry size
-#: lib/prefs.c:416
+#: lib/prefs.c:411
 msgid "Text field size:"
 msgstr "Yazı alanı boyutu:"
 
 #. server address
-#: lib/prefs.c:461
+#: lib/prefs.c:456
 msgid "Server:"
 msgstr "Sunucu:"
 
 #. server port
-#: lib/prefs.c:471
+#: lib/prefs.c:466
 msgid "Server Port:"
 msgstr "Sunucu Bağlantı Noktası:"
 
 #. dictionary
-#: lib/prefs.c:481 lib/prefs.c:639
+#: lib/prefs.c:476 lib/prefs.c:634
 msgid "Dictionary:"
 msgstr "Sözlük:"
 
-#: lib/prefs.c:484
+#: lib/prefs.c:479
 msgid "* (use all)"
 msgstr "* (tümünü kullan)"
 
-#: lib/prefs.c:486
+#: lib/prefs.c:481
 msgid "! (use all, stop after first match)"
 msgstr "! (tümünü kullan, ilk eşleşmeden sonra dur)"
 
-#: lib/prefs.c:568
+#: lib/prefs.c:563
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Web Arama Adresi:</b>"
 
-#: lib/prefs.c:573
+#: lib/prefs.c:568
 msgid "URL:"
 msgstr "Adres:"
 
-#: lib/prefs.c:593
+#: lib/prefs.c:588
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "Çeviri veya sözlük hizmeti veren web sitesi adresi girin. Aranacak sözcüğü karşılaması için {word} değerini kullanın."
 
-#: lib/prefs.c:615
+#: lib/prefs.c:610
 msgid "Spell Check Program:"
 msgstr "Yazım Denetimi Uygulaması:"
 
-#: lib/prefs.c:632
+#: lib/prefs.c:627
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
