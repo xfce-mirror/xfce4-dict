@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-03-31 00:50+0100\n"
+"POT-Creation-Date: 2024-10-02 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2015-2017,2019-2021\n"
 "Language-Team: Czech (http://app.transifex.com/xfce/xfce-apps/language/cs/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
-#: lib/gui.c:760 lib/prefs.c:266
+#: lib/gui.c:759 lib/prefs.c:266
 msgid "Dictionary"
 msgstr "Slovník"
 
@@ -29,18 +29,31 @@ msgstr "Slovník"
 msgid "A plugin to query different dictionaries."
 msgstr "Zásuvný modul pro dotazování různých slovníků."
 
-#: panel-plugin/xfce4-dict-plugin.c:273 panel-plugin/xfce4-dict-plugin.c:401
-#: src/xfce4-dict.c:194 lib/spell.c:242 lib/gui.c:539
+#: panel-plugin/xfce4-dict-plugin.c:242 panel-plugin/xfce4-dict-plugin.c:402
+#: src/xfce4-dict.c:193 lib/spell.c:242 lib/gui.c:538
 msgid "Ready"
 msgstr "Připraven"
 
-#: panel-plugin/xfce4-dict-plugin.c:335
+#: panel-plugin/xfce4-dict-plugin.c:315
 msgid "Look up a word"
 msgstr "Vyhledat slovo"
 
-#: panel-plugin/xfce4-dict-plugin.c:374 lib/gui.c:791
+#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:790
 msgid "Search term"
 msgstr "Hledat pojem"
+
+#. sub menus to toggle search mode
+#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:306 lib/prefs.c:453
+msgid "Dictionary Server"
+msgstr "Server slovníku"
+
+#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:314 lib/prefs.c:561
+msgid "Web Service"
+msgstr "Webová služba"
+
+#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:322 lib/prefs.c:608
+msgid "Spell Checker"
+msgstr "Kontrola pravopisu"
 
 #: src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -55,30 +68,26 @@ msgid "Check the given text with a spell checker"
 msgstr "Zkontrolovat zadaný text kontrolou pravopisu"
 
 #: src/xfce4-dict.c:52
-msgid "Grab the focus on the text field in the panel"
-msgstr "Umístit kurzor do textového pole v panelu"
-
-#: src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Spustit samostatnou aplikaci přestože je spuštěn zásuvný modul panelu"
 
-#: src/xfce4-dict.c:54
+#: src/xfce4-dict.c:53
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Použije obsah PRIMÁRNÍHO výběru pro hledání"
 
-#: src/xfce4-dict.c:55
+#: src/xfce4-dict.c:54
 msgid "Be verbose"
 msgstr "Podrobný výpis"
 
-#: src/xfce4-dict.c:56
+#: src/xfce4-dict.c:55
 msgid "Show version information"
 msgstr "Zobrazí informaci o verzi"
 
-#: src/xfce4-dict.c:127
+#: src/xfce4-dict.c:126
 msgid "[TEXT]"
 msgstr "[TEXT]"
 
-#: src/xfce4-dict.c:143
+#: src/xfce4-dict.c:142
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Prosíme, abyste chyby hlásili na adresu <%s>."
@@ -243,7 +252,7 @@ msgstr "Vymazat obsah textového pole"
 msgid "_Start"
 msgstr "_Spustit"
 
-#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:708 lib/gui.c:817
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:707 lib/gui.c:816
 #: lib/prefs.c:268
 msgid "_Close"
 msgstr "_Zavřít"
@@ -332,49 +341,49 @@ msgstr "Informace serveru pro „%s“"
 msgid "The server doesn't offer any databases."
 msgstr "Server nenabízí žádné databáze."
 
-#: lib/gui.c:362
+#: lib/gui.c:361
 msgid "Copy Link"
 msgstr "Kopírovat odkaz"
 
-#: lib/gui.c:372
+#: lib/gui.c:371
 msgid "Search"
 msgstr "Hledat"
 
-#: lib/gui.c:590
+#: lib/gui.c:589
 msgid "F_ind"
 msgstr "N_ajít"
 
 #. File Menu
-#: lib/gui.c:672
+#: lib/gui.c:671
 msgid "_File"
 msgstr "_Soubor"
 
-#: lib/gui.c:679 lib/gui.c:805
+#: lib/gui.c:678 lib/gui.c:804
 msgid "Speed _Reader"
 msgstr "_Rychločtení"
 
-#: lib/gui.c:694
+#: lib/gui.c:693
 msgid "_Preferences"
 msgstr "_Předvolby"
 
-#: lib/gui.c:708 lib/gui.c:817
+#: lib/gui.c:707 lib/gui.c:816
 msgid "_Quit"
 msgstr "_Ukončit"
 
 #. Help Menu
-#: lib/gui.c:718
+#: lib/gui.c:717
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: lib/gui.c:725
+#: lib/gui.c:724
 msgid "About"
 msgstr "O aplikaci"
 
-#: lib/gui.c:829
+#: lib/gui.c:828
 msgid "Search with:"
 msgstr "Hledat pomocí:"
 
-#: lib/gui.c:833
+#: lib/gui.c:832
 msgid "_Dictionary Server"
 msgstr "_Server slovníku"
 
@@ -386,15 +395,15 @@ msgstr "_Webová služba"
 msgid "_Spell Checker"
 msgstr "_Kontrola pravopisu"
 
-#: lib/gui.c:972
+#: lib/gui.c:973
 msgid "A client program to query different dictionaries."
 msgstr "Klientský program pro získávání dat z různých slovníků."
 
-#: lib/gui.c:976
+#: lib/gui.c:977
 msgid "translator-credits"
 msgstr "Michal Várady <miko.vaji@gmail.com>"
 
-#: lib/gui.c:979
+#: lib/gui.c:980
 msgid "Xfce4 Dictionary"
 msgstr "Slovník Xfce4"
 
@@ -450,105 +459,93 @@ msgstr "Čistý"
 msgid "You have chosen an invalid dictionary."
 msgstr "Zvolili jste neplatný slovník."
 
-#: lib/prefs.c:300
+#: lib/prefs.c:299
 msgid "General"
 msgstr "Obecné"
 
-#: lib/prefs.c:302
+#: lib/prefs.c:301
 msgid "<b>Default search method:</b>"
 msgstr "<b>Výchozí metoda pro hledání:</b>"
 
-#: lib/prefs.c:307 lib/prefs.c:458
-msgid "Dictionary Server"
-msgstr "Server slovníku"
-
-#: lib/prefs.c:316 lib/prefs.c:566
-msgid "Web Service"
-msgstr "Webová služba"
-
-#: lib/prefs.c:325 lib/prefs.c:613
-msgid "Spell Checker"
-msgstr "Kontrola pravopisu"
-
-#: lib/prefs.c:334
+#: lib/prefs.c:330
 msgid "Last used method"
 msgstr "Poslední použitá metoda"
 
-#: lib/prefs.c:343
+#: lib/prefs.c:338
 msgid "<b>Colors:</b>"
 msgstr "<b>Barvy:</b>"
 
-#: lib/prefs.c:349
+#: lib/prefs.c:344
 msgid "Links:"
 msgstr "Odkazy:"
 
-#: lib/prefs.c:350
+#: lib/prefs.c:345
 msgid "Phonetics:"
 msgstr "Výslovnost:"
 
-#: lib/prefs.c:351
+#: lib/prefs.c:346
 msgid "Spelled correctly:"
 msgstr "Správná výslovnost:"
 
-#: lib/prefs.c:352
+#: lib/prefs.c:347
 msgid "Spelled incorrectly:"
 msgstr "Nesprávná výslovnost:"
 
-#: lib/prefs.c:403
+#: lib/prefs.c:398
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Textové pole panelu:</b>"
 
-#: lib/prefs.c:409
+#: lib/prefs.c:404
 msgid "Show text field in the panel"
 msgstr "Zobrazit textové pole v panelu"
 
 #. panel entry size
-#: lib/prefs.c:416
+#: lib/prefs.c:411
 msgid "Text field size:"
 msgstr "Velikost textového pole:"
 
 #. server address
-#: lib/prefs.c:461
+#: lib/prefs.c:456
 msgid "Server:"
 msgstr "Server:"
 
 #. server port
-#: lib/prefs.c:471
+#: lib/prefs.c:466
 msgid "Server Port:"
 msgstr "Port serveru:"
 
 #. dictionary
-#: lib/prefs.c:481 lib/prefs.c:639
+#: lib/prefs.c:476 lib/prefs.c:634
 msgid "Dictionary:"
 msgstr "Slovník:"
 
-#: lib/prefs.c:484
+#: lib/prefs.c:479
 msgid "* (use all)"
 msgstr "* (použít vše)"
 
-#: lib/prefs.c:486
+#: lib/prefs.c:481
 msgid "! (use all, stop after first match)"
 msgstr "! (použít vše, zastavit při první shodě)"
 
-#: lib/prefs.c:568
+#: lib/prefs.c:563
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Hledání na webové stránce URL:</b>"
 
-#: lib/prefs.c:573
+#: lib/prefs.c:568
 msgid "URL:"
 msgstr "Adresa URL:"
 
-#: lib/prefs.c:593
+#: lib/prefs.c:588
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "Zadejte adresu URL webové stránky, která nabízí překlady nebo slovníkové služby. Použijte {word} jako zástupný řetězec pro hledané slovo."
 
-#: lib/prefs.c:615
+#: lib/prefs.c:610
 msgid "Spell Check Program:"
 msgstr "Aplikace pro kontrolu pravopisu:"
 
-#: lib/prefs.c:632
+#: lib/prefs.c:627
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
