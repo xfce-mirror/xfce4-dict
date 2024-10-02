@@ -6,15 +6,15 @@
 # Allan Nordhøy <epost@anotheragency.no>, 2014
 # Allan Nordhøy <epost@anotheragency.no>, 2016-2017
 # Harald H. <haarektrans@gmail.com>, 2014-2015
-# Kaci Heskjestad, 2019-2021
+# heskjestad, 2019-2021
 # Terje Uriansrud <ter@operamail.com>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-03-31 00:50+0100\n"
+"POT-Creation-Date: 2024-10-02 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Kaci Heskjestad, 2019-2021\n"
+"Last-Translator: heskjestad, 2019-2021\n"
 "Language-Team: Norwegian Bokmål (http://app.transifex.com/xfce/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
-#: lib/gui.c:760 lib/prefs.c:266
+#: lib/gui.c:759 lib/prefs.c:266
 msgid "Dictionary"
 msgstr "Ordliste"
 
@@ -31,18 +31,31 @@ msgstr "Ordliste"
 msgid "A plugin to query different dictionaries."
 msgstr "Ordliste for hurtig tilgang til forskjellige ordlister."
 
-#: panel-plugin/xfce4-dict-plugin.c:273 panel-plugin/xfce4-dict-plugin.c:401
-#: src/xfce4-dict.c:194 lib/spell.c:242 lib/gui.c:539
+#: panel-plugin/xfce4-dict-plugin.c:242 panel-plugin/xfce4-dict-plugin.c:402
+#: src/xfce4-dict.c:193 lib/spell.c:242 lib/gui.c:538
 msgid "Ready"
 msgstr "Klar"
 
-#: panel-plugin/xfce4-dict-plugin.c:335
+#: panel-plugin/xfce4-dict-plugin.c:315
 msgid "Look up a word"
 msgstr "Søk opp et ord"
 
-#: panel-plugin/xfce4-dict-plugin.c:374 lib/gui.c:791
+#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:790
 msgid "Search term"
 msgstr "Søkestreng:"
+
+#. sub menus to toggle search mode
+#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:306 lib/prefs.c:453
+msgid "Dictionary Server"
+msgstr "Ordlistetjener"
+
+#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:314 lib/prefs.c:561
+msgid "Web Service"
+msgstr "Nettjeneste"
+
+#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:322 lib/prefs.c:608
+msgid "Spell Checker"
+msgstr "Stavekontroll"
 
 #: src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -57,30 +70,26 @@ msgid "Check the given text with a spell checker"
 msgstr "Kontroller denne teksten med ordliste"
 
 #: src/xfce4-dict.c:52
-msgid "Grab the focus on the text field in the panel"
-msgstr "Rett fokus mot tekstfeltet i panelet"
-
-#: src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Start frittstående program selv om panelprogram har startet"
 
-#: src/xfce4-dict.c:54
+#: src/xfce4-dict.c:53
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Bruker primærvalgt tekst og bruker denne som søketekst."
 
-#: src/xfce4-dict.c:55
+#: src/xfce4-dict.c:54
 msgid "Be verbose"
 msgstr "Vis utdypende utdata"
 
-#: src/xfce4-dict.c:56
+#: src/xfce4-dict.c:55
 msgid "Show version information"
 msgstr "Vis versjonsinformasjon"
 
-#: src/xfce4-dict.c:127
+#: src/xfce4-dict.c:126
 msgid "[TEXT]"
 msgstr "[TEKST]"
 
-#: src/xfce4-dict.c:143
+#: src/xfce4-dict.c:142
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Meld inn feil til <%s>."
@@ -241,7 +250,7 @@ msgstr "Fjern innholdet i tekstfeltet"
 msgid "_Start"
 msgstr "_Start"
 
-#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:708 lib/gui.c:817
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:707 lib/gui.c:816
 #: lib/prefs.c:268
 msgid "_Close"
 msgstr "_Lukk"
@@ -328,49 +337,49 @@ msgstr "Tjenerinformasjon for «%s»"
 msgid "The server doesn't offer any databases."
 msgstr "Tjeneren tilbyr ingen databaser."
 
-#: lib/gui.c:362
+#: lib/gui.c:361
 msgid "Copy Link"
 msgstr "Kopier lenke"
 
-#: lib/gui.c:372
+#: lib/gui.c:371
 msgid "Search"
 msgstr "Søk"
 
-#: lib/gui.c:590
+#: lib/gui.c:589
 msgid "F_ind"
 msgstr "F_inn"
 
 #. File Menu
-#: lib/gui.c:672
+#: lib/gui.c:671
 msgid "_File"
 msgstr "_Fil"
 
-#: lib/gui.c:679 lib/gui.c:805
+#: lib/gui.c:678 lib/gui.c:804
 msgid "Speed _Reader"
 msgstr "Hastighets_leser"
 
-#: lib/gui.c:694
+#: lib/gui.c:693
 msgid "_Preferences"
 msgstr "_Innstillinger"
 
-#: lib/gui.c:708 lib/gui.c:817
+#: lib/gui.c:707 lib/gui.c:816
 msgid "_Quit"
 msgstr "_Avslutt"
 
 #. Help Menu
-#: lib/gui.c:718
+#: lib/gui.c:717
 msgid "_Help"
 msgstr "_Hjelp"
 
-#: lib/gui.c:725
+#: lib/gui.c:724
 msgid "About"
 msgstr "Om"
 
-#: lib/gui.c:829
+#: lib/gui.c:828
 msgid "Search with:"
 msgstr "Søk med:"
 
-#: lib/gui.c:833
+#: lib/gui.c:832
 msgid "_Dictionary Server"
 msgstr "_Ordlistetjener"
 
@@ -382,15 +391,15 @@ msgstr "_Nettjeneste"
 msgid "_Spell Checker"
 msgstr "_Stavekontroll"
 
-#: lib/gui.c:972
+#: lib/gui.c:973
 msgid "A client program to query different dictionaries."
 msgstr "Et klientprogram for å søke i forskjellige ordlister."
 
-#: lib/gui.c:976
+#: lib/gui.c:977
 msgid "translator-credits"
 msgstr "haarek - Harald <https://www.transifex.com/accounts/profile/haarek/>\nkingu - Allan Nordhøy <https://www.transifex.com/accounts/profile/kingu/>\npapparonny - Ronny K. M. Olufsen <https://www.transifex.com/accounts/profile/papparonny/>\nTerje Uriansrud <ter@operamail.com>"
 
-#: lib/gui.c:979
+#: lib/gui.c:980
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4-ordliste"
 
@@ -446,105 +455,93 @@ msgstr "Tøm"
 msgid "You have chosen an invalid dictionary."
 msgstr "Du har valgt ugyldig ordliste."
 
-#: lib/prefs.c:300
+#: lib/prefs.c:299
 msgid "General"
 msgstr "Generelt"
 
-#: lib/prefs.c:302
+#: lib/prefs.c:301
 msgid "<b>Default search method:</b>"
 msgstr "<b>Forvalgt søkemetode:</b>"
 
-#: lib/prefs.c:307 lib/prefs.c:458
-msgid "Dictionary Server"
-msgstr "Ordlistetjener"
-
-#: lib/prefs.c:316 lib/prefs.c:566
-msgid "Web Service"
-msgstr "Nettjeneste"
-
-#: lib/prefs.c:325 lib/prefs.c:613
-msgid "Spell Checker"
-msgstr "Stavekontroll"
-
-#: lib/prefs.c:334
+#: lib/prefs.c:330
 msgid "Last used method"
 msgstr "Sist brukte metode"
 
-#: lib/prefs.c:343
+#: lib/prefs.c:338
 msgid "<b>Colors:</b>"
 msgstr "<b>Farger:</b>"
 
-#: lib/prefs.c:349
+#: lib/prefs.c:344
 msgid "Links:"
 msgstr "Lenker:"
 
-#: lib/prefs.c:350
+#: lib/prefs.c:345
 msgid "Phonetics:"
 msgstr "Fonetikk:"
 
-#: lib/prefs.c:351
+#: lib/prefs.c:346
 msgid "Spelled correctly:"
 msgstr "Korrekt stavet:"
 
-#: lib/prefs.c:352
+#: lib/prefs.c:347
 msgid "Spelled incorrectly:"
 msgstr "Feilstavet:"
 
-#: lib/prefs.c:403
+#: lib/prefs.c:398
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Panel-tekstfelt:</b>"
 
-#: lib/prefs.c:409
+#: lib/prefs.c:404
 msgid "Show text field in the panel"
 msgstr "Vis tekstfelt i panelet"
 
 #. panel entry size
-#: lib/prefs.c:416
+#: lib/prefs.c:411
 msgid "Text field size:"
 msgstr "Tekstfeltstørrelse:"
 
 #. server address
-#: lib/prefs.c:461
+#: lib/prefs.c:456
 msgid "Server:"
 msgstr "Tjener:"
 
 #. server port
-#: lib/prefs.c:471
+#: lib/prefs.c:466
 msgid "Server Port:"
 msgstr "Tjenerport:"
 
 #. dictionary
-#: lib/prefs.c:481 lib/prefs.c:639
+#: lib/prefs.c:476 lib/prefs.c:634
 msgid "Dictionary:"
 msgstr "Ordliste:"
 
-#: lib/prefs.c:484
+#: lib/prefs.c:479
 msgid "* (use all)"
 msgstr "* (bruk alle)"
 
-#: lib/prefs.c:486
+#: lib/prefs.c:481
 msgid "! (use all, stop after first match)"
 msgstr "! (bruk alle, stopp etter første treff)"
 
-#: lib/prefs.c:568
+#: lib/prefs.c:563
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Nettsøk-URL:</b>"
 
-#: lib/prefs.c:573
+#: lib/prefs.c:568
 msgid "URL:"
 msgstr "Nettadresse:"
 
-#: lib/prefs.c:593
+#: lib/prefs.c:588
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "Skriv inn nettadresse til side som tilbyr oversettelse eller ordboktjenester. Bruk {word} som plassholder for gitt søkeord."
 
-#: lib/prefs.c:615
+#: lib/prefs.c:610
 msgid "Spell Check Program:"
 msgstr "Stavekontrollprogram:"
 
-#: lib/prefs.c:632
+#: lib/prefs.c:627
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
