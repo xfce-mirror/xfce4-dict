@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-03-31 00:50+0100\n"
+"POT-Creation-Date: 2024-10-02 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2007,2020-2021\n"
 "Language-Team: Albanian (http://app.transifex.com/xfce/xfce-apps/language/sq/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
-#: lib/gui.c:760 lib/prefs.c:266
+#: lib/gui.c:759 lib/prefs.c:266
 msgid "Dictionary"
 msgstr "Fjalor"
 
@@ -29,18 +29,31 @@ msgstr "Fjalor"
 msgid "A plugin to query different dictionaries."
 msgstr "Një shtojcë për të kërkuar në fjalorë të ndryshëm."
 
-#: panel-plugin/xfce4-dict-plugin.c:273 panel-plugin/xfce4-dict-plugin.c:401
-#: src/xfce4-dict.c:194 lib/spell.c:242 lib/gui.c:539
+#: panel-plugin/xfce4-dict-plugin.c:242 panel-plugin/xfce4-dict-plugin.c:402
+#: src/xfce4-dict.c:193 lib/spell.c:242 lib/gui.c:538
 msgid "Ready"
 msgstr "Gati"
 
-#: panel-plugin/xfce4-dict-plugin.c:335
+#: panel-plugin/xfce4-dict-plugin.c:315
 msgid "Look up a word"
 msgstr "Kërkoni për një fjalë"
 
-#: panel-plugin/xfce4-dict-plugin.c:374 lib/gui.c:791
+#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:790
 msgid "Search term"
 msgstr "Term kërkimi"
+
+#. sub menus to toggle search mode
+#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:306 lib/prefs.c:453
+msgid "Dictionary Server"
+msgstr "Shërbyes Fjalori"
+
+#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:314 lib/prefs.c:561
+msgid "Web Service"
+msgstr "Shërbim Web"
+
+#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:322 lib/prefs.c:608
+msgid "Spell Checker"
+msgstr "Kontroll Drejtshkrimi"
 
 #: src/xfce4-dict.c:49
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -55,30 +68,26 @@ msgid "Check the given text with a spell checker"
 msgstr "Kontrollojeni tekstin e dhënë me një kontroll drejtshkrimi"
 
 #: src/xfce4-dict.c:52
-msgid "Grab the focus on the text field in the panel"
-msgstr "Kaloje fokusin te fushë tekstesh te paneli"
-
-#: src/xfce4-dict.c:53
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Nise aplikacionin më vete, edhe nëse është ngarkuar shtojca e panelit"
 
-#: src/xfce4-dict.c:54
+#: src/xfce4-dict.c:53
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Përlan lëndën e përzgjedhjes PARËSORE dhe e përdor si tekst kërkimi"
 
-#: src/xfce4-dict.c:55
+#: src/xfce4-dict.c:54
 msgid "Be verbose"
 msgstr "Ji fjalaman"
 
-#: src/xfce4-dict.c:56
+#: src/xfce4-dict.c:55
 msgid "Show version information"
 msgstr "Shfaq të dhëna versioni"
 
-#: src/xfce4-dict.c:127
+#: src/xfce4-dict.c:126
 msgid "[TEXT]"
 msgstr "[TEKST]"
 
-#: src/xfce4-dict.c:143
+#: src/xfce4-dict.c:142
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Ju lutemi, njoftoni të meta te <%s>."
@@ -239,7 +248,7 @@ msgstr "Spastro lëndën e fushës së teksteve"
 msgid "_Start"
 msgstr "_Fillo"
 
-#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:708 lib/gui.c:817
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:707 lib/gui.c:816
 #: lib/prefs.c:268
 msgid "_Close"
 msgstr "_Mbylle"
@@ -326,49 +335,49 @@ msgstr "Të dhëna Shërbyesi për \"%s\""
 msgid "The server doesn't offer any databases."
 msgstr "Shërbyesi s’ofron ndonjë bazë të dhënash."
 
-#: lib/gui.c:362
+#: lib/gui.c:361
 msgid "Copy Link"
 msgstr "Kopjoji Lidhjen"
 
-#: lib/gui.c:372
+#: lib/gui.c:371
 msgid "Search"
 msgstr "Kërko"
 
-#: lib/gui.c:590
+#: lib/gui.c:589
 msgid "F_ind"
 msgstr "_Gjej"
 
 #. File Menu
-#: lib/gui.c:672
+#: lib/gui.c:671
 msgid "_File"
 msgstr "_Kartelë"
 
-#: lib/gui.c:679 lib/gui.c:805
+#: lib/gui.c:678 lib/gui.c:804
 msgid "Speed _Reader"
 msgstr "_Lexues Shpejtësie"
 
-#: lib/gui.c:694
+#: lib/gui.c:693
 msgid "_Preferences"
 msgstr "_Parapëlqime"
 
-#: lib/gui.c:708 lib/gui.c:817
+#: lib/gui.c:707 lib/gui.c:816
 msgid "_Quit"
 msgstr "_Dil"
 
 #. Help Menu
-#: lib/gui.c:718
+#: lib/gui.c:717
 msgid "_Help"
 msgstr "_Ndihmë"
 
-#: lib/gui.c:725
+#: lib/gui.c:724
 msgid "About"
 msgstr "Mbi"
 
-#: lib/gui.c:829
+#: lib/gui.c:828
 msgid "Search with:"
 msgstr "Kërko me:"
 
-#: lib/gui.c:833
+#: lib/gui.c:832
 msgid "_Dictionary Server"
 msgstr "_Shërbyes Fjalorësh"
 
@@ -380,15 +389,15 @@ msgstr "Shërbim _Web"
 msgid "_Spell Checker"
 msgstr "Kontroll _Drejtshkrimi"
 
-#: lib/gui.c:972
+#: lib/gui.c:973
 msgid "A client program to query different dictionaries."
 msgstr "Një program klient për të bërë kërkime në fjalorë të ndryshëm."
 
-#: lib/gui.c:976
+#: lib/gui.c:977
 msgid "translator-credits"
 msgstr "Besnik Bleta"
 
-#: lib/gui.c:979
+#: lib/gui.c:980
 msgid "Xfce4 Dictionary"
 msgstr "Fjalor Xfce4"
 
@@ -444,105 +453,93 @@ msgstr "Spastroje"
 msgid "You have chosen an invalid dictionary."
 msgstr "Keni zgjedhur një fjalor të pavlefshëm."
 
-#: lib/prefs.c:300
+#: lib/prefs.c:299
 msgid "General"
 msgstr "Të përgjithshme"
 
-#: lib/prefs.c:302
+#: lib/prefs.c:301
 msgid "<b>Default search method:</b>"
 msgstr "<b>Metodë parazgjedhje kërkimesh:</b>"
 
-#: lib/prefs.c:307 lib/prefs.c:458
-msgid "Dictionary Server"
-msgstr "Shërbyes Fjalori"
-
-#: lib/prefs.c:316 lib/prefs.c:566
-msgid "Web Service"
-msgstr "Shërbim Web"
-
-#: lib/prefs.c:325 lib/prefs.c:613
-msgid "Spell Checker"
-msgstr "Kontroll Drejtshkrimi"
-
-#: lib/prefs.c:334
+#: lib/prefs.c:330
 msgid "Last used method"
 msgstr "Metodë e përdorur së fundi"
 
-#: lib/prefs.c:343
+#: lib/prefs.c:338
 msgid "<b>Colors:</b>"
 msgstr "<b>Ngjyra:</b>"
 
-#: lib/prefs.c:349
+#: lib/prefs.c:344
 msgid "Links:"
 msgstr "Lidhje:"
 
-#: lib/prefs.c:350
+#: lib/prefs.c:345
 msgid "Phonetics:"
 msgstr "Fonetikë:"
 
-#: lib/prefs.c:351
+#: lib/prefs.c:346
 msgid "Spelled correctly:"
 msgstr "Shkruar saktë:"
 
-#: lib/prefs.c:352
+#: lib/prefs.c:347
 msgid "Spelled incorrectly:"
 msgstr "Shkruar pasaktësisht:"
 
-#: lib/prefs.c:403
+#: lib/prefs.c:398
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Fushë Tekstesh Paneli:</b>"
 
-#: lib/prefs.c:409
+#: lib/prefs.c:404
 msgid "Show text field in the panel"
 msgstr "Shfaq fushë tekstesh te paneli"
 
 #. panel entry size
-#: lib/prefs.c:416
+#: lib/prefs.c:411
 msgid "Text field size:"
 msgstr "Madhësi fushe tekstesh:"
 
 #. server address
-#: lib/prefs.c:461
+#: lib/prefs.c:456
 msgid "Server:"
 msgstr "Shërbyes:"
 
 #. server port
-#: lib/prefs.c:471
+#: lib/prefs.c:466
 msgid "Server Port:"
 msgstr "Portë Shërbyesi:"
 
 #. dictionary
-#: lib/prefs.c:481 lib/prefs.c:639
+#: lib/prefs.c:476 lib/prefs.c:634
 msgid "Dictionary:"
 msgstr "Fjalor:"
 
-#: lib/prefs.c:484
+#: lib/prefs.c:479
 msgid "* (use all)"
 msgstr "* (përdori krejt)"
 
-#: lib/prefs.c:486
+#: lib/prefs.c:481
 msgid "! (use all, stop after first match)"
 msgstr "! (përdori krejt, ndalu pas përputhjes së parë)"
 
-#: lib/prefs.c:568
+#: lib/prefs.c:563
 msgid "<b>Web search URL:</b>"
 msgstr "<b>URL kërkimi në Web:</b>"
 
-#: lib/prefs.c:573
+#: lib/prefs.c:568
 msgid "URL:"
 msgstr "URL:"
 
-#: lib/prefs.c:593
+#: lib/prefs.c:588
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "Jepni URL-në e një sajti që ofron shërbim përkthimi ose fjalori. Si vendmbajtëse për fjalën që duhet kërkuar, përdorni formatin {word}."
 
-#: lib/prefs.c:615
+#: lib/prefs.c:610
 msgid "Spell Check Program:"
 msgstr "Program Kontrollesh Drejtshkrimi:"
 
-#: lib/prefs.c:632
+#: lib/prefs.c:627
 msgid ""
 "<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
