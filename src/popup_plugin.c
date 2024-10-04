@@ -19,8 +19,6 @@
 
 
 #include <gtk/gtk.h>
-#include <gdk/gdkx.h>
-#include <X11/Xlib.h>
 #include <string.h>
 
 #include "libdict.h"

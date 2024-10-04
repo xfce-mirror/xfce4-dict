@@ -25,10 +25,6 @@
 #include <libxfce4ui/libxfce4ui.h>
 #include <libxfce4panel/libxfce4panel.h>
 
-#ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
-#endif
-
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
