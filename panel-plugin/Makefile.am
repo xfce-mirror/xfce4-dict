@@ -26,7 +26,6 @@ libxfce4dict_la_LIBADD =						\
 	$(LIBXFCE4PANEL_LIBS)						\
 	$(LIBXFCE4UI_LIBS)							\
 	@GTHREAD_LIBS@								\
-	@X11_LIBS@								\
 	$(top_builddir)/lib/libdict.la
 
 

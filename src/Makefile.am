@@ -19,7 +19,6 @@ xfce4_dict_LDADD =								\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(LIBXFCEGUI4_LIBS)							\
 	@GTHREAD_LIBS@								\
-	@X11_LIBS@								\
 	$(top_builddir)/lib/libdict.la
 
 
@@ -35,4 +34,3 @@ EXTRA_DIST =									\
 
 CLEANFILES =									\
 	$(desktop_DATA)
-
