@@ -38,6 +38,9 @@ DISTCLEANFILES =								\
 	dbus.c										\
 	dbus.h
 
+EXTRA_DIST =									\
+	meson.build
+
 gui.c: resources.c dbus.c
 
 common.c: dbus.c

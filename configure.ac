@@ -11,6 +11,7 @@ AC_INIT([xfce4-dict], [xdt_version], [https://gitlab.xfce.org/apps/xfce4-dict], 
 AC_PREREQ([2.69])
 AC_REVISION([xdt_version_build])
 AC_CONFIG_MACRO_DIRS([m4])
+AC_DEFINE([VERSION_FULL], [PACKAGE_VERSION], [Alias for VERSION and PACKAGE_VERSION for meson compatibility])
 
 dnl ***************************
 dnl *** Initialize automake ***
@@ -52,11 +53,11 @@ AM_GNU_GETTEXT_VERSION([0.19.8])
 dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
-XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.24.0])
-XDT_CHECK_PACKAGE([GTK], [gtk+-3.0], [3.22.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.12.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.10.0])
-XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-2.0], [4.10.0])
+XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.66.0])
+XDT_CHECK_PACKAGE([GTK], [gtk+-3.0], [3.24.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.18.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.18.0])
+XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-2.0], [4.18.0])
 
 dnl ***********************************
 dnl *** Check for gdbus-codegen     ***

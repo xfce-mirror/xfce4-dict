@@ -19,6 +19,9 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+#ifdef HAVE_XFCE_REVISION_H
+#include "xfce-revision.h"
+#endif
 
 #include <stdio.h>
 #include <gtk/gtk.h>
@@ -136,7 +139,7 @@ gint main(gint argc, gchar *argv[])
 
 	if (show_version)
 	{
-		g_print("%s %s (Xfce %s)\n\n", PACKAGE, PACKAGE_VERSION, xfce_version_string());
+		g_print("%s %s (Xfce %s)\n\n", PACKAGE, VERSION_FULL, xfce_version_string());
 		g_print("%s\n", "Copyright (c) 2006-2023");
 		g_print("\tXfce Development Team\n\n");
 		g_print(_("Please report bugs to <%s>."), PACKAGE_BUGREPORT);

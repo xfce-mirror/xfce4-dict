@@ -22,6 +22,9 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+#ifdef HAVE_XFCE_REVISION_H
+#include "xfce-revision.h"
+#endif
 
 #include <string.h>
 #include <stdarg.h>
@@ -976,7 +979,7 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 		"logo-icon-name", "org.xfce.Dictionary",
 		"translator-credits", _("translator-credits"),
 		"license", XFCE_LICENSE_GPL,
-		"version", PACKAGE_VERSION,
+		"version", VERSION_FULL,
 		"program-name", _("Xfce4 Dictionary"),
 		  NULL);
 }
