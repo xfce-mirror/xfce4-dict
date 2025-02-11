@@ -32,7 +32,7 @@ libdict_sources += gnome.compile_resources(
 )
 
 libdict = static_library(
-  'libdict',
+  'dict',
   libdict_sources,
   sources: xfce_revision_h,
   include_directories: [

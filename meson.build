@@ -129,7 +129,7 @@ xfce_revision_h = vcs_tag(
   replace_string: '@REVISION@',
 )
 
-install_data('xfce4-dict.1', install_dir: get_option('prefix') / get_option('datadir') / 'man' / 'man1')
+install_man('xfce4-dict.1')
 
 subdir('icons')
 subdir('po')
