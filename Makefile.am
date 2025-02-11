@@ -12,7 +12,8 @@ AUTOMAKE_OPTIONS =												\
 	dist-bzip2
 
 EXTRA_DIST =													\
-	xfce4-dict.1
+	xfce4-dict.1												\
+	meson.build
 
 distclean-local:
 	rm -rf *.cache *~
