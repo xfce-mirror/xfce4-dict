@@ -32,6 +32,7 @@
 #include <math.h>
 #include <gtk/gtk.h>
 
+#include <libxfce4ui/libxfce4ui.h>
 #include <libxfce4util/libxfce4util.h>
 
 #include "common.h"
@@ -128,8 +129,12 @@ static gboolean open_browser(DictData *dd, const gchar *uri)
 	gboolean result = FALSE;
 	guint i = 0;
 	const gchar *browsers[] = {
-		"xdg-open", "exo-open", "htmlview", "firefox", "mozilla",
-		"opera", "epiphany", "konqueror", "seamonkey", NULL };
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+    "xdg-open", "xfce-open", "htmlview", "firefox", "mozilla",
+#else
+    "xdg-open", "exo-open", "htmlview", "firefox", "mozilla",
+#endif
+    "opera", "epiphany", "konqueror", "seamonkey", NULL };
 
 	while (browsers[i] != NULL && (browser_path = g_find_program_in_path(browsers[i])) == NULL)
 		i++;
