@@ -25,9 +25,6 @@ libdict_sources += gnome.compile_resources(
   'resources.xml',
   c_name: 'dict',
   export: false,
-  extra_args: [
-    '--manual-register',
-  ],
   source_dir: '..' / 'icons' / 'scalable'
 )
 
