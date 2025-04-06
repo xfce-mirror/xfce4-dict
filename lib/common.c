@@ -314,7 +314,7 @@ static gchar *get_spell_program(void)
 {
 	gchar *path;
 
-	path = g_find_program_in_path("enchant");
+	path = g_find_program_in_path("enchant-2");
 	if (path != NULL)
 		return path;
 
