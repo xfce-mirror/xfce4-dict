@@ -355,7 +355,7 @@ void dict_spell_get_dictionaries(DictData *dd, GtkWidget *spell_combo)
 
 		if (strstr(entry_cmd, "enchant") != NULL)
 		{
-			cmd = g_strdup("enchant-lsmod -list-dicts");
+			cmd = g_strdup("enchant-lsmod-2 -list-dicts");
 			use_enchant = TRUE;
 		}
 		else

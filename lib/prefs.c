@@ -624,7 +624,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_show(spell_entry);
 
 		label_help = gtk_label_new(_(
-	"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check "
+	"<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check "
 	"program which is compatible to the ispell command.\nThe icon shows whether the entered "
 	"command exists.</i>"));
 		gtk_label_set_line_wrap(GTK_LABEL(label_help), TRUE);
