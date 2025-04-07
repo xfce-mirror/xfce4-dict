@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-10-02 00:51+0200\n"
+"POT-Creation-Date: 2025-04-07 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>, 2024\n"
 "Language-Team: Hungarian (http://app.transifex.com/xfce/xfce-apps/language/hu/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
-#: lib/gui.c:759 lib/prefs.c:266
+#: lib/gui.c:762 lib/prefs.c:266
 msgid "Dictionary"
 msgstr "Szótár"
 
@@ -32,65 +32,65 @@ msgstr "Szótár"
 msgid "A plugin to query different dictionaries."
 msgstr "Különböző szótárak lekérdezése"
 
-#: panel-plugin/xfce4-dict-plugin.c:242 panel-plugin/xfce4-dict-plugin.c:402
-#: src/xfce4-dict.c:193 lib/spell.c:242 lib/gui.c:538
+#: panel-plugin/xfce4-dict-plugin.c:238 panel-plugin/xfce4-dict-plugin.c:398
+#: src/xfce4-dict.c:196 lib/spell.c:242 lib/gui.c:541
 msgid "Ready"
 msgstr "Kész"
 
-#: panel-plugin/xfce4-dict-plugin.c:315
+#: panel-plugin/xfce4-dict-plugin.c:311
 msgid "Look up a word"
 msgstr "Szó keresése"
 
-#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:790
+#: panel-plugin/xfce4-dict-plugin.c:350 lib/gui.c:793
 msgid "Search term"
 msgstr "Keresőkifejezés"
 
 #. sub menus to toggle search mode
-#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:306 lib/prefs.c:453
+#: panel-plugin/xfce4-dict-plugin.c:377 lib/prefs.c:306 lib/prefs.c:453
 msgid "Dictionary Server"
 msgstr "Szótárkiszolgáló"
 
-#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:314 lib/prefs.c:561
+#: panel-plugin/xfce4-dict-plugin.c:378 lib/prefs.c:314 lib/prefs.c:561
 msgid "Web Service"
 msgstr "Webszolgáltatás"
 
-#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:322 lib/prefs.c:608
+#: panel-plugin/xfce4-dict-plugin.c:379 lib/prefs.c:322 lib/prefs.c:608
 msgid "Spell Checker"
 msgstr "Helyesírás-ellenőrző"
 
-#: src/xfce4-dict.c:49
+#: src/xfce4-dict.c:52
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "A megadott szöveg keresése Dict kiszolgáló használatával"
 
-#: src/xfce4-dict.c:50
+#: src/xfce4-dict.c:53
 msgid "Search the given text using a web-based search engine"
 msgstr "A megadott szöveg keresése webes keresőmotorral"
 
-#: src/xfce4-dict.c:51
+#: src/xfce4-dict.c:54
 msgid "Check the given text with a spell checker"
 msgstr "A megadott szöveg helyesírásának ellenőrzése"
 
-#: src/xfce4-dict.c:52
+#: src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Önálló alkalmazás indítása, még ha a panelbővítmény fut is"
 
-#: src/xfce4-dict.c:53
+#: src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Az elsődleges kijelölés használata keresőkifejezésként"
 
-#: src/xfce4-dict.c:54
+#: src/xfce4-dict.c:57
 msgid "Be verbose"
 msgstr "Részletes kimenet"
 
-#: src/xfce4-dict.c:55
+#: src/xfce4-dict.c:58
 msgid "Show version information"
 msgstr "Verzióinformációk megjelenítése"
 
-#: src/xfce4-dict.c:126
+#: src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[SZÖVEG]"
 
-#: src/xfce4-dict.c:142
+#: src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "A hibákat ide jelentse: <%s>."
@@ -251,28 +251,28 @@ msgstr "A szövegmező tartalmának törlése"
 msgid "_Start"
 msgstr "In_dítás"
 
-#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:707 lib/gui.c:816
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:710 lib/gui.c:819
 #: lib/prefs.c:268
 msgid "_Close"
 msgstr "_Bezárás"
 
-#: lib/common.c:185
+#: lib/common.c:190
 msgid "The search URL is empty. Please check your preferences."
 msgstr "A keresési webcím üres. Ellenőrizze beállításait."
 
-#: lib/common.c:191
+#: lib/common.c:196
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "A böngésző nem nyitható meg. Ellenőrizze beállításait."
 
-#: lib/common.c:231
+#: lib/common.c:236
 msgid "Invalid non-UTF8 input"
 msgstr "Érvénytelen nem UTF-8 bevitel"
 
-#: lib/common.c:567
+#: lib/common.c:572
 msgid "Error"
 msgstr "Hiba"
 
-#: lib/common.c:570
+#: lib/common.c:575
 msgid "warning"
 msgstr "figyelmeztetés"
 
@@ -338,69 +338,69 @@ msgstr "„%s” kiszolgálóinformációi"
 msgid "The server doesn't offer any databases."
 msgstr "A kiszolgáló nem ajánl fel adatbázisokat."
 
-#: lib/gui.c:361
+#: lib/gui.c:364
 msgid "Copy Link"
 msgstr "Hivatkozás másolása"
 
-#: lib/gui.c:371
+#: lib/gui.c:374
 msgid "Search"
 msgstr "Keresés"
 
-#: lib/gui.c:589
+#: lib/gui.c:592
 msgid "F_ind"
 msgstr "_Keresés"
 
 #. File Menu
-#: lib/gui.c:671
+#: lib/gui.c:674
 msgid "_File"
 msgstr "_Fájl"
 
-#: lib/gui.c:678 lib/gui.c:804
+#: lib/gui.c:681 lib/gui.c:807
 msgid "Speed _Reader"
 msgstr "_Gyorsolvasó"
 
-#: lib/gui.c:693
+#: lib/gui.c:696
 msgid "_Preferences"
 msgstr "_Beállítások"
 
-#: lib/gui.c:707 lib/gui.c:816
+#: lib/gui.c:710 lib/gui.c:819
 msgid "_Quit"
 msgstr "_Kilépés"
 
 #. Help Menu
-#: lib/gui.c:717
+#: lib/gui.c:720
 msgid "_Help"
 msgstr "_Súgó"
 
-#: lib/gui.c:724
+#: lib/gui.c:727
 msgid "About"
 msgstr "Névjegy"
 
-#: lib/gui.c:828
+#: lib/gui.c:831
 msgid "Search with:"
 msgstr "Keresés ezzel:"
 
-#: lib/gui.c:832
+#: lib/gui.c:835
 msgid "_Dictionary Server"
 msgstr "_Szótárkiszolgáló"
 
-#: lib/gui.c:839
+#: lib/gui.c:842
 msgid "_Web Service"
 msgstr "_Webszolgáltatás"
 
-#: lib/gui.c:847
+#: lib/gui.c:850
 msgid "_Spell Checker"
 msgstr "_Helyesírás-ellenőrző"
 
-#: lib/gui.c:973
+#: lib/gui.c:976
 msgid "A client program to query different dictionaries."
 msgstr "Kliensprogram különböző szótárak lekérdezéséhez."
 
-#: lib/gui.c:977
+#: lib/gui.c:980
 msgid "translator-credits"
 msgstr "Kelemen Gábor <kelemeng@gnome.hu>"
 
-#: lib/gui.c:980
+#: lib/gui.c:983
 msgid "Xfce4 Dictionary"
 msgstr "Xfce 4 szótár"
 
@@ -544,6 +544,6 @@ msgstr "Helyesírás-ellenőrző program:"
 
 #: lib/prefs.c:627
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>A helyesírás-ellenőrző az „enchant”, „aspell”, „ispell”, vagy bármely más ispell-kompatibilis helyesírás-ellenőrző program lehet.\nAz ikon megjeleníti, hogy a megadott parancs létezik-e.</i>"
+msgstr ""
