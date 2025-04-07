@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-10-02 00:51+0200\n"
+"POT-Creation-Date: 2025-04-07 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2013,2015,2019,2021\n"
 "Language-Team: Korean (http://app.transifex.com/xfce/xfce-apps/language/ko/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
-#: lib/gui.c:759 lib/prefs.c:266
+#: lib/gui.c:762 lib/prefs.c:266
 msgid "Dictionary"
 msgstr "사전"
 
@@ -28,65 +28,65 @@ msgstr "사전"
 msgid "A plugin to query different dictionaries."
 msgstr "제각기 다른 사전에 요청하는 플러그인입니다."
 
-#: panel-plugin/xfce4-dict-plugin.c:242 panel-plugin/xfce4-dict-plugin.c:402
-#: src/xfce4-dict.c:193 lib/spell.c:242 lib/gui.c:538
+#: panel-plugin/xfce4-dict-plugin.c:238 panel-plugin/xfce4-dict-plugin.c:398
+#: src/xfce4-dict.c:196 lib/spell.c:242 lib/gui.c:541
 msgid "Ready"
 msgstr "준비"
 
-#: panel-plugin/xfce4-dict-plugin.c:315
+#: panel-plugin/xfce4-dict-plugin.c:311
 msgid "Look up a word"
 msgstr "단어 찾기"
 
-#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:790
+#: panel-plugin/xfce4-dict-plugin.c:350 lib/gui.c:793
 msgid "Search term"
 msgstr "용어 검색"
 
 #. sub menus to toggle search mode
-#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:306 lib/prefs.c:453
+#: panel-plugin/xfce4-dict-plugin.c:377 lib/prefs.c:306 lib/prefs.c:453
 msgid "Dictionary Server"
 msgstr "사전 서버"
 
-#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:314 lib/prefs.c:561
+#: panel-plugin/xfce4-dict-plugin.c:378 lib/prefs.c:314 lib/prefs.c:561
 msgid "Web Service"
 msgstr "웹 서비스"
 
-#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:322 lib/prefs.c:608
+#: panel-plugin/xfce4-dict-plugin.c:379 lib/prefs.c:322 lib/prefs.c:608
 msgid "Spell Checker"
 msgstr "철자 검사기"
 
-#: src/xfce4-dict.c:49
+#: src/xfce4-dict.c:52
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "사전 서버(RFC 2229)를 사용하여 주어진 본문을 검색"
 
-#: src/xfce4-dict.c:50
+#: src/xfce4-dict.c:53
 msgid "Search the given text using a web-based search engine"
 msgstr "웹기반 검색 엔진을 사용하여 주어진 본문을 검색"
 
-#: src/xfce4-dict.c:51
+#: src/xfce4-dict.c:54
 msgid "Check the given text with a spell checker"
 msgstr "철자 검사기로 주어진 본문 검사"
 
-#: src/xfce4-dict.c:52
+#: src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "패널 플러그인을 불러냈는지 여부와 관계 없이 독립 프로그램으로 시작"
 
-#: src/xfce4-dict.c:53
+#: src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "초기 선택 내용을 잡고 검색 본문으로 사용"
 
-#: src/xfce4-dict.c:54
+#: src/xfce4-dict.c:57
 msgid "Be verbose"
 msgstr "자세히 출력"
 
-#: src/xfce4-dict.c:55
+#: src/xfce4-dict.c:58
 msgid "Show version information"
 msgstr "버전 정보 보기"
 
-#: src/xfce4-dict.c:126
+#: src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[TEXT]"
 
-#: src/xfce4-dict.c:142
+#: src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "<%s>로 버그를 알려주십시오."
@@ -245,28 +245,28 @@ msgstr "본문 필드 내용 지우기"
 msgid "_Start"
 msgstr "시작(_S)"
 
-#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:707 lib/gui.c:816
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:710 lib/gui.c:819
 #: lib/prefs.c:268
 msgid "_Close"
 msgstr "닫기(_C)"
 
-#: lib/common.c:185
+#: lib/common.c:190
 msgid "The search URL is empty. Please check your preferences."
 msgstr "검색 URL이 비어 있습니다. 기본 설정을 확인하십시오."
 
-#: lib/common.c:191
+#: lib/common.c:196
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "브라우저를 열 수 없습니다. 기본 설정을 확인하십시오."
 
-#: lib/common.c:231
+#: lib/common.c:236
 msgid "Invalid non-UTF8 input"
 msgstr "잘못된 비 UTF8 입력입니다"
 
-#: lib/common.c:567
+#: lib/common.c:572
 msgid "Error"
 msgstr "오류"
 
-#: lib/common.c:570
+#: lib/common.c:575
 msgid "warning"
 msgstr "경고"
 
@@ -331,69 +331,69 @@ msgstr "\"%s\"의 서버 정보"
 msgid "The server doesn't offer any databases."
 msgstr "서버가 어떤 데이터베이스도 제공하지 않습니다."
 
-#: lib/gui.c:361
+#: lib/gui.c:364
 msgid "Copy Link"
 msgstr "연결 복사"
 
-#: lib/gui.c:371
+#: lib/gui.c:374
 msgid "Search"
 msgstr "검색"
 
-#: lib/gui.c:589
+#: lib/gui.c:592
 msgid "F_ind"
 msgstr "찾기(_I)"
 
 #. File Menu
-#: lib/gui.c:671
+#: lib/gui.c:674
 msgid "_File"
 msgstr "파일(_F)"
 
-#: lib/gui.c:678 lib/gui.c:804
+#: lib/gui.c:681 lib/gui.c:807
 msgid "Speed _Reader"
 msgstr "속독기(_R)"
 
-#: lib/gui.c:693
+#: lib/gui.c:696
 msgid "_Preferences"
 msgstr "기본 설정(_P)"
 
-#: lib/gui.c:707 lib/gui.c:816
+#: lib/gui.c:710 lib/gui.c:819
 msgid "_Quit"
 msgstr "끝내기(_Q)"
 
 #. Help Menu
-#: lib/gui.c:717
+#: lib/gui.c:720
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: lib/gui.c:724
+#: lib/gui.c:727
 msgid "About"
 msgstr "정보"
 
-#: lib/gui.c:828
+#: lib/gui.c:831
 msgid "Search with:"
 msgstr "검색어:"
 
-#: lib/gui.c:832
+#: lib/gui.c:835
 msgid "_Dictionary Server"
 msgstr "사전 서버(_D)"
 
-#: lib/gui.c:839
+#: lib/gui.c:842
 msgid "_Web Service"
 msgstr "웹 서비스(_W)"
 
-#: lib/gui.c:847
+#: lib/gui.c:850
 msgid "_Spell Checker"
 msgstr "철자 검사기(_S)"
 
-#: lib/gui.c:973
+#: lib/gui.c:976
 msgid "A client program to query different dictionaries."
 msgstr "제각기 다른 사전에 요청하기 위한 클라이언트 프로그램입니다."
 
-#: lib/gui.c:977
+#: lib/gui.c:980
 msgid "translator-credits"
 msgstr "Seong-ho Cho <darkcircle.0426@gmail.com>"
 
-#: lib/gui.c:980
+#: lib/gui.c:983
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 사전"
 
@@ -537,6 +537,6 @@ msgstr "철자 검사 프로그램:"
 
 #: lib/prefs.c:627
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>철자 검사 프로그램에는 'enchant', 'aspell', 'ispell' 또는 ispell과 호환되는 다른 철자 검사 프로그램이 있습니다.\n아이콘은 입력한 프로그램이 있는지에 따라 나타납니다.</i>"
+msgstr ""
