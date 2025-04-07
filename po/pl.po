@@ -5,19 +5,19 @@
 # Translators:
 # Grzegorz Gębczyński <grzegorz.gebczynski@gmail.com>, 2016
 # marcin mikołajczak <me@mkljczk.pl>, 2016
-# Marek Adamski, 2023-2024
+# Marek Adamski, 2023-2025
 # Marek Adamski, 2019-2021
 # Piotr Maliński <riklaunim@gmail.com>, 2007
 # Piotr Sokół <psokol.l10n@gmail.com>, 2009,2013
-# Piotr Strębski <strebski@gmail.com>, 2017
-# Piotr Strębski <strebski@gmail.com>, 2015
+# Piotr Strebski <strebski@gmail.com>, 2017
+# Piotr Strebski <strebski@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-10-02 00:51+0200\n"
+"POT-Creation-Date: 2025-04-07 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Marek Adamski, 2023-2024\n"
+"Last-Translator: Marek Adamski, 2023-2025\n"
 "Language-Team: Polish (http://app.transifex.com/xfce/xfce-apps/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
-#: lib/gui.c:759 lib/prefs.c:266
+#: lib/gui.c:762 lib/prefs.c:266
 msgid "Dictionary"
 msgstr "Słownik"
 
@@ -34,65 +34,65 @@ msgstr "Słownik"
 msgid "A plugin to query different dictionaries."
 msgstr "Umożliwia wyszukiwanie wyrażeń w różnych słownikach"
 
-#: panel-plugin/xfce4-dict-plugin.c:242 panel-plugin/xfce4-dict-plugin.c:402
-#: src/xfce4-dict.c:193 lib/spell.c:242 lib/gui.c:538
+#: panel-plugin/xfce4-dict-plugin.c:238 panel-plugin/xfce4-dict-plugin.c:398
+#: src/xfce4-dict.c:196 lib/spell.c:242 lib/gui.c:541
 msgid "Ready"
 msgstr "Gotowy"
 
-#: panel-plugin/xfce4-dict-plugin.c:315
+#: panel-plugin/xfce4-dict-plugin.c:311
 msgid "Look up a word"
 msgstr "Wyszukuje wyrażenie"
 
-#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:790
+#: panel-plugin/xfce4-dict-plugin.c:350 lib/gui.c:793
 msgid "Search term"
 msgstr "Wyszukiwanie..."
 
 #. sub menus to toggle search mode
-#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:306 lib/prefs.c:453
+#: panel-plugin/xfce4-dict-plugin.c:377 lib/prefs.c:306 lib/prefs.c:453
 msgid "Dictionary Server"
 msgstr "Serwer słownika"
 
-#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:314 lib/prefs.c:561
+#: panel-plugin/xfce4-dict-plugin.c:378 lib/prefs.c:314 lib/prefs.c:561
 msgid "Web Service"
 msgstr "Usługa internetowa"
 
-#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:322 lib/prefs.c:608
+#: panel-plugin/xfce4-dict-plugin.c:379 lib/prefs.c:322 lib/prefs.c:608
 msgid "Spell Checker"
 msgstr "Sprawdzanie pisowni"
 
-#: src/xfce4-dict.c:49
+#: src/xfce4-dict.c:52
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Wyszukuje wprowadzone wyrażenie przy użyciu serwera Dict (RFC 2229)"
 
-#: src/xfce4-dict.c:50
+#: src/xfce4-dict.c:53
 msgid "Search the given text using a web-based search engine"
 msgstr "Wyszukuje wprowadzone wyrażenie przy użyciu usługi internetowej"
 
-#: src/xfce4-dict.c:51
+#: src/xfce4-dict.c:54
 msgid "Check the given text with a spell checker"
 msgstr "Sprawdza poprawność pisowni wprowadzonego wyrażenia"
 
-#: src/xfce4-dict.c:52
+#: src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Uruchamia program, nawet jeśli aplet panelu jest wczytany"
 
-#: src/xfce4-dict.c:53
+#: src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Używa zawartości schowka jako poszukiwanego ciągu"
 
-#: src/xfce4-dict.c:54
+#: src/xfce4-dict.c:57
 msgid "Be verbose"
 msgstr "Wypisuje szczegółowe komunikaty"
 
-#: src/xfce4-dict.c:55
+#: src/xfce4-dict.c:58
 msgid "Show version information"
-msgstr "Wyświetla informacje o wersji i kończy"
+msgstr "Wyświetla informacje o wersji i kończy"
 
-#: src/xfce4-dict.c:126
+#: src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[TEKST]"
 
-#: src/xfce4-dict.c:142
+#: src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Proszę zgłaszać błędy na adres <%s>."
@@ -257,28 +257,28 @@ msgstr "Czyści zawartość pola tekstowego"
 msgid "_Start"
 msgstr "_Rozpocznij"
 
-#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:707 lib/gui.c:816
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:710 lib/gui.c:819
 #: lib/prefs.c:268
 msgid "_Close"
 msgstr "_Zamknij"
 
-#: lib/common.c:185
+#: lib/common.c:190
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Adres URL usługi internetowej jest pusty. Proszę sprawdzić preferencje programu."
 
-#: lib/common.c:191
+#: lib/common.c:196
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Nie można otworzyć przeglądarki internetowej. Proszę sprawdzić preferencje programu."
 
-#: lib/common.c:231
+#: lib/common.c:236
 msgid "Invalid non-UTF8 input"
 msgstr "Nieprawidłowe dane wejściowe o kodowaniu innym niż UTF8"
 
-#: lib/common.c:567
+#: lib/common.c:572
 msgid "Error"
 msgstr "Błąd"
 
-#: lib/common.c:570
+#: lib/common.c:575
 msgid "warning"
 msgstr "ostrzeżenie"
 
@@ -346,71 +346,71 @@ msgstr "Informacje serwera dla wyrażenia „%s”"
 msgid "The server doesn't offer any databases."
 msgstr "Serwer nie oferuje żadnych baz danych."
 
-#: lib/gui.c:361
+#: lib/gui.c:364
 msgid "Copy Link"
 msgstr "Skopiuj odnośnik"
 
-#: lib/gui.c:371
+#: lib/gui.c:374
 msgid "Search"
 msgstr "Wyszukiwanie"
 
-#: lib/gui.c:589
+#: lib/gui.c:592
 msgid "F_ind"
 msgstr "_Znajdź"
 
 #. File Menu
-#: lib/gui.c:671
+#: lib/gui.c:674
 msgid "_File"
 msgstr "_Plik"
 
-#: lib/gui.c:678 lib/gui.c:804
+#: lib/gui.c:681 lib/gui.c:807
 msgid "Speed _Reader"
 msgstr "Szybkie _czytanie"
 
-#: lib/gui.c:693
+#: lib/gui.c:696
 msgid "_Preferences"
 msgstr "P_referencje"
 
-#: lib/gui.c:707 lib/gui.c:816
+#: lib/gui.c:710 lib/gui.c:819
 msgid "_Quit"
 msgstr "Za_kończ"
 
 #. Help Menu
-#: lib/gui.c:717
+#: lib/gui.c:720
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: lib/gui.c:724
+#: lib/gui.c:727
 msgid "About"
 msgstr "_O programie"
 
-#: lib/gui.c:828
+#: lib/gui.c:831
 msgid "Search with:"
 msgstr "Metoda wyszukiwania:"
 
-#: lib/gui.c:832
+#: lib/gui.c:835
 msgid "_Dictionary Server"
 msgstr "Serwer _słownika"
 
-#: lib/gui.c:839
+#: lib/gui.c:842
 msgid "_Web Service"
 msgstr "Usługa _internetowa"
 
-#: lib/gui.c:847
+#: lib/gui.c:850
 msgid "_Spell Checker"
 msgstr "_Sprawdzanie pisowni"
 
-#: lib/gui.c:973
+#: lib/gui.c:976
 msgid "A client program to query different dictionaries."
 msgstr "Umożliwia wyszukiwanie wyrażeń w różnych słownikach"
 
-#: lib/gui.c:977
+#: lib/gui.c:980
 msgid "translator-credits"
 msgstr "Piotr Maliński <riklaunim@gmail.com>, 2007.\nPiotr Sokół <psokol@jabster.pl>, 2009, 2013."
 
-#: lib/gui.c:980
+#: lib/gui.c:983
 msgid "Xfce4 Dictionary"
-msgstr "Xfce4 Dictionary"
+msgstr "Słownik Xfce4"
 
 #: lib/prefs.c:52
 msgid "dict.leo.org - German <-> English"
@@ -552,6 +552,6 @@ msgstr "Polecenie:"
 
 #: lib/prefs.c:627
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>Do sprawdzania poprawności pisowni można użyć programu „enchant”, „ispell” lub innego programu kompatybilnego ze składnią polecenia ispell.\nIkona wskazuje, czy wprowadzone polecenie jest prawidłowe.</i>"
+msgstr "<i>Programem sprawdzającym pisownię może być „enchant-2”, „aspell”, „ispell” lub dowolny inny program do sprawdzania pisowni, który jest kompatybilny z poleceniem ispell.\nIkona wskazuje, czy wprowadzone polecenie istnieje.</i>"
