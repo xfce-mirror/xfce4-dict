@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-10-02 00:51+0200\n"
+"POT-Creation-Date: 2025-04-07 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: Gheyret Kenji <gheyret@yahoo.com>, 2013\n"
 "Language-Team: Uyghur (http://app.transifex.com/xfce/xfce-apps/language/ug/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
-#: lib/gui.c:759 lib/prefs.c:266
+#: lib/gui.c:762 lib/prefs.c:266
 msgid "Dictionary"
 msgstr "لۇغەت"
 
@@ -27,65 +27,65 @@ msgstr "لۇغەت"
 msgid "A plugin to query different dictionaries."
 msgstr "ھەر خىل لۇغەتلەردىن ئىزدەيدىغان قىستۇرما."
 
-#: panel-plugin/xfce4-dict-plugin.c:242 panel-plugin/xfce4-dict-plugin.c:402
-#: src/xfce4-dict.c:193 lib/spell.c:242 lib/gui.c:538
+#: panel-plugin/xfce4-dict-plugin.c:238 panel-plugin/xfce4-dict-plugin.c:398
+#: src/xfce4-dict.c:196 lib/spell.c:242 lib/gui.c:541
 msgid "Ready"
 msgstr "تەييار بولدۇم"
 
-#: panel-plugin/xfce4-dict-plugin.c:315
+#: panel-plugin/xfce4-dict-plugin.c:311
 msgid "Look up a word"
 msgstr "سوز ئىزدەش"
 
-#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:790
+#: panel-plugin/xfce4-dict-plugin.c:350 lib/gui.c:793
 msgid "Search term"
 msgstr "ئىزدەش تۈرى"
 
 #. sub menus to toggle search mode
-#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:306 lib/prefs.c:453
+#: panel-plugin/xfce4-dict-plugin.c:377 lib/prefs.c:306 lib/prefs.c:453
 msgid "Dictionary Server"
 msgstr "لۇغەت مۇلازىمېتىرى"
 
-#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:314 lib/prefs.c:561
+#: panel-plugin/xfce4-dict-plugin.c:378 lib/prefs.c:314 lib/prefs.c:561
 msgid "Web Service"
 msgstr "تور مۇلازىمىتى"
 
-#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:322 lib/prefs.c:608
+#: panel-plugin/xfce4-dict-plugin.c:379 lib/prefs.c:322 lib/prefs.c:608
 msgid "Spell Checker"
 msgstr "كوررېكتور"
 
-#: src/xfce4-dict.c:49
+#: src/xfce4-dict.c:52
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "لۇغەت مۇلازىمىتى(RFC 2229) دىن كىرگۈزۈلگەن تېكىستنى ئىزدەيدۇ"
 
-#: src/xfce4-dict.c:50
+#: src/xfce4-dict.c:53
 msgid "Search the given text using a web-based search engine"
 msgstr "تور ئىزدەش ماتورىدىن كىرگۈزۈلگەن تېكىستنى ئىزدەيدۇ"
 
-#: src/xfce4-dict.c:51
+#: src/xfce4-dict.c:54
 msgid "Check the given text with a spell checker"
 msgstr "ئىملا تەكشۈرگۈدە كىرگۈزۈلگەن تېكىستنى تەكشۈرىدۇ"
 
-#: src/xfce4-dict.c:52
+#: src/xfce4-dict.c:55
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "تاختا قىستۇرمىسى قاچىلانغان ئەھۋالدىمۇ ئايرىم پروگرامما سۈپىتىدە قوزغاتسۇن"
 
-#: src/xfce4-dict.c:53
+#: src/xfce4-dict.c:56
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "نۆۋەتتىكى تاللانغان مەزمۇننى ئېلىپ، ئۇنى ئىزدەيدىغان تېكىست سۈپىتىدە ئىشلىتىدۇ"
 
-#: src/xfce4-dict.c:54
+#: src/xfce4-dict.c:57
 msgid "Be verbose"
 msgstr "ئەتراپلىق بولسۇن"
 
-#: src/xfce4-dict.c:55
+#: src/xfce4-dict.c:58
 msgid "Show version information"
 msgstr "نەشر ئۇچۇرىنى كۆرسەت"
 
-#: src/xfce4-dict.c:126
+#: src/xfce4-dict.c:129
 msgid "[TEXT]"
 msgstr "[TEXT]"
 
-#: src/xfce4-dict.c:142
+#: src/xfce4-dict.c:145
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "كەمتۈكنى <%s> غا دوكلات قىلىڭ."
@@ -246,28 +246,28 @@ msgstr "تېكىست كۆزنەكچىسىنىڭ مەزمۇنىنى تازىلا�
 msgid "_Start"
 msgstr "باشلا(_S)"
 
-#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:707 lib/gui.c:816
+#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:710 lib/gui.c:819
 #: lib/prefs.c:268
 msgid "_Close"
 msgstr "تاقا(_C)"
 
-#: lib/common.c:185
+#: lib/common.c:190
 msgid "The search URL is empty. Please check your preferences."
 msgstr "ئىزدەش ئۈچۈن ئىشلىتىلىدىغان URL ئىكەن. تەڭشىكىڭىزنى تەكشۈرۈپ كۆرۈڭ."
 
-#: lib/common.c:191
+#: lib/common.c:196
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "توركۆرگۈنى ئاچقىلى بولمىدى. تەڭشىكىڭىزنى تەكشۈرۈپ كۆرۈڭ."
 
-#: lib/common.c:231
+#: lib/common.c:236
 msgid "Invalid non-UTF8 input"
 msgstr "خاتا UTF8 كىرگۈزۈشى"
 
-#: lib/common.c:567
+#: lib/common.c:572
 msgid "Error"
 msgstr "خاتالىق"
 
-#: lib/common.c:570
+#: lib/common.c:575
 msgid "warning"
 msgstr "ئاگاھلاندۇرۇش"
 
@@ -333,69 +333,69 @@ msgstr "«%s» نىڭ مۇلازىمېتىر ئۇچۇرلىرى"
 msgid "The server doesn't offer any databases."
 msgstr "مۇلازىمېتىردا ھېچقانداق ساندان يوق."
 
-#: lib/gui.c:361
+#: lib/gui.c:364
 msgid "Copy Link"
 msgstr "ئۇلانما كۆچۈر"
 
-#: lib/gui.c:371
+#: lib/gui.c:374
 msgid "Search"
 msgstr "ئىزدە"
 
-#: lib/gui.c:589
+#: lib/gui.c:592
 msgid "F_ind"
 msgstr ""
 
 #. File Menu
-#: lib/gui.c:671
+#: lib/gui.c:674
 msgid "_File"
 msgstr "ھۆججەت(_F)"
 
-#: lib/gui.c:678 lib/gui.c:804
+#: lib/gui.c:681 lib/gui.c:807
 msgid "Speed _Reader"
 msgstr "تېز ئوقۇغۇ(_R)"
 
-#: lib/gui.c:693
+#: lib/gui.c:696
 msgid "_Preferences"
 msgstr ""
 
-#: lib/gui.c:707 lib/gui.c:816
+#: lib/gui.c:710 lib/gui.c:819
 msgid "_Quit"
 msgstr "ئاخىرلاشتۇر(_Q)"
 
 #. Help Menu
-#: lib/gui.c:717
+#: lib/gui.c:720
 msgid "_Help"
 msgstr "ياردەم(_H)"
 
-#: lib/gui.c:724
+#: lib/gui.c:727
 msgid "About"
 msgstr ""
 
-#: lib/gui.c:828
+#: lib/gui.c:831
 msgid "Search with:"
 msgstr "تۆۋەندىكى بىلەن ئىزدە:"
 
-#: lib/gui.c:832
+#: lib/gui.c:835
 msgid "_Dictionary Server"
 msgstr "لۇغەت مۇلازىمېتىرى(_D)"
 
-#: lib/gui.c:839
+#: lib/gui.c:842
 msgid "_Web Service"
 msgstr "تور مۇلازىمىتى(_W)"
 
-#: lib/gui.c:847
+#: lib/gui.c:850
 msgid "_Spell Checker"
 msgstr "كوررېكتور"
 
-#: lib/gui.c:973
+#: lib/gui.c:976
 msgid "A client program to query different dictionaries."
 msgstr "ھەر خىل لۇغەتلەرنى سۈرۈشتۈرىدىغان خېرىدار پروگراممىسى"
 
-#: lib/gui.c:977
+#: lib/gui.c:980
 msgid "translator-credits"
 msgstr "غەيرەت ت.كەنجى <gheyret@gmail.com>"
 
-#: lib/gui.c:980
+#: lib/gui.c:983
 msgid "Xfce4 Dictionary"
 msgstr "Xfce4 لۇغىتى"
 
@@ -539,6 +539,6 @@ msgstr "كوررېكتور پروگراممىسى:"
 
 #: lib/prefs.c:627
 msgid ""
-"<i>The spell check program can be 'enchant', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
+"<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr "<i>كوررېكتور پروگراممىسى 'enchant'، 'aspell'، 'ispell'  ياكى باشقا ispell بىلەن ماس كېلىدىغان باشقا كوررېكتور پروگراممىسى بولسا بولىدۇ.\nسىنبەلگە كىرگۈزگەن بۇيرۇق بارمۇ يوق كۆرسىتىپ تۇرىدۇ.</i>"
+msgstr ""
