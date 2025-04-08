@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the xfce-apps.xfce4-dict package.
 # 
 # Translators:
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019-2020
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019-2020,2025
 # José Vieira <jvieira33@sapo.pt>, 2017,2020-2021
 # Nuno Miguel <nunomgue@gmail.com>, 2015-2016
 msgid ""
@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-04-07 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: José Vieira <jvieira33@sapo.pt>, 2017,2020-2021\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>, 2019-2020,2025\n"
 "Language-Team: Portuguese (http://app.transifex.com/xfce/xfce-apps/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -546,4 +546,4 @@ msgstr "Programa de verificação ortográfica:"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>O programa de correção ortográfica pode ser o 'enchant-2', 'aspell', 'ispell' ou qualquer outro programa de correção ortográfica que seja compatível com o comando ispell.\nO ícone mostra se o comando introduzido existe.</i>"
