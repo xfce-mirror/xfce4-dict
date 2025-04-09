@@ -4,6 +4,8 @@
 # 
 # Translators:
 # Cédric Valmary <cvalmary@yahoo.fr>, 2013
+# Cédric Valmary <cvalmary@yahoo.fr>, 2013
+# Quentin PAGÈS, 2024
 # Quentin PAGÈS, 2024
 msgid ""
 msgstr ""
@@ -542,4 +544,4 @@ msgstr "Programa per verificar l'ortografia :"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>Lo programa de verificacion ortografica pòt èsser « enchant-2 », « aspell », « ispell » o tot autre programa de verificacion ortografica compatible amb la comanda ispell.\nL'icòna s’aficha se la comanda picada existís.</i>"
