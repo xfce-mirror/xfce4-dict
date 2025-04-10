@@ -5,13 +5,14 @@
 # Translators:
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012
 # Moo, 2015-2017,2019-2021
+# Moo, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-04-07 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Moo, 2015-2017,2019-2021\n"
+"Last-Translator: Moo, 2025\n"
 "Language-Team: Lithuanian (http://app.transifex.com/xfce/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -548,4 +549,4 @@ msgstr "Rašybos tikrinimo programa:"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>Rašybos tikrinimo programa gali būti „enchant-2“, „aspell“, „ispell“ ar bet kuri rašybos tikrinimo programa, kuri yra suderinama su „ispell“ komanda.\nPiktograma rodo, ar įvesta komanda egzistuoja.</i>"
