@@ -45,6 +45,7 @@ static gboolean focus_panel_entry = FALSE;
 static gboolean mode_dict = FALSE;
 static gboolean mode_web = FALSE;
 static gboolean mode_spell = FALSE;
+static gboolean mode_llm = FALSE;
 static gboolean verbose_mode = FALSE;
 
 static GOptionEntry cli_options[] =
@@ -52,6 +53,7 @@ static GOptionEntry cli_options[] =
 	{ "dict", 'd', 0, G_OPTION_ARG_NONE, &mode_dict, N_("Search the given text using a Dict server(RFC 2229)"), NULL },
 	{ "web", 'w', 0, G_OPTION_ARG_NONE, &mode_web, N_("Search the given text using a web-based search engine"), NULL },
 	{ "spell", 's', 0, G_OPTION_ARG_NONE, &mode_spell, N_("Check the given text with a spell checker"), NULL },
+	{ "llm", 'l', 0, G_OPTION_ARG_NONE, &mode_llm, N_("Generate the definition of the given text with a large language model"), NULL },
 	{ "ignore-plugin", 'i', 0, G_OPTION_ARG_NONE, &ignore_plugin, N_("Start stand-alone application even if the panel plugin is loaded"), NULL },
 	{ "clipboard", 'c', 0, G_OPTION_ARG_NONE, &use_clipboard, N_("Grabs the PRIMARY selection content and uses it as search text"), NULL },
 	{ "verbose", 'v', 0, G_OPTION_ARG_NONE, &verbose_mode, N_("Be verbose"), NULL },
@@ -97,6 +99,8 @@ static gchar get_flags(void)
 		flags |= DICT_FLAGS_MODE_WEB;
 	if (mode_spell)
 		flags |= DICT_FLAGS_MODE_SPELL;
+	if (mode_llm)
+		flags |= DICT_FLAGS_MODE_LLM;
 
 	return flags;
 }
