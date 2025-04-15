@@ -295,7 +295,7 @@ static void dict_plugin_drag_data_received(GtkWidget *widget, GdkDragContext *dr
 
 static void dict_plugin_construct(XfcePanelPlugin *plugin)
 {
-	GtkWidget *menu_item_dict, *menu_item_web, *menu_item_spell;
+	GtkWidget *menu_item_dict, *menu_item_web, *menu_item_spell, *menu_item_llm;
 	GtkCssProvider *css_provider;
 	DictPanelData *dpd = g_new0(DictPanelData, 1);
 
@@ -377,21 +377,27 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	menu_item_dict = gtk_radio_menu_item_new_with_label(NULL, _("Dictionary Server"));
 	menu_item_web = gtk_radio_menu_item_new_with_label(gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(menu_item_dict)), _("Web Service"));
 	menu_item_spell = gtk_radio_menu_item_new_with_label(gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(menu_item_web)), _("Spell Checker"));
+	menu_item_llm = gtk_radio_menu_item_new_with_label(gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(menu_item_spell)), _("LLM"));
 	g_object_bind_property(dpd->dd->radio_button_dict, "sensitive", menu_item_dict, "sensitive", G_BINDING_SYNC_CREATE);
 	g_object_bind_property(dpd->dd->radio_button_dict, "active", menu_item_dict, "active", G_BINDING_SYNC_CREATE);
 	g_object_bind_property(dpd->dd->radio_button_web, "sensitive", menu_item_web, "sensitive", G_BINDING_SYNC_CREATE);
 	g_object_bind_property(dpd->dd->radio_button_web, "active", menu_item_web, "active", G_BINDING_SYNC_CREATE);
 	g_object_bind_property(dpd->dd->radio_button_spell, "sensitive", menu_item_spell, "sensitive", G_BINDING_SYNC_CREATE);
 	g_object_bind_property(dpd->dd->radio_button_spell, "active", menu_item_spell, "active", G_BINDING_SYNC_CREATE);
+	g_object_bind_property(dpd->dd->radio_button_llm, "sensitive", menu_item_llm, "sensitive", G_BINDING_SYNC_CREATE);
+	g_object_bind_property(dpd->dd->radio_button_llm, "active", menu_item_llm, "active", G_BINDING_SYNC_CREATE);
 	g_signal_connect(menu_item_dict, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_dict);
 	g_signal_connect(menu_item_web, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_web);
 	g_signal_connect(menu_item_spell, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_spell);
+	g_signal_connect(menu_item_spell, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_llm);
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_dict));
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_web));
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_spell));
+	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_llm));
 	gtk_widget_show_all(menu_item_dict);
 	gtk_widget_show_all(menu_item_web);
 	gtk_widget_show_all(menu_item_spell);
+	gtk_widget_show_all(menu_item_llm);
 
 	dict_acquire_dbus_name(dpd->dd);
 
