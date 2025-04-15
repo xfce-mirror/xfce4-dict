@@ -39,6 +39,7 @@
 #define DICT_FLAGS_MODE_DICT			2
 #define DICT_FLAGS_MODE_WEB				4
 #define DICT_FLAGS_MODE_SPELL			8
+#define DICT_FLAGS_MODE_LLM				16
 
 #define XFCE_DICT_SELECTION	"XFCE_DICT_SEL"
 
@@ -48,7 +49,8 @@ typedef enum
 	DICTMODE_DICT = 0,
 	DICTMODE_WEB,
 	DICTMODE_SPELL,
-	DICTMODE_LAST_USED
+	DICTMODE_LAST_USED,
+	DICTMODE_LLM
 } dict_mode_t;
 
 
@@ -88,6 +90,11 @@ typedef struct
 	gchar *spell_bin;
 	gchar *spell_dictionary;
 
+	gchar *llm_server;
+	gchar *llm_port;
+	gchar *llm_model;
+	gchar *llm_prompt;
+
 	gboolean verbose_mode;
 	gboolean is_plugin;	/* specify whether the panel plugin loaded or not */
 
@@ -111,6 +118,7 @@ typedef struct
 	GtkWidget *radio_button_dict;
 	GtkWidget *radio_button_web;
 	GtkWidget *radio_button_spell;
+	GtkWidget *radio_button_llm;
 	GtkWidget *panel_entry;
 	GtkWidget *main_textview;
 	GtkTextBuffer *main_textbuffer;
@@ -150,5 +158,7 @@ gchar    *dict_get_clipboard_contents(void);
 void      dict_acquire_dbus_name(DictData *dd);
 
 void dict_show_msgbox(DictData *dd, gint type, const gchar *text, ...) G_GNUC_PRINTF (3, 4);
+
+gint open_socket(const gchar *host_name, const gchar *port);
 
 #endif

@@ -6,6 +6,8 @@ libdict_sources = [
   'gui.c',
   'gui.h',
   'libdict.h',
+  'llm.c',
+  'llm.h',
   'prefs.c',
   'prefs.h',
   'speedreader.c',

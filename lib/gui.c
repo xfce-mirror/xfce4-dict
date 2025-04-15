@@ -506,6 +506,9 @@ void dict_gui_clear_text_buffer(DictData *dd)
 {
 	GtkTextIter end_iter;
 
+	if (dd->query_is_running)
+		return;
+
 	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &dd->textiter);
 	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
 	gtk_text_buffer_delete(dd->main_textbuffer, &dd->textiter, &end_iter);
@@ -601,6 +604,7 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 	{
 		case DICTMODE_DICT:
 		case DICTMODE_WEB:
+		case DICTMODE_LLM:
 		{
 			image = gtk_image_new_from_icon_name("edit-find-symbolic", GTK_ICON_SIZE_BUTTON);
 			break;
@@ -647,6 +651,17 @@ static void search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *d
 	if (gtk_toggle_button_get_active(togglebutton))
 	{
 		dd->mode_in_use = DICTMODE_SPELL;
+		gtk_widget_grab_focus(dd->main_entry);
+		update_search_button(dd, NULL);
+	}
+}
+
+
+static void search_mode_llm_toggled(GtkToggleButton *togglebutton, DictData *dd)
+{
+	if (gtk_toggle_button_get_active(togglebutton))
+	{
+		dd->mode_in_use = DICTMODE_LLM;
 		gtk_widget_grab_focus(dd->main_entry);
 		update_search_button(dd, NULL);
 	}
@@ -854,6 +869,13 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
+	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_LLM"));
+	dd->radio_button_llm = radio;
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_LLM));
+	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_llm_toggled), dd);
+	gtk_widget_show(radio);
+	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
+
 	/* results area */
 	scrolledwindow_results = gtk_scrolled_window_new(NULL, NULL);
 	gtk_widget_show(scrolledwindow_results);
@@ -967,7 +989,7 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 {
 	const gchar *authors[]= { "Enrico Tröger <enrico@xfce.org>",
                             "Harald Judt <hjudt@xfce.org>",
-                            "André Miranda <andre42m@gmail.com>",
+                            "André Miranda <andreldm@xfce.org>",
                             NULL };
 
 	gtk_show_about_dialog(GTK_WINDOW(dd->window),
