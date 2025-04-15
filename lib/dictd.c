@@ -371,7 +371,7 @@ static void append_web_search_link(DictData *dd, gboolean prepend_whitespace)
 {
 	gchar *label, *text;
 
-	if (dd->web_url == NULL || dd->mode_in_use != DICTMODE_DICT)
+	if (xfce_str_is_empty (dd->web_url) || dd->mode_in_use != DICTMODE_DICT)
 		return;
 
 	label = _(dict_prefs_get_web_url_label(dd));
