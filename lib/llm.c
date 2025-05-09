@@ -82,8 +82,11 @@ static gpointer ask_server(DictData *dd)
 				g_free(response_text);
 			}
 			g_match_info_free(match_info);
+			if (!dd->query_is_running) break;
 		}
 		g_strfreev(lines);
+
+		if (!dd->query_is_running) break;
 	}
 
 	g_regex_unref(regex);
@@ -92,6 +95,7 @@ static gpointer ask_server(DictData *dd)
 
 exit:
 	dd->query_is_running = FALSE;
+	gtk_widget_hide(dd->cancel_query_button);
 	g_thread_exit(NULL);
 	return NULL;
 }
@@ -102,6 +106,7 @@ void dict_llm_start_query(DictData *dd, const gchar *word)
 	if (!dd->query_is_running)
 	{
 		dict_gui_status_add(dd, _("Querying %s..."), dd->llm_server);
+		gtk_widget_show(dd->cancel_query_button);
 
 		/* start the thread to query the server */
 		g_thread_new(NULL, (GThreadFunc) ask_server, dd);
