@@ -675,6 +675,13 @@ static void speedreader_clicked_cb(GtkButton *button, DictData *dd)
 }
 
 
+static void cancel_query_clicked_cb(GtkButton *button, DictData *dd)
+{
+	dd->query_is_running = FALSE;
+	gtk_widget_hide(dd->cancel_query_button);
+}
+
+
 static GtkWidget *create_file_menu(DictData *dd)
 {
 	GtkWidget *icon;
@@ -767,7 +774,7 @@ void dict_gui_finalize(DictData *dd)
 
 void dict_gui_create_main_window(DictData *dd)
 {
-	GtkWidget *main_box, *entry_box, *label_box;
+	GtkWidget *main_box, *entry_box, *label_box, *status_box;
 	GtkWidget *sep, *scrolledwindow_results;
 	GdkPixbuf *icon;
 	GtkWidget *method_chooser, *radio, *label, *button;
@@ -952,10 +959,21 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(dd->main_textview);
 	gtk_container_add(GTK_CONTAINER(scrolledwindow_results), dd->main_textview);
 
+	/* status box */
+	status_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+	gtk_widget_show(status_box);
+	gtk_box_pack_end(GTK_BOX(main_box), status_box, FALSE, FALSE, 0);
+
 	/* status bar */
 	dd->statusbar = gtk_statusbar_new();
-	gtk_widget_show(dd->statusbar);
-	gtk_box_pack_end(GTK_BOX(main_box), dd->statusbar, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(status_box), dd->statusbar, FALSE, FALSE, 0);
+
+	/* cancel query button */
+	dd->cancel_query_button = gtk_button_new_from_icon_name("process-stop-symbolic", GTK_ICON_SIZE_BUTTON);
+	gtk_widget_set_valign(dd->cancel_query_button, GTK_ALIGN_CENTER);
+	gtk_widget_set_no_show_all(GTK_WIDGET(dd->cancel_query_button), TRUE);
+	gtk_box_pack_end(GTK_BOX(status_box), dd->cancel_query_button, FALSE, FALSE, 4);
+	g_signal_connect(dd->cancel_query_button, "clicked", G_CALLBACK(cancel_query_clicked_cb), dd);
 
 	/* DnD */
 	g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);

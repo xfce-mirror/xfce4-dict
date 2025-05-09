@@ -110,6 +110,7 @@ typedef struct
 	/* widgets */
 	GtkWidget *window;
 	GtkWidget *statusbar;
+	GtkWidget *cancel_query_button;
 	GtkWidget *close_button;
 	GtkWidget *close_menu_item;
 	GtkWidget *pref_menu_item;
