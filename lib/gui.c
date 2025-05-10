@@ -966,6 +966,7 @@ void dict_gui_create_main_window(DictData *dd)
 
 	/* status bar */
 	dd->statusbar = gtk_statusbar_new();
+	gtk_widget_show(dd->statusbar);
 	gtk_box_pack_start(GTK_BOX(status_box), dd->statusbar, FALSE, FALSE, 0);
 
 	/* cancel query button */
