@@ -21,6 +21,7 @@
 
 
 void dict_llm_start_query(DictData *dd, const gchar *word);
+void dict_llm_invalidate_dict_data(void);
 
 
 #endif

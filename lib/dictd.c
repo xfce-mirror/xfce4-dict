@@ -652,7 +652,7 @@ void dict_dictd_start_query(DictData *dd, const gchar *word)
 		dictd_init();
 
 		/* start the thread to query the server */
-		g_thread_new(NULL, (GThreadFunc) ask_server, dd);
+		g_thread_unref(g_thread_new(NULL, (GThreadFunc) ask_server, dd));
 	}
 }
 
