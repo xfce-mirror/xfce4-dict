@@ -276,9 +276,18 @@ static void spell_combo_changed_cb(GtkComboBox *widget, DictData *dd)
 }
 
 
+static void reset_llm_settings_cb(GtkButton *button, GObject *dialog)
+{
+	gtk_entry_set_text(GTK_ENTRY(g_object_get_data(G_OBJECT(dialog), "llm_server_entry")), LLM_DEFAULT_SERVER);
+	gtk_entry_set_text(GTK_ENTRY(g_object_get_data(G_OBJECT(dialog), "llm_port_entry")), LLM_DEFAULT_PORT);
+	gtk_entry_set_text(GTK_ENTRY(g_object_get_data(G_OBJECT(dialog), "llm_model_entry")), LLM_DEFAULT_MODEL);
+	gtk_text_buffer_set_text(GTK_TEXT_BUFFER(g_object_get_data(G_OBJECT(dialog), "prompt_text_buffer")), LLM_DEFAULT_PROMPT, -1);
+}
+
+
 GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 {
-	GtkWidget *dialog, *inner_vbox, *notebook, *notebook_vbox;
+	GtkWidget *dialog, *inner_vbox, *notebook, *notebook_vbox, *scrolled_window;
 	GtkWidget *label1, *label2, *label3, *label4;
 
 	dialog = xfce_titled_dialog_new_with_mixed_buttons(
@@ -702,7 +711,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	 * Page: LLM
 	 */
 	{
-		GtkWidget *grid, *label_help;
+		GtkWidget *grid, *label_help, *button;
 		GtkWidget *server_entry, *port_entry, *model_entry, *prompt_text_view;
 		GtkTextBuffer *prompt_text_buffer;
 
@@ -718,7 +727,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 			"This works with Ollama or any service that implements its HTTP API.\n"
 			"HTTPS is not supported.\n"
 			"Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
-			"The prompt must include a \\%s placeholder where the search term will be inserted."));
+			"The prompt must include a \%s placeholder where the search term will be inserted."));
 		gtk_label_set_line_wrap(GTK_LABEL(label_help), TRUE);
 		gtk_label_set_use_markup(GTK_LABEL(label_help), TRUE);
 		gtk_widget_show(label_help);
@@ -756,6 +765,12 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		/* prompt */
 		label4 = gtk_label_new_with_mnemonic(_("Prompt:"));
 
+		scrolled_window = gtk_scrolled_window_new(NULL, NULL);
+		gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(scrolled_window),
+											GTK_SHADOW_IN);
+		gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_window),
+									   GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+
 		prompt_text_view = gtk_text_view_new();
 		gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(prompt_text_view), GTK_WRAP_WORD);
 		prompt_text_buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(prompt_text_view));
@@ -764,6 +779,13 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 			gtk_text_buffer_set_text(prompt_text_buffer, dd->llm_prompt, -1);
 		}
 
+		/* reset */
+		button = gtk_button_new_from_icon_name("edit-undo-symbolic", GTK_ICON_SIZE_BUTTON);
+		gtk_widget_set_halign(button, GTK_ALIGN_START);
+		gtk_button_set_label(GTK_BUTTON(button), _("Reset"));
+		g_signal_connect(button, "clicked", G_CALLBACK(reset_llm_settings_cb), dialog);
+
+		/* set data */
 		g_object_set_data(G_OBJECT(dialog), "llm_server_entry", server_entry);
 		g_object_set_data(G_OBJECT(dialog), "llm_port_entry", port_entry);
 		g_object_set_data(G_OBJECT(dialog), "llm_model_entry", model_entry);
@@ -799,11 +821,14 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_set_hexpand(model_entry, TRUE);
 
 		gtk_grid_attach(GTK_GRID(grid), label4, 0, 4, 1, 1);
-		gtk_widget_set_valign (label3, GTK_ALIGN_CENTER);
-		gtk_widget_set_halign (label3, GTK_ALIGN_END);
+		gtk_widget_set_valign (label4, GTK_ALIGN_CENTER);
+		gtk_widget_set_halign (label4, GTK_ALIGN_END);
 
-		gtk_grid_attach(GTK_GRID(grid), prompt_text_view, 1, 4, 1, 8);
-		gtk_widget_set_hexpand(prompt_text_view, TRUE);
+		gtk_grid_attach(GTK_GRID(grid), scrolled_window, 1, 4, 1, 8);
+		gtk_widget_set_hexpand(scrolled_window, TRUE);
+		gtk_container_add(GTK_CONTAINER(scrolled_window), prompt_text_view);
+
+		gtk_grid_attach(GTK_GRID(grid), button, 1, 13, 2, 1);
 
 		gtk_widget_show_all(grid);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), grid, FALSE, FALSE, 0);
