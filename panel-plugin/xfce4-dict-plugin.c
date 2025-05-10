@@ -389,7 +389,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	g_signal_connect(menu_item_dict, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_dict);
 	g_signal_connect(menu_item_web, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_web);
 	g_signal_connect(menu_item_spell, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_spell);
-	g_signal_connect(menu_item_spell, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_llm);
+	g_signal_connect(menu_item_llm, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_llm);
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_dict));
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_web));
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_spell));
