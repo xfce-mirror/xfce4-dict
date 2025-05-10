@@ -72,6 +72,11 @@ enum
 #define TAG_BOLD "bold"
 #define TAG_PHONETIC "phonetic"
 
+#define LLM_DEFAULT_SERVER "localhost"
+#define LLM_DEFAULT_PORT "11434"
+#define LLM_DEFAULT_MODEL "gemma3:4b"
+#define LLM_DEFAULT_PROMPT _("Pretend you're a dictionary, I'll ask you to define a term or expression, try to compose a message that resembles a dictionary entry. Do NOT add anything to the message, before or after it, for example, do NOT prepend 'Okay' or 'Understood'. Do NOT format the answers with markdown or html, write in plain text. You can use multiple lines. Try to be concise. Define the word: %s")
+
 typedef struct
 {
 	/* settings */

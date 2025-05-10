@@ -382,10 +382,10 @@ void dict_read_rc_file(DictData *dd)
 	const gchar *error_color_str = "#800000";
 	const gchar *success_color_str = "#107000";
 	const gchar *speedreader_font = "Sans 32";
-	const gchar *llm_server = "localhost";
-	const gchar *llm_port = "11434";
-	const gchar *llm_model = "gemma3:4b";
-	const gchar *llm_prompt = _("Pretend you're a dictionary, I'll ask you to define a term or expression, try to compose a message that resembles a dictionary entry. Do NOT add anything to the message, before or after it, for example, do NOT prepend 'Okay' or 'Understood'. Do NOT format the answers with markdown or html, write in plain text. You can use multiple lines. Try to be concise. Define the word: %s");
+	const gchar *llm_server = LLM_DEFAULT_SERVER;
+	const gchar *llm_port = LLM_DEFAULT_PORT;
+	const gchar *llm_model = LLM_DEFAULT_MODEL;
+	const gchar *llm_prompt = LLM_DEFAULT_PROMPT;
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
 	{
