@@ -25,6 +25,8 @@
 #include "gui.h"
 
 
+static gboolean dict_data_valid = TRUE;
+
 
 static gpointer ask_server(DictData *dd)
 {
@@ -69,10 +71,14 @@ static gpointer ask_server(DictData *dd)
 
 	while ((bytes_received = recv(fd, buffer, sizeof(buffer) - 1, 0)) > 0)
 	{
+		if (!dict_data_valid || !dd->query_is_running) break;
+
 		buffer[bytes_received] = '\0';
 		lines = g_strsplit(buffer, "\n", -1);
 		for (int i = 0; lines[i] != NULL; ++i)
 		{
+			if (!dict_data_valid || !dd->query_is_running) break;
+
 			if (g_regex_match(regex, lines[i], 0, &match_info))
 			{
 				gchar *response_text = g_match_info_fetch(match_info, 1);
@@ -82,20 +88,20 @@ static gpointer ask_server(DictData *dd)
 				g_free(response_text);
 			}
 			g_match_info_free(match_info);
-			if (!dd->query_is_running) break;
 		}
 		g_strfreev(lines);
-
-		if (!dd->query_is_running) break;
 	}
 
 	g_regex_unref(regex);
 	close(fd);
-	dict_gui_status_add(dd, _("Ready"));
+	if (dict_data_valid) dict_gui_status_add(dd, _("Ready"));
 
 exit:
-	dd->query_is_running = FALSE;
-	gtk_widget_hide(dd->cancel_query_button);
+	if (dict_data_valid)
+	{
+		dd->query_is_running = FALSE;
+		gtk_widget_hide(dd->cancel_query_button);
+	}
 	g_thread_exit(NULL);
 	return NULL;
 }
@@ -109,6 +115,12 @@ void dict_llm_start_query(DictData *dd, const gchar *word)
 		gtk_widget_show(dd->cancel_query_button);
 
 		/* start the thread to query the server */
-		g_thread_new(NULL, (GThreadFunc) ask_server, dd);
+		g_thread_unref(g_thread_new(NULL, (GThreadFunc) ask_server, dd));
 	}
+}
+
+
+void dict_llm_invalidate_dict_data(void)
+{
+	dict_data_valid = FALSE;
 }

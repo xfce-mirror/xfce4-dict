@@ -538,9 +538,16 @@ void dict_free_data(DictData *dd)
 	g_free(dd->searched_word);
 	g_free(dd->dictionary);
 	g_free(dd->server);
+	g_free(dd->port);
 	g_free(dd->web_url);
 	g_free(dd->spell_bin);
+	g_free(dd->spell_dictionary);
 	g_free(dd->speedreader_font);
+
+	g_free(dd->llm_server);
+	g_free(dd->llm_port);
+	g_free(dd->llm_model);
+	g_free(dd->llm_prompt);
 
 	g_free(dd->color_link);
 	g_free(dd->color_phonetic);
@@ -549,6 +556,8 @@ void dict_free_data(DictData *dd)
 
 	if (dd->icon != NULL)
 		g_object_unref(dd->icon);
+
+	dict_llm_invalidate_dict_data();
 
 	g_free(dd);
 }
