@@ -41,7 +41,10 @@
 #include "dictd.h"
 #include "gui.h"
 #include "dbus.h"
+
+#ifdef ENABLE_LLM
 #include "llm.h"
+#endif
 
 
 
@@ -212,8 +215,10 @@ dict_mode_t dict_set_search_mode_from_flags(dict_mode_t mode, gchar flags)
 		mode = DICTMODE_WEB;
 	else if (flags & DICT_FLAGS_MODE_SPELL)
 		mode = DICTMODE_SPELL;
+#ifdef ENABLE_LLM
 	else if (flags & DICT_FLAGS_MODE_LLM)
 		mode = DICTMODE_LLM;
+#endif
 
 	return mode;
 }
@@ -269,11 +274,13 @@ void dict_search_word(DictData *dd, const gchar *word)
 			dict_spell_start_query(dd, dd->searched_word, FALSE);
 			break;
 		}
+#ifdef ENABLE_LLM
 		case DICTMODE_LLM:
 		{
 			dict_llm_start_query(dd, dd->searched_word);
 			break;
 		}
+#endif
 		default:
 		{
 			dict_dictd_start_query(dd, dd->searched_word);
@@ -382,10 +389,12 @@ void dict_read_rc_file(DictData *dd)
 	const gchar *error_color_str = "#800000";
 	const gchar *success_color_str = "#107000";
 	const gchar *speedreader_font = "Sans 32";
+#ifdef ENABLE_LLM
 	const gchar *llm_server = LLM_DEFAULT_SERVER;
 	const gchar *llm_port = LLM_DEFAULT_PORT;
 	const gchar *llm_model = LLM_DEFAULT_MODEL;
 	const gchar *llm_prompt = LLM_DEFAULT_PROMPT;
+#endif
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
 	{
@@ -410,10 +419,12 @@ void dict_read_rc_file(DictData *dd)
 		grouping = xfce_rc_read_int_entry(rc, "speedreader_grouping", grouping);
 		mark_paragraphs = xfce_rc_read_bool_entry(rc, "speedreader_mark_paragraphs", mark_paragraphs);
 
+#ifdef ENABLE_LLM
 		llm_server = xfce_rc_read_entry(rc, "llm_server", llm_server);
 		llm_port = xfce_rc_read_entry(rc, "llm_port", llm_port);
 		llm_model = xfce_rc_read_entry(rc, "llm_model", llm_model);
 		llm_prompt = xfce_rc_read_entry(rc, "llm_prompt", llm_prompt);
+#endif
 
 		geo = xfce_rc_read_entry(rc, "geometry", geo);
 		parse_geometry(dd, geo);
@@ -463,10 +474,12 @@ void dict_read_rc_file(DictData *dd)
 	dd->speedreader_grouping = grouping;
 	dd->speedreader_font = g_strdup(speedreader_font);
 
+#ifdef ENABLE_LLM
 	dd->llm_server = g_strdup(llm_server);
 	dd->llm_port = g_strdup(llm_port);
 	dd->llm_model = g_strdup(llm_model);
 	dd->llm_prompt = g_strdup(llm_prompt);
+#endif
 
 	xfce_rc_close(rc);
 }
@@ -511,10 +524,12 @@ void dict_write_rc_file(DictData *dd)
 		xfce_rc_write_int_entry(rc, "speedreader_grouping", dd->speedreader_grouping);
 		xfce_rc_write_bool_entry(rc, "speedreader_mark_paragraphs", dd->speedreader_mark_paragraphs);
 
+#ifdef ENABLE_LLM
 		xfce_rc_write_entry(rc, "llm_server", dd->llm_server);
 		xfce_rc_write_entry(rc, "llm_port", dd->llm_port);
 		xfce_rc_write_entry(rc, "llm_model", dd->llm_model);
 		xfce_rc_write_entry(rc, "llm_prompt", dd->llm_prompt);
+#endif
 
 		g_free(link_color_str);
 		g_free(phon_color_str);
@@ -544,10 +559,14 @@ void dict_free_data(DictData *dd)
 	g_free(dd->spell_dictionary);
 	g_free(dd->speedreader_font);
 
+#ifdef ENABLE_LLM
 	g_free(dd->llm_server);
 	g_free(dd->llm_port);
 	g_free(dd->llm_model);
 	g_free(dd->llm_prompt);
+
+	dict_llm_invalidate_dict_data();
+#endif
 
 	g_free(dd->color_link);
 	g_free(dd->color_phonetic);
@@ -556,8 +575,6 @@ void dict_free_data(DictData *dd)
 
 	if (dd->icon != NULL)
 		g_object_unref(dd->icon);
-
-	dict_llm_invalidate_dict_data();
 
 	g_free(dd);
 }
