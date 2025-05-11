@@ -657,6 +657,7 @@ static void search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *d
 }
 
 
+#ifdef ENABLE_LLM
 static void search_mode_llm_toggled(GtkToggleButton *togglebutton, DictData *dd)
 {
 	if (gtk_toggle_button_get_active(togglebutton))
@@ -667,18 +668,18 @@ static void search_mode_llm_toggled(GtkToggleButton *togglebutton, DictData *dd)
 	}
 }
 
+static void cancel_query_clicked_cb(GtkButton *button, DictData *dd)
+{
+	dd->query_is_running = FALSE;
+	gtk_widget_hide(dd->cancel_query_button);
+}
+#endif
+
 
 static void speedreader_clicked_cb(GtkButton *button, DictData *dd)
 {
 	GtkWidget *dialog = xfd_speed_reader_new(GTK_WINDOW(dd->window), dd);
 	gtk_widget_show(dialog);
-}
-
-
-static void cancel_query_clicked_cb(GtkButton *button, DictData *dd)
-{
-	dd->query_is_running = FALSE;
-	gtk_widget_hide(dd->cancel_query_button);
 }
 
 
@@ -876,12 +877,14 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
+#ifdef ENABLE_LLM
 	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_LLM"));
 	dd->radio_button_llm = radio;
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_LLM));
 	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_llm_toggled), dd);
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
+#endif
 
 	/* results area */
 	scrolledwindow_results = gtk_scrolled_window_new(NULL, NULL);
@@ -969,12 +972,14 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(dd->statusbar);
 	gtk_box_pack_start(GTK_BOX(status_box), dd->statusbar, FALSE, FALSE, 0);
 
+#ifdef ENABLE_LLM
 	/* cancel query button */
 	dd->cancel_query_button = gtk_button_new_from_icon_name("process-stop-symbolic", GTK_ICON_SIZE_BUTTON);
 	gtk_widget_set_valign(dd->cancel_query_button, GTK_ALIGN_CENTER);
 	gtk_widget_set_no_show_all(GTK_WIDGET(dd->cancel_query_button), TRUE);
 	gtk_box_pack_end(GTK_BOX(status_box), dd->cancel_query_button, FALSE, FALSE, 4);
 	g_signal_connect(dd->cancel_query_button, "clicked", G_CALLBACK(cancel_query_clicked_cb), dd);
+#endif
 
 	/* DnD */
 	g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);

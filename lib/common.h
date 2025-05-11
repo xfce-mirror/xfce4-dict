@@ -50,7 +50,7 @@ typedef enum
 	DICTMODE_WEB,
 	DICTMODE_SPELL,
 	DICTMODE_LAST_USED,
-	DICTMODE_LLM
+	DICTMODE_LLM,
 } dict_mode_t;
 
 
@@ -72,10 +72,12 @@ enum
 #define TAG_BOLD "bold"
 #define TAG_PHONETIC "phonetic"
 
+#ifdef ENABLE_LLM
 #define LLM_DEFAULT_SERVER "localhost"
 #define LLM_DEFAULT_PORT "11434"
 #define LLM_DEFAULT_MODEL "gemma3:4b"
 #define LLM_DEFAULT_PROMPT _("Pretend you're a dictionary, I'll ask you to define a term or expression, try to compose a message that resembles a dictionary entry. Do NOT add anything to the message, before or after it, for example, do NOT prepend 'Okay' or 'Understood'. Do NOT format the answers with markdown or html, write in plain text. You can use multiple lines. Try to be concise. Define the word: %s")
+#endif
 
 typedef struct
 {
@@ -95,10 +97,12 @@ typedef struct
 	gchar *spell_bin;
 	gchar *spell_dictionary;
 
+#ifdef ENABLE_LLM
 	gchar *llm_server;
 	gchar *llm_port;
 	gchar *llm_model;
 	gchar *llm_prompt;
+#endif
 
 	gboolean verbose_mode;
 	gboolean is_plugin;	/* specify whether the panel plugin loaded or not */
@@ -115,7 +119,9 @@ typedef struct
 	/* widgets */
 	GtkWidget *window;
 	GtkWidget *statusbar;
+#ifdef ENABLE_LLM
 	GtkWidget *cancel_query_button;
+#endif
 	GtkWidget *close_button;
 	GtkWidget *close_menu_item;
 	GtkWidget *pref_menu_item;
