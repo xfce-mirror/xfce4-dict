@@ -6,8 +6,6 @@ libdict_sources = [
   'gui.c',
   'gui.h',
   'libdict.h',
-  'llm.c',
-  'llm.h',
   'prefs.c',
   'prefs.h',
   'speedreader.c',
@@ -15,6 +13,13 @@ libdict_sources = [
   'spell.c',
   'spell.h',
 ]
+
+if get_option('llm')
+  libdict_sources += [
+  'llm.c',
+  'llm.h',
+  ]
+endif
 
 libdict_sources += gnome.gdbus_codegen(
   'dbus',

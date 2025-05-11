@@ -11,8 +11,6 @@ libdict_la_SOURCES =							\
 	gui.c										\
 	gui.h										\
 	libdict.h									\
-	llm.c										\
-	llm.h										\
 	prefs.c										\
 	prefs.h										\
 	resources.c									\

@@ -89,8 +89,10 @@ static void search_method_changed(GtkRadioButton *radiobutton, DictData *dd)
 void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 {
 	gchar *dictionary;
+#ifdef ENABLE_LLM
 	GtkTextBuffer *text_buffer;
 	GtkTextIter start, end;
+#endif
 
 	/* check some values before actually saving the settings in case we need to return to
 	 * the dialog */
@@ -138,6 +140,7 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 			GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "spell_entry"))));
 
 	/* MODE LLM */
+#ifdef ENABLE_LLM
 	g_free(dd->llm_server);
 	dd->llm_server = g_strdup(gtk_entry_get_text(
 			GTK_ENTRY(g_object_get_data(G_OBJECT(dlg), "llm_server_entry"))));
@@ -152,6 +155,7 @@ void dict_prefs_dialog_response(GtkWidget *dlg, gint response, DictData *dd)
 	gtk_text_buffer_get_start_iter(text_buffer, &start);
 	gtk_text_buffer_get_end_iter(text_buffer, &end);
 	dd->llm_prompt = g_strdup(gtk_text_buffer_get_text(text_buffer, &start, &end, FALSE));
+#endif
 
 	/* general settings */
 	if (dd->is_plugin)
@@ -276,6 +280,7 @@ static void spell_combo_changed_cb(GtkComboBox *widget, DictData *dd)
 }
 
 
+#ifdef ENABLE_LLM
 static void reset_llm_settings_cb(GtkButton *button, GObject *dialog)
 {
 	gtk_entry_set_text(GTK_ENTRY(g_object_get_data(G_OBJECT(dialog), "llm_server_entry")), LLM_DEFAULT_SERVER);
@@ -283,11 +288,12 @@ static void reset_llm_settings_cb(GtkButton *button, GObject *dialog)
 	gtk_entry_set_text(GTK_ENTRY(g_object_get_data(G_OBJECT(dialog), "llm_model_entry")), LLM_DEFAULT_MODEL);
 	gtk_text_buffer_set_text(GTK_TEXT_BUFFER(g_object_get_data(G_OBJECT(dialog), "prompt_text_buffer")), LLM_DEFAULT_PROMPT, -1);
 }
+#endif
 
 
 GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 {
-	GtkWidget *dialog, *inner_vbox, *notebook, *notebook_vbox, *scrolled_window;
+	GtkWidget *dialog, *inner_vbox, *notebook, *notebook_vbox;
 	GtkWidget *label1, *label2, *label3, *label4;
 
 	dialog = xfce_titled_dialog_new_with_mixed_buttons(
@@ -710,8 +716,9 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 	/*
 	 * Page: LLM
 	 */
+#ifdef ENABLE_LLM
 	{
-		GtkWidget *grid, *label_help, *button;
+		GtkWidget *grid, *label_help, *button, *scrolled_window;
 		GtkWidget *server_entry, *port_entry, *model_entry, *prompt_text_view;
 		GtkTextBuffer *prompt_text_buffer;
 
@@ -834,6 +841,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_box_pack_start(GTK_BOX(inner_vbox), grid, FALSE, FALSE, 0);
 		gtk_box_pack_start(GTK_BOX(notebook_vbox), inner_vbox, TRUE, TRUE, 5);
 	}
+#endif
 
 	return dialog;
 }
