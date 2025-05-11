@@ -14,6 +14,7 @@ AUTOMAKE_OPTIONS =												\
 EXTRA_DIST =													\
 	xfce4-dict.1												\
 	xfce-revision.h.in											\
+	meson_options.txt											\
 	meson.build
 
 distclean-local:
