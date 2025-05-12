@@ -16,8 +16,8 @@ libdict_sources = [
 
 if get_option('llm')
   libdict_sources += [
-  'llm.c',
-  'llm.h',
+    'llm.c',
+    'llm.h',
   ]
 endif
 
