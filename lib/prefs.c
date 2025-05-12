@@ -831,7 +831,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_set_valign (label4, GTK_ALIGN_CENTER);
 		gtk_widget_set_halign (label4, GTK_ALIGN_END);
 
-		gtk_grid_attach(GTK_GRID(grid), scrolled_window, 1, 4, 1, 8);
+		gtk_grid_attach(GTK_GRID(grid), scrolled_window, 1, 4, 1, 12);
 		gtk_widget_set_hexpand(scrolled_window, TRUE);
 		gtk_container_add(GTK_CONTAINER(scrolled_window), prompt_text_view);
 
