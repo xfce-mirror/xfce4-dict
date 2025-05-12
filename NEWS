@@ -1,3 +1,27 @@
+0.8.9 (2025-05-12)
+=====
+- Hide web search link in results if not set
+- Fix enchant binary names
+- autotools-build: Add missing compile flags
+- meson-build: Remove --manual-register flag from compile_resources()
+- Replace deprecated exo with libxfce4ui 4.21.0
+- Meson version can be older
+- build: Automate copyright year management
+- Add suport to Meson
+- I18n: Update po/LINGUAS list
+- Remove x11 includes
+- Drop libx11 as dependency
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Italian, Japanese, Kazakh, Korean,
+  Latvian, Lithuanian, Malay, Norwegian Bokmål, Occitan (post 1500),
+  Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian,
+  Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, Urdu,
+  Urdu (Pakistan), Uyghur, Vietnamese
+
 0.8.8 (2024-10-01)
 =====
 - Avoid freeze when toggling search modes

@@ -1,14 +1,10 @@
 project(
   'xfce4-dict',
   'c',
-  version: '0.8.8-dev',
-  license: 'GPL-2.0-or-later',
-  meson_version: '>= 0.54.0',
-  default_options: [
-    'c_std=gnu11',
-    'buildtype=debugoptimized',
-    'warning_level=2',
-  ]
+  version : '0.8.9',
+  license : 'GPL-2.0-or-later',
+  meson_version : '>= 0.54.0',
+  default_options : ['c_std=gnu11', 'buildtype=debugoptimized', 'warning_level=2']
 )
 
 project_namespace = 'apps'
