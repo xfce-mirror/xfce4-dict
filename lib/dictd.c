@@ -29,18 +29,11 @@
 #include <libxfce4ui/libxfce4ui.h>
 
 #include <signal.h>
-#include <sys/types.h>
 #include <sys/socket.h>
-#include <sys/stat.h>
 #include <unistd.h>
-#include <netdb.h>
-#include <netinet/tcp.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
 #include <signal.h>
 #include <string.h>
 #include <stdlib.h>
-
 
 #include "common.h"
 #include "dictd.h"
@@ -51,39 +44,6 @@
 
 #define BUF_SIZE 256
 
-
-
-static gint open_socket(const gchar *host_name, const gchar *port)
-{
-	struct addrinfo hints, *res, *res0;
-	gint fd = -1;
-	gint opt = 1;
-
-	memset(&hints, 0, sizeof (hints));
-	hints.ai_family = AF_UNSPEC;
-	hints.ai_socktype = SOCK_STREAM;
-
-	if (getaddrinfo(host_name, port, &hints, &res0))
-		return (-1);
-
-	for (res = res0; res; res = res->ai_next) {
-		fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
-		if (fd < 0)
-			continue;
-
-		setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (gchar *) &opt, sizeof (opt));
-		if (connect(fd, res->ai_addr, res->ai_addrlen) != 0) {
-			close(fd);
-			fd = -1;
-			continue;
-		}
-
-		break;
-	}
-
-	freeaddrinfo(res0);
-	return (fd);
-}
 
 
 static void send_command(gint fd, const gchar *str)
@@ -692,7 +652,7 @@ void dict_dictd_start_query(DictData *dd, const gchar *word)
 		dictd_init();
 
 		/* start the thread to query the server */
-		g_thread_new(NULL, (GThreadFunc) ask_server, dd);
+		g_thread_unref(g_thread_new(NULL, (GThreadFunc) ask_server, dd));
 	}
 }
 
