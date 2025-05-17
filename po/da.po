@@ -6,7 +6,7 @@
 # Aputsiak Niels Janussen <aputtu@gmail.com>, 2013
 # Aputsiak Niels Janussen <aputtu@gmail.com>, 2013
 # Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007
-# scootergrisen, 2016-2022
+# scootergrisen, 2016-2022,2025
 # Søren Waaben Hansen <soren@minorflaw.dk>, 2008
 msgid ""
 msgstr ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-04-07 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: scootergrisen, 2016-2022\n"
+"Last-Translator: scootergrisen, 2016-2022,2025\n"
 "Language-Team: Danish (http://app.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -545,4 +545,4 @@ msgstr "Stavekontrolprogram:"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>Stavekontrolprogrammet kan være 'enchant-2', 'aspell', 'ispell' eller et andet stavekontrolprogram som er kompatibelt med ispell-kommandoen\nIkonet viser om den angivne kommando findes.</i>"
