@@ -835,7 +835,7 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		gtk_widget_set_hexpand(scrolled_window, TRUE);
 		gtk_container_add(GTK_CONTAINER(scrolled_window), prompt_text_view);
 
-		gtk_grid_attach(GTK_GRID(grid), button, 1, 13, 2, 1);
+		gtk_grid_attach(GTK_GRID(grid), button, 1, 16, 2, 1);
 
 		gtk_widget_show_all(grid);
 		gtk_box_pack_start(GTK_BOX(inner_vbox), grid, FALSE, FALSE, 0);
