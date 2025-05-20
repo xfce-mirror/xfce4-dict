@@ -14,6 +14,13 @@ libdict_sources = [
   'spell.h',
 ]
 
+if get_option('llm')
+  libdict_sources += [
+    'llm.c',
+    'llm.h',
+  ]
+endif
+
 libdict_sources += gnome.gdbus_codegen(
   'dbus',
   sources: 'dbus.xml',

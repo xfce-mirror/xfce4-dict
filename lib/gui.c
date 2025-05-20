@@ -506,6 +506,9 @@ void dict_gui_clear_text_buffer(DictData *dd)
 {
 	GtkTextIter end_iter;
 
+	if (dd->query_is_running)
+		return;
+
 	gtk_text_buffer_get_start_iter(dd->main_textbuffer, &dd->textiter);
 	gtk_text_buffer_get_end_iter(dd->main_textbuffer, &end_iter);
 	gtk_text_buffer_delete(dd->main_textbuffer, &dd->textiter, &end_iter);
@@ -601,6 +604,7 @@ static void update_search_button(DictData *dd, GtkWidget *box)
 	{
 		case DICTMODE_DICT:
 		case DICTMODE_WEB:
+		case DICTMODE_LLM:
 		{
 			image = gtk_image_new_from_icon_name("edit-find-symbolic", GTK_ICON_SIZE_BUTTON);
 			break;
@@ -651,6 +655,25 @@ static void search_mode_spell_toggled(GtkToggleButton *togglebutton, DictData *d
 		update_search_button(dd, NULL);
 	}
 }
+
+
+#ifdef ENABLE_LLM
+static void search_mode_llm_toggled(GtkToggleButton *togglebutton, DictData *dd)
+{
+	if (gtk_toggle_button_get_active(togglebutton))
+	{
+		dd->mode_in_use = DICTMODE_LLM;
+		gtk_widget_grab_focus(dd->main_entry);
+		update_search_button(dd, NULL);
+	}
+}
+
+static void cancel_query_clicked_cb(GtkButton *button, DictData *dd)
+{
+	dd->query_is_running = FALSE;
+	gtk_widget_hide(dd->cancel_query_button);
+}
+#endif
 
 
 static void speedreader_clicked_cb(GtkButton *button, DictData *dd)
@@ -752,7 +775,7 @@ void dict_gui_finalize(DictData *dd)
 
 void dict_gui_create_main_window(DictData *dd)
 {
-	GtkWidget *main_box, *entry_box, *label_box;
+	GtkWidget *main_box, *entry_box, *label_box, *status_box;
 	GtkWidget *sep, *scrolledwindow_results;
 	GdkPixbuf *icon;
 	GtkWidget *method_chooser, *radio, *label, *button;
@@ -854,6 +877,15 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(radio);
 	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
 
+#ifdef ENABLE_LLM
+	radio = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(radio), _("_LLM"));
+	dd->radio_button_llm = radio;
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radio), (dd->mode_in_use == DICTMODE_LLM));
+	g_signal_connect(radio, "toggled", G_CALLBACK(search_mode_llm_toggled), dd);
+	gtk_widget_show(radio);
+	gtk_box_pack_start(GTK_BOX(method_chooser), radio, FALSE, FALSE, 6);
+#endif
+
 	/* results area */
 	scrolledwindow_results = gtk_scrolled_window_new(NULL, NULL);
 	gtk_widget_show(scrolledwindow_results);
@@ -930,10 +962,24 @@ void dict_gui_create_main_window(DictData *dd)
 	gtk_widget_show(dd->main_textview);
 	gtk_container_add(GTK_CONTAINER(scrolledwindow_results), dd->main_textview);
 
+	/* status box */
+	status_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+	gtk_widget_show(status_box);
+	gtk_box_pack_end(GTK_BOX(main_box), status_box, FALSE, FALSE, 0);
+
 	/* status bar */
 	dd->statusbar = gtk_statusbar_new();
 	gtk_widget_show(dd->statusbar);
-	gtk_box_pack_end(GTK_BOX(main_box), dd->statusbar, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(status_box), dd->statusbar, FALSE, FALSE, 0);
+
+#ifdef ENABLE_LLM
+	/* cancel query button */
+	dd->cancel_query_button = gtk_button_new_from_icon_name("process-stop-symbolic", GTK_ICON_SIZE_BUTTON);
+	gtk_widget_set_valign(dd->cancel_query_button, GTK_ALIGN_CENTER);
+	gtk_widget_set_no_show_all(GTK_WIDGET(dd->cancel_query_button), TRUE);
+	gtk_box_pack_end(GTK_BOX(status_box), dd->cancel_query_button, FALSE, FALSE, 4);
+	g_signal_connect(dd->cancel_query_button, "clicked", G_CALLBACK(cancel_query_clicked_cb), dd);
+#endif
 
 	/* DnD */
 	g_signal_connect(dd->main_entry, "drag-data-received", G_CALLBACK(dict_drag_data_received), dd);
@@ -967,7 +1013,7 @@ void dict_gui_about_dialog(GtkWidget *widget, DictData *dd)
 {
 	const gchar *authors[]= { "Enrico Tröger <enrico@xfce.org>",
                             "Harald Judt <hjudt@xfce.org>",
-                            "André Miranda <andre42m@gmail.com>",
+                            "André Miranda <andreldm@xfce.org>",
                             NULL };
 
 	gtk_show_about_dialog(GTK_WINDOW(dd->window),

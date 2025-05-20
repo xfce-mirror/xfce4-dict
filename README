@@ -6,14 +6,14 @@ This program allows you to search different kinds of dictionary services
 for words or phrases and shows you the result.
 Currently you can query a "Dict" server(RFC 2229), any online dictionary
 service by opening a web browser or search for words using a spell check
-program like aspell, ispell or enchant.
+program like aspell, ispell or enchant. It's also possible to query
+Large Language Models running via Ollama.
 
 xfce4-dict contains a stand-alone application called "xfce4-dict" and a
 panel plugin for the Xfce panel.
 
 
-"xfce4-dict" command
---------------------
+## "xfce4-dict" command
 
 If the panel plugin is loaded, the xfce4-dict command just opens the
 already loaded main window of the panel plugin (replacement for the
@@ -41,8 +41,7 @@ that xfce4-dict will start a single stand-alone application. Then all
 passed text is used as search term.
 
 
-Panel Plugin
-------------
+## Panel Plugin
 
 With the panel plugin enabled, you can also easily select a word in an
 email or on a web page and drag it onto the dict icon in your panel, then
@@ -53,8 +52,7 @@ text to search for. To start the search simply press the Enter key in
 the text field.
 
 
-Query a Dict server
--------------------
+## Query a Dict server
 
 You can query a dictionary server(see RFC 2229) to search for the
 translation or explanation of a word. You can also choose a dictionary
@@ -69,8 +67,7 @@ This program was mainly tested with the server "dict.org" but should
 work with any other servers which implement the DICT protocol defined
 in RFC 2229.
 
-Search result highlighting
-``````````````````````````
+### Search result highlighting
 
 Sometimes definitions in certain dictionaries contain special markups
 to give additional information. Two of them are:
@@ -85,8 +82,7 @@ to give additional information. Two of them are:
     Xfce4-dict will highlight these with a green colour.
 
 
-Local dictionary server
-```````````````````````
+### Local dictionary server
 
 Instead of using remote dictionary servers like dict.org which
 always need a network connection and then still might be slow,
@@ -109,8 +105,7 @@ If you need more information about setting up a local dictionary server,
 please see http://docs.kde.org/kde3/en/kdenetwork/kdict/dictd-mini-howto.html.
 
 
-Web-based dictionaries
-----------------------
+## Web-based dictionaries
 
 Searching web-based dictionary services like dict.leo.org or other ones
 is also supported by passing the search word as a URL argument and
@@ -124,8 +119,7 @@ other known browsers are tried. But it's better to set a default browser
 using "Preferred Applications" in the Xfce settings manager.
 
 
-Spell checking based search
----------------------------
+## Spell checking based search
 
 It is also possible to verify the spelling of word using spell checking
 programs like enchant or aspell (or its predecessor ispell).
@@ -135,8 +129,7 @@ working. If you have multiple dictionaries installed, you can
 select the one to use in the preferences dialog.
 
 
-Speed Reader
-------------
+## Speed Reader
 
 With the builtin Speed Reader you can train and improve your
 skills in fast reading texts. You just specify a text, define
@@ -146,3 +139,6 @@ Then the words of the specified text are displayed so you can read them.
 The higher the speed rate is the faster you can read.
 
 
+## Large Language Model
+
+It is possible to retrieve definitions from Large Language Models (LLMs) running via [Ollama](https://ollama.com/) or any other implementation that supports its HTTP API. The quality of the results may vary depending on the model used. In general, larger models require more memory and are slower to respond, but they tend to produce more accurate results.

@@ -39,6 +39,7 @@
 #define DICT_FLAGS_MODE_DICT			2
 #define DICT_FLAGS_MODE_WEB				4
 #define DICT_FLAGS_MODE_SPELL			8
+#define DICT_FLAGS_MODE_LLM				16
 
 #define XFCE_DICT_SELECTION	"XFCE_DICT_SEL"
 
@@ -48,7 +49,8 @@ typedef enum
 	DICTMODE_DICT = 0,
 	DICTMODE_WEB,
 	DICTMODE_SPELL,
-	DICTMODE_LAST_USED
+	DICTMODE_LAST_USED,
+	DICTMODE_LLM,
 } dict_mode_t;
 
 
@@ -70,6 +72,13 @@ enum
 #define TAG_BOLD "bold"
 #define TAG_PHONETIC "phonetic"
 
+#ifdef ENABLE_LLM
+#define LLM_DEFAULT_SERVER "localhost"
+#define LLM_DEFAULT_PORT "11434"
+#define LLM_DEFAULT_MODEL "gemma3:4b"
+#define LLM_DEFAULT_PROMPT _("Pretend you're a dictionary, I'll ask you to define a term or expression, try to compose a message that resembles a dictionary entry. Do NOT add anything to the message, before or after it, for example, do NOT prepend 'Okay' or 'Understood'. Do NOT format the answers with markdown or html, write in plain text. You can use multiple lines. Try to be concise. Define the word: %s")
+#endif
+
 typedef struct
 {
 	/* settings */
@@ -88,6 +97,13 @@ typedef struct
 	gchar *spell_bin;
 	gchar *spell_dictionary;
 
+#ifdef ENABLE_LLM
+	gchar *llm_server;
+	gchar *llm_port;
+	gchar *llm_model;
+	gchar *llm_prompt;
+#endif
+
 	gboolean verbose_mode;
 	gboolean is_plugin;	/* specify whether the panel plugin loaded or not */
 
@@ -103,6 +119,9 @@ typedef struct
 	/* widgets */
 	GtkWidget *window;
 	GtkWidget *statusbar;
+#ifdef ENABLE_LLM
+	GtkWidget *cancel_query_button;
+#endif
 	GtkWidget *close_button;
 	GtkWidget *close_menu_item;
 	GtkWidget *pref_menu_item;
@@ -111,6 +130,7 @@ typedef struct
 	GtkWidget *radio_button_dict;
 	GtkWidget *radio_button_web;
 	GtkWidget *radio_button_spell;
+	GtkWidget *radio_button_llm;
 	GtkWidget *panel_entry;
 	GtkWidget *main_textview;
 	GtkTextBuffer *main_textbuffer;
@@ -150,5 +170,7 @@ gchar    *dict_get_clipboard_contents(void);
 void      dict_acquire_dbus_name(DictData *dd);
 
 void dict_show_msgbox(DictData *dd, gint type, const gchar *text, ...) G_GNUC_PRINTF (3, 4);
+
+gint open_socket(const gchar *host_name, const gchar *port);
 
 #endif
