@@ -28,6 +28,12 @@ libxfce4ui = dependency('libxfce4ui-2', version: dependency_versions['xfce4'])
 libxfce4util = dependency('libxfce4util-1.0', version: dependency_versions['xfce4'])
 libxfce4panel = dependency('libxfce4panel-2.0', version: dependency_versions['xfce4'])
 
+feature_cflags = []
+
+if get_option('llm')
+  feature_cflags += '-DENABLE_LLM=1'
+endif
+
 extra_cflags = []
 extra_cflags_check = [
   '-Wmissing-declarations',
@@ -118,6 +124,7 @@ extra_cflags += [
 
 add_project_arguments(cc.get_supported_arguments(extra_cflags_check), language: 'c')
 add_project_arguments(extra_cflags, language: 'c')
+add_project_arguments(feature_cflags, language: 'c')
 
 xfce_revision_h = vcs_tag(
   command: ['git', 'rev-parse', '--short', 'HEAD'],

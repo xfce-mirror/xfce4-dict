@@ -296,6 +296,10 @@ static void dict_plugin_drag_data_received(GtkWidget *widget, GdkDragContext *dr
 static void dict_plugin_construct(XfcePanelPlugin *plugin)
 {
 	GtkWidget *menu_item_dict, *menu_item_web, *menu_item_spell;
+#ifdef ENABLE_LLM
+	GtkWidget *menu_item_llm;
+#endif
+
 	GtkCssProvider *css_provider;
 	DictPanelData *dpd = g_new0(DictPanelData, 1);
 
@@ -377,6 +381,7 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	menu_item_dict = gtk_radio_menu_item_new_with_label(NULL, _("Dictionary Server"));
 	menu_item_web = gtk_radio_menu_item_new_with_label(gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(menu_item_dict)), _("Web Service"));
 	menu_item_spell = gtk_radio_menu_item_new_with_label(gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(menu_item_web)), _("Spell Checker"));
+
 	g_object_bind_property(dpd->dd->radio_button_dict, "sensitive", menu_item_dict, "sensitive", G_BINDING_SYNC_CREATE);
 	g_object_bind_property(dpd->dd->radio_button_dict, "active", menu_item_dict, "active", G_BINDING_SYNC_CREATE);
 	g_object_bind_property(dpd->dd->radio_button_web, "sensitive", menu_item_web, "sensitive", G_BINDING_SYNC_CREATE);
@@ -392,6 +397,15 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	gtk_widget_show_all(menu_item_dict);
 	gtk_widget_show_all(menu_item_web);
 	gtk_widget_show_all(menu_item_spell);
+
+#ifdef ENABLE_LLM
+	menu_item_llm = gtk_radio_menu_item_new_with_label(gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(menu_item_spell)), _("LLM"));
+	g_object_bind_property(dpd->dd->radio_button_llm, "sensitive", menu_item_llm, "sensitive", G_BINDING_SYNC_CREATE);
+	g_object_bind_property(dpd->dd->radio_button_llm, "active", menu_item_llm, "active", G_BINDING_SYNC_CREATE);
+	g_signal_connect(menu_item_llm, "toggled", G_CALLBACK(menu_item_clicked_cb), dpd->dd->radio_button_llm);
+	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(menu_item_llm));
+	gtk_widget_show_all(menu_item_llm);
+#endif
 
 	dict_acquire_dbus_name(dpd->dd);
 

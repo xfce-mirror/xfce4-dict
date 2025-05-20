@@ -1,0 +1,6 @@
+option(
+  'llm',
+  type: 'boolean',
+  value: 'true',
+  description: 'Support for Large Language Models',
+)

@@ -29,7 +29,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
-#include <math.h>
+#include <netdb.h>
+#include <netinet/tcp.h>
 #include <gtk/gtk.h>
 
 #include <libxfce4ui/libxfce4ui.h>
@@ -40,6 +41,10 @@
 #include "dictd.h"
 #include "gui.h"
 #include "dbus.h"
+
+#ifdef ENABLE_LLM
+#include "llm.h"
+#endif
 
 
 
@@ -210,6 +215,10 @@ dict_mode_t dict_set_search_mode_from_flags(dict_mode_t mode, gchar flags)
 		mode = DICTMODE_WEB;
 	else if (flags & DICT_FLAGS_MODE_SPELL)
 		mode = DICTMODE_SPELL;
+#ifdef ENABLE_LLM
+	else if (flags & DICT_FLAGS_MODE_LLM)
+		mode = DICTMODE_LLM;
+#endif
 
 	return mode;
 }
@@ -265,6 +274,13 @@ void dict_search_word(DictData *dd, const gchar *word)
 			dict_spell_start_query(dd, dd->searched_word, FALSE);
 			break;
 		}
+#ifdef ENABLE_LLM
+		case DICTMODE_LLM:
+		{
+			dict_llm_start_query(dd, dd->searched_word);
+			break;
+		}
+#endif
 		default:
 		{
 			dict_dictd_start_query(dd, dd->searched_word);
@@ -373,6 +389,12 @@ void dict_read_rc_file(DictData *dd)
 	const gchar *error_color_str = "#800000";
 	const gchar *success_color_str = "#107000";
 	const gchar *speedreader_font = "Sans 32";
+#ifdef ENABLE_LLM
+	const gchar *llm_server = LLM_DEFAULT_SERVER;
+	const gchar *llm_port = LLM_DEFAULT_PORT;
+	const gchar *llm_model = LLM_DEFAULT_MODEL;
+	const gchar *llm_prompt = LLM_DEFAULT_PROMPT;
+#endif
 
 	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
 	{
@@ -396,6 +418,13 @@ void dict_read_rc_file(DictData *dd)
 		wpm = xfce_rc_read_int_entry(rc, "speedreader_wpm", wpm);
 		grouping = xfce_rc_read_int_entry(rc, "speedreader_grouping", grouping);
 		mark_paragraphs = xfce_rc_read_bool_entry(rc, "speedreader_mark_paragraphs", mark_paragraphs);
+
+#ifdef ENABLE_LLM
+		llm_server = xfce_rc_read_entry(rc, "llm_server", llm_server);
+		llm_port = xfce_rc_read_entry(rc, "llm_port", llm_port);
+		llm_model = xfce_rc_read_entry(rc, "llm_model", llm_model);
+		llm_prompt = xfce_rc_read_entry(rc, "llm_prompt", llm_prompt);
+#endif
 
 		geo = xfce_rc_read_entry(rc, "geometry", geo);
 		parse_geometry(dd, geo);
@@ -445,6 +474,13 @@ void dict_read_rc_file(DictData *dd)
 	dd->speedreader_grouping = grouping;
 	dd->speedreader_font = g_strdup(speedreader_font);
 
+#ifdef ENABLE_LLM
+	dd->llm_server = g_strdup(llm_server);
+	dd->llm_port = g_strdup(llm_port);
+	dd->llm_model = g_strdup(llm_model);
+	dd->llm_prompt = g_strdup(llm_prompt);
+#endif
+
 	xfce_rc_close(rc);
 }
 
@@ -488,6 +524,13 @@ void dict_write_rc_file(DictData *dd)
 		xfce_rc_write_int_entry(rc, "speedreader_grouping", dd->speedreader_grouping);
 		xfce_rc_write_bool_entry(rc, "speedreader_mark_paragraphs", dd->speedreader_mark_paragraphs);
 
+#ifdef ENABLE_LLM
+		xfce_rc_write_entry(rc, "llm_server", dd->llm_server);
+		xfce_rc_write_entry(rc, "llm_port", dd->llm_port);
+		xfce_rc_write_entry(rc, "llm_model", dd->llm_model);
+		xfce_rc_write_entry(rc, "llm_prompt", dd->llm_prompt);
+#endif
+
 		g_free(link_color_str);
 		g_free(phon_color_str);
 		g_free(error_color_str);
@@ -510,9 +553,20 @@ void dict_free_data(DictData *dd)
 	g_free(dd->searched_word);
 	g_free(dd->dictionary);
 	g_free(dd->server);
+	g_free(dd->port);
 	g_free(dd->web_url);
 	g_free(dd->spell_bin);
+	g_free(dd->spell_dictionary);
 	g_free(dd->speedreader_font);
+
+#ifdef ENABLE_LLM
+	g_free(dd->llm_server);
+	g_free(dd->llm_port);
+	g_free(dd->llm_model);
+	g_free(dd->llm_prompt);
+
+	dict_llm_invalidate_dict_data();
+#endif
 
 	g_free(dd->color_link);
 	g_free(dd->color_phonetic);
@@ -630,4 +684,36 @@ void dict_acquire_dbus_name(DictData *dd)
       NULL,
       dd,
       NULL);
+}
+
+gint open_socket(const gchar *host_name, const gchar *port)
+{
+	struct addrinfo hints, *res, *res0;
+	gint fd = -1;
+	gint opt = 1;
+
+	memset(&hints, 0, sizeof (hints));
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
+
+	if (getaddrinfo(host_name, port, &hints, &res0))
+		return (-1);
+
+	for (res = res0; res; res = res->ai_next) {
+		fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+		if (fd < 0)
+			continue;
+
+		setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (gchar *) &opt, sizeof (opt));
+		if (connect(fd, res->ai_addr, res->ai_addrlen) != 0) {
+			close(fd);
+			fd = -1;
+			continue;
+		}
+
+		break;
+	}
+
+	freeaddrinfo(res0);
+	return (fd);
 }
