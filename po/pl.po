@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-04-07 00:48+0200\n"
+"POT-Creation-Date: 2025-05-21 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: Marek Adamski, 2023-2025\n"
 "Language-Team: Polish (http://app.transifex.com/xfce/xfce-apps/language/pl/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
-#: lib/gui.c:762 lib/prefs.c:266
+#: lib/gui.c:785 lib/prefs.c:300
 msgid "Dictionary"
 msgstr "Słownik"
 
@@ -34,65 +34,73 @@ msgstr "Słownik"
 msgid "A plugin to query different dictionaries."
 msgstr "Umożliwia wyszukiwanie wyrażeń w różnych słownikach"
 
-#: panel-plugin/xfce4-dict-plugin.c:238 panel-plugin/xfce4-dict-plugin.c:398
-#: src/xfce4-dict.c:196 lib/spell.c:242 lib/gui.c:541
+#: panel-plugin/xfce4-dict-plugin.c:238 panel-plugin/xfce4-dict-plugin.c:412
+#: src/xfce4-dict.c:200 lib/spell.c:242 lib/gui.c:544
 msgid "Ready"
 msgstr "Gotowy"
 
-#: panel-plugin/xfce4-dict-plugin.c:311
+#: panel-plugin/xfce4-dict-plugin.c:315
 msgid "Look up a word"
 msgstr "Wyszukuje wyrażenie"
 
-#: panel-plugin/xfce4-dict-plugin.c:350 lib/gui.c:793
+#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:816
 msgid "Search term"
 msgstr "Wyszukiwanie..."
 
 #. sub menus to toggle search mode
-#: panel-plugin/xfce4-dict-plugin.c:377 lib/prefs.c:306 lib/prefs.c:453
+#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:339 lib/prefs.c:485
 msgid "Dictionary Server"
 msgstr "Serwer słownika"
 
-#: panel-plugin/xfce4-dict-plugin.c:378 lib/prefs.c:314 lib/prefs.c:561
+#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:347 lib/prefs.c:592
 msgid "Web Service"
 msgstr "Usługa internetowa"
 
-#: panel-plugin/xfce4-dict-plugin.c:379 lib/prefs.c:322 lib/prefs.c:608
+#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:355 lib/prefs.c:638
 msgid "Spell Checker"
 msgstr "Sprawdzanie pisowni"
 
-#: src/xfce4-dict.c:52
+#: panel-plugin/xfce4-dict-plugin.c:402 lib/prefs.c:731
+msgid "LLM"
+msgstr "Duży model językowy"
+
+#: src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "Wyszukuje wprowadzone wyrażenie przy użyciu serwera Dict (RFC 2229)"
 
-#: src/xfce4-dict.c:53
+#: src/xfce4-dict.c:54
 msgid "Search the given text using a web-based search engine"
 msgstr "Wyszukuje wprowadzone wyrażenie przy użyciu usługi internetowej"
 
-#: src/xfce4-dict.c:54
+#: src/xfce4-dict.c:55
 msgid "Check the given text with a spell checker"
 msgstr "Sprawdza poprawność pisowni wprowadzonego wyrażenia"
 
-#: src/xfce4-dict.c:55
+#: src/xfce4-dict.c:56
+msgid "Generate the definition of the given text with a large language model"
+msgstr "Wygeneruj definicję danego tekstu za pomocą dużego modelu językowego"
+
+#: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "Uruchamia program, nawet jeśli aplet panelu jest wczytany"
 
-#: src/xfce4-dict.c:56
+#: src/xfce4-dict.c:58
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "Używa zawartości schowka jako poszukiwanego ciągu"
 
-#: src/xfce4-dict.c:57
+#: src/xfce4-dict.c:59
 msgid "Be verbose"
 msgstr "Wypisuje szczegółowe komunikaty"
 
-#: src/xfce4-dict.c:58
+#: src/xfce4-dict.c:60
 msgid "Show version information"
 msgstr "Wyświetla informacje o wersji i kończy"
 
-#: src/xfce4-dict.c:129
+#: src/xfce4-dict.c:133
 msgid "[TEXT]"
 msgstr "[TEKST]"
 
-#: src/xfce4-dict.c:145
+#: src/xfce4-dict.c:149
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Proszę zgłaszać błędy na adres <%s>."
@@ -257,69 +265,69 @@ msgstr "Czyści zawartość pola tekstowego"
 msgid "_Start"
 msgstr "_Rozpocznij"
 
-#: lib/speedreader.c:699 lib/dictd.c:766 lib/gui.c:710 lib/gui.c:819
-#: lib/prefs.c:268
+#: lib/speedreader.c:699 lib/dictd.c:726 lib/gui.c:733 lib/gui.c:842
+#: lib/prefs.c:302
 msgid "_Close"
 msgstr "_Zamknij"
 
-#: lib/common.c:190
+#: lib/common.c:195
 msgid "The search URL is empty. Please check your preferences."
 msgstr "Adres URL usługi internetowej jest pusty. Proszę sprawdzić preferencje programu."
 
-#: lib/common.c:196
+#: lib/common.c:201
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "Nie można otworzyć przeglądarki internetowej. Proszę sprawdzić preferencje programu."
 
-#: lib/common.c:236
+#: lib/common.c:245
 msgid "Invalid non-UTF8 input"
 msgstr "Nieprawidłowe dane wejściowe o kodowaniu innym niż UTF8"
 
-#: lib/common.c:572
+#: lib/common.c:626
 msgid "Error"
 msgstr "Błąd"
 
-#: lib/common.c:575
+#: lib/common.c:629
 msgid "warning"
 msgstr "ostrzeżenie"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: lib/dictd.c:381
+#: lib/dictd.c:341
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "Wyszukaj wyrażenie „%s” przy użyciu usługi „%s”"
 
-#: lib/dictd.c:388
+#: lib/dictd.c:348
 msgid "Web Search:"
 msgstr "Wyszukiwanie w Internecie:"
 
-#: lib/dictd.c:411 lib/dictd.c:719 lib/dictd.c:728 lib/dictd.c:817
-#: lib/dictd.c:826
+#: lib/dictd.c:371 lib/dictd.c:679 lib/dictd.c:688 lib/dictd.c:777
+#: lib/dictd.c:786
 msgid "Could not connect to server."
 msgstr "Nie można połączyć z serwerem."
 
-#: lib/dictd.c:417
+#: lib/dictd.c:377
 msgid "The server is not ready."
 msgstr "Serwer nie jest gotowy."
 
-#: lib/dictd.c:424
+#: lib/dictd.c:384
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "Nieprawidłowo skonfigurowany słownik. Proszę sprawdzić preferencje programu."
 
-#: lib/dictd.c:432 lib/dictd.c:472 lib/dictd.c:851
+#: lib/dictd.c:392 lib/dictd.c:432 lib/dictd.c:811
 msgid "Unknown error while querying the server."
 msgstr "Wystąpił nieznany błąd podczas odpytywania serwera."
 
-#: lib/dictd.c:447
+#: lib/dictd.c:407
 msgid "Dictionary Results:"
 msgstr "Wyniki ze słownika:"
 
-#: lib/dictd.c:450
+#: lib/dictd.c:410
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "Nie odnaleziono definicji wyrażenia „%s”."
 
-#: lib/dictd.c:477
+#: lib/dictd.c:437
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
@@ -328,21 +336,21 @@ msgstr[1] "Odnaleziono %d definicje"
 msgstr[2] "Odnaleziono %d definicji"
 msgstr[3] "Odnaleziono %d definicji"
 
-#: lib/dictd.c:690
+#: lib/dictd.c:650
 #, c-format
 msgid "Querying %s..."
 msgstr "Odpytywanie serwera %s..."
 
-#: lib/dictd.c:749
+#: lib/dictd.c:709
 msgid "An error occurred while querying server information."
 msgstr "Wystąpił błąd podczas odpytywania serwera."
 
-#: lib/dictd.c:762
+#: lib/dictd.c:722
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "Informacje serwera dla wyrażenia „%s”"
 
-#: lib/dictd.c:846
+#: lib/dictd.c:806
 msgid "The server doesn't offer any databases."
 msgstr "Serwer nie oferuje żadnych baz danych."
 
@@ -354,204 +362,231 @@ msgstr "Skopiuj odnośnik"
 msgid "Search"
 msgstr "Wyszukiwanie"
 
-#: lib/gui.c:592
+#: lib/gui.c:595
 msgid "F_ind"
 msgstr "_Znajdź"
 
 #. File Menu
-#: lib/gui.c:674
+#: lib/gui.c:697
 msgid "_File"
 msgstr "_Plik"
 
-#: lib/gui.c:681 lib/gui.c:807
+#: lib/gui.c:704 lib/gui.c:830
 msgid "Speed _Reader"
 msgstr "Szybkie _czytanie"
 
-#: lib/gui.c:696
+#: lib/gui.c:719
 msgid "_Preferences"
 msgstr "P_referencje"
 
-#: lib/gui.c:710 lib/gui.c:819
+#: lib/gui.c:733 lib/gui.c:842
 msgid "_Quit"
 msgstr "Za_kończ"
 
 #. Help Menu
-#: lib/gui.c:720
+#: lib/gui.c:743
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: lib/gui.c:727
+#: lib/gui.c:750
 msgid "About"
 msgstr "_O programie"
 
-#: lib/gui.c:831
+#: lib/gui.c:854
 msgid "Search with:"
 msgstr "Metoda wyszukiwania:"
 
-#: lib/gui.c:835
+#: lib/gui.c:858
 msgid "_Dictionary Server"
 msgstr "Serwer _słownika"
 
-#: lib/gui.c:842
+#: lib/gui.c:865
 msgid "_Web Service"
 msgstr "Usługa _internetowa"
 
-#: lib/gui.c:850
+#: lib/gui.c:873
 msgid "_Spell Checker"
 msgstr "_Sprawdzanie pisowni"
 
-#: lib/gui.c:976
+#: lib/gui.c:881
+msgid "_LLM"
+msgstr "_Duży model językowy"
+
+#: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
 msgstr "Umożliwia wyszukiwanie wyrażeń w różnych słownikach"
 
-#: lib/gui.c:980
+#: lib/gui.c:1026
 msgid "translator-credits"
 msgstr "Piotr Maliński <riklaunim@gmail.com>, 2007.\nPiotr Sokół <psokol@jabster.pl>, 2009, 2013."
 
-#: lib/gui.c:983
+#: lib/gui.c:1029
 msgid "Xfce4 Dictionary"
 msgstr "Słownik Xfce4"
 
-#: lib/prefs.c:52
+#: lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org ‒ niemiecki <-> angielski"
 
-#: lib/prefs.c:53
+#: lib/prefs.c:54
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org ‒ niemiecki <-> francuski"
 
-#: lib/prefs.c:54
+#: lib/prefs.c:55
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org ‒ niemiecki <-> hiszpański"
 
-#: lib/prefs.c:55
+#: lib/prefs.c:56
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org ‒ niemiecki <-> włoski"
 
-#: lib/prefs.c:56
+#: lib/prefs.c:57
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org ‒ niemiecki <-> chiński"
 
-#: lib/prefs.c:57
+#: lib/prefs.c:58
 msgid "dict.cc - Dictionary"
 msgstr "Słownik dict.cc"
 
-#: lib/prefs.c:58
+#: lib/prefs.c:59
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: lib/prefs.c:59
+#: lib/prefs.c:60
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: lib/prefs.c:60
+#: lib/prefs.c:61
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "Wikipedia, wolna encyklopedia (EN)"
 
-#: lib/prefs.c:61
+#: lib/prefs.c:62
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "Wikisłownik, wolny słownik (EN)"
 
-#: lib/prefs.c:62
+#: lib/prefs.c:63
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Słownik Merriam-Webster"
 
-#: lib/prefs.c:63
+#: lib/prefs.c:64
 msgid "Clear"
 msgstr "Wyczyść"
 
-#: lib/prefs.c:98
+#: lib/prefs.c:103
 msgid "You have chosen an invalid dictionary."
 msgstr "Wybrano nieprawidłowy słownik."
 
-#: lib/prefs.c:299
+#: lib/prefs.c:332
 msgid "General"
 msgstr "Ogólne"
 
-#: lib/prefs.c:301
+#: lib/prefs.c:334
 msgid "<b>Default search method:</b>"
 msgstr "<b>Domyślna metoda wyszukiwania</b>"
 
-#: lib/prefs.c:330
+#: lib/prefs.c:363
 msgid "Last used method"
 msgstr "Ostatnio używana"
 
-#: lib/prefs.c:338
+#: lib/prefs.c:371
 msgid "<b>Colors:</b>"
 msgstr "<b>Kolory</b>"
 
-#: lib/prefs.c:344
+#: lib/prefs.c:377
 msgid "Links:"
 msgstr "Odnośniki:"
 
-#: lib/prefs.c:345
+#: lib/prefs.c:378
 msgid "Phonetics:"
 msgstr "Wymowa:"
 
-#: lib/prefs.c:346
+#: lib/prefs.c:379
 msgid "Spelled correctly:"
 msgstr "Prawidłowa pisownia:"
 
-#: lib/prefs.c:347
+#: lib/prefs.c:380
 msgid "Spelled incorrectly:"
 msgstr "Nieprawidłowa pisownia:"
 
-#: lib/prefs.c:398
+#: lib/prefs.c:431
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>Pole tekstowe panelu</b>"
 
-#: lib/prefs.c:404
+#: lib/prefs.c:437
 msgid "Show text field in the panel"
 msgstr "Wyświetlanie"
 
 #. panel entry size
-#: lib/prefs.c:411
+#: lib/prefs.c:444
 msgid "Text field size:"
 msgstr "Rozmiar:"
 
 #. server address
-#: lib/prefs.c:456
+#: lib/prefs.c:488 lib/prefs.c:743
 msgid "Server:"
 msgstr "Serwer:"
 
 #. server port
-#: lib/prefs.c:466
+#: lib/prefs.c:498 lib/prefs.c:753
 msgid "Server Port:"
 msgstr "Port serwera:"
 
 #. dictionary
-#: lib/prefs.c:476 lib/prefs.c:634
+#: lib/prefs.c:508 lib/prefs.c:664
 msgid "Dictionary:"
 msgstr "Słownik:"
 
-#: lib/prefs.c:479
+#: lib/prefs.c:511
 msgid "* (use all)"
 msgstr "* (wszystkie)"
 
-#: lib/prefs.c:481
+#: lib/prefs.c:513
 msgid "! (use all, stop after first match)"
 msgstr "! (wszystkie, przerwanie po pierwszym dopasowaniu)"
 
-#: lib/prefs.c:563
+#: lib/prefs.c:594
 msgid "<b>Web search URL:</b>"
 msgstr "<b>Adres URL wyszukiwania w sieci</b>"
 
-#: lib/prefs.c:568
+#: lib/prefs.c:599
 msgid "URL:"
 msgstr "Adres URL:"
 
-#: lib/prefs.c:588
+#: lib/prefs.c:619
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "Proszę wprowadzić adres URL strony oferującej usługę tłumaczenia lub słownika. Jako zmienną przesyłającą wyszukiwane słowo należy użyć wyrażenia „{word}”."
 
-#: lib/prefs.c:610
+#: lib/prefs.c:640
 msgid "Spell Check Program:"
 msgstr "Polecenie:"
 
-#: lib/prefs.c:627
+#: lib/prefs.c:657
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr "<i>Programem sprawdzającym pisownię może być „enchant-2”, „aspell”, „ispell” lub dowolny inny program do sprawdzania pisowni, który jest kompatybilny z poleceniem ispell.\nIkona wskazuje, czy wprowadzone polecenie istnieje.</i>"
+
+#: lib/prefs.c:734
+#, c-format
+msgid ""
+"This works with Ollama or any service that implements its HTTP API.\n"
+"HTTPS is not supported.\n"
+"Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
+"The prompt must include a %s placeholder where the search term will be inserted."
+msgstr "Działa to z Ollamą lub dowolną usługą, która implementuje jego interfejs API HTTP.\nHTTPS nie jest obsługiwany.\nUsługi takie jak ChatGPT lub Gemini nie są obsługiwane i nie ma planów dodania wsparcia.\nPrompt musi zawierać symbol zastępczy %s, w którym zostanie wstawiony wyszukiwany termin."
+
+#. model
+#: lib/prefs.c:763
+msgid "Model:"
+msgstr "Model:"
+
+#. prompt
+#: lib/prefs.c:773
+msgid "Prompt:"
+msgstr "Prompt:"
+
+#: lib/prefs.c:792
+msgid "Reset"
+msgstr "Resetuj"
