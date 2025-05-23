@@ -52,7 +52,7 @@ msgstr "Verificador ortográfico"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:402 ../lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: ../src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -68,7 +68,7 @@ msgstr "Verificar o texto indicado com um verificador ortográfico"
 
 #: ../src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Gerar a definição do texto dado com um modelo de linguagem de grande dimensão"
 
 #: ../src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -164,7 +164,7 @@ msgstr "Concluído"
 
 #: ../lib/speedreader.c:261
 msgid "_Back"
-msgstr "_Recuar"
+msgstr "_Voltar"
 
 #: ../lib/speedreader.c:269
 msgid "Speed Reader"
@@ -176,7 +176,7 @@ msgstr "Tem que introduzir um texto."
 
 #: ../lib/speedreader.c:527
 msgid "Choose a file to load"
-msgstr "Escolha o ficheiro a carregar"
+msgstr "Escolha um ficheiro a carregar"
 
 #: ../lib/speedreader.c:530
 msgid "_Cancel"
@@ -393,7 +393,7 @@ msgstr "_Verificador ortográfico"
 
 #: ../lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: ../lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -558,17 +558,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Isto funciona com o Ollama ou qualquer serviço que implemente a sua API HTTP.\nHTTPS não é suportado.\nServiços como ChatGPT ou Gemini não são suportados, e não há planos para adicionar suporte.\nO \"prompt\" deve incluir um espaço reservado %s onde o termo de pesquisa será inserido."
 
 #. model
 #: ../lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Modelo:"
 
 #. prompt
 #: ../lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Prompt:"
 
 #: ../lib/prefs.c:792
 msgid "Reset"
