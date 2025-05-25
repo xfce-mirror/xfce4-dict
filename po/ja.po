@@ -52,7 +52,7 @@ msgstr "スペルチェッカー"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:402 ../lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: ../src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -68,7 +68,7 @@ msgstr "指定されたテキストをスペルチェッカーでチェックす
 
 #: ../src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "大規模言語モデルを使用して、与えられたテキストの定義を生成する"
 
 #: ../src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -387,7 +387,7 @@ msgstr "スペルチェッカー(_S)"
 
 #: ../lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: ../lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -552,17 +552,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "これは Ollama か Ollama の HTTP API を実装する任意のサービスで機能します。\nHTTPS はサポートされていません。\nChatGPT や Gemini などのサービスはサポートされておらず、サポートを追加する予定もありません。\nプロンプトには検索語として挿入される %s プレースホルダーを含める必要があります。"
 
 #. model
 #: ../lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "モデル:"
 
 #. prompt
 #: ../lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "プロンプト:"
 
 #: ../lib/prefs.c:792
 msgid "Reset"
