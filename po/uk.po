@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2007-2008
+# Gordon Freeman, 2025
 # Olexandr Nesterenko <nolexndr@gmail.com>, 2020
 # Taras Panchenko <top39@ukr.net>, 2021
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2015-2017
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-21 12:49+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Taras Panchenko <top39@ukr.net>, 2021\n"
+"Last-Translator: Gordon Freeman, 2025\n"
 "Language-Team: Ukrainian (http://app.transifex.com/xfce/xfce-apps/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +54,7 @@ msgstr "Перевірка орфографії"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:402 ../lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: ../src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -69,7 +70,7 @@ msgstr "Перевірити даний текст на орфографію"
 
 #: ../src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Згенерувати визначення даного тексту за допомогою великої мовної моделі"
 
 #: ../src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -397,7 +398,7 @@ msgstr "Перев_ірка орфографії"
 
 #: ../lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: ../lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -553,7 +554,7 @@ msgstr "Програма перевірки орфографії:"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>Програма перевірки правопису може бути «enchant-2», «aspell», «ispell» або будь-яка інша подібна програма, сумісна з командою ispell.\nЗначок показує, чи існує введена команда.</i>"
 
 #: ../lib/prefs.c:734
 #, c-format
@@ -562,17 +563,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Працює з Ollama або будь-яким сервісом, який реалізує його HTTP API.\nHTTPS не підтримується.\nТакі сервіси, як ChatGPT або Gemini не підтримуються, і їх підримка не запланована.\nПідказка повинна містити %s заповнювач, в який буде вставлено пошуковий термін."
 
 #. model
 #: ../lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Модель:"
 
 #. prompt
 #: ../lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Підказка:"
 
 #: ../lib/prefs.c:792
 msgid "Reset"
