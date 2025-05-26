@@ -389,7 +389,7 @@ msgstr "拼写检查器(_S)"
 
 #: ../lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "LLM(_L)"
 
 #: ../lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -554,17 +554,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "这适用于 Ollama 或任何实现其 HTTP API 的服务。 \n不支持 HTTPS。 \n不支持 ChatGPT 或 Gemini 等服务，也没有增加支持的计划。 \n提示必须包含一个%s占位符，用于插入搜索词。"
 
 #. model
 #: ../lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "模型:"
 
 #. prompt
 #: ../lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "提示:"
 
 #: ../lib/prefs.c:792
 msgid "Reset"
