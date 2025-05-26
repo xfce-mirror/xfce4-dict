@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Саша Петровић <salepetronije@gmail.com>, 2012-2013,2015,2017,2019
+# Саша Петровић <salepetronije@gmail.com>, 2012-2013,2015,2017,2019,2025
 # Саша Петровић <salepetronije@gmail.com>, 2017,2019
 msgid ""
 msgstr ""
@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-21 12:49+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Саша Петровић <salepetronije@gmail.com>, 2012-2013,2015,2017,2019\n"
+"Last-Translator: Саша Петровић <salepetronije@gmail.com>, 2012-2013,2015,2017,2019,2025\n"
 "Language-Team: Serbian (http://app.transifex.com/xfce/xfce-apps/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,7 +51,7 @@ msgstr "Правописар"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:402 ../lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "ШЈО"
 
 #: ../src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -67,7 +67,7 @@ msgstr "Провери дати напис правописарем"
 
 #: ../src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Одређује опис датог писма помоћу широког језичког обрасца"
 
 #: ../src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -392,7 +392,7 @@ msgstr "_Правописар"
 
 #: ../lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_ШЈО"
 
 #: ../lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -557,17 +557,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Ради са Олама или било којег служитеља који примењује њен ХТТП АПИ.\nХТТПС није подржан.\nСлужитељи попут ЧатГПТ-а или Геминија нису подржани, и нема планова за додавање подршке.\nОвај упит мора обухватити поље %sгде ће се уметати појам упита."
 
 #. model
 #: ../lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Образац:"
 
 #. prompt
 #: ../lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Упит:"
 
 #: ../lib/prefs.c:792
 msgid "Reset"
