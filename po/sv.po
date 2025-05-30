@@ -54,7 +54,7 @@ msgstr "Stavningskontroll"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:402 ../lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: ../src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -70,7 +70,7 @@ msgstr "Kontrollera angiven text med hjälp av stavningskontroll"
 
 #: ../src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Generera definitionen av den givna texten med en stor språkmodell"
 
 #: ../src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -392,7 +392,7 @@ msgstr "_Stavningskontroll"
 
 #: ../lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: ../lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -557,17 +557,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Detta fungerar med Ollama eller någon tjänst som implementerar dess HTTP API. HTTPS stöds inte. Tjänster som ChatGPT eller Gemini stöds inte, och det finns inga planer på att lägga till stöd. Prompten måste innehålla en %s platshållare där söktermen kommer att infogas."
 
 #. model
 #: ../lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Modell:"
 
 #. prompt
 #: ../lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Prompt:"
 
 #: ../lib/prefs.c:792
 msgid "Reset"
