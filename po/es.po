@@ -13,7 +13,7 @@
 # e49097353bae6e06d169bea93a448e3e, 2017
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
-# Ignacio Poggi <ignaciop.3@gmail.com>, 2020
+# Ignacio Poggi <ignaciop.3@gmail.com>, 2020,2025
 # 629cf3e396111bb8c5fb6664e2dbc91d, 2016
 # Pablo Lezaeta Reyes <prflr88@gmail.com>, 2017
 # Pablo Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
@@ -26,7 +26,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-21 12:49+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2021\n"
+"Last-Translator: Ignacio Poggi <ignaciop.3@gmail.com>, 2020,2025\n"
 "Language-Team: Spanish (http://app.transifex.com/xfce/xfce-apps/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,7 +66,7 @@ msgstr "Revisión ortográfica"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:402 ../lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: ../src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -82,7 +82,7 @@ msgstr "Revisar el texto dado con un corrector ortográfico"
 
 #: ../src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Generar la definición del texto dado con un modelo de lenguaje grande"
 
 #: ../src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -407,7 +407,7 @@ msgstr "Revisión ort_ográfica"
 
 #: ../lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: ../lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -563,7 +563,7 @@ msgstr "Programa de corrección ortográfica:"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>El corrector ortográfico puede ser 'enchant-2', 'aspell', 'ispell' o cualquier otro compatible con el comando 'ispell'.\nEl icono muestra si el comando introducido existe.</i>"
 
 #: ../lib/prefs.c:734
 #, c-format
@@ -572,17 +572,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Esto funciona con Ollama o cualquier servicio que implemente su API HTTP.\nNo se admite HTTPS.\nServicios como ChatGPT o Gemini no son compatibles y no hay planes para añadirlos.\nLa solicitud debe incluir un %s marcador de posición donde se insertará el término de búsqueda."
 
 #. model
 #: ../lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Modelo:"
 
 #. prompt
 #: ../lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Línea:"
 
 #: ../lib/prefs.c:792
 msgid "Reset"
