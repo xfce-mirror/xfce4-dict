@@ -159,7 +159,7 @@ msgstr "Executant"
 
 #: ../lib/speedreader.c:260
 msgid "Finished"
-msgstr "Finalitzat"
+msgstr "Acabat"
 
 #: ../lib/speedreader.c:261
 msgid "_Back"
