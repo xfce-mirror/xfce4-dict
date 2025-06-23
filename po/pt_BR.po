@@ -14,6 +14,7 @@
 # Lucas Wilm <lucaswilm@gmail.com>, 2021
 # Michael Martins, 2020
 # Michael Martins, 2020
+# Michael Martins, 2025
 # Og Maciel <ogmaciel@gnome.org>, 2008
 # Pablo Lerina <pabloalr@gmail.com>, 2007
 # The Cat, 2025
@@ -24,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-21 12:49+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: The Cat, 2025\n"
+"Last-Translator: Michael Martins, 2025\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/xfce/xfce-apps/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -351,7 +352,7 @@ msgstr "Copiar link"
 
 #: ../lib/gui.c:374
 msgid "Search"
-msgstr "Procurar"
+msgstr "Pesquisar"
 
 #: ../lib/gui.c:595
 msgid "F_ind"
@@ -413,7 +414,7 @@ msgstr "Um programa para consultar dicionários diferentes."
 
 #: ../lib/gui.c:1026
 msgid "translator-credits"
-msgstr "Bruno Jesus <00cpxxx@gmail.com>\nPablo Lerina <pabloalr@gmail.com>\nVladimir Melo <vladimirmelo@foresightlinux.org>\nOg Maciel <ogmaciel@gnome.org>\nFábio Nogueira <deb-user-ba@ubuntu.com>\nMichael Martins <michaelfm21@gmail.com>"
+msgstr "Bruno Jesus <00cpxxx@gmail.com>\nPablo Lerina <pabloalr@gmail.com>\nVladimir Melo <vladimirmelo@foresightlinux.org>\nOg Maciel <ogmaciel@gnome.org>\nFábio Nogueira <deb-user-ba@ubuntu.com>\nMichael Martins <michael.xgrind@aol.com>"
 
 #: ../lib/gui.c:1029
 msgid "Xfce4 Dictionary"
@@ -469,7 +470,7 @@ msgstr "Limpar"
 
 #: ../lib/prefs.c:103
 msgid "You have chosen an invalid dictionary."
-msgstr "Você selecionou um dicionário inválido."
+msgstr "Você escolheu um dicionário inválido."
 
 #: ../lib/prefs.c:332
 msgid "General"
