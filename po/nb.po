@@ -6,6 +6,7 @@
 # Allan Nordhøy <epost@anotheragency.no>, 2014
 # Allan Nordhøy <epost@anotheragency.no>, 2016-2017
 # Harald H. <haarektrans@gmail.com>, 2014-2015
+# heskjestad, 2025
 # heskjestad, 2019-2021
 # Terje Uriansrud <ter@operamail.com>, 2008
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-21 12:49+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: heskjestad, 2019-2021\n"
+"Last-Translator: heskjestad, 2025\n"
 "Language-Team: Norwegian Bokmål (http://app.transifex.com/xfce/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,7 +55,7 @@ msgstr "Stavekontroll"
 
 #: ../panel-plugin/xfce4-dict-plugin.c:402 ../lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: ../src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -70,7 +71,7 @@ msgstr "Kontroller denne teksten med ordliste"
 
 #: ../src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Opprett definisjonen til den gitte teksten med en språkmodell (LLM)"
 
 #: ../src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -392,7 +393,7 @@ msgstr "_Stavekontroll"
 
 #: ../lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: ../lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -548,7 +549,7 @@ msgstr "Stavekontrollprogram:"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>Stavekontrollprogram kan være «enchant-2», «aspell», «ispell» eller andre stavekontrollprogrammer som er kompatible med ispells kommandosyntaks.\nIkonet viser om angitt kommando eksisterer.</i>"
 
 #: ../lib/prefs.c:734
 #, c-format
@@ -557,17 +558,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Dette fungerer med Ollama eller en annen tjeneste som implementerer dets HTTP API.\nHTTPS støttes ikke.\nTjenester slik som ChatGPT eller Gemini støttes ikke, og det er ingen planer om støtte dem.\nLedeteksten må ha med en %s-plassholder der søkeuttrykket vil settes inn."
 
 #. model
 #: ../lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Modell:"
 
 #. prompt
 #: ../lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Ledetekst:"
 
 #: ../lib/prefs.c:792
 msgid "Reset"
