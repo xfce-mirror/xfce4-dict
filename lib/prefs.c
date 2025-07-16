@@ -19,10 +19,6 @@
 /* Preferences dialog and helper functions. */
 
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <string.h>
 #include <gtk/gtk.h>
 #include <libxfce4ui/libxfce4ui.h>

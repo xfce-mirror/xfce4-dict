@@ -20,10 +20,6 @@
  * binary with a given search term and reads it output. */
 
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
