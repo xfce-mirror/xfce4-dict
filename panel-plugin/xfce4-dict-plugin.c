@@ -185,7 +185,6 @@ static void dict_plugin_properties_dialog_response(GtkWidget *dlg, gint response
 	dict_plugin_panel_save_settings(dpd);
 
 	g_object_set_data(G_OBJECT(dpd->plugin), "dialog", NULL);
-	xfce_panel_plugin_unblock_menu(dpd->plugin);
 }
 
 
@@ -194,7 +193,11 @@ static void dict_plugin_properties_dialog(GtkWidget *widget, DictPanelData *dpd)
 	GtkWidget *dlg;
 	XfcePanelPlugin *plugin = dpd->plugin;
 
-	xfce_panel_plugin_block_menu(plugin);
+	if ((dlg = g_object_get_data(G_OBJECT(plugin), "dialog")) != NULL)
+	{
+		gtk_window_present(GTK_WINDOW(dlg));
+		return;
+	}
 
 	dlg = dict_prefs_dialog_show(gtk_widget_get_toplevel(GTK_WIDGET(plugin)), dpd->dd);
 
