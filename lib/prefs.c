@@ -298,7 +298,6 @@ GtkWidget *dict_prefs_dialog_show(GtkWidget *parent, DictData *dd)
 		"window-close", _("_Close"), GTK_RESPONSE_OK,
 		NULL);
 
-	gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
 	gtk_window_set_icon_name(GTK_WINDOW(dialog), "xfce4-dict");
 	gtk_window_set_default_size (GTK_WINDOW(dialog), 500, 400);
