@@ -21,10 +21,6 @@
 /* TODO: This should be more separated from GUI code, sometime. */
 
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <gtk/gtk.h>
 #include <libxfce4ui/libxfce4ui.h>
 
