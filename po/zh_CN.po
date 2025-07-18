@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-apps.xfce4-dict package.
 # 
 # Translators:
 # Chipong Luo <chipong.luo@yahoo.com>, 2011-2013
@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-21 12:49+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:03+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2022,2025\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/xfce/xfce-apps/language/zh_CN/)\n"
@@ -22,532 +22,541 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:238
-#: ../panel-plugin/xfce4-dict-plugin.c:412 ../src/xfce4-dict.c:200
-#: ../lib/spell.c:242 ../lib/gui.c:544
+#: panel-plugin/xfce4-dict-plugin.desktop.in:5 src/xfce4-dict.desktop.in:5
+#: lib/gui.c:785 lib/prefs.c:300
+msgid "Dictionary"
+msgstr "词典"
+
+#: panel-plugin/xfce4-dict-plugin.desktop.in:6
+msgid "A plugin to query different dictionaries."
+msgstr "查询不同词典的插件。"
+
+#: panel-plugin/xfce4-dict-plugin.c:238 panel-plugin/xfce4-dict-plugin.c:412
+#: src/xfce4-dict.c:200 lib/spell.c:242 lib/gui.c:544
 msgid "Ready"
 msgstr "就绪"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:315
+#: panel-plugin/xfce4-dict-plugin.c:315
 msgid "Look up a word"
 msgstr "查找单词"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:354 ../lib/gui.c:816
+#: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:816
 msgid "Search term"
 msgstr "搜索短语"
 
 #. sub menus to toggle search mode
-#: ../panel-plugin/xfce4-dict-plugin.c:381 ../lib/prefs.c:339
-#: ../lib/prefs.c:485
+#: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:339 lib/prefs.c:485
 msgid "Dictionary Server"
 msgstr "词典服务器"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:382 ../lib/prefs.c:347
-#: ../lib/prefs.c:592
+#: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:347 lib/prefs.c:592
 msgid "Web Service"
 msgstr "网络服务"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:383 ../lib/prefs.c:355
-#: ../lib/prefs.c:638
+#: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:355 lib/prefs.c:638
 msgid "Spell Checker"
 msgstr "拼写检查器"
 
-#: ../panel-plugin/xfce4-dict-plugin.c:402 ../lib/prefs.c:731
+#: panel-plugin/xfce4-dict-plugin.c:402 lib/prefs.c:731
 msgid "LLM"
 msgstr "LLM"
 
-#: ../src/xfce4-dict.c:53
+#: src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
 msgstr "使用词典服务器(RFC 2229)搜索给定的文字"
 
-#: ../src/xfce4-dict.c:54
+#: src/xfce4-dict.c:54
 msgid "Search the given text using a web-based search engine"
 msgstr "使用基于网络的搜索引擎搜索给定的文字"
 
-#: ../src/xfce4-dict.c:55
+#: src/xfce4-dict.c:55
 msgid "Check the given text with a spell checker"
 msgstr "使用拼写检查器检查给定的文字"
 
-#: ../src/xfce4-dict.c:56
+#: src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
 msgstr "使用大型语言模型生成指定文本的定义"
 
-#: ../src/xfce4-dict.c:57
+#: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
 msgstr "即使面板已载入也启动的独立应用程序"
 
-#: ../src/xfce4-dict.c:58
+#: src/xfce4-dict.c:58
 msgid "Grabs the PRIMARY selection content and uses it as search text"
 msgstr "捕获之前选择的内容并作为搜索文字"
 
-#: ../src/xfce4-dict.c:59
+#: src/xfce4-dict.c:59
 msgid "Be verbose"
 msgstr "查看详细内容"
 
-#: ../src/xfce4-dict.c:60
+#: src/xfce4-dict.c:60
 msgid "Show version information"
 msgstr "显示版本信息"
 
-#: ../src/xfce4-dict.c:133
+#: src/xfce4-dict.c:133
 msgid "[TEXT]"
 msgstr "[文字]"
 
-#: ../src/xfce4-dict.c:149
+#: src/xfce4-dict.c:149
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "请向 <%s> 报告缺陷。"
 
-#: ../lib/spell.c:74
+#: src/xfce4-dict.desktop.in:6
+msgid "Dictionary Client"
+msgstr "词典客户端"
+
+#: src/xfce4-dict.desktop.in:7
+msgid "A client program to query different dictionaries"
+msgstr "查询不同词典的客户端程序"
+
+#: lib/spell.c:74
 msgid "Spell Checker Results:"
 msgstr "拼写检查结果："
 
-#: ../lib/spell.c:100
+#: lib/spell.c:100
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
 msgstr[0] "找到 %d 条建议。"
 
-#: ../lib/spell.c:104
+#: lib/spell.c:104
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
 msgstr "对 “%s”(%s) 的建议："
 
-#: ../lib/spell.c:121
+#: lib/spell.c:121
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
 msgstr "“%s” 拼写正确(%s)。"
 
-#: ../lib/spell.c:133
+#: lib/spell.c:133
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
 msgstr "未能找到对 “%s”(%s) 的建议。"
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
-#: ../lib/spell.c:163
+#: lib/spell.c:163
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
 msgstr "执行 “%s”(%s)时出错。"
 
-#: ../lib/spell.c:201
+#: lib/spell.c:201
 msgid "Please set the spell check command in the preferences dialog."
 msgstr "请在首选项对话框中设置拼写检查命令。"
 
-#: ../lib/spell.c:207
+#: lib/spell.c:207
 msgid "Invalid input"
 msgstr "无效输入"
 
-#: ../lib/spell.c:246
+#: lib/spell.c:246
 #, c-format
 msgid "Process failed (%s)"
 msgstr "无法执行(%s)"
 
-#: ../lib/speedreader.c:74 ../lib/speedreader.c:696
+#: lib/speedreader.c:74 lib/speedreader.c:696
 msgid "P_ause"
 msgstr "暂停(_A)"
 
-#: ../lib/speedreader.c:75
+#: lib/speedreader.c:75
 msgid "_Resume"
 msgstr "恢复(_R)"
 
-#: ../lib/speedreader.c:249 ../lib/speedreader.c:698
+#: lib/speedreader.c:249 lib/speedreader.c:698
 msgid "S_top"
 msgstr "停止(_T)"
 
-#: ../lib/speedreader.c:257
+#: lib/speedreader.c:257
 msgid "Running"
 msgstr "正在运行"
 
-#: ../lib/speedreader.c:260
+#: lib/speedreader.c:260
 msgid "Finished"
 msgstr "已结束"
 
-#: ../lib/speedreader.c:261
+#: lib/speedreader.c:261
 msgid "_Back"
 msgstr "后退(_B)"
 
-#: ../lib/speedreader.c:269
+#: lib/speedreader.c:269
 msgid "Speed Reader"
 msgstr "语速训练器"
 
-#: ../lib/speedreader.c:370
+#: lib/speedreader.c:370
 msgid "You must enter a text."
 msgstr "您必须输入一段文字。"
 
-#: ../lib/speedreader.c:527
+#: lib/speedreader.c:527
 msgid "Choose a file to load"
 msgstr "选择要载入的文件"
 
-#: ../lib/speedreader.c:530
+#: lib/speedreader.c:530
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: ../lib/speedreader.c:531
+#: lib/speedreader.c:531
 msgid "_Open"
 msgstr "打开(&O)"
 
-#: ../lib/speedreader.c:556
+#: lib/speedreader.c:556
 #, c-format
 msgid "The file '%s' could not be loaded."
 msgstr "未能载入 ‘%s’ 文件。"
 
-#: ../lib/speedreader.c:582
+#: lib/speedreader.c:582
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
 msgstr[0] "(一次显示 %d 个单词)"
 
-#: ../lib/speedreader.c:606
+#: lib/speedreader.c:606
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
 msgstr "这是一个简单的能帮助您读得更快的语速训练工具。其原理是在屏幕上快速闪过不同的单词。"
 
-#: ../lib/speedreader.c:611
+#: lib/speedreader.c:611
 msgid "_Words per Minute:"
 msgstr "每分钟单词数(_W)："
 
-#: ../lib/speedreader.c:618
+#: lib/speedreader.c:618
 msgid "_Mark Paragraphs"
 msgstr "标记段落(_M)"
 
-#: ../lib/speedreader.c:625
+#: lib/speedreader.c:625
 msgid "Word _Grouping:"
 msgstr "单词组(_G)："
 
-#: ../lib/speedreader.c:642
+#: lib/speedreader.c:642
 msgid "_Font Size:"
 msgstr "字体大小(_F)："
 
-#: ../lib/speedreader.c:663
+#: lib/speedreader.c:663
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
 msgstr "在此输入一些您要阅读的文字。\n\n放松并处于舒适状态，然后点击开始进行语速训练。"
 
-#: ../lib/speedreader.c:676
+#: lib/speedreader.c:676
 msgid "Load the contents of a file"
 msgstr "载入文件的内容"
 
-#: ../lib/speedreader.c:681
+#: lib/speedreader.c:681
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
 msgstr "清空文本框内容并粘贴剪贴板内容"
 
-#: ../lib/speedreader.c:685
+#: lib/speedreader.c:685
 msgid "Clear the contents of the text field"
 msgstr "清空文本框内容"
 
-#: ../lib/speedreader.c:697
+#: lib/speedreader.c:697
 msgid "_Start"
 msgstr "开始(_S)"
 
-#: ../lib/speedreader.c:699 ../lib/dictd.c:726 ../lib/gui.c:733
-#: ../lib/gui.c:842 ../lib/prefs.c:302
+#: lib/speedreader.c:699 lib/dictd.c:726 lib/gui.c:733 lib/gui.c:842
+#: lib/prefs.c:302
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: ../lib/common.c:195
+#: lib/common.c:195
 msgid "The search URL is empty. Please check your preferences."
 msgstr "搜索 URL 是空的。请检查您的首选项。"
 
-#: ../lib/common.c:201
+#: lib/common.c:201
 msgid "Browser could not be opened. Please check your preferences."
 msgstr "未能打开浏览器。请检查您的首选项。"
 
-#: ../lib/common.c:245
+#: lib/common.c:245
 msgid "Invalid non-UTF8 input"
 msgstr "无效的非 UTF-8 输入"
 
-#: ../lib/common.c:626
+#: lib/common.c:626
 msgid "Error"
 msgstr "错误"
 
-#: ../lib/common.c:629
+#: lib/common.c:629
 msgid "warning"
 msgstr "警告"
 
 #. for translators: the first wildcard is the search term, the second wildcard
 #. * is the name of the preferred web search engine
-#: ../lib/dictd.c:341
+#: lib/dictd.c:341
 #, c-format
 msgid "Search \"%s\" using \"%s\""
 msgstr "使用 “%2$s” 搜索 “%1$s”"
 
-#: ../lib/dictd.c:348
+#: lib/dictd.c:348
 msgid "Web Search:"
 msgstr "网络搜索："
 
-#: ../lib/dictd.c:371 ../lib/dictd.c:679 ../lib/dictd.c:688 ../lib/dictd.c:777
-#: ../lib/dictd.c:786
+#: lib/dictd.c:371 lib/dictd.c:679 lib/dictd.c:688 lib/dictd.c:777
+#: lib/dictd.c:786
 msgid "Could not connect to server."
 msgstr "未能与服务器连接。"
 
-#: ../lib/dictd.c:377
+#: lib/dictd.c:377
 msgid "The server is not ready."
 msgstr "服务器未就绪。"
 
-#: ../lib/dictd.c:384
+#: lib/dictd.c:384
 msgid "Invalid dictionary specified. Please check your preferences."
 msgstr "指定的词典无效。请检查您的首选项。"
 
-#: ../lib/dictd.c:392 ../lib/dictd.c:432 ../lib/dictd.c:811
+#: lib/dictd.c:392 lib/dictd.c:432 lib/dictd.c:811
 msgid "Unknown error while querying the server."
 msgstr "在服务器中查询时发生未知错误。"
 
-#: ../lib/dictd.c:407
+#: lib/dictd.c:407
 msgid "Dictionary Results:"
 msgstr "词典结果："
 
-#: ../lib/dictd.c:410
+#: lib/dictd.c:410
 #, c-format
 msgid "No matches could be found for \"%s\"."
 msgstr "未能找到与 “%s” 匹配的。"
 
-#: ../lib/dictd.c:437
+#: lib/dictd.c:437
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
 msgstr[0] "找到 %d 个定义。"
 
-#: ../lib/dictd.c:650
+#: lib/dictd.c:650
 #, c-format
 msgid "Querying %s..."
 msgstr "正在查询 %s..."
 
-#: ../lib/dictd.c:709
+#: lib/dictd.c:709
 msgid "An error occurred while querying server information."
 msgstr "在服务器信息中查询时出错。"
 
-#: ../lib/dictd.c:722
+#: lib/dictd.c:722
 #, c-format
 msgid "Server Information for \"%s\""
 msgstr "“%s” 的服务器信息"
 
-#: ../lib/dictd.c:806
+#: lib/dictd.c:806
 msgid "The server doesn't offer any databases."
 msgstr "服务器没有提供任何数据库。"
 
-#: ../lib/gui.c:364
+#: lib/gui.c:364
 msgid "Copy Link"
 msgstr "复制链接"
 
-#: ../lib/gui.c:374
+#: lib/gui.c:374
 msgid "Search"
 msgstr "搜索"
 
-#: ../lib/gui.c:595
+#: lib/gui.c:595
 msgid "F_ind"
 msgstr "查找(_I)"
 
 #. File Menu
-#: ../lib/gui.c:697
+#: lib/gui.c:697
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../lib/gui.c:704 ../lib/gui.c:830
+#: lib/gui.c:704 lib/gui.c:830
 msgid "Speed _Reader"
 msgstr "语速训练器(_R)"
 
-#: ../lib/gui.c:719
+#: lib/gui.c:719
 msgid "_Preferences"
 msgstr "首选项(_P)"
 
-#: ../lib/gui.c:733 ../lib/gui.c:842
+#: lib/gui.c:733 lib/gui.c:842
 msgid "_Quit"
 msgstr "退出(_Q)"
 
 #. Help Menu
-#: ../lib/gui.c:743
+#: lib/gui.c:743
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../lib/gui.c:750
+#: lib/gui.c:750
 msgid "About"
 msgstr "关于"
 
-#: ../lib/gui.c:785 ../lib/prefs.c:300
-msgid "Dictionary"
-msgstr "词典"
-
-#: ../lib/gui.c:854
+#: lib/gui.c:854
 msgid "Search with:"
 msgstr "搜索方式："
 
-#: ../lib/gui.c:858
+#: lib/gui.c:858
 msgid "_Dictionary Server"
 msgstr "词典服务器(_D)"
 
-#: ../lib/gui.c:865
+#: lib/gui.c:865
 msgid "_Web Service"
 msgstr "网络服务(_W)"
 
-#: ../lib/gui.c:873
+#: lib/gui.c:873
 msgid "_Spell Checker"
 msgstr "拼写检查器(_S)"
 
-#: ../lib/gui.c:881
+#: lib/gui.c:881
 msgid "_LLM"
 msgstr "LLM(_L)"
 
-#: ../lib/gui.c:1022
+#: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
 msgstr "查询不同词典的客户端程序。"
 
-#: ../lib/gui.c:1026
+#: lib/gui.c:1026
 msgid "translator-credits"
 msgstr "Hunt Xu <huntxu@live.cn>, 2008, 2009, 2010.\nChipong Luo <chipong.luo@yahoo.com>, 2011, 2012, 2013."
 
-#: ../lib/gui.c:1029
+#: lib/gui.c:1029
 msgid "Xfce4 Dictionary"
 msgstr "Xfce 4 词典"
 
-#: ../lib/prefs.c:53
+#: lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
 msgstr "dict.leo.org - 德语 <-> 英语"
 
-#: ../lib/prefs.c:54
+#: lib/prefs.c:54
 msgid "dict.leo.org - German <-> French"
 msgstr "dict.leo.org - 德语 <-> 法语"
 
-#: ../lib/prefs.c:55
+#: lib/prefs.c:55
 msgid "dict.leo.org - German <-> Spanish"
 msgstr "dict.leo.org - 德语 <-> 西班牙语"
 
-#: ../lib/prefs.c:56
+#: lib/prefs.c:56
 msgid "dict.leo.org - German <-> Italian"
 msgstr "dict.leo.org - 德语 <-> 意大利语"
 
-#: ../lib/prefs.c:57
+#: lib/prefs.c:57
 msgid "dict.leo.org - German <-> Chinese"
 msgstr "dict.leo.org - 德语 <-> 中文"
 
-#: ../lib/prefs.c:58
+#: lib/prefs.c:58
 msgid "dict.cc - Dictionary"
 msgstr "dict.cc - 词典"
 
-#: ../lib/prefs.c:59
+#: lib/prefs.c:59
 msgid "Dictionary.com"
 msgstr "Dictionary.com"
 
-#: ../lib/prefs.c:60
+#: lib/prefs.c:60
 msgid "TheFreeDictionary.com"
 msgstr "TheFreeDictionary.com"
 
-#: ../lib/prefs.c:61
+#: lib/prefs.c:61
 msgid "Wikipedia, the free encyclopedia (EN)"
 msgstr "维基百科，自由的百科全书(英语)"
 
-#: ../lib/prefs.c:62
+#: lib/prefs.c:62
 msgid "Wiktionary, the free dictionary (EN)"
 msgstr "维基词典，自由的词典(英语)"
 
-#: ../lib/prefs.c:63
+#: lib/prefs.c:63
 msgid "Merriam-Webster Online Dictionary"
 msgstr "Merriam-Webster 在线词典"
 
-#: ../lib/prefs.c:64
+#: lib/prefs.c:64
 msgid "Clear"
 msgstr "清除"
 
-#: ../lib/prefs.c:103
+#: lib/prefs.c:103
 msgid "You have chosen an invalid dictionary."
 msgstr "您选择了一个无效的词典。"
 
-#: ../lib/prefs.c:332
+#: lib/prefs.c:332
 msgid "General"
 msgstr "通用"
 
-#: ../lib/prefs.c:334
+#: lib/prefs.c:334
 msgid "<b>Default search method:</b>"
 msgstr "<b>默认搜索模式：</b>"
 
-#: ../lib/prefs.c:363
+#: lib/prefs.c:363
 msgid "Last used method"
 msgstr "上次使用的模式"
 
-#: ../lib/prefs.c:371
+#: lib/prefs.c:371
 msgid "<b>Colors:</b>"
 msgstr "<b>颜色：</b>"
 
-#: ../lib/prefs.c:377
+#: lib/prefs.c:377
 msgid "Links:"
 msgstr "链接："
 
-#: ../lib/prefs.c:378
+#: lib/prefs.c:378
 msgid "Phonetics:"
 msgstr "发音："
 
-#: ../lib/prefs.c:379
+#: lib/prefs.c:379
 msgid "Spelled correctly:"
 msgstr "拼写正确："
 
-#: ../lib/prefs.c:380
+#: lib/prefs.c:380
 msgid "Spelled incorrectly:"
 msgstr "拼写不正确："
 
-#: ../lib/prefs.c:431
+#: lib/prefs.c:431
 msgid "<b>Panel Text Field:</b>"
 msgstr "<b>面板文本框：</b>"
 
-#: ../lib/prefs.c:437
+#: lib/prefs.c:437
 msgid "Show text field in the panel"
 msgstr "在面板内显示文本框"
 
 #. panel entry size
-#: ../lib/prefs.c:444
+#: lib/prefs.c:444
 msgid "Text field size:"
 msgstr "文本框大小："
 
 #. server address
-#: ../lib/prefs.c:488 ../lib/prefs.c:743
+#: lib/prefs.c:488 lib/prefs.c:743
 msgid "Server:"
 msgstr "服务器："
 
 #. server port
-#: ../lib/prefs.c:498 ../lib/prefs.c:753
+#: lib/prefs.c:498 lib/prefs.c:753
 msgid "Server Port:"
 msgstr "服务器端口："
 
 #. dictionary
-#: ../lib/prefs.c:508 ../lib/prefs.c:664
+#: lib/prefs.c:508 lib/prefs.c:664
 msgid "Dictionary:"
 msgstr "词典："
 
-#: ../lib/prefs.c:511
+#: lib/prefs.c:511
 msgid "* (use all)"
 msgstr "*(使用所有)"
 
-#: ../lib/prefs.c:513
+#: lib/prefs.c:513
 msgid "! (use all, stop after first match)"
 msgstr "!(使用所有，在第一个匹配处停止)"
 
-#: ../lib/prefs.c:594
+#: lib/prefs.c:594
 msgid "<b>Web search URL:</b>"
 msgstr "<b>网络搜索 URL：</b>"
 
-#: ../lib/prefs.c:599
+#: lib/prefs.c:599
 msgid "URL:"
 msgstr "URL："
 
-#: ../lib/prefs.c:619
+#: lib/prefs.c:619
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
 msgstr "输入一个提供翻译或词典服务网站的 URL。使用 {word} 作为占位符代表搜索的单词。"
 
-#: ../lib/prefs.c:640
+#: lib/prefs.c:640
 msgid "Spell Check Program:"
 msgstr "拼写检查程序："
 
-#: ../lib/prefs.c:657
+#: lib/prefs.c:657
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
 msgstr "<i>拼写检查程序可以是 ‘enchant-2'、‘aspell’、‘ispell’ 或任何其它与 ispell 命令兼容的拼写检查程序。\n图标将显示输入的命令是否存在。</i>"
 
-#: ../lib/prefs.c:734
+#: lib/prefs.c:734
 #, c-format
 msgid ""
 "This works with Ollama or any service that implements its HTTP API.\n"
@@ -557,15 +566,15 @@ msgid ""
 msgstr "这适用于 Ollama 或任何实现其 HTTP API 的服务。 \n不支持 HTTPS。 \n不支持 ChatGPT 或 Gemini 等服务，也没有增加支持的计划。 \n提示必须包含一个%s占位符，用于插入搜索词。"
 
 #. model
-#: ../lib/prefs.c:763
+#: lib/prefs.c:763
 msgid "Model:"
 msgstr "模型:"
 
 #. prompt
-#: ../lib/prefs.c:773
+#: lib/prefs.c:773
 msgid "Prompt:"
 msgstr "提示:"
 
-#: ../lib/prefs.c:792
+#: lib/prefs.c:792
 msgid "Reset"
 msgstr "重置"
