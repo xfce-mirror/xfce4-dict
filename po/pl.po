@@ -390,7 +390,7 @@ msgstr "Pomo_c"
 
 #: lib/gui.c:750
 msgid "About"
-msgstr "_O programie"
+msgstr "O programie"
 
 #: lib/gui.c:854
 msgid "Search with:"
