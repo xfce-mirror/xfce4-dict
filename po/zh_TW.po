@@ -58,7 +58,7 @@ msgstr "拼字檢查器"
 
 #: panel-plugin/xfce4-dict-plugin.c:402 lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -74,7 +74,7 @@ msgstr "以拼字檢查器檢查給定文字"
 
 #: src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "使用大型語言模型產生指定文字的定義"
 
 #: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -397,7 +397,7 @@ msgstr "拼字檢查(_S)"
 
 #: lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "LLM(_L)"
 
 #: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -562,17 +562,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "這適用於 Ollama 或任何實作其 HTTP API 的服務。\n不支援 HTTPS。\n不支援 ChatGPT 與 Gemini 等服務，也並未規劃支援。\n提示詞必須包含 %s 佔位字串，用於插入搜尋的詞彙。"
 
 #. model
 #: lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "模型："
 
 #. prompt
 #: lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "提示詞："
 
 #: lib/prefs.c:792
 msgid "Reset"
