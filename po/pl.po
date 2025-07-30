@@ -414,7 +414,7 @@ msgstr "_Duży model językowy"
 
 #: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
-msgstr "Umożliwia wyszukiwanie wyrażeń w różnych słownikach"
+msgstr "Program do wyszukiwania wyrażeń w różnych słownikach."
 
 #: lib/gui.c:1026
 msgid "translator-credits"
@@ -422,7 +422,7 @@ msgstr "Piotr Maliński <riklaunim@gmail.com>, 2007.\nPiotr Sokół <psokol@jabs
 
 #: lib/gui.c:1029
 msgid "Xfce4 Dictionary"
-msgstr "Słownik Xfce4"
+msgstr "Słownik Xfce"
 
 #: lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
