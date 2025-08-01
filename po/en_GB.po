@@ -57,7 +57,7 @@ msgstr "Spell Checker"
 
 #: panel-plugin/xfce4-dict-plugin.c:402 lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -73,7 +73,7 @@ msgstr "Check the given text with a spell checker"
 
 #: src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Generate the definition of the given text with a large language model"
 
 #: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -399,7 +399,7 @@ msgstr "_Spell Checker"
 
 #: lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -564,17 +564,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "This works with Ollama or any service that implements its HTTP API.\nHTTPS is not supported.\nServices like ChatGPT or Gemini are not supported, and there are no plans to add support.\nThe prompt must include a %s placeholder where the search term will be inserted."
 
 #. model
 #: lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Model:"
 
 #. prompt
 #: lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Prompt:"
 
 #: lib/prefs.c:792
 msgid "Reset"
