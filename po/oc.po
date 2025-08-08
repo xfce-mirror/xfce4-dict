@@ -6,14 +6,14 @@
 # Cédric Valmary <cvalmary@yahoo.fr>, 2013
 # Cédric Valmary <cvalmary@yahoo.fr>, 2013
 # Quentin PAGÈS, 2024
-# Quentin PAGÈS, 2024
+# Quentin PAGÈS, 2024-2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-07-18 11:03+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Quentin PAGÈS, 2024\n"
+"Last-Translator: Quentin PAGÈS, 2024-2025\n"
 "Language-Team: Occitan (post 1500) (http://app.transifex.com/xfce/xfce-apps/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,7 +58,7 @@ msgstr "Verificador ortografic"
 
 #: panel-plugin/xfce4-dict-plugin.c:402 lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -74,7 +74,7 @@ msgstr "Verificar lo tèxte donat amb un corrector ortografic"
 
 #: src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Generar la definicion d’un tèxt donat amb un modèl de lengatge larg"
 
 #: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -400,7 +400,7 @@ msgstr "_Verificador ortografic"
 
 #: lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -570,12 +570,12 @@ msgstr ""
 #. model
 #: lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Modèl :"
 
 #. prompt
 #: lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Convit de comanda : "
 
 #: lib/prefs.c:792
 msgid "Reset"
