@@ -565,7 +565,7 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Aquò fonciona amb Ollama o quin servici que siá qu'implementa son API HTTP.\nHTTPS es pas suportat.\nDe servicis coma ChatGPT o Gemini son pas suportats, e i a pas de projèctes per ajustar la presa en carga.\nLo messatge deu inclure un %s qu'es un emplaçament ont lo tèrme de recèrca serà inserit."
 
 #. model
 #: lib/prefs.c:763
