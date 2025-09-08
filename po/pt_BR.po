@@ -40,7 +40,7 @@ msgstr "Dicionário"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:6
 msgid "A plugin to query different dictionaries."
-msgstr "Um plug-in para consultar dicionários diferentes."
+msgstr "Um plugin para consultar dicionários diferentes."
 
 #: panel-plugin/xfce4-dict-plugin.c:238 panel-plugin/xfce4-dict-plugin.c:412
 #: src/xfce4-dict.c:200 lib/spell.c:242 lib/gui.c:544
