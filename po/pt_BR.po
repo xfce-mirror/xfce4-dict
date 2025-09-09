@@ -90,7 +90,7 @@ msgstr "Gerar a definição do texto dado com um modelo de linguagem de grande d
 
 #: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Iniciar o aplicativo de forma independente mesmo se o plug-in no painel estiver carregado"
+msgstr "Iniciar o aplicativo de forma independente mesmo se o plugin no painel estiver carregado"
 
 #: src/xfce4-dict.c:58
 msgid "Grabs the PRIMARY selection content and uses it as search text"
