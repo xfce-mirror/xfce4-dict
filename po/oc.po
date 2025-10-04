@@ -333,7 +333,7 @@ msgstr "Requèsta a %s..."
 
 #: lib/dictd.c:709
 msgid "An error occurred while querying server information."
-msgstr "Una error s'es producha al moment de la requèsta de las informacions del servidor."
+msgstr "Una error s'es produita al moment de la requèsta de las informacions del servidor."
 
 #: lib/dictd.c:722
 #, c-format
