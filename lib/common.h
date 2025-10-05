@@ -107,6 +107,10 @@ typedef struct
 	gboolean verbose_mode;
 	gboolean is_plugin;	/* specify whether the panel plugin loaded or not */
 
+	/* Paths to the configuration file, which are different for each plugin instance. */
+	gchar *rc_path_read;
+	gchar *rc_path_write;
+
 	/* status values */
 	gchar *searched_word;  /* word to query the server */
 	gboolean query_is_running;
