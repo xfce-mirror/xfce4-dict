@@ -74,7 +74,7 @@ msgstr "ตรวจสอบคำที่กำหนดด้วยเคร
 
 #: src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "สร้างคำจำกัดความของข้อความที่กำหนดด้วยแบบจำลองภาษาขนาดใหญ่"
 
 #: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -397,7 +397,7 @@ msgstr "เครื่องมือตรวจตัว_สะกด"
 
 #: lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -553,7 +553,7 @@ msgstr "โปรแกรมตรวจตัวสะกด:"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>โปรแกรมตรวจตัวสะกดอาจเป็น 'enchant-2', 'aspell', 'ispell' หรือโปรแกรมตรวจตัวสะกดอื่นๆ ที่เข้ากันได้กับคำสั่ง ispell\nไอคอนจะแสดงสถานะว่ามีคำสั่งที่ป้อนหรือไม่</i>"
 
 #: lib/prefs.c:734
 #, c-format
@@ -562,17 +562,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "โปรแกรมนี้ใช้ได้กับ Ollama หรือบริการใด ๆ ที่ใช้ HTTP API\nแต่ไม่รองรับ HTTPS\nไม่รองรับบริการเช่น ChatGPT หรือ Gemini และไม่มีแผนที่จะเพิ่มการสนับสนุน\nพรอมต์จะต้องมี %s ตัวยึดตำแหน่งที่จะแทรกคำค้นหา"
 
 #. model
 #: lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "โมเดล:"
 
 #. prompt
 #: lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Prompt:"
 
 #: lib/prefs.c:792
 msgid "Reset"
