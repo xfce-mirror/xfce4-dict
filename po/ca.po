@@ -77,7 +77,7 @@ msgstr "Genera la definició del text donat amb un model de llenguatge ampli"
 
 #: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Inicia com aplicació autònoma fins i tot si el connector del tauler està carregat"
+msgstr "Inicia com aplicació autònoma fins i tot si el connector del panell està carregat"
 
 #: src/xfce4-dict.c:58
 msgid "Grabs the PRIMARY selection content and uses it as search text"
@@ -411,7 +411,7 @@ msgstr "Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006-2008\nHarald Serva
 
 #: lib/gui.c:1029
 msgid "Xfce4 Dictionary"
-msgstr "Diccionari de Xfce4"
+msgstr "Diccionari de l'Xfce4"
 
 #: lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
@@ -499,11 +499,11 @@ msgstr "Escrit incorrectament:"
 
 #: lib/prefs.c:431
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>Camp de text del tauler:</b>"
+msgstr "<b>Camp de text del panell:</b>"
 
 #: lib/prefs.c:437
 msgid "Show text field in the panel"
-msgstr "Mostra el camp de text al tauler"
+msgstr "Mostra el camp de text al panell"
 
 #. panel entry size
 #: lib/prefs.c:444
