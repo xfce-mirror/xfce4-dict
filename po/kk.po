@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the xfce-apps.xfce4-dict package.
 # 
 # Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010,2013,2015-2017,2019,2021
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010,2013,2015-2017,2019,2021,2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-07-18 11:03+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010,2013,2015-2017,2019,2021\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010,2013,2015-2017,2019,2021,2026\n"
 "Language-Team: Kazakh (http://app.transifex.com/xfce/xfce-apps/language/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +55,7 @@ msgstr "Емлені тексеруші"
 
 #: panel-plugin/xfce4-dict-plugin.c:402 lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -71,7 +71,7 @@ msgstr "Берілген мәтінді емлені тексерушімен т
 
 #: src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Берілген мәтіннің анықтамасын үлкен тілдік модельдің көмегімен жасау."
 
 #: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -397,7 +397,7 @@ msgstr "Е_млені тексеруші"
 
 #: lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -553,7 +553,7 @@ msgstr "Емлені тексеру бағдарламасы:"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>Емлені тексеру бағдарламасы 'enchant-2', 'aspell', 'ispell' немесе басқа да ispell командасымен үйлесімді емле тексеру бағдарламасы бола алады.\nТаңбаша енгізілген командасының бар-жоғын көрсетеді.</i>"
 
 #: lib/prefs.c:734
 #, c-format
@@ -562,17 +562,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Бұл Ollama немесе оның HTTP API интерфейсін іске асыратын кез келген қызметпен жұмыс істейді.\nHTTPS қолдау көрсетілмейді.\nChatGPT немесе Gemini сияқты қызметтерге қолдау көрсетілмейді және оны қосу жоспарланбаған.\nСұрау мәтінінде іздеу термині енгізілетін %s толтырғышы болуы тиіс."
 
 #. model
 #: lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Модель:"
 
 #. prompt
 #: lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Сұрау мәтіні:"
 
 #: lib/prefs.c:792
 msgid "Reset"
