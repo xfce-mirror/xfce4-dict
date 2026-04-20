@@ -174,6 +174,9 @@ gint main(gint argc, gchar *argv[])
 	dd->is_plugin = FALSE;
 	dd->verbose_mode = verbose_mode;
 
+	dd->rc_path_read = xfce_resource_save_location(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE);
+	dd->rc_path_write = g_strdup(dd->rc_path_read);
+
 	dict_read_rc_file(dd);
 
 	/* set search mode from command line flags, if any */
