@@ -392,7 +392,7 @@ void dict_read_rc_file(DictData *dd)
 	const gchar *llm_prompt = LLM_DEFAULT_PROMPT;
 #endif
 
-	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", TRUE)) != NULL)
+	if ((rc = xfce_rc_simple_open(dd->rc_path_read, TRUE)) != NULL)
 	{
 		mode_in_use = xfce_rc_read_int_entry(rc, "mode_in_use", mode_in_use);
 		mode_default = xfce_rc_read_int_entry(rc, "mode_default", mode_default);
@@ -485,7 +485,7 @@ void dict_write_rc_file(DictData *dd)
 {
 	XfceRc *rc;
 
-	if ((rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", FALSE)) != NULL)
+	if ((rc = xfce_rc_simple_open(dd->rc_path_write, FALSE)) != NULL)
 	{
 		gchar *geometry_string;
 		gchar *link_color_str, *phon_color_str, *error_color_str, *success_color_str;
@@ -554,6 +554,8 @@ void dict_free_data(DictData *dd)
 	g_free(dd->spell_bin);
 	g_free(dd->spell_dictionary);
 	g_free(dd->speedreader_font);
+	g_free(dd->rc_path_read);
+	g_free(dd->rc_path_write);
 
 #ifdef ENABLE_LLM
 	g_free(dd->llm_server);
