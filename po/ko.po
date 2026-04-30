@@ -561,7 +561,7 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "이 기능은 Ollama 또는 Ollama의 HTTP API를 구현하는 모든 서비스와 호환됩니다.\nHTTPS는 지원되지 않습니다.\nChatGPT 또는 Gemini와 같은 서비스는 지원되지 않으며, 향후 지원 계획도 없습니다.\n프롬프트에는 검색어가 삽입될 %s 자리 표시자가 포함되어야 합니다."
 
 #. model
 #: lib/prefs.c:763
