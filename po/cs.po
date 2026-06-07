@@ -271,7 +271,7 @@ msgstr "Adresa URL pro vyhledávání je prázdná. Zkontrolujte předvolby."
 
 #: lib/common.c:201
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Nelze otevřít prohlížeč. Ověřte nastavení."
+msgstr "Nelze otevřít prohlížeč. Zkontrolujte předvolby."
 
 #: lib/common.c:245
 msgid "Invalid non-UTF8 input"
@@ -343,7 +343,7 @@ msgstr "Při dotazování na informace o serveru došlo k chybě."
 #: lib/dictd.c:722
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "Informace serveru pro „%s“"
+msgstr "Informace o serveru pro „%s“"
 
 #: lib/dictd.c:806
 msgid "The server doesn't offer any databases."
@@ -429,7 +429,7 @@ msgstr "dict.leo.org - němčina <-> francouzština"
 
 #: lib/prefs.c:55
 msgid "dict.leo.org - German <-> Spanish"
-msgstr "dict.leo.org - běmčina <-> španělstina"
+msgstr "dict.leo.org - němčina <-> španělština"
 
 #: lib/prefs.c:56
 msgid "dict.leo.org - German <-> Italian"
@@ -481,7 +481,7 @@ msgstr "<b>Výchozí způsob hledání:</b>"
 
 #: lib/prefs.c:363
 msgid "Last used method"
-msgstr "Poslední použitá metoda"
+msgstr "Poslední použitý způsob"
 
 #: lib/prefs.c:371
 msgid "<b>Colors:</b>"
@@ -580,7 +580,7 @@ msgstr "Model:"
 #. prompt
 #: lib/prefs.c:773
 msgid "Prompt:"
-msgstr "Výzva:"
+msgstr "Prompt:"
 
 #: lib/prefs.c:792
 msgid "Reset"
