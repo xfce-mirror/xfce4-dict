@@ -710,6 +710,13 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	buffer++;
 
 	end = strstr(buffer, ".\r\n250");
+	if (end == NULL)
+	{
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR,
+			_("An error occurred while querying server information."));
+		g_free(answer);
+		return;
+	}
 	*end = '\0';
 
 	text = g_strdup_printf(_("Server Information for \"%s\""), server);
