@@ -568,7 +568,7 @@ static gint get_answer(gint fd, gchar **buffer)
 
 static gpointer ask_server(DictData *dd)
 {
-	gint fd, i;
+	gint fd;
 	static gchar cmd[BUF_SIZE];
 
 	if ((fd = open_socket(dd->server, dd->port)) == -1)
@@ -584,17 +584,14 @@ static gpointer ask_server(DictData *dd)
 	dd->query_status = get_answer(fd, NULL);
 	if (dd->query_status == NO_ERROR)
 	{
-		/* take only the first part of the dictionary string, so let the string end at the space */
-		i = 0;
-		while (dd->dictionary[i] != ' ')
-			i++;
-		dd->dictionary[i] = '\0';
+		/* take only the first part of the dictionary string, i.e. the database name up to
+		 * the first space (the rest just is a description) */
+		gsize len = strcspn(dd->dictionary, " ");
+		gchar *database = g_strndup(dd->dictionary, len);
 
-		g_snprintf(cmd, BUF_SIZE, "DEFINE %s \"%s\"", dd->dictionary, dd->searched_word);
+		g_snprintf(cmd, BUF_SIZE, "DEFINE %s \"%s\"", database, dd->searched_word);
 		send_command(fd, cmd);
-
-		/* and now, "append" again the rest of the dictionary string again */
-		dd->dictionary[i] = ' ';
+		g_free(database);
 
 		dd->query_status = get_answer(fd, &(dd->query_buffer));
 	}
@@ -713,6 +710,13 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	buffer++;
 
 	end = strstr(buffer, ".\r\n250");
+	if (end == NULL)
+	{
+		dict_show_msgbox(dd, GTK_MESSAGE_ERROR,
+			_("An error occurred while querying server information."));
+		g_free(answer);
+		return;
+	}
 	*end = '\0';
 
 	text = g_strdup_printf(_("Server Information for \"%s\""), server);
