@@ -700,6 +700,7 @@ void dict_dictd_get_information(GtkWidget *button, DictData *dd)
 	{
 		dict_show_msgbox(dd, GTK_MESSAGE_ERROR,
 			_("An error occurred while querying server information."));
+		g_free(answer);
 		return;
 	}
 
@@ -804,11 +805,13 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	if (strncmp("554", buffer, 3) == 0)
 	{
 		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("The server doesn't offer any databases."));
+		g_free(answer);
 		return;
 	}
 	else if (strncmp("110", buffer, 3) != 0 && strncmp("554", buffer, 3) != 0)
 	{
 		dict_show_msgbox(dd, GTK_MESSAGE_ERROR, _("Unknown error while querying the server."));
+		g_free(answer);
 		return;
 	}
 
@@ -828,7 +831,11 @@ void dict_dictd_get_list(GtkWidget *button, DictData *dd)
 	lines = g_strsplit(buffer, "\r\n", -1);
 	max_lines = g_strv_length(lines);
 	if (lines == NULL || max_lines == 0)
+	{
+		g_strfreev(lines);
+		g_free(answer);
 		return;
+	}
 
 	i = 0;
 	while (i < max_lines && lines[i][0] != '.')
