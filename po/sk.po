@@ -5,14 +5,14 @@
 # Translators:
 # Automatically generated, 2011
 # Dušan Kazik <prescott66@gmail.com>, 2015-2016
-# Slavko <linux@slavino.sk>, 2011,2015,2017
+# Slavko <linux@slavino.sk>, 2011,2015,2017,2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-07-18 11:03+0200\n"
 "PO-Revision-Date: 2013-07-03 18:37+0000\n"
-"Last-Translator: Slavko <linux@slavino.sk>, 2011,2015,2017\n"
+"Last-Translator: Slavko <linux@slavino.sk>, 2011,2015,2017,2026\n"
 "Language-Team: Slovak (http://app.transifex.com/xfce/xfce-apps/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +57,7 @@ msgstr "Kontrola preklepov"
 
 #: panel-plugin/xfce4-dict-plugin.c:402 lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
@@ -73,7 +73,7 @@ msgstr "Skontrolovať preklepy v zadanom texte"
 
 #: src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Generuje definíciu daného textu pomocou veľkého jazykového modelu"
 
 #: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
@@ -106,7 +106,7 @@ msgstr "Klient slovníka"
 
 #: src/xfce4-dict.desktop.in:7
 msgid "A client program to query different dictionaries"
-msgstr ""
+msgstr "Klientský program na vyhľadávanie v rôznych slovníkoch."
 
 #: lib/spell.c:74
 msgid "Spell Checker Results:"
@@ -405,7 +405,7 @@ msgstr "_Kontrola preklepov"
 
 #: lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
@@ -441,7 +441,7 @@ msgstr "dict.leo.org – Nemčina <-> Čínština"
 
 #: lib/prefs.c:58
 msgid "dict.cc - Dictionary"
-msgstr ""
+msgstr "dist.cc – Slovník"
 
 #: lib/prefs.c:59
 msgid "Dictionary.com"
@@ -561,7 +561,7 @@ msgstr "Program kontroly preklepov:"
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>Program na kontrolu preklepov môže byť „enchant-2”, „aspell”, „ispell” alebo akýkoľvek iný program kontroly preklepov, ktorý je kompatibilný s príkazom ispell.\nIkona udáva, či zadaný príkaz existuje.</i>"
 
 #: lib/prefs.c:734
 #, c-format
@@ -570,17 +570,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Toto funguje s Ollama alebo inou službou, ktorá implementuje jeho HTTP API.\nHTTPS podporované nie je.\nSlužby ako ChatGPT alebo Gemini podporované nie sú a ich podpora v pláne nie je.\nZadanie musí obsahovať zástupcu %s, kde bude vložený hľadaný text."
 
 #. model
 #: lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Model:"
 
 #. prompt
 #: lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Zadanie:"
 
 #: lib/prefs.c:792
 msgid "Reset"
