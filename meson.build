@@ -1,7 +1,7 @@
 project(
   'xfce4-dict',
   'c',
-  version : '0.8.9-dev',
+  version : '0.8.10',
   license : 'GPL-2.0-or-later',
   meson_version : '>= 0.54.0',
   default_options : ['c_std=gnu11', 'buildtype=debugoptimized', 'warning_level=2']
@@ -9,7 +9,7 @@ project(
 
 project_namespace = 'apps'
 pkgdatadir = get_option('prefix') / get_option('datadir') / meson.project_name()
-copyright_year = '2025'
+copyright_year = '2026'
 
 cc = meson.get_compiler('c')
 gnome = import('gnome')
