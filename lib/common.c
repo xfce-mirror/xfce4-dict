@@ -27,6 +27,7 @@
 #include <stdarg.h>
 #include <netdb.h>
 #include <netinet/tcp.h>
+#include <sys/socket.h>
 #include <gtk/gtk.h>
 
 #include <libxfce4ui/libxfce4ui.h>
