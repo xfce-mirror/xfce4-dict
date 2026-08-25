@@ -308,6 +308,29 @@ static void dict_plugin_construct(XfcePanelPlugin *plugin)
 	dpd->dd->is_plugin = TRUE;
 	dpd->plugin = plugin;
 
+	dpd->dd->rc_path_read = xfce_panel_plugin_lookup_rc_file(plugin);
+	dpd->dd->rc_path_write = xfce_panel_plugin_save_location(plugin, TRUE);
+	if (dpd->dd->rc_path_read == NULL)
+		dpd->dd->rc_path_read = g_strdup(dpd->dd->rc_path_write);
+
+	/*
+	 * Migrate settings from the shared config file if the plugin's own config doesn't exist.
+	 * This block might be removed in future releases.
+	 */
+	if (!g_file_test(dpd->dd->rc_path_read, G_FILE_TEST_EXISTS))
+	{
+		gchar *shared_rc_path = xfce_resource_save_location(XFCE_RESOURCE_CONFIG, "xfce4-dict/xfce4-dict.rc", FALSE);
+		if (g_file_test(shared_rc_path, G_FILE_TEST_EXISTS))
+		{
+			GFile *source_file = g_file_new_for_path(shared_rc_path);
+			GFile *dest_file = g_file_new_for_path(dpd->dd->rc_path_write);
+			g_file_copy(source_file, dest_file, G_FILE_COPY_OVERWRITE, NULL, NULL, NULL, NULL);
+			g_object_unref(source_file);
+			g_object_unref(dest_file);
+		}
+		g_free(shared_rc_path);
+	}
+
 	dict_read_rc_file(dpd->dd);
 
 	dpd->panel_button = xfce_panel_create_button();
