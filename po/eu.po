@@ -26,25 +26,25 @@ msgstr "Hiztegia"
 
 #: panel-plugin/xfce4-dict-plugin.desktop.in:6
 msgid "A plugin to query different dictionaries."
-msgstr "Hiztegi ezberdinak galdekatzeko plugina."
+msgstr "Hainbat hiztegi kontsultatzeko plugina."
 
 #: panel-plugin/xfce4-dict-plugin.c:238 panel-plugin/xfce4-dict-plugin.c:412
 #: src/xfce4-dict.c:200 lib/spell.c:242 lib/gui.c:544
 msgid "Ready"
-msgstr "Prest."
+msgstr "Prest"
 
 #: panel-plugin/xfce4-dict-plugin.c:315
 msgid "Look up a word"
-msgstr "Hitz bat bilatu"
+msgstr "Bilatu hitz bat"
 
 #: panel-plugin/xfce4-dict-plugin.c:354 lib/gui.c:816
 msgid "Search term"
-msgstr "Bilaketa terminoa"
+msgstr "Bilaketa-terminoa"
 
 #. sub menus to toggle search mode
 #: panel-plugin/xfce4-dict-plugin.c:381 lib/prefs.c:339 lib/prefs.c:485
 msgid "Dictionary Server"
-msgstr "Hiztegi zerbitzaria"
+msgstr "Hiztegi-zerbitzaria"
 
 #: panel-plugin/xfce4-dict-plugin.c:382 lib/prefs.c:347 lib/prefs.c:592
 msgid "Web Service"
@@ -52,43 +52,43 @@ msgstr "Web zerbitzua"
 
 #: panel-plugin/xfce4-dict-plugin.c:383 lib/prefs.c:355 lib/prefs.c:638
 msgid "Spell Checker"
-msgstr "Ortografia-egiaztatzea"
+msgstr "Ortografia-zuzentzailea"
 
 #: panel-plugin/xfce4-dict-plugin.c:402 lib/prefs.c:731
 msgid "LLM"
-msgstr ""
+msgstr "LLM"
 
 #: src/xfce4-dict.c:53
 msgid "Search the given text using a Dict server(RFC 2229)"
-msgstr "Bilatu emandako testua Dict zerbitzari(RFC 2229) batetan"
+msgstr "Bilatu emandako testua Dict zerbitzari batean (RFC 2229)"
 
 #: src/xfce4-dict.c:54
 msgid "Search the given text using a web-based search engine"
-msgstr "Bilatu emandako testua web-ean oinarritutako motor bat erabiliaz"
+msgstr "Bilatu emandako testua webeko bilatzaile bat erabiliz"
 
 #: src/xfce4-dict.c:55
 msgid "Check the given text with a spell checker"
-msgstr "Egiaztatu emandako testua ortografikoarekin"
+msgstr "Egiaztatu emandako testua ortografia-zuzentzaile batekin"
 
 #: src/xfce4-dict.c:56
 msgid "Generate the definition of the given text with a large language model"
-msgstr ""
+msgstr "Sortu emandako testuaren definizioa hizkuntza-eredu handi batekin"
 
 #: src/xfce4-dict.c:57
 msgid "Start stand-alone application even if the panel plugin is loaded"
-msgstr "Hasi banakako aplikazioa nahiz panel plugina kargaturik egon"
+msgstr "Abiarazi aplikazio autonomoa panel-plugina kargatuta egon arren"
 
 #: src/xfce4-dict.c:58
 msgid "Grabs the PRIMARY selection content and uses it as search text"
-msgstr "Lehen mailako hautapena hartu eta bilaketa testu bezala erabiltzen du"
+msgstr "PRIMARY hautapenaren edukia hartzen du eta bilaketa-testu gisa erabiltzen du"
 
 #: src/xfce4-dict.c:59
 msgid "Be verbose"
-msgstr "Xehetasun asko"
+msgstr "Erakutsi xehetasun guztiak"
 
 #: src/xfce4-dict.c:60
 msgid "Show version information"
-msgstr "Ikusi bertsio argibideak"
+msgstr "Erakutsi bertsioaren informazioa"
 
 #: src/xfce4-dict.c:133
 msgid "[TEXT]"
@@ -97,56 +97,56 @@ msgstr "[TESTUA]"
 #: src/xfce4-dict.c:149
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Programa erroreen berri <%s>-ra bidali (ingelesez)"
+msgstr "Eman akatsen berri hemen: <%s>."
 
 #: src/xfce4-dict.desktop.in:6
 msgid "Dictionary Client"
-msgstr "Hiztegi bezeroa"
+msgstr "Hiztegi-bezeroa"
 
 #: src/xfce4-dict.desktop.in:7
 msgid "A client program to query different dictionaries"
-msgstr "Hiztegi ezberdinak galdekatzeko bezero programa bat"
+msgstr "Hainbat hiztegi kontsultatzeko bezero-programa"
 
 #: lib/spell.c:74
 msgid "Spell Checker Results:"
-msgstr "Ortografia-egiaztatze emaitzak:"
+msgstr "Ortografia-zuzentzailearen emaitzak:"
 
 #: lib/spell.c:100
 #, c-format
 msgid "%d suggestion found."
 msgid_plural "%d suggestions found."
-msgstr[0] "Gomendio %d aurkitu da"
-msgstr[1] "%d gomendio aurkitu dira"
+msgstr[0] "Iradokizun %d aurkitu da."
+msgstr[1] "%d iradokizun aurkitu dira."
 
 #: lib/spell.c:104
 #, c-format
 msgid "Suggestions for \"%s\" (%s):"
-msgstr "\"%s\"-rentzat gomendioak (%s):"
+msgstr "\"%s\" hitzerako iradokizunak (%s):"
 
 #: lib/spell.c:121
 #, c-format
 msgid "\"%s\" is spelled correctly (%s)."
-msgstr "\"%s\" behar bezala idatzirik dago (%s)."
+msgstr "\"%s\" ondo idatzita dago (%s)."
 
 #: lib/spell.c:133
 #, c-format
 msgid "No suggestions could be found for \"%s\" (%s)."
-msgstr "Ez da gomendiorik aurkitu \"%s\"-rentzat (%s)."
+msgstr "Ez da iradokizunik aurkitu \"%s\" hitzerako (%s)."
 
 #. translation hint:
 #. * Error while executing <spell command, e.g. "aspell"> (<error message>)
 #: lib/spell.c:163
 #, c-format
 msgid "Error while executing \"%s\" (%s)."
-msgstr "Errorea \"%s\" (%s) exekutatzean."
+msgstr "Errorea \"%s\" exekutatzean (%s)."
 
 #: lib/spell.c:201
 msgid "Please set the spell check command in the preferences dialog."
-msgstr "Mesedez ezarri egiaztapen ortografiko komandoa hobespenetan."
+msgstr "Ezarri ortografia-zuzentzailearen komandoa hobespenen elkarrizketan."
 
 #: lib/spell.c:207
 msgid "Invalid input"
-msgstr "Sarrera baliogabea."
+msgstr "Sarrera baliogabea"
 
 #: lib/spell.c:246
 #, c-format
@@ -171,7 +171,7 @@ msgstr "Martxan"
 
 #: lib/speedreader.c:260
 msgid "Finished"
-msgstr "Amaiturik"
+msgstr "Amaituta"
 
 #: lib/speedreader.c:261
 msgid "_Back"
@@ -179,7 +179,7 @@ msgstr "_Atzera"
 
 #: lib/speedreader.c:269
 msgid "Speed Reader"
-msgstr "Irakurle abiadura"
+msgstr "Irakurketa azkarra"
 
 #: lib/speedreader.c:370
 msgid "You must enter a text."
@@ -200,24 +200,24 @@ msgstr "_Ireki"
 #: lib/speedreader.c:556
 #, c-format
 msgid "The file '%s' could not be loaded."
-msgstr "'%s' fitxategia ezin da kargatu."
+msgstr "Ezin izan da '%s' fitxategia kargatu."
 
 #: lib/speedreader.c:582
 #, c-format
 msgid "(display %d word at a time)"
 msgid_plural "(display %d words at a time)"
-msgstr[0] "(Bistarazi hitz %d batera)"
-msgstr[1] "(Bistarazi %d hitz batera)"
+msgstr[0] "(bistaratu hitz %d aldi bakoitzean)"
+msgstr[1] "(bistaratu %d hitz aldi bakoitzean)"
 
 #: lib/speedreader.c:606
 msgid ""
 "This is an easy speed reading utility to help train you to read faster. It "
 "does this by flashing words at a rapid rate on the screen."
-msgstr "Hau irakurketa bizkor lanabes bat da azkarrago irakurtzen laguntzeko. Hau hitzak abiadura handian pantailan bistaratzen egiten du."
+msgstr "Irakurketa azkarrerako tresna erraz bat da, azkarrago irakurtzen trebatzen laguntzeko. Horretarako, hitzak abiadura handian erakusten ditu pantailan."
 
 #: lib/speedreader.c:611
 msgid "_Words per Minute:"
-msgstr "_Hitz minutuko:"
+msgstr "Hitzak minutu_ko:"
 
 #: lib/speedreader.c:618
 msgid "_Mark Paragraphs"
@@ -229,27 +229,27 @@ msgstr "Hitz _taldekatzea:"
 
 #: lib/speedreader.c:642
 msgid "_Font Size:"
-msgstr "_Letra-tipo tamaina:"
+msgstr "_Letra-tamaina:"
 
 #: lib/speedreader.c:663
 msgid ""
 "Enter some text here you would like to read.\n"
 "\n"
 "Be relaxed and make yourself comfortable, then press Start to begin speed reading."
-msgstr "Idatzi testu irakurtzea nahi duzun testua hemen.\n\nErlaxatu eta komodo ipini zaitez eta Hasi sakatu irakurketa bizkorra abiarazteko."
+msgstr "Idatzi hemen irakurri nahi duzun testua.\n\nLasai eta eroso jarri, eta sakatu Hasi irakurketa azkarrari ekiteko."
 
 #: lib/speedreader.c:676
 msgid "Load the contents of a file"
-msgstr "Kargatu fitxategi bateko edukiak"
+msgstr "Kargatu fitxategi baten edukia"
 
 #: lib/speedreader.c:681
 msgid ""
 "Clear the contents of the text field and paste the contents of the clipboard"
-msgstr "Garbitu testu eremuko edukia eta itsatsi arbelekoa"
+msgstr "Garbitu testu-eremuaren edukia eta itsatsi arbelaren edukia"
 
 #: lib/speedreader.c:685
 msgid "Clear the contents of the text field"
-msgstr "Garbitu testu eremuko edukia"
+msgstr "Garbitu testu-eremuaren edukia"
 
 #: lib/speedreader.c:697
 msgid "_Start"
@@ -262,11 +262,11 @@ msgstr "It_xi"
 
 #: lib/common.c:195
 msgid "The search URL is empty. Please check your preferences."
-msgstr "Bilaketa URLa hutsik dago. Mesedez egiaztatu zure hobespenak."
+msgstr "Bilaketa-URLa hutsik dago. Egiaztatu zure hobespenak."
 
 #: lib/common.c:201
 msgid "Browser could not be opened. Please check your preferences."
-msgstr "Nabigatzailea ezin da ireki. Mesedez egiaztatu zure hobespenak."
+msgstr "Ezin izan da nabigatzailea ireki. Egiaztatu zure hobespenak."
 
 #: lib/common.c:245
 msgid "Invalid non-UTF8 input"
@@ -285,7 +285,7 @@ msgstr "abisua"
 #: lib/dictd.c:341
 #, c-format
 msgid "Search \"%s\" using \"%s\""
-msgstr "Bilatu \"%s\" \"%s\" erabiliaz"
+msgstr "Bilatu \"%s\" \"%s\" erabiliz"
 
 #: lib/dictd.c:348
 msgid "Web Search:"
@@ -294,7 +294,7 @@ msgstr "Web bilaketa:"
 #: lib/dictd.c:371 lib/dictd.c:679 lib/dictd.c:688 lib/dictd.c:777
 #: lib/dictd.c:786
 msgid "Could not connect to server."
-msgstr "Ezin da zerbitzarira konektatu."
+msgstr "Ezin izan da zerbitzarira konektatu."
 
 #: lib/dictd.c:377
 msgid "The server is not ready."
@@ -302,49 +302,49 @@ msgstr "Zerbitzaria ez dago prest."
 
 #: lib/dictd.c:384
 msgid "Invalid dictionary specified. Please check your preferences."
-msgstr "Okerreko hiztegia zehazturik. Mesedez egiaztatu zure hobespenak."
+msgstr "Zehaztutako hiztegia baliogabea da. Egiaztatu zure hobespenak."
 
 #: lib/dictd.c:392 lib/dictd.c:432 lib/dictd.c:811
 msgid "Unknown error while querying the server."
-msgstr "Errore ezezaguna zerbitzaria galdekatzerakoan."
+msgstr "Errore ezezaguna zerbitzaria kontsultatzean."
 
 #: lib/dictd.c:407
 msgid "Dictionary Results:"
-msgstr "Hiztegi emaitzak:"
+msgstr "Hiztegiaren emaitzak:"
 
 #: lib/dictd.c:410
 #, c-format
 msgid "No matches could be found for \"%s\"."
-msgstr "Ez da parekatzerik aurkitu \"%s\"-rentzat."
+msgstr "Ez da bat-etortzerik aurkitu \"%s\" hitzerako."
 
 #: lib/dictd.c:437
 #, c-format
 msgid "%d definition found."
 msgid_plural "%d definitions found."
-msgstr[0] "definizio %d aurkitu da"
-msgstr[1] "%d definizio aurkitu dira"
+msgstr[0] "Definizio %d aurkitu da."
+msgstr[1] "%d definizio aurkitu dira."
 
 #: lib/dictd.c:650
 #, c-format
 msgid "Querying %s..."
-msgstr "%s galdekatzen..."
+msgstr "%s kontsultatzen..."
 
 #: lib/dictd.c:709
 msgid "An error occurred while querying server information."
-msgstr "Errore bat gertatu da zerbitzaria galdekatzerakoan."
+msgstr "Errore bat gertatu da zerbitzariaren informazioa kontsultatzean."
 
 #: lib/dictd.c:722
 #, c-format
 msgid "Server Information for \"%s\""
-msgstr "\"%s\"-rentzat zerbitzari argibideak"
+msgstr "\"%s\" zerbitzariaren informazioa"
 
 #: lib/dictd.c:806
 msgid "The server doesn't offer any databases."
-msgstr "Zerbitzariak ez du datubaserik eskaintzen."
+msgstr "Zerbitzariak ez du datu-baserik eskaintzen."
 
 #: lib/gui.c:364
 msgid "Copy Link"
-msgstr "Kopiatu lotura"
+msgstr "Kopiatu esteka"
 
 #: lib/gui.c:374
 msgid "Search"
@@ -352,7 +352,7 @@ msgstr "Bilatu"
 
 #: lib/gui.c:595
 msgid "F_ind"
-msgstr "Au_rkitu"
+msgstr "_Bilatu"
 
 #. File Menu
 #: lib/gui.c:697
@@ -361,7 +361,7 @@ msgstr "_Fitxategia"
 
 #: lib/gui.c:704 lib/gui.c:830
 msgid "Speed _Reader"
-msgstr "Iraku_rle abiadura"
+msgstr "Irakurketa _azkarra"
 
 #: lib/gui.c:719
 msgid "_Preferences"
@@ -386,7 +386,7 @@ msgstr "Bilatu honekin:"
 
 #: lib/gui.c:858
 msgid "_Dictionary Server"
-msgstr "_Hiztegi zerbitzaria"
+msgstr "_Hiztegi-zerbitzaria"
 
 #: lib/gui.c:865
 msgid "_Web Service"
@@ -394,15 +394,15 @@ msgstr "_Web zerbitzua"
 
 #: lib/gui.c:873
 msgid "_Spell Checker"
-msgstr "_Ortografia-egiaztatzea"
+msgstr "_Ortografia-zuzentzailea"
 
 #: lib/gui.c:881
 msgid "_LLM"
-msgstr ""
+msgstr "_LLM"
 
 #: lib/gui.c:1022
 msgid "A client program to query different dictionaries."
-msgstr "Hiztegi ezberdinak galdekatzeko bezero programa bat."
+msgstr "Hainbat hiztegi kontsultatzeko bezero-programa."
 
 #: lib/gui.c:1026
 msgid "translator-credits"
@@ -410,7 +410,7 @@ msgstr "Piarres Beobide <pi@beobide.net>"
 
 #: lib/gui.c:1029
 msgid "Xfce4 Dictionary"
-msgstr "Xfce4 Hiztegia"
+msgstr "Xfce4 hiztegia"
 
 #: lib/prefs.c:53
 msgid "dict.leo.org - German <-> English"
@@ -454,7 +454,7 @@ msgstr "Wiktionary, hiztegi librea (EN)"
 
 #: lib/prefs.c:63
 msgid "Merriam-Webster Online Dictionary"
-msgstr "Merriam-Webster sare-bidezko hiztegia"
+msgstr "Merriam-Webster lineako hiztegia"
 
 #: lib/prefs.c:64
 msgid "Clear"
@@ -470,11 +470,11 @@ msgstr "Orokorra"
 
 #: lib/prefs.c:334
 msgid "<b>Default search method:</b>"
-msgstr "<b>Lehenetsitako bilaketa metodoa:</b>"
+msgstr "<b>Bilaketa-metodo lehenetsia:</b>"
 
 #: lib/prefs.c:363
 msgid "Last used method"
-msgstr "Azkenez erabilitako metodoa"
+msgstr "Azken aldiz erabilitako metodoa"
 
 #: lib/prefs.c:371
 msgid "<b>Colors:</b>"
@@ -482,7 +482,7 @@ msgstr "<b>Koloreak:</b>"
 
 #: lib/prefs.c:377
 msgid "Links:"
-msgstr "Loturak:"
+msgstr "Estekak:"
 
 #: lib/prefs.c:378
 msgid "Phonetics:"
@@ -490,24 +490,24 @@ msgstr "Fonetika:"
 
 #: lib/prefs.c:379
 msgid "Spelled correctly:"
-msgstr "Behar bezala idatzirik dago."
+msgstr "Ondo idatzita:"
 
 #: lib/prefs.c:380
 msgid "Spelled incorrectly:"
-msgstr "Ez dago behar bezala idatzirik."
+msgstr "Gaizki idatzita:"
 
 #: lib/prefs.c:431
 msgid "<b>Panel Text Field:</b>"
-msgstr "<b>Panel testu eremua:</b>"
+msgstr "<b>Panelaren testu-eremua:</b>"
 
 #: lib/prefs.c:437
 msgid "Show text field in the panel"
-msgstr "Ikusi testu eremua panelean"
+msgstr "Erakutsi testu-eremua panelean"
 
 #. panel entry size
 #: lib/prefs.c:444
 msgid "Text field size:"
-msgstr "Testu eremu tamaina:"
+msgstr "Testu-eremuaren tamaina:"
 
 #. server address
 #: lib/prefs.c:488 lib/prefs.c:743
@@ -517,7 +517,7 @@ msgstr "Zerbitzaria:"
 #. server port
 #: lib/prefs.c:498 lib/prefs.c:753
 msgid "Server Port:"
-msgstr "Zerbitzari ataka:"
+msgstr "Zerbitzariaren ataka:"
 
 #. dictionary
 #: lib/prefs.c:508 lib/prefs.c:664
@@ -526,15 +526,15 @@ msgstr "Hiztegia:"
 
 #: lib/prefs.c:511
 msgid "* (use all)"
-msgstr "* (dena erabili)"
+msgstr "* (erabili denak)"
 
 #: lib/prefs.c:513
 msgid "! (use all, stop after first match)"
-msgstr "! (dena erabili, lehen parekatzean gelditu)"
+msgstr "! (erabili denak, gelditu lehen bat-etortzean)"
 
 #: lib/prefs.c:594
 msgid "<b>Web search URL:</b>"
-msgstr "<b>Web bilaketa URLa:</b>"
+msgstr "<b>Web-bilaketaren URLa:</b>"
 
 #: lib/prefs.c:599
 msgid "URL:"
@@ -544,17 +544,17 @@ msgstr "URLa:"
 msgid ""
 "Enter the URL of a web site which offers translation or dictionary services."
 " Use {word} as placeholder for the searched word."
-msgstr "Idatzi itzulpena edo hiztegi zerbitzuak eskaintzen dituen webgune baten URLa. {word} erabili bilatu behar den hitza zehazteko."
+msgstr "Idatzi itzulpen- edo hiztegi-zerbitzuak eskaintzen dituen webgune baten URLa. Erabili {word} bilatutako hitzaren leku-marka gisa."
 
 #: lib/prefs.c:640
 msgid "Spell Check Program:"
-msgstr "Egiaztapen ortografiko programa:"
+msgstr "Ortografia-zuzentzailea:"
 
 #: lib/prefs.c:657
 msgid ""
 "<i>The spell check program can be 'enchant-2', 'aspell', 'ispell' or any other spell check program which is compatible to the ispell command.\n"
 "The icon shows whether the entered command exists.</i>"
-msgstr ""
+msgstr "<i>Ortografia-zuzentzailea 'enchant-2', 'aspell', 'ispell' edo ispell komandoarekin bateragarria den beste edozein programa izan daiteke.\nIkonoak adierazten du idatzitako komandoa existitzen den ala ez.</i>"
 
 #: lib/prefs.c:734
 #, c-format
@@ -563,17 +563,17 @@ msgid ""
 "HTTPS is not supported.\n"
 "Services like ChatGPT or Gemini are not supported, and there are no plans to add support.\n"
 "The prompt must include a %s placeholder where the search term will be inserted."
-msgstr ""
+msgstr "Ollama-rekin edo haren HTTP APIa inplementatzen duen edozein zerbitzurekin funtzionatzen du.\nHTTPS ez da onartzen.\nChatGPT edo Gemini bezalako zerbitzuak ez dira onartzen, eta ez dago euskarria gehitzeko asmorik.\nGonbitak %s leku-marka bat izan behar du, bilaketa-terminoa non txertatuko den adierazteko."
 
 #. model
 #: lib/prefs.c:763
 msgid "Model:"
-msgstr ""
+msgstr "Eredua:"
 
 #. prompt
 #: lib/prefs.c:773
 msgid "Prompt:"
-msgstr ""
+msgstr "Gonbita:"
 
 #: lib/prefs.c:792
 msgid "Reset"
